@@ -112,6 +112,45 @@
   .connection-title { font-family: 'Cinzel', serif; font-size: 0.8rem; font-weight: 600; color: var(--ink); line-height: 1.3; margin-bottom: 4px; }
   .connection-why { font-family: 'Lora', serif; font-style: italic; font-size: 0.77rem; color: var(--ink-light); line-height: 1.5; }
 
+
+  /* ── QUIZ ── */
+  .modal-quiz { margin: 20px 36px 0; background: #fff; border: 1px solid rgba(44,26,14,0.10); border-radius: 12px; overflow: hidden; }
+  .quiz-header { background: var(--ink); padding: 14px 22px; display: flex; align-items: center; justify-content: space-between; }
+  .quiz-header-label { font-family: 'Source Sans 3', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+  .quiz-dots { display: flex; gap: 6px; }
+  .quiz-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.15); transition: background 0.3s; }
+  .quiz-dot.qdone { background: var(--gold); }
+  .quiz-dot.qactive { background: rgba(201,162,39,0.5); }
+  .quiz-body { padding: 24px 24px 20px; }
+  .quiz-q-num { font-family: 'Source Sans 3', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .quiz-q-text { font-family: 'Cinzel', serif; font-size: 0.98rem; font-weight: 600; color: var(--ink); line-height: 1.5; margin-bottom: 18px; }
+  .quiz-options { display: flex; flex-direction: column; gap: 9px; }
+  .quiz-option { padding: 12px 16px; border: 1.5px solid rgba(44,26,14,0.14); border-radius: 9px; font-family: 'Lora', serif; font-size: 0.9rem; color: var(--ink); cursor: pointer; display: flex; align-items: center; gap: 10px; background: #fff; transition: border-color 0.15s, background 0.15s; text-align: left; width: 100%; }
+  .quiz-option:hover { border-color: var(--gold); background: rgba(201,162,39,0.04); }
+  .quiz-option.qcorrect { border-color: #3B6D11; background: #EAF3DE; color: #27500A; animation: qpop 0.4s cubic-bezier(0.34,1.56,0.64,1); }
+  .quiz-option.qwrong { border-color: #A32D2D; background: #FCEBEB; color: #791F1F; animation: qshake 0.4s ease; }
+  @keyframes qpop { 0%{transform:scale(1)} 50%{transform:scale(1.02)} 100%{transform:scale(1)} }
+  @keyframes qshake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-5px)} 75%{transform:translateX(5px)} }
+  .quiz-letter { width: 24px; height: 24px; border-radius: 50%; background: rgba(44,26,14,0.07); display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-size: 10px; font-weight: 700; color: var(--ink-light); flex-shrink: 0; transition: background 0.15s, color 0.15s; }
+  .quiz-option.qcorrect .quiz-letter { background: #3B6D11; color: #fff; }
+  .quiz-option.qwrong .quiz-letter { background: #A32D2D; color: #fff; }
+  .quiz-feedback { margin-top: 14px; padding: 11px 14px; border-radius: 7px; font-family: 'Lora', serif; font-style: italic; font-size: 0.88rem; line-height: 1.5; display: none; }
+  .quiz-feedback.qwrong-msg { display: block; background: #FCEBEB; color: #791F1F; border: 1px solid rgba(163,45,45,0.2); }
+  .quiz-feedback.qcorrect-msg { display: block; background: #EAF3DE; color: #27500A; border: 1px solid rgba(59,109,17,0.2); }
+  .quiz-next-btn { display: none; margin-top: 16px; width: 100%; padding: 11px; background: linear-gradient(135deg,var(--gold),var(--gold-bright)); color: var(--ink); border: none; border-radius: 8px; font-family: 'Cinzel', serif; font-size: 12px; font-weight: 700; letter-spacing: 0.05em; cursor: pointer; transition: transform 0.15s; }
+  .quiz-next-btn:hover { transform: translateY(-1px); }
+  .quiz-next-btn.qvisible { display: block; animation: qfadeup 0.3s ease; }
+  @keyframes qfadeup { from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)} }
+  .quiz-celebration { display: none; padding: 32px 24px; text-align: center; }
+  .quiz-celebration.qvisible { display: block; }
+  .quiz-stars { font-size: 28px; letter-spacing: 6px; margin-bottom: 16px; animation: qpop 0.5s cubic-bezier(0.34,1.56,0.64,1); }
+  .quiz-confetti { display: flex; justify-content: center; gap: 5px; flex-wrap: wrap; margin-bottom: 20px; }
+  .quiz-confetti-dot { width: 10px; height: 10px; border-radius: 50%; opacity: 0; animation: qconf 0.7s ease forwards; }
+  @keyframes qconf { 0%{transform:translateY(-16px);opacity:0} 60%{opacity:1} 100%{transform:translateY(0);opacity:1} }
+  .quiz-cel-title { font-family: 'Cinzel', serif; font-size: 1.4rem; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+  .quiz-cel-sub { font-family: 'Lora', serif; font-style: italic; font-size: 0.95rem; color: var(--ink-light); margin-bottom: 20px; line-height: 1.6; }
+  .quiz-score-badge { display: inline-block; background: var(--ink); color: var(--gold); font-family: 'Cinzel', serif; font-size: 12px; font-weight: 700; padding: 7px 18px; border-radius: 20px; margin-bottom: 20px; letter-spacing: 0.06em; }
+
   /* ── MODAL FOOTER ── */
   .modal-footer { padding: 20px 36px 28px; border-top: 1px solid var(--parchment-dark); margin-top: 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
   .mark-done-btn { background: linear-gradient(135deg,var(--gold),var(--gold-bright)); color: var(--ink); border: none; border-radius: 7px; padding: 10px 22px; font-family: 'Cinzel', serif; font-size: 13px; font-weight: 700; letter-spacing: 0.05em; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 2px 8px rgba(201,162,39,0.3); }
@@ -126,7 +165,7 @@
   .site-footer { text-align: center; padding: 32px 24px; border-top: 1px solid var(--parchment-dark); font-family: 'Source Sans 3', sans-serif; font-size: 12px; color: var(--ink-light); opacity: 0.6; }
   @media (max-width: 600px) {
     .modal-hero,.modal-body,.modal-footer{padding-left:20px;padding-right:20px}
-    .modal-audio,.modal-devotional,.modal-connections{margin-left:20px;margin-right:20px}
+    .modal-audio,.modal-devotional,.modal-connections,.modal-quiz{margin-left:20px;margin-right:20px}
     .modal-devotional{padding:18px 16px}
     .connections-grid{grid-template-columns:1fr}
     .story-grid{grid-template-columns:1fr 1fr}
@@ -184,6 +223,7 @@
 
     <div class="modal-devotional" id="modalDevotional"></div>
     <div class="modal-connections" id="modalConnections"></div>
+    <div class="modal-quiz" id="modalQuiz" style="display:none"></div>
 
     <div class="modal-footer">
       <div class="nav-btns">
@@ -328,6 +368,16 @@ function renderModal(idx){
       </div>`;
   } else { connEl.style.display='none'; }
 
+  // Quiz
+  const quizEl=document.getElementById('modalQuiz');
+  if(story.quiz&&story.quiz.length){
+    quizEl.style.display='';
+    initQuiz(story.quiz, quizEl);
+  } else {
+    quizEl.style.display='none';
+    quizEl.innerHTML='';
+  }
+
   // Mark done
   const btn=document.getElementById('markDoneBtn');
   btn.textContent=done?'✓ Already Read':'Mark as Read ✓';
@@ -338,6 +388,74 @@ function renderModal(idx){
   document.getElementById('nextBtn').disabled=idx>=stories.length-1;
   document.getElementById('prevBtn').dataset.idx=idx;
   document.getElementById('nextBtn').dataset.idx=idx;
+}
+
+function initQuiz(questions, container){
+  const letters=['A','B','C','D'];
+  let current=0, answered=false, score=0;
+
+  function renderQ(){
+    const q=questions[current];
+    container.innerHTML=`
+      <div class="quiz-header">
+        <span class="quiz-header-label">Story Quiz</span>
+        <div class="quiz-dots">${questions.map((_,i)=>`<div class="quiz-dot ${i<current?'qdone':i===current?'qactive':''}"></div>`).join('')}</div>
+      </div>
+      <div class="quiz-body">
+        <div class="quiz-q-num">Question ${current+1} of ${questions.length}</div>
+        <div class="quiz-q-text">${q.question}</div>
+        <div class="quiz-options">
+          ${q.options.map((opt,i)=>`<button class="quiz-option" data-idx="${i}"><span class="quiz-letter">${letters[i]}</span>${opt}</button>`).join('')}
+        </div>
+        <div class="quiz-feedback" id="qfeedback"></div>
+        <button class="quiz-next-btn" id="qnext">${current<questions.length-1?'Next Question →':'See Your Results!'}</button>
+      </div>`;
+
+    answered=false;
+    container.querySelectorAll('.quiz-option').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        if(answered)return;
+        const idx=parseInt(btn.dataset.idx);
+        const fb=container.querySelector('#qfeedback');
+        const nb=container.querySelector('#qnext');
+        if(idx===q.answer){
+          answered=true; score++;
+          btn.className='quiz-option qcorrect';
+          fb.className='quiz-feedback qcorrect-msg';
+          fb.textContent='Correct! '+( q.explanation||'Well done!');
+          nb.className='quiz-next-btn qvisible';
+        } else {
+          btn.className='quiz-option qwrong';
+          fb.className='quiz-feedback qwrong-msg';
+          fb.textContent='Not quite — try again!';
+          setTimeout(()=>{btn.className='quiz-option';},800);
+        }
+      });
+    });
+    container.querySelector('#qnext').addEventListener('click',()=>{
+      current++;
+      if(current<questions.length) renderQ();
+      else showCelebration();
+    });
+  }
+
+  function showCelebration(){
+    const colors=['#c9a227','#f0c040','#8b1a1a','#c9a227','#3B6D11','#f0c040','#7c3aed','#c9a227','#f0c040','#065f46'];
+    const stars=score===questions.length?'★ ★ ★':score>=questions.length*0.66?'★ ★ ☆':'★ ☆ ☆';
+    const msg=score===questions.length
+      ?'You got every question right! You really know this story.'
+      :`Great effort! You got ${score} out of ${questions.length}. Worth a second read!`;
+    container.innerHTML=`
+      <div class="quiz-celebration qvisible">
+        <div class="quiz-stars">${stars}</div>
+        <div class="quiz-confetti">${colors.map((c,i)=>`<div class="quiz-confetti-dot" style="background:${c};animation-delay:${i*0.06}s"></div>`).join('')}</div>
+        <div class="quiz-cel-title">Well done!</div>
+        <div class="quiz-cel-sub">${msg}</div>
+        <div class="quiz-score-badge">${score} out of ${questions.length} correct</div>
+      </div>`;
+  }
+
+  renderQ();
 }
 
 function closeModal(){
