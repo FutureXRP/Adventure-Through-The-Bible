@@ -503,6 +503,7 @@ function closeModal(){
   wordTimings=[];
   allWordSpans=[];
   currentTimestamps=null;
+  lastHighlightIdx=-1;
   document.getElementById('modalBackdrop').classList.remove('open');
   document.body.style.overflow='';
   currentStoryIndex=null;
@@ -531,6 +532,7 @@ function toggleAudio(){
       document.getElementById('audioFill').style.width='0%';
       document.getElementById('audioTime').textContent='0:00';
       isAudioPlaying=false;
+      lastHighlightIdx=-1;
       clearHighlights();
     });
     // Load timestamps if available
@@ -556,67 +558,95 @@ function buildWordTimings(alignment){
   const starts=alignment.character_start_times_seconds;
   const ends=alignment.character_end_times_seconds;
   wordTimings=[];
-  let word='', wordStart=null;
+  let word='', wordStart=null, wordEndIdx=0;
   for(let i=0;i<chars.length;i++){
-    if(chars[i]===' '||chars[i]==='\n'){
+    const c=chars[i];
+    // Split on space, newline, or em-dash
+    if(c===' '||c==='\n'||c==='\u2014'){
       if(word){
-        wordTimings.push({word,start:wordStart,end:ends[i-1]});
+        wordTimings.push({word,start:wordStart,end:ends[wordEndIdx]});
         word='';wordStart=null;
       }
     } else {
       if(!word) wordStart=starts[i];
-      word+=chars[i];
+      word+=c;
+      wordEndIdx=i;
     }
   }
-  if(word) wordTimings.push({word,start:wordStart,end:ends[ends.length-1]});
+  if(word) wordTimings.push({word,start:wordStart,end:ends[wordEndIdx]});
+  console.log('Word timings built:',wordTimings.length,'words');
+  console.log('First 5:',wordTimings.slice(0,5));
 }
 
 function wrapStoryWords(){
-  // Wrap each word in the story body in a span for highlighting
+  // Strategy: wrap every whitespace-delimited token in a span.
+  // The span index matches the wordTimings index directly — pure positional,
+  // no text comparison needed, no drift possible.
   allWordSpans=[];
   const body=document.getElementById('modalBody');
   const paras=body.querySelectorAll('.story-paragraph');
   let globalIdx=0;
-  paras.forEach(para=>{
-    const text=para.innerText;
-    const tokens=text.split(/( )/);
+  paras.forEach((para,pIdx)=>{
+    const rawText=para.innerText;
+    const tokens=rawText.split(/(\s+)/);
     let html='';
     tokens.forEach(token=>{
-      if(token===' '){
-        html+=' ';
-      } else if(token){
-        html+=`<span class="story-word" data-idx="${globalIdx}">${token}</span>`;
+      if(/^\s+$/.test(token)){
+        html+=token;
+      } else if(token.length>0){
+        // First token of first paragraph — preserve drop cap via data attribute
+        if(globalIdx===0&&pIdx===0){
+          html+=`<span class="story-word story-word-first" data-idx="0">${token}</span>`;
+        } else {
+          html+=`<span class="story-word" data-idx="${globalIdx}">${token}</span>`;
+        }
         globalIdx++;
       }
     });
     para.innerHTML=html;
   });
   allWordSpans=Array.from(body.querySelectorAll('.story-word'));
+  console.log('Story spans created:',allWordSpans.length,'| Word timings:',wordTimings.length);
 }
+
+let lastHighlightIdx=-1;
 
 function highlightCurrentWord(currentTime){
   if(!wordTimings.length||!allWordSpans.length)return;
-  // Find which word is currently being spoken
-  let activeIdx=-1;
-  for(let i=0;i<wordTimings.length;i++){
-    if(currentTime>=wordTimings[i].start && currentTime<=wordTimings[i].end){
-      activeIdx=i;
-      break;
-    }
+
+  // Pure time-based search — find timing index where currentTime falls
+  // Use the last known index as starting point to avoid scanning from 0 every frame
+  let idx=Math.max(0,lastHighlightIdx);
+
+  // Scan forward from last position
+  while(idx<wordTimings.length-1 && currentTime>=wordTimings[idx+1].start){
+    idx++;
   }
-  if(activeIdx===-1)return;
-  // Remove all highlights
+  // Scan backward if needed (e.g. after scrub)
+  while(idx>0 && currentTime<wordTimings[idx].start){
+    idx--;
+  }
+
+  if(idx===lastHighlightIdx)return; // nothing changed — skip DOM update
+  lastHighlightIdx=idx;
+
+  // Clear previous highlight efficiently — only clear the last one
   allWordSpans.forEach(s=>s.classList.remove('speaking'));
   document.querySelectorAll('.story-paragraph').forEach(p=>p.classList.remove('story-para-active'));
-  // Highlight current word
-  if(activeIdx<allWordSpans.length){
-    const span=allWordSpans[activeIdx];
+
+  // Apply new highlight
+  if(idx>=0&&idx<allWordSpans.length){
+    const span=allWordSpans[idx];
     span.classList.add('speaking');
-    // Highlight the containing paragraph
     const para=span.closest('.story-paragraph');
     if(para) para.classList.add('story-para-active');
-    // Scroll word into view smoothly
-    span.scrollIntoView({behavior:'smooth',block:'nearest'});
+    // Only scroll if outside visible modal body area
+    const modalBody=document.getElementById('modalBody');
+    const spanRect=span.getBoundingClientRect();
+    const bodyRect=modalBody.getBoundingClientRect();
+    if(spanRect.top<bodyRect.top+20||spanRect.bottom>bodyRect.bottom-20){
+      span.scrollIntoView({behavior:'smooth',block:'center'});
+    }
   }
 }
 
