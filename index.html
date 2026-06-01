@@ -567,8 +567,7 @@ function buildWordTimings(alignment){
   let word='', wordStart=null, wordEndIdx=0;
   for(let i=0;i<chars.length;i++){
     const c=chars[i];
-    if(c===' '||c==='
-'||c==='—'){
+    if(c===' '||c==='\n'||c==='\u2014'){
       if(word){
         wordTimings.push({word, start:wordStart+OFFSET, end:ends[wordEndIdx]+OFFSET});
         word='';wordStart=null;
