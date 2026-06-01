@@ -61,7 +61,7 @@
   .card-read-btn:hover { opacity: 0.7; }
   .modal-backdrop { display: none; position: fixed; inset: 0; background: rgba(20,10,5,0.75); z-index: 1000; align-items: flex-start; justify-content: center; padding: 20px; overflow-y: auto; backdrop-filter: blur(4px); }
   .modal-backdrop.open { display: flex; }
-  .modal { background: var(--parchment); border-radius: 14px; max-width: 720px; width: 100%; margin: auto; position: relative; box-shadow: 0 24px 80px rgba(0,0,0,0.45); overflow: hidden; animation: modalIn 0.3s cubic-bezier(0.34,1.56,0.64,1); }
+  .modal { background: var(--parchment); border-radius: 14px; max-width: 720px; width: 100%; margin: auto; position: relative; box-shadow: 0 24px 80px rgba(0,0,0,0.45); animation: modalIn 0.3s cubic-bezier(0.34,1.56,0.64,1); }
   @keyframes modalIn { from{opacity:0;transform:translateY(20px) scale(0.97)}to{opacity:1;transform:translateY(0) scale(1)} }
   .modal-hero { padding: 36px 36px 24px; border-bottom: 1px solid var(--parchment-dark); position: relative; }
   .modal-era-stripe { position: absolute; top: 0; left: 0; right: 0; height: 4px; }
@@ -73,7 +73,7 @@
   .modal-meta-item { font-family: 'Source Sans 3', sans-serif; font-size: 12px; color: var(--ink-light); }
   .modal-close { position: absolute; top: 16px; right: 16px; background: rgba(44,26,14,0.08); border: none; border-radius: 50%; width: 36px; height: 36px; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--ink-light); transition: background 0.15s; line-height: 1; }
   .modal-close:hover { background: rgba(44,26,14,0.15); }
-  .modal-body { padding: 28px 36px 0; max-height: 50vh; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--parchment-dark) transparent; }
+  .modal-body { padding: 28px 36px 0; max-height: 35vh; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--parchment-dark) transparent; }
   .modal-body::-webkit-scrollbar { width: 6px; }
   .modal-body::-webkit-scrollbar-thumb { background: var(--parchment-dark); border-radius: 3px; }
   .story-paragraph { font-family: 'Lora', serif; font-size: 1rem; line-height: 1.85; color: var(--ink); margin-bottom: 18px; }
@@ -112,6 +112,31 @@
   .connection-title { font-family: 'Cinzel', serif; font-size: 0.8rem; font-weight: 600; color: var(--ink); line-height: 1.3; margin-bottom: 4px; }
   .connection-why { font-family: 'Lora', serif; font-style: italic; font-size: 0.77rem; color: var(--ink-light); line-height: 1.5; }
 
+
+
+  /* ── WORD HIGHLIGHTING ── */
+  .story-word {
+    display: inline;
+    border-radius: 3px;
+    padding: 1px 0;
+    transition: background 0.05s, color 0.05s;
+    cursor: default;
+  }
+  .story-word.speaking {
+    background: #c9a227;
+    color: #2c1a0e;
+    border-radius: 3px;
+    padding: 1px 3px;
+    margin: 0 -1px;
+  }
+  .story-para-active {
+    background: rgba(201,162,39,0.07);
+    border-radius: 6px;
+    margin-left: -6px;
+    margin-right: -6px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
 
   /* ── QUIZ ── */
   .modal-quiz { margin: 20px 36px 0; background: #fff; border: 1px solid rgba(44,26,14,0.10); border-radius: 12px; overflow: hidden; }
@@ -333,14 +358,28 @@ function renderModal(idx){
     audioStatus.textContent='';
     playBtn.style.opacity='1';
     currentAudioSrc=story.audio;
+    currentTimestamps=null;
+    wordTimings=[];
+    allWordSpans=[];
     playBtn.onclick=toggleAudio;
-    // Wire up progress bar scrubbing
     document.getElementById('audioProgressWrap').onclick=scrubAudio;
+    // Try to load timestamp JSON
+    const tsPath=story.audio.replace('.mp3','.json');
+    fetch(tsPath)
+      .then(r=>r.ok?r.json():null)
+      .then(ts=>{
+        if(ts){
+          currentTimestamps=ts;
+          audioStatus.textContent='';
+        }
+      })
+      .catch(()=>{});
   } else {
     audioStatus.textContent='Audio coming soon';
     playBtn.style.opacity='0.4';
     playBtn.onclick=null;
     currentAudioSrc=null;
+    currentTimestamps=null;
     document.getElementById('audioProgressWrap').onclick=null;
   }
 
@@ -460,6 +499,10 @@ function initQuiz(questions, container){
 
 function closeModal(){
   if(currentAudio){currentAudio.pause();currentAudio=null;isAudioPlaying=false;}
+  clearHighlights();
+  wordTimings=[];
+  allWordSpans=[];
+  currentTimestamps=null;
   document.getElementById('modalBackdrop').classList.remove('open');
   document.body.style.overflow='';
   currentStoryIndex=null;
@@ -468,21 +511,33 @@ function closeModal(){
 // Audio player
 let currentAudio=null;
 let currentAudioSrc=null;
+let currentTimestamps=null;
 let isAudioPlaying=false;
+let highlightInterval=null;
+let wordTimings=[];
+let allWordSpans=[];
 
 function toggleAudio(){
   const btn=document.getElementById('audioPlayBtn');
   if(!currentAudioSrc)return;
   if(!currentAudio){
-    // First play — create audio object
     currentAudio=new Audio(currentAudioSrc);
-    currentAudio.addEventListener('timeupdate',updateAudioProgress);
+    currentAudio.addEventListener('timeupdate',()=>{
+      updateAudioProgress();
+      if(wordTimings.length) highlightCurrentWord(currentAudio.currentTime);
+    });
     currentAudio.addEventListener('ended',()=>{
       btn.innerHTML='<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>';
       document.getElementById('audioFill').style.width='0%';
       document.getElementById('audioTime').textContent='0:00';
       isAudioPlaying=false;
+      clearHighlights();
     });
+    // Load timestamps if available
+    if(currentTimestamps){
+      buildWordTimings(currentTimestamps);
+      wrapStoryWords();
+    }
   }
   if(isAudioPlaying){
     currentAudio.pause();
@@ -493,6 +548,81 @@ function toggleAudio(){
     isAudioPlaying=true;
     btn.innerHTML='<svg viewBox="0 0 24 24"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg>';
   }
+}
+
+function buildWordTimings(alignment){
+  // Convert ElevenLabs character timestamps to word timestamps
+  const chars=alignment.characters;
+  const starts=alignment.character_start_times_seconds;
+  const ends=alignment.character_end_times_seconds;
+  wordTimings=[];
+  let word='', wordStart=null;
+  for(let i=0;i<chars.length;i++){
+    if(chars[i]===' '||chars[i]==='\n'){
+      if(word){
+        wordTimings.push({word,start:wordStart,end:ends[i-1]});
+        word='';wordStart=null;
+      }
+    } else {
+      if(!word) wordStart=starts[i];
+      word+=chars[i];
+    }
+  }
+  if(word) wordTimings.push({word,start:wordStart,end:ends[ends.length-1]});
+}
+
+function wrapStoryWords(){
+  // Wrap each word in the story body in a span for highlighting
+  allWordSpans=[];
+  const body=document.getElementById('modalBody');
+  const paras=body.querySelectorAll('.story-paragraph');
+  let globalIdx=0;
+  paras.forEach(para=>{
+    const text=para.innerText;
+    const tokens=text.split(/( )/);
+    let html='';
+    tokens.forEach(token=>{
+      if(token===' '){
+        html+=' ';
+      } else if(token){
+        html+=`<span class="story-word" data-idx="${globalIdx}">${token}</span>`;
+        globalIdx++;
+      }
+    });
+    para.innerHTML=html;
+  });
+  allWordSpans=Array.from(body.querySelectorAll('.story-word'));
+}
+
+function highlightCurrentWord(currentTime){
+  if(!wordTimings.length||!allWordSpans.length)return;
+  // Find which word is currently being spoken
+  let activeIdx=-1;
+  for(let i=0;i<wordTimings.length;i++){
+    if(currentTime>=wordTimings[i].start && currentTime<=wordTimings[i].end){
+      activeIdx=i;
+      break;
+    }
+  }
+  if(activeIdx===-1)return;
+  // Remove all highlights
+  allWordSpans.forEach(s=>s.classList.remove('speaking'));
+  document.querySelectorAll('.story-paragraph').forEach(p=>p.classList.remove('story-para-active'));
+  // Highlight current word
+  if(activeIdx<allWordSpans.length){
+    const span=allWordSpans[activeIdx];
+    span.classList.add('speaking');
+    // Highlight the containing paragraph
+    const para=span.closest('.story-paragraph');
+    if(para) para.classList.add('story-para-active');
+    // Scroll word into view smoothly
+    span.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+}
+
+function clearHighlights(){
+  allWordSpans.forEach(s=>s.classList.remove('speaking'));
+  document.querySelectorAll('.story-paragraph').forEach(p=>p.classList.remove('story-para-active'));
 }
 
 function updateAudioProgress(){
