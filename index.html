@@ -28,11 +28,8 @@
     min-height: 100vh;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
   }
-  .site-header { text-align: center; padding: 56px 24px 40px; border-bottom: 2px solid var(--parchment-dark); position: relative; }
-  .site-header::after { content: ''; display: block; width: 80px; height: 3px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 24px auto 0; }
-  .header-eyebrow { font-family: 'Source Sans 3', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
-  .site-title { font-family: 'Cinzel', serif; font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 700; color: var(--ink); line-height: 1.1; letter-spacing: 0.02em; }
-  .site-subtitle { font-family: 'Lora', serif; font-style: italic; font-size: 1.1rem; color: var(--ink-light); margin-top: 10px; }
+  .site-header { padding: 0; border-bottom: 2px solid var(--parchment-dark); line-height: 0; }
+  .site-header img { width: 100%; display: block; max-height: 420px; object-fit: cover; object-position: center 30%; }
   .progress-strip { background: var(--parchment-dark); border-bottom: 1px solid rgba(44,26,14,0.1); padding: 14px 24px; display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
   .progress-label { font-family: 'Source Sans 3', sans-serif; font-size: 13px; font-weight: 600; color: var(--ink-light); letter-spacing: 0.05em; }
   .progress-bar-outer { width: 200px; height: 8px; background: rgba(44,26,14,0.12); border-radius: 4px; overflow: hidden; }
@@ -140,9 +137,7 @@
 <body>
 
 <header class="site-header">
-  <p class="header-eyebrow">A Journey Through Scripture</p>
-  <h1 class="site-title">Footsteps</h1>
-  <p class="site-subtitle">Walk through the greatest story ever told</p>
+  <img src="./header.png" alt="Footsteps — Walk through the greatest story ever told">
 </header>
 
 <div class="progress-strip">
