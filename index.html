@@ -554,6 +554,12 @@ function toggleAudio(){
 
 function buildWordTimings(alignment){
   // Convert ElevenLabs character timestamps to word timestamps
+  // OFFSET: ElevenLabs timestamps start from when the voice begins,
+  // but the audio file may have leading silence. A negative offset
+  // shifts highlights earlier so they fire closer to when words are spoken.
+  // Tune this value if highlighting is still early or late.
+  const OFFSET = 0.0; // start at 0, we handle timing differently below
+
   const chars=alignment.characters;
   const starts=alignment.character_start_times_seconds;
   const ends=alignment.character_end_times_seconds;
@@ -561,10 +567,10 @@ function buildWordTimings(alignment){
   let word='', wordStart=null, wordEndIdx=0;
   for(let i=0;i<chars.length;i++){
     const c=chars[i];
-    // Split on space, newline, or em-dash
-    if(c===' '||c==='\n'||c==='\u2014'){
+    if(c===' '||c==='
+'||c==='—'){
       if(word){
-        wordTimings.push({word,start:wordStart,end:ends[wordEndIdx]});
+        wordTimings.push({word, start:wordStart+OFFSET, end:ends[wordEndIdx]+OFFSET});
         word='';wordStart=null;
       }
     } else {
@@ -573,9 +579,10 @@ function buildWordTimings(alignment){
       wordEndIdx=i;
     }
   }
-  if(word) wordTimings.push({word,start:wordStart,end:ends[wordEndIdx]});
+  if(word) wordTimings.push({word, start:wordStart+OFFSET, end:ends[wordEndIdx]+OFFSET});
   console.log('Word timings built:',wordTimings.length,'words');
-  console.log('First 5:',wordTimings.slice(0,5));
+  console.log('First word timing:',wordTimings[0]);
+  console.log('Audio offset applied:',OFFSET,'seconds');
 }
 
 function wrapStoryWords(){
@@ -615,17 +622,25 @@ function highlightCurrentWord(currentTime){
   if(!wordTimings.length||!allWordSpans.length)return;
 
   // Pure time-based search — find timing index where currentTime falls
-  // Use the last known index as starting point to avoid scanning from 0 every frame
+  // Highlight fires when currentTime reaches word start time
   let idx=Math.max(0,lastHighlightIdx);
 
-  // Scan forward from last position
-  while(idx<wordTimings.length-1 && currentTime>=wordTimings[idx+1].start){
+  // Look ahead by 150ms to compensate for timeupdate firing delay
+  // This makes the highlight appear right as the word is spoken
+  const LOOKAHEAD = 0.15;
+  const t = currentTime + LOOKAHEAD;
+
+  // Scan forward — advance when next word has started
+  while(idx<wordTimings.length-1 && t>=wordTimings[idx+1].start){
     idx++;
   }
   // Scan backward if needed (e.g. after scrub)
-  while(idx>0 && currentTime<wordTimings[idx].start){
+  while(idx>0 && t<wordTimings[idx].start){
     idx--;
   }
+
+  // If audio hasn't reached the first word yet, don't highlight
+  if(t < wordTimings[0].start) return;
 
   if(idx===lastHighlightIdx)return; // nothing changed — skip DOM update
   lastHighlightIdx=idx;
