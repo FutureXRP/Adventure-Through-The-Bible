@@ -86,7 +86,7 @@
   .audio-play-btn svg { width: 14px; height: 14px; fill: var(--ink); }
   .audio-center { flex: 1; min-width: 0; }
   .audio-label { font-family: 'Source Sans 3', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 5px; }
-  .audio-progress-wrap { height: 3px; background: rgba(255,255,255,0.15); border-radius: 2px; }
+  .audio-progress-wrap { height: 3px; background: rgba(255,255,255,0.15); border-radius: 2px; cursor: pointer; position: relative; padding: 8px 0; margin: -8px 0; }
   .audio-progress-fill { height: 100%; background: var(--gold); border-radius: 2px; width: 0%; transition: width 0.1s linear; }
   .audio-time { font-family: 'Source Sans 3', sans-serif; font-size: 10px; color: rgba(255,255,255,0.35); margin-top: 4px; }
   .audio-status { font-family: 'Lora', serif; font-style: italic; font-size: 11px; color: rgba(255,255,255,0.3); flex-shrink: 0; }
@@ -174,7 +174,7 @@
       </button>
       <div class="audio-center">
         <div class="audio-label">Listen along</div>
-        <div class="audio-progress-wrap">
+        <div class="audio-progress-wrap" id="audioProgressWrap">
           <div class="audio-progress-fill" id="audioFill"></div>
         </div>
         <div class="audio-time" id="audioTime">0:00</div>
@@ -284,16 +284,24 @@ function renderModal(idx){
   // Audio
   const audioStatus=document.getElementById('audioStatus');
   const playBtn=document.getElementById('audioPlayBtn');
+  // Stop existing audio when switching stories
+  if(currentAudio){currentAudio.pause();currentAudio=null;isAudioPlaying=false;}
+  playBtn.innerHTML='<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>';
   document.getElementById('audioFill').style.width='0%';
   document.getElementById('audioTime').textContent='0:00';
   if(story.audio){
     audioStatus.textContent='';
     playBtn.style.opacity='1';
-    playBtn.onclick=()=>playAudio(story.audio);
+    currentAudioSrc=story.audio;
+    playBtn.onclick=toggleAudio;
+    // Wire up progress bar scrubbing
+    document.getElementById('audioProgressWrap').onclick=scrubAudio;
   } else {
     audioStatus.textContent='Audio coming soon';
     playBtn.style.opacity='0.4';
     playBtn.onclick=null;
+    currentAudioSrc=null;
+    document.getElementById('audioProgressWrap').onclick=null;
   }
 
   // Devotional
@@ -333,7 +341,7 @@ function renderModal(idx){
 }
 
 function closeModal(){
-  if(currentAudio){currentAudio.pause();currentAudio=null;}
+  if(currentAudio){currentAudio.pause();currentAudio=null;isAudioPlaying=false;}
   document.getElementById('modalBackdrop').classList.remove('open');
   document.body.style.overflow='';
   currentStoryIndex=null;
@@ -341,25 +349,50 @@ function closeModal(){
 
 // Audio player
 let currentAudio=null;
-function playAudio(src){
-  if(currentAudio){currentAudio.pause();currentAudio=null;}
-  const fill=document.getElementById('audioFill');
-  const time=document.getElementById('audioTime');
+let currentAudioSrc=null;
+let isAudioPlaying=false;
+
+function toggleAudio(){
   const btn=document.getElementById('audioPlayBtn');
-  currentAudio=new Audio(src);
-  currentAudio.addEventListener('timeupdate',()=>{
-    const pct=currentAudio.duration?(currentAudio.currentTime/currentAudio.duration)*100:0;
-    fill.style.width=pct+'%';
-    const m=Math.floor(currentAudio.currentTime/60);
-    const s=Math.floor(currentAudio.currentTime%60);
-    time.textContent=m+':'+String(s).padStart(2,'0');
-  });
-  currentAudio.addEventListener('ended',()=>{
+  if(!currentAudioSrc)return;
+  if(!currentAudio){
+    // First play — create audio object
+    currentAudio=new Audio(currentAudioSrc);
+    currentAudio.addEventListener('timeupdate',updateAudioProgress);
+    currentAudio.addEventListener('ended',()=>{
+      btn.innerHTML='<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>';
+      document.getElementById('audioFill').style.width='0%';
+      document.getElementById('audioTime').textContent='0:00';
+      isAudioPlaying=false;
+    });
+  }
+  if(isAudioPlaying){
+    currentAudio.pause();
+    isAudioPlaying=false;
     btn.innerHTML='<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>';
-    fill.style.width='0%';
-  });
-  currentAudio.play();
-  btn.innerHTML='<svg viewBox="0 0 24 24"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg>';
+  } else {
+    currentAudio.play();
+    isAudioPlaying=true;
+    btn.innerHTML='<svg viewBox="0 0 24 24"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg>';
+  }
+}
+
+function updateAudioProgress(){
+  if(!currentAudio)return;
+  const pct=currentAudio.duration?(currentAudio.currentTime/currentAudio.duration)*100:0;
+  document.getElementById('audioFill').style.width=pct+'%';
+  const m=Math.floor(currentAudio.currentTime/60);
+  const s=Math.floor(currentAudio.currentTime%60);
+  document.getElementById('audioTime').textContent=m+':'+String(s).padStart(2,'0');
+}
+
+function scrubAudio(e){
+  if(!currentAudio||!currentAudio.duration)return;
+  const wrap=document.getElementById('audioProgressWrap');
+  const rect=wrap.getBoundingClientRect();
+  const pct=Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width));
+  currentAudio.currentTime=pct*currentAudio.duration;
+  updateAudioProgress();
 }
 
 document.getElementById('modalClose').addEventListener('click',closeModal);
