@@ -123,7 +123,8 @@
           "reference": "2 Corinthians 5:17",
           "why": "Paul calls anyone in Christ a 'new creation' — the same language, the same God, making all things new again."
         }
-      ]
+      ],
+      "audio": "./audio/001-creation.mp3"
     },
     {
       "id": "adam-eve",
@@ -181,7 +182,8 @@
           "reference": "Genesis 3:15",
           "why": "God's promise to crush the serpent's head is the first announcement of the gospel — the whole Bible is the story of that promise being kept."
         }
-      ]
+      ],
+      "audio": "./audio/002-adam-eve.mp3"
     },
     {
       "id": "cain-abel",
@@ -239,7 +241,8 @@
           "reference": "1 John 3:11–12",
           "why": "John uses Cain as the opposite of love — the example of what it looks like when jealousy and hatred are allowed to grow unchecked."
         }
-      ]
+      ],
+      "audio": "./audio/003-cain-abel.mp3"
     },
     {
       "id": "noah",
@@ -299,7 +302,8 @@
           "reference": "Matthew 24:37–39",
           "why": "Jesus Himself refers to the days of Noah — people carrying on as normal, completely unaware, right up until the moment everything changed."
         }
-      ]
+      ],
+      "audio": "./audio/004-noah.mp3"
     },
     {
       "id": "tower-babel",
@@ -356,7 +360,8 @@
           "reference": "Genesis 3:5",
           "why": "The serpent promised 'you will be like God.' At Babel, people tried to make that happen themselves. Same pride, bigger stage."
         }
-      ]
+      ],
+      "audio": "./audio/005-tower-babel.mp3"
     },
     {
       "id": "abraham",
@@ -397,7 +402,8 @@
         "patience",
         "sacrifice",
         "Jesus"
-      ]
+      ],
+      "audio": "./audio/006-abraham.mp3"
     },
     {
       "id": "joseph",
@@ -438,7 +444,8 @@
         "jealousy",
         "redemption",
         "faith"
-      ]
+      ],
+      "audio": "./audio/007-joseph.mp3"
     },
     {
       "id": "moses-birth",
@@ -478,7 +485,8 @@
         "family",
         "God's sovereignty",
         "providence"
-      ]
+      ],
+      "audio": "./audio/008-moses-birth.mp3"
     },
     {
       "id": "burning-bush",
@@ -519,7 +527,8 @@
         "inadequacy",
         "faith",
         "God's name"
-      ]
+      ],
+      "audio": "./audio/009-burning-bush.mp3"
     },
     {
       "id": "red-sea",
@@ -556,7 +565,8 @@
         "God's power",
         "fear",
         "rescue"
-      ]
+      ],
+      "audio": "./audio/010-red-sea.mp3"
     },
     {
       "id": "ten-commandments",
@@ -592,7 +602,8 @@
         "obedience",
         "love",
         "worship"
-      ]
+      ],
+      "audio": "./audio/011-ten-commandments.mp3"
     },
     {
       "id": "rahab",
@@ -629,7 +640,8 @@
         "redemption",
         "God's grace",
         "unlikely heroes"
-      ]
+      ],
+      "audio": "./audio/012-rahab.mp3"
     },
     {
       "id": "gideon",
@@ -666,7 +678,8 @@
         "inadequacy",
         "God's power",
         "unlikely heroes"
-      ]
+      ],
+      "audio": "./audio/013-gideon.mp3"
     },
     {
       "id": "ruth",
@@ -703,7 +716,8 @@
         "redemption",
         "courage",
         "family"
-      ]
+      ],
+      "audio": "./audio/014-ruth.mp3"
     },
     {
       "id": "samuel",
@@ -740,7 +754,8 @@
         "God's voice",
         "calling",
         "obedience"
-      ]
+      ],
+      "audio": "./audio/015-samuel.mp3"
     },
     {
       "id": "david-goliath",
@@ -777,7 +792,8 @@
         "fear",
         "God's power",
         "giants"
-      ]
+      ],
+      "audio": "./audio/016-david-goliath.mp3"
     },
     {
       "id": "psalm23",
@@ -814,7 +830,8 @@
         "fear",
         "peace",
         "provision"
-      ]
+      ],
+      "audio": "./audio/017-psalm23.mp3"
     },
     {
       "id": "elijah",
@@ -851,7 +868,8 @@
         "God's power",
         "burnout",
         "prayer"
-      ]
+      ],
+      "audio": "./audio/018-elijah.mp3"
     },
     {
       "id": "daniel",
@@ -888,7 +906,8 @@
         "prayer",
         "integrity",
         "persecution"
-      ]
+      ],
+      "audio": "./audio/019-daniel.mp3"
     },
     {
       "id": "esther",
@@ -925,7 +944,8 @@
         "God's providence",
         "purpose",
         "sacrifice"
-      ]
+      ],
+      "audio": "./audio/020-esther.mp3"
     },
     {
       "id": "annunciation",
@@ -968,7 +988,8 @@
         "God's plan",
         "humility",
         "Christmas"
-      ]
+      ],
+      "audio": "./audio/021-annunciation.mp3"
     },
     {
       "id": "boy-temple",
@@ -1009,7 +1030,8 @@
         "growing up",
         "purpose",
         "Incarnation"
-      ]
+      ],
+      "audio": "./audio/022-boy-temple.mp3"
     },
     {
       "id": "sermon-mount",
@@ -1053,7 +1075,8 @@
         "worry",
         "ethics",
         "heart"
-      ]
+      ],
+      "audio": "./audio/023-sermon-mount.mp3"
     },
     {
       "id": "prodigal",
@@ -1096,7 +1119,8 @@
         "God's character",
         "parable",
         "lost and found"
-      ]
+      ],
+      "audio": "./audio/024-prodigal.mp3"
     },
     {
       "id": "lazarus",
@@ -1133,7 +1157,8 @@
         "faith",
         "miracles",
         "resurrection"
-      ]
+      ],
+      "audio": "./audio/025-lazarus.mp3"
     },
     {
       "id": "crucifixion",
@@ -1175,7 +1200,8 @@
         "love",
         "salvation",
         "crucifixion"
-      ]
+      ],
+      "audio": "./audio/026-crucifixion.mp3"
     },
     {
       "id": "resurrection",
@@ -1217,7 +1243,8 @@
         "hope",
         "salvation",
         "evidence"
-      ]
+      ],
+      "audio": "./audio/027-resurrection.mp3"
     },
     {
       "id": "pentecost",
@@ -1254,7 +1281,8 @@
         "community",
         "mission",
         "transformation"
-      ]
+      ],
+      "audio": "./audio/028-pentecost.mp3"
     },
     {
       "id": "paul-conversion",
@@ -1291,7 +1319,8 @@
         "God's power",
         "mercy",
         "mission"
-      ]
+      ],
+      "audio": "./audio/029-paul-conversion.mp3"
     },
     {
       "id": "paul-jail",
@@ -1328,7 +1357,8 @@
         "faith",
         "joy",
         "mission"
-      ]
+      ],
+      "audio": "./audio/030-paul-jail.mp3"
     }
   ]
 }
