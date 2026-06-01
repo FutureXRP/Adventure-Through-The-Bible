@@ -586,8 +586,9 @@ function buildWordTimings(alignment){
 
 function wrapStoryWords(){
   // Strategy: wrap every whitespace-delimited token in a span.
-  // The span index matches the wordTimings index directly — pure positional,
-  // no text comparison needed, no drift possible.
+  // IMPORTANT: standalone dashes (— or -) surrounded by spaces are
+  // counted as their own character by ElevenLabs timestamps.
+  // We must also wrap them as spans so span index === timing index.
   allWordSpans=[];
   const body=document.getElementById('modalBody');
   const paras=body.querySelectorAll('.story-paragraph');
@@ -598,21 +599,26 @@ function wrapStoryWords(){
     let html='';
     tokens.forEach(token=>{
       if(/^\s+$/.test(token)){
-        html+=token;
+        html+=token; // whitespace — pass through
       } else if(token.length>0){
-        // First token of first paragraph — preserve drop cap via data attribute
-        if(globalIdx===0&&pIdx===0){
-          html+=`<span class="story-word story-word-first" data-idx="0">${token}</span>`;
-        } else {
-          html+=`<span class="story-word" data-idx="${globalIdx}">${token}</span>`;
-        }
+        // Wrap ALL non-whitespace tokens including standalone dashes
+        // so span count always matches ElevenLabs timing count
+        const isFirst=(globalIdx===0&&pIdx===0);
+        const cls=isFirst?'story-word story-word-first':'story-word';
+        // Hide standalone dashes from highlight — they look odd highlighted
+        const isDash=(token==='—'||token==='–'||token==='-');
+        const style=isDash?' style="opacity:1"':'';
+        html+=`<span class="${cls}"${style} data-idx="${globalIdx}">${token}</span>`;
         globalIdx++;
       }
     });
     para.innerHTML=html;
   });
   allWordSpans=Array.from(body.querySelectorAll('.story-word'));
-  console.log('Story spans created:',allWordSpans.length,'| Word timings:',wordTimings.length);
+  console.log('Story spans:',allWordSpans.length,'| Word timings:',wordTimings.length);
+  if(allWordSpans.length!==wordTimings.length){
+    console.warn('COUNT MISMATCH — spans:',allWordSpans.length,'timings:',wordTimings.length);
+  }
 }
 
 let lastHighlightIdx=-1;
@@ -648,18 +654,23 @@ function highlightCurrentWord(currentTime){
   allWordSpans.forEach(s=>s.classList.remove('speaking'));
   document.querySelectorAll('.story-paragraph').forEach(p=>p.classList.remove('story-para-active'));
 
-  // Apply new highlight
+  // Apply new highlight — skip dashes, they look odd highlighted
   if(idx>=0&&idx<allWordSpans.length){
     const span=allWordSpans[idx];
-    span.classList.add('speaking');
+    const isDash=span.textContent==='—'||span.textContent==='–'||span.textContent==='-';
+    if(!isDash){
+      span.classList.add('speaking');
+    }
     const para=span.closest('.story-paragraph');
     if(para) para.classList.add('story-para-active');
     // Only scroll if outside visible modal body area
-    const modalBody=document.getElementById('modalBody');
-    const spanRect=span.getBoundingClientRect();
-    const bodyRect=modalBody.getBoundingClientRect();
-    if(spanRect.top<bodyRect.top+20||spanRect.bottom>bodyRect.bottom-20){
-      span.scrollIntoView({behavior:'smooth',block:'center'});
+    if(!isDash){
+      const modalBody=document.getElementById('modalBody');
+      const spanRect=span.getBoundingClientRect();
+      const bodyRect=modalBody.getBoundingClientRect();
+      if(spanRect.top<bodyRect.top+20||spanRect.bottom>bodyRect.bottom-20){
+        span.scrollIntoView({behavior:'smooth',block:'center'});
+      }
     }
   }
 }
