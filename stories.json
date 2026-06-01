@@ -124,7 +124,36 @@
           "why": "Paul calls anyone in Christ a 'new creation' — the same language, the same God, making all things new again."
         }
       ],
-      "audio": "./audio/001-creation.mp3"
+      "audio": "./audio/creation.mp3",
+      "quiz": [
+        {
+          "question": "What were the very first words God spoke to create the world?",
+          "options": [
+            "Let there be life",
+            "Let there be light",
+            "Let there be earth"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What did God do on the seventh day?",
+          "options": [
+            "Created the animals",
+            "Rested and called the day holy",
+            "Made the sun and moon"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "How did God make the man come alive?",
+          "options": [
+            "He spoke his name",
+            "He touched him with fire",
+            "He breathed into his nostrils"
+          ],
+          "answer": 2
+        }
+      ]
     },
     {
       "id": "adam-eve",
@@ -183,7 +212,36 @@
           "why": "God's promise to crush the serpent's head is the first announcement of the gospel — the whole Bible is the story of that promise being kept."
         }
       ],
-      "audio": "./audio/002-adam-eve.mp3"
+      "audio": "./audio/adam-eve.mp3",
+      "quiz": [
+        {
+          "question": "What was the one rule God gave Adam and Eve in the garden?",
+          "options": [
+            "Do not leave the garden",
+            "Do not eat from the tree in the middle of the garden",
+            "Do not talk to animals"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What did the serpent tell Eve would happen if she ate the fruit?",
+          "options": [
+            "She would get sick and die",
+            "Her eyes would be opened and she would be like God",
+            "She would become very strong"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What did God make for Adam and Eve before sending them out of the garden?",
+          "options": [
+            "A new home",
+            "Garments of skin to clothe them",
+            "A boat to travel in"
+          ],
+          "answer": 1
+        }
+      ]
     },
     {
       "id": "cain-abel",
@@ -242,7 +300,36 @@
           "why": "John uses Cain as the opposite of love — the example of what it looks like when jealousy and hatred are allowed to grow unchecked."
         }
       ],
-      "audio": "./audio/003-cain-abel.mp3"
+      "audio": "./audio/cain-abel.mp3",
+      "quiz": [
+        {
+          "question": "What was different about the offerings Cain and Abel brought to God?",
+          "options": [
+            "Abel brought crops and Cain brought animals",
+            "Abel brought his very best while Cain just brought some",
+            "Cain brought more than Abel did"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What did God warn Cain about before anything bad happened?",
+          "options": [
+            "That Abel would leave the family",
+            "That sin was crouching at the door waiting to control him",
+            "That the harvest would fail"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What did God do for Cain even after he murdered his brother?",
+          "options": [
+            "Gave him a new home",
+            "Placed a mark on him to protect him",
+            "Forgave him immediately"
+          ],
+          "answer": 1
+        }
+      ]
     },
     {
       "id": "noah",
@@ -303,7 +390,36 @@
           "why": "Jesus Himself refers to the days of Noah — people carrying on as normal, completely unaware, right up until the moment everything changed."
         }
       ],
-      "audio": "./audio/004-noah.mp3"
+      "audio": "./audio/noah.mp3",
+      "quiz": [
+        {
+          "question": "How did Noah respond when God told him to build the ark?",
+          "options": [
+            "He argued and asked for a sign first",
+            "He did everything exactly as God commanded",
+            "He waited to see if it would rain before starting"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Who shut the door of the ark when it was time?",
+          "options": [
+            "Noah and his sons",
+            "God Himself shut the door",
+            "The animals pushed it closed"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What sign did God put in the sky as a promise to never flood the whole earth again?",
+          "options": [
+            "A bright star",
+            "A rainbow",
+            "A pillar of fire"
+          ],
+          "answer": 1
+        }
+      ]
     },
     {
       "id": "tower-babel",
@@ -361,7 +477,36 @@
           "why": "The serpent promised 'you will be like God.' At Babel, people tried to make that happen themselves. Same pride, bigger stage."
         }
       ],
-      "audio": "./audio/005-tower-babel.mp3"
+      "audio": "./audio/tower-babel.mp3",
+      "quiz": [
+        {
+          "question": "Why did the people want to build a tower reaching to heaven?",
+          "options": [
+            "To worship God from a high place",
+            "To make a name for themselves and not be scattered",
+            "To see the whole earth from above"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "How did God stop the building of the tower?",
+          "options": [
+            "He knocked it down with wind",
+            "He confused their language so they could not understand each other",
+            "He sent rain to wash it away"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What event thousands of years later reversed what happened at Babel?",
+          "options": [
+            "The building of the Temple in Jerusalem",
+            "Pentecost when the Holy Spirit let everyone hear in their own language",
+            "Moses receiving the Ten Commandments"
+          ],
+          "answer": 1
+        }
+      ]
     },
     {
       "id": "abraham",
@@ -403,7 +548,7 @@
         "sacrifice",
         "Jesus"
       ],
-      "audio": "./audio/006-abraham.mp3"
+      "audio": "./audio/abraham.mp3"
     },
     {
       "id": "joseph",
@@ -445,7 +590,7 @@
         "redemption",
         "faith"
       ],
-      "audio": "./audio/007-joseph.mp3"
+      "audio": "./audio/joseph.mp3"
     },
     {
       "id": "moses-birth",
@@ -486,7 +631,7 @@
         "God's sovereignty",
         "providence"
       ],
-      "audio": "./audio/008-moses-birth.mp3"
+      "audio": "./audio/moses-birth.mp3"
     },
     {
       "id": "burning-bush",
@@ -528,7 +673,7 @@
         "faith",
         "God's name"
       ],
-      "audio": "./audio/009-burning-bush.mp3"
+      "audio": "./audio/burning-bush.mp3"
     },
     {
       "id": "red-sea",
@@ -566,7 +711,7 @@
         "fear",
         "rescue"
       ],
-      "audio": "./audio/010-red-sea.mp3"
+      "audio": "./audio/red-sea.mp3"
     },
     {
       "id": "ten-commandments",
@@ -603,7 +748,7 @@
         "love",
         "worship"
       ],
-      "audio": "./audio/011-ten-commandments.mp3"
+      "audio": "./audio/ten-commandments.mp3"
     },
     {
       "id": "rahab",
@@ -641,7 +786,7 @@
         "God's grace",
         "unlikely heroes"
       ],
-      "audio": "./audio/012-rahab.mp3"
+      "audio": "./audio/rahab.mp3"
     },
     {
       "id": "gideon",
@@ -679,7 +824,7 @@
         "God's power",
         "unlikely heroes"
       ],
-      "audio": "./audio/013-gideon.mp3"
+      "audio": "./audio/gideon.mp3"
     },
     {
       "id": "ruth",
@@ -717,7 +862,7 @@
         "courage",
         "family"
       ],
-      "audio": "./audio/014-ruth.mp3"
+      "audio": "./audio/ruth.mp3"
     },
     {
       "id": "samuel",
@@ -755,7 +900,7 @@
         "calling",
         "obedience"
       ],
-      "audio": "./audio/015-samuel.mp3"
+      "audio": "./audio/samuel.mp3"
     },
     {
       "id": "david-goliath",
@@ -793,7 +938,7 @@
         "God's power",
         "giants"
       ],
-      "audio": "./audio/016-david-goliath.mp3"
+      "audio": "./audio/david-goliath.mp3"
     },
     {
       "id": "psalm23",
@@ -831,7 +976,7 @@
         "peace",
         "provision"
       ],
-      "audio": "./audio/017-psalm23.mp3"
+      "audio": "./audio/psalm23.mp3"
     },
     {
       "id": "elijah",
@@ -869,7 +1014,7 @@
         "burnout",
         "prayer"
       ],
-      "audio": "./audio/018-elijah.mp3"
+      "audio": "./audio/elijah.mp3"
     },
     {
       "id": "daniel",
@@ -907,7 +1052,7 @@
         "integrity",
         "persecution"
       ],
-      "audio": "./audio/019-daniel.mp3"
+      "audio": "./audio/daniel.mp3"
     },
     {
       "id": "esther",
@@ -945,7 +1090,7 @@
         "purpose",
         "sacrifice"
       ],
-      "audio": "./audio/020-esther.mp3"
+      "audio": "./audio/esther.mp3"
     },
     {
       "id": "annunciation",
@@ -989,7 +1134,7 @@
         "humility",
         "Christmas"
       ],
-      "audio": "./audio/021-annunciation.mp3"
+      "audio": "./audio/annunciation.mp3"
     },
     {
       "id": "boy-temple",
@@ -1031,7 +1176,7 @@
         "purpose",
         "Incarnation"
       ],
-      "audio": "./audio/022-boy-temple.mp3"
+      "audio": "./audio/boy-temple.mp3"
     },
     {
       "id": "sermon-mount",
@@ -1076,7 +1221,7 @@
         "ethics",
         "heart"
       ],
-      "audio": "./audio/023-sermon-mount.mp3"
+      "audio": "./audio/sermon-mount.mp3"
     },
     {
       "id": "prodigal",
@@ -1120,7 +1265,7 @@
         "parable",
         "lost and found"
       ],
-      "audio": "./audio/024-prodigal.mp3"
+      "audio": "./audio/prodigal.mp3"
     },
     {
       "id": "lazarus",
@@ -1158,7 +1303,7 @@
         "miracles",
         "resurrection"
       ],
-      "audio": "./audio/025-lazarus.mp3"
+      "audio": "./audio/lazarus.mp3"
     },
     {
       "id": "crucifixion",
@@ -1201,7 +1346,7 @@
         "salvation",
         "crucifixion"
       ],
-      "audio": "./audio/026-crucifixion.mp3"
+      "audio": "./audio/crucifixion.mp3"
     },
     {
       "id": "resurrection",
@@ -1244,7 +1389,7 @@
         "salvation",
         "evidence"
       ],
-      "audio": "./audio/027-resurrection.mp3"
+      "audio": "./audio/resurrection.mp3"
     },
     {
       "id": "pentecost",
@@ -1282,7 +1427,7 @@
         "mission",
         "transformation"
       ],
-      "audio": "./audio/028-pentecost.mp3"
+      "audio": "./audio/pentecost.mp3"
     },
     {
       "id": "paul-conversion",
@@ -1320,7 +1465,7 @@
         "mercy",
         "mission"
       ],
-      "audio": "./audio/029-paul-conversion.mp3"
+      "audio": "./audio/paul-conversion.mp3"
     },
     {
       "id": "paul-jail",
@@ -1358,7 +1503,7 @@
         "joy",
         "mission"
       ],
-      "audio": "./audio/030-paul-jail.mp3"
+      "audio": "./audio/paul-jail.mp3"
     }
   ]
 }
