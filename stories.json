@@ -979,21 +979,21 @@
       "location": "Mount Sinai, Sinai Peninsula",
       "hook": "The mountain shook with thunder and lightning and thick cloud. Then God spoke ten words that shaped civilization.",
       "story": [
-        "Three months after leaving Egypt, the Israelites arrived at the base of Mount Sinai. This was the same mountain where Moses had seen the burning bush. God told Moses to prepare the people: in three days, God Himself would speak to them from the mountain.",
-        "On the morning of the third day, the people woke to something terrifying and magnificent. Thunder and lightning. A thick cloud on the mountain. A trumpet blast so loud the people trembled. The whole mountain shook violently and was covered in smoke, because God had descended on it in fire.",
-        "Then, out of the fire and the smoke, God spoke ten words to His people. Not suggestions. Not options. Commands — the foundation of the life He was calling them to live. They have shaped civilization for three thousand years.",
-        "The first four are about the relationship between the people and God: no other gods, no idols, no misusing God's name, and keep the Sabbath as holy rest. These commandments say: know who God is, keep Him first, treat His name with the weight it deserves, and rest the way He rested.",
-        "The last six are about the relationships between people: honor your father and mother; do not murder; do not commit adultery; do not steal; do not lie about your neighbor; do not covet what belongs to someone else. These say: the way you treat people reflects what you believe about God.",
-        "The people were so overwhelmed by the thunder and fire that they drew back and said to Moses: Speak to us yourself and we will listen. But do not let God speak to us or we will die. Moses went near the thick darkness where God was, and came back with the Law written on two stone tablets — written by the finger of God.",
-        "Centuries later, Jesus was asked which commandment was the greatest. He answered with two: love the Lord your God with all your heart, soul, and mind. And love your neighbor as yourself. All the Law and the Prophets, He said, hang on these two commandments.",
-        "The commandments were never meant to be a ladder to climb to God. They were a description of what life looks like when God is truly first. When you love God completely and love people genuinely, you end up keeping all ten without even trying."
+        "Three months after walking out of Egypt, the Israelites arrived at the base of a mountain in the middle of the Sinai Peninsula. Mount Sinai. The same mountain where Moses had seen the burning bush. God told Moses to prepare the people — in three days, He was coming down to speak to them Himself.",
+        "On the morning of the third day, they woke to something they had never seen before and would never forget. Thunder and lightning covered the mountain. A thick cloud settled on the peak. A trumpet blast — not made by human hands — rang out so loud that the entire camp trembled. Then the whole mountain began to shake and smoke, because God had descended on it in fire. Moses spoke, and God answered him in thunder.",
+        "And then God spoke directly to His people. Not through a prophet. Not through a dream. Out of the fire, in a voice the whole nation could hear, God spoke ten words that would shape civilization for the next four thousand years.",
+        "The first four were about God Himself. You shall have no other gods before me — there is only one God, and He is the Lord. You shall not make idols — no statue or image can represent the God who made everything. You shall not misuse the name of the Lord your God — His name carries the weight of who He is; treat it that way. Remember the Sabbath day and keep it holy — one day in seven, rest the way God rested. These four commandments said: know who God is, keep Him first, treat His name with the reverence it deserves, and build rest into the rhythm of your life.",
+        "The last six were about people. Honor your father and your mother. You shall not murder. You shall not commit adultery. You shall not steal. You shall not give false testimony against your neighbor. You shall not covet what belongs to someone else. These six commandments said: the way you treat people is a direct reflection of what you believe about God.",
+        "The people were so overwhelmed by the fire and thunder that they drew back from the mountain and said to Moses: you speak to us, and we will listen. But do not let God speak to us, or we will die. Moses went into the thick darkness where God was. He came back with two stone tablets — the Law written by the finger of God.",
+        "Centuries later, a religious expert asked Jesus which commandment was the greatest. Jesus collapsed all ten into two: love the Lord your God with all your heart, soul, and mind — and love your neighbor as yourself. All the Law and the Prophets, He said, hang on these two commandments. The ten become two, and the two rest on one word: love.",
+        "The commandments were never meant to be a ladder to climb to God. They were a picture of what life looks like when God is truly first — when someone loves God so completely and loves people so genuinely that right behavior flows naturally from a changed heart. God did not give these commandments to earn His people's love. He gave them after He had already rescued His people, because rescued people need to know how to live."
       ],
       "devotional": {
-        "bigIdea": "The ten commandments are not a list of rules to earn God's love. They are a picture of what life looks like when God's love has truly taken root.",
+        "bigIdea": "The Ten Commandments are not a list of rules to earn God's love. They are a picture of what life looks like when God's love has already taken root in your heart.",
         "questions": [
-          "Which of the ten commandments do you think is hardest to keep? Why?",
-          "Jesus said all ten can be summarized as love God and love people. Do you think that is simpler or harder than following ten rules?",
-          "Why do you think God gave these commandments right after rescuing His people from slavery — not before?"
+          "Jesus said all ten commandments can be summarized as love God and love people. Do you think that makes it simpler or harder than following ten rules?",
+          "God gave the commandments after rescuing His people from Egypt — not before. Why do you think the rescue came first?",
+          "Which of the ten commandments do you think is hardest to keep — and why?"
         ]
       },
       "tags": [
@@ -1002,7 +1002,59 @@
         "love",
         "worship"
       ],
-      "audio": "./audio/ten-commandments.mp3"
+      "audio": "./audio/ten-commandments.mp3",
+      "connections": [
+        {
+          "title": "The Upside-Down Kingdom",
+          "storyId": "sermon-mount",
+          "reference": "Matthew 5:17–18",
+          "why": "Jesus said He did not come to abolish the Law but to fulfill it — and then showed that the Law was always about the heart, not just the behavior."
+        },
+        {
+          "title": "Through the Sea on Dry Ground",
+          "storyId": "red-sea",
+          "reference": "Exodus 20:2",
+          "why": "God opens the Ten Commandments with 'I am the Lord your God who brought you out of Egypt.' The rescue always comes before the requirement."
+        },
+        {
+          "title": "The Darkest Friday",
+          "storyId": "crucifixion",
+          "reference": "Romans 8:3–4",
+          "why": "Paul says what the Law could not do — make us righteous from the inside — God did by sending His Son. Jesus fulfilled what the commandments pointed toward."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "How did God deliver the Ten Commandments to Israel?",
+          "options": [
+            "He whispered them to Moses alone on the mountain",
+            "He spoke them out loud from the mountain in fire and thunder so the whole nation heard",
+            "He sent an angel to write them in the sky"
+          ],
+          "answer": 1,
+          "explanation": "God spoke directly to the whole nation from the mountain — out of fire and thunder — before giving Moses the stone tablets."
+        },
+        {
+          "question": "What are the first four commandments about?",
+          "options": [
+            "How to treat your neighbors and family",
+            "The relationship between God and His people",
+            "Rules for worship in the tabernacle"
+          ],
+          "answer": 1,
+          "explanation": "The first four commandments are all about God — no other gods, no idols, honor His name, keep the Sabbath. They establish who God is and how to relate to Him."
+        },
+        {
+          "question": "How did Jesus summarize all ten commandments?",
+          "options": [
+            "Keep the Sabbath and honor your parents",
+            "Love God with everything you have and love your neighbor as yourself",
+            "Do not murder, steal, or lie"
+          ],
+          "answer": 1,
+          "explanation": "Jesus said all the Law hangs on two things: love God completely and love your neighbor as yourself. The ten collapse into two, and the two rest on love."
+        }
+      ]
     },
     {
       "id": "rahab",
@@ -1016,21 +1068,21 @@
       "location": "Jericho, Canaan",
       "hook": "Two spies. A city they had to take. A woman who hid them — and a red rope that changed everything.",
       "story": [
-        "Forty years in the wilderness were over. Moses had died, and Joshua had taken leadership of Israel. They were camped on the eastern bank of the Jordan River, looking west at Canaan — a land of walled cities, the first of which was Jericho.",
-        "Joshua sent two spies across the river to look over Jericho. They entered the city and came to the house of a woman named Rahab, who lived in the city wall itself. She was a Canaanite and a prostitute — not the kind of person you would expect to feature in a story of faith.",
-        "But the king of Jericho found out the spies were there and sent men to her house. She had hidden the spies under stalks of flax on her roof. When the soldiers came, she sent them in the wrong direction. Then she went to the spies and said something remarkable: I know that the Lord has given you this land. We have heard how He dried up the Red Sea for you and what you did to the two kings of the Amorites. Our hearts melted in fear. For the Lord your God is God in heaven above and on earth below.",
-        "She had heard the stories. She had believed them. And she made a choice that put her life in danger. She asked only one thing in return: spare me and my family when you take the city.",
-        "The spies agreed and gave her a sign: tie a scarlet cord in the window of her house. Anyone inside with the scarlet cord would be spared. Rahab lowered them by a rope through the window and told them which way to flee. They escaped and reported back to Joshua: The Lord has surely given the whole land into our hands.",
-        "When Jericho fell — after the Israelites marched around the walls for seven days and the walls collapsed at a shout — Joshua kept the promise. Rahab and her whole family were brought out safely.",
-        "So permanently was she woven into the story that Rahab appears in the genealogy of Jesus in Matthew chapter one. A Canaanite woman who believed what she heard about God — and acted on it — became an ancestor of the Messiah.",
-        "The scarlet cord that saved her family points forward across centuries to another scarlet sacrifice that would make a way for all of us."
+        "Forty years in the wilderness were finally over. Moses had died on the mountain after seeing the Promised Land from a distance, and Joshua had taken command. The Israelites were camped on the eastern bank of the Jordan River, looking west at Canaan — a land of walled cities and powerful kingdoms, and the first obstacle between them and the promise was Jericho.",
+        "Joshua sent two spies across the river to look over the land, and especially Jericho. They entered the city and came to the house of a woman named Rahab. She lived in the city wall itself — her house was built right into it. She was a Canaanite. A prostitute. Not the kind of person you would expect to feature in a story about faith.",
+        "But the king of Jericho found out the spies were in the city and sent soldiers to Rahab's house. She had already hidden them under the stalks of flax drying on her roof. She sent the soldiers in the wrong direction — told them the men had already left and if they hurried they could still catch them. The soldiers left. The spies were safe on her roof.",
+        "Then Rahab went up to the spies and said something remarkable. She had heard about the God of Israel. She had heard how He dried up the Red Sea when they came out of Egypt. She had heard what He did to the two kings of the Amorites. And she believed what she had heard. Our hearts melted in fear, she said. The Lord your God — He is God in heaven above and on earth below.",
+        "She had never met God. She had never been to a worship service. She had only heard the stories — and she believed them. And she made a choice that put her life in danger. She asked only one thing in return for saving the spies: spare me and my family when you take the city.",
+        "The spies agreed. They gave her a sign — a scarlet cord tied in the window of her house. Anyone inside the house with the scarlet cord would be spared when Israel came. Rahab lowered them by a rope through the window and told them which way to run. They escaped. She tied the scarlet cord in the window.",
+        "When Jericho fell — after the Israelites had marched around the walls for seven days and the walls collapsed at a shout on the seventh day — Joshua kept the promise. Rahab and her entire family were brought out safely while the city was destroyed around them. The woman with the scarlet cord in her window walked out alive.",
+        "The story does not end there. Rahab appears in the genealogy of Jesus in Matthew chapter one — listed by name as an ancestor of the Messiah. A Canaanite prostitute who believed what she heard about God and acted on it became part of the family line through which God would save the world. The scarlet cord that saved her household pointed forward across fifteen centuries to another scarlet sacrifice that would make a way for all of us."
       ],
       "devotional": {
-        "bigIdea": "God does not require a perfect past to write someone into His story. He just requires faith — even small, trembling faith — and action.",
+        "bigIdea": "Rahab had the wrong background, the wrong nationality, and the wrong reputation. What she had was faith — and that was enough. God does not require a perfect past to write someone into His story.",
         "questions": [
-          "Rahab was a Canaanite and an outsider in every way. Why do you think God chose her?",
-          "She believed the stories she heard about God even though she had never met Him. What stories about God have shaped your faith?",
-          "The scarlet cord protected the family only if they stayed inside. What does that tell you about faith that is real versus faith that is only words?"
+          "Rahab had only heard stories about God — she had never experienced Him herself. But she believed and acted on what she heard. What stories about God have shaped your faith?",
+          "The scarlet cord in Rahab's window saved everyone who stayed inside. What do you think that cord was pointing toward?",
+          "Rahab risked her life to protect the spies. Where do you think that kind of courage comes from?"
         ]
       },
       "tags": [
@@ -1040,7 +1092,59 @@
         "God's grace",
         "unlikely heroes"
       ],
-      "audio": "./audio/rahab.mp3"
+      "audio": "./audio/rahab.mp3",
+      "connections": [
+        {
+          "title": "The Darkest Friday",
+          "storyId": "crucifixion",
+          "reference": "Hebrews 11:31",
+          "why": "Rahab is listed in Hebrews 11 — the hall of faith — as someone who acted on belief before she could see the outcome. The scarlet cord points to the blood of Christ."
+        },
+        {
+          "title": "The Ark and the Rainbow",
+          "storyId": "noah",
+          "reference": "Joshua 2:11",
+          "why": "Rahab says 'the Lord your God is God in heaven above and earth below' — the same God who made a covenant with Noah. She recognized the covenant God from the stories she had heard."
+        },
+        {
+          "title": "Impossible News",
+          "storyId": "annunciation",
+          "reference": "Matthew 1:5",
+          "why": "Rahab is named in Matthew's genealogy of Jesus — a Canaanite woman in the family line of the Messiah. God consistently chooses unexpected people to carry the story forward."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Where did Rahab hide the two Israelite spies?",
+          "options": [
+            "In a cave outside the city walls",
+            "Under stalks of flax drying on her roof",
+            "In a storage room beneath her house"
+          ],
+          "answer": 1,
+          "explanation": "Rahab hid the spies under the stalks of flax drying on her roof — then sent the king's soldiers in the wrong direction."
+        },
+        {
+          "question": "What sign did the spies give Rahab to mark her house for safety?",
+          "options": [
+            "A white stone placed above the door",
+            "A scarlet cord tied in the window",
+            "An olive branch hung on the wall"
+          ],
+          "answer": 1,
+          "explanation": "The spies told Rahab to tie a scarlet cord in the window — anyone inside the house marked by that cord would be spared when Israel took the city."
+        },
+        {
+          "question": "Where does Rahab appear later in the Bible?",
+          "options": [
+            "As a judge who led Israel into battle",
+            "In the genealogy of Jesus in Matthew chapter one",
+            "As the mother of the prophet Elijah"
+          ],
+          "answer": 1,
+          "explanation": "Rahab is named in Matthew's genealogy of Jesus — a Canaanite woman who believed became an ancestor of the Messiah."
+        }
+      ]
     },
     {
       "id": "gideon",
@@ -1054,21 +1158,21 @@
       "location": "Valley of Jezreel, Israel",
       "hook": "God told a frightened farmer to fight an army of 135,000 men with 300 soldiers and some clay pots.",
       "story": [
-        "Israel had a pattern in those years, repeated like a slow painful loop. They would forget God, worship idols, suffer under foreign oppression, cry out to God, and God would raise up a deliverer. Then the cycle would begin again.",
-        "The Midianites were the oppressor this time. They swept into Israel at harvest time like locusts and took everything — crops, livestock, all of it — until the Israelites were hiding in mountain caves just to survive. They had done this for seven years.",
-        "An angel appeared to a man named Gideon, who was threshing wheat inside a winepress — hidden, afraid, trying not to be seen. The angel's greeting was almost ironic: The Lord is with you, mighty warrior. Gideon answered with brutal honesty: If the Lord is with us, why has all this happened? Where are the miracles we heard about? He did not feel like a mighty warrior. He felt like a man hiding in a hole.",
-        "God looked past the hole. Go in the strength you have and save Israel from Midian. Am I not sending you? Gideon asked for a sign. God gave him one. Then another. Then another. He was patient with Gideon's doubt in a way that is almost tender.",
-        "Gideon gathered an army of 32,000 men to face 135,000 Midianites. God looked at the 32,000 and said: too many. If you win with this many men, Israel will think they did it themselves. Send home anyone who is afraid. 22,000 left. God said: still too many. Take them to the water and watch how they drink. He kept 300.",
-        "Three hundred men against 135,000. The math was impossible and God intended it that way. The battle plan: divide the 300 into three groups, surround the camp at night, blow the trumpets, break the clay jars, raise the torches. No swords drawn. No charge.",
-        "In the middle of the night, the torches blazed, the trumpets blared, and three hundred voices cried out: A sword for the Lord and for Gideon! The Midianite army woke in chaos, turned their swords on each other, and fled. The victory was absolute, and it was obviously God's.",
-        "Gideon went from hiding in a winepress to routing 135,000 men. The difference was not confidence. The difference was that God was with him. That has always been enough."
+        "Israel had a pattern in those years that repeated like a slow, painful loop. They would forget God, chase after the idols of the surrounding nations, get swallowed up by foreign oppression, cry out to God in desperation, and God would raise up a deliverer. Then the cycle would begin again. It was the same story, repeated generation after generation, because the problem was never the enemy outside — it was always the heart inside.",
+        "This time the oppressor was Midian. For seven years, the Midianites had swept into Israel at harvest time like locusts — taking everything. Crops, livestock, all of it. The Israelites were hiding in caves and mountain strongholds just to survive. They had cried out to God.",
+        "God's answer came to a man named Gideon, who at that moment was threshing wheat in a winepress — hidden underground, trying not to be seen. An angel of the Lord appeared and said to him: The Lord is with you, mighty warrior. The greeting was almost ironic. Gideon looked around at the winepress. Mighty warrior.",
+        "He answered with brutal honesty: if the Lord is with us, why has all this happened? Where are the miracles we heard about? The Lord has abandoned us. God's response skipped past the objection entirely: Go in the strength you have and save Israel from Midian. Am I not sending you? Gideon asked for a sign. God gave him one. Then another. Then another. God was patient with Gideon's doubt in a way that is almost tender.",
+        "Gideon gathered an army of 32,000 men to face a Midianite force of 135,000. Then God said something that must have felt like a punch: too many. If you win with this many, Israel will think they did it themselves. Send home anyone who is afraid. 22,000 left. Still too many, God said. Take them to the water. Watch how they drink. Those who knelt with their face to the water — 9,700 — were sent home. Those who lapped the water with their hand to their mouth — 300 — stayed. Three hundred men against 135,000.",
+        "The math was impossible and God intended it that way. The battle plan was stranger still: divide into three groups, surround the camp at night, carry torches hidden inside clay jars, and at Gideon's signal — blow trumpets, smash the jars, raise the torches, and shout. No swords. No charge. Just light and noise in the darkness.",
+        "In the middle of the night, the torches blazed, three hundred trumpets blared, and 300 voices cried out: A sword for the Lord and for Gideon! The Midianite camp erupted in chaos. In their confusion and terror, they turned their swords on each other. They ran. Israel pursued. The victory was total — and it was obviously, unmistakably God's.",
+        "Gideon went from hiding in a winepress to routing 135,000 men. The difference was not confidence. The difference was not superior strategy. The difference was that God was with him — and God had deliberately stripped away every human advantage so that nobody could miss it. That is how God tends to work. Not with overwhelming resources, but with willing, obedient people and impossible odds, so that when the victory comes, everyone knows who won it."
       ],
       "devotional": {
-        "bigIdea": "God often reduces your resources before the battle so the victory is obviously His. Small forces and impossible odds and total dependence on God are exactly how He works.",
+        "bigIdea": "God reduced Gideon's army from 32,000 to 300 on purpose. He often reduces your resources before the battle so the victory is obviously His. Small forces and impossible odds are exactly how He works.",
         "questions": [
-          "Gideon told God exactly how he felt — confused, afraid, abandoned. Is it okay to be that honest with God?",
-          "God reduced Gideon's army from 32,000 to 300. Why would God do that?",
-          "Where in your life do you feel like Gideon — hiding in the winepress, afraid, feeling like the wrong person for what is ahead?"
+          "Gideon told God exactly how he felt — confused, afraid, and abandoned. Is it okay to be that honest with God? What do you think happens when you are?",
+          "God kept reducing the army until only 300 were left. Why do you think God works that way instead of just giving you everything you need?",
+          "Where in your life right now do you feel like Gideon — hiding in the winepress, feeling like the wrong person for what is ahead?"
         ]
       },
       "tags": [
@@ -1078,7 +1182,59 @@
         "God's power",
         "unlikely heroes"
       ],
-      "audio": "./audio/gideon.mp3"
+      "audio": "./audio/gideon.mp3",
+      "connections": [
+        {
+          "title": "The Burning Bush",
+          "storyId": "burning-bush",
+          "reference": "Judges 6:14",
+          "why": "God called Gideon the same way He called Moses — Go in the strength you have, am I not sending you? Both men felt completely unqualified. Both went anyway."
+        },
+        {
+          "title": "One Stone",
+          "storyId": "david-goliath",
+          "reference": "1 Samuel 17:45–47",
+          "why": "David and Gideon both faced impossible military odds and both understood the same thing: the battle belongs to the Lord. The victory is never about the size of your army."
+        },
+        {
+          "title": "The Day Everything Changed",
+          "storyId": "pentecost",
+          "reference": "1 Corinthians 1:27",
+          "why": "Paul says God chose the weak things of the world to shame the strong. Gideon's 300 is exactly that pattern — God consistently chooses the small and the unlikely."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What was Gideon doing when the angel of the Lord appeared to him?",
+          "options": [
+            "Praying at the tabernacle in Shiloh",
+            "Leading his army against the Midianites",
+            "Threshing wheat in a winepress, hiding from the enemy"
+          ],
+          "answer": 2,
+          "explanation": "Gideon was hiding in a winepress — threshing wheat underground so the Midianites wouldn't see him. Not exactly where you'd expect to find a mighty warrior."
+        },
+        {
+          "question": "How many men did God reduce Gideon's army to before the battle?",
+          "options": [
+            "Three thousand",
+            "Three hundred",
+            "Thirty"
+          ],
+          "answer": 1,
+          "explanation": "God reduced the army from 32,000 all the way down to 300 — so that when Israel won, nobody could claim they did it themselves."
+        },
+        {
+          "question": "What was the battle plan God gave Gideon?",
+          "options": [
+            "Charge the camp at dawn with swords drawn",
+            "Surround the camp at night with torches, trumpets, and a shout — no swords",
+            "Send the 300 men in disguise to cause confusion inside the camp"
+          ],
+          "answer": 1,
+          "explanation": "Torches hidden in clay jars, trumpets, and a shout in the night — that was the whole plan. No swords drawn. No charge. Just light and noise and God."
+        }
+      ]
     },
     {
       "id": "ruth",
@@ -1092,21 +1248,22 @@
       "location": "Moab to Bethlehem, Israel",
       "hook": "Her husband died. Her mother-in-law's husband died. Then Ruth said the most loyal words in the Bible.",
       "story": [
-        "There was a famine in Israel, and a man named Elimelech took his wife Naomi and their two sons to live in Moab. In Moab the sons married Moabite women: one named Orpah, one named Ruth. And then, over the years that followed, all three men died. Three widows, no husbands, no children, in a world where a woman without a man had almost no way to survive.",
-        "Naomi decided to return to Bethlehem. She told her daughters-in-law to go back to their own families — back to their own people, their own gods, their own chance at a new life. Orpah kissed Naomi and left, weeping. Ruth would not go.",
-        "What Ruth said has been repeated at weddings and funerals and moments of deep loyalty for three thousand years: Do not urge me to leave you or to turn back from you. Where you go I will go, and where you stay I will stay. Your people will be my people and your God my God. Where you die I will die, and there I will be buried. Not because Naomi was offering her anything. Because Ruth loved her, and love does not calculate the cost.",
-        "They arrived in Bethlehem at the beginning of the barley harvest. Ruth went to the fields to glean — to pick up the grain the harvesters left behind, the ancient provision for the poor. She happened to come to a field belonging to a man named Boaz, a relative of Naomi's dead husband.",
-        "Boaz noticed her. He asked about her, heard her story, and immediately gave instructions to leave extra grain for her on purpose — to let her drink from their water jars, to make sure no one bothered her. He told her: I have been told all about what you have done for your mother-in-law since the death of your husband, how you left your father and mother and your homeland.",
-        "Ruth asked why he was being so kind to her. He said: You have come under the wings of the Lord God of Israel for refuge. She had exchanged her own gods for His, her own people for His people, and He had noticed.",
-        "Boaz was what the law called a kinsman-redeemer — a relative with the right and responsibility to redeem a family member who had fallen into poverty. He chose to use that right. He married Ruth. And from that marriage came a son named Obed, who would have a son named Jesse, who would have a son named David — the greatest king Israel ever had.",
-        "A foreign widow who chose loyalty over comfort, and a God who noticed, and a field where she happened to glean, and a man in exactly the right position. There are no accidents in this story. There never are."
+        "There was a famine in Israel. A man named Elimelech took his wife Naomi and their two sons to live in Moab — a neighboring country east of the Jordan, across the Dead Sea — to wait out the famine. In Moab, the sons married Moabite women. One was named Orpah. The other was named Ruth. And then, over the years that followed, all three men died. Elimelech first. Then both sons. Three widows. No husbands. No children. In a world where a woman without a man had almost no way to survive.",
+        "Naomi heard that the famine in Israel was over and decided to go home to Bethlehem. She told her daughters-in-law to go back to their own families — back to their own people, their own gods, their own chance at a new life. She had nothing to offer them. It was the generous thing to say. The practical thing.",
+        "Orpah kissed Naomi and left, weeping. Ruth would not go.",
+        "What Ruth said has been repeated at weddings and funerals and moments of deep loyalty for three thousand years. Don't urge me to leave you or turn back from you. Where you go I will go, and where you stay I will stay. Your people will be my people and your God my God. Where you die I will die, and there I will be buried. Not because Naomi was offering her anything. Not because the future looked bright. Because Ruth loved her — and love does not calculate the cost.",
+        "They arrived in Bethlehem at the beginning of the barley harvest, two widows with nothing. Ruth went to the fields to glean — to pick up the grain the harvesters left behind, the ancient provision in the Law for the poor. She happened to come to a field belonging to a man named Boaz, a relative of Naomi's dead husband.",
+        "Boaz noticed her. He asked his workers who she was, heard her story, and immediately gave instructions to leave extra grain for her on purpose — let her drink from the workers' water jars, make sure nobody bothers her. He told her: I've heard everything you've done for your mother-in-law since your husband died — how you left your father and mother and your homeland and came to a people you did not know. May the Lord repay you for what you have done.",
+        "Ruth asked why he was being so kind to a foreigner. He said: You have come to take refuge under the wings of the Lord God of Israel. She had exchanged her own gods for His, her own people for His people — and He had noticed.",
+        "Boaz was what the Law called a kinsman-redeemer — a close relative with the right and the responsibility to redeem a family member who had fallen into poverty or lost their land. He chose to use that right. He married Ruth. From that marriage came a son named Obed, who had a son named Jesse, who had a son named David — the greatest king Israel ever had.",
+        "A foreign widow who chose loyalty over comfort, in a field where she happened to glean, with a man who was exactly the right person in exactly the right position. There are no accidents in this story. The God who redeemed Ruth through Boaz was already planning a greater redemption through a greater Son — one who would be called the kinsman-redeemer of all humanity."
       ],
       "devotional": {
-        "bigIdea": "Loyalty to the people God has placed in your life, especially when it costs something, is one of the most beautiful things you can offer.",
+        "bigIdea": "Ruth gave up everything familiar because she loved Naomi and chose Naomi's God. Loyalty to the people God has placed in your life — especially when it costs something — is one of the most beautiful things you can offer.",
         "questions": [
-          "Ruth had every practical reason to go back to her own people. Why do you think she stayed?",
-          "Boaz said Ruth had come under the wings of God for refuge. What does it look like to take refuge in God?",
-          "Ruth ends up in the family line of both David and Jesus. What does that tell you about the long-term results of faithful choices?"
+          "Ruth had every practical reason to go back to her own people. What do you think made her stay with Naomi instead?",
+          "Boaz said Ruth had come to take refuge under the wings of the Lord God of Israel. What does it mean to take refuge in God?",
+          "Ruth ends up in the family line of both David and Jesus. What does that tell you about the long-term results of faithful, loyal choices?"
         ]
       },
       "tags": [
@@ -1116,7 +1273,59 @@
         "courage",
         "family"
       ],
-      "audio": "./audio/ruth.mp3"
+      "audio": "./audio/ruth.mp3",
+      "connections": [
+        {
+          "title": "The Boy Who Came Home",
+          "storyId": "prodigal",
+          "reference": "Ruth 1:16–17",
+          "why": "Ruth's commitment to Naomi — where you go I will go — mirrors the unconditional loyalty of the father in the prodigal son. Love that does not calculate the cost."
+        },
+        {
+          "title": "Impossible News",
+          "storyId": "annunciation",
+          "reference": "Matthew 1:5",
+          "why": "Ruth is named in Matthew's genealogy of Jesus alongside Rahab. Two foreign women, both outsiders, both in the family line of the Messiah. God's grace reaches further than we expect."
+        },
+        {
+          "title": "The Darkest Friday",
+          "storyId": "crucifixion",
+          "reference": "Leviticus 25:25",
+          "why": "Boaz acted as kinsman-redeemer — paying the price to redeem what was lost. Jesus is the ultimate kinsman-redeemer, paying the price to redeem what sin had taken from all of us."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What did Ruth say to Naomi when Naomi told her to go back to her own people?",
+          "options": [
+            "She agreed to leave but promised to come back",
+            "She said where you go I will go — your people will be my people and your God my God",
+            "She said she would stay only until Naomi reached Bethlehem safely"
+          ],
+          "answer": 1,
+          "explanation": "Ruth's words have echoed through three thousand years: where you go I will go. She chose loyalty over safety, and Naomi's God over her own people's gods."
+        },
+        {
+          "question": "What was Boaz's relationship to Naomi's family that made him especially significant?",
+          "options": [
+            "He was an old friend of Elimelech from childhood",
+            "He was a kinsman-redeemer — a close relative with the right to redeem the family",
+            "He was the leading elder at the city gate in Bethlehem"
+          ],
+          "answer": 1,
+          "explanation": "Boaz was a kinsman-redeemer — in the Law, a close relative had the right and responsibility to redeem a family member who had lost everything. He chose to use that right for Ruth."
+        },
+        {
+          "question": "Who was the famous grandson of Ruth and Boaz?",
+          "options": [
+            "Solomon, the king who built the Temple",
+            "Samuel, the prophet who anointed the first kings",
+            "David, the greatest king Israel ever had"
+          ],
+          "answer": 2,
+          "explanation": "Ruth and Boaz had a son named Obed, who had a son named Jesse, who had a son named David — and David's line eventually led to Jesus."
+        }
+      ]
     },
     {
       "id": "samuel",
@@ -1130,21 +1339,21 @@
       "location": "Shiloh, Israel",
       "hook": "A boy kept hearing his name in the night. He did not know yet that it was God.",
       "story": [
-        "Samuel was a boy living in the tabernacle at Shiloh, serving the priest Eli. His mother Hannah had prayed for a child with such desperate intensity that the priest thought she was drunk. God gave her Samuel, and she brought him to the tabernacle to serve God there, as she had promised.",
-        "The word of the Lord was rare in those days. The text notes this with a quiet sadness — visions were not common. The spiritual life of Israel had grown thin. The priests themselves, Eli's sons, were corrupt and wicked, dishonoring God and taking advantage of the people. Eli knew and did not stop them.",
-        "One night Samuel lay down to sleep in the temple, near the ark of God. And he heard his name: Samuel! He ran to Eli. Here I am, you called me. Eli said: I did not call you. Go back to bed. Samuel lay down. The voice came again: Samuel! He ran to Eli again. A third time the voice came. A third time Samuel ran to Eli.",
-        "And this time Eli understood what was happening. The old priest told the boy: Go and lie down. And if He calls you again, say: Speak, Lord, for your servant is listening. Samuel went and lay down.",
-        "The Lord came and stood there and called as before: Samuel! Samuel! And the boy said: Speak, for your servant is listening. Those four words — speak, for your servant is listening — became the posture of one of Israel's greatest prophets. A posture of availability. Of quietness. Of expecting God to say something worth hearing.",
-        "What God said was hard. He told Samuel that He was going to judge the family of Eli because Eli's sons had sinned and Eli had not restrained them. Samuel lay still until morning, afraid to tell Eli what he had heard. But Eli called him and asked: What did God say? Do not hide it from me. And Samuel told him everything.",
-        "Eli's response reveals a complicated man. He is the Lord, Eli said. Let Him do what is good in His eyes. Samuel grew up, and the Lord was with him, and all Israel knew that Samuel was a true prophet of God.",
-        "Sometimes God speaks to the youngest and most inexperienced person in the room, because they are the only one still listening. The capacity to hear from God is not about age or position. It is about availability. Speak, Lord. Your servant is listening. That is the whole prayer."
+        "Samuel was a boy who lived in the tabernacle at Shiloh, serving the priest Eli. His mother Hannah had prayed for a child with such desperate intensity that Eli had thought she was drunk. God heard her prayer and gave her Samuel — and she had brought him back to the tabernacle to serve God there, as she had promised. He was young. He slept near the ark of God. He helped Eli, who was old and whose eyes had grown so weak he could barely see.",
+        "The word of the Lord was rare in those days. The text notes this with a quiet sadness — visions were not common. The spiritual life of Israel had grown thin. The priests themselves, Eli's sons Hophni and Phinehas, were corrupt and wicked, dishonoring the offerings and taking advantage of the people who came to worship. Eli knew and did not stop them. The light of God's voice had dimmed.",
+        "One night, Samuel lay down to sleep in the temple near the ark of God. And he heard his name: Samuel! He got up and ran to Eli. Here I am — you called me. Eli said: I didn't call you. Go back and lie down. Samuel went back. The voice came again: Samuel! He ran to Eli again. Here I am — you called me. Eli said: I didn't call you, my son. Go lie down.",
+        "A third time the voice came. A third time Samuel ran to Eli. And this time Eli understood what was happening. The old priest told the boy: go and lie down, and if He calls you again, say — Speak, Lord, for your servant is listening. Samuel went and lay down in his place.",
+        "The Lord came and stood there and called as before: Samuel! Samuel! And the boy said the four words that became the posture of one of Israel's greatest prophets: Speak, for your servant is listening. Four words. A posture of complete availability. Of quiet expectation. Of expecting God to say something worth hearing.",
+        "What God said was hard. He told Samuel that He was going to judge the family of Eli because Eli's sons had blasphemed God and Eli had not restrained them. Samuel lay there until morning, afraid to tell Eli what he had heard. But Eli called him and said: do not hide from me what God said — may God deal with you severely if you hide anything. And Samuel told him everything. Every word.",
+        "Eli's response reveals a man who had failed at the most important thing — restraining his sons — and who knew it. He is the Lord, Eli said. Let Him do what is good in His eyes. Samuel grew up, and the Lord was with him. And all of Israel knew that Samuel was established as a prophet of the Lord.",
+        "God chose to speak to the youngest person in the building. Not the high priest. Not the experienced religious leader. The boy sleeping near the ark. Sometimes God speaks to the youngest and most inexperienced person in the room because they are the only one still listening. The capacity to hear from God has never been about age or position or religious experience. It has always been about availability. Speak, Lord. Your servant is listening. That is the whole prayer."
       ],
       "devotional": {
-        "bigIdea": "God is still speaking. The question is whether we are still listening. Samuel's whole prayer was four words: Your servant is listening.",
+        "bigIdea": "God is still speaking. The question has never been whether He speaks — it is whether we are listening. Samuel's entire prayer was four words: your servant is listening.",
         "questions": [
-          "Samuel kept running to the wrong person because he did not recognize God's voice yet. How do you learn to recognize a voice you have never heard before?",
-          "Eli had been a priest his whole life but seems to have stopped hearing God. What do you think happens to our ability to hear God when we stop trying?",
-          "What would it look like to pray Samuel's prayer — Speak, Lord, your servant is listening — and actually mean it?"
+          "Samuel kept running to Eli because he didn't recognize God's voice yet. How do you learn to recognize a voice you've never heard before?",
+          "Eli had been a priest his whole life but seems to have stopped hearing God. What do you think happens to our ability to hear God when we stop paying attention?",
+          "What would it look like for you to pray Samuel's prayer — Speak, Lord, your servant is listening — and actually mean it today?"
         ]
       },
       "tags": [
@@ -1154,7 +1363,59 @@
         "calling",
         "obedience"
       ],
-      "audio": "./audio/samuel.mp3"
+      "audio": "./audio/samuel.mp3",
+      "connections": [
+        {
+          "title": "The Burning Bush",
+          "storyId": "burning-bush",
+          "reference": "1 Samuel 3:10",
+          "why": "Moses turned aside to look at the burning bush — one small act of attention that changed everything. Samuel said speak, Lord, I am listening. Both stories turn on paying attention to God."
+        },
+        {
+          "title": "The Day Everything Changed",
+          "storyId": "pentecost",
+          "reference": "Acts 2:17",
+          "why": "At Pentecost, Peter quotes Joel: your sons and daughters will prophesy. Samuel was the beginning of that prophetic stream — God speaking through available people of every age."
+        },
+        {
+          "title": "Left Behind in Jerusalem",
+          "storyId": "boy-temple",
+          "reference": "1 Samuel 2:26",
+          "why": "Samuel grew in favor with God and people — the exact same phrase used for Jesus growing up in Nazareth. Both were young, both were available, both were in the place of worship."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Why did Samuel keep running to Eli when he heard his name called?",
+          "options": [
+            "He thought Eli was in danger and needed help",
+            "He had never heard God's voice before and didn't recognize it",
+            "He was testing whether Eli was awake"
+          ],
+          "answer": 1,
+          "explanation": "Samuel had never heard God speak before — he didn't recognize the voice. It took three times before Eli realized what was happening and told Samuel how to respond."
+        },
+        {
+          "question": "What four words did Samuel say when God called him the fourth time?",
+          "options": [
+            "Here I am, Lord God",
+            "Speak, for your servant is listening",
+            "What would you have me do"
+          ],
+          "answer": 1,
+          "explanation": "Speak, for your servant is listening — four words that became the posture of one of Israel's greatest prophets. Complete availability. Quiet expectation."
+        },
+        {
+          "question": "Why did God choose to speak to Samuel rather than to Eli the high priest?",
+          "options": [
+            "Because Samuel was more righteous than Eli",
+            "Because Eli was too old to serve God faithfully",
+            "Because Eli had failed to restrain his wicked sons and the word of the Lord had grown rare"
+          ],
+          "answer": 2,
+          "explanation": "The word of the Lord was rare because the spiritual life of Israel had grown thin — including Eli's own failure to lead his family. God spoke to the boy who was still listening."
+        }
+      ]
     },
     {
       "id": "david-goliath",
