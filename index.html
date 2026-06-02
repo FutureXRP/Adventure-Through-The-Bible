@@ -43,6 +43,9 @@
     justify-content: space-between;
     gap: 12px;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 100;
+    overflow: visible;
   }
   .auth-bar-left {
     display: flex;
@@ -336,19 +339,19 @@
   .journey-badge-status.earned-label { color: var(--gold); opacity: 1; font-weight: 600; }
 
   /* ── PROFILE SWITCHER DROPDOWN ── */
-  .profile-menu { position: relative; }
+  .profile-menu { position: relative; overflow: visible; }
   .profile-dropdown {
     display: none;
     position: absolute;
     top: calc(100% + 8px);
-    right: 0;
+    left: 0;
     background: #fff;
     border: 1px solid rgba(44,26,14,0.14);
     border-radius: 12px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-    min-width: 220px;
-    z-index: 500;
-    overflow: hidden;
+    min-width: 240px;
+    z-index: 900;
+    overflow: visible;
     animation: dropIn 0.2s ease;
   }
   @keyframes dropIn { from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)} }
@@ -664,7 +667,7 @@
 const SUPABASE_URL = 'https://bqyysvjnitbeimvaxkao.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxeXlzdmpuaXRiZWltdmF4a2FvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA0MTA1OTIsImV4cCI6MjA5NTk4NjU5Mn0._GJFay_isjcvm7O_Ry7hBk1EfkKQvqoMPVVOBL2uhug';
 const { createClient } = supabase;
-const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, { auth: { detectSessionInUrl: true, persistSession: true, autoRefreshToken: true } });
 
 const PAYWALL_ENABLED = false;
 const FREE_STORY_LIMIT = 3;
