@@ -534,7 +534,7 @@ async function init() {
   // Load profile
   const { data: profile } = await sb
     .from('profiles')
-    .select('*')
+    .select('*, has_lifetime')
     .eq('id', authUser.id)
     .single();
   userProfile = profile;
@@ -630,8 +630,8 @@ function renderPage() {
       <div class="card-header">
         <div class="card-header-icon">📜</div>
         <div>
-          <div class="card-header-title">${isPaid && planType === "one_time" ? "One-Time Purchase" : isPaid && planType === "monthly" ? "Monthly Subscription" : planType === "monthly_cancelling" ? "Monthly Subscription" : "Free Plan"}</div>
-          <div class="card-header-sub">${isPaid && planType === "one_time" ? "Permanent access · Future packs sold separately" : isPaid && planType === "monthly" ? "All stories + every future story included" : planType === "monthly_cancelling" ? "Cancelling at end of billing period" : "First 3 stories included"}</div>
+          <div class="card-header-title">${planType === "monthly" ? "Monthly Subscription" : (hasLifetime || planType === "one_time") ? "One-Time Purchase" : planType === "monthly_cancelling" ? "Subscription Cancelled" : "Free Plan"}</div>
+          <div class="card-header-sub">${planType === "monthly" ? (hasLifetime ? "Monthly + Lifetime Access" : "All stories + future stories included") : (hasLifetime || planType === "one_time") ? "Permanent access · Future packs sold separately" : planType === "monthly_cancelling" ? (hasLifetime ? "Lifetime access preserved" : "Access ends at billing period") : "First 3 stories included"}</div>
         </div>
       </div>
       <div class="card-body">
@@ -645,7 +645,7 @@ function renderPage() {
           </div>
         </div>
 
-        ${isPaid && planType === 'one_time' ? `
+        ${(hasLifetime && planType !== 'monthly') ? `
           ${paidAt ? `
           <div class="detail-row">
             <span class="detail-label">Purchased</span>
