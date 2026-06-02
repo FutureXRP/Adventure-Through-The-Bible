@@ -669,10 +669,10 @@ const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 const { createClient } = supabase;
 const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, { auth: { detectSessionInUrl: true, persistSession: true, autoRefreshToken: true } });
 
-const PAYWALL_ENABLED = false;
+const PAYWALL_ENABLED = false; // ← flip to true when ready to charge
 const FREE_STORY_LIMIT = 3;
-const STRIPE_MONTHLY_LINK = '#';
-const STRIPE_LIFETIME_LINK = '#';
+const SUPABASE_FUNCTIONS_URL = 'https://bqyysvjnitbeimvaxkao.supabase.co/functions/v1';
+const STRIPE_PK = 'pk_test_51THwruLhNi71Q1IHXoFa7HQdFk5Gz4PirM6J9VCPjcgZ4rCZkrUWCdRBtCLZZBydmLj1S7j4dush2j8GHd1rxd000GC3sAMxu';
 const PROGRESS_KEY = 'footsteps_progress_v1';
 const WELCOME_KEY = 'footsteps_seen_welcome';
 const AVATARS = ['📖','⭐','🦁','🐬','🦅','🌟','🦋','🐢','🌙','☀️','🌿','🦊','🐧','🦉','🌊','🏔️','🌸','🦒','🐝','🎠'];
@@ -729,6 +729,7 @@ async function init() {
   renderBadgeShelf();
   render();
   updateProgress();
+  await checkCheckoutReturn();
 
   // Listen for auth changes (login/logout in another tab etc.)
   sb.auth.onAuthStateChange(async (event, session) => {
@@ -750,7 +751,7 @@ async function init() {
 // SUPABASE DATA LOADING
 // ════════════════════════════════════════════════════
 async function loadUserProfile() {
-  const { data: profile } = await sb.from('profiles').select('*').eq('id', authUser.id).single();
+  const { data: profile } = await sb.from('profiles').select('*, is_paid, plan_type, stripe_customer_id').eq('id', authUser.id).single();
   if (!profile) return;
   userProfile = profile;
 
@@ -939,6 +940,7 @@ function renderAuthBar() {
         <div>
           <div class="auth-bar-name">${activeProfile ? activeProfile.name : userProfile.display_name}</div>
           <div class="auth-bar-type">${isParent ? (activeProfile && activeProfile.type === 'child' ? 'Child Profile' : 'Parent Account') : 'Individual Account'}</div>
+          ${userProfile.is_paid ? `<div style="font-family:'Source Sans 3',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:rgba(201,162,39,0.15);color:var(--gold);border:1px solid rgba(201,162,39,0.3);border-radius:4px;padding:1px 6px">${userProfile.plan_type === 'monthly' ? '● MONTHLY' : '● FULL ACCESS'}</div>` : ''}
         </div>
         <span style="color:rgba(201,162,39,0.6);font-size:10px;margin-left:4px;">▼</span>
       </div>
@@ -1053,6 +1055,81 @@ async function saveChild() {
 // ════════════════════════════════════════════════════
 // PAYWALL / WELCOME
 // ════════════════════════════════════════════════════
+
+// ════════════════════════════════════════════════════
+// STRIPE CHECKOUT
+// ════════════════════════════════════════════════════
+async function startCheckout(plan) {
+  if (!authUser) {
+    // Not logged in — send to signup first, return to index after
+    window.location.href = './login.html?mode=signup&returnTo=' + encodeURIComponent(window.location.pathname + '?openPaywall=1');
+    return;
+  }
+
+  // Show loading state on buttons
+  const btnMonthly = document.getElementById('pwBtnMonthly');
+  const btnLifetime = document.getElementById('pwBtnLifetime');
+  const originalMonthly = btnMonthly.textContent;
+  const originalLifetime = btnLifetime.textContent;
+  btnMonthly.textContent = 'Loading…';
+  btnLifetime.textContent = 'Loading…';
+  btnMonthly.disabled = true;
+  btnLifetime.disabled = true;
+
+  try {
+    const { data: { session } } = await sb.auth.getSession();
+    const response = await fetch(`${SUPABASE_FUNCTIONS_URL}/create-checkout`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${session.access_token}`,
+      },
+      body: JSON.stringify({ plan }),
+    });
+
+    const data = await response.json();
+
+    if (data.error) throw new Error(data.error);
+    if (data.url) {
+      window.location.href = data.url;
+    }
+  } catch (err) {
+    console.error('Checkout error:', err);
+    showToast('Something went wrong. Please try again.');
+    btnMonthly.textContent = originalMonthly;
+    btnLifetime.textContent = originalLifetime;
+    btnMonthly.disabled = false;
+    btnLifetime.disabled = false;
+  }
+}
+
+// Check URL params on load — handle post-checkout return
+async function checkCheckoutReturn() {
+  const params = new URLSearchParams(window.location.search);
+  const checkout = params.get('checkout');
+  const openPaywall = params.get('openPaywall');
+
+  if (checkout === 'success') {
+    // Clean URL
+    window.history.replaceState({}, '', window.location.pathname);
+    // Reload profile to pick up is_paid = true set by webhook
+    if (authUser) {
+      await loadUserProfile();
+      renderAuthBar();
+      render();
+      showToast('🎉 Welcome to Footsteps! All stories are now unlocked.');
+    }
+  } else if (checkout === 'cancelled') {
+    window.history.replaceState({}, '', window.location.pathname);
+    showToast('Checkout cancelled — no charge was made.');
+  }
+
+  if (openPaywall === '1') {
+    window.history.replaceState({}, '', window.location.pathname);
+    setTimeout(openPaywall, 500);
+  }
+}
+
 function closeWelcome() {
   localStorage.setItem(WELCOME_KEY, '1');
   document.getElementById('welcomeOverlay').classList.remove('open');
@@ -1070,14 +1147,15 @@ document.getElementById('welcomeStartBtn').addEventListener('click', closeWelcom
 document.getElementById('welcomeUnlockBtn').addEventListener('click', () => { closeWelcome(); setTimeout(openPaywall, 250); });
 document.getElementById('paywallDismiss').addEventListener('click', closePaywall);
 document.getElementById('paywallBackdrop').addEventListener('click', e => { if (e.target === document.getElementById('paywallBackdrop')) closePaywall(); });
-document.getElementById('pwBtnMonthly').addEventListener('click', () => { if (STRIPE_MONTHLY_LINK !== '#') window.location.href = STRIPE_MONTHLY_LINK; else alert('Monthly subscription coming soon!'); });
-document.getElementById('pwBtnLifetime').addEventListener('click', () => { if (STRIPE_LIFETIME_LINK !== '#') window.location.href = STRIPE_LIFETIME_LINK; else alert('One-time purchase coming soon!'); });
-document.getElementById('pwLifetimePlan').addEventListener('click', () => { if (STRIPE_LIFETIME_LINK !== '#') window.location.href = STRIPE_LIFETIME_LINK; });
-document.getElementById('pwMonthlyPlan').addEventListener('click', () => { if (STRIPE_MONTHLY_LINK !== '#') window.location.href = STRIPE_MONTHLY_LINK; });
+document.getElementById('pwBtnMonthly').addEventListener('click', () => startCheckout('monthly'));
+document.getElementById('pwBtnLifetime').addEventListener('click', () => startCheckout('one_time'));
+document.getElementById('pwLifetimePlan').addEventListener('click', () => startCheckout('one_time'));
+document.getElementById('pwMonthlyPlan').addEventListener('click', () => startCheckout('monthly'));
 
 function storyIsLocked(story) {
   if (!PAYWALL_ENABLED) return false;
-  const isPaid = localStorage.getItem('footsteps_paid') === '1';
+  // Check Supabase profile is_paid (set by Stripe webhook)
+  const isPaid = userProfile && userProfile.is_paid === true;
   if (isPaid) return false;
   return story.order > FREE_STORY_LIMIT;
 }
