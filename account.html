@@ -527,6 +527,25 @@ async function init() {
   storyProgress = progress || [];
 
   renderPage();
+
+  // Update card title based on plan
+  const planCardTitle = document.getElementById('planCardTitle');
+  const planCardSub = document.getElementById('planCardSub');
+  if (planCardTitle && planCardSub) {
+    if (isPaid && planType === 'one_time') {
+      planCardTitle.textContent = 'One-Time Purchase';
+      planCardSub.textContent = 'Permanent access to all launch stories';
+    } else if (isPaid && planType === 'monthly') {
+      planCardTitle.textContent = 'Monthly Subscription';
+      planCardSub.textContent = 'All stories + future updates';
+    } else if (planType === 'monthly_cancelling') {
+      planCardTitle.textContent = 'Monthly Subscription';
+      planCardSub.textContent = 'Cancelling at end of period';
+    } else {
+      planCardTitle.textContent = 'Free Plan';
+      planCardSub.textContent = 'First 3 stories included';
+    }
+  }
 }
 
 // ── RENDER ──────────────────────────────────────────────────
@@ -599,8 +618,8 @@ function renderPage() {
       <div class="card-header">
         <div class="card-header-icon">📜</div>
         <div>
-          <div class="card-header-title">Subscription</div>
-          <div class="card-header-sub">Your current plan</div>
+          <div class="card-header-title" id="planCardTitle">Your Plan</div>
+          <div class="card-header-sub" id="planCardSub">Current access level</div>
         </div>
       </div>
       <div class="card-body">
@@ -614,16 +633,30 @@ function renderPage() {
           </div>
         </div>
 
-        ${isPaid ? `
-          <div class="detail-row">
-            <span class="detail-label">Plan</span>
-            <span class="detail-value ${planType === 'one_time' ? 'green' : 'gold'}">${planType === 'one_time' ? 'One-Time Purchase' : 'Monthly — $4.99/mo'}</span>
-          </div>
+        ${isPaid && planType === 'one_time' ? `
           ${paidAt ? `
           <div class="detail-row">
             <span class="detail-label">Purchased</span>
             <span class="detail-value">${paidAt}</span>
           </div>` : ''}
+          <div class="detail-row">
+            <span class="detail-label">Future stories</span>
+            <span class="detail-value">Available as add-on packs</span>
+          </div>
+        ` : isPaid && (planType === 'monthly' || planType === 'monthly_cancelling') ? `
+          ${paidAt ? `
+          <div class="detail-row">
+            <span class="detail-label">Started</span>
+            <span class="detail-value">${paidAt}</span>
+          </div>` : ''}
+          <div class="detail-row">
+            <span class="detail-label">Price</span>
+            <span class="detail-value">$4.99 / month</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Future stories</span>
+            <span class="detail-value green">Included automatically</span>
+          </div>
           ${planType === 'monthly' ? `
           <div style="margin-top:16px">
             <button class="btn-danger" onclick="openConfirm()">Cancel Subscription</button>
@@ -631,7 +664,7 @@ function renderPage() {
           </div>` : ''}
         ` : `
           <div style="margin-top:4px">
-            <a href="./index.html" class="btn-primary" onclick="setTimeout(()=>document.getElementById('pwBtnMonthly')?.click(),500)">Upgrade — $4.99/month</a>
+            <a href="./index.html" class="btn-primary">Upgrade — $4.99/month</a>
             <a href="./index.html" class="btn-ghost">View Plans</a>
           </div>
         `}
