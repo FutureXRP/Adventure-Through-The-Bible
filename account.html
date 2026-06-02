@@ -492,6 +492,36 @@ let userProfile = null;
 let childProfiles = [];
 let storyProgress = [];
 
+// ── STRIPE CHECKOUT ─────────────────────────────────────────
+async function startCheckout(plan) {
+  const btn = document.getElementById('switchMonthlyBtn') || document.getElementById('upgradeBtn');
+  if (btn) { btn.disabled = true; btn.innerHTML = '<span class="spinner"></span>Loading…'; }
+
+  try {
+    const { data: { session } } = await sb.auth.getSession();
+    if (!session) { window.location.href = './login.html'; return; }
+
+    const response = await fetch(`${SUPABASE_FUNCTIONS_URL}/create-checkout`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${session.access_token}`,
+      },
+      body: JSON.stringify({ plan }),
+    });
+
+    const data = await response.json();
+    if (data.error) throw new Error(data.error);
+    if (data.url) window.location.href = data.url;
+
+  } catch (err) {
+    console.error('Checkout error:', err);
+    const msgBox = document.getElementById('msgBox');
+    if (msgBox) { msgBox.className = 'msg-box error'; msgBox.textContent = 'Something went wrong. Please try again.'; }
+    if (btn) { btn.disabled = false; btn.textContent = 'Switch to Monthly — $4.99/mo'; }
+  }
+}
+
 // ── INIT ────────────────────────────────────────────────────
 async function init() {
   const { data: { session } } = await sb.auth.getSession();
@@ -626,7 +656,7 @@ function renderPage() {
             <span class="detail-value">Available as add-on packs</span>
           </div>
           <div style="margin-top:16px">
-            <button class="btn-primary" onclick="window.location.href='./index.html'">Switch to Monthly — $4.99/mo</button>
+            <button class="btn-primary" id="switchMonthlyBtn" onclick="startCheckout('monthly')">Switch to Monthly — $4.99/mo</button>
             <div style="text-align:center;font-family:'Source Sans 3',sans-serif;font-size:11px;color:var(--ink-light);opacity:0.55;margin-top:6px">Get all future stories automatically included</div>
           </div>
         ` : isPaid && (planType === 'monthly' || planType === 'monthly_cancelling') ? `
@@ -650,8 +680,8 @@ function renderPage() {
           </div>` : ''}
         ` : `
           <div style="margin-top:4px">
-            <a href="./index.html" class="btn-primary">Upgrade — $4.99/month</a>
-            <a href="./index.html" class="btn-ghost">View Plans</a>
+            <button class="btn-primary" id="upgradeBtn" onclick="startCheckout('monthly')">Subscribe Monthly — $4.99/mo</button>
+            <button class="btn-ghost" style="margin-top:8px" onclick="startCheckout('one_time')">One-Time Purchase — $49.99</button>
           </div>
         `}
       </div>
