@@ -392,10 +392,11 @@
 
 <script>
 // ── SUPABASE INIT ──────────────────────────────────────────────
+const SITE_URL = 'https://futurexrp.github.io/Adventure-Through-The-Bible';
 const SUPABASE_URL = 'https://bqyysvjnitbeimvaxkao.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxeXlzdmpuaXRiZWltdmF4a2FvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA0MTA1OTIsImV4cCI6MjA5NTk4NjU5Mn0._GJFay_isjcvm7O_Ry7hBk1EfkKQvqoMPVVOBL2uhug';
 const { createClient } = supabase;
-const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, { auth: { detectSessionInUrl: true, persistSession: true, autoRefreshToken: true } });
 
 // ── AVATARS ────────────────────────────────────────────────────
 const AVATARS = ['📖','⭐','🦁','🐬','🦅','🌟','🦋','🐢','🌙','☀️','🌿','🦊','🐧','🦉','🌊','🏔️','🌸','🦒','🐝','🎠'];
@@ -509,7 +510,7 @@ async function handleForgot() {
   if (!email) { showMessage('Enter your email address above, then click Forgot password.', 'error'); return; }
   setLoading(true);
   const { error } = await sb.auth.resetPasswordForEmail(email, {
-    redirectTo: window.location.origin + '/index.html'
+    redirectTo: SITE_URL + '/index.html'
   });
   setLoading(false);
   if (error) { showMessage(friendlyError(error.message), 'error'); return; }
