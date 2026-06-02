@@ -758,7 +758,7 @@ async function init() {
 // SUPABASE DATA LOADING
 // ════════════════════════════════════════════════════
 async function loadUserProfile() {
-  const { data: profile } = await sb.from('profiles').select('*, is_paid, plan_type, stripe_customer_id').eq('id', authUser.id).single();
+  const { data: profile } = await sb.from('profiles').select('*, is_paid, has_lifetime, plan_type, stripe_customer_id').eq('id', authUser.id).single();
   if (!profile) return;
   userProfile = profile;
 
@@ -1163,9 +1163,10 @@ document.getElementById('pwMonthlyPlan').addEventListener('click', () => startCh
 
 function storyIsLocked(story) {
   if (!PAYWALL_ENABLED) return false;
-  // Check Supabase profile is_paid (set by Stripe webhook)
-  const isPaid = userProfile && userProfile.is_paid === true;
-  if (isPaid) return false;
+  // has_lifetime = permanent access to launch stories (survives subscription cancellation)
+  // is_paid = active access (monthly subscription OR one-time purchase)
+  const hasAccess = userProfile && (userProfile.is_paid === true || userProfile.has_lifetime === true);
+  if (hasAccess) return false;
   return story.order > FREE_STORY_LIMIT;
 }
 
