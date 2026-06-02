@@ -669,7 +669,7 @@ const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 const { createClient } = supabase;
 const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, { auth: { detectSessionInUrl: true, persistSession: true, autoRefreshToken: true } });
 
-const PAYWALL_ENABLED = false; // ← flip to true when ready to charge
+const PAYWALL_ENABLED = true; // ← flip to false to disable paywall
 const FREE_STORY_LIMIT = 3;
 const SUPABASE_FUNCTIONS_URL = 'https://bqyysvjnitbeimvaxkao.supabase.co/functions/v1';
 const STRIPE_PK = 'pk_test_51THwruLhNi71Q1IHXoFa7HQdFk5Gz4PirM6J9VCPjcgZ4rCZkrUWCdRBtCLZZBydmLj1S7j4dush2j8GHd1rxd000GC3sAMxu';
@@ -712,15 +712,22 @@ async function init() {
   eras = DATA.eras;
 
   // Auth state
-  const { data: { session } } = await sb.auth.getSession();
-  if (session) {
-    authUser = session.user;
-    await loadUserProfile();
+  try {
+    const { data: { session } } = await sb.auth.getSession();
+    if (session) {
+      authUser = session.user;
+      await loadUserProfile();
+    }
+  } catch(e) {
+    console.warn('Auth session error:', e);
   }
 
-  // Welcome splash (paywall feature flag)
+  // Welcome splash (paywall feature flag) — always check, show if not seen
   if (PAYWALL_ENABLED && !localStorage.getItem(WELCOME_KEY)) {
-    document.getElementById('welcomeOverlay').classList.add('open');
+    const overlay = document.getElementById('welcomeOverlay');
+    overlay.classList.add('open');
+    overlay.style.display = 'flex';
+    overlay.style.zIndex = '9999';
     document.body.style.overflow = 'hidden';
   }
 
@@ -1132,7 +1139,9 @@ async function checkCheckoutReturn() {
 
 function closeWelcome() {
   localStorage.setItem(WELCOME_KEY, '1');
-  document.getElementById('welcomeOverlay').classList.remove('open');
+  const overlay = document.getElementById('welcomeOverlay');
+  overlay.classList.remove('open');
+  overlay.style.display = 'none';
   document.body.style.overflow = '';
 }
 function openPaywall() {
