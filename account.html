@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Account — Footsteps</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+  :root {
+    --parchment: #fdf6e3;
+    --parchment-dark: #f0e6c8;
+    --ink: #2c1a0e;
+    --ink-light: #5c3d1e;
+    --crimson: #8b1a1a;
+    --gold: #c9a227;
+    --gold-bright: #f0c040;
+    --gold-glow: rgba(201,162,39,0.35);
+    --shadow: rgba(44,26,14,0.18);
+    --green: #3B6D11;
+    --green-bg: #EAF3DE;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { min-height: 100vh; }
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Lora', Georgia, serif;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+
+  /* ── TOP BAR ── */
+  .top-bar {
+    background: var(--ink);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .top-bar-brand {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+  }
+  .top-bar-back {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    transition: color 0.15s;
+  }
+  .top-bar-back:hover { color: #fff; }
+
+  /* ── PAGE LAYOUT ── */
+  .page { max-width: 600px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  .page-eyebrow {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .page-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .page-sub {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--ink-light);
+    margin-bottom: 40px;
+  }
+
+  /* ── CARDS ── */
+  .account-card {
+    background: #fff;
+    border: 1px solid rgba(44,26,14,0.12);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px var(--shadow);
+  }
+  .card-header {
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--parchment-dark);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .card-header-icon {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--parchment-dark);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .card-header-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .card-header-sub {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 11px;
+    color: var(--ink-light);
+    opacity: 0.6;
+    margin-top: 2px;
+  }
+  .card-body { padding: 22px 24px; }
+
+  /* ── PROFILE SECTION ── */
+  .profile-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .profile-avatar {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px var(--gold-glow);
+  }
+  .profile-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .profile-email {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    color: var(--ink-light);
+    opacity: 0.7;
+    margin-top: 3px;
+  }
+  .profile-type-badge {
+    display: inline-block;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 10px;
+    margin-top: 6px;
+    background: rgba(44,26,14,0.06);
+    color: var(--ink-light);
+  }
+
+  /* ── PLAN STATUS ── */
+  .plan-status {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+  }
+  .plan-status.active {
+    background: var(--green-bg);
+    border: 1px solid rgba(59,109,17,0.2);
+  }
+  .plan-status.cancelling {
+    background: #FFF8E6;
+    border: 1px solid rgba(201,162,39,0.3);
+  }
+  .plan-status.free {
+    background: var(--parchment);
+    border: 1px solid var(--parchment-dark);
+  }
+  .plan-status-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  .plan-status.active .plan-status-dot { background: var(--green); box-shadow: 0 0 0 3px rgba(59,109,17,0.2); }
+  .plan-status.cancelling .plan-status-dot { background: var(--gold); box-shadow: 0 0 0 3px var(--gold-glow); }
+  .plan-status.free .plan-status-dot { background: var(--ink-light); opacity: 0.4; }
+  .plan-status-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+  .plan-status-desc {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 0.82rem;
+    color: var(--ink-light);
+    line-height: 1.5;
+  }
+
+  /* ── DETAIL ROWS ── */
+  .detail-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--parchment-dark);
+  }
+  .detail-row:last-child { border-bottom: none; }
+  .detail-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--ink-light);
+    opacity: 0.7;
+  }
+  .detail-value {
+    font-family: 'Lora', serif;
+    font-size: 0.9rem;
+    color: var(--ink);
+    text-align: right;
+  }
+  .detail-value.green { color: var(--green); font-weight: 600; }
+  .detail-value.gold { color: var(--gold); font-weight: 600; }
+
+  /* ── CHILDREN LIST ── */
+  .child-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--parchment-dark);
+  }
+  .child-item:last-child { border-bottom: none; }
+  .child-avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--parchment-dark);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .child-name {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .child-age {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 11px;
+    color: var(--ink-light);
+    opacity: 0.6;
+    margin-top: 2px;
+  }
+  .child-progress {
+    margin-left: auto;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gold);
+  }
+
+  /* ── BUTTONS ── */
+  .btn-primary {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+    color: var(--ink);
+    border: none;
+    border-radius: 8px;
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow: 0 2px 10px var(--gold-glow);
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 10px;
+  }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 16px var(--gold-glow); }
+
+  .btn-danger {
+    display: block;
+    width: 100%;
+    padding: 11px;
+    background: transparent;
+    color: var(--crimson);
+    border: 1.5px solid rgba(139,26,26,0.25);
+    border-radius: 8px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .btn-danger:hover { background: rgba(139,26,26,0.05); border-color: var(--crimson); }
+  .btn-danger:disabled { opacity: 0.4; cursor: default; }
+
+  .btn-ghost {
+    display: block;
+    width: 100%;
+    padding: 11px;
+    background: transparent;
+    color: var(--ink-light);
+    border: 1.5px solid rgba(44,26,14,0.15);
+    border-radius: 8px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: background 0.15s;
+    text-align: center;
+    text-decoration: none;
+  }
+  .btn-ghost:hover { background: rgba(44,26,14,0.04); }
+
+  /* ── MESSAGE BOX ── */
+  .msg-box {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 14px;
+    display: none;
+  }
+  .msg-box.success { display: block; background: var(--green-bg); color: #27500A; border: 1px solid rgba(59,109,17,0.2); }
+  .msg-box.error { display: block; background: #FCEBEB; color: #791F1F; border: 1px solid rgba(163,45,45,0.2); }
+  .msg-box.info { display: block; background: #FFF8E6; color: #7a5500; border: 1px solid rgba(201,162,39,0.3); }
+
+  /* ── CANCEL CONFIRM MODAL ── */
+  .confirm-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(20,10,5,0.75);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    backdrop-filter: blur(4px);
+  }
+  .confirm-backdrop.open { display: flex; }
+  .confirm-card {
+    background: var(--parchment);
+    border-radius: 14px;
+    max-width: 420px;
+    width: 100%;
+    padding: 32px 28px 24px;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+    animation: popIn 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  @keyframes popIn { from{opacity:0;transform:scale(0.95)}to{opacity:1;transform:scale(1)} }
+  .confirm-icon { font-size: 36px; margin-bottom: 14px; }
+  .confirm-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .confirm-body {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--ink-light);
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .confirm-btns { display: flex; gap: 10px; }
+  .confirm-cancel-btn {
+    flex: 1; padding: 11px;
+    background: transparent;
+    border: 1.5px solid rgba(44,26,14,0.18);
+    border-radius: 8px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px; font-weight: 600;
+    color: var(--ink-light);
+    cursor: pointer;
+  }
+  .confirm-proceed-btn {
+    flex: 1; padding: 11px;
+    background: var(--crimson);
+    border: none;
+    border-radius: 8px;
+    font-family: 'Cinzel', serif;
+    font-size: 12px; font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .confirm-proceed-btn:hover { background: #6e1515; }
+  .confirm-proceed-btn:disabled { opacity: 0.5; cursor: default; }
+
+  /* ── SPINNER ── */
+  .spinner {
+    display: inline-block;
+    width: 14px; height: 14px;
+    border: 2px solid rgba(44,26,14,0.2);
+    border-top-color: var(--ink);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    vertical-align: middle;
+    margin-right: 6px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── LOADING STATE ── */
+  .loading-state {
+    text-align: center;
+    padding: 60px 24px;
+    font-family: 'Lora', serif;
+    font-style: italic;
+    color: var(--ink-light);
+    opacity: 0.6;
+  }
+
+  @media (max-width: 480px) {
+    .page { padding: 32px 16px 60px; }
+    .card-body { padding: 18px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── TOP BAR ── -->
+<div class="top-bar">
+  <a href="./index.html" class="top-bar-brand">Footsteps</a>
+  <a href="./index.html" class="top-bar-back">← Back to Stories</a>
+</div>
+
+<!-- ── CANCEL CONFIRM MODAL ── -->
+<div class="confirm-backdrop" id="confirmBackdrop">
+  <div class="confirm-card">
+    <div class="confirm-icon">⚠️</div>
+    <div class="confirm-title">Cancel your subscription?</div>
+    <div class="confirm-body">
+      You'll keep full access until the end of your current billing period. After that, only the first 3 stories will be available.
+    </div>
+    <div class="confirm-btns">
+      <button class="confirm-cancel-btn" onclick="closeConfirm()">Keep Subscription</button>
+      <button class="confirm-proceed-btn" id="confirmProceedBtn" onclick="proceedCancel()">Yes, Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── PAGE ── -->
+<div class="page" id="pageContent">
+  <div class="loading-state">Loading your account…</div>
+</div>
+
+<script>
+// ── SUPABASE ──────────────────────────────────────────────────
+const SUPABASE_URL = 'https://bqyysvjnitbeimvaxkao.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxeXlzdmpuaXRiZWltdmF4a2FvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA0MTA1OTIsImV4cCI6MjA5NTk4NjU5Mn0._GJFay_isjcvm7O_Ry7hBk1EfkKQvqoMPVVOBL2uhug';
+const SUPABASE_FUNCTIONS_URL = 'https://bqyysvjnitbeimvaxkao.supabase.co/functions/v1';
+const STRIPE_MONTHLY_LINK = '#';
+const STRIPE_LIFETIME_LINK = '#';
+
+const { createClient } = supabase;
+const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+  auth: { detectSessionInUrl: true, persistSession: true, autoRefreshToken: true }
+});
+
+let authUser = null;
+let userProfile = null;
+let childProfiles = [];
+let storyProgress = [];
+
+// ── INIT ────────────────────────────────────────────────────
+async function init() {
+  const { data: { session } } = await sb.auth.getSession();
+  if (!session) {
+    window.location.href = './login.html?returnTo=account.html';
+    return;
+  }
+  authUser = session.user;
+
+  // Load profile
+  const { data: profile } = await sb
+    .from('profiles')
+    .select('*')
+    .eq('id', authUser.id)
+    .single();
+  userProfile = profile;
+
+  // Load children if parent
+  if (profile?.account_type === 'parent') {
+    const { data: children } = await sb
+      .from('child_profiles')
+      .select('*')
+      .eq('parent_id', authUser.id)
+      .order('created_at');
+    childProfiles = children || [];
+  }
+
+  // Load story progress
+  const { data: progress } = await sb
+    .from('story_progress')
+    .select('story_id, profile_id, profile_type')
+    .or(`profile_id.eq.${authUser.id},profile_id.in.(${childProfiles.map(c => c.id).join(',') || 'null'})`);
+  storyProgress = progress || [];
+
+  renderPage();
+}
+
+// ── RENDER ──────────────────────────────────────────────────
+function renderPage() {
+  const page = document.getElementById('pageContent');
+  const isParent = userProfile?.account_type === 'parent';
+  const isPaid = userProfile?.is_paid;
+  const planType = userProfile?.plan_type;
+  const paidAt = userProfile?.paid_at ? new Date(userProfile.paid_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : null;
+
+  // Plan status config
+  let planStatusClass = 'free';
+  let planStatusDot = '';
+  let planLabel = 'Free Plan';
+  let planDesc = 'You have access to the first 3 stories.';
+
+  if (isPaid && planType === 'one_time') {
+    planStatusClass = 'active';
+    planLabel = 'Full Access — One-Time Purchase';
+    planDesc = 'You have permanent access to all 50 stories available at launch.';
+  } else if (isPaid && planType === 'monthly') {
+    planStatusClass = 'active';
+    planLabel = 'Monthly Subscription — Active';
+    planDesc = 'You have access to all current and future stories.';
+  } else if (planType === 'monthly_cancelling') {
+    planStatusClass = 'cancelling';
+    planLabel = 'Monthly Subscription — Cancelling';
+    planDesc = 'Your subscription is cancelled. You\'ll keep access until the end of your billing period.';
+  }
+
+  // User progress count
+  const userProgressCount = storyProgress.filter(p => p.profile_id === authUser.id && p.profile_type === 'user').length;
+
+  page.innerHTML = `
+    <div class="page-eyebrow">My Account</div>
+    <h1 class="page-title">Account Settings</h1>
+    <p class="page-sub">Manage your profile, subscription, and family access.</p>
+
+    <!-- PROFILE CARD -->
+    <div class="account-card">
+      <div class="card-header">
+        <div class="card-header-icon">👤</div>
+        <div>
+          <div class="card-header-title">Profile</div>
+          <div class="card-header-sub">Your account details</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="profile-row">
+          <div class="profile-avatar">${userProfile?.avatar_emoji || '📖'}</div>
+          <div>
+            <div class="profile-name">${userProfile?.display_name || 'Reader'}</div>
+            <div class="profile-email">${authUser.email}</div>
+            <div class="profile-type-badge">${isParent ? 'Family Account' : 'Individual Account'}</div>
+          </div>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Stories Read</span>
+          <span class="detail-value">${userProgressCount} stories</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Member Since</span>
+          <span class="detail-value">${new Date(authUser.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUBSCRIPTION CARD -->
+    <div class="account-card">
+      <div class="card-header">
+        <div class="card-header-icon">📜</div>
+        <div>
+          <div class="card-header-title">Subscription</div>
+          <div class="card-header-sub">Your current plan</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div id="msgBox" class="msg-box"></div>
+
+        <div class="plan-status ${planStatusClass}">
+          <div class="plan-status-dot"></div>
+          <div>
+            <div class="plan-status-label">${planLabel}</div>
+            <div class="plan-status-desc">${planDesc}</div>
+          </div>
+        </div>
+
+        ${isPaid ? `
+          <div class="detail-row">
+            <span class="detail-label">Plan</span>
+            <span class="detail-value ${planType === 'one_time' ? 'green' : 'gold'}">${planType === 'one_time' ? 'One-Time Purchase' : 'Monthly — $4.99/mo'}</span>
+          </div>
+          ${paidAt ? `
+          <div class="detail-row">
+            <span class="detail-label">Purchased</span>
+            <span class="detail-value">${paidAt}</span>
+          </div>` : ''}
+          ${planType === 'monthly' ? `
+          <div style="margin-top:16px">
+            <button class="btn-danger" onclick="openConfirm()">Cancel Subscription</button>
+            <div style="text-align:center;font-family:'Source Sans 3',sans-serif;font-size:11px;color:var(--ink-light);opacity:0.55;margin-top:6px">You'll keep access until the end of your billing period</div>
+          </div>` : ''}
+        ` : `
+          <div style="margin-top:4px">
+            <a href="./index.html" class="btn-primary" onclick="setTimeout(()=>document.getElementById('pwBtnMonthly')?.click(),500)">Upgrade — $4.99/month</a>
+            <a href="./index.html" class="btn-ghost">View Plans</a>
+          </div>
+        `}
+      </div>
+    </div>
+
+    ${isParent ? `
+    <!-- FAMILY CARD -->
+    <div class="account-card">
+      <div class="card-header">
+        <div class="card-header-icon">👨‍👩‍👧‍👦</div>
+        <div>
+          <div class="card-header-title">Family Profiles</div>
+          <div class="card-header-sub">${childProfiles.length} child ${childProfiles.length === 1 ? 'profile' : 'profiles'}</div>
+        </div>
+      </div>
+      <div class="card-body">
+        ${childProfiles.length === 0 ? `
+          <div style="font-family:'Lora',serif;font-style:italic;font-size:0.9rem;color:var(--ink-light);opacity:0.7;text-align:center;padding:16px 0">
+            No child profiles yet. Add one from the main app.
+          </div>
+        ` : childProfiles.map(child => {
+          const childProgress = storyProgress.filter(p => p.profile_id === child.id && p.profile_type === 'child').length;
+          return `
+          <div class="child-item">
+            <div class="child-avatar">${child.avatar_emoji}</div>
+            <div>
+              <div class="child-name">${child.display_name}</div>
+              <div class="child-age">${child.age ? 'Age ' + child.age : 'No age set'}</div>
+            </div>
+            <div class="child-progress">${childProgress} stories read</div>
+          </div>`;
+        }).join('')}
+        <div style="margin-top:${childProfiles.length > 0 ? '16px' : '0'}">
+          <a href="./index.html" class="btn-ghost">Manage Profiles in App</a>
+        </div>
+      </div>
+    </div>
+    ` : ''}
+
+    <!-- SIGN OUT -->
+    <div class="account-card">
+      <div class="card-body">
+        <button class="btn-ghost" onclick="handleSignOut()">Sign Out</button>
+      </div>
+    </div>
+  `;
+}
+
+// ── CANCEL SUBSCRIPTION ──────────────────────────────────────
+function openConfirm() {
+  document.getElementById('confirmBackdrop').classList.add('open');
+}
+function closeConfirm() {
+  document.getElementById('confirmBackdrop').classList.remove('open');
+}
+
+async function proceedCancel() {
+  const btn = document.getElementById('confirmProceedBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>Cancelling…';
+
+  try {
+    const { data: { session } } = await sb.auth.getSession();
+    const response = await fetch(`${SUPABASE_FUNCTIONS_URL}/cancel-subscription`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${session.access_token}`,
+      },
+    });
+
+    const data = await response.json();
+    closeConfirm();
+
+    if (data.error) throw new Error(data.error);
+
+    // Refresh profile
+    const { data: profile } = await sb.from('profiles').select('*').eq('id', authUser.id).single();
+    userProfile = profile;
+    renderPage();
+
+    // Show success message
+    const msgBox = document.getElementById('msgBox');
+    if (msgBox) {
+      msgBox.className = 'msg-box info';
+      msgBox.textContent = data.message || 'Your subscription has been cancelled.';
+    }
+
+  } catch (err) {
+    closeConfirm();
+    const msgBox = document.getElementById('msgBox');
+    if (msgBox) {
+      msgBox.className = 'msg-box error';
+      msgBox.textContent = err.message || 'Something went wrong. Please try again.';
+    }
+    btn.disabled = false;
+    btn.textContent = 'Yes, Cancel';
+  }
+}
+
+// ── SIGN OUT ─────────────────────────────────────────────────
+async function handleSignOut() {
+  await sb.auth.signOut();
+  window.location.href = './index.html';
+}
+
+// ── CLOSE CONFIRM ON BACKDROP CLICK ─────────────────────────
+document.getElementById('confirmBackdrop').addEventListener('click', e => {
+  if (e.target === document.getElementById('confirmBackdrop')) closeConfirm();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeConfirm(); });
+
+init();
+</script>
+</body>
+</html>
