@@ -367,11 +367,98 @@ Paste this at the top of every new chat session:
 
 ## Pending Infrastructure
 
-- [ ] Supabase auth — user accounts, cross-device progress
-- [ ] Stripe or Gumroad one-time purchase ($14.99 target)
-- [ ] Age tier tabs (9–12 done first, then 5–8)
+### User Acquisition Flow — CRITICAL (build this before paywall)
+
+The goal is to get families hooked on the product before asking for money.
+Designed as a three-stage funnel:
+
+**Stage 1 — Welcome Splash (first visit only)**
+- Full-screen branded overlay shown before the story grid appears
+- Shows on first visit, never again (localStorage flag: `footsteps_seen_welcome`)
+- Content: Footsteps logo, tagline, 2-sentence description, two CTAs:
+  - "Start Reading" → dismisses overlay, shows story grid
+  - "Create Free Account" → goes to signup
+- Design: dark parchment overlay, gold accents, header image as background
+
+**Stage 2 — Free Stories (no account required)**
+- First 2 stories completely free, no login required
+- Stories 3–5 require a free account (email + password via Clerk/Supabase)
+- When a logged-out user opens story 3+, a modal appears:
+  - "You've found a great story. Create a free account to keep reading."
+  - Email + password fields inline, or "Sign In" link
+  - On success: story opens immediately
+- Free account gets stories 1–5, progress saved across devices
+
+**Stage 3 — Paywall at Story 6**
+- Stories 6–30 require paid access
+- When a paid-account user opens story 6+, paywall modal appears:
+  - Side-by-side pricing cards (see Monetization section below)
+  - "Already purchased? Sign in" link
+  - On purchase: Stripe webhook updates Supabase, content unlocks immediately
+
+**Access levels in stories.json:**
+- `"access": "free"` — stories 1–2, no login required
+- `"access": "account"` — stories 3–5, free account required
+- `"access": "premium"` — stories 6–30, paid access required
+
+**Implementation order:**
+1. Welcome splash (pure HTML/JS, no backend)
+2. Supabase auth + Clerk login UI
+3. Access level enforcement in index.html renderModal()
+4. Stripe checkout + webhook
+5. Account page
+
+### Authentication
+- [ ] Supabase auth — user accounts, cross-device progress tracking
+- [ ] Clerk for auth UI (login, signup, password reset pages)
+- [ ] Login page — clean, on-brand, matches parchment/gold design system
+- [ ] Account page — shows progress, subscription status, manage billing
+- [ ] Welcome splash overlay (first-visit only, localStorage flag)
+- [ ] Inline signup modal triggered at story 3 for logged-out users
+- [ ] Paywall modal triggered at story 6 for non-paying users
+
+### Monetization — TWO OPTIONS (both available at checkout)
+
+**Option A — One-Time Purchase: $49.99**
+- Lifetime access to all 30 stories (both tiers when ready)
+- No recurring charges ever
+- Stripe one-time payment link
+- Unlock key stored in Supabase against user account
+
+**Option B — Monthly Subscription: $4.99/month**
+- Full access while subscribed
+- Cancel anytime
+- Stripe subscription product
+- Status checked on login via Stripe webhook → Supabase
+
+**Checkout flow:**
+1. User hits locked content or clicks Unlock
+2. Pricing page shows both options side by side
+3. User selects plan → Stripe Checkout
+4. On success → Supabase user record updated → content unlocked
+5. Stripe webhook handles subscription renewals and cancellations
+
+**Stripe products to create:**
+- Product: Footsteps Full Access (one-time) — $49.99
+- Product: Footsteps Monthly — $4.99/month recurring
+
+### Content
+- [ ] 9 stories needing audio regeneration next credit reset:
+  - Story 11 — The Ten Commandments (minor wording fix)
+  - Story 16 — One Stone (David & Goliath)
+  - Story 17 — The Lord Is My Shepherd (Psalm 23)
+  - Story 18 — Fire from Heaven (Elijah)
+  - Story 19 — The Lion's Den (Daniel)
+  - Story 20 — For Such a Time as This (Esther)
+  - Story 26 — The Darkest Friday (no audio yet)
+  - Story 27 — The Empty Tomb (no audio yet)
+  - Story 30 — Singing at Midnight (no audio yet)
+
+### Future
+- [ ] Age tier tabs — 5–8 tier after 9–12 complete
 - [ ] Background music — layer instrumental in Audacity before MP3 export
 - [ ] PWA / mobile app consideration (v2)
+- [ ] Stories 31–50 — see story list in this document
 
 ## Design System
 
