@@ -499,6 +499,7 @@ function initQuiz(questions, container){
 
 function closeModal(){
   if(currentAudio){currentAudio.pause();currentAudio=null;isAudioPlaying=false;}
+  stopHighlightLoop();
   clearHighlights();
   wordTimings=[];
   allWordSpans=[];
@@ -523,16 +524,14 @@ function toggleAudio(){
   if(!currentAudioSrc)return;
   if(!currentAudio){
     currentAudio=new Audio(currentAudioSrc);
-    currentAudio.addEventListener('timeupdate',()=>{
-      updateAudioProgress();
-      if(wordTimings.length) highlightCurrentWord(currentAudio.currentTime);
-    });
+    currentAudio.addEventListener('timeupdate', updateAudioProgress);
     currentAudio.addEventListener('ended',()=>{
       btn.innerHTML='<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>';
       document.getElementById('audioFill').style.width='0%';
       document.getElementById('audioTime').textContent='0:00';
       isAudioPlaying=false;
       lastHighlightIdx=-1;
+      stopHighlightLoop();
       clearHighlights();
     });
     // Load timestamps if available
@@ -544,10 +543,12 @@ function toggleAudio(){
   if(isAudioPlaying){
     currentAudio.pause();
     isAudioPlaying=false;
+    stopHighlightLoop();
     btn.innerHTML='<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>';
   } else {
     currentAudio.play();
     isAudioPlaying=true;
+    if(wordTimings.length) startHighlightLoop();
     btn.innerHTML='<svg viewBox="0 0 24 24"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg>';
   }
 }
@@ -622,49 +623,58 @@ function wrapStoryWords(){
 }
 
 let lastHighlightIdx=-1;
+let rafHandle=null;
+
+// ── requestAnimationFrame highlight loop ──
+// Fires every ~16ms (vs timeupdate's ~250-400ms lag)
+// Industry standard for audio sync — used by Spotify, Audible, Fender Play
+function startHighlightLoop(){
+  if(rafHandle) cancelAnimationFrame(rafHandle);
+  function loop(){
+    if(!currentAudio||currentAudio.paused||!wordTimings.length||!allWordSpans.length){
+      rafHandle=null;
+      return;
+    }
+    highlightCurrentWord(currentAudio.currentTime);
+    rafHandle=requestAnimationFrame(loop);
+  }
+  rafHandle=requestAnimationFrame(loop);
+}
+
+function stopHighlightLoop(){
+  if(rafHandle){cancelAnimationFrame(rafHandle);rafHandle=null;}
+}
+
+// Binary search — O(log n) — finds word at time t instantly
+function binarySearchWord(t){
+  if(!wordTimings.length||t<wordTimings[0].start) return -1;
+  let lo=0, hi=wordTimings.length-1;
+  while(lo<hi){
+    const mid=Math.ceil((lo+hi)/2);
+    if(wordTimings[mid].start<=t) lo=mid;
+    else hi=mid-1;
+  }
+  return lo;
+}
 
 function highlightCurrentWord(currentTime){
   if(!wordTimings.length||!allWordSpans.length)return;
-
-  // Pure time-based search — find timing index where currentTime falls
-  // Highlight fires when currentTime reaches word start time
-  let idx=Math.max(0,lastHighlightIdx);
-
-  // Look ahead by 150ms to compensate for timeupdate firing delay
-  // This makes the highlight appear right as the word is spoken
-  const LOOKAHEAD = 0.15;
-  const t = currentTime + LOOKAHEAD;
-
-  // Scan forward — advance when next word has started
-  while(idx<wordTimings.length-1 && t>=wordTimings[idx+1].start){
-    idx++;
-  }
-  // Scan backward if needed (e.g. after scrub)
-  while(idx>0 && t<wordTimings[idx].start){
-    idx--;
-  }
-
-  // If audio hasn't reached the first word yet, don't highlight
-  if(t < wordTimings[0].start) return;
-
-  if(idx===lastHighlightIdx)return; // nothing changed — skip DOM update
+  const idx=binarySearchWord(currentTime);
+  if(idx===-1||idx===lastHighlightIdx)return;
   lastHighlightIdx=idx;
 
-  // Clear previous highlight efficiently — only clear the last one
+  // Clear previous highlights
   allWordSpans.forEach(s=>s.classList.remove('speaking'));
   document.querySelectorAll('.story-paragraph').forEach(p=>p.classList.remove('story-para-active'));
 
-  // Apply new highlight — skip dashes, they look odd highlighted
+  // Apply highlight — skip dashes
   if(idx>=0&&idx<allWordSpans.length){
     const span=allWordSpans[idx];
     const isDash=span.textContent==='—'||span.textContent==='–'||span.textContent==='-';
     if(!isDash){
       span.classList.add('speaking');
-    }
-    const para=span.closest('.story-paragraph');
-    if(para) para.classList.add('story-para-active');
-    // Only scroll if outside visible modal body area
-    if(!isDash){
+      const para=span.closest('.story-paragraph');
+      if(para) para.classList.add('story-para-active');
       const modalBody=document.getElementById('modalBody');
       const spanRect=span.getBoundingClientRect();
       const bodyRect=modalBody.getBoundingClientRect();
@@ -695,6 +705,7 @@ function scrubAudio(e){
   const rect=wrap.getBoundingClientRect();
   const pct=Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width));
   currentAudio.currentTime=pct*currentAudio.duration;
+  lastHighlightIdx=-1; // reset so highlight recalculates from new position
   updateAudioProgress();
 }
 
