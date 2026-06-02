@@ -565,6 +565,7 @@ function renderPage() {
   const page = document.getElementById('pageContent');
   const isParent = userProfile?.account_type === 'parent';
   const isPaid = userProfile?.is_paid;
+  const hasLifetime = userProfile?.has_lifetime;
   const planType = userProfile?.plan_type;
   const paidAt = userProfile?.paid_at ? new Date(userProfile.paid_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : null;
 
