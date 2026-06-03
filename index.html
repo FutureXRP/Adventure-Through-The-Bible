@@ -142,10 +142,9 @@
   /* ── WELCOME SPLASH ── */
   .splash-backdrop {
     position: fixed; inset: 0; z-index: 3000;
-    background: rgba(20,10,5,0.92);
+    background: rgba(20,10,5,0.75);
     display: flex; align-items: center; justify-content: center;
     padding: 24px;
-    backdrop-filter: blur(6px);
   }
   .splash-backdrop.hidden { display: none; }
   .splash-box {
@@ -299,8 +298,8 @@
     <span class="splash-emoji">👣</span>
     <h2 class="splash-title">Welcome to Footsteps</h2>
     <p class="splash-desc">Walk through the greatest story ever told — 30 Bible stories brought to life with vivid storytelling, read-along audio, and questions your family can dig into together.</p>
-    <button class="splash-btn-primary" onclick="dismissSplash()">Start Reading →</button>
-    <button class="splash-btn-secondary" onclick="dismissSplash(); openGate('login')">Sign In / Create Account</button>
+    <button class="splash-btn-primary" id="splashStartBtn">Start Reading →</button>
+    <button class="splash-btn-secondary" id="splashSignInBtn">Sign In / Create Account</button>
   </div>
 </div>
 
@@ -880,6 +879,14 @@ function initSplash() {
   } else {
     document.getElementById('splashBackdrop').classList.add('hidden');
   }
+  // Wire buttons here so functions are guaranteed defined
+  const startBtn = document.getElementById('splashStartBtn');
+  const signInBtn = document.getElementById('splashSignInBtn');
+  if (startBtn) startBtn.addEventListener('click', dismissSplash);
+  if (signInBtn) signInBtn.addEventListener('click', function(){
+    dismissSplash();
+    openGate('login');
+  });
 }
 
 function dismissSplash() {
@@ -908,25 +915,28 @@ function closeGate() {
 
 function buildLoginUI(mode, storyId) {
   const isSignup = mode === 'signup';
-  return `
-    <span class="gate-emoji">📖</span>
-    <h2 class="gate-title">${isSignup ? 'Create Your Free Account' : 'Welcome Back'}</h2>
-    <p class="gate-desc">${isSignup
-      ? 'Get free access to the first 5 stories and save your progress across devices.'
-      : 'Sign in to continue your journey through Scripture.'}</p>
-    <div class="gate-form">
-      <input class="gate-input" type="email" id="gateEmail" placeholder="Email address" />
-      <input class="gate-input" type="password" id="gatePassword" placeholder="Password" />
-      ${isSignup ? '<input class="gate-input" type="password" id="gateConfirm" placeholder="Confirm password" />' : ''}
-      <button class="gate-submit" onclick="handleAuth('${mode}', '${storyId||''}')">
-        ${isSignup ? 'Create Free Account' : 'Sign In'}
-      </button>
-    </div>
-    <div class="gate-switch">
-      ${isSignup
-        ? 'Already have an account? <a onclick="openGate('login','${storyId||''}')">Sign in</a>'
-        : 'No account yet? <a onclick="openGate('signup','${storyId||''}')">Create one free</a>'}
-    </div>`;
+  const sid = storyId || '';
+  const title = isSignup ? 'Create Your Free Account' : 'Welcome Back';
+  const desc = isSignup
+    ? 'Get free access to the first 5 stories and save your progress across devices.'
+    : 'Sign in to continue your journey through Scripture.';
+  const confirmField = isSignup
+    ? '<input class="gate-input" type="password" id="gateConfirm" placeholder="Confirm password" />'
+    : '';
+  const btnLabel = isSignup ? 'Create Free Account' : 'Sign In';
+  const switchLine = isSignup
+    ? 'Already have an account? <a onclick="openGate(\'login\',\'' + sid + '\')"  style="cursor:pointer">Sign in</a>'
+    : 'No account yet? <a onclick="openGate(\'signup\',\'' + sid + '\')" style="cursor:pointer">Create one free</a>';
+  return '<span class="gate-emoji">📖</span>'
+    + '<h2 class="gate-title">' + title + '</h2>'
+    + '<p class="gate-desc">' + desc + '</p>'
+    + '<div class="gate-form">'
+    + '<input class="gate-input" type="email" id="gateEmail" placeholder="Email address" />'
+    + '<input class="gate-input" type="password" id="gatePassword" placeholder="Password" />'
+    + confirmField
+    + '<button class="gate-submit" onclick="handleAuth('' + mode + '','' + sid + '')">' + btnLabel + '</button>'
+    + '</div>'
+    + '<div class="gate-switch">' + switchLine + '</div>';
 }
 
 function buildPaywallUI(storyId) {
