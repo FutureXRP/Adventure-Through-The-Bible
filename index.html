@@ -283,6 +283,14 @@
   .quiz-cel-sub { font-family: 'Lora', serif; font-style: italic; font-size: 0.95rem; color: var(--ink-light); margin-bottom: 20px; line-height: 1.6; }
   .quiz-score-badge { display: inline-block; background: var(--ink); color: var(--gold); font-family: 'Cinzel', serif; font-size: 12px; font-weight: 700; padding: 7px 18px; border-radius: 20px; margin-bottom: 20px; letter-spacing: 0.06em; }
 
+
+  /* ── QUIZ MUTE BUTTON ── */
+  .quiz-mute-btn {
+    background: none; border: none; cursor: pointer;
+    font-size: 16px; opacity: 0.5; transition: opacity 0.15s;
+    padding: 0; line-height: 1;
+  }
+  .quiz-mute-btn:hover { opacity: 1; }
   /* ── MODAL FOOTER ── */
   .modal-footer { padding: 20px 36px 28px; border-top: 1px solid var(--parchment-dark); margin-top: 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
   .mark-done-btn { background: linear-gradient(135deg,var(--gold),var(--gold-bright)); color: var(--ink); border: none; border-radius: 7px; padding: 10px 22px; font-family: 'Cinzel', serif; font-size: 13px; font-weight: 700; letter-spacing: 0.05em; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 2px 8px rgba(201,162,39,0.3); }
@@ -661,6 +669,67 @@
 <footer class="site-footer">&copy; 2025 Footsteps &nbsp;·&nbsp; Walk through the greatest story ever told</footer>
 
 <script>
+
+// ════════════════════════════════════════════════════
+// QUIZ SOUND EFFECTS
+// Uses Web Audio API — no external files needed
+// ════════════════════════════════════════════════════
+let audioCtx = null;
+
+function getAudioCtx() {
+  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  return audioCtx;
+}
+
+function playCorrectSound() {
+  if (localStorage.getItem('footsteps_mute') === '1') return;
+  try {
+    const ctx = getAudioCtx();
+    // Bright ascending chime: C5 → E5 → G5
+    [[523.25, 0], [659.25, 0.12], [783.99, 0.24]].forEach(([freq, delay]) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.type = 'sine';
+      osc.frequency.value = freq;
+      const t = ctx.currentTime + delay;
+      gain.gain.setValueAtTime(0, t);
+      gain.gain.linearRampToValueAtTime(0.25, t + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.35);
+      osc.start(t);
+      osc.stop(t + 0.35);
+    });
+  } catch(e) {}
+}
+
+function playWrongSound() {
+  if (localStorage.getItem('footsteps_mute') === '1') return;
+  try {
+    const ctx = getAudioCtx();
+    // Low thud: short E3
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.type = 'sine';
+    osc.frequency.value = 164.81;
+    const t = ctx.currentTime;
+    gain.gain.setValueAtTime(0.2, t);
+    gain.gain.exponentialRampToValueAtTime(0.001, t + 0.25);
+    osc.start(t);
+    osc.stop(t + 0.25);
+  } catch(e) {}
+}
+
+function toggleQuizMute() {
+  const muted = localStorage.getItem('footsteps_mute') === '1';
+  localStorage.setItem('footsteps_mute', muted ? '0' : '1');
+  document.querySelectorAll('#quizMuteBtn').forEach(btn => {
+    btn.textContent = muted ? '🔇' : '🔊';
+  });
+}
+
 // ════════════════════════════════════════════════════
 // SUPABASE + CONFIG
 // ════════════════════════════════════════════════════
@@ -1338,11 +1407,13 @@ function initQuiz(questions, container, story) {
         const nb = container.querySelector('#qnext');
         if (idx === q.answer) {
           answered = true; score++;
+          playCorrectSound();
           btn.className = 'quiz-option qcorrect';
           fb.className = 'quiz-feedback qcorrect-msg';
           fb.textContent = 'Correct! ' + (q.explanation || 'Well done!');
           nb.className = 'quiz-next-btn qvisible';
         } else {
+          playWrongSound();
           btn.className = 'quiz-option qwrong';
           fb.className = 'quiz-feedback qwrong-msg';
           fb.textContent = 'Not quite — try again!';
@@ -1435,24 +1506,39 @@ function buildWordTimings(alignment) {
 }
 
 function wrapStoryWords() {
+  // Build word list directly from wordTimings (derived from ElevenLabs array)
+  // so span indices always match timing indices exactly — no drift possible.
   allWordSpans = [];
   const body = document.getElementById('modalBody');
-  let globalIdx = 0;
-  body.querySelectorAll('.story-paragraph').forEach(para => {
-    const tokens = para.innerText.split(/(\s+)/);
+  const paras = Array.from(body.querySelectorAll('.story-paragraph'));
+
+  // Flatten all paragraph text into one stream for matching
+  let timingIdx = 0;
+
+  paras.forEach(para => {
+    // Use textContent (raw text) not innerText (which normalizes whitespace differently)
+    const raw = para.textContent;
+    // Split on whitespace runs, keeping delimiters so we can reconstruct spacing
+    const tokens = raw.split(/(\s+)/);
     let html = '';
     tokens.forEach(token => {
-      if (/^\s+$/.test(token)) { html += token; }
-      else if (token.length > 0) {
+      if (/^\s+$/.test(token) || token.length === 0) {
+        html += token;
+      } else {
+        // Every non-whitespace token gets a span, including dashes
         const isDash = token === '—' || token === '–' || token === '-';
-        html += `<span class="story-word"${isDash ? ' style="opacity:1"' : ''} data-idx="${globalIdx}">${token}</span>`;
-        globalIdx++;
+        html += `<span class="story-word" data-idx="${timingIdx}">${token}</span>`;
+        timingIdx++;
       }
     });
     para.innerHTML = html;
   });
+
   allWordSpans = Array.from(body.querySelectorAll('.story-word'));
-  if (allWordSpans.length !== wordTimings.length) console.warn('COUNT MISMATCH — spans:', allWordSpans.length, 'timings:', wordTimings.length);
+  console.log(`Word spans: ${allWordSpans.length} | Timings: ${wordTimings.length}`);
+  if (allWordSpans.length !== wordTimings.length) {
+    console.warn(`COUNT MISMATCH — spans: ${allWordSpans.length} timings: ${wordTimings.length}`);
+  }
 }
 
 function startHighlightLoop() {
