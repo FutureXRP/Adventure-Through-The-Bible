@@ -7,7 +7,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
   :root {
     --parchment: #fdf6e3;
@@ -29,133 +28,13 @@
     min-height: 100vh;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
   }
-
-  /* ── SITE HEADER ── */
-  .site-header { padding: 0; border-bottom: 2px solid var(--parchment-dark); line-height: 0; position: relative; }
+  .site-header { padding: 0; border-bottom: 2px solid var(--parchment-dark); line-height: 0; }
   .site-header img { width: 100%; display: block; max-height: 420px; object-fit: cover; object-position: center 30%; }
-
-  /* ── AUTH BAR ── */
-  .auth-bar {
-    background: var(--ink);
-    padding: 10px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    flex-wrap: wrap;
-    position: relative;
-    z-index: 100;
-    overflow: visible;
-  }
-  .auth-bar-left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .auth-bar-avatar {
-    width: 32px; height: 32px;
-    border-radius: 50%;
-    background: rgba(201,162,39,0.2);
-    border: 1.5px solid var(--gold);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .auth-bar-avatar:hover { background: rgba(201,162,39,0.35); }
-  .auth-bar-name {
-    font-family: 'Cinzel', serif;
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--gold);
-    letter-spacing: 0.04em;
-  }
-  .auth-bar-type {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 10px;
-    color: rgba(255,255,255,0.35);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-  .auth-bar-right { display: flex; align-items: center; gap: 10px; }
-  .auth-bar-btn {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 6px 14px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    transition: background 0.15s, color 0.15s;
-    text-decoration: none;
-    display: inline-block;
-  }
-  .auth-bar-btn.primary {
-    background: var(--gold);
-    color: var(--ink);
-  }
-  .auth-bar-btn.primary:hover { background: var(--gold-bright); }
-  .auth-bar-btn.ghost {
-    background: transparent;
-    color: rgba(255,255,255,0.5);
-    border: 1px solid rgba(255,255,255,0.15);
-  }
-  .auth-bar-btn.ghost:hover { color: #fff; border-color: rgba(255,255,255,0.4); }
-
-  /* ── PROGRESS STRIP ── */
   .progress-strip { background: var(--parchment-dark); border-bottom: 1px solid rgba(44,26,14,0.1); padding: 14px 24px; display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
   .progress-label { font-family: 'Source Sans 3', sans-serif; font-size: 13px; font-weight: 600; color: var(--ink-light); letter-spacing: 0.05em; }
   .progress-bar-outer { width: 200px; height: 8px; background: rgba(44,26,14,0.12); border-radius: 4px; overflow: hidden; }
   .progress-bar-inner { height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-bright)); border-radius: 4px; transition: width 0.6s ease; }
   .progress-count { font-family: 'Cinzel', serif; font-size: 13px; font-weight: 600; color: var(--gold); }
-
-  /* ── BADGE SHELF ── */
-  .badge-shelf {
-    background: var(--parchment-dark);
-    border-bottom: 1px solid rgba(44,26,14,0.1);
-    padding: 10px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .badge-shelf-label {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-light);
-    opacity: 0.5;
-    margin-right: 4px;
-  }
-  .badge-chip {
-    width: 34px; height: 34px;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 18px;
-    cursor: pointer;
-    transition: transform 0.2s;
-    position: relative;
-  }
-  .badge-chip.earned {
-    background: linear-gradient(135deg, var(--gold), var(--gold-bright));
-    box-shadow: 0 0 0 2px var(--gold-glow), 0 2px 8px rgba(201,162,39,0.4);
-    animation: badgePulse 3s ease-in-out infinite;
-  }
-  .badge-chip.locked {
-    background: rgba(44,26,14,0.06);
-    border: 1.5px solid rgba(44,26,14,0.12);
-    filter: grayscale(1);
-    opacity: 0.4;
-  }
-  .badge-chip:hover { transform: scale(1.2); }
-  @keyframes badgePulse { 0%,100%{box-shadow:0 0 0 2px var(--gold-glow),0 2px 8px rgba(201,162,39,0.4)} 50%{box-shadow:0 0 0 4px var(--gold-glow),0 4px 16px rgba(201,162,39,0.5)} }
-
-  /* ── MAIN CONTENT ── */
   .main { max-width: 1100px; margin: 0 auto; padding: 0 20px 80px; }
   .era-section { margin-top: 56px; opacity: 0; transform: translateY(16px); animation: fadeUp 0.5s ease forwards; }
   .era-section:nth-child(1){animation-delay:0.05s}.era-section:nth-child(2){animation-delay:0.1s}.era-section:nth-child(3){animation-delay:0.15s}.era-section:nth-child(4){animation-delay:0.2s}.era-section:nth-child(5){animation-delay:0.25s}.era-section:nth-child(6){animation-delay:0.3s}.era-section:nth-child(7){animation-delay:0.35s}.era-section:nth-child(8){animation-delay:0.4s}
@@ -169,14 +48,9 @@
   .story-card { background: #fff; border: 1px solid rgba(44,26,14,0.12); border-radius: 10px; padding: 22px 20px 18px; cursor: pointer; position: relative; overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; box-shadow: 0 2px 8px var(--shadow); }
   .story-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px var(--shadow); border-color: var(--gold); }
   .story-card.completed { border-color: var(--gold); box-shadow: 0 0 0 2px var(--gold-glow), 0 4px 20px var(--gold-glow); animation: goldenGlow 3s ease-in-out infinite; }
-  .story-card.locked { cursor: default; }
-  .story-card.locked:hover { transform: none; box-shadow: 0 2px 8px var(--shadow); border-color: rgba(44,26,14,0.12); }
   @keyframes goldenGlow { 0%,100%{box-shadow:0 0 0 2px var(--gold-glow),0 4px 16px var(--gold-glow)}50%{box-shadow:0 0 0 3px rgba(201,162,39,0.5),0 6px 28px rgba(201,162,39,0.45)} }
   .read-stamp { display: none; position: absolute; top: 12px; right: 12px; background: transparent; border: 2.5px solid var(--crimson); color: var(--crimson); font-family: 'Cinzel', serif; font-size: 9px; font-weight: 700; letter-spacing: 0.18em; padding: 2px 6px; border-radius: 3px; transform: rotate(12deg); opacity: 0.75; }
   .completed .read-stamp { display: block; }
-  .lock-badge { display: none; position: absolute; top: 12px; right: 12px; background: rgba(44,26,14,0.06); border: 1.5px solid rgba(44,26,14,0.14); color: var(--ink-light); font-family: 'Source Sans 3', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; padding: 3px 8px; border-radius: 10px; }
-  .locked .lock-badge { display: flex; align-items: center; gap: 4px; }
-  .locked .card-hook, .locked .card-title { opacity: 0.55; }
   .card-emoji { font-size: 28px; display: block; margin-bottom: 10px; line-height: 1; }
   .card-title { font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 600; color: var(--ink); line-height: 1.3; margin-bottom: 4px; }
   .card-book { font-family: 'Source Sans 3', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
@@ -185,8 +59,6 @@
   .card-location { font-family: 'Source Sans 3', sans-serif; font-size: 11px; color: var(--ink-light); opacity: 0.7; }
   .card-read-btn { font-family: 'Source Sans 3', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; color: var(--crimson); background: none; border: none; cursor: pointer; padding: 0; transition: opacity 0.15s; }
   .card-read-btn:hover { opacity: 0.7; }
-
-  /* ── STORY MODAL ── */
   .modal-backdrop { display: none; position: fixed; inset: 0; background: rgba(20,10,5,0.75); z-index: 1000; align-items: flex-start; justify-content: center; padding: 20px; overflow-y: auto; backdrop-filter: blur(4px); }
   .modal-backdrop.open { display: flex; }
   .modal { background: var(--parchment); border-radius: 14px; max-width: 720px; width: 100%; margin: auto; position: relative; box-shadow: 0 24px 80px rgba(0,0,0,0.45); animation: modalIn 0.3s cubic-bezier(0.34,1.56,0.64,1); }
@@ -207,7 +79,7 @@
   .story-paragraph { font-family: 'Lora', serif; font-size: 1rem; line-height: 1.85; color: var(--ink); margin-bottom: 18px; }
   .story-paragraph:first-child::first-letter { font-family: 'Cinzel', serif; font-size: 3.2em; font-weight: 700; float: left; line-height: 0.8; margin: 0.08em 0.08em 0 0; color: var(--crimson); }
 
-  /* ── AUDIO BAR ── */
+  /* ── AUDIO BAR — below story, above devotional ── */
   .modal-audio { margin: 20px 36px 0; padding: 13px 18px; background: var(--ink); border-radius: 10px; display: flex; align-items: center; gap: 14px; }
   .audio-play-btn { width: 36px; height: 36px; border-radius: 50%; background: var(--gold); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.15s; }
   .audio-play-btn:hover { background: var(--gold-bright); }
@@ -240,10 +112,111 @@
   .connection-title { font-family: 'Cinzel', serif; font-size: 0.8rem; font-weight: 600; color: var(--ink); line-height: 1.3; margin-bottom: 4px; }
   .connection-why { font-family: 'Lora', serif; font-style: italic; font-size: 0.77rem; color: var(--ink-light); line-height: 1.5; }
 
+
+
   /* ── WORD HIGHLIGHTING ── */
-  .story-word { display: inline; border-radius: 3px; padding: 1px 0; transition: background 0.05s, color 0.05s; cursor: default; }
-  .story-word.speaking { background: #c9a227; color: #2c1a0e; border-radius: 3px; padding: 1px 3px; margin: 0 -1px; }
-  .story-para-active { background: rgba(201,162,39,0.07); border-radius: 6px; margin-left: -6px; margin-right: -6px; padding-left: 6px; padding-right: 6px; }
+  .story-word {
+    display: inline;
+    border-radius: 3px;
+    padding: 1px 0;
+    transition: background 0.05s, color 0.05s;
+    cursor: default;
+  }
+  .story-word.speaking {
+    background: #c9a227;
+    color: #2c1a0e;
+    border-radius: 3px;
+    padding: 1px 3px;
+    margin: 0 -1px;
+  }
+  .story-para-active {
+    background: rgba(201,162,39,0.07);
+    border-radius: 6px;
+    margin-left: -6px;
+    margin-right: -6px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+
+  /* ── WELCOME SPLASH ── */
+  .splash-backdrop {
+    position: fixed; inset: 0; z-index: 3000;
+    background: rgba(20,10,5,0.92);
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px;
+    backdrop-filter: blur(6px);
+  }
+  .splash-backdrop.hidden { display: none; }
+  .splash-box {
+    background: var(--parchment);
+    border-radius: 16px;
+    max-width: 520px; width: 100%;
+    padding: 44px 40px 36px;
+    text-align: center;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+    animation: modalIn 0.4s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .splash-emoji { font-size: 48px; margin-bottom: 16px; display: block; }
+  .splash-title { font-family: 'Cinzel', serif; font-size: 1.8rem; font-weight: 700; color: var(--ink); margin-bottom: 10px; }
+  .splash-desc { font-family: 'Lora', serif; font-style: italic; font-size: 1rem; color: var(--ink-light); line-height: 1.65; margin-bottom: 28px; }
+  .splash-btn-primary { display: block; width: 100%; padding: 14px; background: linear-gradient(135deg, var(--gold), var(--gold-bright)); color: var(--ink); border: none; border-radius: 9px; font-family: 'Cinzel', serif; font-size: 14px; font-weight: 700; letter-spacing: 0.06em; cursor: pointer; margin-bottom: 12px; transition: transform 0.15s; }
+  .splash-btn-primary:hover { transform: translateY(-1px); }
+  .splash-btn-secondary { display: block; width: 100%; padding: 12px; background: transparent; color: var(--ink-light); border: 1.5px solid rgba(44,26,14,0.2); border-radius: 9px; font-family: 'Source Sans 3', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; transition: border-color 0.15s; }
+  .splash-btn-secondary:hover { border-color: var(--gold); color: var(--ink); }
+
+  /* ── ACCESS GATE MODAL (login + paywall) ── */
+  .gate-backdrop {
+    display: none; position: fixed; inset: 0;
+    background: rgba(20,10,5,0.80);
+    z-index: 2000;
+    align-items: center; justify-content: center;
+    padding: 24px;
+    backdrop-filter: blur(4px);
+  }
+  .gate-backdrop.open { display: flex; }
+  .gate-box {
+    background: var(--parchment);
+    border-radius: 14px;
+    max-width: 480px; width: 100%;
+    padding: 40px 36px 32px;
+    text-align: center;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.45);
+    animation: modalIn 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    position: relative;
+  }
+  .gate-close { position: absolute; top: 14px; right: 14px; background: rgba(44,26,14,0.08); border: none; border-radius: 50%; width: 32px; height: 32px; font-size: 16px; cursor: pointer; color: var(--ink-light); display: flex; align-items: center; justify-content: center; }
+  .gate-close:hover { background: rgba(44,26,14,0.15); }
+  .gate-emoji { font-size: 36px; display: block; margin-bottom: 14px; }
+  .gate-title { font-family: 'Cinzel', serif; font-size: 1.3rem; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+  .gate-desc { font-family: 'Lora', serif; font-style: italic; font-size: 0.95rem; color: var(--ink-light); line-height: 1.6; margin-bottom: 24px; }
+
+  /* login form */
+  .gate-form { text-align: left; margin-bottom: 16px; }
+  .gate-input { width: 100%; padding: 11px 14px; border: 1.5px solid rgba(44,26,14,0.18); border-radius: 8px; font-family: 'Lora', serif; font-size: 0.95rem; color: var(--ink); background: #fff; margin-bottom: 10px; outline: none; transition: border-color 0.15s; }
+  .gate-input:focus { border-color: var(--gold); }
+  .gate-submit { width: 100%; padding: 13px; background: linear-gradient(135deg, var(--gold), var(--gold-bright)); color: var(--ink); border: none; border-radius: 8px; font-family: 'Cinzel', serif; font-size: 13px; font-weight: 700; letter-spacing: 0.05em; cursor: pointer; margin-bottom: 12px; transition: transform 0.15s; }
+  .gate-submit:hover { transform: translateY(-1px); }
+  .gate-switch { font-family: 'Source Sans 3', sans-serif; font-size: 12px; color: var(--ink-light); text-align: center; }
+  .gate-switch a { color: var(--gold); text-decoration: none; font-weight: 600; cursor: pointer; }
+  .gate-switch a:hover { color: var(--crimson); }
+
+  /* pricing cards */
+  .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+  .pricing-card { border: 2px solid rgba(44,26,14,0.12); border-radius: 10px; padding: 18px 16px; cursor: pointer; transition: border-color 0.15s, box-shadow 0.15s; background: #fff; text-align: center; }
+  .pricing-card:hover { border-color: var(--gold); box-shadow: 0 4px 16px rgba(201,162,39,0.2); }
+  .pricing-card.featured { border-color: var(--gold); box-shadow: 0 4px 16px rgba(201,162,39,0.2); }
+  .pricing-badge { font-family: 'Source Sans 3', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+  .pricing-price { font-family: 'Cinzel', serif; font-size: 1.6rem; font-weight: 700; color: var(--ink); line-height: 1; margin-bottom: 4px; }
+  .pricing-period { font-family: 'Source Sans 3', sans-serif; font-size: 11px; color: var(--ink-light); margin-bottom: 10px; }
+  .pricing-desc { font-family: 'Lora', serif; font-style: italic; font-size: 0.8rem; color: var(--ink-light); line-height: 1.5; }
+  .pricing-cta { display: block; width: 100%; padding: 13px; background: linear-gradient(135deg, var(--gold), var(--gold-bright)); color: var(--ink); border: none; border-radius: 8px; font-family: 'Cinzel', serif; font-size: 13px; font-weight: 700; letter-spacing: 0.05em; cursor: pointer; margin-bottom: 10px; transition: transform 0.15s; }
+  .pricing-cta:hover { transform: translateY(-1px); }
+
+  /* card access indicators */
+  .card-lock { position: absolute; top: 10px; right: 10px; font-size: 14px; opacity: 0.4; }
+  .story-card.access-account .card-lock::after { content: '🔒'; }
+  .story-card.access-premium .card-lock::after { content: '⭐'; }
 
   /* ── QUIZ ── */
   .modal-quiz { margin: 20px 36px 0; background: #fff; border: 1px solid rgba(44,26,14,0.10); border-radius: 12px; overflow: hidden; }
@@ -283,14 +256,6 @@
   .quiz-cel-sub { font-family: 'Lora', serif; font-style: italic; font-size: 0.95rem; color: var(--ink-light); margin-bottom: 20px; line-height: 1.6; }
   .quiz-score-badge { display: inline-block; background: var(--ink); color: var(--gold); font-family: 'Cinzel', serif; font-size: 12px; font-weight: 700; padding: 7px 18px; border-radius: 20px; margin-bottom: 20px; letter-spacing: 0.06em; }
 
-
-  /* ── QUIZ MUTE BUTTON ── */
-  .quiz-mute-btn {
-    background: none; border: none; cursor: pointer;
-    font-size: 16px; opacity: 0.5; transition: opacity 0.15s;
-    padding: 0; line-height: 1;
-  }
-  .quiz-mute-btn:hover { opacity: 1; }
   /* ── MODAL FOOTER ── */
   .modal-footer { padding: 20px 36px 28px; border-top: 1px solid var(--parchment-dark); margin-top: 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
   .mark-done-btn { background: linear-gradient(135deg,var(--gold),var(--gold-bright)); color: var(--ink); border: none; border-radius: 7px; padding: 10px 22px; font-family: 'Cinzel', serif; font-size: 13px; font-weight: 700; letter-spacing: 0.05em; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 2px 8px rgba(201,162,39,0.3); }
@@ -300,316 +265,25 @@
   .nav-btn { background: rgba(44,26,14,0.07); border: 1px solid rgba(44,26,14,0.12); border-radius: 6px; padding: 8px 14px; font-family: 'Source Sans 3', sans-serif; font-size: 12px; font-weight: 600; color: var(--ink-light); cursor: pointer; transition: background 0.15s; }
   .nav-btn:hover { background: rgba(44,26,14,0.12); }
   .nav-btn:disabled { opacity: 0.35; cursor: default; }
-
-  /* ── BADGE EARNED POPUP ── */
-  .badge-earned-popup {
-    position: fixed;
-    bottom: 80px;
-    left: 50%;
-    transform: translateX(-50%) translateY(30px);
-    background: var(--ink);
-    border: 2px solid var(--gold);
-    border-radius: 14px;
-    padding: 16px 24px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    z-index: 3000;
-    opacity: 0;
-    transition: opacity 0.4s, transform 0.4s;
-    pointer-events: none;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-    max-width: 360px;
-    width: calc(100% - 48px);
-  }
-  .badge-earned-popup.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-  .badge-earned-emoji { font-size: 36px; flex-shrink: 0; }
-  .badge-earned-text { flex: 1; }
-  .badge-earned-label { font-family: 'Source Sans 3', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; }
-  .badge-earned-name { font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 700; color: #fff; }
-  .badge-earned-sub { font-family: 'Lora', serif; font-style: italic; font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-top: 2px; }
-
-  /* ── BADGE JOURNEY MODAL ── */
-  .journey-backdrop { display: none; position: fixed; inset: 0; background: rgba(20,10,5,0.78); z-index: 2000; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(4px); }
-  .journey-backdrop.open { display: flex; }
-  .journey-card { background: var(--parchment); border-radius: 16px; max-width: 560px; width: 100%; max-height: 90vh; overflow-y: auto; box-shadow: 0 24px 80px rgba(0,0,0,0.45); animation: modalIn 0.3s cubic-bezier(0.34,1.56,0.64,1); }
-  .journey-header { padding: 28px 28px 20px; border-bottom: 1px solid var(--parchment-dark); display: flex; align-items: flex-start; justify-content: space-between; }
-  .journey-title { font-family: 'Cinzel', serif; font-size: 1.3rem; font-weight: 700; color: var(--ink); }
-  .journey-sub { font-family: 'Lora', serif; font-style: italic; font-size: 0.85rem; color: var(--ink-light); margin-top: 4px; }
-  .journey-close { background: rgba(44,26,14,0.08); border: none; border-radius: 50%; width: 34px; height: 34px; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--ink-light); flex-shrink: 0; }
-  .journey-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 24px 28px 28px; }
-  .journey-badge-item { text-align: center; }
-  .journey-badge-icon { width: 64px; height: 64px; border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; font-size: 30px; transition: transform 0.2s; }
-  .journey-badge-icon.earned { background: linear-gradient(135deg, var(--gold), var(--gold-bright)); box-shadow: 0 0 0 3px var(--gold-glow), 0 4px 16px rgba(201,162,39,0.4); animation: badgePulse 3s ease-in-out infinite; }
-  .journey-badge-icon.locked { background: rgba(44,26,14,0.06); border: 2px solid rgba(44,26,14,0.10); filter: grayscale(1); opacity: 0.4; }
-  .journey-badge-name { font-family: 'Cinzel', serif; font-size: 0.72rem; font-weight: 600; color: var(--ink); line-height: 1.3; margin-bottom: 4px; }
-  .journey-badge-status { font-family: 'Source Sans 3', sans-serif; font-size: 10px; color: var(--ink-light); opacity: 0.6; }
-  .journey-badge-status.earned-label { color: var(--gold); opacity: 1; font-weight: 600; }
-
-  /* ── PROFILE SWITCHER DROPDOWN ── */
-  .profile-menu { position: relative; overflow: visible; }
-  .profile-dropdown {
-    display: none;
-    position: absolute;
-    top: calc(100% + 8px);
-    left: 0;
-    background: #fff;
-    border: 1px solid rgba(44,26,14,0.14);
-    border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-    min-width: 240px;
-    z-index: 900;
-    overflow: visible;
-    animation: dropIn 0.2s ease;
-  }
-  @keyframes dropIn { from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)} }
-  .profile-dropdown.open { display: block; }
-  .profile-drop-header { padding: 12px 16px 8px; font-family: 'Source Sans 3', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-light); opacity: 0.5; }
-  .profile-drop-item { padding: 10px 16px; display: flex; align-items: center; gap: 10px; cursor: pointer; transition: background 0.12s; border: none; background: none; width: 100%; text-align: left; }
-  .profile-drop-item:hover { background: var(--parchment); }
-  .profile-drop-item.active { background: rgba(201,162,39,0.08); }
-  .profile-drop-avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--parchment-dark); display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
-  .profile-drop-name { font-family: 'Cinzel', serif; font-size: 0.82rem; font-weight: 600; color: var(--ink); }
-  .profile-drop-type { font-family: 'Source Sans 3', sans-serif; font-size: 10px; color: var(--ink-light); opacity: 0.6; }
-  .profile-drop-check { margin-left: auto; color: var(--gold); font-size: 14px; }
-  .profile-drop-divider { height: 1px; background: var(--parchment-dark); margin: 4px 0; }
-  .profile-drop-action { padding: 10px 16px; font-family: 'Source Sans 3', sans-serif; font-size: 11px; font-weight: 600; color: var(--crimson); cursor: pointer; background: none; border: none; width: 100%; text-align: left; transition: background 0.12s; }
-  .profile-drop-action:hover { background: var(--parchment); }
-  .profile-drop-action.muted { color: var(--ink-light); }
-
-  /* ── ADD CHILD MODAL ── */
-  .child-modal-backdrop { display: none; position: fixed; inset: 0; background: rgba(20,10,5,0.75); z-index: 2500; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(4px); }
-  .child-modal-backdrop.open { display: flex; }
-  .child-modal { background: var(--parchment); border-radius: 16px; max-width: 420px; width: 100%; box-shadow: 0 24px 80px rgba(0,0,0,0.45); animation: modalIn 0.3s cubic-bezier(0.34,1.56,0.64,1); overflow: hidden; }
-  .child-modal-bar { height: 4px; background: linear-gradient(90deg, var(--gold), var(--gold-bright)); }
-  .child-modal-inner { padding: 28px 28px 24px; }
-  .child-modal-title { font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: 700; color: var(--ink); margin-bottom: 20px; }
-  .child-form-group { margin-bottom: 14px; }
-  .child-form-label { display: block; font-family: 'Source Sans 3', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 6px; }
-  .child-form-input { display: block; width: 100%; padding: 10px 13px; border: 1.5px solid rgba(44,26,14,0.16); border-radius: 8px; background: #fff; font-family: 'Lora', serif; font-size: 0.95rem; color: var(--ink); outline: none; transition: border-color 0.15s, box-shadow 0.15s; }
-  .child-form-input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px var(--gold-glow); }
-  .child-avatar-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
-  .child-avatar-opt { width: 36px; height: 36px; border-radius: 50%; border: 2px solid rgba(44,26,14,0.12); background: var(--parchment); font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: border-color 0.15s, transform 0.15s; }
-  .child-avatar-opt:hover { transform: scale(1.15); border-color: var(--gold); }
-  .child-avatar-opt.selected { border-color: var(--gold); box-shadow: 0 0 0 3px var(--gold-glow); }
-  .child-modal-btns { display: flex; gap: 10px; margin-top: 20px; }
-  .child-modal-save { flex: 1; padding: 11px; background: linear-gradient(135deg,var(--gold),var(--gold-bright)); color: var(--ink); border: none; border-radius: 8px; font-family: 'Cinzel', serif; font-size: 13px; font-weight: 700; cursor: pointer; transition: transform 0.15s; }
-  .child-modal-save:hover { transform: translateY(-1px); }
-  .child-modal-cancel { padding: 11px 18px; background: transparent; color: var(--ink-light); border: 1.5px solid rgba(44,26,14,0.18); border-radius: 8px; font-family: 'Source Sans 3', sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; }
-
-  /* ── PAYWALL / WELCOME (kept but feature-flagged) ── */
-  .welcome-overlay { display: none; position: fixed; inset: 0; z-index: 3000; background: rgba(20,10,5,0.92); backdrop-filter: blur(6px); align-items: center; justify-content: center; padding: 20px; overflow-y: auto; }
-  .welcome-overlay.open { display: flex; animation: wFadeIn 0.5s ease; }
-  @keyframes wFadeIn { from{opacity:0}to{opacity:1} }
-  .welcome-card { background: var(--parchment); border-radius: 18px; max-width: 560px; width: 100%; margin: auto; overflow: hidden; box-shadow: 0 32px 100px rgba(0,0,0,0.6); animation: wSlideUp 0.5s cubic-bezier(0.34,1.2,0.64,1); }
-  @keyframes wSlideUp { from{opacity:0;transform:translateY(32px) scale(0.96)}to{opacity:1;transform:translateY(0) scale(1)} }
-  .welcome-top-bar { height: 5px; background: linear-gradient(90deg,#7c3aed,var(--gold),var(--crimson),#065f46,var(--gold-bright)); }
-  .welcome-inner { padding: 44px 44px 36px; }
-  .welcome-eyebrow { font-family: 'Source Sans 3', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
-  .welcome-title { font-family: 'Cinzel', serif; font-size: clamp(1.6rem,5vw,2.2rem); font-weight: 700; color: var(--ink); line-height: 1.15; margin-bottom: 10px; }
-  .welcome-sub { font-family: 'Lora', serif; font-style: italic; font-size: 1rem; color: var(--ink-light); line-height: 1.65; margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--parchment-dark); }
-  .welcome-free-row { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
-  .welcome-free-badge { background: linear-gradient(135deg,var(--gold),var(--gold-bright)); color: var(--ink); font-family: 'Cinzel', serif; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; padding: 6px 14px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
-  .welcome-free-text { font-family: 'Lora', serif; font-size: 0.88rem; color: var(--ink-light); line-height: 1.5; }
-  .welcome-pricing { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
-  .welcome-plan { border: 1.5px solid rgba(44,26,14,0.14); border-radius: 12px; padding: 18px 16px; background: #fff; position: relative; transition: border-color 0.2s,box-shadow 0.2s; }
-  .welcome-plan:hover { border-color: var(--gold); box-shadow: 0 4px 18px rgba(201,162,39,0.2); }
-  .welcome-plan.featured { border-color: var(--gold); box-shadow: 0 0 0 2px var(--gold-glow); background: linear-gradient(160deg,#fffdf5,#fff); }
-  .welcome-plan-badge { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--ink); font-family: 'Source Sans 3', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 3px 10px; border-radius: 10px; white-space: nowrap; }
-  .welcome-plan-name { font-family: 'Cinzel', serif; font-size: 0.8rem; font-weight: 600; color: var(--ink); margin-bottom: 6px; letter-spacing: 0.03em; }
-  .welcome-plan-price { font-family: 'Cinzel', serif; font-size: 1.5rem; font-weight: 700; color: var(--ink); line-height: 1; margin-bottom: 2px; }
-  .welcome-plan-price span { font-family: 'Source Sans 3', sans-serif; font-size: 11px; font-weight: 400; color: var(--ink-light); }
-  .welcome-plan-desc { font-family: 'Lora', serif; font-style: italic; font-size: 0.78rem; color: var(--ink-light); line-height: 1.5; margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(44,26,14,0.07); }
-  .welcome-plan-detail { font-family: 'Source Sans 3', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.06em; color: var(--crimson); margin-top: 6px; }
-  .welcome-cta-primary { display: block; width: 100%; padding: 14px; background: linear-gradient(135deg,var(--gold),var(--gold-bright)); color: var(--ink); border: none; border-radius: 9px; font-family: 'Cinzel', serif; font-size: 14px; font-weight: 700; letter-spacing: 0.04em; cursor: pointer; transition: transform 0.15s,box-shadow 0.15s; box-shadow: 0 3px 12px rgba(201,162,39,0.35); margin-bottom: 10px; text-align: center; }
-  .welcome-cta-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(201,162,39,0.45); }
-  .welcome-cta-secondary { display: block; width: 100%; padding: 12px; background: transparent; color: var(--ink-light); border: 1.5px solid rgba(44,26,14,0.18); border-radius: 9px; font-family: 'Source Sans 3', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; cursor: pointer; transition: border-color 0.15s,background 0.15s; text-align: center; }
-  .welcome-cta-secondary:hover { border-color: var(--ink-light); background: rgba(44,26,14,0.04); }
-  .welcome-footnote { text-align: center; margin-top: 16px; font-family: 'Source Sans 3', sans-serif; font-size: 11px; color: var(--ink-light); opacity: 0.6; }
-  .paywall-backdrop { display: none; position: fixed; inset: 0; background: rgba(20,10,5,0.78); z-index: 2000; align-items: center; justify-content: center; padding: 20px; overflow-y: auto; backdrop-filter: blur(5px); }
-  .paywall-backdrop.open { display: flex; }
-  .paywall-card { background: var(--parchment); border-radius: 16px; max-width: 520px; width: 100%; margin: auto; overflow: hidden; box-shadow: 0 28px 80px rgba(0,0,0,0.5); animation: modalIn 0.3s cubic-bezier(0.34,1.56,0.64,1); }
-  .paywall-top-bar { height: 4px; background: linear-gradient(90deg,var(--crimson),var(--gold),var(--gold-bright)); }
-  .paywall-inner { padding: 36px 36px 32px; }
-  .paywall-lock-icon { width: 48px; height: 48px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
-  .paywall-lock-icon svg { width: 22px; height: 22px; fill: var(--gold); }
-  .paywall-eyebrow { font-family: 'Source Sans 3', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
-  .paywall-title { font-family: 'Cinzel', serif; font-size: 1.5rem; font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 10px; }
-  .paywall-sub { font-family: 'Lora', serif; font-style: italic; font-size: 0.95rem; color: var(--ink-light); line-height: 1.65; margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px solid var(--parchment-dark); }
-  .paywall-sub strong { font-style: normal; color: var(--ink); font-family: 'Cinzel', serif; font-size: 0.9rem; }
-  .paywall-pricing { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
-  .paywall-plan { border: 1.5px solid rgba(44,26,14,0.14); border-radius: 11px; padding: 16px; background: #fff; position: relative; cursor: pointer; transition: border-color 0.2s,box-shadow 0.2s,transform 0.15s; }
-  .paywall-plan:hover { border-color: var(--gold); box-shadow: 0 4px 16px rgba(201,162,39,0.2); transform: translateY(-1px); }
-  .paywall-plan.pw-featured { border-color: var(--gold); box-shadow: 0 0 0 2px var(--gold-glow); }
-  .paywall-plan-tag { position: absolute; top: -9px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--ink); font-family: 'Source Sans 3', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 2px 10px; border-radius: 8px; white-space: nowrap; }
-  .paywall-plan-name { font-family: 'Cinzel', serif; font-size: 0.78rem; font-weight: 600; color: var(--ink); margin-bottom: 5px; }
-  .paywall-plan-price { font-family: 'Cinzel', serif; font-size: 1.4rem; font-weight: 700; color: var(--ink); line-height: 1; margin-bottom: 2px; }
-  .paywall-plan-price span { font-family: 'Source Sans 3', sans-serif; font-size: 10px; font-weight: 400; color: var(--ink-light); }
-  .paywall-plan-note { font-family: 'Source Sans 3', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.06em; color: var(--crimson); margin-top: 5px; }
-  .paywall-plan-desc { font-family: 'Lora', serif; font-style: italic; font-size: 0.76rem; color: var(--ink-light); line-height: 1.45; margin-top: 7px; padding-top: 7px; border-top: 1px solid rgba(44,26,14,0.07); }
-  .paywall-btn-monthly { display: block; width: 100%; padding: 13px; background: linear-gradient(135deg,var(--gold),var(--gold-bright)); color: var(--ink); border: none; border-radius: 9px; font-family: 'Cinzel', serif; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; cursor: pointer; transition: transform 0.15s,box-shadow 0.15s; box-shadow: 0 3px 12px rgba(201,162,39,0.35); margin-bottom: 10px; text-align: center; }
-  .paywall-btn-monthly:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(201,162,39,0.45); }
-  .paywall-btn-lifetime { display: block; width: 100%; padding: 11px; background: var(--ink); color: var(--gold); border: none; border-radius: 9px; font-family: 'Cinzel', serif; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; cursor: pointer; transition: background 0.15s; margin-bottom: 14px; text-align: center; }
-  .paywall-btn-lifetime:hover { background: #1a0c06; }
-  .paywall-dismiss { display: block; width: 100%; padding: 10px; background: transparent; color: var(--ink-light); border: none; border-radius: 8px; font-family: 'Source Sans 3', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; cursor: pointer; transition: color 0.15s; text-align: center; }
-  .paywall-dismiss:hover { color: var(--ink); }
-  .paywall-footnote { text-align: center; margin-top: 14px; font-family: 'Source Sans 3', sans-serif; font-size: 11px; color: var(--ink-light); opacity: 0.55; }
-
-  /* ── TOAST ── */
-  .toast { position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--ink); color: var(--gold-bright); font-family: 'Cinzel', serif; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; padding: 12px 24px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.35); z-index: 2000; opacity: 0; transition: opacity 0.3s,transform 0.3s; pointer-events: none; }
+  .toast { position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--ink); color: var(--gold-bright); font-family: 'Cinzel', serif; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; padding: 12px 24px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.35); z-index: 2000; opacity: 0; transition: opacity 0.3s, transform 0.3s; pointer-events: none; }
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-
   .site-footer { text-align: center; padding: 32px 24px; border-top: 1px solid var(--parchment-dark); font-family: 'Source Sans 3', sans-serif; font-size: 12px; color: var(--ink-light); opacity: 0.6; }
-
   @media (max-width: 600px) {
     .modal-hero,.modal-body,.modal-footer{padding-left:20px;padding-right:20px}
     .modal-audio,.modal-devotional,.modal-connections,.modal-quiz{margin-left:20px;margin-right:20px}
+    .modal-devotional{padding:18px 16px}
     .connections-grid{grid-template-columns:1fr}
     .story-grid{grid-template-columns:1fr 1fr}
-    .journey-grid{grid-template-columns:repeat(3,1fr)}
-    .welcome-inner{padding:32px 24px 28px}
-    .welcome-pricing,.paywall-pricing{grid-template-columns:1fr}
   }
   @media (max-width: 420px) { .story-grid{grid-template-columns:1fr} }
 </style>
 </head>
 <body>
 
-<!-- ── WELCOME OVERLAY (feature-flagged) ── -->
-<div class="welcome-overlay" id="welcomeOverlay" role="dialog" aria-modal="true">
-  <div class="welcome-card">
-    <div class="welcome-top-bar"></div>
-    <div class="welcome-inner">
-      <div class="welcome-eyebrow">Welcome to Footsteps</div>
-      <h1 class="welcome-title">Walk Through the<br>Greatest Story Ever Told</h1>
-      <p class="welcome-sub">30 Bible stories told the way they were meant to be told — vivid, present-tense, and alive. Built for families. Designed to stick with your kids.</p>
-      <div class="welcome-free-row">
-        <div class="welcome-free-badge">3 Free Stories</div>
-        <div class="welcome-free-text">Start reading right now — no account needed. Unlock the full library when you're ready.</div>
-      </div>
-      <div class="welcome-pricing">
-        <div class="welcome-plan">
-          <div class="welcome-plan-name">One-Time Purchase</div>
-          <div class="welcome-plan-price">$49.99 <span>once</span></div>
-          <div class="welcome-plan-detail">All 50 stories available at launch</div>
-          <div class="welcome-plan-desc">Pay once, own everything available now. Future story packs sold separately.</div>
-        </div>
-        <div class="welcome-plan featured">
-          <div class="welcome-plan-badge">Most Popular</div>
-          <div class="welcome-plan-name">Monthly</div>
-          <div class="welcome-plan-price">$4.99 <span>/ month</span></div>
-          <div class="welcome-plan-detail">All 50 stories + every new story added</div>
-          <div class="welcome-plan-desc">All current stories plus everything we publish after launch. Cancel anytime.</div>
-        </div>
-      </div>
-      <button class="welcome-cta-primary" id="welcomeStartBtn">Explore the Free Stories →</button>
-      <button class="welcome-cta-secondary" id="welcomeUnlockBtn">Unlock the Full Library</button>
-      <div class="welcome-footnote">No account required to start reading</div>
-    </div>
-  </div>
-</div>
-
-<!-- ── PAYWALL MODAL (feature-flagged) ── -->
-<div class="paywall-backdrop" id="paywallBackdrop" role="dialog" aria-modal="true">
-  <div class="paywall-card">
-    <div class="paywall-top-bar"></div>
-    <div class="paywall-inner">
-      <div class="paywall-lock-icon">
-        <svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4" fill="none" stroke="#c9a227" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="16" r="1.5" fill="#2c1a0e"/></svg>
-      </div>
-      <div class="paywall-eyebrow">Full Library</div>
-      <h2 class="paywall-title">You've reached the end<br>of the free stories.</h2>
-      <p class="paywall-sub">You've read your 3 free stories. To keep going — and to unlock all <strong>50 stories</strong> from Genesis to the early church — choose a plan below.</p>
-      <div class="paywall-pricing">
-        <div class="paywall-plan" id="pwLifetimePlan">
-          <div class="paywall-plan-name">One-Time Purchase</div>
-          <div class="paywall-plan-price">$49.99 <span>once</span></div>
-          <div class="paywall-plan-note">All 50 stories available now</div>
-          <div class="paywall-plan-desc">Pay once, own everything available at launch. Future story packs sold separately.</div>
-        </div>
-        <div class="paywall-plan pw-featured" id="pwMonthlyPlan">
-          <div class="paywall-plan-tag">Best Value</div>
-          <div class="paywall-plan-name">Monthly</div>
-          <div class="paywall-plan-price">$4.99 <span>/ month</span></div>
-          <div class="paywall-plan-note">All 50 stories + every new story added</div>
-          <div class="paywall-plan-desc">All current stories plus everything published after launch. Cancel anytime.</div>
-        </div>
-      </div>
-      <button class="paywall-btn-monthly" id="pwBtnMonthly">Start Monthly — $4.99/mo</button>
-      <button class="paywall-btn-lifetime" id="pwBtnLifetime">One-Time Purchase — $49.99</button>
-      <button class="paywall-dismiss" id="paywallDismiss">Not right now — go back</button>
-      <div class="paywall-footnote">Secure checkout · Cancel anytime · Stories work on any device</div>
-    </div>
-  </div>
-</div>
-
-<!-- ── BADGE JOURNEY MODAL ── -->
-<div class="journey-backdrop" id="journeyBackdrop" role="dialog" aria-modal="true">
-  <div class="journey-card">
-    <div class="journey-header">
-      <div>
-        <div class="journey-title">My Journey</div>
-        <div class="journey-sub" id="journeyProfileName">Loading...</div>
-      </div>
-      <button class="journey-close" onclick="closeJourney()">✕</button>
-    </div>
-    <div class="journey-grid" id="journeyGrid"></div>
-  </div>
-</div>
-
-<!-- ── ADD CHILD MODAL ── -->
-<div class="child-modal-backdrop" id="childModalBackdrop">
-  <div class="child-modal">
-    <div class="child-modal-bar"></div>
-    <div class="child-modal-inner">
-      <div class="child-modal-title">Add a Child Profile</div>
-      <div class="child-form-group">
-        <label class="child-form-label" for="childNameInput">Child's Name</label>
-        <input class="child-form-input" type="text" id="childNameInput" placeholder="e.g. Emma">
-      </div>
-      <div class="child-form-group">
-        <label class="child-form-label" for="childAgeInput">Age (optional)</label>
-        <input class="child-form-input" type="number" id="childAgeInput" placeholder="e.g. 10" min="3" max="18">
-      </div>
-      <div class="child-form-group">
-        <label class="child-form-label">Pick an Avatar</label>
-        <div class="child-avatar-grid" id="childAvatarGrid"></div>
-      </div>
-      <div id="childModalMsg" style="font-family:'Lora',serif;font-style:italic;font-size:0.85rem;color:#791F1F;display:none;margin-top:8px;"></div>
-      <div class="child-modal-btns">
-        <button class="child-modal-cancel" onclick="closeChildModal()">Cancel</button>
-        <button class="child-modal-save" onclick="saveChild()">Add Profile</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ── BADGE EARNED POPUP ── -->
-<div class="badge-earned-popup" id="badgePopup">
-  <div class="badge-earned-emoji" id="badgePopupEmoji">🏆</div>
-  <div class="badge-earned-text">
-    <div class="badge-earned-label">Badge Earned!</div>
-    <div class="badge-earned-name" id="badgePopupName"></div>
-    <div class="badge-earned-sub" id="badgePopupSub"></div>
-  </div>
-</div>
-
-<!-- ── SITE HEADER ── -->
 <header class="site-header">
   <img src="./header.png" alt="Footsteps — Walk through the greatest story ever told">
 </header>
 
-<!-- ── AUTH BAR ── -->
-<div class="auth-bar" id="authBar">
-  <div class="auth-bar-left" id="authBarLeft">
-    <!-- populated by JS -->
-  </div>
-  <div class="auth-bar-right" id="authBarRight">
-    <!-- populated by JS -->
-  </div>
-</div>
-
-<!-- ── PROGRESS STRIP ── -->
 <div class="progress-strip">
   <span class="progress-label">YOUR JOURNEY</span>
   <div class="progress-bar-outer">
@@ -618,17 +292,34 @@
   <span class="progress-count" id="progressCount">0 stories read</span>
 </div>
 
-<!-- ── BADGE SHELF ── -->
-<div class="badge-shelf" id="badgeShelf">
-  <span class="badge-shelf-label">Badges</span>
-  <!-- populated by JS -->
+
+<!-- WELCOME SPLASH -->
+<div class="splash-backdrop" id="splashBackdrop">
+  <div class="splash-box">
+    <span class="splash-emoji">👣</span>
+    <h2 class="splash-title">Welcome to Footsteps</h2>
+    <p class="splash-desc">Walk through the greatest story ever told — 30 Bible stories brought to life with vivid storytelling, read-along audio, and questions your family can dig into together.</p>
+    <button class="splash-btn-primary" onclick="dismissSplash()">Start Reading →</button>
+    <button class="splash-btn-secondary" onclick="dismissSplash(); openGate('login')">Sign In / Create Account</button>
+  </div>
+</div>
+
+<!-- ACCESS GATE (login + paywall) -->
+<div class="gate-backdrop" id="gateBackdrop">
+  <div class="gate-box" id="gateBox">
+    <button class="gate-close" onclick="closeGate()">✕</button>
+    <div id="gateContent"></div>
+  </div>
 </div>
 
 <main class="main" id="mainContent"></main>
 
-<!-- ── STORY MODAL ── -->
+<div class="toast" id="toast">⭐ Story marked as read!</div>
+
+<!-- MODAL -->
 <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true">
   <div class="modal" id="modal">
+
     <div class="modal-hero" id="modalHero">
       <div class="modal-era-stripe" id="modalStripe"></div>
       <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
@@ -638,7 +329,9 @@
       <p class="modal-hook" id="modalHook"></p>
       <div class="modal-meta" id="modalMeta"></div>
     </div>
+
     <div class="modal-body" id="modalBody"></div>
+
     <div class="modal-audio">
       <button class="audio-play-btn" id="audioPlayBtn" aria-label="Play">
         <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
@@ -652,9 +345,11 @@
       </div>
       <div class="audio-status" id="audioStatus">Audio coming soon</div>
     </div>
+
     <div class="modal-devotional" id="modalDevotional"></div>
     <div class="modal-connections" id="modalConnections"></div>
     <div class="modal-quiz" id="modalQuiz" style="display:none"></div>
+
     <div class="modal-footer">
       <div class="nav-btns">
         <button class="nav-btn" id="prevBtn">← Prev</button>
@@ -662,594 +357,38 @@
       </div>
       <button class="mark-done-btn" id="markDoneBtn">Mark as Read ✓</button>
     </div>
+
   </div>
 </div>
 
-<div class="toast" id="toast"></div>
-<footer class="site-footer">&copy; 2025 Footsteps &nbsp;·&nbsp; Walk through the greatest story ever told</footer>
+<footer class="site-footer">
+  &copy; 2025 Footsteps &nbsp;·&nbsp; Walk through the greatest story ever told
+</footer>
 
 <script>
+let DATA=null,stories=[],eras=[],currentStoryIndex=null;
+const PROGRESS_KEY='footsteps_progress_v1';
 
-// ════════════════════════════════════════════════════
-// QUIZ SOUND EFFECTS
-// Uses Web Audio API — no external files needed
-// ════════════════════════════════════════════════════
-let audioCtx = null;
+function getProgress(){try{return new Set(JSON.parse(localStorage.getItem(PROGRESS_KEY)||'[]'))}catch(e){return new Set()}}
+function saveProgress(set){localStorage.setItem(PROGRESS_KEY,JSON.stringify([...set]))}
 
-function getAudioCtx() {
-  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-  return audioCtx;
+async function init(){
+  try{const r=await fetch('./stories.json');DATA=await r.json()}
+  catch(e){try{const r=await fetch('./data/stories.json');DATA=await r.json()}
+  catch(e2){document.getElementById('mainContent').innerHTML='<p style="text-align:center;padding:60px;font-style:italic;color:#5c3d1e;">Could not load stories.json</p>';return}}
+  stories=DATA.stories.sort((a,b)=>a.order-b.order);
+  eras=DATA.eras;
+  render();updateProgress();
 }
 
-function playCorrectSound() {
-  if (localStorage.getItem('footsteps_mute') === '1') return;
-  try {
-    const ctx = getAudioCtx();
-    // Bright ascending chime: C5 → E5 → G5
-    [[523.25, 0], [659.25, 0.12], [783.99, 0.24]].forEach(([freq, delay]) => {
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-      osc.type = 'sine';
-      osc.frequency.value = freq;
-      const t = ctx.currentTime + delay;
-      gain.gain.setValueAtTime(0, t);
-      gain.gain.linearRampToValueAtTime(0.25, t + 0.02);
-      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.35);
-      osc.start(t);
-      osc.stop(t + 0.35);
-    });
-  } catch(e) {}
-}
-
-function playWrongSound() {
-  if (localStorage.getItem('footsteps_mute') === '1') return;
-  try {
-    const ctx = getAudioCtx();
-    // Low thud: short E3
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
-    osc.connect(gain);
-    gain.connect(ctx.destination);
-    osc.type = 'sine';
-    osc.frequency.value = 164.81;
-    const t = ctx.currentTime;
-    gain.gain.setValueAtTime(0.2, t);
-    gain.gain.exponentialRampToValueAtTime(0.001, t + 0.25);
-    osc.start(t);
-    osc.stop(t + 0.25);
-  } catch(e) {}
-}
-
-function toggleQuizMute() {
-  const muted = localStorage.getItem('footsteps_mute') === '1';
-  localStorage.setItem('footsteps_mute', muted ? '0' : '1');
-  document.querySelectorAll('#quizMuteBtn').forEach(btn => {
-    btn.textContent = muted ? '🔇' : '🔊';
-  });
-}
-
-// ════════════════════════════════════════════════════
-// SUPABASE + CONFIG
-// ════════════════════════════════════════════════════
-const SUPABASE_URL = 'https://bqyysvjnitbeimvaxkao.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxeXlzdmpuaXRiZWltdmF4a2FvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA0MTA1OTIsImV4cCI6MjA5NTk4NjU5Mn0._GJFay_isjcvm7O_Ry7hBk1EfkKQvqoMPVVOBL2uhug';
-const { createClient } = supabase;
-const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, { auth: { detectSessionInUrl: true, persistSession: true, autoRefreshToken: true } });
-
-const PAYWALL_ENABLED = true; // ← flip to false to disable paywall
-const FREE_STORY_LIMIT = 3;
-const SUPABASE_FUNCTIONS_URL = 'https://bqyysvjnitbeimvaxkao.supabase.co/functions/v1';
-const STRIPE_PK = 'pk_test_51THwruLhNi71Q1IHXoFa7HQdFk5Gz4PirM6J9VCPjcgZ4rCZkrUWCdRBtCLZZBydmLj1S7j4dush2j8GHd1rxd000GC3sAMxu';
-const PROGRESS_KEY = 'footsteps_progress_v1';
-const WELCOME_KEY = 'footsteps_seen_welcome';
-const AVATARS = ['📖','⭐','🦁','🐬','🦅','🌟','🦋','🐢','🌙','☀️','🌿','🦊','🐧','🦉','🌊','🏔️','🌸','🦒','🐝','🎠'];
-
-// ── BADGE DEFINITIONS ───────────────────────────────
-const BADGE_DEFS = [
-  { id: 'creation',      emoji: '🌍', name: 'In the Beginning',  era: 'creation',      desc: 'Completed all Creation stories' },
-  { id: 'patriarchs',    emoji: '⛺', name: 'The Patriarchs',    era: 'patriarchs',    desc: 'Completed all Patriarch stories' },
-  { id: 'exodus',        emoji: '🔥', name: 'The Deliverer',     era: 'exodus',        desc: 'Completed all Exodus stories' },
-  { id: 'promised-land', emoji: '⚔️', name: 'The Warrior',      era: 'promised-land', desc: 'Completed all Promised Land stories' },
-  { id: 'kingdom',       emoji: '👑', name: 'The Kingdom',       era: 'kingdom',       desc: 'Completed all Kingdom stories' },
-  { id: 'exile',         emoji: '📜', name: 'The Remnant',       era: 'exile',         desc: 'Completed all Exile stories' },
-  { id: 'nt-life',       emoji: '✨', name: 'The Witness',       era: 'nt-life',       desc: 'Completed all Life of Jesus stories' },
-  { id: 'nt-church',     emoji: '⚡', name: 'The Sent Ones',     era: 'nt-church',     desc: 'Completed all Early Church stories' },
-  { id: 'complete',      emoji: '🏆', name: 'Footsteps Complete',era: null,            desc: 'Read every single story' },
-];
-
-// ── APP STATE ────────────────────────────────────────
-let DATA = null, stories = [], eras = [];
-let currentStoryIndex = null;
-let authUser = null;          // Supabase auth user
-let userProfile = null;       // profiles row
-let activeProfile = null;     // { id, type: 'user'|'child', name, emoji } — who is reading right now
-let childProfiles = [];       // child_profiles rows for parent accounts
-let dbProgress = new Set();   // story_ids completed by activeProfile
-let dbBadges = new Set();     // badge_ids earned by activeProfile
-let selectedChildAvatar = '⭐';
-
-// ════════════════════════════════════════════════════
-// INIT
-// ════════════════════════════════════════════════════
-async function init() {
-  // Load stories
-  try { const r = await fetch('./stories.json'); DATA = await r.json(); }
-  catch(e) { try { const r = await fetch('./data/stories.json'); DATA = await r.json(); } catch(e2) { document.getElementById('mainContent').innerHTML = '<p style="text-align:center;padding:60px;font-style:italic">Could not load stories.json</p>'; return; } }
-  stories = DATA.stories.sort((a,b) => a.order - b.order);
-  eras = DATA.eras;
-
-  // Auth state
-  try {
-    const { data: { session } } = await sb.auth.getSession();
-    if (session) {
-      authUser = session.user;
-      await loadUserProfile();
-    }
-  } catch(e) {
-    console.warn('Auth session error:', e);
-  }
-
-  // Welcome splash (paywall feature flag) — always check, show if not seen
-  if (PAYWALL_ENABLED && !localStorage.getItem(WELCOME_KEY)) {
-    const overlay = document.getElementById('welcomeOverlay');
-    overlay.classList.add('open');
-    overlay.style.display = 'flex';
-    overlay.style.zIndex = '9999';
-    document.body.style.overflow = 'hidden';
-  }
-
-  buildChildAvatarGrid();
-  renderAuthBar();
-  renderBadgeShelf();
-  render();
-  updateProgress();
-  await checkCheckoutReturn();
-
-  // Listen for auth changes (login/logout in another tab etc.)
-  sb.auth.onAuthStateChange(async (event, session) => {
-    if (event === 'SIGNED_IN' && session) {
-      authUser = session.user;
-      await loadUserProfile();
-    } else if (event === 'SIGNED_OUT') {
-      authUser = null; userProfile = null; activeProfile = null;
-      childProfiles = []; dbProgress = new Set(); dbBadges = new Set();
-    }
-    renderAuthBar();
-    renderBadgeShelf();
-    render();
-    updateProgress();
-  });
-}
-
-// ════════════════════════════════════════════════════
-// SUPABASE DATA LOADING
-// ════════════════════════════════════════════════════
-async function loadUserProfile() {
-  const { data: profile } = await sb.from('profiles').select('*, is_paid, has_lifetime, plan_type, stripe_customer_id').eq('id', authUser.id).single();
-  if (!profile) return;
-  userProfile = profile;
-
-  // Set active profile to user by default
-  activeProfile = { id: authUser.id, type: 'user', name: profile.display_name, emoji: profile.avatar_emoji };
-
-  // Load children if parent account
-  if (profile.account_type === 'parent') {
-    const { data: children } = await sb.from('child_profiles').select('*').eq('parent_id', authUser.id).order('created_at');
-    childProfiles = children || [];
-  }
-
-  await loadProgressForActiveProfile();
-}
-
-async function loadProgressForActiveProfile() {
-  if (!activeProfile) { dbProgress = new Set(); dbBadges = new Set(); return; }
-
-  const { data: progress } = await sb.from('story_progress')
-    .select('story_id')
-    .eq('profile_id', activeProfile.id)
-    .eq('profile_type', activeProfile.type);
-  dbProgress = new Set((progress || []).map(r => r.story_id));
-
-  const { data: badges } = await sb.from('badges')
-    .select('badge_id')
-    .eq('profile_id', activeProfile.id)
-    .eq('profile_type', activeProfile.type);
-  dbBadges = new Set((badges || []).map(r => r.badge_id));
-
-  renderBadgeShelf();
-  updateProgress();
-  render();
-}
-
-async function switchProfile(profileId, profileType) {
-  if (profileType === 'user') {
-    activeProfile = { id: authUser.id, type: 'user', name: userProfile.display_name, emoji: userProfile.avatar_emoji };
-  } else {
-    const child = childProfiles.find(c => c.id === profileId);
-    if (!child) return;
-    activeProfile = { id: child.id, type: 'child', name: child.display_name, emoji: child.avatar_emoji };
-  }
-  closeDropdown();
-  await loadProgressForActiveProfile();
-  renderAuthBar();
-}
-
-// ════════════════════════════════════════════════════
-// PROGRESS — reads from DB if logged in, localStorage otherwise
-// ════════════════════════════════════════════════════
-function getProgress() {
-  if (authUser && activeProfile) return dbProgress;
-  try { return new Set(JSON.parse(localStorage.getItem(PROGRESS_KEY) || '[]')); } catch(e) { return new Set(); }
-}
-
-function saveProgressLocal(set) {
-  localStorage.setItem(PROGRESS_KEY, JSON.stringify([...set]));
-}
-
-async function markStoryComplete(story) {
-  if (authUser && activeProfile) {
-    // Save to Supabase
-    await sb.from('story_progress').upsert({
-      profile_id: activeProfile.id,
-      profile_type: activeProfile.type,
-      story_id: story.id,
-      story_order: story.order,
-      era: story.era,
-    });
-    dbProgress.add(story.id);
-    await checkAndAwardBadges(story);
-  } else {
-    // Save to localStorage
-    const p = getProgress();
-    p.add(story.id);
-    saveProgressLocal(p);
-  }
-  updateProgress();
-  render();
-  if (currentStoryIndex !== null) renderModal(currentStoryIndex);
-}
-
-// ════════════════════════════════════════════════════
-// BADGE LOGIC
-// ════════════════════════════════════════════════════
-async function checkAndAwardBadges(justCompletedStory) {
-  const progress = getProgress();
-
-  for (const badge of BADGE_DEFS) {
-    if (dbBadges.has(badge.id)) continue; // already earned
-
-    let earned = false;
-    if (badge.id === 'complete') {
-      // All stories done
-      earned = stories.every(s => progress.has(s.id));
-    } else {
-      // All stories in this era done
-      const eraStories = stories.filter(s => s.era === badge.era);
-      earned = eraStories.length > 0 && eraStories.every(s => progress.has(s.id));
-    }
-
-    if (earned) {
-      dbBadges.add(badge.id);
-      await sb.from('badges').upsert({
-        profile_id: activeProfile.id,
-        profile_type: activeProfile.type,
-        badge_id: badge.id,
-      });
-      showBadgePopup(badge);
-      renderBadgeShelf();
-    }
-  }
-}
-
-function showBadgePopup(badge) {
-  const popup = document.getElementById('badgePopup');
-  document.getElementById('badgePopupEmoji').textContent = badge.emoji;
-  document.getElementById('badgePopupName').textContent = badge.name;
-  document.getElementById('badgePopupSub').textContent = badge.desc;
-  popup.classList.add('show');
-  setTimeout(() => popup.classList.remove('show'), 4000);
-}
-
-function renderBadgeShelf() {
-  const shelf = document.getElementById('badgeShelf');
-  const earned = authUser ? dbBadges : new Set();
-  const chips = BADGE_DEFS.map(badge => {
-    const isEarned = earned.has(badge.id);
-    return `<div class="badge-chip ${isEarned ? 'earned' : 'locked'}" title="${badge.name}" onclick="openJourney()">${badge.emoji}</div>`;
-  }).join('');
-  shelf.innerHTML = `<span class="badge-shelf-label">Badges</span>${chips}`;
-}
-
-function openJourney() {
-  const earned = authUser ? dbBadges : new Set();
-  const profileName = activeProfile ? activeProfile.name : 'Guest';
-  document.getElementById('journeyProfileName').textContent = profileName + "'s badges";
-
-  const grid = document.getElementById('journeyGrid');
-  grid.innerHTML = BADGE_DEFS.map(badge => {
-    const isEarned = earned.has(badge.id);
-    const eraStories = badge.era ? stories.filter(s => s.era === badge.era) : stories;
-    const completedCount = eraStories.filter(s => getProgress().has(s.id)).length;
-    const statusText = isEarned ? 'Earned!' : `${completedCount} of ${eraStories.length} stories`;
-    return `<div class="journey-badge-item">
-      <div class="journey-badge-icon ${isEarned ? 'earned' : 'locked'}">${badge.emoji}</div>
-      <div class="journey-badge-name">${badge.name}</div>
-      <div class="journey-badge-status ${isEarned ? 'earned-label' : ''}">${statusText}</div>
-    </div>`;
-  }).join('');
-
-  document.getElementById('journeyBackdrop').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeJourney() {
-  document.getElementById('journeyBackdrop').classList.remove('open');
-  if (!document.getElementById('modalBackdrop').classList.contains('open')) {
-    document.body.style.overflow = '';
-  }
-}
-
-// ════════════════════════════════════════════════════
-// AUTH BAR
-// ════════════════════════════════════════════════════
-function renderAuthBar() {
-  const left = document.getElementById('authBarLeft');
-  const right = document.getElementById('authBarRight');
-
-  if (!authUser || !userProfile) {
-    // Logged out
-    left.innerHTML = `<span style="font-family:'Lora',serif;font-style:italic;font-size:12px;color:rgba(255,255,255,0.35);">Reading as guest — progress saved locally</span>`;
-    right.innerHTML = `
-      <a href="./login.html?mode=signup" class="auth-bar-btn primary">Create Account</a>
-      <a href="./login.html" class="auth-bar-btn ghost">Sign In</a>`;
-    return;
-  }
-
-  // Logged in
-  const isParent = userProfile.account_type === 'parent';
-  left.innerHTML = `
-    <div class="profile-menu">
-      <div style="display:flex;align-items:center;gap:10px;cursor:pointer" onclick="toggleDropdown()">
-        <div class="auth-bar-avatar">${activeProfile ? activeProfile.emoji : userProfile.avatar_emoji}</div>
-        <div>
-          <div class="auth-bar-name">${activeProfile ? activeProfile.name : userProfile.display_name}</div>
-          <div class="auth-bar-type">${isParent ? (activeProfile && activeProfile.type === 'child' ? 'Child Profile' : 'Parent Account') : 'Individual Account'}</div>
-          ${userProfile.is_paid ? `<div style="font-family:'Source Sans 3',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:rgba(201,162,39,0.15);color:var(--gold);border:1px solid rgba(201,162,39,0.3);border-radius:4px;padding:1px 6px">${userProfile.plan_type === 'monthly' ? '● MONTHLY' : '● FULL ACCESS'}</div>` : ''}
-        </div>
-        <span style="color:rgba(201,162,39,0.6);font-size:10px;margin-left:4px;">▼</span>
-      </div>
-      <div class="profile-dropdown" id="profileDropdown">
-        <div class="profile-drop-header">Switch Profile</div>
-        <!-- Parent / Individual profile -->
-        <button class="profile-drop-item ${activeProfile && activeProfile.type === 'user' ? 'active' : ''}" onclick="switchProfile('${authUser.id}','user')">
-          <div class="profile-drop-avatar">${userProfile.avatar_emoji}</div>
-          <div>
-            <div class="profile-drop-name">${userProfile.display_name}</div>
-            <div class="profile-drop-type">${isParent ? 'Parent' : 'Individual'}</div>
-          </div>
-          ${activeProfile && activeProfile.type === 'user' ? '<span class="profile-drop-check">✓</span>' : ''}
-        </button>
-        <!-- Child profiles -->
-        ${childProfiles.map(c => `
-          <button class="profile-drop-item ${activeProfile && activeProfile.id === c.id ? 'active' : ''}" onclick="switchProfile('${c.id}','child')">
-            <div class="profile-drop-avatar">${c.avatar_emoji}</div>
-            <div>
-              <div class="profile-drop-name">${c.display_name}</div>
-              <div class="profile-drop-type">${c.age ? 'Age ' + c.age : 'Child'}</div>
-            </div>
-            ${activeProfile && activeProfile.id === c.id ? '<span class="profile-drop-check">✓</span>' : ''}
-          </button>`).join('')}
-        ${isParent ? `
-          <div class="profile-drop-divider"></div>
-          <button class="profile-drop-action" onclick="openChildModal()">+ Add Child Profile</button>` : ''}
-        <div class="profile-drop-divider"></div>
-        <button class="profile-drop-action muted" onclick="handleSignOut()">Sign Out</button>
-      </div>
-    </div>`;
-
-  right.innerHTML = `<button class="auth-bar-btn ghost" onclick="openJourney()">🏆 My Journey</button><a href="./account.html" class="auth-bar-btn ghost">My Account</a>`;
-}
-
-function toggleDropdown() {
-  document.getElementById('profileDropdown').classList.toggle('open');
-}
-function closeDropdown() {
-  const d = document.getElementById('profileDropdown');
-  if (d) d.classList.remove('open');
-}
-document.addEventListener('click', e => {
-  if (!e.target.closest('.profile-menu')) closeDropdown();
-});
-
-async function handleSignOut() {
-  closeDropdown();
-  await sb.auth.signOut();
-  authUser = null; userProfile = null; activeProfile = null;
-  childProfiles = []; dbProgress = new Set(); dbBadges = new Set();
-  renderAuthBar();
-  renderBadgeShelf();
-  render();
-  updateProgress();
-}
-
-// ════════════════════════════════════════════════════
-// ADD CHILD MODAL
-// ════════════════════════════════════════════════════
-function buildChildAvatarGrid() {
-  const grid = document.getElementById('childAvatarGrid');
-  AVATARS.forEach(emoji => {
-    const btn = document.createElement('button');
-    btn.className = 'child-avatar-opt' + (emoji === '⭐' ? ' selected' : '');
-    btn.textContent = emoji;
-    btn.onclick = () => {
-      selectedChildAvatar = emoji;
-      document.querySelectorAll('.child-avatar-opt').forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-    };
-    grid.appendChild(btn);
-  });
-}
-
-function openChildModal() {
-  closeDropdown();
-  document.getElementById('childNameInput').value = '';
-  document.getElementById('childAgeInput').value = '';
-  document.getElementById('childModalMsg').style.display = 'none';
-  selectedChildAvatar = '⭐';
-  document.querySelectorAll('.child-avatar-opt').forEach(b => b.classList.toggle('selected', b.textContent === '⭐'));
-  document.getElementById('childModalBackdrop').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeChildModal() {
-  document.getElementById('childModalBackdrop').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-async function saveChild() {
-  const name = document.getElementById('childNameInput').value.trim();
-  const age = document.getElementById('childAgeInput').value;
-  const msgEl = document.getElementById('childModalMsg');
-  if (!name) { msgEl.textContent = 'Please enter a name.'; msgEl.style.display = 'block'; return; }
-
-  const { data, error } = await sb.from('child_profiles').insert({
-    parent_id: authUser.id,
-    display_name: name,
-    age: age ? parseInt(age) : null,
-    avatar_emoji: selectedChildAvatar,
-  }).select().single();
-
-  if (error) { msgEl.textContent = 'Something went wrong. Please try again.'; msgEl.style.display = 'block'; return; }
-
-  childProfiles.push(data);
-  closeChildModal();
-  showToast('✓ ' + name + ' added!');
-  renderAuthBar();
-}
-
-// ════════════════════════════════════════════════════
-// PAYWALL / WELCOME
-// ════════════════════════════════════════════════════
-
-// ════════════════════════════════════════════════════
-// STRIPE CHECKOUT
-// ════════════════════════════════════════════════════
-async function startCheckout(plan) {
-  if (!authUser) {
-    // Not logged in — send to signup first, return to index after
-    window.location.href = './login.html?mode=signup&returnTo=' + encodeURIComponent(window.location.pathname + '?openPaywall=1');
-    return;
-  }
-
-  // Show loading state on buttons
-  const btnMonthly = document.getElementById('pwBtnMonthly');
-  const btnLifetime = document.getElementById('pwBtnLifetime');
-  const originalMonthly = btnMonthly.textContent;
-  const originalLifetime = btnLifetime.textContent;
-  btnMonthly.textContent = 'Loading…';
-  btnLifetime.textContent = 'Loading…';
-  btnMonthly.disabled = true;
-  btnLifetime.disabled = true;
-
-  try {
-    const { data: { session } } = await sb.auth.getSession();
-    const response = await fetch(`${SUPABASE_FUNCTIONS_URL}/create-checkout`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${session.access_token}`,
-      },
-      body: JSON.stringify({ plan }),
-    });
-
-    const data = await response.json();
-
-    if (data.error) throw new Error(data.error);
-    if (data.url) {
-      window.location.href = data.url;
-    }
-  } catch (err) {
-    console.error('Checkout error:', err);
-    showToast('Something went wrong. Please try again.');
-    btnMonthly.textContent = originalMonthly;
-    btnLifetime.textContent = originalLifetime;
-    btnMonthly.disabled = false;
-    btnLifetime.disabled = false;
-  }
-}
-
-// Check URL params on load — handle post-checkout return
-async function checkCheckoutReturn() {
-  const params = new URLSearchParams(window.location.search);
-  const checkout = params.get('checkout');
-  const openPaywall = params.get('openPaywall');
-
-  if (checkout === 'success') {
-    // Clean URL
-    window.history.replaceState({}, '', window.location.pathname);
-    // Reload profile to pick up is_paid = true set by webhook
-    if (authUser) {
-      await loadUserProfile();
-      renderAuthBar();
-      render();
-      showToast('🎉 Welcome to Footsteps! All stories are now unlocked.');
-    }
-  } else if (checkout === 'cancelled') {
-    window.history.replaceState({}, '', window.location.pathname);
-    showToast('Checkout cancelled — no charge was made.');
-  }
-
-  if (openPaywall === '1') {
-    window.history.replaceState({}, '', window.location.pathname);
-    setTimeout(openPaywall, 500);
-  }
-}
-
-function closeWelcome() {
-  localStorage.setItem(WELCOME_KEY, '1');
-  const overlay = document.getElementById('welcomeOverlay');
-  overlay.classList.remove('open');
-  overlay.style.display = 'none';
-  document.body.style.overflow = '';
-}
-function openPaywall() {
-  document.getElementById('paywallBackdrop').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closePaywall() {
-  document.getElementById('paywallBackdrop').classList.remove('open');
-  document.body.style.overflow = '';
-}
-document.getElementById('welcomeStartBtn').addEventListener('click', closeWelcome);
-document.getElementById('welcomeUnlockBtn').addEventListener('click', () => { closeWelcome(); setTimeout(openPaywall, 250); });
-document.getElementById('paywallDismiss').addEventListener('click', closePaywall);
-document.getElementById('paywallBackdrop').addEventListener('click', e => { if (e.target === document.getElementById('paywallBackdrop')) closePaywall(); });
-document.getElementById('pwBtnMonthly').addEventListener('click', () => startCheckout('monthly'));
-document.getElementById('pwBtnLifetime').addEventListener('click', () => startCheckout('one_time'));
-document.getElementById('pwLifetimePlan').addEventListener('click', () => startCheckout('one_time'));
-document.getElementById('pwMonthlyPlan').addEventListener('click', () => startCheckout('monthly'));
-
-function storyIsLocked(story) {
-  if (!PAYWALL_ENABLED) return false;
-  // has_lifetime = permanent access to launch stories (survives subscription cancellation)
-  // is_paid = active access (monthly subscription OR one-time purchase)
-  const hasAccess = userProfile && (userProfile.is_paid === true || userProfile.has_lifetime === true);
-  if (hasAccess) return false;
-  return story.order > FREE_STORY_LIMIT;
-}
-
-// ════════════════════════════════════════════════════
-// RENDER
-// ════════════════════════════════════════════════════
-function render() {
-  const main = document.getElementById('mainContent');
-  const progress = getProgress();
-  let html = '';
-  eras.forEach(era => {
-    const eraStories = stories.filter(s => s.era === era.id);
-    if (!eraStories.length) return;
-    html += `<section class="era-section">
+function render(){
+  const main=document.getElementById('mainContent');
+  const progress=getProgress();
+  let html='';
+  eras.forEach(era=>{
+    const eraStories=stories.filter(s=>s.era===era.id);
+    if(!eraStories.length)return;
+    html+=`<section class="era-section">
       <div class="era-header">
         <div class="era-accent" style="background:${era.color}"></div>
         <div class="era-text">
@@ -1258,400 +397,610 @@ function render() {
           <div class="era-context">${era.worldContext}</div>
         </div>
       </div>
-      <div class="story-grid">${eraStories.map(s => renderCard(s, progress)).join('')}</div>
+      <div class="story-grid">${eraStories.map(s=>renderCard(s,progress)).join('')}</div>
     </section>`;
   });
-  main.innerHTML = html;
-  document.querySelectorAll('.story-card[data-id]').forEach(c => c.addEventListener('click', () => handleCardClick(c.dataset.id)));
-  document.querySelectorAll('.card-read-btn').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); handleCardClick(b.dataset.id); }));
+  main.innerHTML=html;
+  document.querySelectorAll('.story-card[data-id]').forEach(c=>c.addEventListener('click',()=>openModal(c.dataset.id)));
+  document.querySelectorAll('.card-read-btn').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation();openModal(b.dataset.id)}));
 }
 
-function renderCard(story, progress) {
-  const done = progress.has(story.id);
-  const locked = storyIsLocked(story);
-  return `<div class="story-card${done ? ' completed' : ''}${locked ? ' locked' : ''}" data-id="${story.id}" role="button" tabindex="0">
-    ${done ? '<div class="read-stamp">READ</div>' : ''}
-    ${locked ? '<div class="lock-badge">🔒 Locked</div>' : ''}
+function renderCard(story,progress){
+  const done=progress.has(story.id);
+  const access=story.access||'free';
+  const accessible=canAccessStory(story);
+  const accessClass=access==='account'?'access-account':access==='premium'?'access-premium':'';
+  return`<div class="story-card${done?' completed':''} ${accessClass}" data-id="${story.id}" role="button" tabindex="0" aria-label="Read ${story.title}">
+    <div class="read-stamp">READ</div>
+    <div class="card-lock"></div>
     <span class="card-emoji">${story.emoji}</span>
     <div class="card-title">${story.title}</div>
     <div class="card-book">${story.book}</div>
     <div class="card-hook">${story.hook}</div>
     <div class="card-footer">
       <span class="card-location">📍 ${story.location.split('—')[0].trim()}</span>
-      <button class="card-read-btn" data-id="${story.id}">${locked ? 'Unlock →' : 'Read →'}</button>
+      <button class="card-read-btn" data-id="${story.id}">${accessible?'Read →':'Unlock →'}</button>
     </div>
   </div>`;
 }
 
-function handleCardClick(storyId) {
-  const story = stories.find(s => s.id === storyId);
-  if (!story) return;
-  if (storyIsLocked(story)) { openPaywall(); return; }
-  openModal(storyId);
-}
-
-// ════════════════════════════════════════════════════
-// MODAL
-// ════════════════════════════════════════════════════
-function openModal(storyId) {
-  const idx = stories.findIndex(s => s.id === storyId);
-  if (idx === -1) return;
-  currentStoryIndex = idx;
+function openModal(storyId){
+  const idx=stories.findIndex(s=>s.id===storyId);
+  if(idx===-1)return;
+  currentStoryIndex=idx;
   renderModal(idx);
   document.getElementById('modalBackdrop').classList.add('open');
-  document.body.style.overflow = 'hidden';
+  document.body.style.overflow='hidden';
 }
 
-function renderModal(idx) {
-  const story = stories[idx];
-  const era = eras.find(e => e.id === story.era);
-  const progress = getProgress();
-  const done = progress.has(story.id);
+function renderModal(idx){
+  const story=stories[idx];
+  const era=eras.find(e=>e.id===story.era);
+  const progress=getProgress();
+  const done=progress.has(story.id);
 
-  document.getElementById('modalStripe').style.background = era ? era.color : '#c9a227';
-  document.getElementById('modalEmoji').textContent = story.emoji;
-  document.getElementById('modalEyebrow').textContent = `${era ? era.label : ''} · ${story.book}`;
-  document.getElementById('modalTitle').textContent = story.title;
-  document.getElementById('modalHook').textContent = story.hook;
-  document.getElementById('modalMeta').innerHTML = `<span class="modal-meta-item">📍 ${story.location}</span><span class="modal-meta-item">🗓 ${story.date}</span>`;
+  document.getElementById('modalStripe').style.background=era?era.color:'#c9a227';
+  document.getElementById('modalEmoji').textContent=story.emoji;
+  document.getElementById('modalEyebrow').textContent=`${era?era.label:''} · ${story.book}`;
+  document.getElementById('modalTitle').textContent=story.title;
+  document.getElementById('modalHook').textContent=story.hook;
+  document.getElementById('modalMeta').innerHTML=`<span class="modal-meta-item">📍 ${story.location}</span><span class="modal-meta-item">🗓 ${story.date}</span>`;
 
-  const bodyEl = document.getElementById('modalBody');
-  bodyEl.innerHTML = story.story.map(p => `<p class="story-paragraph">${p}</p>`).join('');
-  bodyEl.scrollTop = 0;
+  const bodyEl=document.getElementById('modalBody');
+  bodyEl.innerHTML=story.story.map(p=>`<p class="story-paragraph">${p}</p>`).join('');
+  bodyEl.scrollTop=0;
 
   // Audio
-  const audioStatus = document.getElementById('audioStatus');
-  const playBtn = document.getElementById('audioPlayBtn');
-  if (currentAudio) { currentAudio.pause(); currentAudio = null; isAudioPlaying = false; }
-  playBtn.innerHTML = '<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>';
-  document.getElementById('audioFill').style.width = '0%';
-  document.getElementById('audioTime').textContent = '0:00';
-  if (story.audio) {
-    audioStatus.textContent = '';
-    playBtn.style.opacity = '1';
-    currentAudioSrc = story.audio;
-    currentTimestamps = null; wordTimings = []; allWordSpans = [];
-    playBtn.onclick = toggleAudio;
-    document.getElementById('audioProgressWrap').onclick = scrubAudio;
-    const tsPath = story.audio.replace('.mp3', '.json');
-    fetch(tsPath).then(r => r.ok ? r.json() : null).then(ts => { if (ts) { currentTimestamps = ts; } }).catch(() => {});
+  const audioStatus=document.getElementById('audioStatus');
+  const playBtn=document.getElementById('audioPlayBtn');
+  // Stop existing audio when switching stories
+  if(currentAudio){currentAudio.pause();currentAudio=null;isAudioPlaying=false;}
+  playBtn.innerHTML='<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>';
+  document.getElementById('audioFill').style.width='0%';
+  document.getElementById('audioTime').textContent='0:00';
+  if(story.audio){
+    audioStatus.textContent='';
+    playBtn.style.opacity='1';
+    currentAudioSrc=story.audio;
+    currentTimestamps=null;
+    wordTimings=[];
+    allWordSpans=[];
+    playBtn.onclick=toggleAudio;
+    document.getElementById('audioProgressWrap').onclick=scrubAudio;
+    // Try to load timestamp JSON
+    const tsPath=story.audio.replace('.mp3','.json');
+    fetch(tsPath)
+      .then(r=>r.ok?r.json():null)
+      .then(ts=>{
+        if(ts){
+          currentTimestamps=ts;
+          audioStatus.textContent='';
+        }
+      })
+      .catch(()=>{});
   } else {
-    audioStatus.textContent = 'Audio coming soon';
-    playBtn.style.opacity = '0.4'; playBtn.onclick = null; currentAudioSrc = null;
-    document.getElementById('audioProgressWrap').onclick = null;
+    audioStatus.textContent='Audio coming soon';
+    playBtn.style.opacity='0.4';
+    playBtn.onclick=null;
+    currentAudioSrc=null;
+    currentTimestamps=null;
+    document.getElementById('audioProgressWrap').onclick=null;
   }
 
   // Devotional
-  const devEl = document.getElementById('modalDevotional');
-  if (story.devotional) {
-    devEl.style.display = '';
-    devEl.innerHTML = `<div class="devotional-label">Big Idea</div>
+  const devEl=document.getElementById('modalDevotional');
+  if(story.devotional){
+    devEl.style.display='';
+    devEl.innerHTML=`<div class="devotional-label">Big Idea</div>
       <div class="devotional-idea">${story.devotional.bigIdea}</div>
       <div class="devotional-qs-label">Talk About It</div>
-      ${story.devotional.questions.map(q => `<div class="devotional-q">${q}</div>`).join('')}`;
-  } else { devEl.style.display = 'none'; }
+      ${story.devotional.questions.map(q=>`<div class="devotional-q">${q}</div>`).join('')}`;
+  } else { devEl.style.display='none'; }
 
   // Connections
-  const connEl = document.getElementById('modalConnections');
-  if (story.connections && story.connections.length) {
-    connEl.style.display = '';
-    connEl.innerHTML = `<div class="connections-label">This story connects to</div>
+  const connEl=document.getElementById('modalConnections');
+  if(story.connections&&story.connections.length){
+    connEl.style.display='';
+    connEl.innerHTML=`<div class="connections-label">This story connects to</div>
       <div class="connections-grid">
-        ${story.connections.map(c => `<div class="connection-card" onclick="openModal('${c.storyId}')">
+        ${story.connections.map(c=>`<div class="connection-card" onclick="openModal('${c.storyId}')">
           <div class="connection-top"><span class="connection-ref">${c.reference}</span><span class="connection-arrow">↗</span></div>
           <div class="connection-title">${c.title}</div>
           <div class="connection-why">${c.why}</div>
         </div>`).join('')}
       </div>`;
-  } else { connEl.style.display = 'none'; }
+  } else { connEl.style.display='none'; }
 
   // Quiz
-  const quizEl = document.getElementById('modalQuiz');
-  if (story.quiz && story.quiz.length) {
-    quizEl.style.display = '';
-    initQuiz(story.quiz, quizEl, story);
-  } else { quizEl.style.display = 'none'; quizEl.innerHTML = ''; }
+  const quizEl=document.getElementById('modalQuiz');
+  if(story.quiz&&story.quiz.length){
+    quizEl.style.display='';
+    initQuiz(story.quiz, quizEl);
+  } else {
+    quizEl.style.display='none';
+    quizEl.innerHTML='';
+  }
 
-  const btn = document.getElementById('markDoneBtn');
-  btn.textContent = done ? '✓ Already Read' : 'Mark as Read ✓';
-  done ? btn.classList.add('already-done') : btn.classList.remove('already-done');
-  document.getElementById('prevBtn').disabled = idx <= 0;
-  document.getElementById('nextBtn').disabled = idx >= stories.length - 1;
-  document.getElementById('prevBtn').dataset.idx = idx;
-  document.getElementById('nextBtn').dataset.idx = idx;
+  // Mark done
+  const btn=document.getElementById('markDoneBtn');
+  btn.textContent=done?'✓ Already Read':'Mark as Read ✓';
+  done?btn.classList.add('already-done'):btn.classList.remove('already-done');
+
+  // Nav
+  document.getElementById('prevBtn').disabled=idx<=0;
+  document.getElementById('nextBtn').disabled=idx>=stories.length-1;
+  document.getElementById('prevBtn').dataset.idx=idx;
+  document.getElementById('nextBtn').dataset.idx=idx;
 }
 
-function initQuiz(questions, container, story) {
-  const letters = ['A','B','C','D'];
-  let current = 0, answered = false, score = 0;
-  function renderQ() {
-    const q = questions[current];
-    container.innerHTML = `
+function initQuiz(questions, container){
+  const letters=['A','B','C','D'];
+  let current=0, answered=false, score=0;
+
+  function renderQ(){
+    const q=questions[current];
+    container.innerHTML=`
       <div class="quiz-header">
         <span class="quiz-header-label">Story Quiz</span>
-        <div class="quiz-dots">${questions.map((_,i) => `<div class="quiz-dot ${i<current?'qdone':i===current?'qactive':''}"></div>`).join('')}</div>
+        <div class="quiz-dots">${questions.map((_,i)=>`<div class="quiz-dot ${i<current?'qdone':i===current?'qactive':''}"></div>`).join('')}</div>
       </div>
       <div class="quiz-body">
         <div class="quiz-q-num">Question ${current+1} of ${questions.length}</div>
         <div class="quiz-q-text">${q.question}</div>
-        <div class="quiz-options">${q.options.map((opt,i) => `<button class="quiz-option" data-idx="${i}"><span class="quiz-letter">${letters[i]}</span>${opt}</button>`).join('')}</div>
+        <div class="quiz-options">
+          ${q.options.map((opt,i)=>`<button class="quiz-option" data-idx="${i}"><span class="quiz-letter">${letters[i]}</span>${opt}</button>`).join('')}
+        </div>
         <div class="quiz-feedback" id="qfeedback"></div>
         <button class="quiz-next-btn" id="qnext">${current<questions.length-1?'Next Question →':'See Your Results!'}</button>
       </div>`;
-    answered = false;
-    container.querySelectorAll('.quiz-option').forEach(btn => {
-      btn.addEventListener('click', () => {
-        if (answered) return;
-        const idx = parseInt(btn.dataset.idx);
-        const fb = container.querySelector('#qfeedback');
-        const nb = container.querySelector('#qnext');
-        if (idx === q.answer) {
-          answered = true; score++;
-          playCorrectSound();
-          btn.className = 'quiz-option qcorrect';
-          fb.className = 'quiz-feedback qcorrect-msg';
-          fb.textContent = 'Correct! ' + (q.explanation || 'Well done!');
-          nb.className = 'quiz-next-btn qvisible';
+
+    answered=false;
+    container.querySelectorAll('.quiz-option').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        if(answered)return;
+        const idx=parseInt(btn.dataset.idx);
+        const fb=container.querySelector('#qfeedback');
+        const nb=container.querySelector('#qnext');
+        if(idx===q.answer){
+          answered=true; score++;
+          btn.className='quiz-option qcorrect';
+          fb.className='quiz-feedback qcorrect-msg';
+          fb.textContent='Correct! '+( q.explanation||'Well done!');
+          nb.className='quiz-next-btn qvisible';
         } else {
-          playWrongSound();
-          btn.className = 'quiz-option qwrong';
-          fb.className = 'quiz-feedback qwrong-msg';
-          fb.textContent = 'Not quite — try again!';
-          setTimeout(() => { btn.className = 'quiz-option'; }, 800);
+          btn.className='quiz-option qwrong';
+          fb.className='quiz-feedback qwrong-msg';
+          fb.textContent='Not quite — try again!';
+          setTimeout(()=>{btn.className='quiz-option';},800);
         }
       });
     });
-    container.querySelector('#qnext').addEventListener('click', () => {
+    container.querySelector('#qnext').addEventListener('click',()=>{
       current++;
-      if (current < questions.length) renderQ();
+      if(current<questions.length) renderQ();
       else showCelebration();
     });
   }
-  function showCelebration() {
-    // Save quiz attempt to Supabase
-    if (authUser && activeProfile) {
-      sb.from('quiz_attempts').insert({
-        profile_id: activeProfile.id,
-        profile_type: activeProfile.type,
-        story_id: story.id,
-        score,
-        max_score: questions.length,
-      });
-    }
-    const colors = ['#c9a227','#f0c040','#8b1a1a','#c9a227','#3B6D11','#f0c040','#7c3aed','#c9a227','#f0c040','#065f46'];
-    const stars = score === questions.length ? '★ ★ ★' : score >= questions.length * 0.66 ? '★ ★ ☆' : '★ ☆ ☆';
-    const msg = score === questions.length ? 'You got every question right! You really know this story.' : `Great effort! You got ${score} out of ${questions.length}. Worth a second read!`;
-    container.innerHTML = `
+
+  function showCelebration(){
+    const colors=['#c9a227','#f0c040','#8b1a1a','#c9a227','#3B6D11','#f0c040','#7c3aed','#c9a227','#f0c040','#065f46'];
+    const stars=score===questions.length?'★ ★ ★':score>=questions.length*0.66?'★ ★ ☆':'★ ☆ ☆';
+    const msg=score===questions.length
+      ?'You got every question right! You really know this story.'
+      :`Great effort! You got ${score} out of ${questions.length}. Worth a second read!`;
+    container.innerHTML=`
       <div class="quiz-celebration qvisible">
         <div class="quiz-stars">${stars}</div>
-        <div class="quiz-confetti">${colors.map((c,i) => `<div class="quiz-confetti-dot" style="background:${c};animation-delay:${i*0.06}s"></div>`).join('')}</div>
+        <div class="quiz-confetti">${colors.map((c,i)=>`<div class="quiz-confetti-dot" style="background:${c};animation-delay:${i*0.06}s"></div>`).join('')}</div>
         <div class="quiz-cel-title">Well done!</div>
         <div class="quiz-cel-sub">${msg}</div>
         <div class="quiz-score-badge">${score} out of ${questions.length} correct</div>
       </div>`;
   }
+
   renderQ();
 }
 
-function closeModal() {
-  if (currentAudio) { currentAudio.pause(); currentAudio = null; isAudioPlaying = false; }
-  stopHighlightLoop(); clearHighlights();
-  wordTimings = []; allWordSpans = []; currentTimestamps = null; lastHighlightIdx = -1;
+function closeModal(){
+  if(currentAudio){currentAudio.pause();currentAudio=null;isAudioPlaying=false;}
+  stopHighlightLoop();
+  clearHighlights();
+  wordTimings=[];
+  allWordSpans=[];
+  currentTimestamps=null;
+  lastHighlightIdx=-1;
   document.getElementById('modalBackdrop').classList.remove('open');
-  document.body.style.overflow = '';
-  currentStoryIndex = null;
+  document.body.style.overflow='';
+  currentStoryIndex=null;
 }
 
-// ════════════════════════════════════════════════════
-// AUDIO PLAYER
-// ════════════════════════════════════════════════════
-let currentAudio = null, currentAudioSrc = null, currentTimestamps = null, isAudioPlaying = false;
-let wordTimings = [], allWordSpans = [], lastHighlightIdx = -1, rafHandle = null;
+// Audio player
+let currentAudio=null;
+let currentAudioSrc=null;
+let currentTimestamps=null;
+let isAudioPlaying=false;
+let highlightInterval=null;
+let wordTimings=[];
+let allWordSpans=[];
 
-function toggleAudio() {
-  if (!currentAudioSrc) return;
-  if (!currentAudio) {
-    currentAudio = new Audio(currentAudioSrc);
+function toggleAudio(){
+  const btn=document.getElementById('audioPlayBtn');
+  if(!currentAudioSrc)return;
+  if(!currentAudio){
+    currentAudio=new Audio(currentAudioSrc);
     currentAudio.addEventListener('timeupdate', updateAudioProgress);
-    currentAudio.addEventListener('ended', () => {
-      document.getElementById('audioPlayBtn').innerHTML = '<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>';
-      document.getElementById('audioFill').style.width = '0%';
-      document.getElementById('audioTime').textContent = '0:00';
-      isAudioPlaying = false; lastHighlightIdx = -1; stopHighlightLoop(); clearHighlights();
+    currentAudio.addEventListener('ended',()=>{
+      btn.innerHTML='<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>';
+      document.getElementById('audioFill').style.width='0%';
+      document.getElementById('audioTime').textContent='0:00';
+      isAudioPlaying=false;
+      lastHighlightIdx=-1;
+      stopHighlightLoop();
+      clearHighlights();
     });
-    if (currentTimestamps) { buildWordTimings(currentTimestamps); wrapStoryWords(); }
+    // Load timestamps if available
+    if(currentTimestamps){
+      buildWordTimings(currentTimestamps);
+      wrapStoryWords();
+    }
   }
-  if (isAudioPlaying) {
-    currentAudio.pause(); isAudioPlaying = false; stopHighlightLoop();
-    document.getElementById('audioPlayBtn').innerHTML = '<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>';
+  if(isAudioPlaying){
+    currentAudio.pause();
+    isAudioPlaying=false;
+    stopHighlightLoop();
+    btn.innerHTML='<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>';
   } else {
-    currentAudio.play(); isAudioPlaying = true;
-    if (wordTimings.length) startHighlightLoop();
-    document.getElementById('audioPlayBtn').innerHTML = '<svg viewBox="0 0 24 24"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg>';
+    currentAudio.play();
+    isAudioPlaying=true;
+    if(wordTimings.length) startHighlightLoop();
+    btn.innerHTML='<svg viewBox="0 0 24 24"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg>';
   }
 }
 
-function buildWordTimings(alignment) {
-  const OFFSET = 0.0;
-  const chars = alignment.characters, starts = alignment.character_start_times_seconds, ends = alignment.character_end_times_seconds;
-  wordTimings = [];
-  let word = '', wordStart = null, wordEndIdx = 0;
-  for (let i = 0; i < chars.length; i++) {
-    const c = chars[i];
-    if (c === ' ' || c === '\n' || c === '\u2014') {
-      if (word) { wordTimings.push({ word, start: wordStart + OFFSET, end: ends[wordEndIdx] + OFFSET }); word = ''; wordStart = null; }
-    } else { if (!word) wordStart = starts[i]; word += c; wordEndIdx = i; }
+function buildWordTimings(alignment){
+  // Convert ElevenLabs character timestamps to word timestamps
+  // OFFSET: ElevenLabs timestamps start from when the voice begins,
+  // but the audio file may have leading silence. A negative offset
+  // shifts highlights earlier so they fire closer to when words are spoken.
+  // Tune this value if highlighting is still early or late.
+  const OFFSET = 0.0; // start at 0, we handle timing differently below
+
+  const chars=alignment.characters;
+  const starts=alignment.character_start_times_seconds;
+  const ends=alignment.character_end_times_seconds;
+  wordTimings=[];
+  let word='', wordStart=null, wordEndIdx=0;
+  for(let i=0;i<chars.length;i++){
+    const c=chars[i];
+    if(c===' '||c==='\n'||c==='\u2014'){
+      if(word){
+        wordTimings.push({word, start:wordStart+OFFSET, end:ends[wordEndIdx]+OFFSET});
+        word='';wordStart=null;
+      }
+    } else {
+      if(!word) wordStart=starts[i];
+      word+=c;
+      wordEndIdx=i;
+    }
   }
-  if (word) wordTimings.push({ word, start: wordStart + OFFSET, end: ends[wordEndIdx] + OFFSET });
+  if(word) wordTimings.push({word, start:wordStart+OFFSET, end:ends[wordEndIdx]+OFFSET});
+  console.log('Word timings built:',wordTimings.length,'words');
+  console.log('First word timing:',wordTimings[0]);
+  console.log('Audio offset applied:',OFFSET,'seconds');
 }
 
-function wrapStoryWords() {
-  // Build word list directly from wordTimings (derived from ElevenLabs array)
-  // so span indices always match timing indices exactly — no drift possible.
-  allWordSpans = [];
-  const body = document.getElementById('modalBody');
-  const paras = Array.from(body.querySelectorAll('.story-paragraph'));
-
-  // Flatten all paragraph text into one stream for matching
-  let timingIdx = 0;
-
-  paras.forEach(para => {
-    // Use textContent (raw text) not innerText (which normalizes whitespace differently)
-    const raw = para.textContent;
-    // Split on whitespace runs, keeping delimiters so we can reconstruct spacing
-    const tokens = raw.split(/(\s+)/);
-    let html = '';
-    tokens.forEach(token => {
-      if (/^\s+$/.test(token) || token.length === 0) {
-        html += token;
-      } else {
-        // Every non-whitespace token gets a span, including dashes
-        const isDash = token === '—' || token === '–' || token === '-';
-        html += `<span class="story-word" data-idx="${timingIdx}">${token}</span>`;
-        timingIdx++;
+function wrapStoryWords(){
+  // Strategy: wrap every whitespace-delimited token in a span.
+  // IMPORTANT: standalone dashes (— or -) surrounded by spaces are
+  // counted as their own character by ElevenLabs timestamps.
+  // We must also wrap them as spans so span index === timing index.
+  allWordSpans=[];
+  const body=document.getElementById('modalBody');
+  const paras=body.querySelectorAll('.story-paragraph');
+  let globalIdx=0;
+  paras.forEach((para,pIdx)=>{
+    const rawText=para.innerText;
+    const tokens=rawText.split(/(\s+)/);
+    let html='';
+    tokens.forEach(token=>{
+      if(/^\s+$/.test(token)){
+        html+=token; // whitespace — pass through
+      } else if(token.length>0){
+        // Wrap ALL non-whitespace tokens including standalone dashes
+        // so span count always matches ElevenLabs timing count
+        const isFirst=(globalIdx===0&&pIdx===0);
+        const cls=isFirst?'story-word story-word-first':'story-word';
+        // Hide standalone dashes from highlight — they look odd highlighted
+        const isDash=(token==='—'||token==='–'||token==='-');
+        const style=isDash?' style="opacity:1"':'';
+        html+=`<span class="${cls}"${style} data-idx="${globalIdx}">${token}</span>`;
+        globalIdx++;
       }
     });
-    para.innerHTML = html;
+    para.innerHTML=html;
   });
-
-  allWordSpans = Array.from(body.querySelectorAll('.story-word'));
-  console.log(`Word spans: ${allWordSpans.length} | Timings: ${wordTimings.length}`);
-  if (allWordSpans.length !== wordTimings.length) {
-    console.warn(`COUNT MISMATCH — spans: ${allWordSpans.length} timings: ${wordTimings.length}`);
+  allWordSpans=Array.from(body.querySelectorAll('.story-word'));
+  console.log('Story spans:',allWordSpans.length,'| Word timings:',wordTimings.length);
+  if(allWordSpans.length!==wordTimings.length){
+    console.warn('COUNT MISMATCH — spans:',allWordSpans.length,'timings:',wordTimings.length);
   }
 }
 
-function startHighlightLoop() {
-  if (rafHandle) cancelAnimationFrame(rafHandle);
-  function loop() {
-    if (!currentAudio || currentAudio.paused || !wordTimings.length || !allWordSpans.length) { rafHandle = null; return; }
+let lastHighlightIdx=-1;
+let rafHandle=null;
+
+// ── requestAnimationFrame highlight loop ──
+// Fires every ~16ms (vs timeupdate's ~250-400ms lag)
+// Industry standard for audio sync — used by Spotify, Audible, Fender Play
+function startHighlightLoop(){
+  if(rafHandle) cancelAnimationFrame(rafHandle);
+  function loop(){
+    if(!currentAudio||currentAudio.paused||!wordTimings.length||!allWordSpans.length){
+      rafHandle=null;
+      return;
+    }
     highlightCurrentWord(currentAudio.currentTime);
-    rafHandle = requestAnimationFrame(loop);
+    rafHandle=requestAnimationFrame(loop);
   }
-  rafHandle = requestAnimationFrame(loop);
+  rafHandle=requestAnimationFrame(loop);
 }
-function stopHighlightLoop() { if (rafHandle) { cancelAnimationFrame(rafHandle); rafHandle = null; } }
 
-function binarySearchWord(t) {
-  if (!wordTimings.length || t < wordTimings[0].start) return -1;
-  let lo = 0, hi = wordTimings.length - 1;
-  while (lo < hi) { const mid = Math.ceil((lo + hi) / 2); if (wordTimings[mid].start <= t) lo = mid; else hi = mid - 1; }
+function stopHighlightLoop(){
+  if(rafHandle){cancelAnimationFrame(rafHandle);rafHandle=null;}
+}
+
+// Binary search — O(log n) — finds word at time t instantly
+function binarySearchWord(t){
+  if(!wordTimings.length||t<wordTimings[0].start) return -1;
+  let lo=0, hi=wordTimings.length-1;
+  while(lo<hi){
+    const mid=Math.ceil((lo+hi)/2);
+    if(wordTimings[mid].start<=t) lo=mid;
+    else hi=mid-1;
+  }
   return lo;
 }
 
-function highlightCurrentWord(currentTime) {
-  if (!wordTimings.length || !allWordSpans.length) return;
-  const idx = binarySearchWord(currentTime);
-  if (idx === -1 || idx === lastHighlightIdx) return;
-  lastHighlightIdx = idx;
-  allWordSpans.forEach(s => s.classList.remove('speaking'));
-  document.querySelectorAll('.story-paragraph').forEach(p => p.classList.remove('story-para-active'));
-  if (idx >= 0 && idx < allWordSpans.length) {
-    const span = allWordSpans[idx];
-    const isDash = span.textContent === '—' || span.textContent === '–' || span.textContent === '-';
-    if (!isDash) {
+function highlightCurrentWord(currentTime){
+  if(!wordTimings.length||!allWordSpans.length)return;
+  const idx=binarySearchWord(currentTime);
+  if(idx===-1||idx===lastHighlightIdx)return;
+  lastHighlightIdx=idx;
+
+  // Clear previous highlights
+  allWordSpans.forEach(s=>s.classList.remove('speaking'));
+  document.querySelectorAll('.story-paragraph').forEach(p=>p.classList.remove('story-para-active'));
+
+  // Apply highlight — skip dashes
+  if(idx>=0&&idx<allWordSpans.length){
+    const span=allWordSpans[idx];
+    const isDash=span.textContent==='—'||span.textContent==='–'||span.textContent==='-';
+    if(!isDash){
       span.classList.add('speaking');
-      const para = span.closest('.story-paragraph');
-      if (para) para.classList.add('story-para-active');
-      const bodyRect = document.getElementById('modalBody').getBoundingClientRect();
-      const spanRect = span.getBoundingClientRect();
-      if (spanRect.top < bodyRect.top + 20 || spanRect.bottom > bodyRect.bottom - 20) span.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      const para=span.closest('.story-paragraph');
+      if(para) para.classList.add('story-para-active');
+      const modalBody=document.getElementById('modalBody');
+      const spanRect=span.getBoundingClientRect();
+      const bodyRect=modalBody.getBoundingClientRect();
+      if(spanRect.top<bodyRect.top+20||spanRect.bottom>bodyRect.bottom-20){
+        span.scrollIntoView({behavior:'smooth',block:'center'});
+      }
     }
   }
 }
 
-function clearHighlights() {
-  allWordSpans.forEach(s => s.classList.remove('speaking'));
-  document.querySelectorAll('.story-paragraph').forEach(p => p.classList.remove('story-para-active'));
+function clearHighlights(){
+  allWordSpans.forEach(s=>s.classList.remove('speaking'));
+  document.querySelectorAll('.story-paragraph').forEach(p=>p.classList.remove('story-para-active'));
 }
 
-function updateAudioProgress() {
-  if (!currentAudio) return;
-  const pct = currentAudio.duration ? (currentAudio.currentTime / currentAudio.duration) * 100 : 0;
-  document.getElementById('audioFill').style.width = pct + '%';
-  const m = Math.floor(currentAudio.currentTime / 60);
-  const s = Math.floor(currentAudio.currentTime % 60);
-  document.getElementById('audioTime').textContent = m + ':' + String(s).padStart(2, '0');
+function updateAudioProgress(){
+  if(!currentAudio)return;
+  const pct=currentAudio.duration?(currentAudio.currentTime/currentAudio.duration)*100:0;
+  document.getElementById('audioFill').style.width=pct+'%';
+  const m=Math.floor(currentAudio.currentTime/60);
+  const s=Math.floor(currentAudio.currentTime%60);
+  document.getElementById('audioTime').textContent=m+':'+String(s).padStart(2,'0');
 }
 
-function scrubAudio(e) {
-  if (!currentAudio || !currentAudio.duration) return;
-  const rect = document.getElementById('audioProgressWrap').getBoundingClientRect();
-  currentAudio.currentTime = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width)) * currentAudio.duration;
-  lastHighlightIdx = -1;
+function scrubAudio(e){
+  if(!currentAudio||!currentAudio.duration)return;
+  const wrap=document.getElementById('audioProgressWrap');
+  const rect=wrap.getBoundingClientRect();
+  const pct=Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width));
+  currentAudio.currentTime=pct*currentAudio.duration;
+  lastHighlightIdx=-1; // reset so highlight recalculates from new position
   updateAudioProgress();
 }
 
-// ════════════════════════════════════════════════════
-// PROGRESS / MARK DONE
-// ════════════════════════════════════════════════════
-function updateProgress() {
-  const progress = getProgress();
-  const total = progress.size;
-  const pct = stories.length ? (total / stories.length) * 100 : 0;
-  document.getElementById('progressBar').style.width = pct + '%';
-  document.getElementById('progressCount').textContent = total === 0 ? '0 stories read' : `${total} ${total === 1 ? 'story' : 'stories'} read`;
+document.getElementById('modalClose').addEventListener('click',closeModal);
+document.getElementById('modalBackdrop').addEventListener('click',e=>{if(e.target===document.getElementById('modalBackdrop'))closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+document.getElementById('markDoneBtn').addEventListener('click',()=>{
+  if(currentStoryIndex===null)return;
+  const story=stories[currentStoryIndex];
+  const progress=getProgress();
+  if(!progress.has(story.id)){
+    progress.add(story.id);saveProgress(progress);
+    showToast('⭐ Story marked as read!');
+    updateProgress();render();renderModal(currentStoryIndex);
+  }
+});
+
+document.getElementById('prevBtn').addEventListener('click',()=>{
+  const idx=parseInt(document.getElementById('prevBtn').dataset.idx);
+  if(idx>0){currentStoryIndex=idx-1;renderModal(idx-1);document.getElementById('modalBody').scrollTop=0;}
+});
+document.getElementById('nextBtn').addEventListener('click',()=>{
+  const idx=parseInt(document.getElementById('nextBtn').dataset.idx);
+  if(idx<stories.length-1){currentStoryIndex=idx+1;renderModal(idx+1);document.getElementById('modalBody').scrollTop=0;}
+});
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.classList.contains('story-card'))openModal(e.target.dataset.id)});
+
+function updateProgress(){
+  const progress=getProgress();
+  const total=progress.size;
+  const pct=stories.length?(total/stories.length)*100:0;
+  document.getElementById('progressBar').style.width=pct+'%';
+  document.getElementById('progressCount').textContent=total===0?'0 stories read':`${total} ${total===1?'story':'stories'} read`;
 }
 
-document.getElementById('markDoneBtn').addEventListener('click', async () => {
-  if (currentStoryIndex === null) return;
-  const story = stories[currentStoryIndex];
-  const progress = getProgress();
-  if (!progress.has(story.id)) {
-    await markStoryComplete(story);
-    showToast('⭐ Story marked as read!');
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2800);
+}
+
+
+// ── AUTH STATE (stub — replace with Supabase when ready) ──
+// Current user object. null = logged out.
+// { email, plan: 'free'|'account'|'premium' }
+let currentUser = null;
+
+function getUserPlan() {
+  if (!currentUser) return 'guest';
+  return currentUser.plan || 'account';
+}
+
+function canAccessStory(story) {
+  const access = story.access || 'free';
+  const plan = getUserPlan();
+  if (access === 'free') return true;
+  if (access === 'account') return plan === 'account' || plan === 'premium';
+  if (access === 'premium') return plan === 'premium';
+  return false;
+}
+
+// ── WELCOME SPLASH ──
+function initSplash() {
+  const seen = localStorage.getItem('footsteps_seen_welcome');
+  if (!seen) {
+    document.getElementById('splashBackdrop').classList.remove('hidden');
+  } else {
+    document.getElementById('splashBackdrop').classList.add('hidden');
   }
-});
+}
 
-document.getElementById('prevBtn').addEventListener('click', () => {
-  const idx = parseInt(document.getElementById('prevBtn').dataset.idx);
-  if (idx > 0) { currentStoryIndex = idx - 1; renderModal(idx - 1); document.getElementById('modalBody').scrollTop = 0; }
-});
-document.getElementById('nextBtn').addEventListener('click', () => {
-  const idx = parseInt(document.getElementById('nextBtn').dataset.idx);
-  if (idx < stories.length - 1) {
-    const next = stories[idx + 1];
-    if (storyIsLocked(next)) { closeModal(); openPaywall(); }
-    else { currentStoryIndex = idx + 1; renderModal(idx + 1); document.getElementById('modalBody').scrollTop = 0; }
+function dismissSplash() {
+  localStorage.setItem('footsteps_seen_welcome', '1');
+  document.getElementById('splashBackdrop').classList.add('hidden');
+}
+
+// ── ACCESS GATE ──
+function openGate(mode, storyId) {
+  const backdrop = document.getElementById('gateBackdrop');
+  const content = document.getElementById('gateContent');
+  backdrop.classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  if (mode === 'login' || mode === 'signup') {
+    content.innerHTML = buildLoginUI(mode, storyId);
+  } else if (mode === 'paywall') {
+    content.innerHTML = buildPaywallUI(storyId);
   }
-});
+}
 
-document.getElementById('modalClose').addEventListener('click', closeModal);
-document.getElementById('modalBackdrop').addEventListener('click', e => { if (e.target === document.getElementById('modalBackdrop')) closeModal(); });
-document.getElementById('journeyBackdrop').addEventListener('click', e => { if (e.target === document.getElementById('journeyBackdrop')) closeJourney(); });
-document.getElementById('childModalBackdrop').addEventListener('click', e => { if (e.target === document.getElementById('childModalBackdrop')) closeChildModal(); });
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') { closeModal(); closePaywall(); closeJourney(); closeChildModal(); }
-  if (e.key === 'Enter' && e.target.classList.contains('story-card')) handleCardClick(e.target.dataset.id);
-});
+function closeGate() {
+  document.getElementById('gateBackdrop').classList.remove('open');
+  document.body.style.overflow = '';
+}
 
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg; t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2800);
+function buildLoginUI(mode, storyId) {
+  const isSignup = mode === 'signup';
+  return `
+    <span class="gate-emoji">📖</span>
+    <h2 class="gate-title">${isSignup ? 'Create Your Free Account' : 'Welcome Back'}</h2>
+    <p class="gate-desc">${isSignup
+      ? 'Get free access to the first 5 stories and save your progress across devices.'
+      : 'Sign in to continue your journey through Scripture.'}</p>
+    <div class="gate-form">
+      <input class="gate-input" type="email" id="gateEmail" placeholder="Email address" />
+      <input class="gate-input" type="password" id="gatePassword" placeholder="Password" />
+      ${isSignup ? '<input class="gate-input" type="password" id="gateConfirm" placeholder="Confirm password" />' : ''}
+      <button class="gate-submit" onclick="handleAuth('${mode}', '${storyId||''}')">
+        ${isSignup ? 'Create Free Account' : 'Sign In'}
+      </button>
+    </div>
+    <div class="gate-switch">
+      ${isSignup
+        ? 'Already have an account? <a onclick="openGate('login','${storyId||''}')">Sign in</a>'
+        : 'No account yet? <a onclick="openGate('signup','${storyId||''}')">Create one free</a>'}
+    </div>`;
+}
+
+function buildPaywallUI(storyId) {
+  return `
+    <span class="gate-emoji">⭐</span>
+    <h2 class="gate-title">Unlock All 30 Stories</h2>
+    <p class="gate-desc">You've read the free stories. Unlock the full collection — yours forever, or month by month.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-badge">Monthly</div>
+        <div class="pricing-price">$4.99</div>
+        <div class="pricing-period">per month · cancel anytime</div>
+        <div class="pricing-desc">Full access while subscribed. Cancel whenever you like.</div>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Best Value</div>
+        <div class="pricing-price">$49.99</div>
+        <div class="pricing-period">one-time · yours forever</div>
+        <div class="pricing-desc">Pay once, own it forever. Never charged again.</div>
+      </div>
+    </div>
+    <button class="pricing-cta" onclick="handlePurchase('lifetime')">Get Lifetime Access — $49.99</button>
+    <button class="pricing-cta" style="background:rgba(44,26,14,0.08);color:var(--ink);box-shadow:none" onclick="handlePurchase('monthly')">Start Monthly — $4.99/mo</button>
+    <div class="gate-switch" style="margin-top:8px">Already purchased? <a onclick="openGate('login')">Sign in</a></div>`;
+}
+
+function handleAuth(mode, storyId) {
+  const email = document.getElementById('gateEmail')?.value;
+  const password = document.getElementById('gatePassword')?.value;
+  if (!email || !password) { alert('Please enter your email and password.'); return; }
+
+  // STUB — replace with Supabase auth when ready
+  // For now simulate a successful login with account-level access
+  currentUser = { email, plan: 'account' };
+  closeGate();
+  showToast('✓ Welcome to Footsteps!');
+  render();
+  updateProgress();
+
+  // If they were trying to open a specific story, open it now
+  if (storyId) {
+    const story = stories.find(s => s.id === storyId);
+    if (story && canAccessStory(story)) openModal(storyId);
+  }
+}
+
+function handlePurchase(plan) {
+  // STUB — replace with Stripe Checkout link when ready
+  alert('Payment coming soon! Check back shortly.');
+}
+
+// ── OVERRIDE openModal to enforce access ──
+const _openModal = openModal;
+function openModal(storyId) {
+  const story = stories.find(s => s.id === storyId);
+  if (!story) return;
+
+  if (canAccessStory(story)) {
+    _openModal(storyId);
+    return;
+  }
+
+  // Not accessible — show appropriate gate
+  const plan = getUserPlan();
+  if (story.access === 'account' && plan === 'guest') {
+    openGate('signup', storyId);
+  } else if (story.access === 'premium') {
+    if (plan === 'guest') openGate('signup', storyId);
+    else openGate('paywall', storyId);
+  }
 }
 
 init();
+initSplash();
 </script>
 </body>
 </html>
