@@ -430,6 +430,42 @@
   }
   @keyframes spin { to { transform: rotate(360deg); } }
 
+
+  /* ── AVATAR EDIT MODAL ── */
+  .avatar-edit-backdrop {
+    display: none; position: fixed; inset: 0;
+    background: rgba(20,10,5,0.75); z-index: 2000;
+    align-items: center; justify-content: center;
+    padding: 20px; backdrop-filter: blur(4px);
+  }
+  .avatar-edit-backdrop.open { display: flex; }
+  .avatar-edit-card {
+    background: var(--parchment); border-radius: 14px;
+    max-width: 400px; width: 100%;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+    animation: popIn 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    overflow: hidden;
+  }
+  .avatar-edit-bar { height: 4px; background: linear-gradient(90deg, var(--gold), var(--gold-bright)); }
+  .avatar-edit-inner { padding: 24px; }
+  .avatar-edit-title {
+    font-family: 'Cinzel', serif; font-size: 1rem;
+    font-weight: 700; color: var(--ink); margin-bottom: 16px;
+  }
+  .avatar-edit-grid {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    margin-bottom: 20px;
+  }
+  .avatar-edit-opt {
+    width: 44px; height: 44px; border-radius: 50%;
+    border: 2px solid rgba(44,26,14,0.12);
+    background: var(--parchment); font-size: 22px;
+    cursor: pointer; display: flex; align-items: center;
+    justify-content: center; transition: border-color 0.15s, transform 0.15s;
+  }
+  .avatar-edit-opt:hover { transform: scale(1.15); border-color: var(--gold); }
+  .avatar-edit-opt.selected { border-color: var(--gold); box-shadow: 0 0 0 3px var(--gold-glow); transform: scale(1.1); }
+  .avatar-edit-btns { display: flex; gap: 10px; }
   /* ── LOADING STATE ── */
   .loading-state {
     text-align: center;
@@ -469,6 +505,22 @@
   </div>
 </div>
 
+
+<!-- ── AVATAR EDIT MODAL ── -->
+<div class="avatar-edit-backdrop" id="avatarEditBackdrop">
+  <div class="avatar-edit-card">
+    <div class="avatar-edit-bar"></div>
+    <div class="avatar-edit-inner">
+      <div class="avatar-edit-title">Choose Your Avatar</div>
+      <div class="avatar-edit-grid" id="avatarEditGrid"></div>
+      <div class="avatar-edit-btns">
+        <button class="confirm-cancel-btn" onclick="closeAvatarEdit()">Cancel</button>
+        <button class="confirm-proceed-btn" style="background:var(--gold);color:var(--ink)" onclick="saveAvatar()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ── PAGE ── -->
 <div class="page" id="pageContent">
   <div class="loading-state">Loading your account…</div>
@@ -491,6 +543,77 @@ let authUser = null;
 let userProfile = null;
 let childProfiles = [];
 let storyProgress = [];
+
+
+// ── AVATARS ──────────────────────────────────────────────────
+const AVATARS = ['📖','⭐','🦁','🐬','🦅','🌟','🦋','🐢','🌙','☀️','🌿','🦊','🐧','🦉','🌊','🏔️','🌸','🦒','🐝','🎠'];
+let selectedAvatar = null;
+let editingChildId = null;
+
+function buildAvatarGrid() {
+  const grid = document.getElementById('avatarEditGrid');
+  grid.innerHTML = '';
+  const current = editingChildId
+    ? childProfiles.find(c => c.id === editingChildId)?.avatar_emoji
+    : userProfile?.avatar_emoji;
+  selectedAvatar = current;
+
+  AVATARS.forEach(emoji => {
+    const btn = document.createElement('button');
+    btn.className = 'avatar-edit-opt' + (emoji === current ? ' selected' : '');
+    btn.textContent = emoji;
+    btn.onclick = () => {
+      selectedAvatar = emoji;
+      document.querySelectorAll('.avatar-edit-opt').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+    };
+    grid.appendChild(btn);
+  });
+}
+
+function openAvatarEdit(childId = null) {
+  editingChildId = childId;
+  buildAvatarGrid();
+  document.getElementById('avatarEditBackdrop').classList.add('open');
+}
+
+function closeAvatarEdit() {
+  document.getElementById('avatarEditBackdrop').classList.remove('open');
+  editingChildId = null;
+}
+
+async function saveAvatar() {
+  if (!selectedAvatar) { closeAvatarEdit(); return; }
+
+  try {
+    if (editingChildId) {
+      await sb.from('child_profiles').update({ avatar_emoji: selectedAvatar }).eq('id', editingChildId);
+      const child = childProfiles.find(c => c.id === editingChildId);
+      if (child) child.avatar_emoji = selectedAvatar;
+    } else {
+      await sb.from('profiles').update({ avatar_emoji: selectedAvatar }).eq('id', authUser.id);
+      userProfile.avatar_emoji = selectedAvatar;
+    }
+    closeAvatarEdit();
+    renderPage();
+    showToast('Avatar updated!');
+  } catch(err) {
+    console.error('Avatar save error:', err);
+    showToast('Something went wrong. Please try again.');
+  }
+}
+
+function showToast(msg) {
+  // Simple toast for account page
+  const existing = document.getElementById('accountToast');
+  if (existing) existing.remove();
+  const t = document.createElement('div');
+  t.id = 'accountToast';
+  t.textContent = msg;
+  t.style.cssText = 'position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:#2c1a0e;color:#f0c040;font-family:Cinzel,serif;font-size:13px;font-weight:600;padding:12px 24px;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,0.35);z-index:3000;';
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 2500);
+}
 
 // ── STRIPE CHECKOUT ─────────────────────────────────────────
 async function startCheckout(plan) {
@@ -608,7 +731,7 @@ function renderPage() {
       </div>
       <div class="card-body">
         <div class="profile-row">
-          <div class="profile-avatar">${userProfile?.avatar_emoji || '📖'}</div>
+          <div class="profile-avatar" onclick="openAvatarEdit()" style="cursor:pointer;position:relative" title="Click to change avatar">${userProfile?.avatar_emoji || '📖'}<span style="position:absolute;bottom:0;right:0;background:var(--gold);border-radius:50%;width:18px;height:18px;font-size:10px;display:flex;align-items:center;justify-content:center">✏️</span></div>
           <div>
             <div class="profile-name">${userProfile?.display_name || 'Reader'}</div>
             <div class="profile-email">${authUser.email}</div>
@@ -790,10 +913,13 @@ async function handleSignOut() {
 }
 
 // ── CLOSE CONFIRM ON BACKDROP CLICK ─────────────────────────
+document.getElementById('avatarEditBackdrop').addEventListener('click', e => {
+  if (e.target === document.getElementById('avatarEditBackdrop')) closeAvatarEdit();
+});
 document.getElementById('confirmBackdrop').addEventListener('click', e => {
   if (e.target === document.getElementById('confirmBackdrop')) closeConfirm();
 });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeConfirm(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeConfirm(); closeAvatarEdit(); } });
 
 init();
 </script>
