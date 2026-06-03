@@ -511,7 +511,7 @@
   <div class="avatar-edit-card">
     <div class="avatar-edit-bar"></div>
     <div class="avatar-edit-inner">
-      <div class="avatar-edit-title">Choose Your Avatar</div>
+      <div class="avatar-edit-title" id="avatarEditTitle">Choose Your Avatar</div>
       <div class="avatar-edit-grid" id="avatarEditGrid"></div>
       <div class="avatar-edit-btns">
         <button class="confirm-cancel-btn" onclick="closeAvatarEdit()">Cancel</button>
@@ -553,10 +553,13 @@ let editingChildId = null;
 function buildAvatarGrid() {
   const grid = document.getElementById('avatarEditGrid');
   grid.innerHTML = '';
-  const current = editingChildId
-    ? childProfiles.find(c => c.id === editingChildId)?.avatar_emoji
-    : userProfile?.avatar_emoji;
+  const child = editingChildId ? childProfiles.find(c => c.id === editingChildId) : null;
+  const current = child ? child.avatar_emoji : userProfile?.avatar_emoji;
   selectedAvatar = current;
+
+  // Update modal title
+  const titleEl = document.getElementById('avatarEditTitle');
+  if (titleEl) titleEl.textContent = child ? `Choose Avatar for ${child.display_name}` : 'Choose Your Avatar';
 
   AVATARS.forEach(emoji => {
     const btn = document.createElement('button');
@@ -830,7 +833,10 @@ function renderPage() {
           const childProgress = storyProgress.filter(p => p.profile_id === child.id && p.profile_type === 'child').length;
           return `
           <div class="child-item">
-            <div class="child-avatar">${child.avatar_emoji}</div>
+            <div class="child-avatar" onclick="openAvatarEdit('${child.id}')" style="cursor:pointer;position:relative" title="Change avatar">
+              ${child.avatar_emoji}
+              <span style="position:absolute;bottom:0;right:0;background:var(--gold);border-radius:50%;width:16px;height:16px;font-size:9px;display:flex;align-items:center;justify-content:center">✏️</span>
+            </div>
             <div>
               <div class="child-name">${child.display_name}</div>
               <div class="child-age">${child.age ? 'Age ' + child.age : 'No age set'}</div>
