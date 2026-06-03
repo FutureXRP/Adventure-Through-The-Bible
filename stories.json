@@ -129,20 +129,22 @@
         {
           "question": "What were the very first words God spoke to create the world?",
           "options": [
-            "Let there be life",
             "Let there be light",
-            "Let there be earth"
+            "Let there be earth",
+            "Let there be life"
           ],
-          "answer": 1
+          "answer": 0,
+          "explanation": ""
         },
         {
           "question": "What did God do on the seventh day?",
           "options": [
-            "Created the animals",
+            "Made the sun and moon",
             "Rested and called the day holy",
-            "Made the sun and moon"
+            "Created the animals"
           ],
-          "answer": 1
+          "answer": 1,
+          "explanation": ""
         },
         {
           "question": "How did God make the man come alive?",
@@ -151,7 +153,30 @@
             "He touched him with fire",
             "He breathed into his nostrils"
           ],
-          "answer": 2
+          "answer": 2,
+          "explanation": ""
+        },
+        {
+          "question": "What did God say about everything He had made at the end of the sixth day?",
+          "options": [
+            "It was very good",
+            "It was finished",
+            "It was holy",
+            "It was good enough"
+          ],
+          "answer": 0,
+          "explanation": "After creating everything — including humans — God looked at all He had made and called it very good. Not just good, but very good."
+        },
+        {
+          "question": "What did God use to make the first woman?",
+          "options": [
+            "Breath from His own mouth",
+            "Dust from the ground",
+            "Clay from the riverbank",
+            "A rib from the man"
+          ],
+          "answer": 3,
+          "explanation": "God caused the man to fall into a deep sleep and took one of his ribs, forming the woman — showing that she is of the same nature as the man."
         }
       ]
     },
@@ -217,29 +242,54 @@
         {
           "question": "What was the one rule God gave Adam and Eve in the garden?",
           "options": [
+            "Do not talk to animals",
             "Do not leave the garden",
-            "Do not eat from the tree in the middle of the garden",
-            "Do not talk to animals"
+            "Do not eat from the tree in the middle of the garden"
           ],
-          "answer": 1
+          "answer": 2,
+          "explanation": ""
         },
         {
           "question": "What did the serpent tell Eve would happen if she ate the fruit?",
           "options": [
-            "She would get sick and die",
             "Her eyes would be opened and she would be like God",
+            "She would get sick and die",
             "She would become very strong"
           ],
-          "answer": 1
+          "answer": 0,
+          "explanation": ""
         },
         {
           "question": "What did God make for Adam and Eve before sending them out of the garden?",
           "options": [
-            "A new home",
+            "A boat to travel in",
             "Garments of skin to clothe them",
-            "A boat to travel in"
+            "A new home"
           ],
-          "answer": 1
+          "answer": 1,
+          "explanation": ""
+        },
+        {
+          "question": "What did Adam and Eve do immediately after eating the fruit?",
+          "options": [
+            "They hid from each other",
+            "They ran from the garden",
+            "They fell asleep",
+            "They sewed fig leaves together to cover themselves"
+          ],
+          "answer": 3,
+          "explanation": "Their eyes were opened and they realized they were naked — so they sewed fig leaves together. Shame entered the world."
+        },
+        {
+          "question": "What did God promise would happen between the serpent and the woman's offspring?",
+          "options": [
+            "The serpent would be banished underground",
+            "They would never meet again",
+            "The offspring would crush the serpent's head",
+            "They would live in peace"
+          ],
+          "answer": 2,
+          "explanation": "God told the serpent that the woman's offspring would crush his head — the first hint in Scripture of Jesus defeating Satan."
         }
       ]
     },
@@ -305,29 +355,54 @@
         {
           "question": "What was different about the offerings Cain and Abel brought to God?",
           "options": [
-            "Abel brought crops and Cain brought animals",
+            "Cain brought more than Abel did",
             "Abel brought his very best while Cain just brought some",
-            "Cain brought more than Abel did"
+            "Abel brought crops and Cain brought animals"
           ],
-          "answer": 1
+          "answer": 1,
+          "explanation": ""
         },
         {
           "question": "What did God warn Cain about before anything bad happened?",
           "options": [
+            "That the harvest would fail",
             "That Abel would leave the family",
-            "That sin was crouching at the door waiting to control him",
-            "That the harvest would fail"
+            "That sin was crouching at the door waiting to control him"
           ],
-          "answer": 1
+          "answer": 3,
+          "explanation": ""
         },
         {
           "question": "What did God do for Cain even after he murdered his brother?",
           "options": [
-            "Gave him a new home",
             "Placed a mark on him to protect him",
+            "Gave him a new home",
             "Forgave him immediately"
           ],
-          "answer": 1
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Where did God send Cain after he murdered Abel?",
+          "options": [
+            "To serve as a slave in a distant land",
+            "Into the wilderness with no food",
+            "To live as a wanderer east of Eden",
+            "Back to his father Adam"
+          ],
+          "answer": 2,
+          "explanation": "God sent Cain away to live as a restless wanderer east of Eden — cut off from the ground he had worked and from God's presence."
+        },
+        {
+          "question": "What question did Cain ask God that has echoed through history?",
+          "options": [
+            "Why did you not accept my offering?",
+            "Am I my brother's keeper?",
+            "Where has Abel gone?",
+            "Will you forgive what I have done?"
+          ],
+          "answer": 1,
+          "explanation": "\"Am I my brother's keeper?\" — Cain's deflection has become one of the most famous lines in all of Scripture, exposing how quickly sin hardens the heart."
         }
       ]
     },
@@ -395,29 +470,54 @@
         {
           "question": "How did Noah respond when God told him to build the ark?",
           "options": [
+            "He waited to see if it would rain before starting",
             "He argued and asked for a sign first",
-            "He did everything exactly as God commanded",
-            "He waited to see if it would rain before starting"
+            "He did everything exactly as God commanded"
           ],
-          "answer": 1
+          "answer": 3,
+          "explanation": ""
         },
         {
           "question": "Who shut the door of the ark when it was time?",
           "options": [
-            "Noah and his sons",
+            "The animals pushed it closed",
             "God Himself shut the door",
-            "The animals pushed it closed"
+            "Noah and his sons"
           ],
-          "answer": 1
+          "answer": 1,
+          "explanation": ""
         },
         {
           "question": "What sign did God put in the sky as a promise to never flood the whole earth again?",
           "options": [
             "A bright star",
-            "A rainbow",
-            "A pillar of fire"
+            "A pillar of fire",
+            "A rainbow"
           ],
-          "answer": 1
+          "answer": 2,
+          "explanation": ""
+        },
+        {
+          "question": "What did Noah do as soon as he came out of the ark?",
+          "options": [
+            "He built an altar and offered burnt offerings to God",
+            "He planted a vineyard",
+            "He sent a message to his neighbors",
+            "He built a city"
+          ],
+          "answer": 0,
+          "explanation": "The first thing Noah did on dry land was build an altar and worship. God responded by promising never again to destroy every living creature."
+        },
+        {
+          "question": "How long were Noah and his family on the ark?",
+          "options": [
+            "Six months",
+            "Three years",
+            "Forty days and forty nights",
+            "About a year"
+          ],
+          "answer": 3,
+          "explanation": "Though the rain fell for forty days, Noah and his family were on the ark for about a year before the earth was dry enough to leave."
         }
       ]
     },
@@ -482,29 +582,54 @@
         {
           "question": "Why did the people want to build a tower reaching to heaven?",
           "options": [
-            "To worship God from a high place",
             "To make a name for themselves and not be scattered",
+            "To worship God from a high place",
             "To see the whole earth from above"
           ],
-          "answer": 1
+          "answer": 0,
+          "explanation": ""
         },
         {
           "question": "How did God stop the building of the tower?",
           "options": [
+            "He sent rain to wash it away",
             "He knocked it down with wind",
-            "He confused their language so they could not understand each other",
-            "He sent rain to wash it away"
+            "He confused their language so they could not understand each other"
           ],
-          "answer": 1
+          "answer": 2,
+          "explanation": ""
         },
         {
           "question": "What event thousands of years later reversed what happened at Babel?",
           "options": [
+            "Moses receiving the Ten Commandments",
             "The building of the Temple in Jerusalem",
-            "Pentecost when the Holy Spirit let everyone hear in their own language",
-            "Moses receiving the Ten Commandments"
+            "Pentecost when the Holy Spirit let everyone hear in their own language"
           ],
-          "answer": 1
+          "answer": 3,
+          "explanation": ""
+        },
+        {
+          "question": "What were the people of Babel trying to avoid by building the tower?",
+          "options": [
+            "War with neighboring tribes",
+            "Being scattered across the earth",
+            "Another flood",
+            "Being forgotten by future generations"
+          ],
+          "answer": 1,
+          "explanation": "They said \"let us make a name for ourselves, lest we be dispersed over the face of the whole earth.\" Ironically, God scattered them anyway."
+        },
+        {
+          "question": "What does the name \"Babel\" mean?",
+          "options": [
+            "Confusion",
+            "High place",
+            "Tower of heaven",
+            "Great city"
+          ],
+          "answer": 0,
+          "explanation": "Babel means confusion — the city got its name from what God did there when He confused their language."
         }
       ]
     },
@@ -582,22 +707,44 @@
         {
           "question": "What did God tell Abraham when He took him outside at night?",
           "options": [
+            "Listen to the wind — that is my voice",
             "Count the stars — so shall your offspring be",
-            "Look at the sea — so great will your family be",
-            "Listen to the wind — that is my voice"
+            "Look at the sea — so great will your family be"
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "God took Abraham outside and said count the stars — so shall your offspring be. And Abraham believed Him."
         },
         {
           "question": "What did Abraham find caught in the thicket at the last moment?",
           "options": [
+            "A ram",
             "A dove",
-            "A lamb",
-            "A ram"
+            "A lamb"
+          ],
+          "answer": 0,
+          "explanation": "A ram was caught in the thicket — and Abraham sacrificed it in place of his son Isaac. He named that place The Lord Will Provide."
+        },
+        {
+          "question": "What did God change Abram's name to, and what does it mean?",
+          "options": [
+            "Isaac — he laughs",
+            "Israel — one who wrestles with God",
+            "Elohim — God is with us",
+            "Abraham — father of many nations"
+          ],
+          "answer": 3,
+          "explanation": "God changed his name from Abram to Abraham, meaning \"father of many nations\" — even before Abraham had any children with Sarah."
+        },
+        {
+          "question": "What was the name of the mountain where Abraham was asked to sacrifice his son?",
+          "options": [
+            "Mount Carmel",
+            "Mount Sinai",
+            "Mount Moriah",
+            "Mount Hermon"
           ],
           "answer": 2,
-          "explanation": "A ram was caught in the thicket — and Abraham sacrificed it in place of his son Isaac. He named that place The Lord Will Provide."
+          "explanation": "Mount Moriah — the same mountain range where, centuries later, the Temple would be built in Jerusalem, and where Jesus would be crucified."
         }
       ]
     },
@@ -674,22 +821,44 @@
         {
           "question": "How old was Joseph when he became second-in-command of Egypt?",
           "options": [
+            "Thirty years old",
             "Twenty years old",
-            "Twenty-five years old",
-            "Thirty years old"
+            "Twenty-five years old"
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Joseph was thirty years old when he stood before Pharaoh and went from prison to palace in a single day."
         },
         {
           "question": "What did Joseph say to his brothers when he revealed who he was?",
           "options": [
+            "I have been waiting to find you all these years",
             "You will pay for what you did to me",
-            "You intended to harm me, but God intended it for good",
-            "I have been waiting to find you all these years"
+            "You intended to harm me, but God intended it for good"
+          ],
+          "answer": 3,
+          "explanation": "Joseph said you intended harm, but God intended it for good. It is one of the greatest statements of faith and forgiveness in the whole Bible."
+        },
+        {
+          "question": "What gift did Jacob give Joseph that made his brothers jealous?",
+          "options": [
+            "The best portion of land",
+            "A horse of his own",
+            "A coat of many colors",
+            "His own flock of sheep"
+          ],
+          "answer": 2,
+          "explanation": "Jacob gave Joseph a richly ornamented robe — a sign of favoritism that inflamed his brothers' jealousy and set the whole story in motion."
+        },
+        {
+          "question": "What did Joseph's two dreams as a boy suggest about his future?",
+          "options": [
+            "That he would travel to a foreign land",
+            "That he would one day rule over his brothers",
+            "That God would speak to him as a prophet",
+            "That he would be a great farmer"
           ],
           "answer": 1,
-          "explanation": "Joseph said you intended harm, but God intended it for good. It is one of the greatest statements of faith and forgiveness in the whole Bible."
+          "explanation": "Joseph dreamed that sheaves of grain and then the sun, moon, and stars bowed down to him — a picture of his future authority over his whole family."
         }
       ]
     },
@@ -757,31 +926,53 @@
           "question": "What were the names of the two midwives who refused to obey Pharaoh's order?",
           "options": [
             "Rachel and Leah",
-            "Shiphrah and Puah",
-            "Miriam and Zipporah"
+            "Miriam and Zipporah",
+            "Shiphrah and Puah"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "Shiphrah and Puah feared God more than Pharaoh and let the Hebrew boys live. God was kind to them for their courage."
         },
         {
           "question": "What was Moses's basket made from?",
           "options": [
+            "Clay baked in a kiln",
             "Wood and animal skin",
-            "Papyrus reeds sealed with tar and pitch",
-            "Clay baked in a kiln"
+            "Papyrus reeds sealed with tar and pitch"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Moses's mother made a basket from papyrus reeds and waterproofed it — the same Hebrew word used for Noah's ark."
         },
         {
           "question": "Who ran to get Moses's own mother to nurse him?",
           "options": [
-            "Pharaoh's daughter",
             "Moses's mother herself",
-            "His sister Miriam"
+            "His sister Miriam",
+            "Pharaoh's daughter"
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "Miriam was watching from a distance and stepped forward at exactly the right moment — getting their own mother paid to nurse Moses."
+        },
+        {
+          "question": "Why was the birth of Moses especially dangerous?",
+          "options": [
+            "Pharaoh had ordered all newborn Hebrew boys to be thrown into the Nile",
+            "Pharaoh had enslaved all Hebrew men who were working age",
+            "There was a plague spreading through the Hebrew settlements",
+            "There was a famine and food was scarce"
+          ],
+          "answer": 0,
+          "explanation": "Pharaoh feared the growing Hebrew population and ordered every newborn Hebrew boy drowned in the Nile — making Moses's survival a miracle from his first breath."
+        },
+        {
+          "question": "Who adopted Moses and raised him in the palace?",
+          "options": [
+            "Pharaoh's wife",
+            "A Hebrew slave who served the palace",
+            "Pharaoh's sister",
+            "Pharaoh's daughter"
+          ],
+          "answer": 3,
+          "explanation": "Pharaoh's daughter found the basket in the reeds, felt compassion for the crying baby, and raised him as her own son in the royal palace."
         }
       ]
     },
@@ -847,21 +1038,21 @@
         {
           "question": "Why was the burning bush so unusual?",
           "options": [
+            "The bush was burning but not burning up",
             "It was on top of a mountain",
-            "The fire was speaking words",
-            "The bush was burning but not burning up"
+            "The fire was speaking words"
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Bushes catching fire in the dry desert was common. What stopped Moses in his tracks was that this bush kept burning without being consumed."
         },
         {
           "question": "What did God tell Moses his name was?",
           "options": [
+            "The God of Heaven",
             "The Almighty",
-            "I AM WHO I AM",
-            "The God of Heaven"
+            "I AM WHO I AM"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "God said I AM WHO I AM — always present tense, self-existent, without beginning or end. It is the most profound name ever spoken."
         },
         {
@@ -873,6 +1064,28 @@
           ],
           "answer": 2,
           "explanation": "God gave Moses his brother Aaron as a companion and spokesman — Moses would tell him what to say and Aaron would say it."
+        },
+        {
+          "question": "What did God tell Moses to do before coming closer to the burning bush?",
+          "options": [
+            "Bring an offering from his flock",
+            "Remove his sandals because he was standing on holy ground",
+            "Bow down and cover his face",
+            "Fast for three days before approaching"
+          ],
+          "answer": 1,
+          "explanation": "God told Moses to remove his sandals — a sign of reverence before holy ground. God's presence makes ordinary places extraordinary."
+        },
+        {
+          "question": "What was Moses's first objection when God called him to lead Israel out of Egypt?",
+          "options": [
+            "He said \"Who am I that I should go to Pharaoh?\"",
+            "He said he was too old",
+            "He said he was a murderer and could not lead",
+            "He said the people would not listen to him"
+          ],
+          "answer": 0,
+          "explanation": "\"Who am I?\" — Moses's first response was deep humility. God's answer was not to list Moses's qualifications but to say \"I will be with you.\""
         }
       ]
     },
@@ -938,8 +1151,8 @@
         {
           "question": "What did Moses tell the Israelites to do when they were trapped between the army and the sea?",
           "options": [
-            "Pray loudly and march forward",
             "Pick up weapons and fight",
+            "Pray loudly and march forward",
             "Be still — the Lord will fight for you"
           ],
           "answer": 2,
@@ -948,22 +1161,44 @@
         {
           "question": "What happened to the Egyptian army when they followed Israel into the sea?",
           "options": [
-            "They turned back before the water closed",
             "The water came back and covered them completely",
-            "They were captured and made slaves"
+            "They were captured and made slaves",
+            "They turned back before the water closed"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "When Moses stretched out his hand, the water came back over the entire Egyptian army. Not one of them survived."
         },
         {
           "question": "What did Miriam do after Israel crossed safely to the other side?",
           "options": [
+            "She knelt down and wept with gratitude",
             "She built an altar to God",
-            "She took up a tambourine and led the women in dancing",
-            "She knelt down and wept with gratitude"
+            "She took up a tambourine and led the women in dancing"
+          ],
+          "answer": 3,
+          "explanation": "Miriam took up a tambourine and led all the women in dancing and singing — one of the oldest celebrations of worship in recorded history."
+        },
+        {
+          "question": "What did God use to drive back the sea and make a path of dry ground?",
+          "options": [
+            "An angel who pushed the water aside",
+            "A strong east wind that blew all night",
+            "The staff of Moses touching the water",
+            "A flash of lightning that split the waters"
           ],
           "answer": 1,
-          "explanation": "Miriam took up a tambourine and led all the women in dancing and singing — one of the oldest celebrations of worship in recorded history."
+          "explanation": "God drove back the sea with a strong east wind that blew all night — making the seabed dry ground. Natural means, supernatural timing and purpose."
+        },
+        {
+          "question": "What went between the Israelites and the pursuing Egyptian army the night before the crossing?",
+          "options": [
+            "A wall of fire",
+            "A line of angels",
+            "The pillar of cloud moved behind Israel",
+            "A thick cloud of darkness"
+          ],
+          "answer": 2,
+          "explanation": "The pillar of cloud moved from the front to the back of Israel — giving light to Israel but darkness to Egypt, keeping the two camps apart all night."
         }
       ]
     },
@@ -1027,11 +1262,11 @@
         {
           "question": "How did God deliver the Ten Commandments to Israel?",
           "options": [
-            "He whispered them to Moses alone on the mountain",
             "He spoke them out loud from the mountain in fire and thunder so the whole nation heard",
-            "He sent an angel to write them in the sky"
+            "He sent an angel to write them in the sky",
+            "He whispered them to Moses alone on the mountain"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "God spoke directly to the whole nation from the mountain — out of fire and thunder — before giving Moses the stone tablets."
         },
         {
@@ -1047,12 +1282,34 @@
         {
           "question": "How did Jesus summarize all ten commandments?",
           "options": [
+            "Do not murder, steal, or lie",
             "Keep the Sabbath and honor your parents",
-            "Love God with everything you have and love your neighbor as yourself",
-            "Do not murder, steal, or lie"
+            "Love God with everything you have and love your neighbor as yourself"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Jesus said all the Law hangs on two things: love God completely and love your neighbor as yourself. The ten collapse into two, and the two rest on love."
+        },
+        {
+          "question": "What were the Ten Commandments written on?",
+          "options": [
+            "Two tablets of stone, written by the finger of God",
+            "Clay tablets baked in a fire",
+            "Wooden planks carried by the priests",
+            "Papyrus scrolls sealed in gold"
+          ],
+          "answer": 0,
+          "explanation": "God wrote the commandments on two stone tablets with His own finger — a permanent, authoritative record of His covenant with Israel."
+        },
+        {
+          "question": "Which commandment is the only one with a specific promise attached to it?",
+          "options": [
+            "Do not murder",
+            "Remember the Sabbath day",
+            "Do not commit adultery",
+            "Honor your father and your mother"
+          ],
+          "answer": 3,
+          "explanation": "\"Honor your father and mother\" comes with a promise: \"that your days may be long in the land.\" Paul later calls it the first commandment with a promise."
         }
       ]
     },
@@ -1118,31 +1375,53 @@
           "question": "Where did Rahab hide the two Israelite spies?",
           "options": [
             "In a cave outside the city walls",
-            "Under stalks of flax drying on her roof",
-            "In a storage room beneath her house"
+            "In a storage room beneath her house",
+            "Under stalks of flax drying on her roof"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Rahab hid the spies under the stalks of flax drying on her roof — then sent the king's soldiers in the wrong direction."
         },
         {
           "question": "What sign did the spies give Rahab to mark her house for safety?",
           "options": [
-            "A white stone placed above the door",
             "A scarlet cord tied in the window",
-            "An olive branch hung on the wall"
+            "An olive branch hung on the wall",
+            "A white stone placed above the door"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "The spies told Rahab to tie a scarlet cord in the window — anyone inside the house marked by that cord would be spared when Israel took the city."
         },
         {
           "question": "Where does Rahab appear later in the Bible?",
           "options": [
-            "As a judge who led Israel into battle",
+            "As the mother of the prophet Elijah",
             "In the genealogy of Jesus in Matthew chapter one",
-            "As the mother of the prophet Elijah"
+            "As a judge who led Israel into battle"
           ],
           "answer": 1,
           "explanation": "Rahab is named in Matthew's genealogy of Jesus — a Canaanite woman who believed became an ancestor of the Messiah."
+        },
+        {
+          "question": "What did Rahab tell the king's men about the spies when they came looking?",
+          "options": [
+            "She said she had never seen them",
+            "She said they had gone to the market",
+            "She refused to speak and said nothing",
+            "She said the men had already left and told them to chase after them"
+          ],
+          "answer": 3,
+          "explanation": "Rahab misdirected the king's men — sending them on a chase while the spies were hidden on her roof. Her deception protected God's people at great personal risk."
+        },
+        {
+          "question": "What did Rahab say showed her that the God of Israel was real?",
+          "options": [
+            "She had heard God's voice in the wind",
+            "She had seen angels near the Israelite camp",
+            "She had heard what God did at the Red Sea and how Israel defeated the kings",
+            "She had a vision in the night"
+          ],
+          "answer": 2,
+          "explanation": "Rahab said she had heard about the Red Sea crossing and the defeated kings — and that all Canaan was melting with fear. Faith came through hearing."
         }
       ]
     },
@@ -1208,31 +1487,53 @@
           "question": "What was Gideon doing when the angel of the Lord appeared to him?",
           "options": [
             "Praying at the tabernacle in Shiloh",
-            "Leading his army against the Midianites",
-            "Threshing wheat in a winepress, hiding from the enemy"
+            "Threshing wheat in a winepress, hiding from the enemy",
+            "Leading his army against the Midianites"
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "Gideon was hiding in a winepress — threshing wheat underground so the Midianites wouldn't see him. Not exactly where you'd expect to find a mighty warrior."
         },
         {
           "question": "How many men did God reduce Gideon's army to before the battle?",
           "options": [
             "Three thousand",
-            "Three hundred",
-            "Thirty"
+            "Thirty",
+            "Three hundred"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "God reduced the army from 32,000 all the way down to 300 — so that when Israel won, nobody could claim they did it themselves."
         },
         {
           "question": "What was the battle plan God gave Gideon?",
           "options": [
-            "Charge the camp at dawn with swords drawn",
             "Surround the camp at night with torches, trumpets, and a shout — no swords",
-            "Send the 300 men in disguise to cause confusion inside the camp"
+            "Send the 300 men in disguise to cause confusion inside the camp",
+            "Charge the camp at dawn with swords drawn"
+          ],
+          "answer": 0,
+          "explanation": "Torches hidden in clay jars, trumpets, and a shout in the night — that was the whole plan. No swords drawn. No charge. Just light and noise and God."
+        },
+        {
+          "question": "What did Gideon lay out overnight to test whether God was really calling him?",
+          "options": [
+            "A lamp that he asked God to keep burning all night",
+            "A clay pot filled with water",
+            "A fleece of wool — asking God to make it wet while the ground stayed dry",
+            "A sacrifice on the altar"
+          ],
+          "answer": 2,
+          "explanation": "Gideon tested God twice with a fleece — first wet fleece on dry ground, then dry fleece on wet ground. God patiently answered both tests of a fearful man."
+        },
+        {
+          "question": "Why did God reduce Gideon's army so dramatically before the battle?",
+          "options": [
+            "Because God wanted to test Gideon's obedience",
+            "So Israel would not boast that their own strength had saved them",
+            "Because the larger army had too many cowards in its ranks",
+            "Because a smaller army is always more effective in battle"
           ],
           "answer": 1,
-          "explanation": "Torches hidden in clay jars, trumpets, and a shout in the night — that was the whole plan. No swords drawn. No charge. Just light and noise and God."
+          "explanation": "God said \"The people with you are too many for me to give the Midianites into their hand, lest Israel boast over me, saying, My own hand has saved me.\""
         }
       ]
     },
@@ -1299,10 +1600,10 @@
           "question": "What did Ruth say to Naomi when Naomi told her to go back to her own people?",
           "options": [
             "She agreed to leave but promised to come back",
-            "She said where you go I will go — your people will be my people and your God my God",
-            "She said she would stay only until Naomi reached Bethlehem safely"
+            "She said she would stay only until Naomi reached Bethlehem safely",
+            "She said where you go I will go — your people will be my people and your God my God"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "Ruth's words have echoed through three thousand years: where you go I will go. She chose loyalty over safety, and Naomi's God over her own people's gods."
         },
         {
@@ -1324,6 +1625,28 @@
           ],
           "answer": 2,
           "explanation": "Ruth and Boaz had a son named Obed, who had a son named Jesse, who had a son named David — and David's line eventually led to Jesus."
+        },
+        {
+          "question": "What did Ruth do every day to provide food for herself and Naomi?",
+          "options": [
+            "She gleaned grain in the fields behind the harvesters",
+            "She fished in the river near the city",
+            "She made and sold bread from their small supply of grain",
+            "She worked as a servant in Bethlehem's market"
+          ],
+          "answer": 0,
+          "explanation": "Ruth gleaned in the fields — picking up grain left behind by harvesters. God's law commanded farmers to leave grain for the poor and the foreigner."
+        },
+        {
+          "question": "What did Boaz instruct his workers to do for Ruth?",
+          "options": [
+            "Give her a portion of the harvest pay at the end of each day",
+            "Deliberately pull out stalks from the bundles and leave them for her",
+            "Let her eat at the workers' table and rest in their shelter",
+            "All of the above"
+          ],
+          "answer": 3,
+          "explanation": "Boaz told his men to let her eat with them, protect her from harm, and intentionally drop grain from the bundles for her to collect. His kindness was extravagant."
         }
       ]
     },
@@ -1388,32 +1711,54 @@
         {
           "question": "Why did Samuel keep running to Eli when he heard his name called?",
           "options": [
-            "He thought Eli was in danger and needed help",
             "He had never heard God's voice before and didn't recognize it",
-            "He was testing whether Eli was awake"
+            "He was testing whether Eli was awake",
+            "He thought Eli was in danger and needed help"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Samuel had never heard God speak before — he didn't recognize the voice. It took three times before Eli realized what was happening and told Samuel how to respond."
         },
         {
           "question": "What four words did Samuel say when God called him the fourth time?",
           "options": [
+            "What would you have me do",
             "Here I am, Lord God",
-            "Speak, for your servant is listening",
-            "What would you have me do"
+            "Speak, for your servant is listening"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Speak, for your servant is listening — four words that became the posture of one of Israel's greatest prophets. Complete availability. Quiet expectation."
         },
         {
           "question": "Why did God choose to speak to Samuel rather than to Eli the high priest?",
           "options": [
-            "Because Samuel was more righteous than Eli",
             "Because Eli was too old to serve God faithfully",
+            "Because Samuel was more righteous than Eli",
             "Because Eli had failed to restrain his wicked sons and the word of the Lord had grown rare"
           ],
-          "answer": 2,
+          "answer": 3,
           "explanation": "The word of the Lord was rare because the spiritual life of Israel had grown thin — including Eli's own failure to lead his family. God spoke to the boy who was still listening."
+        },
+        {
+          "question": "Why had the word of the Lord become rare in Israel at the time of Samuel's birth?",
+          "options": [
+            "Because Israel had been conquered by a foreign nation",
+            "Because Eli's sons were wicked priests who despised the offerings of God",
+            "Because God was waiting for a new prophet to be born",
+            "Because the people had stopped building altars to God"
+          ],
+          "answer": 1,
+          "explanation": "Eli's sons Hophni and Phinehas were corrupt priests who treated God's offerings with contempt — and Eli did not stop them. Spiritual darkness had settled over Israel."
+        },
+        {
+          "question": "What message did God give Samuel to deliver to Eli that same night?",
+          "options": [
+            "That God would judge Eli's family because he honored his sons above God",
+            "That Israel would be restored if Eli repented",
+            "That Samuel would replace Eli as priest immediately",
+            "That a foreign nation would attack Israel within the year"
+          ],
+          "answer": 0,
+          "explanation": "God told Samuel to tell Eli that judgment was coming on his family — because Eli knew his sons were sinning and did not rebuke them. It was Samuel's first hard assignment."
         }
       ]
     },
@@ -1477,11 +1822,11 @@
         {
           "question": "How long had Goliath been challenging the Israelite army before David arrived?",
           "options": [
+            "One hundred days",
             "Seven days",
-            "Forty days",
-            "One hundred days"
+            "Forty days"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Goliath had been walking out twice a day for forty days — and for forty days, the entire army of Israel had been running from him."
         },
         {
@@ -1497,12 +1842,34 @@
         {
           "question": "What did David say when Goliath threatened him?",
           "options": [
-            "I am not afraid of you because I am stronger than you look",
             "You come with sword and spear — I come in the name of the Lord, and the battle is His",
+            "I am not afraid of you because I am stronger than you look",
             "God will protect me and your weapons cannot harm me"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "David said you come at me with sword and spear — I come in the name of the Lord of hosts. The battle is the Lord's. That was his whole strategy."
+        },
+        {
+          "question": "What experience had David already had that gave him confidence facing Goliath?",
+          "options": [
+            "He had trained with Israel's best soldiers since he was young",
+            "He had seen God defeat the Philistines in a previous battle",
+            "He had received a vision from God promising him victory",
+            "He had killed both a lion and a bear that attacked his flock"
+          ],
+          "answer": 3,
+          "explanation": "David told Saul he had killed lions and bears with his bare hands to protect his sheep. If God could do that, He could handle one uncircumcised Philistine."
+        },
+        {
+          "question": "How many stones did David take from the stream before facing Goliath?",
+          "options": [
+            "One — he trusted God completely from the start",
+            "Three — one for Goliath and two just in case",
+            "Five smooth stones",
+            "Seven — a number of completeness"
+          ],
+          "answer": 2,
+          "explanation": "David chose five smooth stones. He only needed one — but he was prepared. Faith and preparation are not opposites."
         }
       ]
     },
@@ -1566,9 +1933,9 @@
         {
           "question": "Why does a shepherd need to lead sheep to still waters rather than fast-moving streams?",
           "options": [
-            "Because still water is cleaner and healthier for sheep",
+            "Because fast-moving streams are dangerous and sheep could fall in",
             "Because sheep panic easily and won't drink from rushing fast-moving water",
-            "Because fast-moving streams are dangerous and sheep could fall in"
+            "Because still water is cleaner and healthier for sheep"
           ],
           "answer": 1,
           "explanation": "Sheep won't drink from fast-moving water — they need still, quiet streams. The shepherd knows this and leads them accordingly. God meets us where we actually are, not where we should be."
@@ -1576,22 +1943,44 @@
         {
           "question": "What does the Hebrew word translated as 'follow' in 'goodness and mercy shall follow me' actually mean?",
           "options": [
-            "Walk quietly behind someone",
+            "Pursue like a hunter chasing prey",
             "Wait patiently for someone to arrive",
-            "Pursue like a hunter chasing prey"
+            "Walk quietly behind someone"
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "The Hebrew word means to pursue — like a hunter, like a soldier. Goodness and mercy aren't strolling behind David. They are in active pursuit of him, and they will catch him."
         },
         {
           "question": "In the psalm, what does the shepherd's rod represent?",
           "options": [
             "A walking stick to help the shepherd keep balance on hills",
-            "A weapon for fighting off predators that threaten the flock",
-            "A measuring stick to count how many sheep are in the flock"
+            "A measuring stick to count how many sheep are in the flock",
+            "A weapon for fighting off predators that threaten the flock"
+          ],
+          "answer": 3,
+          "explanation": "The rod was a weapon — the shepherd used it to fight off lions, bears, and any predator threatening the flock. The rod and the staff together represent the shepherd's active protection and guidance."
+        },
+        {
+          "question": "What does the phrase \"he restores my soul\" suggest the shepherd does for the sheep?",
+          "options": [
+            "Gives them extra food when they are hungry",
+            "Brings back sheep that have wandered away and gotten lost",
+            "Gives weary sheep a place to rest and recover",
+            "Heals sheep that have been injured by predators"
+          ],
+          "answer": 2,
+          "explanation": "Restoring the soul means bringing the sheep back to wholeness — rest, recovery, healing from exhaustion. The shepherd tends to the whole sheep, not just the physical needs."
+        },
+        {
+          "question": "What does the psalmist mean by \"I will dwell in the house of the Lord forever\"?",
+          "options": [
+            "He was making a vow never to leave Jerusalem",
+            "He was expressing confidence that God's presence would be his permanent home",
+            "He was promising to attend the Temple every day",
+            "He planned to become a priest and live in the Temple"
           ],
           "answer": 1,
-          "explanation": "The rod was a weapon — the shepherd used it to fight off lions, bears, and any predator threatening the flock. The rod and the staff together represent the shepherd's active protection and guidance."
+          "explanation": "The psalm ends not in fear but in confidence — the shepherd's presence is home. It points forward to eternity with God, not just a building."
         }
       ]
     },
@@ -1657,20 +2046,20 @@
           "question": "How did Elijah make the contest on Mount Carmel even harder before asking God to send fire?",
           "options": [
             "He blindfolded himself so he could not help in any way",
-            "He had twelve large jars of water poured over the altar, the sacrifice, and the wood",
-            "He stood far away from the altar and called out to God from a distance"
+            "He stood far away from the altar and called out to God from a distance",
+            "He had twelve large jars of water poured over the altar, the sacrifice, and the wood"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "Elijah had twelve jars of water poured over everything — three times. Water filled the trench around the altar. He made it more obviously impossible so nobody could doubt what God did."
         },
         {
           "question": "How many prophets of Baal were on Mount Carmel that day?",
           "options": [
+            "One thousand",
             "Forty-five",
-            "Four hundred and fifty",
-            "One thousand"
+            "Four hundred and fifty"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "There were 450 prophets of Baal against one prophet of God. Elijah stood alone against the entire false religious establishment of Israel — and God answered by fire."
         },
         {
@@ -1682,6 +2071,28 @@
           ],
           "answer": 1,
           "explanation": "Elijah told Ahab to go eat and drink — the sound of heavy rain was already coming, even though there wasn't a cloud in the sky yet. That is faith: acting on what God said before you can see it."
+        },
+        {
+          "question": "How did God feed Elijah in the wilderness when he was exhausted and wanted to die?",
+          "options": [
+            "An angel touched him twice and gave him food and water for the journey ahead",
+            "A widow found him and brought him food from her last supply",
+            "A stream appeared in the desert with fresh water",
+            "Ravens brought him bread and meat as they had before"
+          ],
+          "answer": 0,
+          "explanation": "An angel touched the sleeping Elijah and gave him cake and water — twice. Then God said the journey was too great for him without food. God is gentle with burned-out servants."
+        },
+        {
+          "question": "How did God speak to Elijah at Mount Horeb after the wind, earthquake, and fire?",
+          "options": [
+            "Through a vision in the night",
+            "In a loud voice from the sky that all could hear",
+            "Through another angel who spoke face to face",
+            "In a low whisper — a still small voice"
+          ],
+          "answer": 3,
+          "explanation": "God was not in the wind, earthquake, or fire — but in the still small voice afterward. God often speaks most clearly in the quiet after the storm."
         }
       ]
     },
@@ -1746,32 +2157,54 @@
         {
           "question": "Why did Daniel's enemies decide to target his faith instead of his work?",
           "options": [
-            "Because they were jealous of how much the king trusted him",
             "Because they could find no corruption or negligence in him — his work was perfect",
-            "Because Daniel had publicly offended them by refusing to eat with them"
+            "Because Daniel had publicly offended them by refusing to eat with them",
+            "Because they were jealous of how much the king trusted him"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "The administrators looked everywhere for something to use against Daniel. They found nothing — he was not corrupt, not negligent, not bribable. The only vulnerability they could find was his God."
         },
         {
           "question": "What did Daniel do when he heard about the decree forbidding prayer?",
           "options": [
             "He prayed secretly in a hidden room so nobody could see him",
-            "He went home and prayed exactly as he always had — three times a day at his open window",
-            "He stopped praying temporarily until the thirty days were over"
+            "He stopped praying temporarily until the thirty days were over",
+            "He went home and prayed exactly as he always had — three times a day at his open window"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "Daniel went home and did exactly what he had always done — three times a day, at his open window, facing Jerusalem. He didn't hide it. He didn't change his routine. He just prayed."
         },
         {
           "question": "What did Darius say to Daniel before he was thrown into the den of lions?",
           "options": [
+            "I will change this law as soon as the thirty days are finished",
             "I am sorry — I had no choice but to follow the law",
-            "May your God whom you serve continually rescue you",
-            "I will change this law as soon as the thirty days are finished"
+            "May your God whom you serve continually rescue you"
+          ],
+          "answer": 2,
+          "explanation": "Darius said may your God whom you serve continually rescue you — then spent the whole night awake, fasting, hoping. He already knew something about Daniel's God before the morning came."
+        },
+        {
+          "question": "What did Darius do all night while Daniel was in the lions' den?",
+          "options": [
+            "He drafted a new law to protect the Jews in his empire",
+            "He fasted, refused entertainment, and could not sleep",
+            "He prayed to the God of Israel for the first time",
+            "He held a feast to pretend nothing had happened"
           ],
           "answer": 1,
-          "explanation": "Darius said may your God whom you serve continually rescue you — then spent the whole night awake, fasting, hoping. He already knew something about Daniel's God before the morning came."
+          "explanation": "Darius fasted and could not sleep — the pagan king was more troubled by Daniel's situation than he was. God uses unlikely people to bear witness."
+        },
+        {
+          "question": "What did Daniel do three times every day that was his consistent practice?",
+          "options": [
+            "Prayed toward Jerusalem with his windows open",
+            "Offered a sacrifice on a small altar in his room",
+            "Fasted and went without food",
+            "Read from the Hebrew Scriptures"
+          ],
+          "answer": 0,
+          "explanation": "Daniel prayed three times a day facing Jerusalem — the same practice he had kept his whole life. When the decree came, he did not change a thing."
         }
       ]
     },
@@ -1836,31 +2269,53 @@
           "question": "Why was it dangerous for Esther to go to the king without being summoned?",
           "options": [
             "The king was known to be cruel and unpredictable with visitors",
-            "Anyone who approached the king unsummoned was put to death unless the king extended his golden scepter",
-            "Haman had issued an order that no one could see the king without his permission"
+            "Haman had issued an order that no one could see the king without his permission",
+            "Anyone who approached the king unsummoned was put to death unless the king extended his golden scepter"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Persian law was absolute — approaching the king without being summoned meant death unless he chose to extend the golden scepter. Esther had not been summoned in thirty days. She went anyway."
         },
         {
           "question": "What did Esther ask Mordecai and the Jewish people to do before she went to the king?",
           "options": [
-            "Pray at the Temple in Jerusalem for her safety",
             "Fast for three days on her behalf, while she and her maids did the same",
+            "Pray at the Temple in Jerusalem for her safety",
             "Prepare a plan to escape the empire if her mission failed"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Esther asked for three days of fasting from all the Jewish people in Susa and from herself. She prepared through prayer and fasting before she acted. Courage and prayer went together."
         },
         {
           "question": "What happened to Haman at the end of the story?",
           "options": [
+            "He was stripped of his position and forced to serve Mordecai",
             "He was exiled to a distant province of the empire",
-            "He was executed on the very gallows he had built to hang Mordecai",
-            "He was stripped of his position and forced to serve Mordecai"
+            "He was executed on the very gallows he had built to hang Mordecai"
+          ],
+          "answer": 3,
+          "explanation": "Haman was executed on the gallows he had built for Mordecai. The trap he set for the Jewish people fell on him instead. This is a pattern throughout Scripture — those who set traps for God's people often fall into them."
+        },
+        {
+          "question": "What did Mordecai tell Esther when she hesitated to go to the king?",
+          "options": [
+            "That the Jewish people would fight their own battles if she refused",
+            "That deliverance would come another way if she stayed silent — but she would not escape",
+            "That the king would certainly spare her life because she was queen",
+            "That God would protect her because she was righteous"
           ],
           "answer": 1,
-          "explanation": "Haman was executed on the gallows he had built for Mordecai. The trap he set for the Jewish people fell on him instead. This is a pattern throughout Scripture — those who set traps for God's people often fall into them."
+          "explanation": "Mordecai said if she stayed silent, deliverance would come another way — but she and her family would not escape. Then came the famous line: \"Who knows whether you have not come to the kingdom for such a time as this?\""
+        },
+        {
+          "question": "What was the name of the law Esther and Mordecai persuaded the king to make?",
+          "options": [
+            "A proclamation honoring Mordecai throughout the empire",
+            "A decree canceling Haman's original order",
+            "A new decree allowing Jews to fight back and defend themselves",
+            "A law making Judaism the official religion of Persia"
+          ],
+          "answer": 2,
+          "explanation": "Since Persian law could not be reversed, the king issued a second decree allowing the Jews to arm themselves and fight back — and on the day of the attack, they won."
         }
       ]
     },
@@ -1926,19 +2381,19 @@
         {
           "question": "What was Mary's one question when Gabriel told her she would have a son?",
           "options": [
-            "Why has God chosen someone as unimportant as me?",
             "How will this be since I am a virgin?",
-            "What will happen to Joseph when he finds out?"
+            "What will happen to Joseph when he finds out?",
+            "Why has God chosen someone as unimportant as me?"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Mary asked one practical question — how will this be since I am a virgin? Not a refusal, not a demand for proof. Just a question from someone trying to understand. Gabriel answered her honestly."
         },
         {
           "question": "What happened when Mary greeted Elizabeth?",
           "options": [
-            "Elizabeth immediately knew Mary was pregnant because of a vision",
+            "Mary told Elizabeth what the angel had said and Elizabeth wept with joy",
             "The baby inside Elizabeth leaped and Elizabeth was filled with the Holy Spirit",
-            "Mary told Elizabeth what the angel had said and Elizabeth wept with joy"
+            "Elizabeth immediately knew Mary was pregnant because of a vision"
           ],
           "answer": 1,
           "explanation": "The moment Mary's greeting reached Elizabeth, the baby inside her leaped. Elizabeth was filled with the Holy Spirit and knew immediately — blessed are you among women, and blessed is the child you will bear."
@@ -1946,12 +2401,34 @@
         {
           "question": "Where was Jesus born and why?",
           "options": [
+            "In Jerusalem, because Mary wanted the baby to be born near the Temple",
             "In Nazareth, because Mary could not travel in her condition",
-            "In Bethlehem, because a Roman census required Joseph to register in his hometown",
-            "In Jerusalem, because Mary wanted the baby to be born near the Temple"
+            "In Bethlehem, because a Roman census required Joseph to register in his hometown"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "A Roman census required everyone to register in their hometown. Joseph was from the line of David, so he went to Bethlehem — David's city. That is how a prophecy written 700 years earlier was fulfilled."
+        },
+        {
+          "question": "What did Gabriel tell Mary about her relative Elizabeth?",
+          "options": [
+            "That Elizabeth who was called barren was six months pregnant — nothing is impossible with God",
+            "That Elizabeth was praying for Mary and had seen a vision of the coming child",
+            "That Elizabeth was the one God had originally chosen to be the mother of the Messiah",
+            "That Elizabeth had died and Mary should go comfort her family"
+          ],
+          "answer": 0,
+          "explanation": "Gabriel pointed to Elizabeth as proof — if God could open a barren old woman's womb, He could certainly do what He was doing with Mary."
+        },
+        {
+          "question": "What was the name Gabriel gave the child, and what does it mean?",
+          "options": [
+            "Messiah — the anointed one",
+            "Immanuel — God is near",
+            "Emmanuel — God with us",
+            "Jesus — the Lord saves"
+          ],
+          "answer": 3,
+          "explanation": "The name Jesus comes from the Hebrew Yeshua, meaning \"the Lord saves\" — His name announced His mission before He drew a single breath."
         }
       ]
     },
@@ -2016,32 +2493,54 @@
         {
           "question": "How long did Mary and Joseph search for Jesus before they found him?",
           "options": [
+            "Seven days — they searched the whole city of Jerusalem",
             "One day — they found him that same evening",
-            "Three days — they had walked a full day before realizing he was missing",
-            "Seven days — they searched the whole city of Jerusalem"
+            "Three days — they had walked a full day before realizing he was missing"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "They walked a full day before realizing Jesus wasn't with them, then turned back immediately. Three days of searching before they found him in the Temple courts — not lost, not frightened, in deep conversation with the teachers."
         },
         {
           "question": "What was Jesus doing when Mary and Joseph finally found him?",
           "options": [
-            "Praying alone in a quiet corner of the Temple",
             "Sitting with the teachers, listening and asking questions that amazed everyone",
+            "Praying alone in a quiet corner of the Temple",
             "Helping the priests prepare for the daily sacrifices"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Jesus was sitting in the middle of the teachers — listening and asking questions. Everyone who heard him was amazed at his understanding and his answers. He was twelve years old."
         },
         {
           "question": "What did Jesus do after this incident in the Temple?",
           "options": [
-            "He stayed in Jerusalem to continue learning from the teachers",
+            "He went to the Jordan River to be baptized by John",
             "He went with his family back to Nazareth and was obedient to them",
-            "He went to the Jordan River to be baptized by John"
+            "He stayed in Jerusalem to continue learning from the teachers"
           ],
           "answer": 1,
           "explanation": "Jesus went back to Nazareth and was obedient to his parents. The Son of God submitted to human authority — a carpenter and his wife — for eighteen more ordinary years. He did not skip the slow seasons."
+        },
+        {
+          "question": "How old was Jesus when this event happened?",
+          "options": [
+            "Eight years old",
+            "Fifteen years old",
+            "Ten years old",
+            "Twelve years old"
+          ],
+          "answer": 3,
+          "explanation": "Jesus was twelve — the age when a Jewish boy began preparing for his bar mitzvah, his formal entry into the life of the community. This was the threshold of young manhood."
+        },
+        {
+          "question": "What did Jesus mean when He said \"I must be in my Father's house\"?",
+          "options": [
+            "That He needed to finish learning from the teachers before He could leave",
+            "That God had given him a specific assignment to complete in Jerusalem",
+            "That His first loyalty and deepest identity was His relationship with God His Father",
+            "That He preferred the Temple to the journey"
+          ],
+          "answer": 2,
+          "explanation": "Jesus was twelve years old and already clear about who He was and who His Father was. Even Mary and Joseph did not fully understand — but Jesus knew."
         }
       ]
     },
@@ -2120,21 +2619,43 @@
           "question": "What did Jesus say about worry when he pointed to the birds and the wildflowers?",
           "options": [
             "He said worry shows a lack of faith and must be confessed as sin",
-            "He said God feeds the birds and clothes the flowers — how much more will He care for you",
-            "He said worry is natural but prayer is the solution to overcome it"
+            "He said worry is natural but prayer is the solution to overcome it",
+            "He said God feeds the birds and clothes the flowers — how much more will He care for you"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "Jesus pointed to birds and flowers as evidence of the Father's care — they don't worry, and God provides for them. Are you not much more valuable than they? Don't worry about tomorrow. Tomorrow has enough trouble of its own."
         },
         {
           "question": "What is the difference between the two builders at the end of the Sermon on the Mount?",
           "options": [
-            "One built a large house and one built a small house",
             "One built on rock and one built on sand — same storm hit both, only the rock house stood",
+            "One built a large house and one built a small house",
             "One used good materials and one used poor materials"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Both builders faced the same storm. The difference was what they built on. Jesus said anyone who hears his words and puts them into practice is like the man who built on rock. The storms are not optional — what you build on is."
+        },
+        {
+          "question": "What did Jesus say about the law — did He come to destroy it?",
+          "options": [
+            "He said the old law no longer applied now that He had come",
+            "He said only the Ten Commandments still mattered",
+            "He said He had not come to abolish the law but to fulfill it",
+            "He said the law was a good starting point but love was better"
+          ],
+          "answer": 2,
+          "explanation": "Jesus said He had not come to abolish the Law or the Prophets but to fulfill them — and that not one letter would pass away until all was accomplished."
+        },
+        {
+          "question": "What did Jesus teach about loving your enemies that was completely radical?",
+          "options": [
+            "That loving enemies was a noble ideal even if impossible in practice",
+            "That you should love your enemies and pray for those who persecute you",
+            "That enemies should be forgiven once they repented",
+            "That you should pray for your enemies from a safe distance"
+          ],
+          "answer": 1,
+          "explanation": "Jesus said love your enemies and pray for those who persecute you — so that you may be sons of your Father in heaven who sends rain on the just and unjust alike."
         }
       ]
     },
@@ -2201,19 +2722,19 @@
         {
           "question": "Why was the younger son's request for his inheritance so shocking in that culture?",
           "options": [
+            "The younger son had no legal right to any inheritance at all",
             "It was illegal under Jewish law to divide an inheritance",
-            "It was equivalent to saying I wish you were dead — inheritance was not released until the father died",
-            "The younger son had no legal right to any inheritance at all"
+            "It was equivalent to saying I wish you were dead — inheritance was not released until the father died"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "In the ancient world, asking for your inheritance before your father died was essentially saying I wish you were dead — I want what you have without you. The father gave it anyway."
         },
         {
           "question": "What was the son planning to ask his father when he returned home?",
           "options": [
-            "To be fully restored as a son with all his rights returned",
+            "To be given a second share of the inheritance to start over",
             "To be made like one of the hired servants — he was not expecting to be a son again",
-            "To be given a second share of the inheritance to start over"
+            "To be fully restored as a son with all his rights returned"
           ],
           "answer": 1,
           "explanation": "The son rehearsed a speech: I am no longer worthy to be called your son — make me like one of your hired servants. He was asking for employment, not restoration. The father didn't let him finish."
@@ -2222,11 +2743,33 @@
           "question": "What did the father do when he saw his son coming from a long way off?",
           "options": [
             "He waited at the door for his son to approach and apologize first",
-            "He ran to his son, threw his arms around him, and kissed him before any words were spoken",
-            "He sent a servant to bring the son in so he could hear the apology privately"
+            "He sent a servant to bring the son in so he could hear the apology privately",
+            "He ran to his son, threw his arms around him, and kissed him before any words were spoken"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "The father saw him while he was still far off, and he ran. An undignified thing for a man of honor in that culture. He didn't wait for the apology. He ran. That is what God is like."
+        },
+        {
+          "question": "What does the father's response to the returning son tell us about how God sees repentant sinners?",
+          "options": [
+            "That God runs toward us before we finish our apology and restores us fully as His children",
+            "That God forgives privately but public shame is part of the consequence",
+            "That God is gracious but remembers what we have done wrong",
+            "That God forgives but expects a long period of earning back trust"
+          ],
+          "answer": 0,
+          "explanation": "The father ran — in that culture a dignified man never ran. He saw the son from far off, ran to him, and threw a party before any apology was finished. That's grace."
+        },
+        {
+          "question": "What was the older brother's reaction to the party and what does it reveal?",
+          "options": [
+            "He was relieved his brother was alive and forgave him immediately",
+            "He was confused but willing to celebrate once he understood what had happened",
+            "He said nothing and went quietly to his room",
+            "He was angry and refused to go in — believing he deserved more than his brother who had wasted everything"
+          ],
+          "answer": 3,
+          "explanation": "The older brother's anger exposes religious pride — he had stayed and worked, but his heart was far from the father's. Jesus told this parable partly for the Pharisees in the crowd."
         }
       ]
     },
@@ -2291,32 +2834,54 @@
         {
           "question": "What did Mary and Martha's message to Jesus say about Lazarus?",
           "options": [
-            "Please come quickly, Lazarus is near death and we are afraid",
             "Lord, the one you love is sick — no request, just a statement of fact",
-            "We need you here immediately or our brother will not survive"
+            "We need you here immediately or our brother will not survive",
+            "Please come quickly, Lazarus is near death and we are afraid"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "The message was simple: Lord, the one you love is sick. No demand, no urgency, no instruction — just a statement of fact, as if knowing that Jesus knew was enough."
         },
         {
           "question": "Why did Jesus weep at the tomb even though He was about to raise Lazarus?",
           "options": [
+            "He wept because He knew Lazarus would have to die again one day",
             "He was overcome with grief for Lazarus and had forgotten His plan",
-            "He entered the grief of those He loved before He resolved it — God weeps with us",
-            "He wept because He knew Lazarus would have to die again one day"
+            "He entered the grief of those He loved before He resolved it — God weeps with us"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Jesus wept even knowing what He was about to do. He did not stand above the grief. He stepped into it first. God does not just fix our pain from a distance — He enters it with us."
         },
         {
           "question": "What did the high priest Caiaphas accidentally prophesy at the meeting after Lazarus was raised?",
           "options": [
+            "That a false prophet had arisen and must be silenced",
             "That Jesus would destroy the Temple and rebuild it in three days",
-            "That it was better for one man to die for the people than for the whole nation to perish",
-            "That a false prophet had arisen and must be silenced"
+            "That it was better for one man to die for the people than for the whole nation to perish"
+          ],
+          "answer": 3,
+          "explanation": "Caiaphas said it is better for one man to die for the people. He was trying to justify killing Jesus politically — but he was accidentally stating the deepest truth of the gospel. One man would die for the people. And death would not hold Him."
+        },
+        {
+          "question": "Why did Jesus wait two days before going to Lazarus when He heard he was sick?",
+          "options": [
+            "Because the illness was not serious enough to require His immediate attention",
+            "Because He said this illness would not end in death but was for God's glory",
+            "Because He was waiting for Lazarus's family to send a second message",
+            "Because He was afraid of the religious leaders in Jerusalem nearby"
           ],
           "answer": 1,
-          "explanation": "Caiaphas said it is better for one man to die for the people. He was trying to justify killing Jesus politically — but he was accidentally stating the deepest truth of the gospel. One man would die for the people. And death would not hold Him."
+          "explanation": "Jesus deliberately waited — not from indifference but from purpose. He said this was for the glory of God, so that the Son of God might be glorified through it."
+        },
+        {
+          "question": "What did Jesus say about Himself just before raising Lazarus?",
+          "options": [
+            "I am the resurrection and the life — whoever believes in me will never die",
+            "I am the light of the world — whoever follows me will not walk in darkness",
+            "I am the good shepherd who lays down his life for the sheep",
+            "I am the way the truth and the life"
+          ],
+          "answer": 0,
+          "explanation": "\"I am the resurrection and the life\" — one of the great I AM statements. Jesus did not say He would bring resurrection. He said He IS resurrection. Then He proved it."
         }
       ]
     },
@@ -2384,19 +2949,19 @@
         {
           "question": "What did Jesus pray in the Garden of Gethsemane before He was arrested?",
           "options": [
+            "Father, I am ready — let your will be done quickly",
             "Father, give me strength to face what is coming",
-            "Father, if it is possible, let this cup pass — yet not as I will, but as you will",
-            "Father, I am ready — let your will be done quickly"
+            "Father, if it is possible, let this cup pass — yet not as I will, but as you will"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Jesus prayed if it is possible let this cup pass from me — then submitted: yet not as I will but as you will. He prayed this three times, in such anguish that His sweat was like drops of blood. Then He went willingly."
         },
         {
           "question": "What happened to the Temple curtain when Jesus died?",
           "options": [
-            "It caught fire and burned completely",
+            "It fell from its frame and collapsed to the ground",
             "It was torn in two from top to bottom — the way God tears things, not human hands",
-            "It fell from its frame and collapsed to the ground"
+            "It caught fire and burned completely"
           ],
           "answer": 1,
           "explanation": "The curtain that had separated the Holy of Holies from the world for a thousand years was torn from top to bottom — not from the bottom up the way a human would tear it. From the top down. God opened the way."
@@ -2404,12 +2969,34 @@
         {
           "question": "What did the criminal crucified next to Jesus ask of Him?",
           "options": [
-            "Ask God to forgive me for all my sins so I can go to heaven",
             "Remember me when you come into your kingdom",
+            "Ask God to forgive me for all my sins so I can go to heaven",
             "Take me down from this cross and I will follow you forever"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "The criminal said simply: remember me when you come into your kingdom. He had nothing to offer, no time to change, no good works to point to. Jesus said today you will be with me in paradise. That is all it takes."
+        },
+        {
+          "question": "What did the sign above Jesus's cross say, and in how many languages?",
+          "options": [
+            "King of the Jews — in Latin only, the language of Rome",
+            "This is Jesus — in Greek and Aramaic",
+            "The Messiah — in Hebrew and Latin",
+            "Jesus of Nazareth, King of the Jews — in Hebrew, Latin, and Greek"
+          ],
+          "answer": 3,
+          "explanation": "The sign was written in Hebrew, Latin, and Greek — the three great languages of the ancient world. The whole world could read the proclamation: this is the King."
+        },
+        {
+          "question": "What happened to Jesus's clothes at the crucifixion that fulfilled an ancient prophecy?",
+          "options": [
+            "His clothes were returned to His mother Mary",
+            "A Roman officer kept them as a trophy of the execution",
+            "The soldiers divided his garments and cast lots for his tunic",
+            "His robe was burned as part of the execution ritual"
+          ],
+          "answer": 2,
+          "explanation": "The soldiers divided His garments and cast lots for His seamless tunic — fulfilling Psalm 22:18 written a thousand years before the cross."
         }
       ]
     },
@@ -2486,22 +3073,44 @@
         {
           "question": "What did Thomas say he would need before he would believe the others had seen Jesus?",
           "options": [
-            "To hear Jesus's voice speaking directly to him",
             "To see the nail marks and put his hand in Jesus's side",
-            "To speak with at least three other witnesses himself"
+            "To speak with at least three other witnesses himself",
+            "To hear Jesus's voice speaking directly to him"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Thomas said unless I see the nail marks and put my finger where the nails were and my hand into His side, I will not believe. Eight days later Jesus appeared and offered Thomas exactly what he had asked for."
         },
         {
           "question": "How many times did Jesus ask Peter do you love me on the beach?",
           "options": [
             "Once — because Peter had confessed his denial already",
-            "Three times — once for each time Peter had denied Him",
-            "Seven times — because that is the number of completeness"
+            "Seven times — because that is the number of completeness",
+            "Three times — once for each time Peter had denied Him"
+          ],
+          "answer": 3,
+          "explanation": "Jesus asked three times — one question for each of Peter's three denials. It was not accusation. It was restoration. Three denials met with three questions and three commissions: feed my sheep."
+        },
+        {
+          "question": "What did Jesus say to the disciples when He appeared to them behind locked doors?",
+          "options": [
+            "Do not be afraid — it is truly me, I am not a ghost",
+            "Why did you abandon me when I needed you most?",
+            "Peace be with you — and then showed them His hands and side",
+            "Go and tell everyone what you have seen"
+          ],
+          "answer": 2,
+          "explanation": "Jesus's first words to His frightened, hiding disciples were \"Peace be with you.\" Not accusation. Not rebuke. Peace. Then He showed them His wounds so they could believe."
+        },
+        {
+          "question": "What did Jesus do on the beach before speaking to the disciples about Peter's calling?",
+          "options": [
+            "He walked on the water to show He had truly risen",
+            "He cooked breakfast for them — bread and fish on a charcoal fire",
+            "He washed their feet again as He had at the Last Supper",
+            "He prayed with them as the sun rose"
           ],
           "answer": 1,
-          "explanation": "Jesus asked three times — one question for each of Peter's three denials. It was not accusation. It was restoration. Three denials met with three questions and three commissions: feed my sheep."
+          "explanation": "Jesus made breakfast — bread and fish on a charcoal fire. The same smell as the night Peter denied Him. Jesus met Peter in the ordinary before He restored him."
         }
       ]
     },
@@ -2566,20 +3175,20 @@
           "question": "What happened when the Holy Spirit fell on the disciples at Pentecost?",
           "options": [
             "They fell to the ground and could not speak for three days",
-            "A sound like rushing wind filled the house, tongues of fire appeared, and they spoke in other languages",
-            "They were transported to the Temple and began healing the sick"
+            "They were transported to the Temple and began healing the sick",
+            "A sound like rushing wind filled the house, tongues of fire appeared, and they spoke in other languages"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "A violent rushing wind filled the house. Tongues of fire rested on each of them. They were filled with the Holy Spirit and spoke in other languages — and every person in the crowd heard them in their own native tongue."
         },
         {
           "question": "What Old Testament event does Pentecost directly reverse?",
           "options": [
             "The destruction of Sodom and Gomorrah",
-            "The Tower of Babel where God confused human language and scattered people",
-            "The golden calf where Israel worshipped an idol in the wilderness"
+            "The golden calf where Israel worshipped an idol in the wilderness",
+            "The Tower of Babel where God confused human language and scattered people"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "At Babel, God confused languages to scatter people who were building for their own glory. At Pentecost, the Spirit enabled every language to hear the same message. What pride broke apart, grace put back together."
         },
         {
@@ -2591,6 +3200,28 @@
           ],
           "answer": 1,
           "explanation": "About three thousand people were added that day — from every nation under heaven, all hearing the message in their own language. The church went from 120 people to over 3,000 in one afternoon."
+        },
+        {
+          "question": "What had Jesus told His disciples to do before the Holy Spirit came?",
+          "options": [
+            "Wait in Jerusalem until they received power from on high",
+            "Go immediately to all the nations and preach the gospel",
+            "Choose a replacement for Judas and then begin their mission",
+            "Baptize as many people as possible before He returned"
+          ],
+          "answer": 0,
+          "explanation": "Jesus commanded them to wait in Jerusalem until they were clothed with power from on high. The church's first act was not action but waiting on God."
+        },
+        {
+          "question": "What was the feast of Pentecost, and why was it significant that the Spirit came on that day?",
+          "options": [
+            "It was the feast of Tabernacles — remembering when Israel lived in the wilderness",
+            "It was the feast of Passover — celebrating Israel's freedom from Egypt",
+            "It was a new moon festival with no harvest significance",
+            "It was a harvest festival celebrating the first fruits of the grain harvest — now the first fruits of the church were gathered in"
+          ],
+          "answer": 3,
+          "explanation": "Pentecost was a harvest festival of first fruits — and on that day the first great harvest of souls was brought in. Three thousand people. God's timing is never accidental."
         }
       ]
     },
@@ -2655,32 +3286,54 @@
         {
           "question": "What was Saul doing when the light from heaven knocked him to the ground?",
           "options": [
-            "Preaching in a synagogue in Jerusalem against the followers of Jesus",
             "Traveling to Damascus to arrest Christians and bring them back as prisoners",
-            "Overseeing a debate between Pharisees and followers of Jesus"
+            "Overseeing a debate between Pharisees and followers of Jesus",
+            "Preaching in a synagogue in Jerusalem against the followers of Jesus"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Saul was on his way to Damascus with authorization from the high priest to find followers of Jesus and bring them back as prisoners to Jerusalem. He was on his way to arrest more Christians when Jesus stopped him."
         },
         {
           "question": "What happened to Saul immediately after he encountered Jesus on the road?",
           "options": [
+            "He was paralyzed and could not move until Ananias came to him",
             "He was struck deaf and could not hear anything for three days",
-            "He was struck blind and had to be led by hand into Damascus",
-            "He was paralyzed and could not move until Ananias came to him"
+            "He was struck blind and had to be led by hand into Damascus"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "Saul was struck blind. They led him by the hand into Damascus, where he stayed for three days without sight, without food, without water — waiting for the instructions Jesus had promised."
         },
         {
           "question": "What did Jesus say to Ananias about why He had chosen Saul?",
           "options": [
             "Because Saul was the most educated man available to carry the gospel",
-            "Because Saul was His chosen instrument to carry His name before the Gentiles and kings and Israel",
-            "Because Saul's transformation would be the greatest miracle of the early church"
+            "Because Saul's transformation would be the greatest miracle of the early church",
+            "Because Saul was His chosen instrument to carry His name before the Gentiles and kings and Israel"
+          ],
+          "answer": 2,
+          "explanation": "Jesus told Ananias: this man is my chosen instrument to carry my name before the Gentiles and their kings and before the people of Israel. God had already decided what Saul was for — before Saul knew it himself."
+        },
+        {
+          "question": "What did the risen Jesus say to Saul when he demanded to know who was speaking?",
+          "options": [
+            "I am the God of Abraham, Isaac, and Jacob — the one your ancestors followed",
+            "I am Jesus whom you are persecuting",
+            "I am the one you have been looking for all your life",
+            "I am the resurrection and the life — why do you fight against me?"
           ],
           "answer": 1,
-          "explanation": "Jesus told Ananias: this man is my chosen instrument to carry my name before the Gentiles and their kings and before the people of Israel. God had already decided what Saul was for — before Saul knew it himself."
+          "explanation": "\"I am Jesus whom you are persecuting\" — not \"I am God\" or \"I am the Messiah.\" Jesus made it personal. To persecute His people was to persecute Him."
+        },
+        {
+          "question": "Who was the disciple God sent to restore Saul's sight and welcome him into the church?",
+          "options": [
+            "Ananias, an ordinary disciple who was terrified of Saul but obeyed God anyway",
+            "Barnabas, who later traveled with Paul on his missions",
+            "Stephen's brother, who wanted to see if God had truly changed Saul's heart",
+            "Peter, who was the leader of the apostles"
+          ],
+          "answer": 0,
+          "explanation": "Ananias — an ordinary disciple, not a famous apostle — was the one God chose. He was afraid of Saul, said so honestly to God, and then obeyed anyway. That's courage."
         }
       ]
     },
@@ -2744,32 +3397,54 @@
         {
           "question": "Why were Paul and Silas thrown into prison in Philippi?",
           "options": [
+            "They refused to offer a sacrifice to the Roman gods",
             "They were caught teaching in the synagogue without permission",
-            "They cast out a spirit from a slave girl and her owners lost their source of income",
-            "They refused to offer a sacrifice to the Roman gods"
+            "They cast out a spirit from a slave girl and her owners lost their source of income"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Paul cast a spirit out of a slave girl who had been earning money for her owners by fortune-telling. Her furious owners dragged Paul and Silas before the magistrates, the crowd attacked, and they were beaten and imprisoned."
         },
         {
           "question": "What were Paul and Silas doing at midnight in prison?",
           "options": [
-            "Sleeping — they were exhausted from the beatings",
             "Praying and singing hymns to God while the other prisoners listened",
-            "Quietly planning how to escape through the window"
+            "Quietly planning how to escape through the window",
+            "Sleeping — they were exhausted from the beatings"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "At midnight, beaten, with feet in stocks, Paul and Silas were praying and singing hymns. The other prisoners were listening. The song in the darkest moment is the one nobody forgets."
         },
         {
           "question": "What did the jailer do immediately after he and his household believed?",
           "options": [
             "He went to the magistrates to confess what had happened to Paul and Silas",
-            "He washed their wounds, had his whole household baptized, brought them to his house and fed them",
-            "He released all the prisoners and resigned from his position"
+            "He released all the prisoners and resigned from his position",
+            "He washed their wounds, had his whole household baptized, brought them to his house and fed them"
+          ],
+          "answer": 3,
+          "explanation": "The jailer washed Paul and Silas's wounds — cleaning the injuries he had indirectly caused — then had his whole household baptized, brought them into his home, set a meal before them, and was filled with joy. All in one night."
+        },
+        {
+          "question": "What happened at midnight that shook the entire prison?",
+          "options": [
+            "The prisoners began shouting together and the walls collapsed",
+            "A violent earthquake shook the foundations and every door flew open and every chain fell off",
+            "An angel appeared in a blinding light that frightened all the guards away",
+            "A lightning bolt struck the prison wall and cracked it open"
           ],
           "answer": 1,
-          "explanation": "The jailer washed Paul and Silas's wounds — cleaning the injuries he had indirectly caused — then had his whole household baptized, brought them into his home, set a meal before them, and was filled with joy. All in one night."
+          "explanation": "A violent earthquake — every foundation shook, every door opened, every chain fell. God's response to His servants singing hymns in a Roman prison was to shake the earth."
+        },
+        {
+          "question": "Why did the jailer draw his sword to kill himself when he woke up?",
+          "options": [
+            "He had heard Paul preaching and was convicted of his sins",
+            "He was ashamed of how he had treated Paul and Silas",
+            "He thought the prisoners had escaped and he would be executed for failing his duty",
+            "He had been planning to leave his post anyway and saw this as his chance"
+          ],
+          "answer": 2,
+          "explanation": "Roman law required a jailer to pay with his own life if prisoners escaped. Seeing the open doors, he assumed the worst — and Paul's shout \"We are all here!\" stopped him."
         }
       ]
     }
