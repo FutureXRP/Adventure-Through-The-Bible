@@ -1,0 +1,515 @@
+{
+  "meta": {
+    "title": "The Story Map",
+    "subtitle": "An Adventure Through the Bible",
+    "version": "1.0",
+    "tier": 2,
+    "ageRange": "5-8",
+    "totalStories": 5,
+    "freeStories": 3
+  },
+  "eras": [
+    {
+      "id": "creation",
+      "label": "In the Beginning",
+      "period": "Before Time",
+      "worldContext": "Before anything existed, God was already there.",
+      "color": "#7c3aed"
+    },
+    {
+      "id": "patriarchs",
+      "label": "The Age of the Patriarchs",
+      "period": "c. 2100-1800 BC",
+      "worldContext": "The world's first great cities rose up. And God chose one family to change everything.",
+      "color": "#b45309"
+    },
+    {
+      "id": "exodus",
+      "label": "The Exodus and Wilderness",
+      "period": "c. 1446-1400 BC",
+      "worldContext": "Egypt was the most powerful country in the world. God was about to show everyone who was really in charge.",
+      "color": "#b91c1c"
+    },
+    {
+      "id": "promised-land",
+      "label": "The Promised Land",
+      "period": "c. 1400-1050 BC",
+      "worldContext": "Israel was about to enter a new land. The big question was whether they would trust God.",
+      "color": "#065f46"
+    },
+    {
+      "id": "kingdom",
+      "label": "The Kingdom Era",
+      "period": "c. 1050-586 BC",
+      "worldContext": "Israel got the kings they asked for. Some were good. Some were not.",
+      "color": "#1e40af"
+    },
+    {
+      "id": "exile",
+      "label": "Exile and Return",
+      "period": "c. 605-430 BC",
+      "worldContext": "God's people were taken far from home. But God never left them.",
+      "color": "#831843"
+    },
+    {
+      "id": "nt-life",
+      "label": "The Life of Jesus",
+      "period": "c. 5 BC-AD 30",
+      "worldContext": "Rome controlled the world. And into that world, God was born as a baby.",
+      "color": "#0369a1"
+    },
+    {
+      "id": "nt-church",
+      "label": "Death, Resurrection and the Early Church",
+      "period": "c. AD 30-62",
+      "worldContext": "Jesus rose from the dead and told his friends to go tell the whole world. They did.",
+      "color": "#065f46"
+    }
+  ],
+  "stories": [
+    {
+      "id": "creation",
+      "era": "creation",
+      "order": 1,
+      "access": "free",
+      "emoji": "🌍",
+      "title": "In the Beginning",
+      "book": "Genesis 1-2",
+      "date": "Before Time",
+      "location": "The Whole Earth",
+      "hook": "Before anything existed at all, God was already there. Then He spoke, and everything began.",
+      "story": [
+        "Before anything existed, God was already there. There was no sky, no ground, no sun, no animals, and no people. Just God. And then God started making things.",
+        "He said, \"Light!\" And bright, beautiful light appeared. God looked at the light and loved it. He called the light Day and the darkness Night. That was the first day.",
+        "On the second day, God made the sky. On the third day, He made dry ground and oceans. He made every kind of plant and tree, with seeds and fruit and flowers. He looked at everything and loved it.",
+        "On the fourth day, God put the sun in the sky to shine during the day and the moon and stars to shine at night. On the fifth day, He filled the oceans with fish and the sky with birds. He loved everything He made and told them to have babies and fill the earth.",
+        "On the sixth day, God made animals. Every kind you can think of! Lions and elephants, dogs and ladybugs. Then God said something special that He had never said before. He said, \"Let us make people, someone like us.\"",
+        "So God made a man and a woman. He looked at them and loved them very much. He told them, \"Take care of everything I made. You are in charge.\" Then He looked at everything He had made and said it was very good. Not just good. Very good!",
+        "On the seventh day, God rested. He had finished everything He wanted to make, so He rested and called that day holy.",
+        "Then God did something amazing with the man. He bent down close and breathed into the man's nose. And the man came alive! God planted a beautiful garden called Eden and put the man there to take care of it.",
+        "God said, \"It is not good for the man to be alone.\" So while the man was sleeping, God made a woman from one of his ribs. When the man woke up and saw her, he was so happy. The two of them were perfectly happy together, with God right there with them."
+      ],
+      "devotional": {
+        "bigIdea": "God made everything, including you, on purpose. You are the best thing He made, and He loves you very much.",
+        "questions": [
+          "God made the whole world and said it was good. But when He made people, He said it was very good. Why do you think people are so special to God?",
+          "God breathed His own breath into the man to make him alive. What does that tell you about how much God cares about people?",
+          "God rested on the seventh day. Why do you think rest is important? Do you have a good rest day in your week?"
+        ]
+      },
+      "tags": ["creation", "identity", "God's character"],
+      "connections": [
+        {
+          "title": "The Darkest Friday",
+          "storyId": "crucifixion",
+          "reference": "John 1:1-3",
+          "why": "Jesus was there when God made everything. John says Jesus is the Word that created the whole world."
+        },
+        {
+          "title": "Impossible News",
+          "storyId": "annunciation",
+          "reference": "Luke 1:35",
+          "why": "The same Spirit who was there at creation helped bring Jesus into the world."
+        },
+        {
+          "title": "The Empty Tomb",
+          "storyId": "resurrection",
+          "reference": "2 Corinthians 5:17",
+          "why": "Paul says when someone follows Jesus they become a new creation, just like God made everything new in the beginning."
+        }
+      ],
+      "audio": "./audio/creation.mp3",
+      "quiz": [
+        {
+          "question": "What were the very first words God said to make the world?",
+          "options": [
+            "Let there be light",
+            "Let there be animals",
+            "Let there be people",
+            "Let there be water"
+          ],
+          "answer": 0,
+          "explanation": "God said \"Light!\" and bright, beautiful light appeared. That was the very first thing God made."
+        },
+        {
+          "question": "How did God make the man come alive?",
+          "options": [
+            "He spoke his name out loud",
+            "He touched him with fire",
+            "He breathed into his nose",
+            "He sprinkled water on him"
+          ],
+          "answer": 2,
+          "explanation": "God bent down close and breathed right into the man's nose. That is how the man came alive. No other creature got this special breath from God."
+        },
+        {
+          "question": "What did God say about everything He made on the sixth day?",
+          "options": [
+            "It was very good",
+            "It was finished",
+            "It was pretty good",
+            "It was enough"
+          ],
+          "answer": 0,
+          "explanation": "After making people, God looked at everything He had made and said it was very good. Not just good, but very good!"
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "adam-eve",
+      "era": "creation",
+      "order": 2,
+      "access": "free",
+      "emoji": "🍎",
+      "title": "The First Bad Choice",
+      "book": "Genesis 3",
+      "date": "Early History",
+      "location": "Garden of Eden",
+      "hook": "Adam and Eve lived in a perfect garden. God gave them one rule. Then a sneaky snake showed up.",
+      "story": [
+        "Adam and Eve lived in a beautiful garden called Eden. God walked with them there like a close friend. They had everything they needed. Every kind of food, every kind of animal, and God right there with them.",
+        "God had given them one rule. He said, \"You can eat from any tree in the garden except one. Do not eat from the tree in the middle of the garden. If you do, you will die.\"",
+        "One day, a sneaky snake came to Eve. The snake was tricky. He asked, \"Did God really say you cannot eat from any tree?\" He twisted the words to make God's rule sound mean.",
+        "Eve said they could eat from any tree except the one in the middle. The snake said, \"You will not die! God knows that if you eat it, you will become wise like Him.\" The snake was trying to make Eve think God was keeping something good from her.",
+        "Eve looked at the fruit. It looked yummy. She wanted to be wise. So she took some and ate it. Then she gave some to Adam, who was standing right there, and he ate it too.",
+        "Right away, everything felt different. But not in a good way. They felt ashamed. They made clothes out of leaves to cover themselves. And when they heard God coming, instead of running to Him like always, they hid in the trees.",
+        "God called out, \"Where are you?\" Adam came out and said he was hiding because he was scared. God asked, \"Did you eat from the tree I told you not to eat from?\" Adam blamed Eve. Eve blamed the snake. Nobody said sorry.",
+        "Because of what they did, things got harder. Work became difficult. Life was not as easy as it had been. And they had to leave the perfect garden.",
+        "But before they left, God made something for them. He made real clothes for them out of animal skins, much better than the leaf clothes they had made. And God made a promise. One day, someone in Eve's family would crush the snake's head. The rescue was already on its way."
+      ],
+      "devotional": {
+        "bigIdea": "When we make bad choices, we might want to hide from God. But God always comes looking for us. He loves us even when we mess up.",
+        "questions": [
+          "Adam and Eve hid from God after they made a bad choice. Have you ever felt like hiding after you did something wrong? What do you think God wants you to do instead?",
+          "God made Adam and Eve better clothes after they messed up. What does that tell you about how God treats people who make mistakes?",
+          "The snake said God was keeping something good from Adam and Eve. But God had given them everything! Why do you think it is important to trust what God says?"
+        ]
+      },
+      "tags": ["temptation", "consequences", "grace", "choices"],
+      "connections": [
+        {
+          "title": "The Darkest Friday",
+          "storyId": "crucifixion",
+          "reference": "Romans 5:19",
+          "why": "Adam's bad choice brought sin into the world. Jesus came to fix what went wrong in the garden."
+        },
+        {
+          "title": "The Boy Who Came Home",
+          "storyId": "prodigal",
+          "reference": "Luke 15:17",
+          "why": "Just like the son in that story ran away and then came back, Adam and Eve turned away from God, but God made a way to come back to Him."
+        },
+        {
+          "title": "In the Beginning",
+          "storyId": "creation",
+          "reference": "Genesis 3:15",
+          "why": "God promised someone from Eve's family would one day beat the snake. That was the first hint about Jesus."
+        }
+      ],
+      "audio": "./audio/adam-eve.mp3",
+      "quiz": [
+        {
+          "question": "What was the one rule God gave Adam and Eve?",
+          "options": [
+            "Do not talk to animals",
+            "Do not leave the garden",
+            "Do not eat from the special tree in the middle",
+            "Do not go out at night"
+          ],
+          "answer": 2,
+          "explanation": "God said they could eat from any tree except the one in the middle of the garden. That was the only rule."
+        },
+        {
+          "question": "What did Adam and Eve do when they heard God coming after they ate the fruit?",
+          "options": [
+            "They ran to meet Him like always",
+            "They hid in the trees because they were scared",
+            "They went to sleep",
+            "They kept eating the fruit"
+          ],
+          "answer": 1,
+          "explanation": "Adam and Eve hid in the trees. They were ashamed and scared because they had broken God's rule."
+        },
+        {
+          "question": "What did God make for Adam and Eve before they left the garden?",
+          "options": [
+            "A boat to travel in",
+            "Real clothes made from animal skins",
+            "A new garden to live in",
+            "A bag of food for the journey"
+          ],
+          "answer": 1,
+          "explanation": "God made real clothes for them out of animal skins. Even after they disobeyed, God still took care of them."
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "cain-abel",
+      "era": "creation",
+      "order": 3,
+      "access": "free",
+      "emoji": "🌱",
+      "title": "Two Brothers",
+      "book": "Genesis 4",
+      "date": "Early History",
+      "location": "East of Eden",
+      "hook": "Cain and Abel were the very first brothers. They both wanted to give something to God. But only one of them gave his very best.",
+      "story": [
+        "Adam and Eve had two sons. The first was named Cain, who grew food from the ground. The second was named Abel, who took care of sheep.",
+        "One day both brothers decided to bring a gift to God. Abel brought the very best of his baby lambs, the finest ones he had. Cain brought some of his crops, but not his best ones.",
+        "God was happy with Abel's gift. But He was not happy with Cain's gift. Cain got very angry. His face fell and he looked upset.",
+        "God came to talk to Cain. He said, \"Why are you angry? If you do what is right, I will be happy with your gift too. But be careful. Something bad wants to get control of you. You have to choose to do what is right.\" God was warning Cain and giving him a chance to change.",
+        "But Cain did not listen. He said to Abel, \"Let us go out to the field.\" And when they got there, Cain hurt Abel and Abel died. It was the very first time someone had died, and it happened because of anger and jealousy.",
+        "God came to Cain and asked, \"Where is your brother Abel?\" Cain said, \"I do not know. Am I supposed to watch my brother?\" But God knew what had happened.",
+        "Because of what Cain did, he had to go away and wander. He was sad and scared. But even then, God put a mark on Cain to keep him safe so no one would hurt him. Even Cain was not forgotten by God.",
+        "This sad story asks us a question: should we take care of each other? The answer God wants us to know is yes. We are supposed to love and look out for the people around us."
+      ],
+      "devotional": {
+        "bigIdea": "God warned Cain before things went wrong. When we feel angry or jealous, we can talk to God about it. He helps us make good choices before we do something we cannot take back.",
+        "questions": [
+          "Cain felt jealous because God liked Abel's gift better. Have you ever felt jealous of someone? What did you do about it?",
+          "God warned Cain before anything bad happened. How do you think God warns us today when we are about to make a bad choice?",
+          "Even after Cain did something terrible, God still kept him safe. What does that tell you about how much God cares about people?"
+        ]
+      },
+      "tags": ["anger", "jealousy", "consequences", "responsibility", "worship"],
+      "connections": [
+        {
+          "title": "The Upside-Down Kingdom",
+          "storyId": "sermon-mount",
+          "reference": "Matthew 5:21-22",
+          "why": "Jesus taught that anger in our heart is dangerous, not just the bad things we do with it. Cain's story shows why."
+        },
+        {
+          "title": "The First Bad Choice",
+          "storyId": "adam-eve",
+          "reference": "Genesis 4:7",
+          "why": "The trouble in Cain's heart started because of what went wrong in the garden. Bad choices lead to more bad choices."
+        },
+        {
+          "title": "The Boy Who Came Home",
+          "storyId": "prodigal",
+          "reference": "1 John 3:11-12",
+          "why": "The Bible uses Cain as an example of what happens when we let jealousy grow. The opposite of Cain is love."
+        }
+      ],
+      "audio": "./audio/cain-abel.mp3",
+      "quiz": [
+        {
+          "question": "What did Abel bring as a gift to God?",
+          "options": [
+            "Some vegetables from his garden",
+            "The very best of his baby lambs",
+            "A pile of rocks he had collected",
+            "Some bread he had baked"
+          ],
+          "answer": 1,
+          "explanation": "Abel brought the very best of his baby lambs. He gave God his best, and God was happy with his gift."
+        },
+        {
+          "question": "What did God tell Cain when Cain was angry?",
+          "options": [
+            "That he should go away and not come back",
+            "That if he did what was right, his gift would be accepted too",
+            "That Abel was better than him",
+            "That he should try harder next time"
+          ],
+          "answer": 1,
+          "explanation": "God told Cain that if he did what was right, his gift would be accepted. God gave Cain a chance to change before anything bad happened."
+        },
+        {
+          "question": "Even after Cain did something very wrong, what did God do for him?",
+          "options": [
+            "God forgave him right away and forgot it happened",
+            "God put a special mark on him to keep him safe",
+            "God gave him a new family",
+            "God let him go back to his old home"
+          ],
+          "answer": 1,
+          "explanation": "God put a mark on Cain so that nobody would hurt him. Even Cain was still cared for by God."
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "noah",
+      "era": "patriarchs",
+      "order": 4,
+      "access": "premium",
+      "emoji": "🌈",
+      "title": "The Ark and the Rainbow",
+      "book": "Genesis 6-9",
+      "date": "c. 2350 BC",
+      "location": "Mesopotamia to Mount Ararat, Turkey",
+      "hook": "The world had forgotten about God. But one man still loved Him. And God had a very big job for that man.",
+      "story": [
+        "A long time after Adam and Eve, the world had gotten very bad. People had stopped caring about God. They were hurting each other. God looked at the world He had made and was very sad.",
+        "But there was one man named Noah who still loved God and tried to do what was right. God saw Noah and decided to talk to him.",
+        "God told Noah that He was going to send a big flood to cover the whole earth. But God wanted to save Noah and his family. He told Noah to build a huge boat called an ark. It was not just a little boat. It was enormous, like a floating house. God told Noah exactly how to build it.",
+        "God also told Noah to bring two of every kind of animal onto the ark, one male and one female. That way, the animals would be safe too.",
+        "Noah did everything God told him to do. It took a very long time to build such a big ark. His neighbors probably thought he was strange, building a huge boat with no water nearby. But Noah kept building because he trusted God.",
+        "When the ark was ready, the animals came, two by two, every kind of animal you can think of. Then Noah and his wife and his sons and their wives all went in. And God closed the door.",
+        "Then it started to rain. It rained and rained for forty days. The water rose higher and higher until even the biggest mountains were covered. But the ark floated safely on top of the water.",
+        "After a long time, the water started going down. The ark landed on a mountain. Noah sent out a dove to see if there was dry land. The third time he sent her out, she did not come back. Noah knew it was time to come out.",
+        "The very first thing Noah did when he got out of the ark was thank God. He built an altar and worshipped God. God was pleased. Then God made Noah a promise. He said, \"I will never flood the whole earth again.\" And He put a rainbow in the sky as a sign of that promise.",
+        "Every rainbow you see is a reminder of that promise. God keeps every promise He makes."
+      ],
+      "devotional": {
+        "bigIdea": "Noah built a huge boat because he trusted God, even when it did not make sense. Every rainbow is God showing us He keeps His promises.",
+        "questions": [
+          "Noah built a giant boat far from any water because God told him to. That must have seemed very strange! Have you ever done something because you trusted God, even when it was hard to understand?",
+          "God closed the door of the ark Himself. Noah did not have to figure out when to go in. What does it feel like to know that God takes care of the details?",
+          "The rainbow is God's promise sign in the sky. What is your favorite reminder that God keeps His promises?"
+        ]
+      },
+      "tags": ["faith", "obedience", "patience", "God's promises", "covenant"],
+      "connections": [
+        {
+          "title": "The Empty Tomb",
+          "storyId": "resurrection",
+          "reference": "1 Peter 3:20-21",
+          "why": "Peter says the ark and the flood pointed forward to baptism, being carried safely through water into a new life."
+        },
+        {
+          "title": "A Promise as Big as the Stars",
+          "storyId": "abraham",
+          "reference": "Genesis 9:8-17",
+          "why": "The rainbow promise with Noah is the first of God's big promises. The same God would later make big promises to Abraham and to us."
+        },
+        {
+          "title": "The Upside-Down Kingdom",
+          "storyId": "sermon-mount",
+          "reference": "Matthew 24:37-39",
+          "why": "Jesus talked about the days of Noah to help people understand that they should always be ready for Him."
+        }
+      ],
+      "audio": "./audio/noah.mp3",
+      "quiz": [
+        {
+          "question": "Why did God decide to save Noah and his family?",
+          "options": [
+            "Because Noah was the tallest man alive",
+            "Because Noah still loved God and tried to do what was right",
+            "Because Noah had the most animals",
+            "Because Noah lived far away from the flood"
+          ],
+          "answer": 1,
+          "explanation": "In a world where everyone had forgotten about God, Noah still loved God and tried to do what was right. God saw Noah's heart."
+        },
+        {
+          "question": "What was the very first thing Noah did when he got out of the ark?",
+          "options": [
+            "He looked for food for the animals",
+            "He checked that everything was dry",
+            "He thanked God and worshipped Him",
+            "He started building a house"
+          ],
+          "answer": 2,
+          "explanation": "Right away, Noah built an altar to thank God. Saying thank you to God was the most important thing on his mind."
+        },
+        {
+          "question": "What did God put in the sky as a sign of His promise to never flood the whole earth again?",
+          "options": [
+            "A bright star",
+            "A rainbow",
+            "A pillar of fire",
+            "A cloud shaped like a boat"
+          ],
+          "answer": 1,
+          "explanation": "God put a rainbow in the sky as a sign of His promise. Every rainbow we see is a reminder that God keeps His word."
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "tower-babel",
+      "era": "patriarchs",
+      "order": 5,
+      "access": "premium",
+      "emoji": "🏛️",
+      "title": "The Tower of Babel",
+      "book": "Genesis 11",
+      "date": "c. 2200 BC",
+      "location": "Shinar, Mesopotamia",
+      "hook": "Long ago, everyone on earth spoke the same language. Then they decided to build a tower to make themselves famous. God had something to say about that.",
+      "story": [
+        "After Noah and his family, people spread out across the earth and had babies and more babies, until there were lots of people again. For a while, everyone in the whole world spoke the same language. Everyone could talk to everyone else.",
+        "A big group of people settled on a flat plain. They figured out how to make bricks and build things. They were good builders, and they had a big idea.",
+        "They said to each other, \"Let us build a huge city with a tower so tall it reaches all the way to heaven! We will make ourselves famous. And we will stay together right here instead of spreading out.\" The problem was that God had told people to spread out and fill the earth. They were doing the opposite.",
+        "God looked down at what they were building. The people were only thinking about making themselves look great. They were not thinking about God at all.",
+        "So God did something surprising. He changed their language! All of a sudden, nobody could understand what anyone else was saying. Workers who had been talking to each other all morning suddenly heard strange sounds when their friends spoke.",
+        "Everything got very confusing. People who could understand each other moved together. People who could not understand each other went different ways. They stopped building and spread out all over the earth, which is exactly what God had wanted them to do all along.",
+        "The city was called Babel, which sounds like the word for confused. They had wanted to build something to reach up to God. Instead, God came down and mixed everything up.",
+        "But here is the good news. Many, many years later, God sent His Holy Spirit, and something amazing happened. People from every country and every language could suddenly understand God's good news in their own language. What happened at Babel was put right by God's Spirit. God's plan is always to bring people together, but in His way, not ours."
+      ],
+      "devotional": {
+        "bigIdea": "The people at Babel wanted to be famous and do things their own way instead of God's way. God wants us to trust His plans, not just make up our own.",
+        "questions": [
+          "The people at Babel wanted to make themselves famous. What kinds of things do people want to be famous for today? What do you think God thinks about that?",
+          "God asked people to spread out and they said no. Have you ever not wanted to do something God or your parents asked you to do? What happened?",
+          "At the end of the story, God's Spirit brought people back together. What does that tell you about God's plan for all the different people of the world?"
+        ]
+      },
+      "tags": ["pride", "ambition", "humility", "God's sovereignty"],
+      "connections": [
+        {
+          "title": "The Day Everything Changed",
+          "storyId": "pentecost",
+          "reference": "Acts 2:1-11",
+          "why": "At Pentecost, God's Spirit let everyone hear the good news in their own language. That undid what happened at Babel."
+        },
+        {
+          "title": "A Promise as Big as the Stars",
+          "storyId": "abraham",
+          "reference": "Genesis 12:1-3",
+          "why": "Right after Babel, God called Abraham and started His plan to bless every nation on earth."
+        },
+        {
+          "title": "The First Bad Choice",
+          "storyId": "adam-eve",
+          "reference": "Genesis 3:5",
+          "why": "The snake told Adam and Eve they could be like God on their own. The people at Babel tried the same thing. It did not work either time."
+        }
+      ],
+      "audio": "./audio/tower-babel.mp3",
+      "quiz": [
+        {
+          "question": "Why did the people want to build such a tall tower?",
+          "options": [
+            "To see the animals from far away",
+            "To get closer to God and worship Him",
+            "To make themselves famous and stay together",
+            "To protect themselves from rain"
+          ],
+          "answer": 2,
+          "explanation": "The people wanted to make themselves famous and stay in one place. They were not thinking about what God wanted."
+        },
+        {
+          "question": "How did God stop the people from finishing their tower?",
+          "options": [
+            "He sent rain to knock it down",
+            "He confused their language so they could not understand each other",
+            "He made them all fall asleep",
+            "He sent an angel to tell them to stop"
+          ],
+          "answer": 1,
+          "explanation": "God mixed up their language so nobody could understand what anyone else was saying. Building became impossible when no one could talk to each other."
+        },
+        {
+          "question": "What does the name Babel mean?",
+          "options": [
+            "High tower",
+            "Big city",
+            "Confused",
+            "Famous place"
+          ],
+          "answer": 2,
+          "explanation": "Babel sounds like the Hebrew word for confused. The city got that name because God confused the language of all the people there."
+        }
+      ],
+      "published_date": "2026-06-03"
+    }
+  ]
+}
