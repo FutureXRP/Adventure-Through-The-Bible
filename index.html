@@ -42,7 +42,6 @@
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    flex-wrap: wrap;
     position: relative;
     z-index: 100;
     overflow: visible;
@@ -951,8 +950,19 @@ function getProgress() {
 function saveProgressLocal(set) { localStorage.setItem(PROGRESS_KEY, JSON.stringify([...set])); }
 async function markStoryComplete(story) {
   if (authUser && activeProfile) {
-    await sb.from('story_progress').upsert({ profile_id: activeProfile.id, profile_type: activeProfile.type, story_id: story.id, story_order: story.order, era: story.era });
-    dbProgress.add(story.id);
+    const { error } = await sb.from('story_progress').upsert({
+      profile_id: activeProfile.id,
+      profile_type: activeProfile.type,
+      story_id: story.id,
+      story_order: story.order,
+      era: story.era
+    });
+    if (error) {
+      // Fall back to local storage if Supabase fails
+      console.warn('Supabase progress save failed, using local fallback:', error.message);
+      const p = getProgress(); p.add(story.id); saveProgressLocal(p);
+    }
+    dbProgress.add(story.id); // Always update in-memory regardless
     await checkAndAwardBadges(story);
   } else {
     const p = getProgress(); p.add(story.id); saveProgressLocal(p);
@@ -1578,8 +1588,16 @@ function updateProgress() {
 document.getElementById('markDoneBtn').addEventListener('click', async () => {
   if (currentStoryIndex === null) return;
   const story = stories[currentStoryIndex];
+  if (!story) return;
   const progress = getProgress();
-  if (!progress.has(story.id)) { await markStoryComplete(story); showToast('⭐ Story marked as read!'); }
+  if (!progress.has(story.id)) {
+    // Optimistic UI — update button immediately so user sees feedback
+    const btn = document.getElementById('markDoneBtn');
+    btn.textContent = '✓ Already Read';
+    btn.classList.add('already-done');
+    await markStoryComplete(story);
+    showToast('⭐ Story marked as read!');
+  }
 });
 document.getElementById('prevBtn').addEventListener('click', () => {
   const idx = parseInt(document.getElementById('prevBtn').dataset.idx);
