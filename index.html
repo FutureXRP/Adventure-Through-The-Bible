@@ -45,6 +45,8 @@
     position: relative;
     z-index: 100;
     overflow: visible;
+    height: 56px;
+    box-sizing: border-box;
   }
   .auth-bar-left { display: flex; align-items: center; gap: 10px; min-width: 0; flex-shrink: 0; }
   .auth-bar-avatar {
@@ -798,7 +800,8 @@ async function init() {
     if (session) { authUser = session.user; await loadUserProfile(); }
   } catch(e) { console.warn('Auth session error:', e); }
 
-  if (PAYWALL_ENABLED && !localStorage.getItem(WELCOME_KEY)) {
+  // Only show welcome popup if user is NOT already signed in AND hasn't seen it
+  if (PAYWALL_ENABLED && !authUser && !localStorage.getItem(WELCOME_KEY)) {
     const overlay = document.getElementById('welcomeOverlay');
     overlay.classList.add('open'); overlay.style.display = 'flex'; overlay.style.zIndex = '9999';
     document.body.style.overflow = 'hidden';
@@ -1093,46 +1096,46 @@ function renderAuthBar() {
     right.innerHTML = '<a href="./login.html?mode=signup" class="auth-bar-btn primary">Create Account</a><a href="./login.html" class="auth-bar-btn ghost">Sign In</a>';
     return;
   }
+
   const isParent = userProfile.account_type === 'parent';
   const activeTier = activeProfile ? (activeProfile.tier || 1) : 1;
 
-  // Build child profile rows
+  // Build child profile rows for dropdown
   let childRows = '';
   childProfiles.forEach(function(c) {
-    const cTier = c.tier || 1;
     const isActive = activeProfile && activeProfile.id === c.id;
-    childRows += '<button class="profile-drop-item' + (isActive ? ' active' : '') + '" onclick="switchProfile(\'' + c.id + '\',\'child\')">';
-    childRows += '<div class="profile-drop-avatar">' + c.avatar_emoji + '</div>';
-    childRows += '<div><div class="profile-drop-name">' + c.display_name + '</div>';
-    childRows += '<div class="profile-drop-type">' + (c.age ? 'Age ' + c.age : 'Child') + '</div></div>';
-    childRows += '<div style="margin-left:auto;display:flex;align-items:center;gap:6px;flex-shrink:0">';
-    childRows += '<button onclick="event.stopPropagation();toggleChildTier(\'' + c.id + '\')" class="tier-badge ' + (cTier === 2 ? 'tier-2' : 'tier-1') + '" title="Switch reading level">Ages ' + (cTier === 2 ? '5\u20138' : '9\u201312') + '</button>';
-    if (isActive) childRows += '<span class="profile-drop-check">\u2713</span>';
-    childRows += '</div></button>';
+    childRows +=
+      '<button class="profile-drop-item' + (isActive ? ' active' : '') + '" onclick="switchProfile(\'' + c.id + '\',\'child\')">' +
+        '<div class="profile-drop-avatar">' + c.avatar_emoji + '</div>' +
+        '<div><div class="profile-drop-name">' + c.display_name + '</div>' +
+        '<div class="profile-drop-type">' + (c.age ? 'Age ' + c.age : 'Child') + '</div></div>' +
+        (isActive ? '<span class="profile-drop-check">\u2713</span>' : '') +
+      '</button>';
   });
 
-  // Add child link — ONLY inside dropdown
-  let addChildRow = '';
-  if (isParent) {
-    addChildRow = '<div class="profile-drop-divider"></div><button class="profile-drop-action" onclick="openChildModal()">+ Add Child Profile</button>';
-  }
-
-  // Tier badge shown in trigger area if viewing a child profile
-  let tierLabel = '';
-  if (activeProfile && activeProfile.type === 'child') {
-    tierLabel = '<div style="font-family:\'Source Sans 3\',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:' + (activeTier === 2 ? '#7c3aed' : 'rgba(44,26,14,0.12)') + ';color:' + (activeTier === 2 ? '#fff' : 'var(--ink-light)') + ';border-radius:4px;padding:1px 6px;margin-top:2px">Ages ' + (activeTier === 2 ? '5\u20138' : '9\u201312') + '</div>';
-  }
+  // Add child link — inside dropdown only
+  const addChildRow = isParent
+    ? '<div class="profile-drop-divider"></div><button class="profile-drop-action" onclick="openChildModal()">+ Add Child Profile</button>'
+    : '';
 
   // Plan badge
-  let planBadge = '';
-  if (userProfile.is_paid) {
-    planBadge = '<div style="font-family:\'Source Sans 3\',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:rgba(201,162,39,0.15);color:var(--gold);border:1px solid rgba(201,162,39,0.3);border-radius:4px;padding:1px 6px">' + (userProfile.plan_type === 'monthly' ? '\u25cf MONTHLY' : '\u25cf FULL ACCESS') + '</div>';
-  }
+  const planBadge = userProfile.is_paid
+    ? '<div style="font-family:\'Source Sans 3\',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:rgba(201,162,39,0.15);color:var(--gold);border:1px solid rgba(201,162,39,0.3);border-radius:4px;padding:1px 6px">' + (userProfile.plan_type === 'monthly' ? '\u25cf MONTHLY' : '\u25cf FULL ACCESS') + '</div>'
+    : '';
 
   const profileName = activeProfile ? activeProfile.name : userProfile.display_name;
   const profileEmoji = activeProfile ? activeProfile.emoji : userProfile.avatar_emoji;
   const profileTypeLabel = isParent ? (activeProfile && activeProfile.type === 'child' ? 'Child Profile' : 'Parent Account') : 'Individual Account';
   const parentCheckmark = (activeProfile && activeProfile.type === 'user') ? '<span class="profile-drop-check">\u2713</span>' : '';
+
+  // Tier toggle — only show if viewing a child profile (parent accounts always see tier 1)
+  const showTierToggle = activeProfile && activeProfile.type === 'child';
+  const tierToggleHtml = showTierToggle
+    ? '<div style="display:flex;align-items:center;gap:0;border:1px solid rgba(255,255,255,0.2);border-radius:6px;overflow:hidden;flex-shrink:0">' +
+        '<button onclick="setActiveTier(1)" style="padding:4px 10px;border:none;cursor:pointer;font-family:\'Source Sans 3\',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.06em;transition:all 0.15s;background:' + (activeTier===1?'rgba(201,162,39,0.9)':'transparent') + ';color:' + (activeTier===1?'#2c1a0e':'rgba(255,255,255,0.5)') + '">9\u201312</button>' +
+        '<button onclick="setActiveTier(2)" style="padding:4px 10px;border:none;cursor:pointer;font-family:\'Source Sans 3\',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.06em;transition:all 0.15s;background:' + (activeTier===2?'#7c3aed':'transparent') + ';color:' + (activeTier===2?'#fff':'rgba(255,255,255,0.5)') + '">5\u20138</button>' +
+      '</div>'
+    : '';
 
   left.innerHTML =
     '<div class="profile-menu">' +
@@ -1141,10 +1144,11 @@ function renderAuthBar() {
         '<div>' +
           '<div class="auth-bar-name">' + profileName + '</div>' +
           '<div class="auth-bar-type">' + profileTypeLabel + '</div>' +
-          planBadge + tierLabel +
+          planBadge +
         '</div>' +
-        '<span style="color:rgba(201,162,39,0.6);font-size:10px;margin-left:4px;">\u25bc</span>' +
+        '<span style="color:rgba(201,162,39,0.6);font-size:10px;margin-left:2px">\u25bc</span>' +
       '</div>' +
+      tierToggleHtml +
       '<div class="profile-dropdown" id="profileDropdown">' +
         '<div class="profile-drop-header">Switch Profile</div>' +
         '<button class="profile-drop-item' + (activeProfile && activeProfile.type === 'user' ? ' active' : '') + '" onclick="switchProfile(\'' + authUser.id + '\',\'user\')">' +
@@ -1162,6 +1166,24 @@ function renderAuthBar() {
 
   right.innerHTML = '<button class="auth-bar-btn ghost" onclick="openJourney()">\U0001f3c6 My Journey</button><a href="./account.html" class="auth-bar-btn ghost">My Account</a>';
 }
+async function setActiveTier(tierVal) {
+  if (!activeProfile || activeProfile.type !== 'child') return;
+  if ((activeProfile.tier || 1) === tierVal) return; // no-op
+  const child = childProfiles.find(c => c.id === activeProfile.id);
+  if (!child) return;
+  // Update Supabase
+  const { error } = await sb.from('child_profiles').update({ tier: tierVal }).eq('id', child.id);
+  if (error && (!error.message || !error.message.toLowerCase().includes('tier'))) {
+    showToast('Could not update reading level.');
+    return;
+  }
+  child.tier = tierVal;
+  activeProfile.tier = tierVal;
+  await loadProgressForActiveProfile();
+  renderAuthBar();
+  showToast(tierVal === 2 ? '📚 Switched to Ages 5–8 stories' : '📖 Switched to Ages 9–12 stories');
+}
+
 function toggleDropdown() { document.getElementById('profileDropdown').classList.toggle('open'); }
 function closeDropdown() { const d = document.getElementById('profileDropdown'); if (d) d.classList.remove('open'); }
 document.addEventListener('click', e => { if (!e.target.closest('.profile-menu')) closeDropdown(); });
