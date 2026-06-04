@@ -47,11 +47,7 @@
     z-index: 100;
     overflow: visible;
   }
-  .auth-bar-left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+  .auth-bar-left { display: flex; align-items: center; gap: 10px; }
   .auth-bar-avatar {
     width: 32px; height: 32px;
     border-radius: 50%;
@@ -63,45 +59,19 @@
     transition: background 0.15s;
   }
   .auth-bar-avatar:hover { background: rgba(201,162,39,0.35); }
-  .auth-bar-name {
-    font-family: 'Cinzel', serif;
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--gold);
-    letter-spacing: 0.04em;
-  }
-  .auth-bar-type {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 10px;
-    color: rgba(255,255,255,0.35);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
+  .auth-bar-name { font-family: 'Cinzel', serif; font-size: 12px; font-weight: 600; color: var(--gold); letter-spacing: 0.04em; }
+  .auth-bar-type { font-family: 'Source Sans 3', sans-serif; font-size: 10px; color: rgba(255,255,255,0.35); letter-spacing: 0.08em; text-transform: uppercase; }
   .auth-bar-right { display: flex; align-items: center; gap: 10px; }
   .auth-bar-btn {
     font-family: 'Source Sans 3', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 6px 14px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 6px 14px; border-radius: 5px; border: none; cursor: pointer;
     transition: background 0.15s, color 0.15s;
-    text-decoration: none;
-    display: inline-block;
+    text-decoration: none; display: inline-block;
   }
-  .auth-bar-btn.primary {
-    background: var(--gold);
-    color: var(--ink);
-  }
+  .auth-bar-btn.primary { background: var(--gold); color: var(--ink); }
   .auth-bar-btn.primary:hover { background: var(--gold-bright); }
-  .auth-bar-btn.ghost {
-    background: transparent;
-    color: rgba(255,255,255,0.5);
-    border: 1px solid rgba(255,255,255,0.15);
-  }
+  .auth-bar-btn.ghost { background: transparent; color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.15); }
   .auth-bar-btn.ghost:hover { color: #fff; border-color: rgba(255,255,255,0.4); }
 
   /* ── PROGRESS STRIP ── */
@@ -112,48 +82,23 @@
   .progress-count { font-family: 'Cinzel', serif; font-size: 13px; font-weight: 600; color: var(--gold); }
 
   /* ── BADGE SHELF ── */
-  .badge-shelf {
-    background: var(--parchment-dark);
-    border-bottom: 1px solid rgba(44,26,14,0.1);
-    padding: 10px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .badge-shelf-label {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-light);
-    opacity: 0.5;
-    margin-right: 4px;
-  }
-  .badge-chip {
-    width: 34px; height: 34px;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 18px;
-    cursor: pointer;
-    transition: transform 0.2s;
-    position: relative;
-  }
-  .badge-chip.earned {
-    background: linear-gradient(135deg, var(--gold), var(--gold-bright));
-    box-shadow: 0 0 0 2px var(--gold-glow), 0 2px 8px rgba(201,162,39,0.4);
-    animation: badgePulse 3s ease-in-out infinite;
-  }
-  .badge-chip.locked {
-    background: rgba(44,26,14,0.06);
-    border: 1.5px solid rgba(44,26,14,0.12);
-    filter: grayscale(1);
-    opacity: 0.4;
-  }
+  .badge-shelf { background: var(--parchment-dark); border-bottom: 1px solid rgba(44,26,14,0.1); padding: 10px 24px; display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; }
+  .badge-shelf-label { font-family: 'Source Sans 3', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-light); opacity: 0.5; margin-right: 4px; }
+  .badge-chip { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; cursor: pointer; transition: transform 0.2s; position: relative; }
+  .badge-chip.earned { background: linear-gradient(135deg, var(--gold), var(--gold-bright)); box-shadow: 0 0 0 2px var(--gold-glow), 0 2px 8px rgba(201,162,39,0.4); animation: badgePulse 3s ease-in-out infinite; }
+  .badge-chip.locked { background: rgba(44,26,14,0.06); border: 1.5px solid rgba(44,26,14,0.12); filter: grayscale(1); opacity: 0.4; }
   .badge-chip:hover { transform: scale(1.2); }
   @keyframes badgePulse { 0%,100%{box-shadow:0 0 0 2px var(--gold-glow),0 2px 8px rgba(201,162,39,0.4)} 50%{box-shadow:0 0 0 4px var(--gold-glow),0 4px 16px rgba(201,162,39,0.5)} }
+
+  /* ── TIER BADGE ── */
+  .tier-badge {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 2px 8px; border-radius: 10px; border: none; cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+  .tier-badge.tier-2 { background: #7c3aed; color: #fff; }
+  .tier-badge.tier-1 { background: rgba(44,26,14,0.1); color: var(--ink-light); }
 
   /* ── MAIN CONTENT ── */
   .main { max-width: 1100px; margin: 0 auto; padding: 0 20px 80px; }
@@ -282,15 +227,9 @@
   .quiz-cel-title { font-family: 'Cinzel', serif; font-size: 1.4rem; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
   .quiz-cel-sub { font-family: 'Lora', serif; font-style: italic; font-size: 0.95rem; color: var(--ink-light); margin-bottom: 20px; line-height: 1.6; }
   .quiz-score-badge { display: inline-block; background: var(--ink); color: var(--gold); font-family: 'Cinzel', serif; font-size: 12px; font-weight: 700; padding: 7px 18px; border-radius: 20px; margin-bottom: 20px; letter-spacing: 0.06em; }
-
-
-  /* ── QUIZ MUTE BUTTON ── */
-  .quiz-mute-btn {
-    background: none; border: none; cursor: pointer;
-    font-size: 16px; opacity: 0.5; transition: opacity 0.15s;
-    padding: 0; line-height: 1;
-  }
+  .quiz-mute-btn { background: none; border: none; cursor: pointer; font-size: 16px; opacity: 0.5; transition: opacity 0.15s; padding: 0; line-height: 1; }
   .quiz-mute-btn:hover { opacity: 1; }
+
   /* ── MODAL FOOTER ── */
   .modal-footer { padding: 20px 36px 28px; border-top: 1px solid var(--parchment-dark); margin-top: 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
   .mark-done-btn { background: linear-gradient(135deg,var(--gold),var(--gold-bright)); color: var(--ink); border: none; border-radius: 7px; padding: 10px 22px; font-family: 'Cinzel', serif; font-size: 13px; font-weight: 700; letter-spacing: 0.05em; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 2px 8px rgba(201,162,39,0.3); }
@@ -302,26 +241,7 @@
   .nav-btn:disabled { opacity: 0.35; cursor: default; }
 
   /* ── BADGE EARNED POPUP ── */
-  .badge-earned-popup {
-    position: fixed;
-    bottom: 80px;
-    left: 50%;
-    transform: translateX(-50%) translateY(30px);
-    background: var(--ink);
-    border: 2px solid var(--gold);
-    border-radius: 14px;
-    padding: 16px 24px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    z-index: 3000;
-    opacity: 0;
-    transition: opacity 0.4s, transform 0.4s;
-    pointer-events: none;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-    max-width: 360px;
-    width: calc(100% - 48px);
-  }
+  .badge-earned-popup { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%) translateY(30px); background: var(--ink); border: 2px solid var(--gold); border-radius: 14px; padding: 16px 24px; display: flex; align-items: center; gap: 14px; z-index: 3000; opacity: 0; transition: opacity 0.4s, transform 0.4s; pointer-events: none; box-shadow: 0 8px 32px rgba(0,0,0,0.4); max-width: 360px; width: calc(100% - 48px); }
   .badge-earned-popup.show { opacity: 1; transform: translateX(-50%) translateY(0); }
   .badge-earned-emoji { font-size: 36px; flex-shrink: 0; }
   .badge-earned-text { flex: 1; }
@@ -348,20 +268,7 @@
 
   /* ── PROFILE SWITCHER DROPDOWN ── */
   .profile-menu { position: relative; overflow: visible; }
-  .profile-dropdown {
-    display: none;
-    position: absolute;
-    top: calc(100% + 8px);
-    left: 0;
-    background: #fff;
-    border: 1px solid rgba(44,26,14,0.14);
-    border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-    min-width: 240px;
-    z-index: 900;
-    overflow: visible;
-    animation: dropIn 0.2s ease;
-  }
+  .profile-dropdown { display: none; position: absolute; top: calc(100% + 8px); left: 0; background: #fff; border: 1px solid rgba(44,26,14,0.14); border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.2); min-width: 260px; z-index: 900; overflow: visible; animation: dropIn 0.2s ease; }
   @keyframes dropIn { from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)} }
   .profile-dropdown.open { display: block; }
   .profile-drop-header { padding: 12px 16px 8px; font-family: 'Source Sans 3', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-light); opacity: 0.5; }
@@ -397,7 +304,7 @@
   .child-modal-save:hover { transform: translateY(-1px); }
   .child-modal-cancel { padding: 11px 18px; background: transparent; color: var(--ink-light); border: 1.5px solid rgba(44,26,14,0.18); border-radius: 8px; font-family: 'Source Sans 3', sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; }
 
-  /* ── PAYWALL / WELCOME (kept but feature-flagged) ── */
+  /* ── PAYWALL / WELCOME ── */
   .welcome-overlay { display: none; position: fixed; inset: 0; z-index: 3000; background: rgba(20,10,5,0.92); backdrop-filter: blur(6px); align-items: center; justify-content: center; padding: 20px; overflow-y: auto; }
   .welcome-overlay.open { display: flex; animation: wFadeIn 0.5s ease; }
   @keyframes wFadeIn { from{opacity:0}to{opacity:1} }
@@ -458,7 +365,6 @@
   /* ── TOAST ── */
   .toast { position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--ink); color: var(--gold-bright); font-family: 'Cinzel', serif; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; padding: 12px 24px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.35); z-index: 2000; opacity: 0; transition: opacity 0.3s,transform 0.3s; pointer-events: none; }
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-
   .site-footer { text-align: center; padding: 32px 24px; border-top: 1px solid var(--parchment-dark); font-family: 'Source Sans 3', sans-serif; font-size: 12px; color: var(--ink-light); opacity: 0.6; }
 
   @media (max-width: 600px) {
@@ -475,7 +381,7 @@
 </head>
 <body>
 
-<!-- ── WELCOME OVERLAY (feature-flagged) ── -->
+<!-- ── WELCOME OVERLAY ── -->
 <div class="welcome-overlay" id="welcomeOverlay" role="dialog" aria-modal="true">
   <div class="welcome-card">
     <div class="welcome-top-bar"></div>
@@ -509,7 +415,7 @@
   </div>
 </div>
 
-<!-- ── PAYWALL MODAL (feature-flagged) ── -->
+<!-- ── PAYWALL MODAL ── -->
 <div class="paywall-backdrop" id="paywallBackdrop" role="dialog" aria-modal="true">
   <div class="paywall-card">
     <div class="paywall-top-bar"></div>
@@ -542,7 +448,6 @@
     </div>
   </div>
 </div>
-
 
 <!-- ── MASTERY QUIZ MODAL ── -->
 <div class="journey-backdrop" id="masteryBackdrop" role="dialog" aria-modal="true" style="display:none">
@@ -587,6 +492,13 @@
         <input class="child-form-input" type="number" id="childAgeInput" placeholder="e.g. 10" min="3" max="18">
       </div>
       <div class="child-form-group">
+        <label class="child-form-label">Reading Level</label>
+        <div style="display:flex;gap:8px;margin-top:6px">
+          <button id="tierBtn1" onclick="setNewChildTier(1)" style="flex:1;padding:10px;border-radius:8px;border:1.5px solid var(--gold);background:linear-gradient(135deg,var(--gold),var(--gold-bright));color:var(--ink);font-family:'Cinzel',serif;font-size:11px;font-weight:700;cursor:pointer;">Ages 9–12</button>
+          <button id="tierBtn2" onclick="setNewChildTier(2)" style="flex:1;padding:10px;border-radius:8px;border:1.5px solid rgba(44,26,14,0.16);background:#fff;color:var(--ink-light);font-family:'Cinzel',serif;font-size:11px;font-weight:700;cursor:pointer;">Ages 5–8</button>
+        </div>
+      </div>
+      <div class="child-form-group">
         <label class="child-form-label">Pick an Avatar</label>
         <div class="child-avatar-grid" id="childAvatarGrid"></div>
       </div>
@@ -616,15 +528,11 @@
 
 <!-- ── AUTH BAR ── -->
 <div class="auth-bar" id="authBar">
-  <div class="auth-bar-left" id="authBarLeft">
-    <!-- populated by JS -->
-  </div>
-  <div class="auth-bar-right" id="authBarRight">
-    <!-- populated by JS -->
-  </div>
+  <div class="auth-bar-left" id="authBarLeft"></div>
+  <div class="auth-bar-right" id="authBarRight"></div>
 </div>
 
-<!-- ── PROGRESS STRIP ── -->
+<!-- ── PROGRESS STRIP ── */-->
 <div class="progress-strip">
   <span class="progress-label">YOUR JOURNEY</span>
   <div class="progress-bar-outer">
@@ -636,7 +544,6 @@
 <!-- ── BADGE SHELF ── -->
 <div class="badge-shelf" id="badgeShelf">
   <span class="badge-shelf-label">Badges</span>
-  <!-- populated by JS -->
 </div>
 
 <main class="main" id="mainContent"></main>
@@ -684,316 +591,148 @@
 <footer class="site-footer">&copy; 2025 Footsteps &nbsp;·&nbsp; Walk through the greatest story ever told</footer>
 
 <script>
-
 // ════════════════════════════════════════════════════
 // QUIZ SOUND EFFECTS
-// Uses Web Audio API — no external files needed
 // ════════════════════════════════════════════════════
 let audioCtx = null;
-
 function getAudioCtx() {
   if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   return audioCtx;
 }
-
 function playCorrectSound() {
   if (localStorage.getItem('footsteps_mute') === '1') return;
   try {
     const ctx = getAudioCtx();
-    // Bright ascending chime: C5 → E5 → G5
     [[523.25, 0], [659.25, 0.12], [783.99, 0.24]].forEach(([freq, delay]) => {
       const osc = ctx.createOscillator();
       const gain = ctx.createGain();
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-      osc.type = 'sine';
-      osc.frequency.value = freq;
+      osc.connect(gain); gain.connect(ctx.destination);
+      osc.type = 'sine'; osc.frequency.value = freq;
       const t = ctx.currentTime + delay;
       gain.gain.setValueAtTime(0, t);
       gain.gain.linearRampToValueAtTime(0.25, t + 0.02);
       gain.gain.exponentialRampToValueAtTime(0.001, t + 0.35);
-      osc.start(t);
-      osc.stop(t + 0.35);
+      osc.start(t); osc.stop(t + 0.35);
     });
   } catch(e) {}
 }
-
 function playWrongSound() {
   if (localStorage.getItem('footsteps_mute') === '1') return;
   try {
     const ctx = getAudioCtx();
-    // Low thud: short E3
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
-    osc.connect(gain);
-    gain.connect(ctx.destination);
-    osc.type = 'sine';
-    osc.frequency.value = 164.81;
+    osc.connect(gain); gain.connect(ctx.destination);
+    osc.type = 'sine'; osc.frequency.value = 164.81;
     const t = ctx.currentTime;
     gain.gain.setValueAtTime(0.2, t);
     gain.gain.exponentialRampToValueAtTime(0.001, t + 0.25);
-    osc.start(t);
-    osc.stop(t + 0.25);
+    osc.start(t); osc.stop(t + 0.25);
   } catch(e) {}
 }
-
 function toggleQuizMute() {
   const muted = localStorage.getItem('footsteps_mute') === '1';
   localStorage.setItem('footsteps_mute', muted ? '0' : '1');
-  document.querySelectorAll('#quizMuteBtn').forEach(btn => {
-    btn.textContent = muted ? '🔇' : '🔊';
-  });
+  document.querySelectorAll('#quizMuteBtn').forEach(btn => { btn.textContent = muted ? '🔇' : '🔊'; });
 }
-
 
 // ════════════════════════════════════════════════════
 // NEW STORY NOTIFICATION FOR ONE-TIME BUYERS
 // ════════════════════════════════════════════════════
 async function checkNewStoriesForLifetimeBuyers() {
   if (!userProfile || !userProfile.has_lifetime) return;
-  if (userProfile.plan_type === 'monthly') return; // monthly gets everything
-
+  if (userProfile.plan_type === 'monthly') return;
   const paidAt = userProfile.paid_at ? userProfile.paid_at.substring(0, 10) : null;
   if (!paidAt) return;
-
-  // Count stories published after their purchase date (locked for them)
-  const newAfterPurchase = stories.filter(s =>
-    s.published_date && s.published_date > paidAt
-  );
-
+  const newAfterPurchase = stories.filter(s => s.published_date && s.published_date > paidAt);
   if (newAfterPurchase.length === 0) return;
-
-  // Only show once per session (check localStorage flag)
   const shownKey = `footsteps_new_story_notice_${paidAt}`;
   if (localStorage.getItem(shownKey)) return;
-
-  // Show the banner
   const existing = document.getElementById('newStoryBuyerBanner');
   if (existing) existing.remove();
-
   const banner = document.createElement('div');
   banner.id = 'newStoryBuyerBanner';
-  banner.style.cssText = `
-    background: var(--parchment-dark);
-    border-bottom: 1px solid rgba(201,162,39,0.3);
-    padding: 13px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    flex-wrap: wrap;
-    font-family: 'Lora', serif;
-    font-size: 13px;
-    color: var(--ink);
-  `;
-  banner.innerHTML = `
-    <span>📖 <strong>${newAfterPurchase.length} new ${newAfterPurchase.length === 1 ? 'story has' : 'stories have'} been added</strong> since your purchase. Subscribe monthly to access all current and future stories.</span>
-    <div style="display:flex;gap:8px;flex-shrink:0">
-      <button onclick="startCheckout('monthly')" style="background:linear-gradient(135deg,var(--gold),var(--gold-bright));border:none;border-radius:6px;padding:7px 16px;font-family:'Cinzel',serif;font-size:11px;font-weight:700;color:var(--ink);cursor:pointer">Subscribe — $4.99/mo</button>
-      <button onclick="dismissNewStoryBanner('${shownKey}')" style="background:transparent;border:1px solid rgba(44,26,14,0.2);border-radius:6px;padding:7px 12px;font-family:'Source Sans 3',sans-serif;font-size:11px;font-weight:600;color:var(--ink-light);cursor:pointer">Dismiss</button>
-    </div>
-  `;
-
-  // Insert after auth bar
+  banner.style.cssText = `background:var(--parchment-dark);border-bottom:1px solid rgba(201,162,39,0.3);padding:13px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:'Lora',serif;font-size:13px;color:var(--ink);`;
+  banner.innerHTML = `<span>📖 <strong>${newAfterPurchase.length} new ${newAfterPurchase.length===1?'story has':'stories have'} been added</strong> since your purchase. Subscribe monthly to access all current and future stories.</span><div style="display:flex;gap:8px;flex-shrink:0"><button onclick="startCheckout('monthly')" style="background:linear-gradient(135deg,var(--gold),var(--gold-bright));border:none;border-radius:6px;padding:7px 16px;font-family:'Cinzel',serif;font-size:11px;font-weight:700;color:var(--ink);cursor:pointer">Subscribe — $4.99/mo</button><button onclick="dismissNewStoryBanner('${shownKey}')" style="background:transparent;border:1px solid rgba(44,26,14,0.2);border-radius:6px;padding:7px 12px;font-family:'Source Sans 3',sans-serif;font-size:11px;font-weight:600;color:var(--ink-light);cursor:pointer">Dismiss</button></div>`;
   const authBar = document.getElementById('authBar');
-  if (authBar && authBar.nextSibling) {
-    authBar.parentNode.insertBefore(banner, authBar.nextSibling);
-  }
+  if (authBar && authBar.nextSibling) authBar.parentNode.insertBefore(banner, authBar.nextSibling);
 }
-
 function dismissNewStoryBanner(key) {
   localStorage.setItem(key, '1');
   const banner = document.getElementById('newStoryBuyerBanner');
   if (banner) banner.remove();
 }
 
-
 // ════════════════════════════════════════════════════
 // MASTERY (HERO) QUIZ
 // ════════════════════════════════════════════════════
-let masteryQuestions = [];
-let masteryAnswers = [];
-let masteryCurrentQ = 0;
-let masteryScore = 0;
-const MASTERY_QUESTION_COUNT = 25; // 25 questions, ~1 per 2 stories
-
+let masteryQuestions = [], masteryAnswers = [], masteryCurrentQ = 0, masteryScore = 0;
+const MASTERY_QUESTION_COUNT = 25;
 function startMasteryQuiz() {
-  // Pull random questions from existing quiz banks across all completed stories
   const progress = getProgress();
   const completedStories = stories.filter(s => progress.has(s.id));
-
-  // Gather all questions from completed stories
   let pool = [];
-  completedStories.forEach(story => {
-    (story.quiz || []).forEach(q => {
-      pool.push({ ...q, storyId: story.id, storyTitle: story.title, era: story.era });
-    });
-  });
-
-  // Shuffle and pick MASTERY_QUESTION_COUNT, ensuring era spread
+  completedStories.forEach(story => { (story.quiz || []).forEach(q => { pool.push({ ...q, storyId: story.id, storyTitle: story.title, era: story.era }); }); });
   pool = pool.sort(() => Math.random() - 0.5);
-
-  // Try to get at least 2-3 from each era
   const eras = [...new Set(stories.map(s => s.era))];
   const selected = [];
   const perEra = Math.ceil(MASTERY_QUESTION_COUNT / eras.length);
-
-  eras.forEach(era => {
-    const eraQs = pool.filter(q => q.era === era);
-    selected.push(...eraQs.slice(0, perEra));
-  });
-
-  // Fill remaining spots randomly
-  const selectedStoryIds = new Set(selected.map(q => q.storyId));
+  eras.forEach(era => { const eraQs = pool.filter(q => q.era === era); selected.push(...eraQs.slice(0, perEra)); });
   const remaining = pool.filter(q => !selected.includes(q));
-  while (selected.length < Math.min(MASTERY_QUESTION_COUNT, pool.length)) {
-    const next = remaining.shift();
-    if (next) selected.push(next);
-  }
-
+  while (selected.length < Math.min(MASTERY_QUESTION_COUNT, pool.length)) { const next = remaining.shift(); if (next) selected.push(next); }
   masteryQuestions = selected.slice(0, MASTERY_QUESTION_COUNT).sort(() => Math.random() - 0.5);
-  masteryAnswers = [];
-  masteryCurrentQ = 0;
-  masteryScore = 0;
-
-  // Show mastery backdrop
+  masteryAnswers = []; masteryCurrentQ = 0; masteryScore = 0;
   document.getElementById('masteryBackdrop').style.display = 'flex';
   document.body.style.overflow = 'hidden';
   renderMasteryQuestion();
 }
-
 function closeMastery() {
   document.getElementById('masteryBackdrop').style.display = 'none';
   document.body.style.overflow = '';
 }
-
 function renderMasteryQuestion() {
   const body = document.getElementById('masteryBody');
   const q = masteryQuestions[masteryCurrentQ];
   const letters = ['A','B','C','D'];
   const pct = Math.round((masteryCurrentQ / masteryQuestions.length) * 100);
-
-  body.innerHTML = `
-    <div style="margin-bottom:16px">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
-        <span style="font-family:'Source Sans 3',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold)">Question ${masteryCurrentQ + 1} of ${masteryQuestions.length}</span>
-        <span style="font-family:'Source Sans 3',sans-serif;font-size:11px;color:var(--ink-light)">Score: ${masteryScore}</span>
-      </div>
-      <div style="height:6px;background:rgba(44,26,14,0.1);border-radius:3px;overflow:hidden;margin-bottom:4px">
-        <div style="height:100%;width:${pct}%;background:linear-gradient(90deg,var(--gold),var(--gold-bright));border-radius:3px;transition:width 0.3s"></div>
-      </div>
-      <div style="font-family:'Source Sans 3',sans-serif;font-size:10px;color:var(--ink-light);opacity:0.6">From: ${q.storyTitle}</div>
-    </div>
-    <div style="font-family:'Cinzel',serif;font-size:0.95rem;font-weight:600;color:var(--ink);line-height:1.5;margin-bottom:16px">${q.question}</div>
-    <div style="display:flex;flex-direction:column;gap:9px" id="masteryOptions">
-      ${q.options.map((opt, i) => `
-        <button class="quiz-option" onclick="answerMastery(${i})" data-idx="${i}">
-          <span class="quiz-letter">${letters[i]}</span>${opt}
-        </button>`).join('')}
-    </div>
-    <div class="quiz-feedback" id="masteryFeedback"></div>
-    <button class="quiz-next-btn" id="masteryNext" onclick="nextMasteryQuestion()" style="display:none">
-      ${masteryCurrentQ < masteryQuestions.length - 1 ? 'Next Question →' : 'See Your Results!'}
-    </button>
-  `;
+  body.innerHTML = `<div style="margin-bottom:16px"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px"><span style="font-family:'Source Sans 3',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold)">Question ${masteryCurrentQ+1} of ${masteryQuestions.length}</span><span style="font-family:'Source Sans 3',sans-serif;font-size:11px;color:var(--ink-light)">Score: ${masteryScore}</span></div><div style="height:6px;background:rgba(44,26,14,0.1);border-radius:3px;overflow:hidden;margin-bottom:4px"><div style="height:100%;width:${pct}%;background:linear-gradient(90deg,var(--gold),var(--gold-bright));border-radius:3px;transition:width 0.3s"></div></div><div style="font-family:'Source Sans 3',sans-serif;font-size:10px;color:var(--ink-light);opacity:0.6">From: ${q.storyTitle}</div></div><div style="font-family:'Cinzel',serif;font-size:0.95rem;font-weight:600;color:var(--ink);line-height:1.5;margin-bottom:16px">${q.question}</div><div style="display:flex;flex-direction:column;gap:9px" id="masteryOptions">${q.options.map((opt,i)=>`<button class="quiz-option" onclick="answerMastery(${i})" data-idx="${i}"><span class="quiz-letter">${letters[i]}</span>${opt}</button>`).join('')}</div><div class="quiz-feedback" id="masteryFeedback"></div><button class="quiz-next-btn" id="masteryNext" onclick="nextMasteryQuestion()" style="display:none">${masteryCurrentQ<masteryQuestions.length-1?'Next Question →':'See Your Results!'}</button>`;
 }
-
 let masteryAnswered = false;
-
 function answerMastery(idx) {
   if (masteryAnswered) return;
   masteryAnswered = true;
-
   const q = masteryQuestions[masteryCurrentQ];
   const correct = idx === q.answer;
   if (correct) masteryScore++;
-
   const btn = document.querySelector(`[data-idx="${idx}"]`);
   const fb = document.getElementById('masteryFeedback');
   const next = document.getElementById('masteryNext');
-
-  if (correct) {
-    btn.className = 'quiz-option qcorrect';
-    fb.className = 'quiz-feedback qcorrect-msg';
-    fb.textContent = 'Correct! ' + (q.explanation || '');
-    playCorrectSound();
-  } else {
-    btn.className = 'quiz-option qwrong';
-    fb.className = 'quiz-feedback qwrong-msg';
-    fb.textContent = 'Not quite. ' + (q.explanation || '');
-    // Show correct answer
-    document.querySelector(`[data-idx="${q.answer}"]`).className = 'quiz-option qcorrect';
-    playWrongSound();
-  }
-
-  next.style.display = 'block';
-  next.className = 'quiz-next-btn qvisible';
+  if (correct) { btn.className='quiz-option qcorrect'; fb.className='quiz-feedback qcorrect-msg'; fb.textContent='Correct! '+(q.explanation||''); playCorrectSound(); }
+  else { btn.className='quiz-option qwrong'; fb.className='quiz-feedback qwrong-msg'; fb.textContent='Not quite. '+(q.explanation||''); document.querySelector(`[data-idx="${q.answer}"]`).className='quiz-option qcorrect'; playWrongSound(); }
+  next.style.display='block'; next.className='quiz-next-btn qvisible';
 }
-
 function nextMasteryQuestion() {
-  masteryAnswered = false;
-  masteryCurrentQ++;
-  if (masteryCurrentQ < masteryQuestions.length) {
-    renderMasteryQuestion();
-  } else {
-    showMasteryCelebration();
-  }
+  masteryAnswered = false; masteryCurrentQ++;
+  if (masteryCurrentQ < masteryQuestions.length) renderMasteryQuestion();
+  else showMasteryCelebration();
 }
-
 async function showMasteryCelebration() {
-  const passed = masteryScore >= Math.ceil(masteryQuestions.length * 0.8); // 80% to pass
+  const passed = masteryScore >= Math.ceil(masteryQuestions.length * 0.8);
   const pct = Math.round((masteryScore / masteryQuestions.length) * 100);
   const body = document.getElementById('masteryBody');
-
-  // Save attempt to Supabase
   if (authUser && activeProfile) {
-    await sb.from('mastery_attempts').insert({
-      profile_id: activeProfile.id,
-      profile_type: activeProfile.type,
-      score: masteryScore,
-      max_score: masteryQuestions.length,
-      passed,
-    });
-
-    // Award Hero badge if passed and not already earned
+    await sb.from('mastery_attempts').insert({ profile_id: activeProfile.id, profile_type: activeProfile.type, score: masteryScore, max_score: masteryQuestions.length, passed });
     if (passed && !dbBadges.has('hero')) {
       dbBadges.add('hero');
-      await sb.from('badges').upsert({
-        profile_id: activeProfile.id,
-        profile_type: activeProfile.type,
-        badge_id: 'hero',
-        story_count_at_earn: stories.length,
-      });
+      await sb.from('badges').upsert({ profile_id: activeProfile.id, profile_type: activeProfile.type, badge_id: 'hero', story_count_at_earn: stories.length });
       renderBadgeShelf();
     }
   }
-
   const colors = ['#c9a227','#f0c040','#8b1a1a','#c9a227','#3B6D11','#f0c040','#7c3aed','#c9a227','#f0c040','#065f46'];
-
   if (passed) {
-    body.innerHTML = `
-      <div style="text-align:center;padding:20px 0">
-        <div style="font-size:56px;margin-bottom:12px;animation:qpop 0.5s cubic-bezier(0.34,1.56,0.64,1)">🌟</div>
-        <div style="font-family:'Cinzel',serif;font-size:1.6rem;font-weight:700;color:var(--ink);margin-bottom:8px">You are a Hero!</div>
-        <div style="font-family:'Lora',serif;font-style:italic;font-size:0.95rem;color:var(--ink-light);line-height:1.6;margin-bottom:16px;max-width:400px;margin-left:auto;margin-right:auto">You have walked through every story from the beginning of creation to the birth of the church. Not many people can say that.</div>
-        <div class="quiz-confetti" style="justify-content:center;margin-bottom:16px">${colors.map((c,i) => `<div class="quiz-confetti-dot" style="background:${c};animation-delay:${i*0.06}s"></div>`).join('')}</div>
-        <div style="display:inline-block;background:var(--ink);color:var(--gold);font-family:'Cinzel',serif;font-size:13px;font-weight:700;padding:8px 20px;border-radius:20px;margin-bottom:20px;letter-spacing:0.06em">${masteryScore} of ${masteryQuestions.length} correct — ${pct}%</div>
-        <br>
-        <button onclick="closeMastery()" style="background:linear-gradient(135deg,var(--gold),var(--gold-bright));border:none;border-radius:9px;padding:12px 28px;font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--ink);cursor:pointer">Back to Stories</button>
-      </div>`;
+    body.innerHTML = `<div style="text-align:center;padding:20px 0"><div style="font-size:56px;margin-bottom:12px;animation:qpop 0.5s cubic-bezier(0.34,1.56,0.64,1)">🌟</div><div style="font-family:'Cinzel',serif;font-size:1.6rem;font-weight:700;color:var(--ink);margin-bottom:8px">You are a Hero!</div><div style="font-family:'Lora',serif;font-style:italic;font-size:0.95rem;color:var(--ink-light);line-height:1.6;margin-bottom:16px;max-width:400px;margin-left:auto;margin-right:auto">You have walked through every story from the beginning of creation to the birth of the church. Not many people can say that.</div><div class="quiz-confetti" style="justify-content:center;margin-bottom:16px">${colors.map((c,i)=>`<div class="quiz-confetti-dot" style="background:${c};animation-delay:${i*0.06}s"></div>`).join('')}</div><div style="display:inline-block;background:var(--ink);color:var(--gold);font-family:'Cinzel',serif;font-size:13px;font-weight:700;padding:8px 20px;border-radius:20px;margin-bottom:20px;letter-spacing:0.06em">${masteryScore} of ${masteryQuestions.length} correct — ${pct}%</div><br><button onclick="closeMastery()" style="background:linear-gradient(135deg,var(--gold),var(--gold-bright));border:none;border-radius:9px;padding:12px 28px;font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--ink);cursor:pointer">Back to Stories</button></div>`;
   } else {
-    body.innerHTML = `
-      <div style="text-align:center;padding:20px 0">
-        <div style="font-size:48px;margin-bottom:12px">📖</div>
-        <div style="font-family:'Cinzel',serif;font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:8px">Almost There!</div>
-        <div style="font-family:'Lora',serif;font-style:italic;font-size:0.92rem;color:var(--ink-light);line-height:1.6;margin-bottom:16px">You need 80% to earn the Hero badge. Review the stories and try again.</div>
-        <div style="display:inline-block;background:var(--ink);color:var(--gold);font-family:'Cinzel',serif;font-size:13px;font-weight:700;padding:8px 20px;border-radius:20px;margin-bottom:20px">${masteryScore} of ${masteryQuestions.length} correct — ${pct}%</div>
-        <br>
-        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
-          <button onclick="startMasteryQuiz()" style="background:linear-gradient(135deg,var(--gold),var(--gold-bright));border:none;border-radius:9px;padding:11px 24px;font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--ink);cursor:pointer">Try Again</button>
-          <button onclick="closeMastery()" style="background:transparent;border:1.5px solid rgba(44,26,14,0.2);border-radius:9px;padding:11px 24px;font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:600;color:var(--ink-light);cursor:pointer">Back to Stories</button>
-        </div>
-      </div>`;
+    body.innerHTML = `<div style="text-align:center;padding:20px 0"><div style="font-size:48px;margin-bottom:12px">📖</div><div style="font-family:'Cinzel',serif;font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:8px">Almost There!</div><div style="font-family:'Lora',serif;font-style:italic;font-size:0.92rem;color:var(--ink-light);line-height:1.6;margin-bottom:16px">You need 80% to earn the Hero badge. Review the stories and try again.</div><div style="display:inline-block;background:var(--ink);color:var(--gold);font-family:'Cinzel',serif;font-size:13px;font-weight:700;padding:8px 20px;border-radius:20px;margin-bottom:20px">${masteryScore} of ${masteryQuestions.length} correct — ${pct}%</div><br><div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><button onclick="startMasteryQuiz()" style="background:linear-gradient(135deg,var(--gold),var(--gold-bright));border:none;border-radius:9px;padding:11px 24px;font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--ink);cursor:pointer">Try Again</button><button onclick="closeMastery()" style="background:transparent;border:1.5px solid rgba(44,26,14,0.2);border-radius:9px;padding:11px 24px;font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:600;color:var(--ink-light);cursor:pointer">Back to Stories</button></div></div>`;
   }
 }
 
@@ -1005,7 +744,7 @@ const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 const { createClient } = supabase;
 const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, { auth: { detectSessionInUrl: true, persistSession: true, autoRefreshToken: true } });
 
-const PAYWALL_ENABLED = true; // ← flip to false to disable paywall
+const PAYWALL_ENABLED = true;
 const FREE_STORY_LIMIT = 3;
 const SUPABASE_FUNCTIONS_URL = 'https://bqyysvjnitbeimvaxkao.supabase.co/functions/v1';
 const STRIPE_PK = 'pk_test_51THwruLhNi71Q1IHXoFa7HQdFk5Gz4PirM6J9VCPjcgZ4rCZkrUWCdRBtCLZZBydmLj1S7j4dush2j8GHd1rxd000GC3sAMxu';
@@ -1013,7 +752,6 @@ const PROGRESS_KEY = 'footsteps_progress_v1';
 const WELCOME_KEY = 'footsteps_seen_welcome';
 const AVATARS = ['📖','⭐','🦁','🐬','🦅','🌟','🦋','🐢','🌙','☀️','🌿','🦊','🐧','🦉','🌊','🏔️','🌸','🦒','🐝','🎠'];
 
-// ── BADGE DEFINITIONS ───────────────────────────────
 const BADGE_DEFS = [
   { id: 'creation',      emoji: '🌍', name: 'In the Beginning',  era: 'creation',      desc: 'Completed all Creation stories' },
   { id: 'patriarchs',    emoji: '⛺', name: 'The Patriarchs',    era: 'patriarchs',    desc: 'Completed all Patriarch stories' },
@@ -1024,47 +762,40 @@ const BADGE_DEFS = [
   { id: 'nt-life',       emoji: '✨', name: 'The Witness',       era: 'nt-life',       desc: 'Completed all Life of Jesus stories' },
   { id: 'nt-church',     emoji: '⚡', name: 'The Sent Ones',     era: 'nt-church',     desc: 'Completed all Early Church stories' },
   { id: 'complete',      emoji: '🏆', name: 'Footsteps Complete',era: null,            desc: 'Read every single story' },
-  { id: 'hero',          emoji: '🌟', name: 'Hero',               era: null,            desc: 'Passed the Hero Quiz — you know every story from Genesis to the early church' },
+  { id: 'hero',          emoji: '🌟', name: 'Hero',               era: null,            desc: 'Passed the Hero Quiz' },
 ];
 
 // ── APP STATE ────────────────────────────────────────
 let DATA = null, stories = [], eras = [];
 let currentStoryIndex = null;
-let authUser = null;          // Supabase auth user
-let userProfile = null;       // profiles row
-let activeProfile = null;     // { id, type: 'user'|'child', name, emoji } — who is reading right now
-let childProfiles = [];       // child_profiles rows for parent accounts
-let dbProgress = new Set();   // story_ids completed by activeProfile
-let dbBadges = new Set();     // badge_ids earned by activeProfile
+let authUser = null, userProfile = null, activeProfile = null;
+let childProfiles = [];
+let dbProgress = new Set(), dbBadges = new Set();
 let selectedChildAvatar = '⭐';
+let newChildTier = 1; // tier selection in the add-child modal
 
 // ════════════════════════════════════════════════════
 // INIT
 // ════════════════════════════════════════════════════
 async function init() {
-  // Load stories
-  try { const r = await fetch('./stories.json'); DATA = await r.json(); }
-  catch(e) { try { const r = await fetch('./data/stories.json'); DATA = await r.json(); } catch(e2) { document.getElementById('mainContent').innerHTML = '<p style="text-align:center;padding:60px;font-style:italic">Could not load stories.json</p>'; return; } }
+  try {
+    const r = await fetch('./stories.json');
+    DATA = await r.json();
+  } catch(e) {
+    try { const r = await fetch('./data/stories.json'); DATA = await r.json(); }
+    catch(e2) { document.getElementById('mainContent').innerHTML = '<p style="text-align:center;padding:60px;font-style:italic">Could not load stories.json</p>'; return; }
+  }
   stories = DATA.stories.sort((a,b) => a.order - b.order);
   eras = DATA.eras;
 
-  // Auth state
   try {
     const { data: { session } } = await sb.auth.getSession();
-    if (session) {
-      authUser = session.user;
-      await loadUserProfile();
-    }
-  } catch(e) {
-    console.warn('Auth session error:', e);
-  }
+    if (session) { authUser = session.user; await loadUserProfile(); }
+  } catch(e) { console.warn('Auth session error:', e); }
 
-  // Welcome splash (paywall feature flag) — always check, show if not seen
   if (PAYWALL_ENABLED && !localStorage.getItem(WELCOME_KEY)) {
     const overlay = document.getElementById('welcomeOverlay');
-    overlay.classList.add('open');
-    overlay.style.display = 'flex';
-    overlay.style.zIndex = '9999';
+    overlay.classList.add('open'); overlay.style.display = 'flex'; overlay.style.zIndex = '9999';
     document.body.style.overflow = 'hidden';
   }
 
@@ -1077,19 +808,15 @@ async function init() {
   await checkBadgeRevocations();
   await checkNewStoriesForLifetimeBuyers();
 
-  // Listen for auth changes (login/logout in another tab etc.)
   sb.auth.onAuthStateChange(async (event, session) => {
-    if (event === 'SIGNED_IN' && session) {
-      authUser = session.user;
-      await loadUserProfile();
-    } else if (event === 'SIGNED_OUT') {
+    if (event === 'SIGNED_IN' && session) { authUser = session.user; await loadUserProfile(); }
+    else if (event === 'SIGNED_OUT') {
       authUser = null; userProfile = null; activeProfile = null;
       childProfiles = []; dbProgress = new Set(); dbBadges = new Set();
+      // Reset to default tier-1 story file
+      try { const r = await fetch('./stories.json'); DATA = await r.json(); stories = DATA.stories.sort((a,b)=>a.order-b.order); eras = DATA.eras; } catch(e) {}
     }
-    renderAuthBar();
-    renderBadgeShelf();
-    render();
-    updateProgress();
+    renderAuthBar(); renderBadgeShelf(); render(); updateProgress();
   });
 }
 
@@ -1100,81 +827,66 @@ async function loadUserProfile() {
   const { data: profile } = await sb.from('profiles').select('*, is_paid, has_lifetime, plan_type, stripe_customer_id, story_count_at_purchase, last_seen_story_count').eq('id', authUser.id).single();
   if (!profile) return;
   userProfile = profile;
-
-  // Set active profile to user by default
-  activeProfile = { id: authUser.id, type: 'user', name: profile.display_name, emoji: profile.avatar_emoji };
-
-  // Load children if parent account
+  activeProfile = { id: authUser.id, type: 'user', name: profile.display_name, emoji: profile.avatar_emoji, tier: 1 };
   if (profile.account_type === 'parent') {
     const { data: children } = await sb.from('child_profiles').select('*').eq('parent_id', authUser.id).order('created_at');
     childProfiles = children || [];
   }
-
   await loadProgressForActiveProfile();
 }
 
+// ── TIER-AWARE STORY LOADER ──────────────────────────
 async function loadProgressForActiveProfile() {
   if (!activeProfile) { dbProgress = new Set(); dbBadges = new Set(); return; }
 
-  const { data: progress } = await sb.from('story_progress')
-    .select('story_id')
-    .eq('profile_id', activeProfile.id)
-    .eq('profile_type', activeProfile.type);
+  // Load correct story file based on profile tier (default tier 1)
+  const tier = activeProfile.tier || 1;
+  const storyFile = tier === 2 ? './stories-tier2.json' : './stories.json';
+  try {
+    const r = await fetch(storyFile);
+    DATA = await r.json();
+    stories = DATA.stories.sort((a, b) => a.order - b.order);
+    eras = DATA.eras;
+  } catch(e) {
+    console.warn('Could not load story file:', storyFile, e);
+  }
+
+  const { data: progress } = await sb.from('story_progress').select('story_id').eq('profile_id', activeProfile.id).eq('profile_type', activeProfile.type);
   dbProgress = new Set((progress || []).map(r => r.story_id));
 
-  const { data: badges } = await sb.from('badges')
-    .select('badge_id')
-    .eq('profile_id', activeProfile.id)
-    .eq('profile_type', activeProfile.type);
+  const { data: badges } = await sb.from('badges').select('badge_id').eq('profile_id', activeProfile.id).eq('profile_type', activeProfile.type);
   dbBadges = new Set((badges || []).map(r => r.badge_id));
 
-  // Award any badges earned from progress but not yet recorded
-  // (silent — no popup, no sound — just catches up the database)
-  if (activeProfile && stories.length > 0) {
-    await syncBadgesFromProgress();
-  }
+  if (activeProfile && stories.length > 0) await syncBadgesFromProgress();
 
   renderBadgeShelf();
   updateProgress();
   render();
 }
 
-// Silently award any badges the user has earned based on current progress
-// but that aren't yet in the badges table. No popup, no sound.
 async function syncBadgesFromProgress() {
   const progress = dbProgress;
   for (const badge of BADGE_DEFS) {
     if (badge.id === 'hero') continue;
     if (dbBadges.has(badge.id)) continue;
-
     let earned = false;
-    if (badge.id === 'complete') {
-      earned = stories.every(s => progress.has(s.id));
-    } else {
-      const eraStories = stories.filter(s => s.era === badge.era);
-      earned = eraStories.length > 0 && eraStories.every(s => progress.has(s.id));
-    }
-
+    if (badge.id === 'complete') { earned = stories.every(s => progress.has(s.id)); }
+    else { const eraStories = stories.filter(s => s.era === badge.era); earned = eraStories.length > 0 && eraStories.every(s => progress.has(s.id)); }
     if (earned) {
       const eraStories = badge.era ? stories.filter(s => s.era === badge.era) : stories;
       dbBadges.add(badge.id);
-      await sb.from('badges').upsert({
-        profile_id: activeProfile.id,
-        profile_type: activeProfile.type,
-        badge_id: badge.id,
-        story_count_at_earn: eraStories.length,
-      });
+      await sb.from('badges').upsert({ profile_id: activeProfile.id, profile_type: activeProfile.type, badge_id: badge.id, story_count_at_earn: eraStories.length });
     }
   }
 }
 
 async function switchProfile(profileId, profileType) {
   if (profileType === 'user') {
-    activeProfile = { id: authUser.id, type: 'user', name: userProfile.display_name, emoji: userProfile.avatar_emoji };
+    activeProfile = { id: authUser.id, type: 'user', name: userProfile.display_name, emoji: userProfile.avatar_emoji, tier: 1 };
   } else {
     const child = childProfiles.find(c => c.id === profileId);
     if (!child) return;
-    activeProfile = { id: child.id, type: 'child', name: child.display_name, emoji: child.avatar_emoji };
+    activeProfile = { id: child.id, type: 'child', name: child.display_name, emoji: child.avatar_emoji, tier: child.tier || 1 };
   }
   closeDropdown();
   await loadProgressForActiveProfile();
@@ -1182,37 +894,62 @@ async function switchProfile(profileId, profileType) {
 }
 
 // ════════════════════════════════════════════════════
-// PROGRESS — reads from DB if logged in, localStorage otherwise
+// TIER TOGGLE
+// ════════════════════════════════════════════════════
+async function toggleChildTier(childId) {
+  const child = childProfiles.find(c => c.id === childId);
+  if (!child) return;
+  const newTierVal = (child.tier || 1) === 1 ? 2 : 1;
+  const { error } = await sb.from('child_profiles').update({ tier: newTierVal }).eq('id', childId);
+  if (error) { showToast('Could not update reading level.'); return; }
+  child.tier = newTierVal;
+  if (activeProfile && activeProfile.id === childId) {
+    activeProfile.tier = newTierVal;
+    await loadProgressForActiveProfile();
+  }
+  renderAuthBar();
+  showToast(newTierVal === 2 ? '📚 Switched to Ages 5–8 stories' : '📖 Switched to Ages 9–12 stories');
+}
+
+// ── NEW-CHILD TIER SELECTOR ──────────────────────────
+function setNewChildTier(tier) {
+  newChildTier = tier;
+  const btn1 = document.getElementById('tierBtn1');
+  const btn2 = document.getElementById('tierBtn2');
+  if (tier === 1) {
+    btn1.style.background = 'linear-gradient(135deg,var(--gold),var(--gold-bright))';
+    btn1.style.color = 'var(--ink)';
+    btn1.style.borderColor = 'var(--gold)';
+    btn2.style.background = '#fff';
+    btn2.style.color = 'var(--ink-light)';
+    btn2.style.borderColor = 'rgba(44,26,14,0.16)';
+  } else {
+    btn2.style.background = '#7c3aed';
+    btn2.style.color = '#fff';
+    btn2.style.borderColor = '#7c3aed';
+    btn1.style.background = '#fff';
+    btn1.style.color = 'var(--ink-light)';
+    btn1.style.borderColor = 'rgba(44,26,14,0.16)';
+  }
+}
+
+// ════════════════════════════════════════════════════
+// PROGRESS
 // ════════════════════════════════════════════════════
 function getProgress() {
   if (authUser && activeProfile) return dbProgress;
   try { return new Set(JSON.parse(localStorage.getItem(PROGRESS_KEY) || '[]')); } catch(e) { return new Set(); }
 }
-
-function saveProgressLocal(set) {
-  localStorage.setItem(PROGRESS_KEY, JSON.stringify([...set]));
-}
-
+function saveProgressLocal(set) { localStorage.setItem(PROGRESS_KEY, JSON.stringify([...set])); }
 async function markStoryComplete(story) {
   if (authUser && activeProfile) {
-    // Save to Supabase
-    await sb.from('story_progress').upsert({
-      profile_id: activeProfile.id,
-      profile_type: activeProfile.type,
-      story_id: story.id,
-      story_order: story.order,
-      era: story.era,
-    });
+    await sb.from('story_progress').upsert({ profile_id: activeProfile.id, profile_type: activeProfile.type, story_id: story.id, story_order: story.order, era: story.era });
     dbProgress.add(story.id);
     await checkAndAwardBadges(story);
   } else {
-    // Save to localStorage
-    const p = getProgress();
-    p.add(story.id);
-    saveProgressLocal(p);
+    const p = getProgress(); p.add(story.id); saveProgressLocal(p);
   }
-  updateProgress();
-  render();
+  updateProgress(); render();
   if (currentStoryIndex !== null) renderModal(currentStoryIndex);
 }
 
@@ -1221,117 +958,52 @@ async function markStoryComplete(story) {
 // ════════════════════════════════════════════════════
 async function checkAndAwardBadges(justCompletedStory) {
   const progress = getProgress();
-
   for (const badge of BADGE_DEFS) {
-    // Skip Hero badge — awarded only via mastery quiz
     if (badge.id === 'hero') continue;
-
-    if (dbBadges.has(badge.id)) continue; // already earned
-
+    if (dbBadges.has(badge.id)) continue;
     let earned = false;
-    if (badge.id === 'complete') {
-      earned = stories.every(s => progress.has(s.id));
-    } else {
-      const eraStories = stories.filter(s => s.era === badge.era);
-      earned = eraStories.length > 0 && eraStories.every(s => progress.has(s.id));
-    }
-
+    if (badge.id === 'complete') { earned = stories.every(s => progress.has(s.id)); }
+    else { const eraStories = stories.filter(s => s.era === badge.era); earned = eraStories.length > 0 && eraStories.every(s => progress.has(s.id)); }
     if (earned) {
       const eraStories = badge.era ? stories.filter(s => s.era === badge.era) : stories;
       dbBadges.add(badge.id);
-      await sb.from('badges').upsert({
-        profile_id: activeProfile.id,
-        profile_type: activeProfile.type,
-        badge_id: badge.id,
-        story_count_at_earn: eraStories.length,
-      });
-      showBadgePopup(badge);
-      renderBadgeShelf();
+      await sb.from('badges').upsert({ profile_id: activeProfile.id, profile_type: activeProfile.type, badge_id: badge.id, story_count_at_earn: eraStories.length });
+      showBadgePopup(badge); renderBadgeShelf();
     }
   }
 }
-
-// Check if any earned badges need revocation due to new stories being added
 async function checkBadgeRevocations() {
   if (!authUser || !activeProfile || !dbBadges.size) return;
-
-  const { data: earnedBadges } = await sb.from('badges')
-    .select('badge_id, story_count_at_earn')
-    .eq('profile_id', activeProfile.id)
-    .eq('profile_type', activeProfile.type);
-
+  const { data: earnedBadges } = await sb.from('badges').select('badge_id, story_count_at_earn').eq('profile_id', activeProfile.id).eq('profile_type', activeProfile.type);
   if (!earnedBadges) return;
-
   const toRevoke = [];
-
   for (const earned of earnedBadges) {
     const badge = BADGE_DEFS.find(b => b.id === earned.badge_id);
     if (!badge || badge.id === 'hero' || badge.id === 'complete') continue;
-
     const currentEraCount = stories.filter(s => s.era === badge.era).length;
     const countAtEarn = earned.story_count_at_earn || 0;
-
-    if (countAtEarn === 0) {
-      // Badge earned before we tracked story_count_at_earn.
-      // Update the count silently so future checks work — do NOT revoke.
-      await sb.from('badges')
-        .update({ story_count_at_earn: currentEraCount })
-        .eq('profile_id', activeProfile.id)
-        .eq('profile_type', activeProfile.type)
-        .eq('badge_id', earned.badge_id);
-      continue;
-    }
-
-    // Only revoke if new stories genuinely added after badge was earned
-    if (currentEraCount > countAtEarn) {
-      toRevoke.push(badge);
-    }
+    if (countAtEarn === 0) { await sb.from('badges').update({ story_count_at_earn: currentEraCount }).eq('profile_id', activeProfile.id).eq('profile_type', activeProfile.type).eq('badge_id', earned.badge_id); continue; }
+    if (currentEraCount > countAtEarn) toRevoke.push(badge);
   }
-
   if (toRevoke.length > 0) {
     for (const badge of toRevoke) {
       dbBadges.delete(badge.id);
-      await sb.from('badges')
-        .delete()
-        .eq('profile_id', activeProfile.id)
-        .eq('profile_type', activeProfile.type)
-        .eq('badge_id', badge.id);
+      await sb.from('badges').delete().eq('profile_id', activeProfile.id).eq('profile_type', activeProfile.type).eq('badge_id', badge.id);
     }
     renderBadgeShelf();
     showNewStoriesInEraNotification(toRevoke);
   }
 }
-
 function showNewStoriesInEraNotification(revokedBadges) {
   const existing = document.getElementById('eraNewStoryBanner');
   if (existing) existing.remove();
-
   const names = revokedBadges.map(b => b.name).join(', ');
   const banner = document.createElement('div');
   banner.id = 'eraNewStoryBanner';
-  banner.style.cssText = `
-    background: linear-gradient(135deg, #c9a227, #f0c040);
-    color: #2c1a0e;
-    padding: 12px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    position: sticky;
-    top: 0;
-    z-index: 200;
-    flex-wrap: wrap;
-  `;
-  banner.innerHTML = `
-    <span>🌟 New stories added to <strong>${names}</strong> — your badge is waiting to be reclaimed!</span>
-    <button onclick="this.parentElement.remove()" style="background:rgba(44,26,14,0.15);border:none;border-radius:5px;padding:4px 12px;font-family:'Cinzel',serif;font-size:11px;font-weight:700;color:#2c1a0e;cursor:pointer">Got it</button>
-  `;
+  banner.style.cssText = `background:linear-gradient(135deg,#c9a227,#f0c040);color:#2c1a0e;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:600;position:sticky;top:0;z-index:200;flex-wrap:wrap;`;
+  banner.innerHTML = `<span>🌟 New stories added to <strong>${names}</strong> — your badge is waiting to be reclaimed!</span><button onclick="this.parentElement.remove()" style="background:rgba(44,26,14,0.15);border:none;border-radius:5px;padding:4px 12px;font-family:'Cinzel',serif;font-size:11px;font-weight:700;color:#2c1a0e;cursor:pointer">Got it</button>`;
   document.querySelector('.main').prepend(banner);
 }
-
 function showBadgePopup(badge) {
   const popup = document.getElementById('badgePopup');
   document.getElementById('badgePopupEmoji').textContent = badge.emoji;
@@ -1340,84 +1012,50 @@ function showBadgePopup(badge) {
   popup.classList.add('show');
   setTimeout(() => popup.classList.remove('show'), 4000);
 }
-
 function renderBadgeShelf() {
   const shelf = document.getElementById('badgeShelf');
   const earned = authUser ? dbBadges : new Set();
   const chips = BADGE_DEFS.map(badge => {
     const isEarned = earned.has(badge.id);
-    return `<div class="badge-chip ${isEarned ? 'earned' : 'locked'}" title="${badge.name}" onclick="openJourney()">${badge.emoji}</div>`;
+    return `<div class="badge-chip ${isEarned?'earned':'locked'}" title="${badge.name}" onclick="openJourney()">${badge.emoji}</div>`;
   }).join('');
   shelf.innerHTML = `<span class="badge-shelf-label">Badges</span>${chips}`;
 }
-
 function openJourney() {
   const earned = authUser ? dbBadges : new Set();
   const profileName = activeProfile ? activeProfile.name : 'Guest';
   document.getElementById('journeyProfileName').textContent = profileName + "'s badges";
-
-  // Check if mastery quiz is available (all stories completed, all era badges earned)
   const allStoriesRead = stories.every(s => getProgress().has(s.id));
   const eraBadges = BADGE_DEFS.filter(b => b.id !== 'hero' && b.id !== 'complete');
-  const allEraBadgesEarned = eraBadges.every(b => (authUser ? dbBadges : new Set()).has(b.id));
   const heroEarned = (authUser ? dbBadges : new Set()).has('hero');
-
   const grid = document.getElementById('journeyGrid');
   grid.innerHTML = BADGE_DEFS.map(badge => {
     const isEarned = earned.has(badge.id);
     const eraStories = badge.era ? stories.filter(s => s.era === badge.era) : stories;
     const completedCount = eraStories.filter(s => getProgress().has(s.id)).length;
     const statusText = isEarned ? 'Earned!' : `${completedCount} of ${eraStories.length} stories`;
-    return `<div class="journey-badge-item">
-      <div class="journey-badge-icon ${isEarned ? 'earned' : 'locked'}">${badge.emoji}</div>
-      <div class="journey-badge-name">${badge.name}</div>
-      <div class="journey-badge-status ${isEarned ? 'earned-label' : ''}">${statusText}</div>
-    </div>`;
+    return `<div class="journey-badge-item"><div class="journey-badge-icon ${isEarned?'earned':'locked'}">${badge.emoji}</div><div class="journey-badge-name">${badge.name}</div><div class="journey-badge-status ${isEarned?'earned-label':''}">${statusText}</div></div>`;
   }).join('');
-
-  // Add mastery quiz section to journey grid
   const masterySection = document.getElementById('masterySection');
   if (masterySection) masterySection.remove();
-
   const sec = document.createElement('div');
   sec.id = 'masterySection';
   sec.style.cssText = 'padding:0 28px 28px;border-top:1px solid var(--parchment-dark);margin-top:8px';
-
   if (heroEarned) {
-    sec.innerHTML = `
-      <div style="text-align:center;padding:20px 0">
-        <div style="font-size:48px;margin-bottom:10px">🌟</div>
-        <div style="font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:6px">Hero</div>
-        <div style="font-family:'Lora',serif;font-style:italic;font-size:0.88rem;color:var(--ink-light)">You have walked through every story from creation to the early church.</div>
-      </div>`;
+    sec.innerHTML = `<div style="text-align:center;padding:20px 0"><div style="font-size:48px;margin-bottom:10px">🌟</div><div style="font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:6px">Hero</div><div style="font-family:'Lora',serif;font-style:italic;font-size:0.88rem;color:var(--ink-light)">You have walked through every story from creation to the early church.</div></div>`;
   } else if (allStoriesRead) {
-    sec.innerHTML = `
-      <div style="text-align:center;padding:20px 0">
-        <div style="font-size:36px;margin-bottom:10px">🌟</div>
-        <div style="font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:6px">Hero Quiz Unlocked</div>
-        <div style="font-family:'Lora',serif;font-style:italic;font-size:0.85rem;color:var(--ink-light);margin-bottom:16px">You have read every story. Now prove you know them.</div>
-        <button onclick="closeJourney();startMasteryQuiz()" style="background:linear-gradient(135deg,var(--gold),var(--gold-bright));border:none;border-radius:9px;padding:12px 28px;font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--ink);cursor:pointer;box-shadow:0 3px 12px rgba(201,162,39,0.35)">Take the Hero Quiz →</button>
-      </div>`;
+    sec.innerHTML = `<div style="text-align:center;padding:20px 0"><div style="font-size:36px;margin-bottom:10px">🌟</div><div style="font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:6px">Hero Quiz Unlocked</div><div style="font-family:'Lora',serif;font-style:italic;font-size:0.85rem;color:var(--ink-light);margin-bottom:16px">You have read every story. Now prove you know them.</div><button onclick="closeJourney();startMasteryQuiz()" style="background:linear-gradient(135deg,var(--gold),var(--gold-bright));border:none;border-radius:9px;padding:12px 28px;font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--ink);cursor:pointer;box-shadow:0 3px 12px rgba(201,162,39,0.35)">Take the Hero Quiz →</button></div>`;
   } else {
     const completed = stories.filter(s => getProgress().has(s.id)).length;
-    sec.innerHTML = `
-      <div style="text-align:center;padding:20px 0;opacity:0.5">
-        <div style="font-size:36px;margin-bottom:10px;filter:grayscale(1)">🌟</div>
-        <div style="font-family:'Cinzel',serif;font-size:0.9rem;font-weight:600;color:var(--ink);margin-bottom:4px">Hero Quiz</div>
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:12px;color:var(--ink-light)">${completed} of ${stories.length} stories read — complete all to unlock</div>
-      </div>`;
+    sec.innerHTML = `<div style="text-align:center;padding:20px 0;opacity:0.5"><div style="font-size:36px;margin-bottom:10px;filter:grayscale(1)">🌟</div><div style="font-family:'Cinzel',serif;font-size:0.9rem;font-weight:600;color:var(--ink);margin-bottom:4px">Hero Quiz</div><div style="font-family:'Source Sans 3',sans-serif;font-size:12px;color:var(--ink-light)">${completed} of ${stories.length} stories read — complete all to unlock</div></div>`;
   }
-
   document.querySelector('.journey-card').appendChild(sec);
   document.getElementById('journeyBackdrop').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-
 function closeJourney() {
   document.getElementById('journeyBackdrop').classList.remove('open');
-  if (!document.getElementById('modalBackdrop').classList.contains('open')) {
-    document.body.style.overflow = '';
-  }
+  if (!document.getElementById('modalBackdrop').classList.contains('open')) document.body.style.overflow = '';
 }
 
 // ════════════════════════════════════════════════════
@@ -1426,81 +1064,66 @@ function closeJourney() {
 function renderAuthBar() {
   const left = document.getElementById('authBarLeft');
   const right = document.getElementById('authBarRight');
-
   if (!authUser || !userProfile) {
-    // Logged out
     left.innerHTML = `<span style="font-family:'Lora',serif;font-style:italic;font-size:12px;color:rgba(255,255,255,0.35);">Reading as guest — progress saved locally</span>`;
-    right.innerHTML = `
-      <a href="./login.html?mode=signup" class="auth-bar-btn primary">Create Account</a>
-      <a href="./login.html" class="auth-bar-btn ghost">Sign In</a>`;
+    right.innerHTML = `<a href="./login.html?mode=signup" class="auth-bar-btn primary">Create Account</a><a href="./login.html" class="auth-bar-btn ghost">Sign In</a>`;
     return;
   }
-
-  // Logged in
   const isParent = userProfile.account_type === 'parent';
+  const activeTier = activeProfile ? (activeProfile.tier || 1) : 1;
   left.innerHTML = `
     <div class="profile-menu">
       <div style="display:flex;align-items:center;gap:10px;cursor:pointer" onclick="toggleDropdown()">
         <div class="auth-bar-avatar">${activeProfile ? activeProfile.emoji : userProfile.avatar_emoji}</div>
         <div>
           <div class="auth-bar-name">${activeProfile ? activeProfile.name : userProfile.display_name}</div>
-          <div class="auth-bar-type">${isParent ? (activeProfile && activeProfile.type === 'child' ? 'Child Profile' : 'Parent Account') : 'Individual Account'}</div>
-          ${userProfile.is_paid ? `<div style="font-family:'Source Sans 3',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:rgba(201,162,39,0.15);color:var(--gold);border:1px solid rgba(201,162,39,0.3);border-radius:4px;padding:1px 6px">${userProfile.plan_type === 'monthly' ? '● MONTHLY' : '● FULL ACCESS'}</div>` : ''}
+          <div class="auth-bar-type">${isParent?(activeProfile&&activeProfile.type==='child'?'Child Profile':'Parent Account'):'Individual Account'}</div>
+          ${userProfile.is_paid?`<div style="font-family:'Source Sans 3',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:rgba(201,162,39,0.15);color:var(--gold);border:1px solid rgba(201,162,39,0.3);border-radius:4px;padding:1px 6px">${userProfile.plan_type==='monthly'?'● MONTHLY':'● FULL ACCESS'}</div>`:''}
+          ${activeProfile&&activeProfile.type==='child'?`<div style="font-family:'Source Sans 3',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:${activeTier===2?'#7c3aed':'rgba(44,26,14,0.12)'};color:${activeTier===2?'#fff':'var(--ink-light)'};border-radius:4px;padding:1px 6px;margin-top:2px">Ages ${activeTier===2?'5–8':'9–12'}</div>`:''}
         </div>
         <span style="color:rgba(201,162,39,0.6);font-size:10px;margin-left:4px;">▼</span>
       </div>
       <div class="profile-dropdown" id="profileDropdown">
         <div class="profile-drop-header">Switch Profile</div>
-        <!-- Parent / Individual profile -->
-        <button class="profile-drop-item ${activeProfile && activeProfile.type === 'user' ? 'active' : ''}" onclick="switchProfile('${authUser.id}','user')">
+        <button class="profile-drop-item ${activeProfile&&activeProfile.type==='user'?'active':''}" onclick="switchProfile('${authUser.id}','user')">
           <div class="profile-drop-avatar">${userProfile.avatar_emoji}</div>
           <div>
             <div class="profile-drop-name">${userProfile.display_name}</div>
-            <div class="profile-drop-type">${isParent ? 'Parent' : 'Individual'}</div>
+            <div class="profile-drop-type">${isParent?'Parent':'Individual'}</div>
           </div>
-          ${activeProfile && activeProfile.type === 'user' ? '<span class="profile-drop-check">✓</span>' : ''}
+          ${activeProfile&&activeProfile.type==='user'?'<span class="profile-drop-check">✓</span>':''}
         </button>
-        <!-- Child profiles -->
-        ${childProfiles.map(c => `
-          <button class="profile-drop-item ${activeProfile && activeProfile.id === c.id ? 'active' : ''}" onclick="switchProfile('${c.id}','child')">
+        ${childProfiles.map(c => {
+          const cTier = c.tier || 1;
+          return `<button class="profile-drop-item ${activeProfile&&activeProfile.id===c.id?'active':''}" onclick="switchProfile('${c.id}','child')">
             <div class="profile-drop-avatar">${c.avatar_emoji}</div>
             <div>
               <div class="profile-drop-name">${c.display_name}</div>
-              <div class="profile-drop-type">${c.age ? 'Age ' + c.age : 'Child'}</div>
+              <div class="profile-drop-type">${c.age?'Age '+c.age:'Child'}</div>
             </div>
-            ${activeProfile && activeProfile.id === c.id ? '<span class="profile-drop-check">✓</span>' : ''}
-          </button>`).join('')}
-        ${isParent ? `
-          <div class="profile-drop-divider"></div>
-          <button class="profile-drop-action" onclick="openChildModal()">+ Add Child Profile</button>` : ''}
+            <div style="margin-left:auto;display:flex;align-items:center;gap:6px;flex-shrink:0">
+              <button onclick="event.stopPropagation();toggleChildTier('${c.id}')" class="tier-badge ${cTier===2?'tier-2':'tier-1'}" title="Switch reading level">Ages ${cTier===2?'5–8':'9–12'}</button>
+              ${activeProfile&&activeProfile.id===c.id?'<span class="profile-drop-check">✓</span>':''}
+            </div>
+          </button>`;
+        }).join('')}
+        ${isParent?`<div class="profile-drop-divider"></div><button class="profile-drop-action" onclick="openChildModal()">+ Add Child Profile</button>`:''}
         <div class="profile-drop-divider"></div>
         <button class="profile-drop-action muted" onclick="handleSignOut()">Sign Out</button>
       </div>
     </div>`;
-
   right.innerHTML = `<button class="auth-bar-btn ghost" onclick="openJourney()">🏆 My Journey</button><a href="./account.html" class="auth-bar-btn ghost">My Account</a>`;
 }
-
-function toggleDropdown() {
-  document.getElementById('profileDropdown').classList.toggle('open');
-}
-function closeDropdown() {
-  const d = document.getElementById('profileDropdown');
-  if (d) d.classList.remove('open');
-}
-document.addEventListener('click', e => {
-  if (!e.target.closest('.profile-menu')) closeDropdown();
-});
-
+function toggleDropdown() { document.getElementById('profileDropdown').classList.toggle('open'); }
+function closeDropdown() { const d = document.getElementById('profileDropdown'); if (d) d.classList.remove('open'); }
+document.addEventListener('click', e => { if (!e.target.closest('.profile-menu')) closeDropdown(); });
 async function handleSignOut() {
   closeDropdown();
   await sb.auth.signOut();
   authUser = null; userProfile = null; activeProfile = null;
   childProfiles = []; dbProgress = new Set(); dbBadges = new Set();
-  renderAuthBar();
-  renderBadgeShelf();
-  render();
-  updateProgress();
+  try { const r = await fetch('./stories.json'); DATA = await r.json(); stories = DATA.stories.sort((a,b)=>a.order-b.order); eras = DATA.eras; } catch(e) {}
+  renderAuthBar(); renderBadgeShelf(); render(); updateProgress();
 }
 
 // ════════════════════════════════════════════════════
@@ -1520,37 +1143,32 @@ function buildChildAvatarGrid() {
     grid.appendChild(btn);
   });
 }
-
 function openChildModal() {
   closeDropdown();
   document.getElementById('childNameInput').value = '';
   document.getElementById('childAgeInput').value = '';
   document.getElementById('childModalMsg').style.display = 'none';
   selectedChildAvatar = '⭐';
+  newChildTier = 1;
+  setNewChildTier(1);
   document.querySelectorAll('.child-avatar-opt').forEach(b => b.classList.toggle('selected', b.textContent === '⭐'));
   document.getElementById('childModalBackdrop').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-function closeChildModal() {
-  document.getElementById('childModalBackdrop').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
+function closeChildModal() { document.getElementById('childModalBackdrop').classList.remove('open'); document.body.style.overflow = ''; }
 async function saveChild() {
   const name = document.getElementById('childNameInput').value.trim();
   const age = document.getElementById('childAgeInput').value;
   const msgEl = document.getElementById('childModalMsg');
   if (!name) { msgEl.textContent = 'Please enter a name.'; msgEl.style.display = 'block'; return; }
-
   const { data, error } = await sb.from('child_profiles').insert({
     parent_id: authUser.id,
     display_name: name,
     age: age ? parseInt(age) : null,
     avatar_emoji: selectedChildAvatar,
+    tier: newChildTier,
   }).select().single();
-
   if (error) { msgEl.textContent = 'Something went wrong. Please try again.'; msgEl.style.display = 'block'; return; }
-
   childProfiles.push(data);
   closeChildModal();
   showToast('✓ ' + name + ' added!');
@@ -1560,97 +1178,51 @@ async function saveChild() {
 // ════════════════════════════════════════════════════
 // PAYWALL / WELCOME
 // ════════════════════════════════════════════════════
-
-// ════════════════════════════════════════════════════
-// STRIPE CHECKOUT
-// ════════════════════════════════════════════════════
 async function startCheckout(plan) {
-  if (!authUser) {
-    // Not logged in — send to signup first, return to index after
-    window.location.href = './login.html?mode=signup&returnTo=' + encodeURIComponent(window.location.pathname + '?openPaywall=1');
-    return;
-  }
-
-  // Show loading state on buttons
+  if (!authUser) { window.location.href = './login.html?mode=signup&returnTo=' + encodeURIComponent(window.location.pathname + '?openPaywall=1'); return; }
   const btnMonthly = document.getElementById('pwBtnMonthly');
   const btnLifetime = document.getElementById('pwBtnLifetime');
   const originalMonthly = btnMonthly.textContent;
   const originalLifetime = btnLifetime.textContent;
-  btnMonthly.textContent = 'Loading…';
-  btnLifetime.textContent = 'Loading…';
-  btnMonthly.disabled = true;
-  btnLifetime.disabled = true;
-
+  btnMonthly.textContent = 'Loading…'; btnLifetime.textContent = 'Loading…';
+  btnMonthly.disabled = true; btnLifetime.disabled = true;
   try {
     const { data: { session } } = await sb.auth.getSession();
     const response = await fetch(`${SUPABASE_FUNCTIONS_URL}/create-checkout`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${session.access_token}`,
-        'x-story-count': String(stories.length),
-      },
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${session.access_token}`, 'x-story-count': String(stories.length) },
       body: JSON.stringify({ plan }),
     });
-
     const data = await response.json();
-
     if (data.error) throw new Error(data.error);
-    if (data.url) {
-      window.location.href = data.url;
-    }
+    if (data.url) window.location.href = data.url;
   } catch (err) {
     console.error('Checkout error:', err);
     showToast('Something went wrong. Please try again.');
-    btnMonthly.textContent = originalMonthly;
-    btnLifetime.textContent = originalLifetime;
-    btnMonthly.disabled = false;
-    btnLifetime.disabled = false;
+    btnMonthly.textContent = originalMonthly; btnLifetime.textContent = originalLifetime;
+    btnMonthly.disabled = false; btnLifetime.disabled = false;
   }
 }
-
-// Check URL params on load — handle post-checkout return
 async function checkCheckoutReturn() {
   const params = new URLSearchParams(window.location.search);
   const checkout = params.get('checkout');
-  const openPaywall = params.get('openPaywall');
-
   if (checkout === 'success') {
-    // Clean URL
     window.history.replaceState({}, '', window.location.pathname);
-    // Reload profile to pick up is_paid = true set by webhook
-    if (authUser) {
-      await loadUserProfile();
-      renderAuthBar();
-      render();
-      showToast('🎉 Welcome to Footsteps! All stories are now unlocked.');
-    }
+    if (authUser) { await loadUserProfile(); renderAuthBar(); render(); showToast('🎉 Welcome to Footsteps! All stories are now unlocked.'); }
   } else if (checkout === 'cancelled') {
     window.history.replaceState({}, '', window.location.pathname);
     showToast('Checkout cancelled — no charge was made.');
   }
-
-  if (openPaywall === '1') {
-    window.history.replaceState({}, '', window.location.pathname);
-    setTimeout(openPaywall, 500);
-  }
+  if (params.get('openPaywall') === '1') { window.history.replaceState({}, '', window.location.pathname); setTimeout(openPaywall, 500); }
 }
-
 function closeWelcome() {
   localStorage.setItem(WELCOME_KEY, '1');
   const overlay = document.getElementById('welcomeOverlay');
-  overlay.classList.remove('open');
-  overlay.style.display = 'none';
+  overlay.classList.remove('open'); overlay.style.display = 'none';
   document.body.style.overflow = '';
 }
-function openPaywall() {
-  document.getElementById('paywallBackdrop').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closePaywall() {
-  document.getElementById('paywallBackdrop').classList.remove('open');
-  document.body.style.overflow = '';
-}
+function openPaywall() { document.getElementById('paywallBackdrop').classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closePaywall() { document.getElementById('paywallBackdrop').classList.remove('open'); document.body.style.overflow = ''; }
 document.getElementById('welcomeStartBtn').addEventListener('click', closeWelcome);
 document.getElementById('welcomeUnlockBtn').addEventListener('click', () => { closeWelcome(); setTimeout(openPaywall, 250); });
 document.getElementById('paywallDismiss').addEventListener('click', closePaywall);
@@ -1662,21 +1234,12 @@ document.getElementById('pwMonthlyPlan').addEventListener('click', () => startCh
 
 function storyIsLocked(story) {
   if (!PAYWALL_ENABLED) return false;
-
-  // Guest — first 3 free
   if (!userProfile) return story.order > FREE_STORY_LIMIT;
-
-  // Monthly subscriber — access to everything
   if (userProfile.is_paid && userProfile.plan_type === 'monthly') return false;
-
-  // One-time purchaser — access to stories published before or on their purchase date
   if (userProfile.has_lifetime) {
     if (!userProfile.paid_at || !story.published_date) return false;
-    // Lock stories published after purchase date
     return story.published_date > userProfile.paid_at.substring(0, 10);
   }
-
-  // Free user — first 3 stories only
   return story.order > FREE_STORY_LIMIT;
 }
 
@@ -1706,24 +1269,22 @@ function render() {
   document.querySelectorAll('.story-card[data-id]').forEach(c => c.addEventListener('click', () => handleCardClick(c.dataset.id)));
   document.querySelectorAll('.card-read-btn').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); handleCardClick(b.dataset.id); }));
 }
-
 function renderCard(story, progress) {
   const done = progress.has(story.id);
   const locked = storyIsLocked(story);
-  return `<div class="story-card${done ? ' completed' : ''}${locked ? ' locked' : ''}" data-id="${story.id}" role="button" tabindex="0">
-    ${done ? '<div class="read-stamp">READ</div>' : ''}
-    ${locked ? '<div class="lock-badge">🔒 Locked</div>' : ''}
+  return `<div class="story-card${done?' completed':''}${locked?' locked':''}" data-id="${story.id}" role="button" tabindex="0">
+    ${done?'<div class="read-stamp">READ</div>':''}
+    ${locked?'<div class="lock-badge">🔒 Locked</div>':''}
     <span class="card-emoji">${story.emoji}</span>
     <div class="card-title">${story.title}</div>
     <div class="card-book">${story.book}</div>
     <div class="card-hook">${story.hook}</div>
     <div class="card-footer">
       <span class="card-location">📍 ${story.location.split('—')[0].trim()}</span>
-      <button class="card-read-btn" data-id="${story.id}">${locked ? 'Unlock →' : 'Read →'}</button>
+      <button class="card-read-btn" data-id="${story.id}">${locked?'Unlock →':'Read →'}</button>
     </div>
   </div>`;
 }
-
 function handleCardClick(storyId) {
   const story = stories.find(s => s.id === storyId);
   if (!story) return;
@@ -1742,25 +1303,20 @@ function openModal(storyId) {
   document.getElementById('modalBackdrop').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-
 function renderModal(idx) {
   const story = stories[idx];
   const era = eras.find(e => e.id === story.era);
   const progress = getProgress();
   const done = progress.has(story.id);
-
   document.getElementById('modalStripe').style.background = era ? era.color : '#c9a227';
   document.getElementById('modalEmoji').textContent = story.emoji;
-  document.getElementById('modalEyebrow').textContent = `${era ? era.label : ''} · ${story.book}`;
+  document.getElementById('modalEyebrow').textContent = `${era?era.label:''} · ${story.book}`;
   document.getElementById('modalTitle').textContent = story.title;
   document.getElementById('modalHook').textContent = story.hook;
   document.getElementById('modalMeta').innerHTML = `<span class="modal-meta-item">📍 ${story.location}</span><span class="modal-meta-item">🗓 ${story.date}</span>`;
-
   const bodyEl = document.getElementById('modalBody');
   bodyEl.innerHTML = story.story.map(p => `<p class="story-paragraph">${p}</p>`).join('');
   bodyEl.scrollTop = 0;
-
-  // Audio
   const audioStatus = document.getElementById('audioStatus');
   const playBtn = document.getElementById('audioPlayBtn');
   if (currentAudio) { currentAudio.pause(); currentAudio = null; isAudioPlaying = false; }
@@ -1770,49 +1326,31 @@ function renderModal(idx) {
   if (story.audio) {
     audioStatus.textContent = '';
     playBtn.style.opacity = '1';
-    currentAudioSrc = story.audio;
-    currentTimestamps = null; wordTimings = []; allWordSpans = [];
+    currentAudioSrc = story.audio; currentTimestamps = null; wordTimings = []; allWordSpans = [];
     playBtn.onclick = toggleAudio;
     document.getElementById('audioProgressWrap').onclick = scrubAudio;
     const tsPath = story.audio.replace('.mp3', '.json');
-    fetch(tsPath).then(r => r.ok ? r.json() : null).then(ts => { if (ts) { currentTimestamps = ts; } }).catch(() => {});
+    fetch(tsPath).then(r => r.ok ? r.json() : null).then(ts => { if (ts) currentTimestamps = ts; }).catch(() => {});
   } else {
     audioStatus.textContent = 'Audio coming soon';
     playBtn.style.opacity = '0.4'; playBtn.onclick = null; currentAudioSrc = null;
     document.getElementById('audioProgressWrap').onclick = null;
   }
-
-  // Devotional
   const devEl = document.getElementById('modalDevotional');
   if (story.devotional) {
     devEl.style.display = '';
-    devEl.innerHTML = `<div class="devotional-label">Big Idea</div>
-      <div class="devotional-idea">${story.devotional.bigIdea}</div>
-      <div class="devotional-qs-label">Talk About It</div>
-      ${story.devotional.questions.map(q => `<div class="devotional-q">${q}</div>`).join('')}`;
+    devEl.innerHTML = `<div class="devotional-label">Big Idea</div><div class="devotional-idea">${story.devotional.bigIdea}</div><div class="devotional-qs-label">Talk About It</div>${story.devotional.questions.map(q=>`<div class="devotional-q">${q}</div>`).join('')}`;
   } else { devEl.style.display = 'none'; }
-
-  // Connections
   const connEl = document.getElementById('modalConnections');
   if (story.connections && story.connections.length) {
     connEl.style.display = '';
-    connEl.innerHTML = `<div class="connections-label">This story connects to</div>
-      <div class="connections-grid">
-        ${story.connections.map(c => `<div class="connection-card" onclick="openModal('${c.storyId}')">
-          <div class="connection-top"><span class="connection-ref">${c.reference}</span><span class="connection-arrow">↗</span></div>
-          <div class="connection-title">${c.title}</div>
-          <div class="connection-why">${c.why}</div>
-        </div>`).join('')}
-      </div>`;
+    connEl.innerHTML = `<div class="connections-label">This story connects to</div><div class="connections-grid">${story.connections.map(c=>`<div class="connection-card" onclick="openModal('${c.storyId}')"><div class="connection-top"><span class="connection-ref">${c.reference}</span><span class="connection-arrow">↗</span></div><div class="connection-title">${c.title}</div><div class="connection-why">${c.why}</div></div>`).join('')}</div>`;
   } else { connEl.style.display = 'none'; }
-
-  // Quiz
   const quizEl = document.getElementById('modalQuiz');
   if (story.quiz && story.quiz.length) {
     quizEl.style.display = '';
     initQuiz(story.quiz, quizEl, story);
   } else { quizEl.style.display = 'none'; quizEl.innerHTML = ''; }
-
   const btn = document.getElementById('markDoneBtn');
   btn.textContent = done ? '✓ Already Read' : 'Mark as Read ✓';
   done ? btn.classList.add('already-done') : btn.classList.remove('already-done');
@@ -1821,24 +1359,12 @@ function renderModal(idx) {
   document.getElementById('prevBtn').dataset.idx = idx;
   document.getElementById('nextBtn').dataset.idx = idx;
 }
-
 function initQuiz(questions, container, story) {
   const letters = ['A','B','C','D'];
   let current = 0, answered = false, score = 0;
   function renderQ() {
     const q = questions[current];
-    container.innerHTML = `
-      <div class="quiz-header">
-        <span class="quiz-header-label">Story Quiz</span>
-        <div class="quiz-dots">${questions.map((_,i) => `<div class="quiz-dot ${i<current?'qdone':i===current?'qactive':''}"></div>`).join('')}</div>
-      </div>
-      <div class="quiz-body">
-        <div class="quiz-q-num">Question ${current+1} of ${questions.length}</div>
-        <div class="quiz-q-text">${q.question}</div>
-        <div class="quiz-options">${q.options.map((opt,i) => `<button class="quiz-option" data-idx="${i}"><span class="quiz-letter">${letters[i]}</span>${opt}</button>`).join('')}</div>
-        <div class="quiz-feedback" id="qfeedback"></div>
-        <button class="quiz-next-btn" id="qnext">${current<questions.length-1?'Next Question →':'See Your Results!'}</button>
-      </div>`;
+    container.innerHTML = `<div class="quiz-header"><span class="quiz-header-label">Story Quiz</span><div class="quiz-dots">${questions.map((_,i)=>`<div class="quiz-dot ${i<current?'qdone':i===current?'qactive':''}"></div>`).join('')}</div></div><div class="quiz-body"><div class="quiz-q-num">Question ${current+1} of ${questions.length}</div><div class="quiz-q-text">${q.question}</div><div class="quiz-options">${q.options.map((opt,i)=>`<button class="quiz-option" data-idx="${i}"><span class="quiz-letter">${letters[i]}</span>${opt}</button>`).join('')}</div><div class="quiz-feedback" id="qfeedback"></div><button class="quiz-next-btn" id="qnext">${current<questions.length-1?'Next Question →':'See Your Results!'}</button></div>`;
     answered = false;
     container.querySelectorAll('.quiz-option').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -1862,38 +1388,19 @@ function initQuiz(questions, container, story) {
         }
       });
     });
-    container.querySelector('#qnext').addEventListener('click', () => {
-      current++;
-      if (current < questions.length) renderQ();
-      else showCelebration();
-    });
+    container.querySelector('#qnext').addEventListener('click', () => { current++; if (current < questions.length) renderQ(); else showCelebration(); });
   }
   function showCelebration() {
-    // Save quiz attempt to Supabase
     if (authUser && activeProfile) {
-      sb.from('quiz_attempts').insert({
-        profile_id: activeProfile.id,
-        profile_type: activeProfile.type,
-        story_id: story.id,
-        score,
-        max_score: questions.length,
-      });
+      sb.from('quiz_attempts').insert({ profile_id: activeProfile.id, profile_type: activeProfile.type, story_id: story.id, score, max_score: questions.length });
     }
     const colors = ['#c9a227','#f0c040','#8b1a1a','#c9a227','#3B6D11','#f0c040','#7c3aed','#c9a227','#f0c040','#065f46'];
     const stars = score === questions.length ? '★ ★ ★' : score >= questions.length * 0.66 ? '★ ★ ☆' : '★ ☆ ☆';
     const msg = score === questions.length ? 'You got every question right! You really know this story.' : `Great effort! You got ${score} out of ${questions.length}. Worth a second read!`;
-    container.innerHTML = `
-      <div class="quiz-celebration qvisible">
-        <div class="quiz-stars">${stars}</div>
-        <div class="quiz-confetti">${colors.map((c,i) => `<div class="quiz-confetti-dot" style="background:${c};animation-delay:${i*0.06}s"></div>`).join('')}</div>
-        <div class="quiz-cel-title">Well done!</div>
-        <div class="quiz-cel-sub">${msg}</div>
-        <div class="quiz-score-badge">${score} out of ${questions.length} correct</div>
-      </div>`;
+    container.innerHTML = `<div class="quiz-celebration qvisible"><div class="quiz-stars">${stars}</div><div class="quiz-confetti">${colors.map((c,i)=>`<div class="quiz-confetti-dot" style="background:${c};animation-delay:${i*0.06}s"></div>`).join('')}</div><div class="quiz-cel-title">Well done!</div><div class="quiz-cel-sub">${msg}</div><div class="quiz-score-badge">${score} out of ${questions.length} correct</div></div>`;
   }
   renderQ();
 }
-
 function closeModal() {
   if (currentAudio) { currentAudio.pause(); currentAudio = null; isAudioPlaying = false; }
   stopHighlightLoop(); clearHighlights();
@@ -1908,7 +1415,6 @@ function closeModal() {
 // ════════════════════════════════════════════════════
 let currentAudio = null, currentAudioSrc = null, currentTimestamps = null, isAudioPlaying = false;
 let wordTimings = [], allWordSpans = [], lastHighlightIdx = -1, rafHandle = null;
-
 function toggleAudio() {
   if (!currentAudioSrc) return;
   if (!currentAudio) {
@@ -1931,7 +1437,6 @@ function toggleAudio() {
     document.getElementById('audioPlayBtn').innerHTML = '<svg viewBox="0 0 24 24"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg>';
   }
 }
-
 function buildWordTimings(alignment) {
   const OFFSET = 0.0;
   const chars = alignment.characters, starts = alignment.character_start_times_seconds, ends = alignment.character_end_times_seconds;
@@ -1945,43 +1450,23 @@ function buildWordTimings(alignment) {
   }
   if (word) wordTimings.push({ word, start: wordStart + OFFSET, end: ends[wordEndIdx] + OFFSET });
 }
-
 function wrapStoryWords() {
-  // Build word list directly from wordTimings (derived from ElevenLabs array)
-  // so span indices always match timing indices exactly — no drift possible.
   allWordSpans = [];
   const body = document.getElementById('modalBody');
   const paras = Array.from(body.querySelectorAll('.story-paragraph'));
-
-  // Flatten all paragraph text into one stream for matching
   let timingIdx = 0;
-
   paras.forEach(para => {
-    // Use textContent (raw text) not innerText (which normalizes whitespace differently)
     const raw = para.textContent;
-    // Split on whitespace runs, keeping delimiters so we can reconstruct spacing
     const tokens = raw.split(/(\s+)/);
     let html = '';
     tokens.forEach(token => {
-      if (/^\s+$/.test(token) || token.length === 0) {
-        html += token;
-      } else {
-        // Every non-whitespace token gets a span, including dashes
-        const isDash = token === '—' || token === '–' || token === '-';
-        html += `<span class="story-word" data-idx="${timingIdx}">${token}</span>`;
-        timingIdx++;
-      }
+      if (/^\s+$/.test(token) || token.length === 0) { html += token; }
+      else { html += `<span class="story-word" data-idx="${timingIdx}">${token}</span>`; timingIdx++; }
     });
     para.innerHTML = html;
   });
-
   allWordSpans = Array.from(body.querySelectorAll('.story-word'));
-  console.log(`Word spans: ${allWordSpans.length} | Timings: ${wordTimings.length}`);
-  if (allWordSpans.length !== wordTimings.length) {
-    console.warn(`COUNT MISMATCH — spans: ${allWordSpans.length} timings: ${wordTimings.length}`);
-  }
 }
-
 function startHighlightLoop() {
   if (rafHandle) cancelAnimationFrame(rafHandle);
   function loop() {
@@ -1992,14 +1477,12 @@ function startHighlightLoop() {
   rafHandle = requestAnimationFrame(loop);
 }
 function stopHighlightLoop() { if (rafHandle) { cancelAnimationFrame(rafHandle); rafHandle = null; } }
-
 function binarySearchWord(t) {
   if (!wordTimings.length || t < wordTimings[0].start) return -1;
   let lo = 0, hi = wordTimings.length - 1;
   while (lo < hi) { const mid = Math.ceil((lo + hi) / 2); if (wordTimings[mid].start <= t) lo = mid; else hi = mid - 1; }
   return lo;
 }
-
 function highlightCurrentWord(currentTime) {
   if (!wordTimings.length || !allWordSpans.length) return;
   const idx = binarySearchWord(currentTime);
@@ -2020,12 +1503,10 @@ function highlightCurrentWord(currentTime) {
     }
   }
 }
-
 function clearHighlights() {
   allWordSpans.forEach(s => s.classList.remove('speaking'));
   document.querySelectorAll('.story-paragraph').forEach(p => p.classList.remove('story-para-active'));
 }
-
 function updateAudioProgress() {
   if (!currentAudio) return;
   const pct = currentAudio.duration ? (currentAudio.currentTime / currentAudio.duration) * 100 : 0;
@@ -2034,13 +1515,11 @@ function updateAudioProgress() {
   const s = Math.floor(currentAudio.currentTime % 60);
   document.getElementById('audioTime').textContent = m + ':' + String(s).padStart(2, '0');
 }
-
 function scrubAudio(e) {
   if (!currentAudio || !currentAudio.duration) return;
   const rect = document.getElementById('audioProgressWrap').getBoundingClientRect();
   currentAudio.currentTime = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width)) * currentAudio.duration;
-  lastHighlightIdx = -1;
-  updateAudioProgress();
+  lastHighlightIdx = -1; updateAudioProgress();
 }
 
 // ════════════════════════════════════════════════════
@@ -2051,19 +1530,14 @@ function updateProgress() {
   const total = progress.size;
   const pct = stories.length ? (total / stories.length) * 100 : 0;
   document.getElementById('progressBar').style.width = pct + '%';
-  document.getElementById('progressCount').textContent = total === 0 ? '0 stories read' : `${total} ${total === 1 ? 'story' : 'stories'} read`;
+  document.getElementById('progressCount').textContent = total === 0 ? '0 stories read' : `${total} ${total===1?'story':'stories'} read`;
 }
-
 document.getElementById('markDoneBtn').addEventListener('click', async () => {
   if (currentStoryIndex === null) return;
   const story = stories[currentStoryIndex];
   const progress = getProgress();
-  if (!progress.has(story.id)) {
-    await markStoryComplete(story);
-    showToast('⭐ Story marked as read!');
-  }
+  if (!progress.has(story.id)) { await markStoryComplete(story); showToast('⭐ Story marked as read!'); }
 });
-
 document.getElementById('prevBtn').addEventListener('click', () => {
   const idx = parseInt(document.getElementById('prevBtn').dataset.idx);
   if (idx > 0) { currentStoryIndex = idx - 1; renderModal(idx - 1); document.getElementById('modalBody').scrollTop = 0; }
@@ -2076,7 +1550,6 @@ document.getElementById('nextBtn').addEventListener('click', () => {
     else { currentStoryIndex = idx + 1; renderModal(idx + 1); document.getElementById('modalBody').scrollTop = 0; }
   }
 });
-
 document.getElementById('modalClose').addEventListener('click', closeModal);
 document.getElementById('modalBackdrop').addEventListener('click', e => { if (e.target === document.getElementById('modalBackdrop')) closeModal(); });
 document.getElementById('journeyBackdrop').addEventListener('click', e => { if (e.target === document.getElementById('journeyBackdrop')) closeJourney(); });
@@ -2086,7 +1559,6 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') { closeModal(); closePaywall(); closeJourney(); closeChildModal(); closeMastery(); }
   if (e.key === 'Enter' && e.target.classList.contains('story-card')) handleCardClick(e.target.dataset.id);
 });
-
 function showToast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg; t.classList.add('show');
