@@ -7,11 +7,11 @@
 
 ## What This App Is
 
-Footsteps is a premium Bible story app for families with children. Each story is told in a vivid, present-tense, Message-style register — faithful to the biblical text, zero commentary woven in, told the way a great storyteller would tell it out loud. Every story has a Big Idea, three Talk About It questions, three connection cards linking to related stories, and a three-question quiz with celebration screen.
+Footsteps is a premium Bible story app for families with children. Each story is told in a vivid, present-tense, Message-style register — faithful to the biblical text, zero commentary woven in, told the way a great storyteller would tell it out loud. Every story has a Big Idea, three Talk About It questions, three connection cards linking to related stories, and a five-question quiz with celebration screen.
 
 **Tagline:** Walk through the greatest story ever told
 **Model:** One-time purchase ($49.99) or monthly subscription ($4.99/month)
-**Status:** Tier 1 (9–12) in progress — 15 of 30 stories complete with audio for stories 1–10
+**Status:** 50 stories complete, audio for stories 1–10, ready for launch after audio generation
 
 ---
 
@@ -19,53 +19,52 @@ Footsteps is a premium Bible story app for families with children. Each story is
 
 ```
 Adventure-Through-The-Bible/
-  index.html              ← main app (story grid, modals, auth, paywall, badges)
-  login.html              ← sign in / sign up page
-  account.html            ← account management, plan, cancel subscription
-  stories.json            ← ALL story content lives here
-  header.png              ← watercolor banner (children walking stone path, ancient ruins)
-  generate_audio.py       ← ElevenLabs API script — generates MP3 + timestamp JSON
-  FOOTSTEPS_PROJECT.md    ← this file
+  index.html                    ← main app
+  login.html                    ← sign in / sign up
+  account.html                  ← account management
+  stories.json                  ← ALL story content lives here
+  header.png                    ← watercolor banner
+  generate_audio.py             ← ElevenLabs audio script
+  FOOTSTEPS_PROJECT.md          ← this file
   audio/
-    creation.mp3 + creation.json
-    adam-eve.mp3 + adam-eve.json
-    cain-abel.mp3 + cain-abel.json
-    noah.mp3 + noah.json
-    tower-babel.mp3 + tower-babel.json
-    abraham.mp3 + abraham.json
-    joseph.mp3 + joseph.json
-    moses-birth.mp3 + moses-birth.json
-    burning-bush.mp3 + burning-bush.json
-    red-sea.mp3 + red-sea.json
-    (stories 11–30 pending)
+    creation.mp3 + .json        ← stories 1-10 have audio
+    adam-eve.mp3 + .json
+    cain-abel.mp3 + .json
+    noah.mp3 + .json
+    tower-babel.mp3 + .json
+    abraham.mp3 + .json
+    joseph.mp3 + .json
+    moses-birth.mp3 + .json
+    burning-bush.mp3 + .json
+    red-sea.mp3 + .json
+    (stories 11-50 pending)
   supabase/
-    config.toml           ← Edge Function JWT config
+    config.toml
     functions/
-      create-checkout/
-        index.ts          ← creates Stripe checkout session
-      stripe-webhook/
-        index.ts          ← handles Stripe events, updates profiles
-      cancel-subscription/
-        index.ts          ← cancels monthly subscription at period end
+      create-checkout/index.ts
+      stripe-webhook/index.ts
+      cancel-subscription/index.ts
   .github/
     workflows/
-      deploy-functions.yml ← auto-deploys Edge Functions on push to main
+      deploy-functions.yml
 ```
 
 ---
 
 ## Tech Stack
 
-- **Frontend:** Static HTML/CSS/JS — no framework, no build step
-- **Hosting:** GitHub Pages (free, auto-deploys on push)
-- **Data:** `stories.json` — fetched at runtime, all story content lives here
-- **Auth:** Supabase Auth — email/password, family + individual accounts
-- **Database:** Supabase Postgres — profiles, child profiles, progress, badges, quiz attempts
-- **Payments:** Stripe — one-time purchase + monthly subscription
-- **Edge Functions:** Supabase Edge Functions (Deno) — checkout, webhook, cancellation
-- **Audio:** ElevenLabs API — generates MP3 + character-level timestamp JSON
-- **Word highlighting:** Time-based positional matching using ElevenLabs timestamp JSON
-- **Progress tracking:** Supabase (logged in) or localStorage (guest)
+| Layer | Technology |
+|-------|-----------|
+| Frontend | Static HTML/CSS/JS, no framework, no build step |
+| Hosting | GitHub Pages — auto-deploys on push to main |
+| Data | stories.json — fetched at runtime |
+| Auth | Supabase Auth — email/password |
+| Database | Supabase Postgres |
+| Payments | Stripe — one-time + monthly subscription |
+| Edge Functions | Supabase Edge Functions (Deno) |
+| Audio | ElevenLabs API — MP3 + character-level timestamps |
+| Word Highlighting | requestAnimationFrame loop + binary search against ElevenLabs timestamp array |
+| Progress | Supabase (logged in) or localStorage (guest) |
 
 ---
 
@@ -73,85 +72,110 @@ Adventure-Through-The-Bible/
 
 **Project URL:** https://bqyysvjnitbeimvaxkao.supabase.co
 **Project Ref:** bqyysvjnitbeimvaxkao
+**Auth Site URL:** https://futurexrp.github.io/Adventure-Through-The-Bible
+**Auth Redirect URLs:** https://futurexrp.github.io/Adventure-Through-The-Bible/**
 
-### Tables
+### Database Tables
+
 | Table | Purpose |
 |-------|---------|
-| `profiles` | One row per auth user — account type, avatar, payment status |
-| `child_profiles` | Children added under parent accounts |
-| `story_progress` | Stories completed per profile |
+| `profiles` | One row per auth user |
+| `child_profiles` | Children under parent accounts |
+| `story_progress` | Completed stories per profile |
 | `quiz_attempts` | Quiz scores per story per profile |
-| `badges` | Badges earned per profile |
+| `badges` | Earned badges with story count at earn time |
+| `mastery_attempts` | Hero Quiz scores and pass/fail |
 
-### Key profile columns
+### Key Profile Columns
+
 | Column | Type | Purpose |
 |--------|------|---------|
+| `account_type` | text | `parent` or `individual` |
+| `avatar_emoji` | text | Chosen emoji avatar |
 | `is_paid` | bool | Active access (monthly or one-time) |
-| `has_lifetime` | bool | Permanent access to 50 launch stories — NEVER reset by cancellation |
+| `has_lifetime` | bool | Permanent access to stories at purchase date — NEVER reset by cancellation |
 | `plan_type` | text | `one_time`, `monthly`, `monthly_cancelling`, null |
 | `stripe_customer_id` | text | Stripe customer reference |
 | `stripe_subscription_id` | text | For monthly subscribers |
 | `paid_at` | timestamptz | When purchase was made |
+| `story_count_at_purchase` | int | Story count when one-time purchase made |
+| `last_seen_story_count` | int | For new story notifications |
 
-### Access logic
-- `has_lifetime = true` → always has access to 50 launch stories, regardless of subscription
-- `is_paid = true` → full active access
-- Cancel monthly → `is_paid` may drop but `has_lifetime` is preserved
-- `storyIsLocked` checks `has_lifetime OR is_paid`
+### Key Badge Columns
 
-### Edge Functions
-| Function | Auth | Purpose |
-|----------|------|---------|
-| `create-checkout` | JWT required | Creates Stripe checkout session |
-| `stripe-webhook` | No JWT (Stripe calls it) | Handles payment events |
-| `cancel-subscription` | JWT required | Cancels monthly at period end |
+| Column | Type | Purpose |
+|--------|------|---------|
+| `badge_id` | text | Badge identifier |
+| `story_count_at_earn` | int | Era story count when badge earned — used for revocation detection |
 
-### Edge Function Secrets (set in Supabase dashboard)
-- `STRIPE_SECRET_KEY` — Stripe secret key
-- `STRIPE_WEBHOOK_SECRET` — Stripe webhook signing secret
-- `SB_SERVICE_ROLE_KEY` — Supabase service role key (named without SUPABASE_ prefix — Supabase blocks that prefix)
+### Access Logic
+
+```
+Monthly subscriber       → access to ALL stories (current and future)
+One-time buyer           → access to stories where published_date <= paid_at
+One-time buyer cancelled → is_paid may drop but has_lifetime stays true
+Guest                    → stories 1-3 only
+```
+
+### Edge Function Secrets (Supabase dashboard)
+
+| Secret | Description |
+|--------|-------------|
+| `STRIPE_SECRET_KEY` | Stripe secret key (sk_test_ or sk_live_) |
+| `STRIPE_WEBHOOK_SECRET` | Stripe webhook signing secret (whsec_) |
+| `SB_SERVICE_ROLE_KEY` | Supabase service role key — named without SUPABASE_ prefix |
 
 ---
 
 ## Stripe Configuration
 
-**Mode:** Test (flip to live before launch)
+**Mode:** Test (not yet live)
 **Test publishable key:** pk_test_51THwruLh...
-**Products:**
+
+### Products
+
 | Product | Price ID | Amount | Type |
 |---------|----------|--------|------|
 | Footsteps Full Access | price_1TdxaVLhNi71Q1IHxg3M9vIX | $49.99 | One-time |
-| Footsteps Monthly | price_1Tdxb2LhNi71Q1IHq8OmNGt6 | $4.99 | Monthly recurring |
+| Footsteps Monthly | price_1Tdxb2LhNi71Q1IHq8OmNGt6 | $4.99/mo | Recurring |
 
 **Webhook:** Footsteps Webhook → https://bqyysvjnitbeimvaxkao.supabase.co/functions/v1/stripe-webhook
 **Webhook events:** checkout.session.completed, invoice.payment_succeeded, invoice.payment_failed, customer.subscription.deleted, customer.subscription.updated
 
-### Going live checklist
-1. Create live mode products in Stripe with same names
-2. Update price IDs in `create-checkout/index.ts`
-3. Update `STRIPE_SECRET_KEY` secret to live key
-4. Create new live webhook endpoint, update `STRIPE_WEBHOOK_SECRET`
-5. Update publishable key in `index.html` and `account.html`
-
 ---
 
-## Auth System
+## Story Release Process — New Batches
 
-### Account types
-- **Family (parent):** Email/password login, can add child profiles (name + age + emoji avatar, no email needed). One purchase covers the whole family.
-- **Individual:** Email/password login, single profile.
+### How it works
 
-### Profile switcher
-Parent accounts show a dropdown in the auth bar to switch between their own profile and any child profiles. Each profile has independent progress and badges.
+Every story has a `published_date` field in stories.json. This is the control mechanism for what each account type can access:
 
-### Pages
-- `login.html` — sign in / sign up with account type picker and emoji avatar selector
-- `account.html` — plan status, cancel subscription, family profiles, sign out
-- Auth bar on `index.html` — shows active profile, My Journey, My Account links
+- **Monthly subscribers** see all stories automatically
+- **One-time buyers** can only access stories where `published_date <= their paid_at date`
+- New stories with a future `published_date` are automatically locked for one-time buyers
 
-### Supabase Auth settings
-- Site URL: https://futurexrp.github.io/Adventure-Through-The-Bible
-- Redirect URLs: https://futurexrp.github.io/Adventure-Through-The-Bible/**
+### To release a new batch
+
+1. Write new stories (new Claude session, follow register rules below)
+2. Set `published_date` to today's date on new stories only
+3. Commit `stories.json` — everything else is automatic
+
+### One-time buyer options for new stories
+
+When new stories are released after a buyer's purchase date, they see a dismissible banner:
+
+**Option A — Subscribe monthly ($4.99/mo):** Gets all new stories plus every future story. Managed in account.html.
+
+**Option B — Story Pack purchase ($9.99 one-time):** Gets access to the specific batch of new stories permanently. Still needs to be built — see Pending Infrastructure below.
+
+### Story Pack (still to build)
+
+- New Stripe product: `Footsteps Story Pack` at $9.99 one-time
+- Add `story_packs` table in Supabase tracking which packs a user has purchased
+- Add `pack_id` field to stories.json (e.g. `pack_1`, `pack_2`)
+- Update `storyIsLocked` to check both `paid_at` and owned packs
+- Add pack purchase option to paywall modal and account.html
+- New Edge Function: `purchase-pack`
 
 ---
 
@@ -159,43 +183,71 @@ Parent accounts show a dropdown in the auth bar to switch between their own prof
 
 ### Feature flag
 ```javascript
-const PAYWALL_ENABLED = false; // ← flip to true when ready to charge
+const PAYWALL_ENABLED = true; // in index.html
 ```
-Set to `true` when Stripe is live. All paywall code stays in place when `false`.
+Set to `false` to disable all locking for development.
 
 ### Access tiers
 - Stories 1–3: Free, no login required
-- Stories 4–50: Requires paid access (`is_paid = true` OR `has_lifetime = true`)
+- Stories 4+: Requires paid access
 
 ### Welcome splash
-- Shows on first visit only (localStorage flag: `footsteps_seen_welcome`)
-- Explains 3 free stories + pricing options
-- Two CTAs: explore free stories or unlock full library
+- First visit only (localStorage flag: `footsteps_seen_welcome`)
+- Explains 3 free stories + both pricing options
 
-### Paywall modal
-- Triggers when locked story is clicked or Next → from story 3
-- Shows both pricing options
-- Redirects to login if not authenticated, then to Stripe checkout
+### Notifications
+- **One-time buyer new story banner** — dismissible gold strip when stories exist after purchase date
+- **Badge revocation banner** — warm notification when new stories added to a completed era
+- **Paywall modal** — triggered by locked story click or Next from story 3
 
 ---
 
 ## Badge System
 
-9 badges total — one per era + one for completing all stories:
+### Era Badges (9 total)
 
-| Badge ID | Emoji | Name | Era |
-|----------|-------|------|-----|
-| creation | 🌍 | In the Beginning | creation |
-| patriarchs | ⛺ | The Patriarchs | patriarchs |
-| exodus | 🔥 | The Deliverer | exodus |
-| promised-land | ⚔️ | The Warrior | promised-land |
-| kingdom | 👑 | The Kingdom | kingdom |
-| exile | 📜 | The Remnant | exile |
-| nt-life | ✨ | The Witness | nt-life |
-| nt-church | ⚡ | The Sent Ones | nt-church |
-| complete | 🏆 | Footsteps Complete | all eras |
+| Badge ID | Emoji | Name | Era | Revocable |
+|----------|-------|------|-----|-----------|
+| creation | 🌍 | In the Beginning | creation | Yes |
+| patriarchs | ⛺ | The Patriarchs | patriarchs | Yes |
+| exodus | 🔥 | The Deliverer | exodus | Yes |
+| promised-land | ⚔️ | The Warrior | promised-land | Yes |
+| kingdom | 👑 | The Kingdom | kingdom | Yes |
+| exile | 📜 | The Remnant | exile | Yes |
+| nt-life | ✨ | The Witness | nt-life | Yes |
+| nt-church | ⚡ | The Sent Ones | nt-church | Yes |
+| complete | 🏆 | Footsteps Complete | all | No |
+| hero | 🌟 | Hero | all | No |
 
-Badges appear in a shelf below the progress strip. Clicking any badge opens the My Journey modal showing all 9 with earned/locked status and progress counts. Badge earned popup animates up from the bottom when a new badge is unlocked.
+### Badge Revocation
+- On app load, compares `story_count_at_earn` on each badge against current era story count
+- If new stories added to era, badge is revoked in Supabase and a warm banner shows
+- Banner: "New stories added to [Era] — your badge is waiting to be reclaimed!"
+- Badge stays displayed until new story is completed, then re-awards naturally with full celebration
+
+### Hero Quiz
+- Unlocks in Journey modal after ALL stories are read
+- 25 questions drawn randomly from existing quiz banks, spread across eras
+- Requires 80% to pass (20/25)
+- Awards 🌟 Hero badge on first pass
+- Retakeable — only celebrate on first perfect pass
+- Score saved to `mastery_attempts` table
+
+---
+
+## Auth System
+
+### Account Types
+- **Family:** Parent email/password, adds child profiles (name + age + emoji avatar, no email needed)
+- **Individual:** Single profile, email/password
+
+### Profile Switcher
+- Dropdown in auth bar, switch between parent and child profiles
+- Each profile has independent progress, badges, and quiz history
+
+### Pages
+- `login.html` — sign in/create account, account type picker, emoji avatar picker
+- `account.html` — plan status, cancel subscription, family profiles with progress, avatar editing
 
 ---
 
@@ -203,51 +255,102 @@ Badges appear in a shelf below the progress strip. Clicking any badge opens the 
 
 Every story must follow this exact style:
 
-- **Message-style** — vivid, present-tense, told out loud, like a great storyteller around a fire
+- **Message-style** — vivid, present-tense, told out loud like a great storyteller around a fire
 - **Faithful to the biblical text** — no invented dialogue or scenes beyond what Scripture gives
-- **Zero commentary** — no "here's why this matters" woven into the story paragraphs
-- **No verse numbers** — flows as narrative, not Scripture reference
-- **Conservative Protestant theology** — free will (Arminian), high view of Scripture, miracles are real, Jesus present in OT typology
-- Commentary and application go ONLY in the devotional section (Big Idea + questions)
-- Big Idea: one punchy sentence, bold
+- **Zero commentary** — no "here's why this matters" woven into story paragraphs
+- **No verse numbers** — flows as narrative
+- **No em dashes (`—`) in story paragraphs** — use commas or rewrite. Em dashes cause word highlighting drift. Stories 1–10 already have audio so leave existing dashes. Apply to all new stories.
+- **Conservative Protestant theology** — free will (Arminian), high view of Scripture, miracles real, OT typology pointing to Christ
+- Big Idea: one punchy sentence
 - Talk About It: exactly 3 questions, age 9–12 appropriate
-- Connections: exactly 3 cards, each with storyId, reference, and one-sentence why
-- Quiz: exactly 3 multiple-choice questions, each with explanation text
+- Connections: exactly 3 cards, each with storyId + reference + one-sentence why
+- Quiz: exactly 5 questions, correct answers spread evenly across A/B/C/D
 
 ---
 
-## Age Tiers
+## Complete 50-Story List
 
-### Tier 1 (Ages 9–12) — ACTIVE BUILD
-- Full Message-style register
-- Quiz with celebration screen
-- Word highlighting during audio playback
-- 30 stories target, building toward 50
+### In the Beginning (Creation Era)
+| # | ID | Title | Book | Audio | Status |
+|---|---|---|---|---|---|
+| 01 | creation | In the Beginning | Genesis 1–2 | ✅ | Complete |
+| 02 | adam-eve | The First Bad Choice | Genesis 3 | ✅ | Complete |
+| 03 | cain-abel | Two Brothers | Genesis 4 | ✅ | Complete |
 
-### Tier 2 (Ages 5–8) — FUTURE BUILD
-Build only after Tier 1 is complete with all audio.
+### The Age of the Patriarchs
+| # | ID | Title | Book | Audio | Status |
+|---|---|---|---|---|---|
+| 04 | noah | The Ark and the Rainbow | Genesis 6–9 | ✅ | Complete |
+| 05 | tower-babel | The Tower of Babel | Genesis 11 | ✅ | Complete |
+| 06 | abraham | A Promise as Big as the Stars | Genesis 12–22 | ✅ | Complete |
+| 07 | joseph | The Dreamer's Long Road | Genesis 37–50 | ✅ | Complete |
 
----
+### The Exodus and Wilderness
+| # | ID | Title | Book | Audio | Status |
+|---|---|---|---|---|---|
+| 08 | moses-birth | The Baby in the River | Exodus 1–2 | ✅ | Complete |
+| 09 | burning-bush | The Burning Bush | Exodus 3–4 | ✅ | Complete |
+| 10 | red-sea | Through the Sea on Dry Ground | Exodus 14–15 | ✅ | Complete |
+| 11 | ten-commandments | The Ten Commandments | Exodus 19–20 | 🔇 | Written |
+| 12 | moses-water | Water From the Rock | Exodus 17 | 🔇 | Written |
 
-## Card Flow (Modal Structure)
+### The Promised Land
+| # | ID | Title | Book | Audio | Status |
+|---|---|---|---|---|---|
+| 13 | rahab | The Scarlet Thread | Joshua 2; 6 | 🔇 | Written |
+| 14 | jericho | The Walls Come Down | Joshua 6 | 🔇 | Written |
+| 15 | gideon | Three Hundred Men and Torches | Judges 6–7 | 🔇 | Written |
+| 16 | ruth | Wherever You Go | Ruth 1–4 | 🔇 | Written |
 
-```
-Hero (era stripe + emoji + title + hook + location + date)
-  ↓
-Story text (Message-style, drop cap on first letter)
-  ↓
-Audio player (ElevenLabs MP3 with word highlighting)
-  ↓
-Devotional (Big Idea + Talk About It questions)
-  ↓
-Connections (2-column grid, 3 cards linking to related stories)
-  ↓
-Quiz (3 questions, wrong answer shakes red and retries, right answer green with explanation)
-  ↓
-Celebration screen (stars + confetti + score badge)
-  ↓
-Mark as Read button (saves to Supabase or localStorage)
-```
+### The Kingdom Era
+| # | ID | Title | Book | Audio | Status |
+|---|---|---|---|---|---|
+| 17 | samuel | Speak, Lord | 1 Samuel 3 | 🔇 | Written |
+| 18 | david-goliath | One Stone | 1 Samuel 17 | 🔇 | Written |
+| 19 | david-saul | The Cave and the King | 1 Samuel 24 | 🔇 | Written |
+| 20 | psalm23 | The Lord Is My Shepherd | Psalm 23 | 🔇 | Written |
+| 21 | solomon-wisdom | The Wisest Request | 1 Kings 3 | 🔇 | Written |
+| 22 | elijah | Fire from Heaven | 1 Kings 17–19 | 🔇 | Written |
+| 23 | job | The Man Who Lost Everything | Job 1–2; 38–42 | 🔇 | Written |
+| 24 | isaiah-servant | The Servant Who Suffers | Isaiah 52–53 | 🔇 | Written |
+
+### Exile and Return
+| # | ID | Title | Book | Audio | Status |
+|---|---|---|---|---|---|
+| 25 | shadrach | The Furnace | Daniel 3 | 🔇 | Written |
+| 26 | daniel | The Lion's Den | Daniel 6 | 🔇 | Written |
+| 27 | esther | For Such a Time as This | Esther 1–10 | 🔇 | Written |
+| 28 | jonah | The Man Who Ran From God | Jonah 1–4 | 🔇 | Written |
+| 29 | nehemiah | The Wall Goes Up | Nehemiah 1–6 | 🔇 | Written |
+
+### The Life of Jesus
+| # | ID | Title | Book | Audio | Status |
+|---|---|---|---|---|---|
+| 30 | annunciation | Impossible News | Luke 1–2 | 🔇 | Written |
+| 31 | boy-temple | Left Behind in Jerusalem | Luke 2:41–52 | 🔇 | Written |
+| 32 | sermon-mount | The Upside-Down Kingdom | Matthew 5–7 | 🔇 | Written |
+| 33 | woman-at-well | The Woman at the Well | John 4:1–42 | 🔇 | Written |
+| 34 | feeding-5000 | Five Loaves and Two Fish | John 6:1–14 | 🔇 | Written |
+| 35 | walk-on-water | Stepping Out | Matthew 14:22–33 | 🔇 | Written |
+| 36 | good-samaritan | The One Who Stopped | Luke 10:25–37 | 🔇 | Written |
+| 37 | zacchaeus | The Man in the Tree | Luke 19:1–10 | 🔇 | Written |
+| 38 | triumphal-entry | The King Rides In | Matthew 21:1–11 | 🔇 | Written |
+| 39 | rich-young-ruler | The Man Who Walked Away | Mark 10:17–27 | 🔇 | Written |
+| 40 | prodigal | The Boy Who Came Home | Luke 15:11–32 | 🔇 | Written |
+| 41 | lazarus | Come Out | John 11 | 🔇 | Written |
+
+### Death, Resurrection and the Early Church
+| # | ID | Title | Book | Audio | Status |
+|---|---|---|---|---|---|
+| 42 | last-supper | The Night Before | Matthew 26:17–30; John 13 | 🔇 | Written |
+| 43 | crucifixion | The Darkest Friday | Matthew 26–27; Luke 23; John 19 | 🔇 | Written |
+| 44 | resurrection | The Empty Tomb | Matthew 28; Luke 24; John 20–21 | 🔇 | Written |
+| 45 | road-emmaus | The Stranger on the Road | Luke 24:13–35 | 🔇 | Written |
+| 46 | pentecost | The Day Everything Changed | Acts 2 | 🔇 | Written |
+| 47 | stephen | The First Martyr | Acts 6–7 | 🔇 | Written |
+| 48 | paul-conversion | The Man Who Hunted Christians | Acts 9; Galatians 1 | 🔇 | Written |
+| 49 | paul-jail | Singing at Midnight | Acts 16:16–40 | 🔇 | Written |
+| 50 | lydia | The Purple Merchant | Acts 16:11–15 | 🔇 | Written |
 
 ---
 
@@ -258,11 +361,18 @@ Mark as Read button (saves to Supabase or localStorage)
 python3 generate_audio.py <story-id>
 ```
 
+Generates `audio/<story-id>.mp3` and `audio/<story-id>.json` simultaneously.
+
 ### ElevenLabs notes
 - Plan: Creator ($22/month)
 - Voice: Premium voice at 2x character usage rate
-- Effective budget: ~40,000 characters per month at 2x rate (~8–10 stories)
-- Always generate audio AFTER the story text is finalized
+- Effective budget: ~40,000 characters per month (~8–10 stories)
+- Always write story first, generate audio after — changing text requires regenerating
+- Stories 1–10: audio complete, do not change story text without regenerating
+- Stories 11–50: ready for audio generation
+
+### Audio pending (stories 11–50)
+Generate in order. Each story costs approximately 2,000–4,000 characters at 2x rate.
 
 ### Git workflow after generation
 ```bash
@@ -273,104 +383,19 @@ git push
 
 ---
 
-## Complete Story List — Tier 1 (Ages 9–12)
-
-### Status Key
-- ✅ Done — Message-style + connections + quiz + audio complete
-- 📝 Written — Message-style + connections + quiz done, audio pending
-- 🔄 Needs rewrite — old commentary style, no audio
-- 🔇 Audio pending
-
-### In the Beginning (Creation Era)
-| # | ID | Title | Book | Status |
-|---|-----|-------|------|--------|
-| 01 | creation | In the Beginning | Genesis 1–2 | ✅ Complete |
-| 02 | adam-eve | The First Bad Choice | Genesis 3 | ✅ Complete |
-| 03 | cain-abel | Two Brothers | Genesis 4 | ✅ Complete |
-
-### The Age of the Patriarchs
-| # | ID | Title | Book | Status |
-|---|-----|-------|------|--------|
-| 04 | noah | The Ark and the Rainbow | Genesis 6–9 | ✅ Complete |
-| 05 | tower-babel | The Tower of Babel | Genesis 11 | ✅ Complete |
-| 06 | abraham | A Promise as Big as the Stars | Genesis 12–22 | ✅ Complete |
-| 07 | joseph | The Dreamer's Long Road | Genesis 37–50 | ✅ Complete |
-
-### The Exodus and Wilderness
-| # | ID | Title | Book | Status |
-|---|-----|-------|------|--------|
-| 08 | moses-birth | The Baby in the River | Exodus 1–2 | ✅ Complete |
-| 09 | burning-bush | The Burning Bush | Exodus 3–4 | ✅ Complete |
-| 10 | red-sea | Through the Sea on Dry Ground | Exodus 14–15 | ✅ Complete |
-| 11 | ten-commandments | The Ten Commandments | Exodus 19–20 | 📝 Written |
-| 12 | rahab | The Scarlet Thread | Joshua 2; 6 | 📝 Written |
-
-### The Promised Land
-| # | ID | Title | Book | Status |
-|---|-----|-------|------|--------|
-| 13 | gideon | Three Hundred Men and Torches | Judges 6–7 | 📝 Written |
-| 14 | ruth | Wherever You Go | Ruth 1–4 | 📝 Written |
-
-### The Kingdom Era
-| # | ID | Title | Book | Status |
-|---|-----|-------|------|--------|
-| 15 | samuel | Speak, Lord | 1 Samuel 3 | 📝 Written |
-| 16 | david-goliath | One Stone | 1 Samuel 17 | 🔄 Needs rewrite |
-| 17 | psalm23 | The Lord Is My Shepherd | Psalm 23 | 🔄 Needs rewrite |
-| 18 | elijah | Fire from Heaven | 1 Kings 17–19 | 🔄 Needs rewrite |
-
-### Exile and Return
-| # | ID | Title | Book | Status |
-|---|-----|-------|------|--------|
-| 19 | daniel | The Lion's Den | Daniel 6 | 🔄 Needs rewrite |
-| 20 | esther | For Such a Time as This | Esther 1–10 | 🔄 Needs rewrite |
-
-### The Life of Jesus
-| # | ID | Title | Book | Status |
-|---|-----|-------|------|--------|
-| 21 | annunciation | Impossible News | Luke 1–2 | 🔄 Needs rewrite |
-| 22 | boy-temple | Left Behind in Jerusalem | Luke 2:41–52 | 🔄 Needs rewrite |
-| 23 | sermon-mount | The Upside-Down Kingdom | Matthew 5–7 | 🔄 Needs rewrite |
-| 24 | prodigal | The Boy Who Came Home | Luke 15:11–32 | 🔄 Needs rewrite |
-| 25 | lazarus | Come Out | John 11 | 🔄 Needs rewrite |
-
-### Death, Resurrection and the Early Church
-| # | ID | Title | Book | Status |
-|---|-----|-------|------|--------|
-| 26 | crucifixion | The Darkest Friday | Matthew 26–27; Luke 23; John 19 | 🔄 Needs rewrite |
-| 27 | resurrection | The Empty Tomb | Matthew 28; Luke 24; John 20–21 | 🔄 Needs rewrite |
-| 28 | pentecost | The Day Everything Changed | Acts 2 | 🔄 Needs rewrite |
-| 29 | paul-conversion | The Man Who Hunted Christians | Acts 9; Galatians 1 | 🔄 Needs rewrite |
-| 30 | paul-jail | Singing at Midnight | Acts 16:16–40 | 🔄 Needs rewrite |
-
----
-
-## Audio Pending (next credit reset)
-9 stories need audio regeneration:
-- Story 11 — The Ten Commandments (minor wording fix)
-- Story 16 — One Stone (needs rewrite first)
-- Story 17 — The Lord Is My Shepherd (needs rewrite first)
-- Story 18 — Fire from Heaven (needs rewrite first)
-- Story 19 — The Lion's Den (needs rewrite first)
-- Story 20 — For Such a Time as This (needs rewrite first)
-- Story 26 — The Darkest Friday (no audio yet)
-- Story 27 — The Empty Tomb (no audio yet)
-- Story 30 — Singing at Midnight (no audio yet)
-
----
-
 ## Design System
 
-| Element | Font | Notes |
-|---------|------|-------|
-| Site title | In header image | Baked into header.png |
-| Era labels | Cinzel 600 | |
-| Story titles | Cinzel 700 | |
-| Big Idea | Cinzel 600 | |
-| Body text | Lora 400 | Line height 1.85 |
-| Hook / italic | Lora italic | |
-| Labels / meta | Source Sans 3 600 | |
+### Fonts
+| Element | Font |
+|---------|------|
+| Era labels | Cinzel 600 |
+| Story titles | Cinzel 700 |
+| Big Idea | Cinzel 600 |
+| Body text | Lora 400, line height 1.85 |
+| Hook / italic | Lora italic |
+| Labels / meta | Source Sans 3 600 |
 
+### Colors
 | Token | Value | Use |
 |-------|-------|-----|
 | --parchment | #fdf6e3 | Background |
@@ -380,83 +405,117 @@ git push
 | --gold-bright | #f0c040 | Buttons, progress bar |
 | --crimson | #8b1a1a | Drop caps, Read button |
 
----
-
-## Era Color Codes
-
-| Era ID | Label | Color |
-|--------|-------|-------|
-| creation | In the Beginning | #7c3aed |
-| patriarchs | The Age of the Patriarchs | #b45309 |
-| exodus | The Exodus and Wilderness | #b91c1c |
-| promised-land | The Promised Land | #065f46 |
-| kingdom | The Kingdom Era | #1e40af |
-| exile | Exile and Return | #831843 |
-| nt-life | The Life of Jesus | #0369a1 |
-| nt-church | Death, Resurrection and the Early Church | #065f46 |
+### Era Colors
+| Era ID | Color |
+|--------|-------|
+| creation | #7c3aed |
+| patriarchs | #b45309 |
+| exodus | #b91c1c |
+| promised-land | #065f46 |
+| kingdom | #1e40af |
+| exile | #831843 |
+| nt-life | #0369a1 |
+| nt-church | #065f46 |
 
 ---
 
-## GitHub Actions
+## Age Tiers
 
-`.github/workflows/deploy-functions.yml` — deploys all Edge Functions automatically on push to main when files in `supabase/functions/**` change. Requires these GitHub Secrets:
-- `SUPABASE_ACCESS_TOKEN`
-- `STRIPE_SECRET_KEY`
-- `SUPABASE_SERVICE_ROLE_KEY`
-- `STRIPE_WEBHOOK_SECRET`
+### Tier 1 (Ages 9–12) — COMPLETE
+50 stories, full quiz system, word highlighting, badge system, Hero Quiz.
 
-Note: GitHub Actions deploy was set up but Edge Functions were ultimately deployed via the Supabase dashboard editor due to project linking issues. The Action still runs and sets secrets on each push.
+### Tier 2 (Ages 5–8) — NOT STARTED
+Build after Tier 1 launch and audio are complete.
+
+**Age-appropriate adjustments for Tier 2:**
+- Shorter paragraphs and simpler sentences throughout
+- Replace "prostitute" in Rahab story with "a woman with a complicated past"
+- Simpler quiz questions
+- Same theological content, age-appropriate wording
 
 ---
 
 ## Pending Infrastructure
 
-### Before launch
-- [ ] Flip `PAYWALL_ENABLED = true` in `index.html`
+### Before launch (required)
+- [ ] Generate audio for stories 11–50 via ElevenLabs
 - [ ] Switch Stripe from test to live mode
+- [ ] Create live Stripe products with same names and prices
 - [ ] Update price IDs in `create-checkout/index.ts`
-- [ ] Update Stripe keys in Edge Function secrets + frontend
-- [ ] Create live Stripe webhook endpoint
-- [ ] Turn on email confirmation in Supabase Auth
-- [ ] Complete stories 16–30 rewrites
-- [ ] Generate audio for all 30 stories
+- [ ] Update `STRIPE_SECRET_KEY` and `STRIPE_WEBHOOK_SECRET` in Supabase secrets
+- [ ] Create live Stripe webhook endpoint pointing to same Edge Function URL
+- [ ] Update publishable key in `index.html` (search for `pk_test_`)
+- [ ] Update Edge Functions in Supabase editor (stripe-webhook.ts and create-checkout.ts have pending changes for story_count_at_purchase — deploy when going live)
+- [ ] Turn on email confirmation in Supabase Auth → Providers → Email
+- [ ] Test full purchase flow end to end with live keys before announcing
+
+### Story Pack system (next build)
+For one-time buyers to purchase new story batches at $9.99:
+- [ ] New Stripe product: `Footsteps Story Pack` at $9.99 one-time
+- [ ] Add `story_packs` table in Supabase: `(id, profile_id, profile_type, pack_id, purchased_at)`
+- [ ] Add `pack_id` field to stories.json (e.g. `pack_1` for launch batch, `pack_2` for next)
+- [ ] Update `storyIsLocked` in index.html to check owned packs in addition to paid_at
+- [ ] Add pack purchase button to paywall modal and account.html
+- [ ] New Edge Function: `purchase-pack`
+- [ ] Webhook handler for pack purchases in stripe-webhook.ts
+- [ ] Update account.html to show owned packs
 
 ### Future features
-- [ ] Age tier tabs — 5–8 tier after 9–12 complete
+- [ ] Tier 2 (Ages 5–8) stories — after Tier 1 launch
 - [ ] Background music — layer instrumental in Audacity before MP3 export
-- [ ] PWA / mobile app consideration (v2)
-- [ ] Stories 31–50
-- [ ] Optimize Supabase fetches (parallelize on load)
-- [ ] Add-on story packs for one-time purchasers
+- [ ] PWA / mobile app (v2)
+- [ ] Stories 51+ (next batch after launch)
+- [ ] Parallelize Supabase fetches on load to reduce perceived load time
+
+---
+
+## GitHub Actions
+
+`.github/workflows/deploy-functions.yml` — deploys Edge Functions on push when `supabase/functions/**` changes.
+
+**Required GitHub Secrets:**
+- `SUPABASE_ACCESS_TOKEN`
+- `STRIPE_SECRET_KEY`
+- `SUPABASE_SERVICE_ROLE_KEY`
+- `STRIPE_WEBHOOK_SECRET`
+
+Note: Functions were also deployed manually via Supabase dashboard editor. Either method works.
 
 ---
 
 ## New Session Prompt
 
-Paste this at the top of every new chat session:
+Paste at the top of every new Claude session:
 
 ---
 
-> **Project:** Footsteps — Bible story app for families, ages 9–12 tier
+> **Project:** Footsteps — Bible story app, ages 9–12
 > **GitHub:** futurexrp/Adventure-Through-The-Bible
 > **Live:** https://futurexrp.github.io/Adventure-Through-The-Bible/
-> **Register:** Message-style — vivid, present-tense, told out loud, faithful to biblical text, zero commentary. Conservative Protestant (Arminian, high view of Scripture, miracles real, OT typology pointing to Christ).
-> **Each story needs:** Message-style rewrite + 3 connections (storyId + reference + one-sentence why) + 3 quiz questions with explanations
-> **Card flow:** Hero → Story → Audio player (word highlighting) → Devotional → Connections → Quiz → Celebration → Mark as Read
-> **Audio:** Generated via `python3 generate_audio.py <story-id>` — always write story first, generate audio after
-> **Work in batches of 5.** Check token usage before starting — each story costs ~4,000–5,000 tokens.
-> **Next batch to write:** Stories 16–20 (david-goliath, psalm23, elijah, daniel, esther)
-> **Infrastructure:** Supabase auth + Stripe payments fully wired. PAYWALL_ENABLED = true in index.html. See FOOTSTEPS_PROJECT.md for full details.
+> **Supabase:** bqyysvjnitbeimvaxkao.supabase.co
+>
+> **Story register:** Message-style — vivid, present-tense, told out loud, faithful to biblical text, zero commentary. Conservative Protestant (Arminian, high view of Scripture, miracles real, OT typology pointing to Christ). No em dashes in story paragraphs. 5 quiz questions per story, answers spread evenly across A/B/C/D. 3 connections per story.
+>
+> **50 stories complete.** Stories 1–10 have audio. Stories 11–50 need audio generation.
+>
+> **Paywall:** PAYWALL_ENABLED = true. Stripe in test mode — not yet live.
+>
+> **Next priorities:**
+> 1. Generate audio for stories 11–50 (ElevenLabs, run in batches per credit reset)
+> 2. Build story pack system ($9.99 one-time for new story batches)
+> 3. Switch Stripe to live mode when ready to charge
+> 4. Tier 2 (Ages 5–8) — after launch
+>
+> **Reference:** FOOTSTEPS_PROJECT.md in the repo for full details.
 
 ---
 
 ## Theological Notes
 
-- Miracles treated as real historical events throughout — no naturalistic hedging
+- Miracles treated as real historical events — no naturalistic hedging
 - Free will intact in all character decisions (Arminian framework)
-- Grace before law framing: God rescues before He requires (Exodus pattern)
-- OT typology pointing to Christ is explicit: ram in thicket (Abraham), scarlet cord (Rahab), kinsman-redeemer (Ruth/Boaz), I AM name (Burning Bush → John 8:58), wood on the hill (Abraham/Isaac → crucifixion)
-- Gospel announced in advance to Abraham (Gal 3:8) — stated explicitly in Story 06
+- Grace before law: God rescues before He requires (Exodus pattern)
+- OT typology pointing to Christ is explicit throughout
 - Creation: Trinity hinted in "let us," six literal days presented as written
-- Red Sea: called by traditional name, not "Sea of Reeds"
-- Rahab described as "a prostitute" in 9–12 tier — faithful to Hebrews 11:31. **For 5–8 tier: replace with "a woman with a complicated past"**
+- Red Sea: traditional name used, not "Sea of Reeds"
+- Rahab: described as "a prostitute" in 9–12 tier — faithful to Hebrews 11:31. For 5–8 tier: replace with "a woman with a complicated past"
