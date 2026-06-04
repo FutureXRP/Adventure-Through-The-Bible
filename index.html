@@ -1128,9 +1128,44 @@ async function loadProgressForActiveProfile() {
     .eq('profile_type', activeProfile.type);
   dbBadges = new Set((badges || []).map(r => r.badge_id));
 
+  // Award any badges earned from progress but not yet recorded
+  // (silent — no popup, no sound — just catches up the database)
+  if (activeProfile && stories.length > 0) {
+    await syncBadgesFromProgress();
+  }
+
   renderBadgeShelf();
   updateProgress();
   render();
+}
+
+// Silently award any badges the user has earned based on current progress
+// but that aren't yet in the badges table. No popup, no sound.
+async function syncBadgesFromProgress() {
+  const progress = dbProgress;
+  for (const badge of BADGE_DEFS) {
+    if (badge.id === 'hero') continue;
+    if (dbBadges.has(badge.id)) continue;
+
+    let earned = false;
+    if (badge.id === 'complete') {
+      earned = stories.every(s => progress.has(s.id));
+    } else {
+      const eraStories = stories.filter(s => s.era === badge.era);
+      earned = eraStories.length > 0 && eraStories.every(s => progress.has(s.id));
+    }
+
+    if (earned) {
+      const eraStories = badge.era ? stories.filter(s => s.era === badge.era) : stories;
+      dbBadges.add(badge.id);
+      await sb.from('badges').upsert({
+        profile_id: activeProfile.id,
+        profile_type: activeProfile.type,
+        badge_id: badge.id,
+        story_count_at_earn: eraStories.length,
+      });
+    }
+  }
 }
 
 async function switchProfile(profileId, profileType) {
@@ -1228,6 +1263,7 @@ async function checkBadgeRevocations() {
   if (!earnedBadges) return;
 
   const toRevoke = [];
+
   for (const earned of earnedBadges) {
     const badge = BADGE_DEFS.find(b => b.id === earned.badge_id);
     if (!badge || badge.id === 'hero' || badge.id === 'complete') continue;
@@ -1235,13 +1271,24 @@ async function checkBadgeRevocations() {
     const currentEraCount = stories.filter(s => s.era === badge.era).length;
     const countAtEarn = earned.story_count_at_earn || 0;
 
+    if (countAtEarn === 0) {
+      // Badge earned before we tracked story_count_at_earn.
+      // Update the count silently so future checks work — do NOT revoke.
+      await sb.from('badges')
+        .update({ story_count_at_earn: currentEraCount })
+        .eq('profile_id', activeProfile.id)
+        .eq('profile_type', activeProfile.type)
+        .eq('badge_id', earned.badge_id);
+      continue;
+    }
+
+    // Only revoke if new stories genuinely added after badge was earned
     if (currentEraCount > countAtEarn) {
       toRevoke.push(badge);
     }
   }
 
   if (toRevoke.length > 0) {
-    // Revoke badges in Supabase
     for (const badge of toRevoke) {
       dbBadges.delete(badge.id);
       await sb.from('badges')
@@ -1251,7 +1298,6 @@ async function checkBadgeRevocations() {
         .eq('badge_id', badge.id);
     }
     renderBadgeShelf();
-    // Show notification
     showNewStoriesInEraNotification(toRevoke);
   }
 }
