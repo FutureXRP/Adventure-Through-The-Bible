@@ -543,6 +543,21 @@
   </div>
 </div>
 
+
+<!-- ── MASTERY QUIZ MODAL ── -->
+<div class="journey-backdrop" id="masteryBackdrop" role="dialog" aria-modal="true" style="display:none">
+  <div class="journey-card" style="max-width:680px">
+    <div class="journey-header">
+      <div>
+        <div class="journey-title">🌟 Hero Quiz</div>
+        <div class="journey-sub" id="masterySubtitle">Prove you know every story from Genesis to the early church</div>
+      </div>
+      <button class="journey-close" onclick="closeMastery()">✕</button>
+    </div>
+    <div id="masteryBody" style="padding:24px 28px 28px"></div>
+  </div>
+</div>
+
 <!-- ── BADGE JOURNEY MODAL ── -->
 <div class="journey-backdrop" id="journeyBackdrop" role="dialog" aria-modal="true">
   <div class="journey-card">
@@ -730,6 +745,258 @@ function toggleQuizMute() {
   });
 }
 
+
+// ════════════════════════════════════════════════════
+// NEW STORY NOTIFICATION FOR ONE-TIME BUYERS
+// ════════════════════════════════════════════════════
+async function checkNewStoriesForLifetimeBuyers() {
+  if (!userProfile || !userProfile.has_lifetime) return;
+  if (userProfile.plan_type === 'monthly') return; // monthly gets everything
+
+  const paidAt = userProfile.paid_at ? userProfile.paid_at.substring(0, 10) : null;
+  if (!paidAt) return;
+
+  // Count stories published after their purchase date (locked for them)
+  const newAfterPurchase = stories.filter(s =>
+    s.published_date && s.published_date > paidAt
+  );
+
+  if (newAfterPurchase.length === 0) return;
+
+  // Only show once per session (check localStorage flag)
+  const shownKey = `footsteps_new_story_notice_${paidAt}`;
+  if (localStorage.getItem(shownKey)) return;
+
+  // Show the banner
+  const existing = document.getElementById('newStoryBuyerBanner');
+  if (existing) existing.remove();
+
+  const banner = document.createElement('div');
+  banner.id = 'newStoryBuyerBanner';
+  banner.style.cssText = `
+    background: var(--parchment-dark);
+    border-bottom: 1px solid rgba(201,162,39,0.3);
+    padding: 13px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-family: 'Lora', serif;
+    font-size: 13px;
+    color: var(--ink);
+  `;
+  banner.innerHTML = `
+    <span>📖 <strong>${newAfterPurchase.length} new ${newAfterPurchase.length === 1 ? 'story has' : 'stories have'} been added</strong> since your purchase. Subscribe monthly to access all current and future stories.</span>
+    <div style="display:flex;gap:8px;flex-shrink:0">
+      <button onclick="startCheckout('monthly')" style="background:linear-gradient(135deg,var(--gold),var(--gold-bright));border:none;border-radius:6px;padding:7px 16px;font-family:'Cinzel',serif;font-size:11px;font-weight:700;color:var(--ink);cursor:pointer">Subscribe — $4.99/mo</button>
+      <button onclick="dismissNewStoryBanner('${shownKey}')" style="background:transparent;border:1px solid rgba(44,26,14,0.2);border-radius:6px;padding:7px 12px;font-family:'Source Sans 3',sans-serif;font-size:11px;font-weight:600;color:var(--ink-light);cursor:pointer">Dismiss</button>
+    </div>
+  `;
+
+  // Insert after auth bar
+  const authBar = document.getElementById('authBar');
+  if (authBar && authBar.nextSibling) {
+    authBar.parentNode.insertBefore(banner, authBar.nextSibling);
+  }
+}
+
+function dismissNewStoryBanner(key) {
+  localStorage.setItem(key, '1');
+  const banner = document.getElementById('newStoryBuyerBanner');
+  if (banner) banner.remove();
+}
+
+
+// ════════════════════════════════════════════════════
+// MASTERY (HERO) QUIZ
+// ════════════════════════════════════════════════════
+let masteryQuestions = [];
+let masteryAnswers = [];
+let masteryCurrentQ = 0;
+let masteryScore = 0;
+const MASTERY_QUESTION_COUNT = 25; // 25 questions, ~1 per 2 stories
+
+function startMasteryQuiz() {
+  // Pull random questions from existing quiz banks across all completed stories
+  const progress = getProgress();
+  const completedStories = stories.filter(s => progress.has(s.id));
+
+  // Gather all questions from completed stories
+  let pool = [];
+  completedStories.forEach(story => {
+    (story.quiz || []).forEach(q => {
+      pool.push({ ...q, storyId: story.id, storyTitle: story.title, era: story.era });
+    });
+  });
+
+  // Shuffle and pick MASTERY_QUESTION_COUNT, ensuring era spread
+  pool = pool.sort(() => Math.random() - 0.5);
+
+  // Try to get at least 2-3 from each era
+  const eras = [...new Set(stories.map(s => s.era))];
+  const selected = [];
+  const perEra = Math.ceil(MASTERY_QUESTION_COUNT / eras.length);
+
+  eras.forEach(era => {
+    const eraQs = pool.filter(q => q.era === era);
+    selected.push(...eraQs.slice(0, perEra));
+  });
+
+  // Fill remaining spots randomly
+  const selectedStoryIds = new Set(selected.map(q => q.storyId));
+  const remaining = pool.filter(q => !selected.includes(q));
+  while (selected.length < Math.min(MASTERY_QUESTION_COUNT, pool.length)) {
+    const next = remaining.shift();
+    if (next) selected.push(next);
+  }
+
+  masteryQuestions = selected.slice(0, MASTERY_QUESTION_COUNT).sort(() => Math.random() - 0.5);
+  masteryAnswers = [];
+  masteryCurrentQ = 0;
+  masteryScore = 0;
+
+  // Show mastery backdrop
+  document.getElementById('masteryBackdrop').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  renderMasteryQuestion();
+}
+
+function closeMastery() {
+  document.getElementById('masteryBackdrop').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function renderMasteryQuestion() {
+  const body = document.getElementById('masteryBody');
+  const q = masteryQuestions[masteryCurrentQ];
+  const letters = ['A','B','C','D'];
+  const pct = Math.round((masteryCurrentQ / masteryQuestions.length) * 100);
+
+  body.innerHTML = `
+    <div style="margin-bottom:16px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+        <span style="font-family:'Source Sans 3',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold)">Question ${masteryCurrentQ + 1} of ${masteryQuestions.length}</span>
+        <span style="font-family:'Source Sans 3',sans-serif;font-size:11px;color:var(--ink-light)">Score: ${masteryScore}</span>
+      </div>
+      <div style="height:6px;background:rgba(44,26,14,0.1);border-radius:3px;overflow:hidden;margin-bottom:4px">
+        <div style="height:100%;width:${pct}%;background:linear-gradient(90deg,var(--gold),var(--gold-bright));border-radius:3px;transition:width 0.3s"></div>
+      </div>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:10px;color:var(--ink-light);opacity:0.6">From: ${q.storyTitle}</div>
+    </div>
+    <div style="font-family:'Cinzel',serif;font-size:0.95rem;font-weight:600;color:var(--ink);line-height:1.5;margin-bottom:16px">${q.question}</div>
+    <div style="display:flex;flex-direction:column;gap:9px" id="masteryOptions">
+      ${q.options.map((opt, i) => `
+        <button class="quiz-option" onclick="answerMastery(${i})" data-idx="${i}">
+          <span class="quiz-letter">${letters[i]}</span>${opt}
+        </button>`).join('')}
+    </div>
+    <div class="quiz-feedback" id="masteryFeedback"></div>
+    <button class="quiz-next-btn" id="masteryNext" onclick="nextMasteryQuestion()" style="display:none">
+      ${masteryCurrentQ < masteryQuestions.length - 1 ? 'Next Question →' : 'See Your Results!'}
+    </button>
+  `;
+}
+
+let masteryAnswered = false;
+
+function answerMastery(idx) {
+  if (masteryAnswered) return;
+  masteryAnswered = true;
+
+  const q = masteryQuestions[masteryCurrentQ];
+  const correct = idx === q.answer;
+  if (correct) masteryScore++;
+
+  const btn = document.querySelector(`[data-idx="${idx}"]`);
+  const fb = document.getElementById('masteryFeedback');
+  const next = document.getElementById('masteryNext');
+
+  if (correct) {
+    btn.className = 'quiz-option qcorrect';
+    fb.className = 'quiz-feedback qcorrect-msg';
+    fb.textContent = 'Correct! ' + (q.explanation || '');
+    playCorrectSound();
+  } else {
+    btn.className = 'quiz-option qwrong';
+    fb.className = 'quiz-feedback qwrong-msg';
+    fb.textContent = 'Not quite. ' + (q.explanation || '');
+    // Show correct answer
+    document.querySelector(`[data-idx="${q.answer}"]`).className = 'quiz-option qcorrect';
+    playWrongSound();
+  }
+
+  next.style.display = 'block';
+  next.className = 'quiz-next-btn qvisible';
+}
+
+function nextMasteryQuestion() {
+  masteryAnswered = false;
+  masteryCurrentQ++;
+  if (masteryCurrentQ < masteryQuestions.length) {
+    renderMasteryQuestion();
+  } else {
+    showMasteryCelebration();
+  }
+}
+
+async function showMasteryCelebration() {
+  const passed = masteryScore >= Math.ceil(masteryQuestions.length * 0.8); // 80% to pass
+  const pct = Math.round((masteryScore / masteryQuestions.length) * 100);
+  const body = document.getElementById('masteryBody');
+
+  // Save attempt to Supabase
+  if (authUser && activeProfile) {
+    await sb.from('mastery_attempts').insert({
+      profile_id: activeProfile.id,
+      profile_type: activeProfile.type,
+      score: masteryScore,
+      max_score: masteryQuestions.length,
+      passed,
+    });
+
+    // Award Hero badge if passed and not already earned
+    if (passed && !dbBadges.has('hero')) {
+      dbBadges.add('hero');
+      await sb.from('badges').upsert({
+        profile_id: activeProfile.id,
+        profile_type: activeProfile.type,
+        badge_id: 'hero',
+        story_count_at_earn: stories.length,
+      });
+      renderBadgeShelf();
+    }
+  }
+
+  const colors = ['#c9a227','#f0c040','#8b1a1a','#c9a227','#3B6D11','#f0c040','#7c3aed','#c9a227','#f0c040','#065f46'];
+
+  if (passed) {
+    body.innerHTML = `
+      <div style="text-align:center;padding:20px 0">
+        <div style="font-size:56px;margin-bottom:12px;animation:qpop 0.5s cubic-bezier(0.34,1.56,0.64,1)">🌟</div>
+        <div style="font-family:'Cinzel',serif;font-size:1.6rem;font-weight:700;color:var(--ink);margin-bottom:8px">You are a Hero!</div>
+        <div style="font-family:'Lora',serif;font-style:italic;font-size:0.95rem;color:var(--ink-light);line-height:1.6;margin-bottom:16px;max-width:400px;margin-left:auto;margin-right:auto">You have walked through every story from the beginning of creation to the birth of the church. Not many people can say that.</div>
+        <div class="quiz-confetti" style="justify-content:center;margin-bottom:16px">${colors.map((c,i) => `<div class="quiz-confetti-dot" style="background:${c};animation-delay:${i*0.06}s"></div>`).join('')}</div>
+        <div style="display:inline-block;background:var(--ink);color:var(--gold);font-family:'Cinzel',serif;font-size:13px;font-weight:700;padding:8px 20px;border-radius:20px;margin-bottom:20px;letter-spacing:0.06em">${masteryScore} of ${masteryQuestions.length} correct — ${pct}%</div>
+        <br>
+        <button onclick="closeMastery()" style="background:linear-gradient(135deg,var(--gold),var(--gold-bright));border:none;border-radius:9px;padding:12px 28px;font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--ink);cursor:pointer">Back to Stories</button>
+      </div>`;
+  } else {
+    body.innerHTML = `
+      <div style="text-align:center;padding:20px 0">
+        <div style="font-size:48px;margin-bottom:12px">📖</div>
+        <div style="font-family:'Cinzel',serif;font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:8px">Almost There!</div>
+        <div style="font-family:'Lora',serif;font-style:italic;font-size:0.92rem;color:var(--ink-light);line-height:1.6;margin-bottom:16px">You need 80% to earn the Hero badge. Review the stories and try again.</div>
+        <div style="display:inline-block;background:var(--ink);color:var(--gold);font-family:'Cinzel',serif;font-size:13px;font-weight:700;padding:8px 20px;border-radius:20px;margin-bottom:20px">${masteryScore} of ${masteryQuestions.length} correct — ${pct}%</div>
+        <br>
+        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+          <button onclick="startMasteryQuiz()" style="background:linear-gradient(135deg,var(--gold),var(--gold-bright));border:none;border-radius:9px;padding:11px 24px;font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--ink);cursor:pointer">Try Again</button>
+          <button onclick="closeMastery()" style="background:transparent;border:1.5px solid rgba(44,26,14,0.2);border-radius:9px;padding:11px 24px;font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:600;color:var(--ink-light);cursor:pointer">Back to Stories</button>
+        </div>
+      </div>`;
+  }
+}
+
 // ════════════════════════════════════════════════════
 // SUPABASE + CONFIG
 // ════════════════════════════════════════════════════
@@ -757,6 +1024,7 @@ const BADGE_DEFS = [
   { id: 'nt-life',       emoji: '✨', name: 'The Witness',       era: 'nt-life',       desc: 'Completed all Life of Jesus stories' },
   { id: 'nt-church',     emoji: '⚡', name: 'The Sent Ones',     era: 'nt-church',     desc: 'Completed all Early Church stories' },
   { id: 'complete',      emoji: '🏆', name: 'Footsteps Complete',era: null,            desc: 'Read every single story' },
+  { id: 'hero',          emoji: '🌟', name: 'Hero',               era: null,            desc: 'Passed the Hero Quiz — you know every story from Genesis to the early church' },
 ];
 
 // ── APP STATE ────────────────────────────────────────
@@ -806,6 +1074,8 @@ async function init() {
   render();
   updateProgress();
   await checkCheckoutReturn();
+  await checkBadgeRevocations();
+  await checkNewStoriesForLifetimeBuyers();
 
   // Listen for auth changes (login/logout in another tab etc.)
   sb.auth.onAuthStateChange(async (event, session) => {
@@ -827,7 +1097,7 @@ async function init() {
 // SUPABASE DATA LOADING
 // ════════════════════════════════════════════════════
 async function loadUserProfile() {
-  const { data: profile } = await sb.from('profiles').select('*, is_paid, has_lifetime, plan_type, stripe_customer_id').eq('id', authUser.id).single();
+  const { data: profile } = await sb.from('profiles').select('*, is_paid, has_lifetime, plan_type, stripe_customer_id, story_count_at_purchase, last_seen_story_count').eq('id', authUser.id).single();
   if (!profile) return;
   userProfile = profile;
 
@@ -918,29 +1188,102 @@ async function checkAndAwardBadges(justCompletedStory) {
   const progress = getProgress();
 
   for (const badge of BADGE_DEFS) {
+    // Skip Hero badge — awarded only via mastery quiz
+    if (badge.id === 'hero') continue;
+
     if (dbBadges.has(badge.id)) continue; // already earned
 
     let earned = false;
     if (badge.id === 'complete') {
-      // All stories done
       earned = stories.every(s => progress.has(s.id));
     } else {
-      // All stories in this era done
       const eraStories = stories.filter(s => s.era === badge.era);
       earned = eraStories.length > 0 && eraStories.every(s => progress.has(s.id));
     }
 
     if (earned) {
+      const eraStories = badge.era ? stories.filter(s => s.era === badge.era) : stories;
       dbBadges.add(badge.id);
       await sb.from('badges').upsert({
         profile_id: activeProfile.id,
         profile_type: activeProfile.type,
         badge_id: badge.id,
+        story_count_at_earn: eraStories.length,
       });
       showBadgePopup(badge);
       renderBadgeShelf();
     }
   }
+}
+
+// Check if any earned badges need revocation due to new stories being added
+async function checkBadgeRevocations() {
+  if (!authUser || !activeProfile || !dbBadges.size) return;
+
+  const { data: earnedBadges } = await sb.from('badges')
+    .select('badge_id, story_count_at_earn')
+    .eq('profile_id', activeProfile.id)
+    .eq('profile_type', activeProfile.type);
+
+  if (!earnedBadges) return;
+
+  const toRevoke = [];
+  for (const earned of earnedBadges) {
+    const badge = BADGE_DEFS.find(b => b.id === earned.badge_id);
+    if (!badge || badge.id === 'hero' || badge.id === 'complete') continue;
+
+    const currentEraCount = stories.filter(s => s.era === badge.era).length;
+    const countAtEarn = earned.story_count_at_earn || 0;
+
+    if (currentEraCount > countAtEarn) {
+      toRevoke.push(badge);
+    }
+  }
+
+  if (toRevoke.length > 0) {
+    // Revoke badges in Supabase
+    for (const badge of toRevoke) {
+      dbBadges.delete(badge.id);
+      await sb.from('badges')
+        .delete()
+        .eq('profile_id', activeProfile.id)
+        .eq('profile_type', activeProfile.type)
+        .eq('badge_id', badge.id);
+    }
+    renderBadgeShelf();
+    // Show notification
+    showNewStoriesInEraNotification(toRevoke);
+  }
+}
+
+function showNewStoriesInEraNotification(revokedBadges) {
+  const existing = document.getElementById('eraNewStoryBanner');
+  if (existing) existing.remove();
+
+  const names = revokedBadges.map(b => b.name).join(', ');
+  const banner = document.createElement('div');
+  banner.id = 'eraNewStoryBanner';
+  banner.style.cssText = `
+    background: linear-gradient(135deg, #c9a227, #f0c040);
+    color: #2c1a0e;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    flex-wrap: wrap;
+  `;
+  banner.innerHTML = `
+    <span>🌟 New stories added to <strong>${names}</strong> — your badge is waiting to be reclaimed!</span>
+    <button onclick="this.parentElement.remove()" style="background:rgba(44,26,14,0.15);border:none;border-radius:5px;padding:4px 12px;font-family:'Cinzel',serif;font-size:11px;font-weight:700;color:#2c1a0e;cursor:pointer">Got it</button>
+  `;
+  document.querySelector('.main').prepend(banner);
 }
 
 function showBadgePopup(badge) {
@@ -967,6 +1310,12 @@ function openJourney() {
   const profileName = activeProfile ? activeProfile.name : 'Guest';
   document.getElementById('journeyProfileName').textContent = profileName + "'s badges";
 
+  // Check if mastery quiz is available (all stories completed, all era badges earned)
+  const allStoriesRead = stories.every(s => getProgress().has(s.id));
+  const eraBadges = BADGE_DEFS.filter(b => b.id !== 'hero' && b.id !== 'complete');
+  const allEraBadgesEarned = eraBadges.every(b => (authUser ? dbBadges : new Set()).has(b.id));
+  const heroEarned = (authUser ? dbBadges : new Set()).has('hero');
+
   const grid = document.getElementById('journeyGrid');
   grid.innerHTML = BADGE_DEFS.map(badge => {
     const isEarned = earned.has(badge.id);
@@ -980,6 +1329,40 @@ function openJourney() {
     </div>`;
   }).join('');
 
+  // Add mastery quiz section to journey grid
+  const masterySection = document.getElementById('masterySection');
+  if (masterySection) masterySection.remove();
+
+  const sec = document.createElement('div');
+  sec.id = 'masterySection';
+  sec.style.cssText = 'padding:0 28px 28px;border-top:1px solid var(--parchment-dark);margin-top:8px';
+
+  if (heroEarned) {
+    sec.innerHTML = `
+      <div style="text-align:center;padding:20px 0">
+        <div style="font-size:48px;margin-bottom:10px">🌟</div>
+        <div style="font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:6px">Hero</div>
+        <div style="font-family:'Lora',serif;font-style:italic;font-size:0.88rem;color:var(--ink-light)">You have walked through every story from creation to the early church.</div>
+      </div>`;
+  } else if (allStoriesRead) {
+    sec.innerHTML = `
+      <div style="text-align:center;padding:20px 0">
+        <div style="font-size:36px;margin-bottom:10px">🌟</div>
+        <div style="font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:6px">Hero Quiz Unlocked</div>
+        <div style="font-family:'Lora',serif;font-style:italic;font-size:0.85rem;color:var(--ink-light);margin-bottom:16px">You have read every story. Now prove you know them.</div>
+        <button onclick="closeJourney();startMasteryQuiz()" style="background:linear-gradient(135deg,var(--gold),var(--gold-bright));border:none;border-radius:9px;padding:12px 28px;font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--ink);cursor:pointer;box-shadow:0 3px 12px rgba(201,162,39,0.35)">Take the Hero Quiz →</button>
+      </div>`;
+  } else {
+    const completed = stories.filter(s => getProgress().has(s.id)).length;
+    sec.innerHTML = `
+      <div style="text-align:center;padding:20px 0;opacity:0.5">
+        <div style="font-size:36px;margin-bottom:10px;filter:grayscale(1)">🌟</div>
+        <div style="font-family:'Cinzel',serif;font-size:0.9rem;font-weight:600;color:var(--ink);margin-bottom:4px">Hero Quiz</div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:12px;color:var(--ink-light)">${completed} of ${stories.length} stories read — complete all to unlock</div>
+      </div>`;
+  }
+
+  document.querySelector('.journey-card').appendChild(sec);
   document.getElementById('journeyBackdrop').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -1159,6 +1542,7 @@ async function startCheckout(plan) {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${session.access_token}`,
+        'x-story-count': String(stories.length),
       },
       body: JSON.stringify({ plan }),
     });
@@ -1232,10 +1616,21 @@ document.getElementById('pwMonthlyPlan').addEventListener('click', () => startCh
 
 function storyIsLocked(story) {
   if (!PAYWALL_ENABLED) return false;
-  // has_lifetime = permanent access to launch stories (survives subscription cancellation)
-  // is_paid = active access (monthly subscription OR one-time purchase)
-  const hasAccess = userProfile && (userProfile.is_paid === true || userProfile.has_lifetime === true);
-  if (hasAccess) return false;
+
+  // Guest — first 3 free
+  if (!userProfile) return story.order > FREE_STORY_LIMIT;
+
+  // Monthly subscriber — access to everything
+  if (userProfile.is_paid && userProfile.plan_type === 'monthly') return false;
+
+  // One-time purchaser — access to stories published before or on their purchase date
+  if (userProfile.has_lifetime) {
+    if (!userProfile.paid_at || !story.published_date) return false;
+    // Lock stories published after purchase date
+    return story.published_date > userProfile.paid_at.substring(0, 10);
+  }
+
+  // Free user — first 3 stories only
   return story.order > FREE_STORY_LIMIT;
 }
 
@@ -1639,9 +2034,10 @@ document.getElementById('nextBtn').addEventListener('click', () => {
 document.getElementById('modalClose').addEventListener('click', closeModal);
 document.getElementById('modalBackdrop').addEventListener('click', e => { if (e.target === document.getElementById('modalBackdrop')) closeModal(); });
 document.getElementById('journeyBackdrop').addEventListener('click', e => { if (e.target === document.getElementById('journeyBackdrop')) closeJourney(); });
+document.getElementById('masteryBackdrop').addEventListener('click', e => { if (e.target === document.getElementById('masteryBackdrop')) closeMastery(); });
 document.getElementById('childModalBackdrop').addEventListener('click', e => { if (e.target === document.getElementById('childModalBackdrop')) closeChildModal(); });
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') { closeModal(); closePaywall(); closeJourney(); closeChildModal(); }
+  if (e.key === 'Escape') { closeModal(); closePaywall(); closeJourney(); closeChildModal(); closeMastery(); }
   if (e.key === 'Enter' && e.target.classList.contains('story-card')) handleCardClick(e.target.dataset.id);
 });
 
