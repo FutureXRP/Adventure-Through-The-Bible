@@ -1,0 +1,178 @@
+<!-- ─────────────────────────────────────────────────────────────
+     REFUND UI PATCH FOR account.html
+     
+     STEP 1: Add this REFUND MODAL just before the closing </body> tag
+             (alongside the existing confirm-backdrop and avatar-edit-backdrop)
+     ───────────────────────────────────────────────────────────── -->
+
+<!-- ── REFUND MODAL ── -->
+<div class="confirm-backdrop" id="refundBackdrop">
+  <div class="confirm-card">
+    <div class="confirm-icon" id="refundIcon">💳</div>
+    <div class="confirm-title" id="refundTitle">Request a Refund</div>
+    <div class="confirm-body" id="refundBody">
+      We'll check your story access and process an automatic refund if you're eligible.
+      Refunds are available if fewer than 5 stories have been opened (monthly) or
+      fewer than 8 stories (one-time purchase).
+    </div>
+    <div id="refundBtns" class="confirm-btns">
+      <button class="confirm-cancel-btn" onclick="closeRefund()">Cancel</button>
+      <button class="confirm-proceed-btn" style="background:var(--gold);color:var(--ink)" id="refundProceedBtn" onclick="processRefund()">Check Eligibility</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ─────────────────────────────────────────────────────────────
+     STEP 2: Add this REFUND CARD to the renderPage() function
+     
+     Find the "SIGN OUT" card section:
+     
+       <!-- SIGN OUT -->
+       <div class="account-card">
+         <div class="card-body">
+           <button class="btn-ghost" onclick="handleSignOut()">Sign Out</button>
+         </div>
+       </div>
+     
+     Replace it with:
+     ───────────────────────────────────────────────────────────── -->
+
+    <!-- REFUND -->
+    ${isPaid && !userProfile?.refund_issued_at ? `
+    <div class="account-card">
+      <div class="card-header">
+        <div class="card-header-icon">💳</div>
+        <div>
+          <div class="card-header-title">Refund Request</div>
+          <div class="card-header-sub">Automatic eligibility check based on stories accessed</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div id="refundMsgBox" class="msg-box"></div>
+        <p style="font-family:'Lora',serif;font-style:italic;font-size:0.88rem;color:var(--ink-light);line-height:1.6;margin-bottom:16px">
+          Refunds are available if your account has accessed fewer than
+          ${planType === 'one_time' ? '8' : '5'} stories total across all profiles.
+          The check is automatic — eligible refunds are processed immediately.
+        </p>
+        <button class="btn-danger" onclick="openRefund()">Request a Refund</button>
+      </div>
+    </div>
+    ` : userProfile?.refund_issued_at ? `
+    <div class="account-card">
+      <div class="card-body">
+        <div class="msg-box info" style="display:block">
+          A refund was issued on ${new Date(userProfile.refund_issued_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}. If you have questions, contact hello@squareonecompassion.org.
+        </div>
+      </div>
+    </div>
+    ` : ''}
+
+    <!-- SIGN OUT -->
+    <div class="account-card">
+      <div class="card-body">
+        <button class="btn-ghost" onclick="handleSignOut()">Sign Out</button>
+      </div>
+    </div>
+
+
+<!-- ─────────────────────────────────────────────────────────────
+     STEP 3: Add these JAVASCRIPT FUNCTIONS
+     
+     Paste before the closing </script> tag (before init(); at the bottom)
+     ───────────────────────────────────────────────────────────── -->
+
+// ── REFUND ───────────────────────────────────────────────────
+const SUPABASE_FUNCTIONS_URL_REFUND = 'https://bqyysvjnitbeimvaxkao.supabase.co/functions/v1';
+
+function openRefund() {
+  // Reset modal to initial state
+  document.getElementById('refundIcon').textContent = '💳';
+  document.getElementById('refundTitle').textContent = 'Request a Refund';
+  document.getElementById('refundBody').textContent =
+    'We\'ll check your story access and process an automatic refund if you\'re eligible. ' +
+    'Refunds are available if fewer than ' +
+    (userProfile?.plan_type === 'one_time' ? '8' : '5') +
+    ' stories have been opened across all profiles on your account.';
+  document.getElementById('refundBtns').innerHTML =
+    '<button class="confirm-cancel-btn" onclick="closeRefund()">Cancel</button>' +
+    '<button class="confirm-proceed-btn" style="background:var(--gold);color:var(--ink)" id="refundProceedBtn" onclick="processRefund()">Check Eligibility</button>';
+  document.getElementById('refundBackdrop').classList.add('open');
+}
+
+function closeRefund() {
+  document.getElementById('refundBackdrop').classList.remove('open');
+}
+
+async function processRefund() {
+  const btn = document.getElementById('refundProceedBtn');
+  if (btn) { btn.disabled = true; btn.innerHTML = '<span class="spinner"></span>Checking…'; }
+
+  try {
+    const { data: { session } } = await sb.auth.getSession();
+    if (!session) { window.location.href = './login.html'; return; }
+
+    const response = await fetch(`${SUPABASE_FUNCTIONS_URL_REFUND}/process-refund`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${session.access_token}`,
+      },
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      // Refund processed
+      document.getElementById('refundIcon').textContent = '✅';
+      document.getElementById('refundTitle').textContent = 'Refund Processed';
+      document.getElementById('refundBody').textContent = data.message ||
+        'Your refund has been processed and will appear on your card within 5–10 business days.';
+      document.getElementById('refundBtns').innerHTML =
+        '<button class="confirm-proceed-btn" style="background:var(--gold);color:var(--ink);flex:1" onclick="closeRefund();window.location.reload()">Done</button>';
+
+    } else if (data.eligible === false) {
+      // Ineligible — show story count
+      document.getElementById('refundIcon').textContent = '📖';
+      document.getElementById('refundTitle').textContent = 'Not Eligible for Refund';
+      document.getElementById('refundBody').textContent =
+        `Your account has opened ${data.stories_opened} ${data.stories_opened === 1 ? 'story' : 'stories'} ` +
+        `across all profiles. Refunds are available only when fewer than ${data.threshold} stories have been accessed. ` +
+        `If you believe there's been an error, contact hello@squareonecompassion.org.`;
+      document.getElementById('refundBtns').innerHTML =
+        '<button class="confirm-proceed-btn" style="background:var(--ink);flex:1" onclick="closeRefund()">Close</button>';
+
+    } else if (data.already_refunded) {
+      document.getElementById('refundIcon').textContent = '✅';
+      document.getElementById('refundTitle').textContent = 'Already Refunded';
+      document.getElementById('refundBody').textContent =
+        'A refund has already been issued for this account. Contact hello@squareonecompassion.org with questions.';
+      document.getElementById('refundBtns').innerHTML =
+        '<button class="confirm-proceed-btn" style="background:var(--ink);flex:1" onclick="closeRefund()">Close</button>';
+
+    } else {
+      // Generic error
+      document.getElementById('refundIcon').textContent = '⚠️';
+      document.getElementById('refundTitle').textContent = 'Something Went Wrong';
+      document.getElementById('refundBody').textContent =
+        data.error || 'Please contact hello@squareonecompassion.org and we\'ll sort it out.';
+      document.getElementById('refundBtns').innerHTML =
+        '<button class="confirm-cancel-btn" onclick="closeRefund()">Close</button>';
+    }
+
+  } catch (err) {
+    console.error('Refund request error:', err);
+    document.getElementById('refundIcon').textContent = '⚠️';
+    document.getElementById('refundTitle').textContent = 'Connection Error';
+    document.getElementById('refundBody').textContent =
+      'Could not reach the server. Please try again or contact hello@squareonecompassion.org.';
+    if (btn) { btn.disabled = false; btn.textContent = 'Try Again'; }
+  }
+}
+
+// Add backdrop click and escape to refund modal (alongside existing listeners)
+document.getElementById('refundBackdrop').addEventListener('click', e => {
+  if (e.target === document.getElementById('refundBackdrop')) closeRefund();
+});
+// Update your existing keydown listener to also call closeRefund():
+// document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeConfirm(); closeAvatarEdit(); closeRefund(); } });
