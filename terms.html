@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — Footsteps</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --parchment: #fdf6e3;
+    --parchment-dark: #f0e6c8;
+    --ink: #2c1a0e;
+    --ink-light: #5c3d1e;
+    --gold: #c9a227;
+    --gold-bright: #f0c040;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Lora', Georgia, serif;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    min-height: 100vh;
+  }
+  .top-bar {
+    background: var(--ink);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .top-bar-brand {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+  }
+  .top-bar-back {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    transition: color 0.15s;
+  }
+  .top-bar-back:hover { color: #fff; }
+
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+  .eyebrow {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .effective {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    color: var(--ink-light);
+    opacity: 0.6;
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--parchment-dark);
+  }
+  .intro {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--ink-light);
+    line-height: 1.75;
+    margin-bottom: 48px;
+    padding: 24px 28px;
+    background: rgba(201,162,39,0.07);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+  }
+  h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-top: 44px;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--parchment-dark);
+  }
+  h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--ink-light);
+    margin-top: 22px;
+    margin-bottom: 8px;
+  }
+  p {
+    font-family: 'Lora', serif;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  ul {
+    margin: 10px 0 14px 20px;
+  }
+  ul li {
+    font-family: 'Lora', serif;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(201,162,39,0.4); }
+  a:hover { border-bottom-color: var(--gold); }
+  .section-number {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--gold);
+    margin-right: 8px;
+  }
+  .highlight-box {
+    background: #fff;
+    border: 1px solid rgba(44,26,14,0.12);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .highlight-box p { margin-bottom: 8px; }
+  .highlight-box p:last-child { margin-bottom: 0; }
+  footer {
+    text-align: center;
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid var(--parchment-dark);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    color: var(--ink-light);
+    opacity: 0.6;
+  }
+  footer a { color: var(--ink-light); border-bottom-color: rgba(92,61,30,0.3); }
+  @media (max-width: 480px) {
+    .page { padding: 36px 16px 64px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="./index.html" class="top-bar-brand">Footsteps</a>
+  <a href="./index.html" class="top-bar-back">← Back to Stories</a>
+</div>
+
+<div class="page">
+  <div class="eyebrow">Legal</div>
+  <h1>Terms of Service</h1>
+  <p class="effective">Effective Date: June 1, 2026 &nbsp;·&nbsp; Last Updated: June 1, 2026</p>
+
+  <div class="intro">
+    Footsteps is a Bible story app built for families, designed to make Scripture vivid, accessible, and meaningful for children. These Terms govern your use of the app and any associated services. Please read them — they're written to be understood, not just signed.
+  </div>
+
+  <h2><span class="section-number">01</span>Who We Are</h2>
+  <p>Footsteps is a product of SquareOne Compassion, a nonprofit organization based in Tulsa, Oklahoma. References to "Footsteps," "we," "us," or "our" in these Terms refer to SquareOne Compassion and its Footsteps application.</p>
+  <p>Questions about these Terms can be directed to us at: <a href="mailto:hello@squareonecompassion.org">hello@squareonecompassion.org</a></p>
+
+  <h2><span class="section-number">02</span>Acceptance of Terms</h2>
+  <p>By creating an account, accessing Footsteps, or making a purchase, you confirm that you have read, understood, and agree to these Terms of Service and our <a href="./privacy.html">Privacy Policy</a>. If you do not agree, please do not use the service.</p>
+  <p>If you are creating an account on behalf of a child or children, you represent that you are the parent or legal guardian of those children and that you have authority to consent on their behalf.</p>
+
+  <h2><span class="section-number">03</span>Who May Use Footsteps</h2>
+  <p>Footsteps accounts must be created and managed by adults (18 years of age or older). Children do not create their own accounts. Instead, a parent or guardian creates a parent account and may then create child profiles linked to that account.</p>
+  <p>By creating a child profile, you confirm that you are the parent or legal guardian of that child and that you consent to our collection and use of limited data associated with that child's reading progress, as described in our Privacy Policy.</p>
+
+  <h2><span class="section-number">04</span>Accounts and Access</h2>
+
+  <h3>Account Creation</h3>
+  <p>You may browse up to 3 free stories without an account. To save progress, create child profiles, or access the full library, you must create an account with a valid email address and password.</p>
+
+  <h3>Child Profiles</h3>
+  <p>Parent accounts may create up to 6 child profiles. Each child profile tracks reading progress independently. Child profiles are associated with your parent account and are managed by you.</p>
+
+  <h3>Concurrent Sessions</h3>
+  <p>Your Footsteps account is licensed for household use. We allow up to 4 simultaneous active sessions per account to accommodate families with multiple children reading at the same time. Sharing your account credentials with individuals outside your household is a violation of these Terms and may result in account suspension.</p>
+
+  <h3>Account Security</h3>
+  <p>You are responsible for maintaining the confidentiality of your account credentials. You agree to notify us immediately if you believe your account has been accessed without authorization.</p>
+
+  <h2><span class="section-number">05</span>Subscriptions and Purchases</h2>
+
+  <h3>Free Access</h3>
+  <p>The first 3 stories are available at no charge, without an account. No credit card is required to access free content.</p>
+
+  <h3>Monthly Subscription — $4.99/month</h3>
+  <div class="highlight-box">
+    <p>Access to all stories currently available (30 at launch, growing to 50 and beyond). Includes all new stories added after your subscription begins. Billed monthly. Cancel anytime — access continues until the end of the current billing period.</p>
+  </div>
+
+  <h3>One-Time Purchase — $49.99</h3>
+  <div class="highlight-box">
+    <p>Permanent access to all stories available at the time of purchase. Future story packs published after your purchase date are sold separately and are not included in this one-time purchase. This is a lifetime license to content existing at time of purchase, not a subscription to all future content.</p>
+  </div>
+
+  <h3>Billing</h3>
+  <p>All payments are processed securely through Stripe. By providing payment information, you authorize us to charge your payment method for the plan you selected. Monthly subscriptions renew automatically at the end of each billing cycle unless cancelled.</p>
+
+  <h3>Cancellation</h3>
+  <p>You may cancel your monthly subscription at any time through your Account page. Upon cancellation, your subscription will remain active through the end of the current billing period. No partial refunds are issued for unused time within a billing period.</p>
+
+  <h3>Refunds</h3>
+  <p>Our refund eligibility is based on how much of the content you have accessed, not on time. This protects readers who genuinely tried the app and decided it wasn't right for them, while ensuring that those who read through the library aren't able to request a full refund after consuming the content.</p>
+
+  <div class="highlight-box">
+    <p><strong>Monthly Subscription:</strong> Full refund available if fewer than 5 stories total have been opened across all profiles on your account. Once 5 or more stories have been accessed, the charge is non-refundable.</p>
+    <p style="margin-top:10px"><strong>One-Time Purchase:</strong> Full refund available if fewer than 8 stories total have been opened across all profiles on your account. Once 8 or more stories have been accessed, the purchase is non-refundable.</p>
+  </div>
+
+  <p>The 3 free stories count toward the total. Story access is measured across all child profiles and the parent account combined.</p>
+  <p>To request a refund, use the <strong>Request a Refund</strong> button on your Account page. Eligible refunds are processed automatically. If your refund is denied due to story access, you will be shown your current story count and the reason for denial. Refunds typically appear on your card within 5–10 business days.</p>
+  <p>If you believe there has been an error, contact us at <a href="mailto:hello@squareonecompassion.org">hello@squareonecompassion.org</a> and we will review your case manually.</p>
+
+  <h2><span class="section-number">06</span>Content and Intellectual Property</h2>
+  <p>All stories, devotional content, quiz questions, audio recordings, illustrations, and other materials within Footsteps are the intellectual property of SquareOne Compassion unless otherwise noted. You may not reproduce, distribute, modify, or create derivative works from any Footsteps content without our written permission.</p>
+  <p>Scripture quotations and references are used for educational and devotional purposes. Individual Bible translations are the property of their respective copyright holders.</p>
+  <p>Your personal account data (reading progress, child profiles) belongs to you. See our <a href="./privacy.html">Privacy Policy</a> for details on how we handle your data.</p>
+
+  <h2><span class="section-number">07</span>Prohibited Conduct</h2>
+  <p>You agree not to:</p>
+  <ul>
+    <li>Share your account credentials with individuals outside your household</li>
+    <li>Use automated means to access the service or scrape content</li>
+    <li>Attempt to circumvent payment requirements or access controls</li>
+    <li>Reverse engineer, decompile, or otherwise attempt to extract source code</li>
+    <li>Use the service for any commercial purpose without our written consent</li>
+    <li>Impersonate another person or misrepresent your affiliation with any person or entity</li>
+  </ul>
+  <p>Violation of these terms may result in immediate account suspension without refund.</p>
+
+  <h2><span class="section-number">08</span>Children's Privacy and COPPA</h2>
+  <p>Footsteps is designed to be used by children under the direct supervision and with the express consent of their parent or guardian. We do not knowingly allow children under 13 to create their own accounts or to provide personal information directly.</p>
+  <p>Child profiles are created by parents. The data associated with child profiles (reading progress, badge history) is linked to the parent's account. Parents may request deletion of all child profile data at any time by contacting us.</p>
+  <p>If you believe a child under 13 has provided personal information without parental consent, please contact us immediately at <a href="mailto:hello@squareonecompassion.org">hello@squareonecompassion.org</a> and we will promptly remove that information.</p>
+  <p>For full details on data collection related to children, see our <a href="./privacy.html">Privacy Policy</a>.</p>
+
+  <h2><span class="section-number">09</span>Disclaimers and Limitation of Liability</h2>
+  <p>Footsteps is provided "as is" without warranties of any kind, express or implied. We do not warrant that the service will be uninterrupted, error-free, or free of viruses or other harmful components.</p>
+  <p>To the fullest extent permitted by applicable law, SquareOne Compassion shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use the service.</p>
+  <p>Our total liability to you for any claims arising from these Terms or your use of Footsteps shall not exceed the amount you paid us in the 12 months preceding the claim.</p>
+
+  <h2><span class="section-number">10</span>Changes to These Terms</h2>
+  <p>We may update these Terms from time to time. When we make material changes, we will notify you by email and update the "Last Updated" date above. Your continued use of Footsteps after the effective date of revised Terms constitutes your acceptance of the changes.</p>
+
+  <h2><span class="section-number">11</span>Governing Law</h2>
+  <p>These Terms are governed by the laws of the State of Oklahoma, without regard to its conflict of law provisions. Any disputes arising from these Terms shall be resolved in the courts of Tulsa County, Oklahoma.</p>
+
+  <h2><span class="section-number">12</span>Contact</h2>
+  <p>For questions, concerns, or requests related to these Terms, please contact us:</p>
+  <div class="highlight-box">
+    <p><strong>SquareOne Compassion</strong><br>
+    Footsteps App<br>
+    Tulsa, Oklahoma<br>
+    <a href="mailto:hello@squareonecompassion.org">hello@squareonecompassion.org</a></p>
+  </div>
+
+  <footer>
+    &copy; 2026 SquareOne Compassion &nbsp;·&nbsp; Footsteps
+    &nbsp;·&nbsp; <a href="./privacy.html">Privacy Policy</a>
+    &nbsp;·&nbsp; <a href="./index.html">Back to Stories</a>
+  </footer>
+</div>
+
+</body>
+</html>
