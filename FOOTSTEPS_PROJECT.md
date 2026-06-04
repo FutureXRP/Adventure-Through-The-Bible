@@ -424,14 +424,36 @@ git push
 ### Tier 1 (Ages 9–12) — COMPLETE
 50 stories, full quiz system, word highlighting, badge system, Hero Quiz.
 
-### Tier 2 (Ages 5–8) — NOT STARTED
-Build after Tier 1 launch and audio are complete.
+### Tier 2 (Ages 5–8) — IN PROGRESS
+
+**Separate file:** `stories-tier2.json` — same structure as `stories.json` but with age-appropriate content. The app loads the correct file based on the active profile's tier setting.
+
+**Tier switching:**
+- Parent toggles between Tier 1 and Tier 2 per child profile in account.html
+- No date of birth required — age field remains optional and informational only
+- Active tier stored on `child_profiles` table as `tier` column (1 or 2, default 1)
+- Progress tracked separately per tier per profile — switching tiers preserves progress in both
+- Parent can switch freely at any time based on readiness, not age
+
+**SQL needed:**
+```sql
+alter table public.child_profiles
+  add column if not exists tier int not null default 1 check (tier in (1, 2));
+```
+
+**Index.html changes needed:**
+- On profile switch, check `activeProfile.tier`
+- Load `stories-tier2.json` instead of `stories.json` when tier = 2
+- Tier toggle button in profile dropdown and account.html
 
 **Age-appropriate adjustments for Tier 2:**
-- Shorter paragraphs and simpler sentences throughout
-- Replace "prostitute" in Rahab story with "a woman with a complicated past"
-- Simpler quiz questions
-- Same theological content, age-appropriate wording
+- Shorter paragraphs, simpler sentences, no complex theological vocabulary
+- 3 quiz questions instead of 5 (simpler format)
+- Talk About It questions aimed at 5–8 year olds
+- Replace "prostitute" in Rahab with "a woman with a complicated past"
+- Same theological content and OT typology — just accessible wording
+- No em dashes in any paragraphs (audio rule same as Tier 1)
+- Same story register rules otherwise: vivid, present-tense, zero commentary
 
 ---
 
@@ -448,6 +470,13 @@ Build after Tier 1 launch and audio are complete.
 - [ ] Update Edge Functions in Supabase editor (stripe-webhook.ts and create-checkout.ts have pending changes for story_count_at_purchase — deploy when going live)
 - [ ] Turn on email confirmation in Supabase Auth → Providers → Email
 - [ ] Test full purchase flow end to end with live keys before announcing
+
+### Tier 2 system (partially built — stories in progress)
+- [ ] Run SQL: `alter table public.child_profiles add column if not exists tier int not null default 1 check (tier in (1, 2));`
+- [ ] Add tier toggle to profile dropdown in index.html
+- [ ] Add tier toggle to account.html child profile cards
+- [ ] Update loadProgressForActiveProfile to load stories-tier2.json when tier = 2
+- [ ] Audio generation for Tier 2 stories via ElevenLabs
 
 ### Story Pack system (next build)
 For one-time buyers to purchase new story batches at $9.99:
@@ -504,7 +533,7 @@ Paste at the top of every new Claude session:
 > 1. Generate audio for stories 11–50 (ElevenLabs, run in batches per credit reset)
 > 2. Build story pack system ($9.99 one-time for new story batches)
 > 3. Switch Stripe to live mode when ready to charge
-> 4. Tier 2 (Ages 5–8) — after launch
+> 4. Tier 2 (Ages 5–8) — `stories-tier2.json` in progress, tier toggle UI still needed
 >
 > **Reference:** FOOTSTEPS_PROJECT.md in the repo for full details.
 
