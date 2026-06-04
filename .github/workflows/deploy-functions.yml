@@ -33,14 +33,17 @@ jobs:
         run: |
           supabase functions deploy process-refund \
             --project-ref bqyysvjnitbeimvaxkao
-      - name: Set Edge Function secrets
+      - name: Set STRIPE_SECRET_KEY
         env:
-          STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-          STRIPE_WEBHOOK_SECRET: ${{ secrets.STRIPE_WEBHOOK_SECRET }}
-        run: |
-          supabase secrets set \
-            STRIPE_SECRET_KEY="$STRIPE_SECRET_KEY" \
-            SUPABASE_SERVICE_ROLE_KEY="$SUPABASE_SERVICE_ROLE_KEY" \
-            STRIPE_WEBHOOK_SECRET="$STRIPE_WEBHOOK_SECRET" \
-            --project-ref bqyysvjnitbeimvaxkao
+          SECRET_VAL: ${{ secrets.STRIPE_SECRET_KEY }}
+        run: supabase secrets set STRIPE_SECRET_KEY="$SECRET_VAL" --project-ref bqyysvjnitbeimvaxkao
+
+      - name: Set SUPABASE_SERVICE_ROLE_KEY
+        env:
+          SECRET_VAL: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: supabase secrets set SUPABASE_SERVICE_ROLE_KEY="$SECRET_VAL" --project-ref bqyysvjnitbeimvaxkao
+
+      - name: Set STRIPE_WEBHOOK_SECRET
+        env:
+          SECRET_VAL: ${{ secrets.STRIPE_WEBHOOK_SECRET }}
+        run: supabase secrets set STRIPE_WEBHOOK_SECRET="$SECRET_VAL" --project-ref bqyysvjnitbeimvaxkao
