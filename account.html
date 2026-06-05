@@ -358,17 +358,25 @@ function renderPage() {
     '<div class="account-card">' +
       '<div class="card-header"><div class="card-header-icon">👨‍👩‍👧‍👦</div><div><div class="card-header-title">Family Profiles</div><div class="card-header-sub">' + childProfiles.length + ' child ' + (childProfiles.length === 1 ? 'profile' : 'profiles') + '</div></div></div>' +
       '<div class="card-body">' +
-        (childProfiles.length === 0 ? '<div style="font-family:\'Lora\',serif;font-style:italic;font-size:0.9rem;color:var(--ink-light);opacity:0.7;text-align:center;padding:16px 0">No child profiles yet. Add one from the main app.</div>' :
+        (childProfiles.length === 0 ? '<div style="font-style:italic;font-size:0.9rem;color:var(--ink-light);opacity:0.7;text-align:center;padding:16px 0">No child profiles yet. Add one from the main app.</div>' :
           childProfiles.map(function(child) {
             const childProgress = storyProgress.filter(p => p.profile_id === child.id && p.profile_type === 'child').length;
-            return '<div class="child-item">' +
-              '<div class="child-avatar" onclick="openAvatarEdit(\'' + child.id + '\')" style="cursor:pointer;position:relative" title="Change avatar">' + child.avatar_emoji + '<span style="position:absolute;bottom:0;right:0;background:var(--gold);border-radius:50%;width:16px;height:16px;font-size:9px;display:flex;align-items:center;justify-content:center">✏️</span></div>' +
-              '<div><div class="child-name">' + child.display_name + '</div><div class="child-age">' + (child.age ? 'Age ' + child.age : 'No age set') + '</div></div>' +
+            const childTier = child.tier || 1;
+            return '<div class="child-item" style="align-items:flex-start;padding:14px 0">' +
+              '<div class="child-avatar" onclick="openAvatarEdit(\'' + child.id + '\')" style="cursor:pointer;position:relative;margin-top:2px" title="Change avatar">' + child.avatar_emoji + '<span style="position:absolute;bottom:0;right:0;background:var(--gold);border-radius:50%;width:16px;height:16px;font-size:9px;display:flex;align-items:center;justify-content:center">✏️</span></div>' +
+              '<div style="flex:1;min-width:0">' +
+                '<div class="child-name">' + child.display_name + '</div>' +
+                '<div class="child-age">' + (child.age ? 'Age ' + child.age : '') + '</div>' +
+                  '<div style="display:flex;border:1.5px solid var(--parchment-dark);border-radius:6px;overflow:hidden">' +
+                    '<button onclick="setChildTier(\'' + child.id + '\',1)" style="padding:3px 10px;border:none;cursor:pointer;font-size:10px;font-weight:700;transition:all 0.15s;background:' + (childTier===1?'var(--gold)':'transparent') + ';color:' + (childTier===1?'var(--ink)':'var(--ink-light)') + '">Ages 9–12</button>' +
+                    '<button onclick="setChildTier(\'' + child.id + '\',2)" style="padding:3px 10px;border:none;cursor:pointer;font-size:10px;font-weight:700;transition:all 0.15s;background:' + (childTier===2?'#7c3aed':'transparent') + ';color:' + (childTier===2?'#fff':'var(--ink-light)') + '">Ages 5–8</button>' +
+                  '</div>' +
+                '</div>' +
+              '</div>' +
               '<div class="child-progress">' + childProgress + ' stories read</div>' +
             '</div>';
           }).join('')) +
-        '<div style="margin-top:' + (childProfiles.length > 0 ? '16px' : '0') + '"><a href="./index.html" class="btn-ghost">Manage Profiles in App</a></div>' +
-      '</div>' +
+        '</div>' +
     '</div>' : '') +
 
     // REFUND CARD — only show if paid and no refund already issued
@@ -387,6 +395,21 @@ function renderPage() {
 
     // SIGN OUT
     '<div class="account-card"><div class="card-body"><button class="btn-ghost" onclick="handleSignOut()">Sign Out</button></div></div>';
+}
+
+// CHILD TIER TOGGLE
+async function setChildTier(childId, tier) {
+  const child = childProfiles.find(c => c.id === childId);
+  if (!child || (child.tier || 1) === tier) return;
+  try {
+    await sb.from('child_profiles').update({ tier: tier }).eq('id', childId);
+    child.tier = tier;
+    renderPage();
+    showToast(tier === 2 ? 'Switched to Ages 5–8 stories' : 'Switched to Ages 9–12 stories');
+  } catch(err) {
+    console.error('Tier update error:', err);
+    showToast('Something went wrong. Please try again.');
+  }
 }
 
 // CANCEL SUBSCRIPTION
