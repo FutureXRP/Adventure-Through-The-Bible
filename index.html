@@ -1087,7 +1087,7 @@ function openJourney() {
   if (masterySection) masterySection.remove();
   const sec = document.createElement('div');
   sec.id = 'masterySection';
-  sec.style.cssText = 'padding:0 28px 28px;border-top:1px solid var(--parchment-dark);margin-top:8px';
+  sec.style.cssText = 'padding:16px 28px;border-bottom:1px solid var(--parchment-dark);margin-bottom:8px';
   if (heroEarned) {
     sec.innerHTML = `<div style="text-align:center;padding:20px 0"><div style="font-size:48px;margin-bottom:10px">🌟</div><div style="font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:6px">Hero</div><div style="font-family:'Lora',serif;font-style:italic;font-size:0.88rem;color:var(--ink-light)">You have walked through every story from creation to the early church.</div></div>`;
   } else if (allStoriesRead) {
@@ -1096,7 +1096,13 @@ function openJourney() {
     const completed = stories.filter(s => getProgress().has(s.id)).length;
     sec.innerHTML = `<div style="text-align:center;padding:20px 0;opacity:0.5"><div style="font-size:36px;margin-bottom:10px;filter:grayscale(1)">🌟</div><div style="font-family:'Cinzel',serif;font-size:0.9rem;font-weight:600;color:var(--ink);margin-bottom:4px">Hero Quiz</div><div style="font-family:'Source Sans 3',sans-serif;font-size:12px;color:var(--ink-light)">${completed} of ${stories.length} stories read — complete all to unlock</div></div>`;
   }
-  document.querySelector('.journey-card').appendChild(sec);
+  const journeyCard = document.querySelector('.journey-card');
+  const journeyGrid = document.getElementById('journeyGrid');
+  if (journeyGrid && journeyGrid.parentNode) {
+    journeyGrid.parentNode.insertBefore(sec, journeyGrid);
+  } else {
+    journeyCard.appendChild(sec);
+  }
   document.getElementById('journeyBackdrop').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
