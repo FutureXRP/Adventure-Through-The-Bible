@@ -1774,7 +1774,7 @@ function showToast(msg) {
   setTimeout(() => t.classList.remove('show'), 2800);
 }
 
-// ── PRINTABLE CERTIFICATES ────────────────────────────────────────────────────
+// ── PRINTABLE CERTIFICATES ───────────────────────────────────────────────────
 function printCertificate(badgeId) {
   const badge = BADGE_DEFS.find(b => b.id === badgeId);
   if (!badge) return;
@@ -1783,144 +1783,149 @@ function printCertificate(badgeId) {
   const dateEarned = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
   const isHero = badgeId === 'hero';
 
-  // Era story count for the badge description line
   const eraStories = badge.era ? stories.filter(s => s.era === badge.era) : stories;
   const storyCountLine = isHero
     ? 'All 50 Stories \u2022 Hero Quiz Passed \u2022 80%+'
-    : badge.era ? (eraStories.length + ' ' + (eraStories.length === 1 ? 'Story' : 'Stories') + ' Complete') : (stories.length + ' Stories Complete');
+    : badge.era ? (eraStories.length + (eraStories.length === 1 ? ' Story' : ' Stories') + ' Complete') : (stories.length + ' Stories Complete');
 
-  // Era-specific body text
   const eraDescriptions = {
-    creation:      'has walked faithfully through the stories of Creation, from the first light to the first family, and earned the badge of',
-    patriarchs:    'has walked faithfully through the stories of the Patriarchs, from Abraham\u2019s call to Joseph\u2019s forgiveness, and earned the badge of',
-    exodus:        'has walked faithfully through the stories of the Exodus, from the burning bush to the parted sea, and earned the badge of',
+    creation:        'has walked faithfully through the stories of Creation, from the first light to the first family, and earned the badge of',
+    patriarchs:      'has walked faithfully through the stories of the Patriarchs, from Abraham\u2019s call to Joseph\u2019s forgiveness, and earned the badge of',
+    exodus:          'has walked faithfully through the stories of the Exodus, from the burning bush to the parted sea, and earned the badge of',
     'promised-land': 'has walked faithfully through the stories of the Promised Land, from the walls of Jericho to the fields of Boaz, and earned the badge of',
-    kingdom:       'has walked faithfully through the stories of the Kingdom Era, from David\u2019s sling to Isaiah\u2019s prophecy, and earned the badge of',
-    exile:         'has walked faithfully through the stories of Exile and Return, from the furnace of Babylon to the walls of Jerusalem, and earned the badge of',
-    'nt-life':     'has walked faithfully through the stories of the Life of Jesus, from the manger in Bethlehem to the road to Jerusalem, and earned the badge of',
-    'nt-church':   'has walked faithfully through the stories of the Early Church, from the empty tomb to the ends of the earth, and earned the badge of',
-    complete:      'has read every story in the Footsteps journey \u2014 all fifty \u2014 and earned the badge of',
-    hero:          'has walked every road, from Creation to the Early Church, read all fifty stories, passed the Hero Quiz, and earned the highest honor Footsteps can bestow \u2014 the badge of',
+    kingdom:         'has walked faithfully through the stories of the Kingdom Era, from David\u2019s sling to Isaiah\u2019s prophecy, and earned the badge of',
+    exile:           'has walked faithfully through the stories of Exile and Return, from the furnace of Babylon to the walls of Jerusalem, and earned the badge of',
+    'nt-life':       'has walked faithfully through the stories of the Life of Jesus, from the manger in Bethlehem to the road to Jerusalem, and earned the badge of',
+    'nt-church':     'has walked faithfully through the stories of the Early Church, from the empty tomb to the ends of the earth, and earned the badge of',
+    complete:        'has read every story in the Footsteps journey \u2014 all fifty \u2014 and earned the badge of',
+    hero:            'has walked every road, from Creation to the Early Church, read all fifty stories, passed the Hero Quiz, and earned the highest honor Footsteps can bestow \u2014 the badge of',
   };
   const bodyText = eraDescriptions[badgeId] || 'has completed this chapter of the journey and earned the badge of';
 
+  // Colors — all inline so Safari cannot strip them
+  const bg          = isHero ? '#1a0f05' : '#fdf6e3';
+  const borderClr   = isHero ? '#f0c040' : '#c9a227';
+  const textPri     = isHero ? '#f0c040' : '#2c1a0e';
+  const textSec     = isHero ? 'rgba(253,246,227,0.75)' : '#5c3d1e';
+  const goldAcc     = isHero ? '#f0c040' : '#c9a227';
+  const subClr      = isHero ? 'rgba(201,162,39,0.55)' : '#5c3d1e';
+  const footerClr   = isHero ? 'rgba(201,162,39,0.4)' : 'rgba(92,61,30,0.45)';
+  const eyebrowClr  = isHero ? 'rgba(201,162,39,0.7)' : '#c9a227';
+  const eraTagClr   = isHero ? 'rgba(201,162,39,0.6)' : '#b45309';
+  const innerBorder = isHero
+    ? `border:1px solid rgba(201,162,39,0.3)`
+    : `border:1px solid rgba(201,162,39,0.4)`;
+
   const heroStars = isHero ? `
-    <div style="display:flex;justify-content:center;gap:6px;margin-bottom:16px;">
-      <div style="width:8px;height:8px;background:#f0c040;transform:rotate(45deg);opacity:0.6;"></div>
-      <div style="width:8px;height:8px;background:#f0c040;transform:rotate(45deg);opacity:0.6;"></div>
-      <div style="width:12px;height:12px;background:#f0c040;transform:rotate(45deg);"></div>
-      <div style="width:8px;height:8px;background:#f0c040;transform:rotate(45deg);opacity:0.6;"></div>
-      <div style="width:8px;height:8px;background:#f0c040;transform:rotate(45deg);opacity:0.6;"></div>
+    <div style="display:flex;justify-content:center;gap:7px;margin-bottom:18px;align-items:center;">
+      <div style="width:8px;height:8px;background:#f0c040;transform:rotate(45deg);opacity:0.55;"></div>
+      <div style="width:8px;height:8px;background:#f0c040;transform:rotate(45deg);opacity:0.55;"></div>
+      <div style="width:13px;height:13px;background:#f0c040;transform:rotate(45deg);"></div>
+      <div style="width:8px;height:8px;background:#f0c040;transform:rotate(45deg);opacity:0.55;"></div>
+      <div style="width:8px;height:8px;background:#f0c040;transform:rotate(45deg);opacity:0.55;"></div>
     </div>` : '';
 
-  const verse = isHero ? '<div style="font-style:italic;font-size:12px;color:rgba(201,162,39,0.55);text-align:center;margin-top:10px;letter-spacing:0.03em;">"These are the footsteps you are about to follow."</div>' : '';
+  const verse = isHero
+    ? `<div style="font-style:italic;font-size:13px;color:rgba(201,162,39,0.55);text-align:center;margin-top:12px;letter-spacing:0.03em;">&ldquo;These are the footsteps you are about to follow.&rdquo;</div>`
+    : '';
 
-  const bg = isHero ? '#1a0f05' : '#fdf6e3';
-  const borderColor = '#c9a227';
-  const textPrimary = isHero ? '#f0c040' : '#2c1a0e';
-  const textSecondary = isHero ? 'rgba(253,246,227,0.7)' : '#5c3d1e';
-  const goldAccent = isHero ? '#f0c040' : '#c9a227';
-  const badgeRing = isHero
-    ? 'box-shadow:0 0 0 3px #1a0f05,0 0 0 5px #f0c040,0 0 0 8px #1a0f05,0 0 0 10px rgba(201,162,39,0.3);'
-    : 'box-shadow:0 0 0 3px #fdf6e3,0 0 0 5px #c9a227;';
-  const innerBorder = isHero
-    ? 'box-shadow:inset 0 0 0 6px #1a0f05,inset 0 0 0 9px #c9a227,inset 0 0 0 12px #1a0f05,inset 0 0 0 13px rgba(201,162,39,0.25);'
-    : 'box-shadow:inset 0 0 0 6px #fdf6e3,inset 0 0 0 8px rgba(201,162,39,0.2);';
-  const footerColor = isHero ? 'rgba(201,162,39,0.35)' : 'rgba(92,61,30,0.4)';
+  const pad = isHero ? '52px 72px 48px' : '48px 64px 44px';
+  const innerInset = isHero ? '16px' : '10px';
+  const cornerSize = isHero ? '40px' : '30px';
+  const cornerPos  = isHero ? '20px' : '14px';
+  const badgeSize  = isHero ? '90px' : '74px';
+  const badgeFont  = isHero ? '44px' : '34px';
+  const recipSize  = isHero ? '40px' : '34px';
+  const badgeRing  = isHero
+    ? `box-shadow:0 0 0 3px ${bg},0 0 0 6px ${borderClr},0 0 0 9px ${bg},0 0 0 11px rgba(201,162,39,0.3);`
+    : `box-shadow:0 0 0 3px ${bg},0 0 0 5px ${borderClr};`;
+
+  // Corner SVG — drawn as content so Safari prints it
+  const corner = (t,r,b,l) => `<div style="position:absolute;top:${t};right:${r};bottom:${b};left:${l};width:${cornerSize};height:${cornerSize};border-color:${borderClr};border-style:solid;border-width:${t?'2px':'0'} ${r?'2px':'0'} ${b?'2px':'0'} ${l?'2px':'0'};opacity:${isHero?'0.85':'0.7'};"></div>`;
 
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Footsteps Certificate \u2014 ${badge.name}</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Footsteps Certificate</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  body { background: #e8e0d0; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 24px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:100%; height:100%; }
+  body { background:${bg}; display:flex; align-items:center; justify-content:center; min-height:100vh; padding:20px; }
   @media print {
-    body { background: ${bg} !important; padding: 0; margin: 0; display: block; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .no-print { display: none !important; }
-    .cert { box-shadow: none !important; max-width: 100% !important; width: 100% !important; border-radius: 0 !important; background: ${bg} !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .cert-outer { padding: 0 !important; max-width: 100% !important; width: 100% !important; }
-    @page { size: 11in 8.5in landscape; margin: 0.3in; }
+    html, body { width:100%; height:100%; background:${bg} !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    .no-print { display:none !important; }
+    @page { size:11in 8.5in landscape; margin:0.25in; }
+    .outer { max-width:100% !important; width:100% !important; padding:0 !important; }
+    .cert { width:100% !important; max-width:100% !important; page-break-inside:avoid; background:${bg} !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
   }
   .print-bar { text-align:center; margin-bottom:20px; }
-  .print-bar button { padding:10px 28px; background:${goldAccent}; border:none; border-radius:8px; font-family:'Cinzel',serif; font-size:13px; font-weight:700; color:${isHero ? '#1a0f05' : '#2c1a0e'}; cursor:pointer; margin-right:10px; }
-  .print-bar .close-btn { background:transparent; border:1px solid #999; color:#555; margin-right:0; }
-  .cert {
-    background: ${bg};
-    border: 3px solid ${borderColor};
-    border-radius: 4px;
-    padding: ${isHero ? '52px 72px 48px' : '48px 64px 44px'};
-    position: relative;
-    max-width: 960px;
-    width: 100%;
-    ${innerBorder}
-  }
-  .recipient { font-size: ${isHero ? '38px' : '34px'} !important; }
-  .app-name { font-size: 15px !important; }
-  .body { font-size: 15px !important; margin: 0 60px !important; }
-  .badge-name { font-size: ${isHero ? '20px' : '18px'} !important; }
-  .badge-circle { width: ${isHero ? '96px' : '80px'} !important; height: ${isHero ? '96px' : '80px'} !important; font-size: ${isHero ? '46px' : '38px'} !important; }
-  .cert::before {
-    content:'';
-    position:absolute;
-    inset:${isHero ? '16px' : '10px'};
-    border:1px solid rgba(201,162,39,${isHero ? '0.3' : '0.4'});
-    border-radius:2px;
-    pointer-events:none;
-  }
-  .corner {
-    position:absolute;
-    border-color:${isHero ? '#f0c040' : '#c9a227'};
-    border-style:solid;
-    opacity:${isHero ? '0.8' : '0.7'};
-  }
-  .eyebrow { font-family:'Source Sans 3',sans-serif; font-size:9px; font-weight:700; letter-spacing:0.26em; text-transform:uppercase; color:${goldAccent}; text-align:center; margin-bottom:10px; ${isHero ? 'opacity:0.7;' : ''} }
-  .app-name { font-family:'Cinzel',serif; font-size:13px; font-weight:600; color:${textPrimary}; text-align:center; letter-spacing:0.12em; margin-bottom:6px; }
-  .divider { display:flex; align-items:center; gap:10px; margin:10px auto; width:320px; }
-  .divider-line { flex:1; height:1px; background:linear-gradient(90deg,transparent,${goldAccent},transparent); }
-  .divider-diamond { width:6px; height:6px; background:${goldAccent}; transform:rotate(45deg); flex-shrink:0; }
-  .presents { font-family:'Lora',serif; font-style:italic; font-size:12px; color:${textSecondary}; text-align:center; margin-bottom:4px; }
-  .recipient { font-family:'Cinzel',serif; font-size:${isHero ? '32px' : '28px'}; font-weight:700; color:${textPrimary}; text-align:center; margin:4px 0 6px; }
-  .body { font-family:'Lora',serif; font-style:italic; font-size:13px; color:${textSecondary}; text-align:center; line-height:1.6; margin:0 40px; }
-  .badge-row { display:flex; align-items:center; justify-content:center; gap:16px; margin:20px 0 14px; }
-  .badge-circle { width:${isHero ? '80px' : '64px'}; height:${isHero ? '80px' : '64px'}; border-radius:50%; background:linear-gradient(135deg,#c9a227,#f0c040); display:flex; align-items:center; justify-content:center; font-size:${isHero ? '38px' : '30px'}; ${badgeRing} }
-  .badge-name { font-family:'Cinzel',serif; font-size:${isHero ? '17px' : '15px'}; font-weight:700; color:${textPrimary}; }
-  .badge-era { font-family:'Source Sans 3',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:${isHero ? 'rgba(201,162,39,0.6)' : '#b45309'}; margin-top:2px; }
-  .date-line { font-family:'Source Sans 3',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:${footerColor}; text-align:center; margin-top:16px; }
+  .print-bar button { padding:11px 30px; background:${goldAcc}; border:none; border-radius:8px; font-family:'Cinzel',serif; font-size:13px; font-weight:700; color:${isHero?'#1a0f05':'#2c1a0e'}; cursor:pointer; margin-right:10px; letter-spacing:0.04em; }
+  .print-bar .close-btn { background:transparent; border:1.5px solid #999; color:#666; margin-right:0; }
 </style>
 </head>
 <body>
-<div class="cert-outer" style="width:100%;max-width:960px;">
+<div class="outer" style="width:100%;max-width:1000px;">
   <div class="no-print print-bar">
     <button onclick="window.print()">Print Certificate</button>
     <button class="close-btn" onclick="window.close()">Close</button>
   </div>
-  <div class="cert">
-    <div class="corner" style="width:${isHero?'36':'28'}px;height:${isHero?'36':'28'}px;top:${isHero?'20':'14'}px;left:${isHero?'20':'14'}px;border-width:2px 0 0 2px;"></div>
-    <div class="corner" style="width:${isHero?'36':'28'}px;height:${isHero?'36':'28'}px;top:${isHero?'20':'14'}px;right:${isHero?'20':'14'}px;border-width:2px 2px 0 0;"></div>
-    <div class="corner" style="width:${isHero?'36':'28'}px;height:${isHero?'36':'28'}px;bottom:${isHero?'20':'14'}px;left:${isHero?'20':'14'}px;border-width:0 0 2px 2px;"></div>
-    <div class="corner" style="width:${isHero?'36':'28'}px;height:${isHero?'36':'28'}px;bottom:${isHero?'20':'14'}px;right:${isHero?'20':'14'}px;border-width:0 2px 2px 0;"></div>
-    ${heroStars}
-    <div class="eyebrow">Certificate of Achievement</div>
-    <div class="app-name">Footsteps &mdash; A Journey Through Scripture</div>
-    <div class="divider"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
-    <div class="presents">This certifies that</div>
-    <div class="recipient">${recipientName}</div>
-    <div class="body">${bodyText}</div>
-    <div class="badge-row">
-      <div class="badge-circle">${badge.emoji}</div>
-      <div>
-        <div class="badge-name">${badge.name}</div>
-        <div class="badge-era">${storyCountLine}</div>
+
+  <div class="cert" style="background:${bg};border:3px solid ${borderClr};border-radius:4px;padding:${pad};position:relative;width:100%;max-width:1000px;">
+
+    <!-- Double inner border via absolute div -->
+    <div style="position:absolute;inset:${innerInset};${innerBorder};border-radius:2px;pointer-events:none;"></div>
+
+    <!-- Corners -->
+    ${corner(cornerPos,'auto','auto',cornerPos)}
+    ${corner(cornerPos,cornerPos,'auto','auto')}
+    ${corner('auto','auto',cornerPos,cornerPos)}
+    ${corner('auto',cornerPos,cornerPos,'auto')}
+
+    <!-- Content -->
+    <div style="position:relative;z-index:1;text-align:center;">
+
+      ${heroStars}
+
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:${eyebrowClr};margin-bottom:10px;">Certificate of Achievement</div>
+
+      <div style="font-family:'Cinzel',serif;font-size:15px;font-weight:600;color:${textPri};letter-spacing:0.12em;margin-bottom:8px;">Footsteps &mdash; A Journey Through Scripture</div>
+
+      <!-- Divider -->
+      <div style="display:flex;align-items:center;gap:10px;margin:10px auto;width:340px;">
+        <div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,${goldAcc},transparent);"></div>
+        <div style="width:6px;height:6px;background:${goldAcc};transform:rotate(45deg);flex-shrink:0;"></div>
+        <div style="flex:1;height:1px;background:linear-gradient(90deg,${goldAcc},transparent,transparent);"></div>
       </div>
+
+      <div style="font-family:'Lora',Georgia,serif;font-style:italic;font-size:13px;color:${textSec};margin-bottom:6px;">This certifies that</div>
+
+      <div style="font-family:'Cinzel',serif;font-size:${recipSize};font-weight:700;color:${textPri};margin:4px 0 10px;">${recipientName}</div>
+
+      <div style="font-family:'Lora',Georgia,serif;font-style:italic;font-size:14px;color:${textSec};line-height:1.7;margin:0 auto 0;max-width:620px;">${bodyText}</div>
+
+      <!-- Badge row -->
+      <div style="display:flex;align-items:center;justify-content:center;gap:18px;margin:22px auto 18px;">
+        <div style="width:${badgeSize};height:${badgeSize};border-radius:50%;background:linear-gradient(135deg,#c9a227,#f0c040);display:flex;align-items:center;justify-content:center;font-size:${badgeFont};flex-shrink:0;${badgeRing}">${badge.emoji}</div>
+        <div style="text-align:left;">
+          <div style="font-family:'Cinzel',serif;font-size:${isHero?'22px':'18px'};font-weight:700;color:${textPri};">${badge.name}</div>
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:${eraTagClr};margin-top:3px;">${storyCountLine}</div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div style="display:flex;align-items:center;gap:10px;margin:0 auto;width:340px;">
+        <div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,${goldAcc},transparent);"></div>
+        <div style="width:6px;height:6px;background:${goldAcc};transform:rotate(45deg);flex-shrink:0;"></div>
+        <div style="flex:1;height:1px;background:linear-gradient(90deg,${goldAcc},transparent,transparent);"></div>
+      </div>
+
+      ${verse}
+
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:${footerClr};margin-top:${isHero?'14px':'16px'};">Awarded ${dateEarned} &bull; Footsteps Bible Stories &bull; Matt &amp; Georgia Blair</div>
+
     </div>
-    <div class="divider"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
-    ${verse}
-    <div class="date-line">Awarded ${dateEarned} &bull; Footsteps Bible Stories &bull; Matt &amp; Georgia Blair</div>
   </div>
 </div>
 </body>
