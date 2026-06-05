@@ -1,0 +1,41 @@
+{
+  "id": "prologue",
+  "era": "prologue",
+  "order": 0,
+  "access": "premium",
+  "emoji": "👣",
+  "title": "The Road Begins Here",
+  "book": "An Introduction",
+  "date": "Before the First Story",
+  "location": "The Beginning of the Road",
+  "hook": "You are about to walk through the greatest story ever told. Not a made-up story. The truest one there is.",
+  "story": [
+    "Before you read the first word of the first story, stop for just a moment.",
+    "You are about to walk through the greatest story ever told. Not a made-up story. Not a fairy tale. A true story — the truest one there is — about a God who made everything, a world that went wrong, and a rescue plan so big it took thousands of years to complete. It has heroes and villains, deserts and seas, battles and miracles, a baby born in a barn and a man who walked out of his own grave.",
+    "You will meet a boy who killed a giant with one stone. A girl who saved her whole people by walking into a throne room she wasn't supposed to enter. A man who spent three days inside a fish. A woman who hid two spies under a pile of hay and tied a red rope in her window and trusted that God would remember her.",
+    "You will stand at the edge of a sea that split in half. You will climb a mountain where fire fell from the sky. You will sit in a garden where the whole world changed with one wrong choice — and then watch as God spent the rest of history fixing it.",
+    "Every story connects to every other story. The rope that saved Rahab points to the cross. The ram caught in the thicket points to the cross. The lamb at Passover, the servant who didn't open his mouth, the son who was sold for silver — all of it points to the same place. One story, told across thousands of years, by one Author who knew exactly where it was going from the very beginning.",
+    "Some of these stories will make you cheer. Some will make you ask hard questions. Some will make you sit quietly for a minute before you move on. That's good. These stories are supposed to do that.",
+    "You don't have to rush. Read one story. Think about it. Talk about it. Then read another. The road is long and every step is worth taking.",
+    "These are not invented footsteps. They are the footsteps of real people — people who were scared and brave, faithful and foolish, broken and restored — who walked with God before you. And at the center of all of it, one set of footsteps that changed everything. Footsteps that walked on water. That carried a cross up a hill. That stepped out of an empty tomb.",
+    "Those are the footsteps you are about to follow.",
+    "Welcome to Footsteps."
+  ],
+  "story_t2": [
+    "Are you ready? Because you are about to go on the greatest adventure in the whole world.",
+    "This is not a made-up story. Everything you are about to read really happened. There are real people, real places, and a real God who made everything and loves you very much.",
+    "You are going to meet some amazing people. A little boy who beat a giant with one tiny stone. A girl who was very brave and saved her whole family. A man who got swallowed by a giant fish and came back out! A woman who trusted God and tied a red rope in her window.",
+    "You will see a sea split open so people could walk right through it on dry ground. You will see fire come down from the sky. You will see bread appear out of nowhere to feed thousands of hungry people.",
+    "And at the very center of all of it — the most important story of all — a baby is born in a barn. He grows up and does things nobody has ever done. He loves people nobody else would love. And then He does something so amazing that the whole world changed forever.",
+    "Every single story in this book is connected. They are all part of one big story about a God who loves you and never, ever gives up.",
+    "You do not have to rush. Read one story. Maybe talk about it with someone you love. Then come back and read another one. There is no hurry.",
+    "Real people walked these roads before you. They were brave and scared, silly and wise, just like you. And right in the middle of their stories walks the one who made everything — leaving footsteps on the water, on the dusty road, and out of an empty tomb.",
+    "Those are the footsteps you are about to follow.",
+    "Welcome to Footsteps."
+  ],
+  "audio": "./audio/prologue.mp3",
+  "audio_t2": "./audio/prologue-t2.mp3",
+  "quiz": [],
+  "devotional": null,
+  "published_date": "2026-06-04"
+}
