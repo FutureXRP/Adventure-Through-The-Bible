@@ -990,13 +990,21 @@ async function checkAndAwardBadges(justCompletedStory) {
     if (badge.id === 'hero') continue;
     if (dbBadges.has(badge.id)) continue;
     let earned = false;
-    if (badge.id === 'complete') { earned = stories.every(s => progress.has(s.id)); }
+    if (badge.id === 'complete') {
+      // Only award complete badge when ALL stories in the current tier are read
+      // Require at least 10 stories to prevent triggering on tiny tier-2 sets
+      earned = stories.length >= 10 && stories.every(s => progress.has(s.id));
+    }
     else { const eraStories = stories.filter(s => s.era === badge.era); earned = eraStories.length > 0 && eraStories.every(s => progress.has(s.id)); }
     if (earned) {
       const eraStories = badge.era ? stories.filter(s => s.era === badge.era) : stories;
       dbBadges.add(badge.id);
       await sb.from('badges').upsert({ profile_id: activeProfile.id, profile_type: activeProfile.type, badge_id: badge.id, story_count_at_earn: eraStories.length });
       showBadgePopup(badge); renderBadgeShelf();
+      // If all stories complete, also unlock the hero quiz
+      if (badge.id === 'complete') {
+        showToast('🏆 You've completed every story! Open My Journey to take the Hero Quiz.');
+      }
     }
   }
 }
@@ -1132,9 +1140,13 @@ function renderAuthBar() {
   // Tier toggle — only show if viewing a child profile (parent accounts always see tier 1)
   const showTierToggle = activeProfile && activeProfile.type === 'child';
   const tierToggleHtml = showTierToggle
-    ? '<div style="display:flex;align-items:center;gap:0;border:1px solid rgba(255,255,255,0.2);border-radius:6px;overflow:hidden;flex-shrink:0">' +
-        '<button onclick="setActiveTier(1)" style="padding:4px 10px;border:none;cursor:pointer;font-family:\'Source Sans 3\',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.06em;transition:all 0.15s;background:' + (activeTier===1?'rgba(201,162,39,0.9)':'transparent') + ';color:' + (activeTier===1?'#2c1a0e':'rgba(255,255,255,0.5)') + '">9\u201312</button>' +
-        '<button onclick="setActiveTier(2)" style="padding:4px 10px;border:none;cursor:pointer;font-family:\'Source Sans 3\',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.06em;transition:all 0.15s;background:' + (activeTier===2?'#7c3aed':'transparent') + ';color:' + (activeTier===2?'#fff':'rgba(255,255,255,0.5)') + '">5\u20138</button>' +
+    ? '<div style="display:flex;flex-direction:column;gap:3px;flex-shrink:0">' +
+        '<div style="font-family:\'Source Sans 3\',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);text-align:center">Reading Level</div>' +
+        '<div style="display:flex;align-items:center;gap:0;border:1.5px solid rgba(255,255,255,0.25);border-radius:7px;overflow:hidden">' +
+          '<button onclick="setActiveTier(1)" style="padding:5px 14px;border:none;cursor:pointer;font-family:\'Source Sans 3\',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.06em;transition:all 0.15s;background:' + (activeTier===1?'rgba(201,162,39,0.9)':'transparent') + ';color:' + (activeTier===1?'#2c1a0e':'rgba(255,255,255,0.55)') + '">Ages 9\u201312</button>' +
+          '<div style="width:1px;height:20px;background:rgba(255,255,255,0.2)"></div>' +
+          '<button onclick="setActiveTier(2)" style="padding:5px 14px;border:none;cursor:pointer;font-family:\'Source Sans 3\',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.06em;transition:all 0.15s;background:' + (activeTier===2?'#7c3aed':'transparent') + ';color:' + (activeTier===2?'#fff':'rgba(255,255,255,0.55)') + '">Ages 5\u20138</button>' +
+        '</div>' +
       '</div>'
     : '';
 
@@ -1165,7 +1177,7 @@ function renderAuthBar() {
       '</div>' +
     '</div>';
 
-  right.innerHTML = '<button class="auth-bar-btn ghost" onclick="openJourney()">\U0001f3c6 My Journey</button><a href="./account.html" class="auth-bar-btn ghost">My Account</a>';
+  right.innerHTML = '<button class="auth-bar-btn ghost" onclick="openJourney()">🏆 My Journey</button><a href="./account.html" class="auth-bar-btn ghost">My Account</a>';
 }
 async function setActiveTier(tierVal) {
   if (!activeProfile || activeProfile.type !== 'child') return;
