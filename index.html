@@ -1837,12 +1837,12 @@ function printCertificate(badgeId) {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   body { background: #e8e0d0; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 24px; }
   @media print {
-    body { background: white; padding: 0; margin: 0; display: block; }
+    body { background: ${bg} !important; padding: 0; margin: 0; display: block; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     .no-print { display: none !important; }
-    .cert { box-shadow: none !important; max-width: 100% !important; width: 100% !important; border-radius: 0 !important; }
+    .cert { box-shadow: none !important; max-width: 100% !important; width: 100% !important; border-radius: 0 !important; background: ${bg} !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     .cert-outer { padding: 0 !important; max-width: 100% !important; width: 100% !important; }
     @page { size: 11in 8.5in landscape; margin: 0.3in; }
   }
