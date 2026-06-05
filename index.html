@@ -1153,9 +1153,7 @@ function renderAuthBar() {
   });
 
   // Add child link — inside dropdown only
-  const addChildRow = isParent
-    ? '<div class="profile-drop-divider"></div><button class="profile-drop-action" onclick="openChildModal()">+ Add Child Profile</button>'
-    : '';
+  const addChildRow = ''; // Add child moved to account.html
   // Plan badge — only show on parent/individual, not child profiles
   const isChildActive = activeProfile && activeProfile.type === 'child';
   const planBadge = (!isChildActive && userProfile.is_paid)
@@ -1347,6 +1345,7 @@ async function checkCheckoutReturn() {
     showToast('Checkout cancelled — no charge was made.');
   }
   if (params.get('openPaywall') === '1') { window.history.replaceState({}, '', window.location.pathname); setTimeout(openPaywall, 500); }
+  if (params.get('addChild') === '1') { window.history.replaceState({}, '', window.location.pathname); setTimeout(openChildModal, 800); }
 }
 
 // ── PROLOGUE MODAL ────────────────────────────────────────────────────────────
@@ -1438,7 +1437,7 @@ function render() {
     const prologueText = tier === 2
       ? 'Are you ready? Because you are about to go on the greatest adventure in the whole world.'
       : 'You are about to walk through the greatest story ever told. Not a made-up story. The truest one there is.';
-    html += '<div style="max-width:900px;margin:0 auto 32px;padding:0 16px">' +
+    html += '<div style="max-width:900px;margin:28px auto 32px;padding:0 16px">' +
       '<div onclick="openPrologueModal()" class="prologue-card-btn">' +
         '<div style="font-size:36px;flex-shrink:0">👣</div>' +
         '<div style="flex:1;min-width:0">' +
