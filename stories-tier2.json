@@ -5,10 +5,17 @@
     "version": "1.0",
     "tier": 2,
     "ageRange": "5-8",
-    "totalStories": 5,
+    "totalStories": 15,
     "freeStories": 3
   },
   "eras": [
+    {
+      "id": "prologue",
+      "label": "The Road Begins Here",
+      "period": "Before the First Story",
+      "worldContext": "Before the adventure begins.",
+      "color": "#c9a227"
+    },
     {
       "id": "creation",
       "label": "In the Beginning",
@@ -85,8 +92,8 @@
         "On the fourth day, God put the sun in the sky to shine during the day and the moon and stars to shine at night. On the fifth day, He filled the oceans with fish and the sky with birds. He loved everything He made and told them to have babies and fill the earth.",
         "On the sixth day, God made animals. Every kind you can think of! Lions and elephants, dogs and ladybugs. Then God said something special that He had never said before. He said, \"Let us make people, someone like us.\"",
         "So God made a man and a woman. He looked at them and loved them very much. He told them, \"Take care of everything I made. You are in charge.\" Then He looked at everything He had made and said it was very good. Not just good. Very good!",
-        "On the seventh day, God rested. He had finished everything He wanted to make, so He rested and called that day holy.",
-        "Then God did something amazing with the man. He bent down close and breathed into the man's nose. And the man came alive! God planted a beautiful garden called Eden and put the man there to take care of it.",
+        "On the seventh day, God rested. He had finished everything He wanted to make, so He rested and called that day special.",
+        "Then God did something amazing with the man. He bent down close and breathed right into the man's nose. And the man came alive! God planted a beautiful garden called Eden and put the man there to take care of it.",
         "God said, \"It is not good for the man to be alone.\" So while the man was sleeping, God made a woman from one of his ribs. When the man woke up and saw her, he was so happy. The two of them were perfectly happy together, with God right there with them."
       ],
       "devotional": {
@@ -94,9 +101,10 @@
         "questions": [
           "God made the whole world and said it was good. But when He made people, He said it was very good. Why do you think people are so special to God?",
           "God breathed His own breath into the man to make him alive. What does that tell you about how much God cares about people?",
-          "God rested on the seventh day. Why do you think rest is important? Do you have a good rest day in your week?"
+          "God rested on the seventh day because His work was all done. What is your favorite thing to do when you rest?"
         ]
       },
+      "devotionalHeading": "Let's Talk About It",
       "tags": ["creation", "identity", "God's character"],
       "connections": [
         {
@@ -140,7 +148,7 @@
             "He sprinkled water on him"
           ],
           "answer": 2,
-          "explanation": "God bent down close and breathed right into the man's nose. That is how the man came alive. No other creature got this special breath from God."
+          "explanation": "God bent down close and breathed right into the man's nose. That is how the man came alive."
         },
         {
           "question": "What did God say about everything He made on the sixth day?",
@@ -169,23 +177,24 @@
       "hook": "Adam and Eve lived in a perfect garden. God gave them one rule. Then a sneaky snake showed up.",
       "story": [
         "Adam and Eve lived in a beautiful garden called Eden. God walked with them there like a close friend. They had everything they needed. Every kind of food, every kind of animal, and God right there with them.",
-        "God had given them one rule. He said, \"You can eat from any tree in the garden except one. Do not eat from the tree in the middle of the garden. If you do, you will die.\"",
-        "One day, a sneaky snake came to Eve. The snake was tricky. He asked, \"Did God really say you cannot eat from any tree?\" He twisted the words to make God's rule sound mean.",
-        "Eve said they could eat from any tree except the one in the middle. The snake said, \"You will not die! God knows that if you eat it, you will become wise like Him.\" The snake was trying to make Eve think God was keeping something good from her.",
-        "Eve looked at the fruit. It looked yummy. She wanted to be wise. So she took some and ate it. Then she gave some to Adam, who was standing right there, and he ate it too.",
-        "Right away, everything felt different. But not in a good way. They felt ashamed. They made clothes out of leaves to cover themselves. And when they heard God coming, instead of running to Him like always, they hid in the trees.",
+        "God had given them one rule. He said, \"You can eat from any tree in the garden except one. Do not eat from the tree in the middle of the garden. If you do, something very bad will happen.\"",
+        "One day, a sneaky snake came to Eve. The snake was tricky. He asked, \"Did God really say you cannot eat from any tree?\" He twisted the words to make God's rule sound mean and unfair.",
+        "Eve said they could eat from any tree except the one in the middle. The snake said, \"You will not get in trouble! God knows that if you eat it, you will become very smart, just like Him.\" The snake wanted Eve to think God was hiding something good from her.",
+        "Eve looked at the fruit. It looked yummy. She wanted to be smart. So she took some and ate it. Then she gave some to Adam, who was standing right there, and he ate it too.",
+        "Right away, everything felt different. But not in a good way. They felt bad inside, like they wanted to hide. They made clothes out of leaves to cover themselves. And when they heard God coming, instead of running to Him like always, they hid in the trees.",
         "God called out, \"Where are you?\" Adam came out and said he was hiding because he was scared. God asked, \"Did you eat from the tree I told you not to eat from?\" Adam blamed Eve. Eve blamed the snake. Nobody said sorry.",
-        "Because of what they did, things got harder. Work became difficult. Life was not as easy as it had been. And they had to leave the perfect garden.",
-        "But before they left, God made something for them. He made real clothes for them out of animal skins, much better than the leaf clothes they had made. And God made a promise. One day, someone in Eve's family would crush the snake's head. The rescue was already on its way."
+        "Because of what they did, things got harder. Life was not as easy as it had been. And they had to leave the beautiful garden.",
+        "But before they left, God made something kind for them. He made real clothes for them so they would not be cold. And God made a promise. One day, someone in Eve's family would fix everything the snake had broken. The rescue was already on its way."
       ],
       "devotional": {
-        "bigIdea": "When we make bad choices, we might want to hide from God. But God always comes looking for us. He loves us even when we mess up.",
+        "bigIdea": "When we make bad choices, we might want to hide. But God always comes looking for us. He loves us even when we mess up.",
         "questions": [
-          "Adam and Eve hid from God after they made a bad choice. Have you ever felt like hiding after you did something wrong? What do you think God wants you to do instead?",
-          "God made Adam and Eve better clothes after they messed up. What does that tell you about how God treats people who make mistakes?",
-          "The snake said God was keeping something good from Adam and Eve. But God had given them everything! Why do you think it is important to trust what God says?"
+          "Adam and Eve hid from God after they made a bad choice. Have you ever felt like hiding when you did something wrong? What did you do?",
+          "God made Adam and Eve warm clothes even after they disobeyed Him. Can you think of a time someone was still kind to you after you made a mistake?",
+          "When God gives us rules, do you think He is trying to help us or hurt us? Why?"
         ]
       },
+      "devotionalHeading": "Let's Talk About It",
       "tags": ["temptation", "consequences", "grace", "choices"],
       "connections": [
         {
@@ -229,18 +238,18 @@
             "They kept eating the fruit"
           ],
           "answer": 1,
-          "explanation": "Adam and Eve hid in the trees. They were ashamed and scared because they had broken God's rule."
+          "explanation": "Adam and Eve hid in the trees. They felt bad inside and were scared because they had broken God's rule."
         },
         {
           "question": "What did God make for Adam and Eve before they left the garden?",
           "options": [
             "A boat to travel in",
-            "Real clothes made from animal skins",
+            "Real clothes to keep them warm",
             "A new garden to live in",
             "A bag of food for the journey"
           ],
           "answer": 1,
-          "explanation": "God made real clothes for them out of animal skins. Even after they disobeyed, God still took care of them."
+          "explanation": "God made real clothes for them. Even after they disobeyed, God still took care of them."
         }
       ],
       "published_date": "2026-06-03"
@@ -258,29 +267,30 @@
       "hook": "Cain and Abel were the very first brothers. They both wanted to give something to God. But only one of them gave his very best.",
       "story": [
         "Adam and Eve had two sons. The first was named Cain, who grew food from the ground. The second was named Abel, who took care of sheep.",
-        "One day both brothers decided to bring a gift to God. Abel brought the very best of his baby lambs, the finest ones he had. Cain brought some of his crops, but not his best ones.",
+        "One day both brothers decided to bring a special gift for God. Abel brought the very best of his baby lambs, the finest ones he had. Cain brought some of his crops, but not his best ones.",
         "God was happy with Abel's gift. But He was not happy with Cain's gift. Cain got very angry. His face fell and he looked upset.",
         "God came to talk to Cain. He said, \"Why are you angry? If you do what is right, I will be happy with your gift too. But be careful. Something bad wants to get control of you. You have to choose to do what is right.\" God was warning Cain and giving him a chance to change.",
-        "But Cain did not listen. He said to Abel, \"Let us go out to the field.\" And when they got there, Cain hurt Abel and Abel died. It was the very first time someone had died, and it happened because of anger and jealousy.",
+        "But Cain did not listen. He said to Abel, \"Let us go out to the field.\" And when they got there, Cain hurt Abel very badly, and Abel died. It was the very first time someone had died, and it happened because of anger and jealousy.",
         "God came to Cain and asked, \"Where is your brother Abel?\" Cain said, \"I do not know. Am I supposed to watch my brother?\" But God knew what had happened.",
-        "Because of what Cain did, he had to go away and wander. He was sad and scared. But even then, God put a mark on Cain to keep him safe so no one would hurt him. Even Cain was not forgotten by God.",
-        "This sad story asks us a question: should we take care of each other? The answer God wants us to know is yes. We are supposed to love and look out for the people around us."
+        "Because of what Cain did, he had to go away and could not go back home. He was sad and scared. But even then, God put a special mark on Cain to keep him safe so no one would hurt him. Even Cain was not forgotten by God.",
+        "This sad story asks us a question we should never forget: should we look out for each other? Yes. God wants us to love the people around us, especially our family."
       ],
       "devotional": {
         "bigIdea": "God warned Cain before things went wrong. When we feel angry or jealous, we can talk to God about it. He helps us make good choices before we do something we cannot take back.",
         "questions": [
-          "Cain felt jealous because God liked Abel's gift better. Have you ever felt jealous of someone? What did you do about it?",
-          "God warned Cain before anything bad happened. How do you think God warns us today when we are about to make a bad choice?",
-          "Even after Cain did something terrible, God still kept him safe. What does that tell you about how much God cares about people?"
+          "Cain felt jealous because God liked Abel's gift better. Have you ever wanted something that someone else had? How did it make you feel?",
+          "God warned Cain before anything bad happened. Can you think of a time a grown-up warned you to stop before you did something wrong?",
+          "Even after Cain did something terrible, God still kept him safe. Does that surprise you? What does that tell you about God?"
         ]
       },
+      "devotionalHeading": "Let's Talk About It",
       "tags": ["anger", "jealousy", "consequences", "responsibility", "worship"],
       "connections": [
         {
           "title": "The Upside-Down Kingdom",
           "storyId": "sermon-mount",
           "reference": "Matthew 5:21-22",
-          "why": "Jesus taught that anger in our heart is dangerous, not just the bad things we do with it. Cain's story shows why."
+          "why": "Jesus taught that angry feelings in our heart are dangerous, not just the bad things we do with them. Cain's story shows why."
         },
         {
           "title": "The First Bad Choice",
@@ -314,7 +324,7 @@
             "That he should go away and not come back",
             "That if he did what was right, his gift would be accepted too",
             "That Abel was better than him",
-            "That he should try harder next time"
+            "That he should try again tomorrow"
           ],
           "answer": 1,
           "explanation": "God told Cain that if he did what was right, his gift would be accepted. God gave Cain a chance to change before anything bad happened."
@@ -348,22 +358,23 @@
         "A long time after Adam and Eve, the world had gotten very bad. People had stopped caring about God. They were hurting each other. God looked at the world He had made and was very sad.",
         "But there was one man named Noah who still loved God and tried to do what was right. God saw Noah and decided to talk to him.",
         "God told Noah that He was going to send a big flood to cover the whole earth. But God wanted to save Noah and his family. He told Noah to build a huge boat called an ark. It was not just a little boat. It was enormous, like a floating house. God told Noah exactly how to build it.",
-        "God also told Noah to bring two of every kind of animal onto the ark, one male and one female. That way, the animals would be safe too.",
-        "Noah did everything God told him to do. It took a very long time to build such a big ark. His neighbors probably thought he was strange, building a huge boat with no water nearby. But Noah kept building because he trusted God.",
-        "When the ark was ready, the animals came, two by two, every kind of animal you can think of. Then Noah and his wife and his sons and their wives all went in. And God closed the door.",
-        "Then it started to rain. It rained and rained for forty days. The water rose higher and higher until even the biggest mountains were covered. But the ark floated safely on top of the water.",
-        "After a long time, the water started going down. The ark landed on a mountain. Noah sent out a dove to see if there was dry land. The third time he sent her out, she did not come back. Noah knew it was time to come out.",
-        "The very first thing Noah did when he got out of the ark was thank God. He built an altar and worshipped God. God was pleased. Then God made Noah a promise. He said, \"I will never flood the whole earth again.\" And He put a rainbow in the sky as a sign of that promise.",
-        "Every rainbow you see is a reminder of that promise. God keeps every promise He makes."
+        "God also told Noah to bring two of every kind of animal onto the ark, one boy animal and one girl animal. That way, the animals would be safe too.",
+        "Noah did everything God told him to do. It took a very long time to build such a big ark. His neighbors probably thought he was very strange, building a huge boat when there was no water nearby. But Noah kept building because he trusted God.",
+        "When the ark was ready, the animals came, two by two. Every kind of animal you can think of. Then Noah and his wife and his sons and their wives all went in. And God closed the door.",
+        "Then it started to rain. It rained and rained for forty days. The water rose higher and higher until everything was covered. But the ark floated safely on top of the water.",
+        "After a long time, the water started going down. The ark landed on a mountain. Noah sent out a little dove to see if there was dry land. The third time the dove flew out, she did not come back. Noah knew it was time to come out.",
+        "The very first thing Noah did when he got out of the ark was thank God. He built a place to worship and said thank you to God for keeping them safe. God was so pleased. Then God made Noah a promise. He said, \"I will never flood the whole earth again.\" And He put a rainbow in the sky as a sign of that promise.",
+        "Every rainbow you see is a reminder that God keeps every promise He makes. Every single one."
       ],
       "devotional": {
         "bigIdea": "Noah built a huge boat because he trusted God, even when it did not make sense. Every rainbow is God showing us He keeps His promises.",
         "questions": [
-          "Noah built a giant boat far from any water because God told him to. That must have seemed very strange! Have you ever done something because you trusted God, even when it was hard to understand?",
-          "God closed the door of the ark Himself. Noah did not have to figure out when to go in. What does it feel like to know that God takes care of the details?",
-          "The rainbow is God's promise sign in the sky. What is your favorite reminder that God keeps His promises?"
+          "Noah built a giant boat far from any water because God told him to. Have you ever done something hard because a grown-up you trusted asked you to?",
+          "God closed the door of the ark Himself. Noah did not have to figure out when to go in. How does it feel to know that God takes care of things for us?",
+          "Next time you see a rainbow, what will you remember about God?"
         ]
       },
+      "devotionalHeading": "Let's Talk About It",
       "tags": ["faith", "obedience", "patience", "God's promises", "covenant"],
       "connections": [
         {
@@ -407,7 +418,7 @@
             "He started building a house"
           ],
           "answer": 2,
-          "explanation": "Right away, Noah built an altar to thank God. Saying thank you to God was the most important thing on his mind."
+          "explanation": "Right away, Noah built a place to worship and said thank you to God. Saying thank you to God was the most important thing on his mind."
         },
         {
           "question": "What did God put in the sky as a sign of His promise to never flood the whole earth again?",
@@ -415,7 +426,7 @@
             "A bright star",
             "A rainbow",
             "A pillar of fire",
-            "A cloud shaped like a boat"
+            "A big cloud shaped like a boat"
           ],
           "answer": 1,
           "explanation": "God put a rainbow in the sky as a sign of His promise. Every rainbow we see is a reminder that God keeps His word."
@@ -435,23 +446,24 @@
       "location": "Shinar, Mesopotamia",
       "hook": "Long ago, everyone on earth spoke the same language. Then they decided to build a tower to make themselves famous. God had something to say about that.",
       "story": [
-        "After Noah and his family, people spread out across the earth and had babies and more babies, until there were lots of people again. For a while, everyone in the whole world spoke the same language. Everyone could talk to everyone else.",
-        "A big group of people settled on a flat plain. They figured out how to make bricks and build things. They were good builders, and they had a big idea.",
-        "They said to each other, \"Let us build a huge city with a tower so tall it reaches all the way to heaven! We will make ourselves famous. And we will stay together right here instead of spreading out.\" The problem was that God had told people to spread out and fill the earth. They were doing the opposite.",
-        "God looked down at what they were building. The people were only thinking about making themselves look great. They were not thinking about God at all.",
-        "So God did something surprising. He changed their language! All of a sudden, nobody could understand what anyone else was saying. Workers who had been talking to each other all morning suddenly heard strange sounds when their friends spoke.",
-        "Everything got very confusing. People who could understand each other moved together. People who could not understand each other went different ways. They stopped building and spread out all over the earth, which is exactly what God had wanted them to do all along.",
-        "The city was called Babel, which sounds like the word for confused. They had wanted to build something to reach up to God. Instead, God came down and mixed everything up.",
-        "But here is the good news. Many, many years later, God sent His Holy Spirit, and something amazing happened. People from every country and every language could suddenly understand God's good news in their own language. What happened at Babel was put right by God's Spirit. God's plan is always to bring people together, but in His way, not ours."
+        "After Noah and his family, people spread out across the earth and had lots and lots of babies, until there were people everywhere. For a while, everyone in the whole world spoke the same language. Everyone could talk to everyone else.",
+        "A big group of people settled on a flat, open plain. They figured out how to make bricks and build big things. They were good builders, and they had a big idea.",
+        "They said to each other, \"Let us build a huge city with a tower so tall it reaches all the way up to heaven! We will make ourselves famous. And we will all stay right here together.\" The problem was that God had told people to spread out and fill the earth. They were doing the exact opposite.",
+        "God looked down at what they were building. These people were only thinking about making themselves look great. They were not thinking about God at all.",
+        "So God did something surprising. He changed their language! All of a sudden, nobody could understand what anyone else was saying. Workers who had been talking to each other all morning suddenly heard strange sounds when their friends opened their mouths.",
+        "Everything got very confusing. People who could understand each other stayed together. People who could not understand each other went in different directions. They stopped building and spread out all over the earth, which is exactly what God had wanted them to do all along.",
+        "The city was called Babel, which means mixed up. They had wanted to build something to reach up to God. Instead, God came down and mixed everything up.",
+        "But here is the good news at the end of the story. Many, many years later, God sent His Holy Spirit, and something wonderful happened. People from every country and every language could suddenly understand God's good news in their own language. What happened at Babel was fixed by God's Spirit. God always finishes what He starts."
       ],
       "devotional": {
-        "bigIdea": "The people at Babel wanted to be famous and do things their own way instead of God's way. God wants us to trust His plans, not just make up our own.",
+        "bigIdea": "The people at Babel wanted to do things their own way instead of God's way. God wants us to trust His plans, not just make up our own.",
         "questions": [
-          "The people at Babel wanted to make themselves famous. What kinds of things do people want to be famous for today? What do you think God thinks about that?",
-          "God asked people to spread out and they said no. Have you ever not wanted to do something God or your parents asked you to do? What happened?",
-          "At the end of the story, God's Spirit brought people back together. What does that tell you about God's plan for all the different people of the world?"
+          "Have you ever wanted to show off or be the most important person? How did that feel?",
+          "God asked people to spread out and they said no. Have you ever not wanted to do something a grown-up asked you to do? What happened?",
+          "At the end of the story, God fixed the Babel problem with His Spirit. What does that tell you about God? Does He give up?"
         ]
       },
+      "devotionalHeading": "Let's Talk About It",
       "tags": ["pride", "ambition", "humility", "God's sovereignty"],
       "connections": [
         {
@@ -490,7 +502,7 @@
           "question": "How did God stop the people from finishing their tower?",
           "options": [
             "He sent rain to knock it down",
-            "He confused their language so they could not understand each other",
+            "He mixed up their language so they could not understand each other",
             "He made them all fall asleep",
             "He sent an angel to tell them to stop"
           ],
@@ -502,14 +514,909 @@
           "options": [
             "High tower",
             "Big city",
-            "Confused",
+            "Mixed up",
             "Famous place"
           ],
           "answer": 2,
-          "explanation": "Babel sounds like the Hebrew word for confused. The city got that name because God confused the language of all the people there."
+          "explanation": "Babel means mixed up. The city got that name because God mixed up the language of all the people there."
         }
       ],
       "published_date": "2026-06-03"
+    },
+    {
+      "id": "abraham",
+      "era": "patriarchs",
+      "order": 6,
+      "access": "premium",
+      "emoji": "⭐",
+      "title": "A Promise as Big as the Stars",
+      "book": "Genesis 12-22",
+      "date": "c. 2091 BC",
+      "location": "Ur, Iraq to Canaan, Israel",
+      "hook": "God told a man to leave his home and go somewhere new. He did not even know where he was going yet. But he went.",
+      "story": [
+        "A man named Abram had a good life. He had a nice home, a wife named Sarai, and lots of animals and helpers. He was happy where he was. He was seventy-five years old.",
+        "Then God spoke to him. God said, \"Leave your home and your family. Go to a new land that I will show you.\" God did not give him a map. He did not tell him how far it was. He just said go.",
+        "God also made Abram a big promise. He said, \"I will make your family into a great nation. I will bless you, and through your family, every person on earth will be blessed.\" That was a very big promise for one man.",
+        "Abram went. He packed everything up and left the only home he had ever known. He did not know exactly where he was going. He just knew that God was asking him to go. So he went.",
+        "Years went by. Then more years. Abram and Sarai had no children, and they were getting old. How could God make a great nation out of them if they had no children? It seemed impossible.",
+        "One night, God took Abram outside and said, \"Look up at the sky. Can you count all the stars?\" There were so many stars that Abram could not even begin to count them. God said, \"That is how many people will be in your family one day.\" Abram looked up at all those stars, and he believed God.",
+        "God changed Abram's name to Abraham, which means father of many nations. And He changed Sarai's name to Sarah. Then God told them something that made Sarah laugh right out loud. He said they were going to have a baby. Sarah was ninety years old! God heard her laughing and said, \"Is anything too hard for me?\"",
+        "One year later, Abraham and Sarah held their baby boy. They named him Isaac, which means he laughs. God had kept His promise.",
+        "Then God asked Abraham to do the hardest thing he had ever been asked to do. He asked Abraham to give Isaac back to Him on a mountain. Abraham was very sad. But he trusted God. He took Isaac up the mountain.",
+        "At the last moment, God called out, \"Stop! I can see that you trust me.\" Abraham looked up and saw a ram caught in the bushes. He used the ram instead. God had provided everything Abraham needed. Abraham named that place The Lord Will Provide. And it has been called that ever since."
+      ],
+      "devotional": {
+        "bigIdea": "Abraham did not know where he was going. He just knew who was asking him to go. That is what it means to trust God.",
+        "questions": [
+          "Abraham left his home without even knowing where he was going. Have you ever had to do something scary because someone you trusted asked you to?",
+          "God asked Abraham to wait a very long time for his baby boy. Waiting is hard! What is something you have had to wait a long time for?",
+          "God said to Abraham, \"Is anything too hard for me?\" What does that make you think? Is there anything too hard for God?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": ["faith", "obedience", "God's promises", "trust", "patience"],
+      "connections": [
+        {
+          "title": "The Darkest Friday",
+          "storyId": "crucifixion",
+          "reference": "John 3:16",
+          "why": "God gave His own Son, just like He asked Abraham to give his. But this time, no angel stopped it."
+        },
+        {
+          "title": "The Empty Tomb",
+          "storyId": "resurrection",
+          "reference": "Hebrews 11:17-19",
+          "why": "Abraham believed God could do the impossible. That same faith points straight to the resurrection."
+        },
+        {
+          "title": "The Ark and the Rainbow",
+          "storyId": "noah",
+          "reference": "Genesis 9:8-17",
+          "why": "God made a big promise to Noah with a rainbow. The promise to Abraham is the next big promise in God's plan."
+        }
+      ],
+      "audio": "./audio/abraham.mp3",
+      "quiz": [
+        {
+          "question": "How old was Abram when God told him to leave his home and go?",
+          "options": [
+            "Twenty-five years old",
+            "Forty years old",
+            "Seventy-five years old",
+            "Ten years old"
+          ],
+          "answer": 2,
+          "explanation": "Abram was seventy-five years old, not young at all, when he trusted God and left everything he knew."
+        },
+        {
+          "question": "What did God use to show Abraham how big his family would be one day?",
+          "options": [
+            "Grains of sand on a beach",
+            "The stars in the night sky",
+            "Drops of water in a river",
+            "Blades of grass in a field"
+          ],
+          "answer": 1,
+          "explanation": "God took Abraham outside at night and said count the stars. So shall your family be. Abraham believed Him."
+        },
+        {
+          "question": "What did God provide at the last moment when Abraham was on the mountain?",
+          "options": [
+            "A lamb sent down from heaven",
+            "A dove with a message",
+            "A ram caught in the bushes",
+            "An angel with a new plan"
+          ],
+          "answer": 2,
+          "explanation": "A ram was caught in the bushes nearby. Abraham used it instead of Isaac. He named the place The Lord Will Provide."
+        }
+      ],
+      "published_date": "2026-06-04"
+    },
+    {
+      "id": "joseph",
+      "era": "patriarchs",
+      "order": 7,
+      "access": "premium",
+      "emoji": "🌾",
+      "title": "The Dreamer's Long Road",
+      "book": "Genesis 37-50",
+      "date": "c. 1898-1885 BC",
+      "location": "Canaan to Egypt",
+      "hook": "Joseph had big dreams. His brothers did not like that. But God had a plan that nobody could have guessed.",
+      "story": [
+        "Jacob had twelve sons, and Joseph was his favorite. Jacob gave Joseph a beautiful coat to show how much he loved him. Joseph's brothers saw the coat every day and it made them jealous.",
+        "Joseph also had two special dreams. In one dream, his brothers' bundles of wheat bowed down to his. In another dream, the sun and moon and eleven stars all bowed to him. When Joseph told his brothers about the dreams, they got very angry. Were they supposed to bow down to their little brother? No way.",
+        "One day, far from home, the brothers saw their chance. They grabbed Joseph, took his beautiful coat, and threw him into a deep empty pit. Then some traders came by going to Egypt. The brothers sold Joseph to the traders for twenty pieces of silver. They dipped his coat in goat's blood and told their father that a wild animal must have eaten him. Jacob cried for a long, long time.",
+        "In Egypt, Joseph was sold to work in a man's house. He worked hard and did everything right. But then something unfair happened and Joseph was thrown into prison. He had done nothing wrong. He was in prison anyway.",
+        "Even in prison, God was with Joseph. Two men who worked for the king had strange dreams one night. Joseph listened carefully and told each man what his dream meant. Everything he said came true exactly.",
+        "One of the men went back to work for the king and forgot all about Joseph. Two whole years went by. Then the king himself had two very strange dreams. Nobody could figure out what they meant.",
+        "The man who had forgotten about Joseph finally remembered. He told the king about the young man in prison. Joseph was brought out of prison, cleaned up, and stood before the most powerful man in the whole country.",
+        "Joseph listened to the king's dreams and said, \"Seven good years of food are coming. Then seven years of no food at all. You need to save up food now while you can.\" The king looked at Joseph and said, \"There is no one as wise as you. You will be in charge of all Egypt.\" Joseph went from prison to being the second most powerful man in the country in one single day.",
+        "When the years of no food came, Joseph's brothers traveled to Egypt to buy food. They stood before the man in charge and bowed down. They had no idea it was Joseph.",
+        "Joseph tested his brothers to see if their hearts had changed. When he saw that they had, he could not hold back his feelings any longer. He started crying so loudly that everyone in the building could hear him. He said, \"I am Joseph, your brother.\" Then he said words that nobody expected: \"You meant to hurt me. But God meant it for good.\""
+      ],
+      "devotional": {
+        "bigIdea": "Joseph had a very hard life for a long time. But God was with him every step of the way, even when it did not feel like it.",
+        "questions": [
+          "Joseph's brothers were mean to him because they were jealous. Have you ever been left out or treated unfairly? How did that feel?",
+          "Joseph was in prison for something he did not do. That is very unfair! Do you think God was still with him even there? How do you know?",
+          "Joseph said to his brothers, \"You meant to hurt me, but God meant it for good.\" What do you think that means?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": ["forgiveness", "perseverance", "God's care", "jealousy"],
+      "connections": [
+        {
+          "title": "The Boy Who Came Home",
+          "storyId": "prodigal",
+          "reference": "Genesis 45:15",
+          "why": "Joseph hugged his brothers and forgave them, just like the father ran to his son in that story."
+        },
+        {
+          "title": "The Darkest Friday",
+          "storyId": "crucifixion",
+          "reference": "Acts 7:9-10",
+          "why": "Joseph was sold by his brothers and then lifted up to save many lives. His story points to Jesus."
+        },
+        {
+          "title": "The Baby in the River",
+          "storyId": "moses-birth",
+          "reference": "Genesis 50:20",
+          "why": "God used Joseph's time in Egypt to get His people there. Then He used Moses to bring them home."
+        }
+      ],
+      "audio": "./audio/joseph.mp3",
+      "quiz": [
+        {
+          "question": "Why were Joseph's brothers so jealous of him?",
+          "options": [
+            "Because Joseph was the fastest runner",
+            "Because their father loved Joseph best and gave him a beautiful coat",
+            "Because Joseph had the most animals",
+            "Because Joseph was the tallest brother"
+          ],
+          "answer": 1,
+          "explanation": "Jacob gave Joseph a beautiful coat to show how much he loved him. The brothers saw it every day and it made them very jealous."
+        },
+        {
+          "question": "What happened to Joseph after his brothers threw him in the pit?",
+          "options": [
+            "He climbed out and ran home",
+            "He was rescued by his father Jacob",
+            "His brothers sold him to traders going to Egypt",
+            "He stayed in the pit until it rained"
+          ],
+          "answer": 2,
+          "explanation": "Some traders came by on their way to Egypt. The brothers sold Joseph to them for twenty pieces of silver."
+        },
+        {
+          "question": "What did Joseph say to his brothers when he finally told them who he was?",
+          "options": [
+            "I have been looking for you all this time",
+            "You will pay for what you did to me",
+            "You meant to hurt me, but God meant it for good",
+            "I never want to see you again"
+          ],
+          "answer": 2,
+          "explanation": "Joseph said you meant to hurt me, but God meant it for good. It is one of the most amazing things anyone ever said."
+        }
+      ],
+      "published_date": "2026-06-04"
+    },
+    {
+      "id": "moses-birth",
+      "era": "exodus",
+      "order": 8,
+      "access": "premium",
+      "emoji": "🌿",
+      "title": "The Baby in the River",
+      "book": "Exodus 1-2",
+      "date": "c. 1526 BC",
+      "location": "Egypt, the Nile River",
+      "hook": "A brave mother hid her baby for as long as she could. When she could not hide him anymore, she did something very brave.",
+      "story": [
+        "More than four hundred years had passed since Joseph. The family of Israel had grown into a huge people. There were so many of them that the new king of Egypt got scared. He made all of the Israelite people into slaves.",
+        "The slaves had to work very hard every single day in the hot sun, making bricks and building things for the king. The king kept making their work harder, but the more he pushed them down, the more they grew. So the king did something terrible. He said that every baby boy born to the Israelite people had to be thrown into the river.",
+        "Into this scary world, a woman had a baby boy. She took one look at him and knew she had to protect him. She hid him for three whole months. Every time he made a sound, her heart must have jumped.",
+        "When she could not hide him any longer, she made a little boat out of reeds, the tall grasses that grow by the river. She made it waterproof and put her baby inside. Then she carried him to the river and set the little boat in the water among the tall reeds. His big sister Miriam watched from a little way away to see what would happen.",
+        "The king's own daughter came down to the river to wash. She saw the little boat floating in the reeds. She opened it, and the baby cried. Her heart went soft right away. She said, \"This must be one of the Israelite babies.\" But she did not throw him in the river. She kept him.",
+        "Right then, Miriam stepped out from her hiding place. She asked, \"Should I go find an Israelite woman to feed the baby for you?\" Yes, said the princess. Miriam ran and got their own mother.",
+        "The mother who had been so scared and so sad got to hold her own baby boy and take care of him, and the king's own daughter paid her to do it.",
+        "The baby grew up in the king's palace. The princess named him Moses, which means pulled out of the water. God had used the very river the king meant for harm to carry Moses to safety. God was already writing the next part of the story."
+      ],
+      "devotional": {
+        "bigIdea": "Moses's mother was very brave. She trusted God with her baby when she could not protect him herself. God was watching over Moses the whole time.",
+        "questions": [
+          "Moses's mother made a little boat and put her baby in the river because she wanted to save him. That must have been so hard! Have you ever had to let go of something you loved?",
+          "God used the king's own daughter to save a baby the king wanted to hurt. Does that surprise you? Can you think of other times God uses surprising people to do good things?",
+          "Moses's sister Miriam was watching and stepped forward at exactly the right moment. Have you ever been brave at just the right time?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": ["courage", "faith", "God's protection", "family"],
+      "connections": [
+        {
+          "title": "The Ark and the Rainbow",
+          "storyId": "noah",
+          "reference": "Exodus 2:3",
+          "why": "The word for Moses's little boat is the same word used for Noah's big ark. Both were boats that God used to rescue someone."
+        },
+        {
+          "title": "The Burning Bush",
+          "storyId": "burning-bush",
+          "reference": "Acts 7:22",
+          "why": "Growing up in the palace gave Moses the education God would use to prepare him for his big job."
+        },
+        {
+          "title": "Impossible News",
+          "storyId": "annunciation",
+          "reference": "Matthew 2:13-15",
+          "why": "Jesus was also a baby whose life was in danger from a king. His family had to run to keep Him safe, just like Moses."
+        }
+      ],
+      "audio": "./audio/moses-birth.mp3",
+      "quiz": [
+        {
+          "question": "What did Moses's mother make to keep her baby safe?",
+          "options": [
+            "A strong wooden box with a lock",
+            "A little boat made of river reeds",
+            "A hiding place under the floor",
+            "A tent in the forest"
+          ],
+          "answer": 1,
+          "explanation": "Moses's mother made a little boat out of reeds from the river and made it waterproof so her baby would float safely."
+        },
+        {
+          "question": "Who found the baby Moses in the river?",
+          "options": [
+            "A fisherman who was fishing nearby",
+            "Moses's sister Miriam",
+            "The king's own daughter",
+            "A kind old woman from the village"
+          ],
+          "answer": 2,
+          "explanation": "The king's daughter came down to the river and found the little boat. Even though she knew he was an Israelite baby, she kept him and raised him."
+        },
+        {
+          "question": "What does the name Moses mean?",
+          "options": [
+            "Born in a river",
+            "Pulled out of the water",
+            "Son of a king",
+            "Strong and brave"
+          ],
+          "answer": 1,
+          "explanation": "The princess named him Moses, which means pulled out of the water, because she pulled him out of the Nile River."
+        }
+      ],
+      "published_date": "2026-06-04"
+    },
+    {
+      "id": "burning-bush",
+      "era": "exodus",
+      "order": 9,
+      "access": "premium",
+      "emoji": "🔥",
+      "title": "The Burning Bush",
+      "book": "Exodus 3-4",
+      "date": "c. 1446 BC",
+      "location": "Mount Horeb, Sinai",
+      "hook": "Moses was watching sheep in the desert when he saw something very strange. A bush was on fire, but it was not burning up. Then God called his name.",
+      "story": [
+        "Moses had grown up in the palace, but things had gone wrong and he had run away to the desert. He had been living there for forty years, taking care of sheep for his father-in-law. He was eighty years old. His big exciting life in the palace felt like a long time ago.",
+        "One ordinary day, Moses was walking with the sheep near a mountain called Horeb. He saw something that stopped him right in his tracks. A bush was on fire.",
+        "Bushes catching fire in the hot desert was not unusual. But this bush kept burning and burning and was not burning up at all. The leaves stayed green. Moses walked over to look more closely.",
+        "The moment Moses turned to look, God called out from inside the burning bush. \"Moses! Moses!\" Moses said, \"Here I am!\" God said, \"Take off your shoes. The ground where you are standing is special because I am here.\" Moses took off his shoes.",
+        "Then God said, \"I have seen how My people are suffering in Egypt. I have heard them crying. I know how much they are hurting. I am going to rescue them. And I am sending you to go tell the king to let them go.\"",
+        "Moses was surprised. He said, \"Who am I? Why would the king listen to me?\" God said, \"I will be with you. That is all you need.\"",
+        "Moses tried again. He said, \"What if people ask me Your name? What should I tell them?\" God said, \"Tell them I AM sent you. I am always here, always present, always the same.\"",
+        "Moses kept finding reasons why he could not do it. \"What if they do not believe me? I am not a good speaker. Please send someone else!\" Each time Moses worried, God answered. He gave Moses signs to show people. He gave Moses his brother Aaron to help him speak.",
+        "Moses had five worries. God had an answer for every single one. Finally Moses stopped arguing and went. He was eighty years old. He had a brother and a staff and a God who promised to be with him. It was enough."
+      ],
+      "devotional": {
+        "bigIdea": "Every single worry Moses had, God had an answer for. God does not just tell us not to be scared. He stays right beside us.",
+        "questions": [
+          "Moses said to God, \"Who am I? I am not important enough for this job.\" Have you ever felt like you were not good enough to do something? What happened?",
+          "God told Moses, \"I will be with you. That is all you need.\" Do you believe that? What does it feel like when you know someone is with you?",
+          "Moses turned aside to look at the strange burning bush. What might he have missed if he had been too busy to stop and look? What do you think God wants you to pay attention to?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": ["calling", "courage", "God's presence", "inadequacy", "faith"],
+      "connections": [
+        {
+          "title": "The Baby in the River",
+          "storyId": "moses-birth",
+          "reference": "Exodus 3:7-8",
+          "why": "God says I have seen and I have heard. The same God who protected Moses as a baby was now sending him back to help His people."
+        },
+        {
+          "title": "The Darkest Friday",
+          "storyId": "crucifixion",
+          "reference": "John 8:58",
+          "why": "Jesus said before Abraham was, I AM. He used the same name God spoke from the burning bush."
+        },
+        {
+          "title": "Three Hundred Men and Torches",
+          "storyId": "gideon",
+          "reference": "Judges 6:14",
+          "why": "God called Gideon the same way He called Moses. Both men felt completely unqualified. Both went anyway."
+        }
+      ],
+      "audio": "./audio/burning-bush.mp3",
+      "quiz": [
+        {
+          "question": "What was so strange about the burning bush that made Moses stop and look?",
+          "options": [
+            "It was glowing every color of the rainbow",
+            "It was floating above the ground",
+            "It was on fire but it was not burning up",
+            "It was singing a song"
+          ],
+          "answer": 2,
+          "explanation": "Bushes catching fire in the hot desert happened sometimes. But this bush kept burning and burning and never burned up. That was what stopped Moses."
+        },
+        {
+          "question": "What did God tell Moses to do before coming closer to the burning bush?",
+          "options": [
+            "Bring a gift from his flock",
+            "Take off his shoes because the ground was special",
+            "Cover his eyes so he would not be scared",
+            "Kneel down and be very quiet"
+          ],
+          "answer": 1,
+          "explanation": "God told Moses to take off his shoes because the ground was special. God's presence makes ordinary places into something amazing."
+        },
+        {
+          "question": "What was Moses's first worry when God asked him to go talk to the king?",
+          "options": [
+            "He said he was too old",
+            "He said the desert was too far to walk",
+            "He said, \"Who am I? Why would the king listen to me?\"",
+            "He said he did not speak Egyptian"
+          ],
+          "answer": 2,
+          "explanation": "Moses said who am I. He felt too small for such a big job. God's answer was not to list Moses's good qualities. He just said I will be with you."
+        }
+      ],
+      "published_date": "2026-06-04"
+    },
+    {
+      "id": "red-sea",
+      "era": "exodus",
+      "order": 10,
+      "access": "premium",
+      "emoji": "🌊",
+      "title": "Through the Sea on Dry Ground",
+      "book": "Exodus 14-15",
+      "date": "c. 1446 BC",
+      "location": "The Red Sea, Egypt",
+      "hook": "God's people were free at last! But then the king changed his mind and came after them with his whole army. They were trapped between the army and the sea.",
+      "story": [
+        "After many amazing and terrifying things happened in Egypt, the king finally let God's people go. Hundreds of thousands of people walked out of Egypt, free for the very first time. God went ahead of them as a tall cloud during the day and a pillar of fire at night so they could always see where He was.",
+        "But then the king changed his mind. He took six hundred of his best chariots and his whole army and chased after the Israelites. Chariots are like fast carts pulled by horses, and they were very scary.",
+        "The people looked up and saw the army coming behind them. Then they looked ahead and saw the sea in front of them. There was nowhere to go. They were very scared and started complaining to Moses. They said, \"Did you bring us out here to die?\"",
+        "Moses said something very important. He said, \"Do not be afraid. Stand still and watch what God is going to do today. You will never see this army again. God will fight for you. You just need to be still.\"",
+        "Then God told Moses to hold out his staff over the sea. All that night, a strong wind blew. And the sea split open. The water piled up on both sides like two great walls, and the ground in the middle went completely dry. The people walked through the sea on dry ground with walls of water on both sides.",
+        "The Egyptian army followed them in. But then God looked down at the army and made the wheels of their chariots come off. They could not move properly. The soldiers said to each other, \"God is fighting for Israel! Let us get out of here!\" But it was too late.",
+        "When all of God's people were safely on the other side, Moses held out his staff again, and the water came rushing back. The whole army was gone. Not one soldier was left.",
+        "The people stood on the other side and looked back at the sea. They were safe. God had done something nobody had ever seen before. Then Moses sang a song, and his sister Miriam grabbed a tambourine and all the women danced and sang together. They had been slaves. Now they were free. And the God who had been quiet for four hundred years had made Himself impossible to ignore."
+      ],
+      "devotional": {
+        "bigIdea": "When you are stuck and scared with nowhere to go, that is often exactly when God does His most amazing work. He just asks you to trust Him and watch.",
+        "questions": [
+          "The people were stuck between the army and the sea and they were very scared. Have you ever felt really stuck and not known what to do? What happened?",
+          "Moses said, \"Stand still and watch what God is going to do.\" That is very hard when you are scared! Why do you think being still and trusting God is sometimes the bravest thing you can do?",
+          "After they crossed safely, Miriam grabbed her tambourine and everyone danced and sang. Have you ever been so happy and relieved that you just had to celebrate?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": ["faith", "miracles", "God's power", "fear", "rescue"],
+      "connections": [
+        {
+          "title": "The Ark and the Rainbow",
+          "storyId": "noah",
+          "reference": "1 Corinthians 10:1-2",
+          "why": "Paul says crossing the sea was like baptism for Israel, being carried safely through water into a new free life."
+        },
+        {
+          "title": "The Empty Tomb",
+          "storyId": "resurrection",
+          "reference": "Isaiah 43:16-19",
+          "why": "God says I am doing something new. The crossing of the sea pointed forward to an even bigger rescue."
+        },
+        {
+          "title": "The Burning Bush",
+          "storyId": "burning-bush",
+          "reference": "Exodus 14:31",
+          "why": "After the crossing, the people believed in God and in Moses, the faith God had been building since the burning bush."
+        }
+      ],
+      "audio": "./audio/red-sea.mp3",
+      "quiz": [
+        {
+          "question": "What was in front of the people and what was behind them when they were trapped?",
+          "options": [
+            "A desert in front and a mountain behind",
+            "The sea in front and the Egyptian army behind",
+            "A forest in front and a river behind",
+            "A city in front and a storm behind"
+          ],
+          "answer": 1,
+          "explanation": "The sea was in front of them and the Egyptian army was coming behind them. There was nowhere to go."
+        },
+        {
+          "question": "What did God use to make a dry path through the sea?",
+          "options": [
+            "A big wave that pushed the water aside",
+            "Angels who held the water back",
+            "A strong wind that blew all night",
+            "Moses jumping into the water"
+          ],
+          "answer": 2,
+          "explanation": "God sent a strong wind that blew all night and pushed the water into two walls, leaving dry ground in the middle."
+        },
+        {
+          "question": "What did Miriam do when the people reached the other side safely?",
+          "options": [
+            "She sat down and cried with happiness",
+            "She grabbed a tambourine and led everyone in dancing and singing",
+            "She built a fire to warm everyone up",
+            "She went straight to sleep because she was so tired"
+          ],
+          "answer": 1,
+          "explanation": "Miriam grabbed her tambourine and led all the women in dancing and singing. It was one of the happiest moments in the whole Bible."
+        }
+      ],
+      "published_date": "2026-06-04"
+    },
+    {
+      "id": "ten-commandments",
+      "era": "exodus",
+      "order": 11,
+      "access": "premium",
+      "emoji": "📜",
+      "title": "The Ten Commandments",
+      "book": "Exodus 19-20",
+      "date": "c. 1446 BC",
+      "location": "Mount Sinai",
+      "hook": "The whole mountain shook and smoked and rumbled. Then God spoke out loud so everyone could hear.",
+      "story": [
+        "Three months after walking out of Egypt, the Israelites set up camp at the bottom of a big mountain called Sinai. God told Moses to tell the people to get ready. In three days, God Himself was going to come down to speak to them.",
+        "On the morning of the third day, something amazing and terrifying happened. Thunder boomed and lightning flashed all over the mountain. A thick cloud covered the top. A loud trumpet blast rang out, so loud that the whole camp of people shook with fear. Then the whole mountain started to shake and smoke, because God came down on it in fire.",
+        "The people were told to stay back from the mountain. God was coming down, and His presence was not something to treat as ordinary. This was the same God who had split the sea and sent amazing signs in Egypt. And now He was going to speak.",
+        "God spoke ten rules that He wanted His people to live by. The first four rules were about God Himself. He said to have no other gods, to not make statues to worship, to treat His name with care, and to rest one day every week the way He had rested.",
+        "The last six rules were about people. He said to honor your mum and dad. Do not hurt people. Be faithful to your husband or wife. Do not steal. Do not tell lies about others. Do not wish that you had things that belong to someone else.",
+        "The people were so scared by the thunder and fire and smoke that they stepped back and said to Moses, \"You talk to God for us and then tell us what He said. If God keeps speaking directly to us, we might not survive!\" Moses went up into the cloud where God was.",
+        "God wrote these ten rules on two flat stones with His own finger. Moses brought them back down the mountain.",
+        "Here is something important to remember. God gave these rules after He had already rescued His people from Egypt. He did not say, follow these rules and then I will save you. He saved them first. Then He said, now that you are free, here is how to live well. That is what kind of God He is."
+      ],
+      "devotional": {
+        "bigIdea": "God's rules are not meant to make life boring. They are meant to help us live well together and stay close to God.",
+        "questions": [
+          "God gave His rules after He had already rescued His people. He did not make them earn their rescue. How does it feel to know that God helps us before He asks things of us?",
+          "Which of the ten rules do you think would be hardest to follow? Why?",
+          "Jesus said all the rules can be made simple: love God with everything you have and love other people. Can you think of one way to do that today?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": ["God's law", "obedience", "love", "worship"],
+      "connections": [
+        {
+          "title": "The Upside-Down Kingdom",
+          "storyId": "sermon-mount",
+          "reference": "Matthew 5:17",
+          "why": "Jesus said He came to fulfill the law, not get rid of it. He showed that the rules were always about the heart."
+        },
+        {
+          "title": "Through the Sea on Dry Ground",
+          "storyId": "red-sea",
+          "reference": "Exodus 20:2",
+          "why": "God opens the Ten Commandments by saying I am the one who brought you out of Egypt. The rescue always comes before the rules."
+        },
+        {
+          "title": "The Darkest Friday",
+          "storyId": "crucifixion",
+          "reference": "Romans 8:3-4",
+          "why": "What the law pointed to but could not do in us, Jesus did by coming to live among us."
+        }
+      ],
+      "audio": "./audio/ten-commandments.mp3",
+      "quiz": [
+        {
+          "question": "What happened on the mountain when God came down to speak?",
+          "options": [
+            "It turned green with flowers and fruit",
+            "It became quiet and peaceful",
+            "It shook and smoked and there was thunder and lightning",
+            "A big rainbow appeared over the top"
+          ],
+          "answer": 2,
+          "explanation": "The mountain shook and smoked and there was thunder and lightning and a loud trumpet sound. God's presence is powerful and amazing."
+        },
+        {
+          "question": "What did God write the ten rules on?",
+          "options": [
+            "A big piece of wood",
+            "Two flat stones",
+            "A long piece of cloth",
+            "The side of the mountain"
+          ],
+          "answer": 1,
+          "explanation": "God wrote the ten rules on two flat stones with His own finger. Moses carried them down the mountain."
+        },
+        {
+          "question": "When did God give the people His rules?",
+          "options": [
+            "Before He rescued them from Egypt so they could earn their freedom",
+            "After He had already rescued them and they were free",
+            "While they were still slaves in Egypt",
+            "A long time after they had settled in the new land"
+          ],
+          "answer": 1,
+          "explanation": "God rescued His people first and then gave them the rules. He did not make them earn their rescue. He helped them first."
+        }
+      ],
+      "published_date": "2026-06-04"
+    },
+    {
+      "id": "moses-water",
+      "era": "exodus",
+      "order": 12,
+      "access": "premium",
+      "emoji": "💧",
+      "title": "Water From the Rock",
+      "book": "Exodus 17",
+      "date": "c. 1446 BC",
+      "location": "The Wilderness",
+      "hook": "The people were very thirsty and there was no water anywhere. Then God told Moses to hit a rock with his stick.",
+      "story": [
+        "The Israelites were travelling through the desert and they stopped at a place called Rephidim. There was no water there. Not a little water. No water at all.",
+        "The people were very thirsty and very grumpy. They turned on Moses and said, \"Why did you bring us out of Egypt? To make us and our children and our animals die of thirst?\" Moses was in real trouble. The people were so angry they wanted to throw rocks at him.",
+        "Moses called out to God. \"What should I do? These people are about to throw rocks at me!\" God told Moses exactly what to do.",
+        "God said, \"Take some of the leaders with you and walk ahead to a rock at Horeb. Take your staff, the same stick you used at the Red Sea. Hit the rock with it. Water will come out and the people will have something to drink.\"",
+        "Moses did exactly what God said. He walked to the rock with the leaders watching. He lifted his staff and hit the rock.",
+        "Water poured out of the rock. Enough water for all the people and all the animals in the desert. Clean, fresh water pouring out of a hard rock in the middle of the desert, because Moses hit it and God made it happen.",
+        "Moses called the place by two names that meant testing and arguing, because the people had tested God by asking, \"Is God actually here with us or not?\" The water answered that question.",
+        "Many years later, a man named Paul wrote something surprising. He said that the rock in the desert was pointing to Jesus. Jesus is the one who gives living water that never runs out, not just water for thirsty bodies but water for thirsty hearts. Jesus stood up one day and called out, \"If anyone is thirsty, come to me and drink.\""
+      ],
+      "devotional": {
+        "bigIdea": "The people forgot what God had done the moment things got hard again. God gave them water from a rock. He keeps taking care of people who keep forgetting He takes care of them.",
+        "questions": [
+          "The people forgot about the Red Sea as soon as they were thirsty. Have you ever forgotten something good that happened because something hard came along? What was it?",
+          "Moses called out to God when he was worried instead of just giving up. What do you do when something feels really hard or scary?",
+          "Jesus said, \"If anyone is thirsty, come to me.\" What kind of thirst do you think He was talking about?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": ["provision", "faith", "wilderness", "water"],
+      "connections": [
+        {
+          "title": "The Burning Bush",
+          "storyId": "burning-bush",
+          "reference": "Exodus 17:5",
+          "why": "The same staff Moses used at the burning bush and the Red Sea was the one God told him to use on the rock."
+        },
+        {
+          "title": "Through the Sea on Dry Ground",
+          "storyId": "red-sea",
+          "reference": "1 Corinthians 10:4",
+          "why": "Paul says the rock was pointing to Christ, connecting the water in the wilderness to Jesus who offers living water."
+        },
+        {
+          "title": "The Woman at the Well",
+          "storyId": "woman-at-well",
+          "reference": "John 7:37-38",
+          "why": "Jesus offered living water that would never run dry, the real thing the desert rock was only pointing toward."
+        }
+      ],
+      "audio": "./audio/moses-water.mp3",
+      "quiz": [
+        {
+          "question": "Why were the people so angry with Moses at Rephidim?",
+          "options": [
+            "Because Moses had gotten them lost in the desert",
+            "Because there was no water and they were afraid of dying of thirst",
+            "Because Moses had taken their food",
+            "Because Moses would not let them rest"
+          ],
+          "answer": 1,
+          "explanation": "There was no water at all. The people were so thirsty and scared that they turned on Moses and started arguing."
+        },
+        {
+          "question": "What did God tell Moses to use to get water from the rock?",
+          "options": [
+            "His hands pressed flat against the stone",
+            "A prayer spoken out loud to the rock",
+            "His staff, the same one he used at the Red Sea",
+            "A bowl of water poured over it"
+          ],
+          "answer": 2,
+          "explanation": "God told Moses to use his staff and hit the rock. The same staff used at the Red Sea was chosen again here."
+        },
+        {
+          "question": "What did Jesus say that connects to this story?",
+          "options": [
+            "I am the bread of life",
+            "If anyone is thirsty, come to me and drink",
+            "I am the light of the world",
+            "Come to me and I will give you rest"
+          ],
+          "answer": 1,
+          "explanation": "Jesus stood up one day and said if anyone is thirsty, come to me and drink. He is the living water the rock in the desert was pointing toward."
+        }
+      ],
+      "published_date": "2026-06-04"
+    },
+    {
+      "id": "rahab",
+      "era": "promised-land",
+      "order": 13,
+      "access": "premium",
+      "emoji": "🪡",
+      "title": "The Scarlet Thread",
+      "book": "Joshua 2 and 6",
+      "date": "c. 1406 BC",
+      "location": "Jericho, Canaan",
+      "hook": "Two spies were hiding in a city that Israel needed to take. A woman with a complicated past hid them. Then she tied a red rope in her window.",
+      "story": [
+        "After forty years in the desert, it was finally time. Moses had died, and Joshua was the new leader. The Israelites were camped right across the river from the land God had promised them. The first city in their way was Jericho, a city with very thick, very tall walls.",
+        "Joshua sent two spies across the river to have a look around. The spies went into the city and came to the house of a woman named Rahab. Her house was actually built right into the city wall.",
+        "But the king of Jericho found out that spies were in the city. He sent soldiers to Rahab's house. Rahab had already hidden the spies under piles of grain drying on her roof. She told the soldiers the men had already left and if they hurried they could probably catch them. The soldiers ran off. The spies were safe.",
+        "Then Rahab went up to the roof and talked to the spies. She told them something surprising. She said everyone in the city was scared. They had all heard about God drying up the Red Sea. They had heard what God did to the armies that stood against Israel. She said, \"Your God is the real God. He is God in heaven above and on earth below. I know it.\"",
+        "She had never met God. She had only heard the stories. But she believed them. And she had hidden the spies at great risk to herself.",
+        "She asked only one thing. \"When you come back to take this city, please keep me and my family safe.\" The spies agreed. They gave her a sign. Tie a red rope in your window. Anyone inside your house when we come will be kept safe.",
+        "Rahab lowered them by a rope out of the window and they escaped. Then she tied the red rope in the window and waited.",
+        "When Jericho fell, Joshua kept the promise. Rahab and her whole family were brought out safely. The woman with the red rope in her window walked out alive. And the Bible tells us that Rahab became part of the family of Jesus Himself."
+      ],
+      "devotional": {
+        "bigIdea": "Rahab had only heard stories about God. But she believed them and acted on them. God does not need a perfect past to write someone into His story.",
+        "questions": [
+          "Rahab believed in God just from hearing stories about what He had done. Have you ever believed something because someone told you about it even though you did not see it yourself?",
+          "The red rope in Rahab's window kept her family safe. What do you think that red rope was pointing toward?",
+          "Rahab risked her life to help the spies because she trusted God. When have you been brave for someone else?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": ["faith", "courage", "redemption", "God's grace"],
+      "connections": [
+        {
+          "title": "The Darkest Friday",
+          "storyId": "crucifixion",
+          "reference": "Hebrews 11:31",
+          "why": "Rahab is in the Bible's list of great faith heroes. The red rope points to the blood of Jesus."
+        },
+        {
+          "title": "The Walls Come Down",
+          "storyId": "jericho",
+          "reference": "Joshua 2:11",
+          "why": "Rahab's faith came before the walls fell. She believed before she saw God act."
+        },
+        {
+          "title": "Impossible News",
+          "storyId": "annunciation",
+          "reference": "Matthew 1:5",
+          "why": "Rahab is named in the family line of Jesus in Matthew's Gospel. God chose her on purpose."
+        }
+      ],
+      "audio": "./audio/rahab.mp3",
+      "quiz": [
+        {
+          "question": "Where did Rahab hide the two spies?",
+          "options": [
+            "In a cave outside the city walls",
+            "In a room under the floor",
+            "Under piles of grain drying on her roof",
+            "In a barrel of water"
+          ],
+          "answer": 2,
+          "explanation": "Rahab hid the two spies under piles of grain that were drying on her flat roof, then sent the soldiers in the wrong direction."
+        },
+        {
+          "question": "What sign did the spies give Rahab to keep her family safe?",
+          "options": [
+            "A white stone placed above her door",
+            "A red rope tied in her window",
+            "A lit candle left burning",
+            "Her name written on the wall"
+          ],
+          "answer": 1,
+          "explanation": "The spies told Rahab to tie a red rope in her window. Anyone inside that house would be kept safe when Israel came."
+        },
+        {
+          "question": "How did Rahab know that God was real even before she met any of God's people?",
+          "options": [
+            "She had a dream about God one night",
+            "She had heard the stories about what God did at the Red Sea",
+            "She saw a rainbow over the Israelite camp",
+            "An angel appeared to her"
+          ],
+          "answer": 1,
+          "explanation": "Rahab said everyone in Jericho had heard what God did at the Red Sea and they were all scared. She heard the stories and believed them."
+        }
+      ],
+      "published_date": "2026-06-04"
+    },
+    {
+      "id": "jericho",
+      "era": "promised-land",
+      "order": 14,
+      "access": "premium",
+      "emoji": "🏛️",
+      "title": "The Walls Come Down",
+      "book": "Joshua 6",
+      "date": "c. 1406 BC",
+      "location": "Jericho, Canaan",
+      "hook": "God's battle plan for Jericho was this: walk around the city, blow some trumpets, and shout. The people did it. The walls fell flat.",
+      "story": [
+        "Jericho had its gates shut tight. Nobody was going in and nobody was going out. The whole city was scared because of what they had heard about God and His people.",
+        "God gave Joshua the strangest battle plan anyone had ever heard. He said, \"March around the city once a day for six days. Seven priests carrying trumpets made from rams' horns walk in front of the ark. On the seventh day, march around seven times with the priests blowing their trumpets. When they blow a long loud blast, have all the people shout as loud as they can. The wall will fall down.\"",
+        "No ladders to climb over. No battering rams to smash the gates. No arrows. Just walking and trumpets and a shout. If anyone had explained this plan to a general, the general would have laughed. But Joshua told the people what God said and they obeyed.",
+        "For six days they marched around the city once each day. The priests blew their trumpets. The ark went with them. The people did not say a single word. Just footsteps and trumpets going round and round. Six days.",
+        "On the seventh day, they got up before the sun was even up and marched around the city seven times. The seventh time, when the priests blew the long blast, Joshua called out to everyone: \"Shout! God has given you this city!\" And the people shouted with everything they had.",
+        "The walls fell down flat. Every part of them. The armies of Israel ran straight in. Joshua remembered his promise to Rahab. The two spies went straight to her house, the one with the red rope in the window, and brought her and her whole family out safely.",
+        "The walls did not fall because Israel had a great army. They fell because God said they would. And because the people trusted what God said enough to shout about it before they could even see it happening."
+      ],
+      "devotional": {
+        "bigIdea": "Israel shouted before the walls fell, not after. They trusted what God said before they could see it come true. That is what faith looks like.",
+        "questions": [
+          "The people marched around the walls for six whole days and nothing happened. Can you imagine how that must have felt? Have you ever kept going at something even when it seemed like it was not working?",
+          "God's plan sounded very strange. Walk around and shout. Would you have followed that plan? Why or why not?",
+          "The people shouted before the walls fell, not after. What is the difference between celebrating something God said and only celebrating something you can already see?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": ["faith", "obedience", "God's power", "victory"],
+      "connections": [
+        {
+          "title": "The Scarlet Thread",
+          "storyId": "rahab",
+          "reference": "Joshua 6:22-23",
+          "why": "Rahab's red rope was in the window when the walls fell. She was safe in the middle of everything because she trusted God before it happened."
+        },
+        {
+          "title": "Three Hundred Men and Torches",
+          "storyId": "gideon",
+          "reference": "Joshua 6:16",
+          "why": "Joshua said the Lord has given you the city before one wall had fallen, just like Gideon was told the victory was his before the battle."
+        },
+        {
+          "title": "Through the Sea on Dry Ground",
+          "storyId": "red-sea",
+          "reference": "Hebrews 11:30",
+          "why": "The walls fell by faith, just like the Red Sea opened by faith. Both times the people trusted what God said before they could see what God would do."
+        }
+      ],
+      "audio": "./audio/jericho.mp3",
+      "quiz": [
+        {
+          "question": "What was God's battle plan for taking the city of Jericho?",
+          "options": [
+            "Build a big ramp and climb over the walls",
+            "Sneak in at night through a secret tunnel",
+            "March around it, blow trumpets, and shout on the seventh day",
+            "Wait until the people inside ran out of food"
+          ],
+          "answer": 2,
+          "explanation": "March around once a day for six days, then seven times on the seventh day, blow the trumpets, and shout. No weapons needed."
+        },
+        {
+          "question": "What did the people do for the first six days as they marched?",
+          "options": [
+            "They shouted war cries to scare the people inside",
+            "They prayed loudly together as they walked",
+            "They made no sound at all except for the trumpets",
+            "They sang songs of praise"
+          ],
+          "answer": 2,
+          "explanation": "Joshua told the people not to say a single word until the day he told them to shout. Six days of silence and just the sound of trumpets."
+        },
+        {
+          "question": "What happened when the people shouted on the seventh day?",
+          "options": [
+            "The gates swung open but the walls stayed up",
+            "The walls fell completely flat to the ground",
+            "A crack appeared and soldiers squeezed through",
+            "The people inside the city ran away"
+          ],
+          "answer": 1,
+          "explanation": "The walls fell flat. Every part of them. The armies ran straight in because there was nothing left to stop them."
+        }
+      ],
+      "published_date": "2026-06-04"
+    },
+    {
+      "id": "gideon",
+      "era": "promised-land",
+      "order": 15,
+      "access": "premium",
+      "emoji": "🏺",
+      "title": "Three Hundred Men and Torches",
+      "book": "Judges 6-7",
+      "date": "c. 1169 BC",
+      "location": "Valley of Jezreel, Israel",
+      "hook": "God told a frightened farmer to fight a huge army of 135,000 men. Then God made him get rid of almost all of his own soldiers first.",
+      "story": [
+        "Israel had gotten into a bad pattern. They would forget God, get in trouble, cry out to God, and God would send someone to help them. Then they would forget again. This time the trouble was a people called the Midianites, who kept sweeping in like a swarm of locusts and taking everything. Israel was hiding in caves just to survive.",
+        "God's answer came to a man named Gideon. Gideon was hiding underground, trying to do his farm work without being seen. An angel appeared and said, \"Hello, mighty warrior!\" Gideon looked around the underground pit he was hiding in and said, \"If God is with us, why is all this bad stuff happening?\"",
+        "The angel did not answer the question. Instead he said, \"Go fight them. I am sending you.\" Gideon said, \"But I am the least important person in the least important family in the whole tribe.\" God said, \"I will be with you.\"",
+        "Gideon gathered an army of 32,000 men. But God said, \"Too many. If you win with this many, the people will think they did it themselves.\" God told Gideon to send home anyone who was scared. 22,000 men left. Only 10,000 stayed.",
+        "Still too many, said God. Take them to the water and watch how they drink. Most of the men knelt down and put their faces in the water. But 300 men scooped the water up with their hands and kept watching while they drank. God said, \"Keep the 300. Send everyone else home.\"",
+        "Three hundred men against 135,000. That is like one person against 450 people.",
+        "God's battle plan was surprising again. In the middle of the night, divide into three groups, surround the whole camp, hide your torches inside clay pots, and at the signal, smash the pots, wave the torches, blow the trumpets, and shout.",
+        "In the darkness, 300 torches blazed up from every direction at once, 300 trumpets blared, and 300 voices cried out, \"For God and for Gideon!\" The enemy camp woke up in total confusion. In the chaos and fear, they started fighting each other and ran away. Israel won.",
+        "Gideon went from hiding in a pit to routing a whole army. The difference was not that Gideon became braver. The difference was that God was with him, and God had made sure that when the victory came, nobody could miss who had actually won it."
+      ],
+      "devotional": {
+        "bigIdea": "God made Gideon's army smaller on purpose so that everyone would know the win came from God, not from how many soldiers they had.",
+        "questions": [
+          "God called Gideon a mighty warrior when Gideon was hiding in a pit. Has anyone ever believed in you more than you believed in yourself? How did that feel?",
+          "God kept making the army smaller. Why do you think God sometimes takes away the things we think we need before He helps us?",
+          "Gideon and his 300 men just shone lights and made noise and God won the battle. What does that tell you about who is really in charge?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": ["courage", "faith", "God's power", "unlikely heroes"],
+      "connections": [
+        {
+          "title": "The Burning Bush",
+          "storyId": "burning-bush",
+          "reference": "Judges 6:14",
+          "why": "God called Gideon the same way He called Moses. Both felt completely wrong for the job. Both went anyway."
+        },
+        {
+          "title": "One Stone",
+          "storyId": "david-goliath",
+          "reference": "1 Samuel 17:45-47",
+          "why": "David and Gideon both faced impossible odds and both understood the same thing: the battle belongs to God."
+        },
+        {
+          "title": "The Day Everything Changed",
+          "storyId": "pentecost",
+          "reference": "1 Corinthians 1:27",
+          "why": "Paul says God chooses the weak things to show up the strong. Gideon's 300 is exactly that."
+        }
+      ],
+      "audio": "./audio/gideon.mp3",
+      "quiz": [
+        {
+          "question": "What was Gideon doing when the angel of the Lord appeared to him?",
+          "options": [
+            "Praying at the front of his army",
+            "Hiding underground doing farm work so the enemy would not see him",
+            "Leading his village in a celebration",
+            "Sleeping in his bed"
+          ],
+          "answer": 1,
+          "explanation": "Gideon was hiding underground trying to do his farm work without being spotted by the enemy. Not exactly where you would expect a mighty warrior."
+        },
+        {
+          "question": "How many men were in Gideon's army when the battle actually started?",
+          "options": [
+            "32,000",
+            "10,000",
+            "300",
+            "3,000"
+          ],
+          "answer": 2,
+          "explanation": "God kept reducing the army until only 300 were left, so that when Israel won, nobody could say it was because of how many soldiers they had."
+        },
+        {
+          "question": "What was Gideon's battle plan?",
+          "options": [
+            "Charge the camp at dawn with swords",
+            "Dig tunnels under the camp at night",
+            "Surround the camp with torches, trumpets, and a shout in the darkness",
+            "Send a small group to the gates to ask them to surrender"
+          ],
+          "answer": 2,
+          "explanation": "In the dark of night, 300 torches blazed up from every direction at once with trumpets and shouting. The enemy panicked and ran."
+        }
+      ],
+      "published_date": "2026-06-04"
     }
   ]
 }
