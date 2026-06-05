@@ -380,6 +380,17 @@
   @media (max-width: 420px) { .story-grid{grid-template-columns:1fr} }
   .prologue-card-btn { cursor:pointer;background:linear-gradient(135deg,#1a0f05 0%,#2c1a0e 100%);border:1px solid rgba(201,162,39,0.35);border-radius:14px;padding:22px 28px;display:flex;align-items:center;gap:20px;box-shadow:0 4px 20px rgba(0,0,0,0.25);transition:transform 0.15s,box-shadow 0.15s;width:100%;text-align:left; }
   .prologue-card-btn:hover { transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,0.35); }
+
+  .auth-tier-badge { display:inline-block;font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;border-radius:4px;padding:1px 6px;margin-top:3px; }
+  .auth-tier-badge.gold { background:rgba(201,162,39,0.15);color:var(--gold);border:1px solid rgba(201,162,39,0.3); }
+  .auth-tier-badge.purple { background:rgba(124,58,237,0.2);color:#a78bfa;border:1px solid rgba(124,58,237,0.35); }
+  .tier-toggle-wrap { display:flex;align-items:center;gap:6px;margin-right:8px; }
+  .tier-toggle-label { font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4); }
+  .tier-toggle-btns { display:flex;align-items:center;border:1.5px solid rgba(255,255,255,0.2);border-radius:6px;overflow:hidden; }
+  .tier-btn { padding:4px 11px;border:none;cursor:pointer;font-size:10px;font-weight:700;letter-spacing:0.04em;transition:all 0.15s;background:transparent;color:rgba(255,255,255,0.5); }
+  .tier-btn.active-gold { background:rgba(201,162,39,0.85);color:#2c1a0e; }
+  .tier-btn.active-purple { background:#7c3aed;color:#fff; }
+  .tier-divider { width:1px;height:16px;background:rgba(255,255,255,0.15);flex-shrink:0; }
 </style>
 </head>
 <body>
@@ -1151,10 +1162,15 @@ function renderAuthBar() {
   const planBadge = (!isChildActive && userProfile.is_paid)
     ? '<div style="font-family:\'Source Sans 3\',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:rgba(201,162,39,0.15);color:var(--gold);border:1px solid rgba(201,162,39,0.3);border-radius:4px;padding:1px 6px">' + (userProfile.plan_type === 'monthly' ? '\u25cf MONTHLY' : '\u25cf FULL ACCESS') + '</div>'
     : '';
+  // Plan badge — only show on parent/individual, not child profiles
+  const isChildActive = activeProfile && activeProfile.type === 'child';
+  const planBadge = (!isChildActive && userProfile.is_paid)
+    ? '<div class="auth-tier-badge gold">' + (userProfile.plan_type === 'monthly' ? '\u25cf MONTHLY' : '\u25cf FULL ACCESS') + '</div>'
+    : '';
 
-  // Child tier badge — shows instead of plan badge when child is active
+  // Tier label badge shown under child name
   const childTierBadge = isChildActive
-    ? '<div style="font-family:\'Source Sans 3\',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:' + (activeTier===2?'rgba(124,58,237,0.2)':'rgba(201,162,39,0.15)') + ';color:' + (activeTier===2?'#a78bfa':'var(--gold)') + ';border:1px solid ' + (activeTier===2?'rgba(124,58,237,0.35)':'rgba(201,162,39,0.3)') + ';border-radius:4px;padding:1px 6px">' + (activeTier===2?'Ages 5–8':'Ages 9–12') + '</div>'
+    ? '<div class="auth-tier-badge ' + (activeTier===2?'purple':'gold') + '">' + (activeTier===2?'Ages 5\u20138':'Ages 9\u201312') + '</div>'
     : '';
 
   const profileName = activeProfile ? activeProfile.name : userProfile.display_name;
@@ -1162,15 +1178,14 @@ function renderAuthBar() {
   const profileTypeLabel = isParent ? (isChildActive ? 'Child Profile' : 'Parent Account') : 'Individual Account';
   const parentCheckmark = (activeProfile && activeProfile.type === 'user') ? '<span class="profile-drop-check">\u2713</span>' : '';
 
-  // Tier toggle — only show if child profile active, as a clean separate bar below the nav
-  const showTierToggle = isChildActive;
-  const tierToggleHtml = showTierToggle
-    ? '<div style="display:flex;align-items:center;gap:8px;padding:5px 12px;background:rgba(255,255,255,0.06);border-radius:6px;margin-left:4px">' +
-        '<span style="font-family:\'Source Sans 3\',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);white-space:nowrap">Level</span>' +
-        '<div style="display:flex;align-items:center;border:1.5px solid rgba(255,255,255,0.2);border-radius:6px;overflow:hidden">' +
-          '<button onclick="setActiveTier(1)" style="padding:4px 11px;border:none;cursor:pointer;font-family:\'Source Sans 3\',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.04em;transition:all 0.15s;background:' + (activeTier===1?'rgba(201,162,39,0.85)':'transparent') + ';color:' + (activeTier===1?'#2c1a0e':'rgba(255,255,255,0.5)') + '">9–12</button>' +
-          '<div style="width:1px;height:16px;background:rgba(255,255,255,0.15)"></div>' +
-          '<button onclick="setActiveTier(2)" style="padding:4px 11px;border:none;cursor:pointer;font-family:\'Source Sans 3\',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.04em;transition:all 0.15s;background:' + (activeTier===2?'#7c3aed':'transparent') + ';color:' + (activeTier===2?'#fff':'rgba(255,255,255,0.5)') + '">5–8</button>' +
+  // Tier toggle — only when child active, inline in the right section of the bar
+  const tierToggleHtml = isChildActive
+    ? '<div class="tier-toggle-wrap">' +
+        '<span class="tier-toggle-label">Level</span>' +
+        '<div class="tier-toggle-btns">' +
+          '<button onclick="setActiveTier(1)" class="tier-btn ' + (activeTier===1?'active-gold':'') + '">9\u201312</button>' +
+          '<span class="tier-divider"></span>' +
+          '<button onclick="setActiveTier(2)" class="tier-btn ' + (activeTier===2?'active-purple':'') + '">5\u20138</button>' +
         '</div>' +
       '</div>'
     : '';
@@ -1186,7 +1201,6 @@ function renderAuthBar() {
         '</div>' +
         '<span style="color:rgba(201,162,39,0.6);font-size:10px;margin-left:2px">\u25bc</span>' +
       '</div>' +
-      tierToggleHtml +
       '<div class="profile-dropdown" id="profileDropdown">' +
         '<div class="profile-drop-header">Switch Profile</div>' +
         '<button class="profile-drop-item' + (activeProfile && activeProfile.type === 'user' ? ' active' : '') + '" onclick="switchProfile(\'' + authUser.id + '\',\'user\')">' +
@@ -1202,6 +1216,7 @@ function renderAuthBar() {
       '</div>' +
     '</div>';
 
+  right.innerHTML = tierToggleHtml + '<button class="auth-bar-btn ghost" onclick="openJourney()">\ud83c\udfc6 My Journey</button><a href="./account.html" class="auth-bar-btn ghost">My Account</a>';
   right.innerHTML = '<button class="auth-bar-btn ghost" onclick="openJourney()">🏆 My Journey</button><a href="./account.html" class="auth-bar-btn ghost">My Account</a>';
 }
 async function setActiveTier(tierVal) {
