@@ -1144,25 +1144,31 @@ function renderAuthBar() {
     ? '<div class="profile-drop-divider"></div><button class="profile-drop-action" onclick="openChildModal()">+ Add Child Profile</button>'
     : '';
 
-  // Plan badge
-  const planBadge = userProfile.is_paid
+  // Plan badge — only show on parent/individual accounts, not child profiles
+  const isChildActive = activeProfile && activeProfile.type === 'child';
+  const planBadge = (!isChildActive && userProfile.is_paid)
     ? '<div style="font-family:\'Source Sans 3\',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:rgba(201,162,39,0.15);color:var(--gold);border:1px solid rgba(201,162,39,0.3);border-radius:4px;padding:1px 6px">' + (userProfile.plan_type === 'monthly' ? '\u25cf MONTHLY' : '\u25cf FULL ACCESS') + '</div>'
+    : '';
+
+  // Child tier badge — shows instead of plan badge when child is active
+  const childTierBadge = isChildActive
+    ? '<div style="font-family:\'Source Sans 3\',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:' + (activeTier===2?'rgba(124,58,237,0.2)':'rgba(201,162,39,0.15)') + ';color:' + (activeTier===2?'#a78bfa':'var(--gold)') + ';border:1px solid ' + (activeTier===2?'rgba(124,58,237,0.35)':'rgba(201,162,39,0.3)') + ';border-radius:4px;padding:1px 6px">' + (activeTier===2?'Ages 5–8':'Ages 9–12') + '</div>'
     : '';
 
   const profileName = activeProfile ? activeProfile.name : userProfile.display_name;
   const profileEmoji = activeProfile ? activeProfile.emoji : userProfile.avatar_emoji;
-  const profileTypeLabel = isParent ? (activeProfile && activeProfile.type === 'child' ? 'Child Profile' : 'Parent Account') : 'Individual Account';
+  const profileTypeLabel = isParent ? (isChildActive ? 'Child Profile' : 'Parent Account') : 'Individual Account';
   const parentCheckmark = (activeProfile && activeProfile.type === 'user') ? '<span class="profile-drop-check">\u2713</span>' : '';
 
-  // Tier toggle — only show if viewing a child profile (parent accounts always see tier 1)
-  const showTierToggle = activeProfile && activeProfile.type === 'child';
+  // Tier toggle — only show if child profile active, as a clean separate bar below the nav
+  const showTierToggle = isChildActive;
   const tierToggleHtml = showTierToggle
-    ? '<div style="display:flex;flex-direction:column;gap:3px;flex-shrink:0">' +
-        '<div style="font-family:\'Source Sans 3\',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);text-align:center">Reading Level</div>' +
-        '<div style="display:flex;align-items:center;gap:0;border:1.5px solid rgba(255,255,255,0.25);border-radius:7px;overflow:hidden">' +
-          '<button onclick="setActiveTier(1)" style="padding:5px 14px;border:none;cursor:pointer;font-family:\'Source Sans 3\',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.06em;transition:all 0.15s;background:' + (activeTier===1?'rgba(201,162,39,0.9)':'transparent') + ';color:' + (activeTier===1?'#2c1a0e':'rgba(255,255,255,0.55)') + '">Ages 9\u201312</button>' +
-          '<div style="width:1px;height:20px;background:rgba(255,255,255,0.2)"></div>' +
-          '<button onclick="setActiveTier(2)" style="padding:5px 14px;border:none;cursor:pointer;font-family:\'Source Sans 3\',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.06em;transition:all 0.15s;background:' + (activeTier===2?'#7c3aed':'transparent') + ';color:' + (activeTier===2?'#fff':'rgba(255,255,255,0.55)') + '">Ages 5\u20138</button>' +
+    ? '<div style="display:flex;align-items:center;gap:8px;padding:5px 12px;background:rgba(255,255,255,0.06);border-radius:6px;margin-left:4px">' +
+        '<span style="font-family:\'Source Sans 3\',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);white-space:nowrap">Level</span>' +
+        '<div style="display:flex;align-items:center;border:1.5px solid rgba(255,255,255,0.2);border-radius:6px;overflow:hidden">' +
+          '<button onclick="setActiveTier(1)" style="padding:4px 11px;border:none;cursor:pointer;font-family:\'Source Sans 3\',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.04em;transition:all 0.15s;background:' + (activeTier===1?'rgba(201,162,39,0.85)':'transparent') + ';color:' + (activeTier===1?'#2c1a0e':'rgba(255,255,255,0.5)') + '">9–12</button>' +
+          '<div style="width:1px;height:16px;background:rgba(255,255,255,0.15)"></div>' +
+          '<button onclick="setActiveTier(2)" style="padding:4px 11px;border:none;cursor:pointer;font-family:\'Source Sans 3\',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.04em;transition:all 0.15s;background:' + (activeTier===2?'#7c3aed':'transparent') + ';color:' + (activeTier===2?'#fff':'rgba(255,255,255,0.5)') + '">5–8</button>' +
         '</div>' +
       '</div>'
     : '';
@@ -1174,7 +1180,7 @@ function renderAuthBar() {
         '<div>' +
           '<div class="auth-bar-name">' + profileName + '</div>' +
           '<div class="auth-bar-type">' + profileTypeLabel + '</div>' +
-          planBadge +
+          planBadge + childTierBadge +
         '</div>' +
         '<span style="color:rgba(201,162,39,0.6);font-size:10px;margin-left:2px">\u25bc</span>' +
       '</div>' +
@@ -1319,12 +1325,66 @@ async function checkCheckoutReturn() {
   const checkout = params.get('checkout');
   if (checkout === 'success') {
     window.history.replaceState({}, '', window.location.pathname);
-    if (authUser) { await loadUserProfile(); renderAuthBar(); render(); showToast('🎉 Welcome to Footsteps! All stories are now unlocked.'); }
+    if (authUser) {
+      await loadUserProfile();
+      renderAuthBar();
+      render();
+      // Show prologue popup on first purchase
+      setTimeout(() => openPrologueModal(), 800);
+    }
   } else if (checkout === 'cancelled') {
     window.history.replaceState({}, '', window.location.pathname);
     showToast('Checkout cancelled — no charge was made.');
   }
   if (params.get('openPaywall') === '1') { window.history.replaceState({}, '', window.location.pathname); setTimeout(openPaywall, 500); }
+}
+
+// ── PROLOGUE MODAL ────────────────────────────────────────────────────────────
+async function openPrologueModal() {
+  try {
+    const r = await fetch('./prologue.json');
+    const p = await r.json();
+    // Use tier-appropriate content
+    const tier = activeProfile ? (activeProfile.tier || 1) : 1;
+    const storyArr = tier === 2 ? p.story_t2 : p.story;
+    const audioSrc = tier === 2 ? p.audio_t2 : p.audio;
+
+    // Build modal
+    const backdrop = document.createElement('div');
+    backdrop.id = 'prologueBackdrop';
+    backdrop.style.cssText = 'display:flex;position:fixed;inset:0;background:rgba(20,10,5,0.88);z-index:2000;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(6px);animation:fadeIn 0.4s ease';
+
+    backdrop.innerHTML =
+      '<div style="background:var(--parchment);border-radius:16px;max-width:620px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,0.5);animation:modalIn 0.4s cubic-bezier(0.34,1.56,0.64,1)">' +
+        '<div style="height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-bright));border-radius:16px 16px 0 0"></div>' +
+        '<div style="padding:32px 32px 12px">' +
+          '<div style="font-family:'Source Sans 3',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">An Introduction</div>' +
+          '<div style="font-family:'Cinzel',serif;font-size:1.6rem;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:6px">👣 The Road Begins Here</div>' +
+          '<div style="font-family:'Lora',serif;font-style:italic;font-size:0.9rem;color:var(--ink-light);margin-bottom:24px">' + p.hook + '</div>' +
+          (audioSrc ? '<audio controls style="width:100%;margin-bottom:20px;border-radius:8px" src="' + audioSrc + '"></audio>' : '') +
+          '<div id="prologueText" style="font-family:'Lora',serif;font-size:0.97rem;color:var(--ink);line-height:1.85">' +
+            storyArr.map(function(para) { return '<p style="margin-bottom:1.2em">' + para + '</p>'; }).join('') +
+          '</div>' +
+        '</div>' +
+        '<div style="padding:20px 32px 32px;text-align:center">' +
+          '<button onclick="closePrologueModal()" style="background:linear-gradient(135deg,var(--gold),var(--gold-bright));border:none;border-radius:10px;padding:14px 40px;font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:var(--ink);cursor:pointer;box-shadow:0 3px 14px var(--gold-glow);letter-spacing:0.04em">Begin the Journey →</button>' +
+        '</div>' +
+      '</div>';
+
+    backdrop.addEventListener('click', function(e) { if (e.target === backdrop) closePrologueModal(); });
+    document.body.appendChild(backdrop);
+    document.body.style.overflow = 'hidden';
+  } catch(err) {
+    console.warn('Prologue load failed:', err);
+    // Silent fail — not critical
+  }
+}
+
+function closePrologueModal() {
+  const el = document.getElementById('prologueBackdrop');
+  if (el) el.remove();
+  document.body.style.overflow = '';
+  showToast('🎉 Welcome to Footsteps! All stories are now unlocked.');
 }
 function closeWelcome() {
   localStorage.setItem(WELCOME_KEY, '1');
@@ -1361,6 +1421,26 @@ function render() {
   const main = document.getElementById('mainContent');
   const progress = getProgress();
   let html = '';
+
+  // Prologue card — only show for paid users, above all eras
+  if (userProfile && userProfile.is_paid) {
+    const tier = activeProfile ? (activeProfile.tier || 1) : 1;
+    const prologueText = tier === 2
+      ? 'Are you ready? Because you are about to go on the greatest adventure in the whole world.'
+      : 'You are about to walk through the greatest story ever told. Not a made-up story. The truest one there is.';
+    html += '<div style="max-width:900px;margin:0 auto 32px;padding:0 16px">' +
+      '<div onclick="openPrologueModal()" style="cursor:pointer;background:linear-gradient(135deg,#1a0f05 0%,#2c1a0e 100%);border:1px solid rgba(201,162,39,0.35);border-radius:14px;padding:22px 28px;display:flex;align-items:center;gap:20px;box-shadow:0 4px 20px rgba(0,0,0,0.25);transition:transform 0.15s,box-shadow 0.15s" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 30px rgba(0,0,0,0.35)'" onmouseout="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.25)'">' +
+        '<div style="font-size:36px;flex-shrink:0">👣</div>' +
+        '<div style="flex:1;min-width:0">' +
+          '<div style="font-family:'Source Sans 3',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(201,162,39,0.7);margin-bottom:4px">An Introduction</div>' +
+          '<div style="font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:#f0c040;margin-bottom:6px">The Road Begins Here</div>' +
+          '<div style="font-family:'Lora',serif;font-style:italic;font-size:0.82rem;color:rgba(253,246,227,0.65);line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + prologueText + '</div>' +
+        '</div>' +
+        '<div style="font-family:'Cinzel',serif;font-size:11px;font-weight:700;color:var(--gold);flex-shrink:0;opacity:0.8">Read →</div>' +
+      '</div>' +
+    '</div>';
+  }
+
   eras.forEach(era => {
     const eraStories = stories.filter(s => s.era === era.id);
     if (!eraStories.length) return;
