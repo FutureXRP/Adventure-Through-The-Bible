@@ -1838,12 +1838,13 @@ function printCertificate(badgeId) {
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: #e8e0d0; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 24px; }
+  body { background: #e8e0d0; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 24px; }
   @media print {
-    body { background: white; padding: 0; }
+    body { background: white; padding: 0; margin: 0; display: block; }
     .no-print { display: none !important; }
-    .cert { box-shadow: none !important; }
-    @page { size: landscape; margin: 0.4in; }
+    .cert { box-shadow: none !important; max-width: 100% !important; width: 100% !important; border-radius: 0 !important; }
+    .cert-outer { padding: 0 !important; max-width: 100% !important; width: 100% !important; }
+    @page { size: 11in 8.5in landscape; margin: 0.3in; }
   }
   .print-bar { text-align:center; margin-bottom:20px; }
   .print-bar button { padding:10px 28px; background:${goldAccent}; border:none; border-radius:8px; font-family:'Cinzel',serif; font-size:13px; font-weight:700; color:${isHero ? '#1a0f05' : '#2c1a0e'}; cursor:pointer; margin-right:10px; }
@@ -1852,12 +1853,17 @@ function printCertificate(badgeId) {
     background: ${bg};
     border: 3px solid ${borderColor};
     border-radius: 4px;
-    padding: ${isHero ? '44px 52px 40px' : '40px 48px 36px'};
+    padding: ${isHero ? '52px 72px 48px' : '48px 64px 44px'};
     position: relative;
-    max-width: 720px;
+    max-width: 960px;
     width: 100%;
     ${innerBorder}
   }
+  .recipient { font-size: ${isHero ? '38px' : '34px'} !important; }
+  .app-name { font-size: 15px !important; }
+  .body { font-size: 15px !important; margin: 0 60px !important; }
+  .badge-name { font-size: ${isHero ? '20px' : '18px'} !important; }
+  .badge-circle { width: ${isHero ? '96px' : '80px'} !important; height: ${isHero ? '96px' : '80px'} !important; font-size: ${isHero ? '46px' : '38px'} !important; }
   .cert::before {
     content:'';
     position:absolute;
@@ -1888,7 +1894,7 @@ function printCertificate(badgeId) {
 </style>
 </head>
 <body>
-<div style="width:100%;max-width:760px;">
+<div class="cert-outer" style="width:100%;max-width:960px;">
   <div class="no-print print-bar">
     <button onclick="window.print()">Print Certificate</button>
     <button class="close-btn" onclick="window.close()">Close</button>
@@ -1920,7 +1926,7 @@ function printCertificate(badgeId) {
 </body>
 </html>`;
 
-  const win = window.open('', '_blank', 'width=800,height=620');
+  const win = window.open('', '_blank', 'width=1100,height=720');
   win.document.write(html);
   win.document.close();
 }
