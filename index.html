@@ -1156,12 +1156,6 @@ function renderAuthBar() {
   const addChildRow = isParent
     ? '<div class="profile-drop-divider"></div><button class="profile-drop-action" onclick="openChildModal()">+ Add Child Profile</button>'
     : '';
-
-  // Plan badge — only show on parent/individual accounts, not child profiles
-  const isChildActive = activeProfile && activeProfile.type === 'child';
-  const planBadge = (!isChildActive && userProfile.is_paid)
-    ? '<div style="font-family:\'Source Sans 3\',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:rgba(201,162,39,0.15);color:var(--gold);border:1px solid rgba(201,162,39,0.3);border-radius:4px;padding:1px 6px">' + (userProfile.plan_type === 'monthly' ? '\u25cf MONTHLY' : '\u25cf FULL ACCESS') + '</div>'
-    : '';
   // Plan badge — only show on parent/individual, not child profiles
   const isChildActive = activeProfile && activeProfile.type === 'child';
   const planBadge = (!isChildActive && userProfile.is_paid)
