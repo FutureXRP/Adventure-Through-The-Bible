@@ -11,7 +11,7 @@ Footsteps is a premium Bible story app for families with children. Each story is
 
 **Tagline:** Walk through the greatest story ever told
 **Model:** One-time purchase ($49.99) or monthly subscription ($4.99/month)
-**Status:** 50 stories complete, audio for stories 1–10, ready for launch after audio generation
+**Status:** 50 stories complete (Tier 1), 5 stories complete (Tier 2), audio for stories 1–10, ready for launch after audio generation
 
 ---
 
@@ -22,9 +22,14 @@ Adventure-Through-The-Bible/
   index.html                    ← main app
   login.html                    ← sign in / sign up
   account.html                  ← account management
-  stories.json                  ← ALL story content lives here
-  header.png                    ← watercolor banner
+  terms.html                    ← Terms of Service
+  privacy.html                  ← Privacy Policy
+  prologue.json                 ← standalone prologue story (both tiers)
+  stories.json                  ← Tier 1 story content (ages 9-12)
+  stories-tier2.json            ← Tier 2 story content (ages 5-8)
+  header.png                    ← cinematic banner image
   generate_audio.py             ← ElevenLabs audio script
+  verify_audio.py               ← audio verification script
   FOOTSTEPS_PROJECT.md          ← this file
   audio/
     creation.mp3 + .json        ← stories 1-10 have audio
@@ -37,6 +42,8 @@ Adventure-Through-The-Bible/
     moses-birth.mp3 + .json
     burning-bush.mp3 + .json
     red-sea.mp3 + .json
+    prologue.mp3                ← needed: Tier 1 prologue audio
+    prologue-t2.mp3             ← needed: Tier 2 prologue audio
     (stories 11-50 pending)
   supabase/
     config.toml
@@ -44,6 +51,7 @@ Adventure-Through-The-Bible/
       create-checkout/index.ts
       stripe-webhook/index.ts
       cancel-subscription/index.ts
+      process-refund/index.ts   ← usage-based refund system
   .github/
     workflows/
       deploy-functions.yml
@@ -57,7 +65,7 @@ Adventure-Through-The-Bible/
 |-------|-----------|
 | Frontend | Static HTML/CSS/JS, no framework, no build step |
 | Hosting | GitHub Pages — auto-deploys on push to main |
-| Data | stories.json — fetched at runtime |
+| Data | stories.json / stories-tier2.json — fetched at runtime |
 | Auth | Supabase Auth — email/password |
 | Database | Supabase Postgres |
 | Payments | Stripe — one-time + monthly subscription |
@@ -85,6 +93,7 @@ Adventure-Through-The-Bible/
 | `quiz_attempts` | Quiz scores per story per profile |
 | `badges` | Earned badges with story count at earn time |
 | `mastery_attempts` | Hero Quiz scores and pass/fail |
+| `refund_log` | Audit trail of all refund requests |
 
 ### Key Profile Columns
 
@@ -97,9 +106,21 @@ Adventure-Through-The-Bible/
 | `plan_type` | text | `one_time`, `monthly`, `monthly_cancelling`, null |
 | `stripe_customer_id` | text | Stripe customer reference |
 | `stripe_subscription_id` | text | For monthly subscribers |
+| `stripe_payment_intent_id` | text | For one-time purchase refunds |
+| `stripe_refund_id` | text | Set when refund issued |
+| `refund_issued_at` | timestamptz | Set when refund processed |
 | `paid_at` | timestamptz | When purchase was made |
 | `story_count_at_purchase` | int | Story count when one-time purchase made |
 | `last_seen_story_count` | int | For new story notifications |
+
+### Child Profile Columns
+
+| Column | Type | Purpose |
+|--------|------|---------|
+| `tier` | int | 1 = Ages 9–12, 2 = Ages 5–8 (default 1) |
+| `avatar_emoji` | text | Child's chosen emoji |
+| `display_name` | text | Child's name |
+| `age` | int | Optional, informational only |
 
 ### Key Badge Columns
 
@@ -123,13 +144,13 @@ Guest                    → stories 1-3 only
 |--------|-------------|
 | `STRIPE_SECRET_KEY` | Stripe secret key (sk_test_ or sk_live_) |
 | `STRIPE_WEBHOOK_SECRET` | Stripe webhook signing secret (whsec_) |
-| `SB_SERVICE_ROLE_KEY` | Supabase service role key — named without SUPABASE_ prefix |
+| `SUPABASE_SERVICE_ROLE_KEY` | Supabase service role key |
 
 ---
 
 ## Stripe Configuration
 
-**Mode:** Test (not yet live)
+**Mode:** Test (not yet live — do NOT switch to live keys until explicitly ready)
 **Test publishable key:** pk_test_51THwruLh...
 
 ### Products
@@ -141,6 +162,49 @@ Guest                    → stories 1-3 only
 
 **Webhook:** Footsteps Webhook → https://bqyysvjnitbeimvaxkao.supabase.co/functions/v1/stripe-webhook
 **Webhook events:** checkout.session.completed, invoice.payment_succeeded, invoice.payment_failed, customer.subscription.deleted, customer.subscription.updated
+
+---
+
+## Refund System
+
+### Policy (usage-based, not time-based)
+- **Monthly:** Full refund if fewer than 5 stories opened across all profiles
+- **One-time:** Full refund if fewer than 8 stories opened across all profiles
+- Free stories count toward the total
+- Story count is measured across ALL child profiles and the parent account combined
+- Once threshold is exceeded, all sales are final
+
+### Implementation
+- `process-refund` Edge Function: checks story count → calls Stripe → updates DB → logs to `refund_log`
+- "Request a Refund" button on `account.html` — only visible to paid users who have not been refunded
+- Three modal states: eligible/processed, ineligible (shows story count), already refunded
+- Eligible refunds processed automatically; ineligible requests show clear denial with count
+- **Important:** `stripe_payment_intent_id` must be saved to profiles on one-time purchase checkout for refunds to work
+
+### Refund log table
+```sql
+refund_log (id, user_id, plan_type, stories_opened, stripe_refund_id, amount_refunded_cents, requested_at)
+```
+
+---
+
+## Prologue System
+
+### What it is
+A standalone introductory story that appears immediately after purchase, welcoming new readers to the journey. Not a Bible story — an invitation.
+
+### Files
+- `prologue.json` — contains both tier versions in one file (`story` for 9–12, `story_t2` for 5–8)
+- Audio files needed: `audio/prologue.mp3` (Tier 1) and `audio/prologue-t2.mp3` (Tier 2)
+
+### Behavior
+1. **On purchase:** Modal popup appears automatically 800ms after Stripe redirect (`?checkout=success`)
+2. **Permanent access:** Dark gold card sits above "In the Beginning" in the story grid (paid users only), always clickable
+3. **Tier-aware:** Shows age-appropriate text based on active profile's tier
+
+### Endings (both tiers)
+Both versions close with:
+> *"Those are the footsteps you are about to follow. Welcome to Footsteps."*
 
 ---
 
@@ -167,15 +231,6 @@ When new stories are released after a buyer's purchase date, they see a dismissi
 **Option A — Subscribe monthly ($4.99/mo):** Gets all new stories plus every future story. Managed in account.html.
 
 **Option B — Story Pack purchase ($9.99 one-time):** Gets access to the specific batch of new stories permanently. Still needs to be built — see Pending Infrastructure below.
-
-### Story Pack (still to build)
-
-- New Stripe product: `Footsteps Story Pack` at $9.99 one-time
-- Add `story_packs` table in Supabase tracking which packs a user has purchased
-- Add `pack_id` field to stories.json (e.g. `pack_1`, `pack_2`)
-- Update `storyIsLocked` to check both `paid_at` and owned packs
-- Add pack purchase option to paywall modal and account.html
-- New Edge Function: `purchase-pack`
 
 ---
 
@@ -226,12 +281,21 @@ Set to `false` to disable all locking for development.
 - Badge stays displayed until new story is completed, then re-awards naturally with full celebration
 
 ### Hero Quiz
-- Unlocks in Journey modal after ALL stories are read
+- Unlocks in Journey modal after ALL 50 stories are read (requires stories.length >= 10 guard to prevent Tier 2 early trigger)
+- Hero Quiz button appears at TOP of My Journey modal when unlocked
 - 25 questions drawn randomly from existing quiz banks, spread across eras
 - Requires 80% to pass (20/25)
 - Awards 🌟 Hero badge on first pass
 - Retakeable — only celebrate on first perfect pass
 - Score saved to `mastery_attempts` table
+
+### Printable Certificates — PLANNED, NOT YET BUILT
+Each of the 9 era badges will generate a printable certificate when earned. Design notes:
+- Each era badge gets its own certificate matching the era's color and theme
+- The Hero badge (🌟) gets the **premium certificate** — most ornate design, most detailed, explicitly suitable for framing
+- The Footsteps Complete badge (🏆) gets a strong certificate as well
+- Certificates should include: child's name, badge name, date earned, Footsteps branding
+- Feature to be built after launch. Add to Pending Infrastructure when starting.
 
 ---
 
@@ -244,10 +308,12 @@ Set to `false` to disable all locking for development.
 ### Profile Switcher
 - Dropdown in auth bar, switch between parent and child profiles
 - Each profile has independent progress, badges, and quiz history
+- When child profile active: shows child name, "Child Profile" label, tier badge (Ages 9–12 or Ages 5–8)
+- Tier toggle (9–12 | 5–8) appears in right side of nav bar when child profile is active
 
 ### Pages
 - `login.html` — sign in/create account, account type picker, emoji avatar picker
-- `account.html` — plan status, cancel subscription, family profiles with progress, avatar editing
+- `account.html` — plan status, cancel subscription, refund request, family profiles with progress, avatar editing, Terms/Privacy links
 
 ---
 
@@ -370,6 +436,7 @@ Generates `audio/<story-id>.mp3` and `audio/<story-id>.json` simultaneously.
 - Always write story first, generate audio after — changing text requires regenerating
 - Stories 1–10: audio complete, do not change story text without regenerating
 - Stories 11–50: ready for audio generation
+- Prologue audio needed: `prologue.mp3` and `prologue-t2.mp3`
 
 ### Audio pending (stories 11–50)
 Generate in order. Each story costs approximately 2,000–4,000 characters at 2x rate.
@@ -394,6 +461,8 @@ git push
 | Body text | Lora 400, line height 1.85 |
 | Hook / italic | Lora italic |
 | Labels / meta | Source Sans 3 600 |
+
+**Important:** Font family names (`'Source Sans 3'`, `'Cinzel'`, `'Lora'`) must NEVER appear inside JavaScript string concatenations — use CSS classes instead. Single quotes inside JS strings cause parser crashes.
 
 ### Colors
 | Token | Value | Use |
@@ -425,35 +494,23 @@ git push
 50 stories, full quiz system, word highlighting, badge system, Hero Quiz.
 
 ### Tier 2 (Ages 5–8) — IN PROGRESS
-
-**Separate file:** `stories-tier2.json` — same structure as `stories.json` but with age-appropriate content. The app loads the correct file based on the active profile's tier setting.
+5 stories complete. Separate file: `stories-tier2.json`.
 
 **Tier switching:**
-- Parent toggles between Tier 1 and Tier 2 per child profile in account.html
-- No date of birth required — age field remains optional and informational only
-- Active tier stored on `child_profiles` table as `tier` column (1 or 2, default 1)
-- Progress tracked separately per tier per profile — switching tiers preserves progress in both
-- Parent can switch freely at any time based on readiness, not age
-
-**SQL needed:**
-```sql
-alter table public.child_profiles
-  add column if not exists tier int not null default 1 check (tier in (1, 2));
-```
-
-**Index.html changes needed:**
-- On profile switch, check `activeProfile.tier`
-- Load `stories-tier2.json` instead of `stories.json` when tier = 2
-- Tier toggle button in profile dropdown and account.html
+- Parent toggles between Tier 1 and Tier 2 per child profile
+- Tier toggle (9–12 | 5–8) shown in right side of nav bar when child profile active
+- Active tier stored on `child_profiles.tier` column (1 or 2, default 1)
+- Progress tracked separately per tier per profile
+- SQL migration: `alter table public.child_profiles add column if not exists tier int not null default 1 check (tier in (1, 2));` ✅ DONE
 
 **Age-appropriate adjustments for Tier 2:**
 - Shorter paragraphs, simpler sentences, no complex theological vocabulary
-- 3 quiz questions instead of 5 (simpler format)
+- 3 quiz questions instead of 5
 - Talk About It questions aimed at 5–8 year olds
 - Replace "prostitute" in Rahab with "a woman with a complicated past"
 - Same theological content and OT typology — just accessible wording
-- No em dashes in any paragraphs (audio rule same as Tier 1)
-- Same story register rules otherwise: vivid, present-tense, zero commentary
+- No em dashes in any paragraphs
+- Same story register rules otherwise
 
 ---
 
@@ -461,40 +518,51 @@ alter table public.child_profiles
 
 ### Before launch (required)
 - [ ] Generate audio for stories 11–50 via ElevenLabs
+- [ ] Generate prologue audio: `prologue.mp3` and `prologue-t2.mp3`
 - [ ] Switch Stripe from test to live mode
 - [ ] Create live Stripe products with same names and prices
 - [ ] Update price IDs in `create-checkout/index.ts`
 - [ ] Update `STRIPE_SECRET_KEY` and `STRIPE_WEBHOOK_SECRET` in Supabase secrets
 - [ ] Create live Stripe webhook endpoint pointing to same Edge Function URL
 - [ ] Update publishable key in `index.html` (search for `pk_test_`)
-- [ ] Update Edge Functions in Supabase editor (stripe-webhook.ts and create-checkout.ts have pending changes for story_count_at_purchase — deploy when going live)
+- [ ] Ensure `stripe_payment_intent_id` is saved to profiles on one-time checkout completion (needed for refunds)
 - [ ] Turn on email confirmation in Supabase Auth → Providers → Email
 - [ ] Test full purchase flow end to end with live keys before announcing
 
-### Tier 2 system (partially built — stories in progress)
-- [ ] Run SQL: `alter table public.child_profiles add column if not exists tier int not null default 1 check (tier in (1, 2));`
-- [ ] Add tier toggle to profile dropdown in index.html
-- [ ] Add tier toggle to account.html child profile cards
-- [ ] Update loadProgressForActiveProfile to load stories-tier2.json when tier = 2
-- [ ] Audio generation for Tier 2 stories via ElevenLabs
+### Refund system (BUILT, needs one fix)
+- [x] `process-refund` Edge Function deployed
+- [x] Refund SQL migration run (`refund_issued_at`, `stripe_refund_id`, `stripe_payment_intent_id`, `refund_log` table)
+- [x] Refund UI on account.html
+- [x] Usage-based policy in Terms of Service
+- [ ] Save `stripe_payment_intent_id` on one-time purchase checkout (needed for refund to work)
+
+### Printable certificates (PLANNED — not yet built)
+- [ ] Each of the 9 era badges generates a printable certificate on earn
+- [ ] Hero badge (🌟) gets premium certificate — most ornate, suitable for framing
+- [ ] Footsteps Complete badge (🏆) gets strong certificate
+- [ ] Certificate includes: child name, badge name, date earned, Footsteps branding, era theme/color
+- [ ] Triggered from My Journey modal via "Print Certificate" button on earned badges
 
 ### Story Pack system (next build)
 For one-time buyers to purchase new story batches at $9.99:
 - [ ] New Stripe product: `Footsteps Story Pack` at $9.99 one-time
-- [ ] Add `story_packs` table in Supabase: `(id, profile_id, profile_type, pack_id, purchased_at)`
-- [ ] Add `pack_id` field to stories.json (e.g. `pack_1` for launch batch, `pack_2` for next)
-- [ ] Update `storyIsLocked` in index.html to check owned packs in addition to paid_at
+- [ ] Add `story_packs` table in Supabase
+- [ ] Add `pack_id` field to stories.json
+- [ ] Update `storyIsLocked` to check owned packs
 - [ ] Add pack purchase button to paywall modal and account.html
 - [ ] New Edge Function: `purchase-pack`
-- [ ] Webhook handler for pack purchases in stripe-webhook.ts
-- [ ] Update account.html to show owned packs
 
-### Future features
-- [ ] Tier 2 (Ages 5–8) stories — after Tier 1 launch
+### Future features (post-launch)
+- [ ] Tier 2 (Ages 5–8) — expand from 5 to 50 stories
+- [ ] Reading streaks — consecutive days, flame counter in auth bar
+- [ ] Parent dashboard — visibility into child progress, quiz scores, badges
+- [ ] Daily story suggestion — "Today's Story" card surfacing next unread story
+- [ ] Email on Hero badge completion — congratulations to parent via Resend
+- [ ] Gift subscriptions — gift checkout flow
+- [ ] Church/school license tier
 - [ ] Background music — layer instrumental in Audacity before MP3 export
 - [ ] PWA / mobile app (v2)
 - [ ] Stories 51+ (next batch after launch)
-- [ ] Parallelize Supabase fetches on load to reduce perceived load time
 
 ---
 
@@ -508,7 +576,7 @@ For one-time buyers to purchase new story batches at $9.99:
 - `SUPABASE_SERVICE_ROLE_KEY`
 - `STRIPE_WEBHOOK_SECRET`
 
-Note: Functions were also deployed manually via Supabase dashboard editor. Either method works.
+**Secrets syntax:** Each secret must be its own step with `env: SECRET_VAL:` pattern — do NOT inline `${{ secrets.X }}` directly into `supabase secrets set` commands (GitHub masking breaks the NAME=VALUE format).
 
 ---
 
@@ -518,22 +586,26 @@ Paste at the top of every new Claude session:
 
 ---
 
-> **Project:** Footsteps — Bible story app, ages 9–12
+> **Project:** Footsteps — Bible story app, ages 9–12 (Tier 1) and 5–8 (Tier 2)
 > **GitHub:** futurexrp/Adventure-Through-The-Bible
 > **Live:** https://futurexrp.github.io/Adventure-Through-The-Bible/
 > **Supabase:** bqyysvjnitbeimvaxkao.supabase.co
 >
-> **Story register:** Message-style — vivid, present-tense, told out loud, faithful to biblical text, zero commentary. Conservative Protestant (Arminian, high view of Scripture, miracles real, OT typology pointing to Christ). No em dashes in story paragraphs. 5 quiz questions per story, answers spread evenly across A/B/C/D. 3 connections per story.
+> **Story register:** Message-style — vivid, present-tense, told out loud, faithful to biblical text, zero commentary. Conservative Protestant (Arminian, high view of Scripture, miracles real, OT typology pointing to Christ). No em dashes in story paragraphs. 5 quiz questions per story (3 for Tier 2), answers spread evenly across A/B/C/D. 3 connections per story.
 >
-> **50 stories complete.** Stories 1–10 have audio. Stories 11–50 need audio generation.
+> **50 stories complete (Tier 1). 5 stories complete (Tier 2).** Stories 1–10 have audio. Stories 11–50 need audio generation. Prologue audio needed.
 >
-> **Paywall:** PAYWALL_ENABLED = true. Stripe in test mode — not yet live.
+> **Paywall:** PAYWALL_ENABLED = true. Stripe in test mode — do NOT switch to live.
+>
+> **Critical JS rule:** Font family names ('Source Sans 3', 'Cinzel', 'Lora') must NEVER appear inside JavaScript string concatenations. Use CSS classes instead. Single quotes inside JS strings crash the parser.
 >
 > **Next priorities:**
 > 1. Generate audio for stories 11–50 (ElevenLabs, run in batches per credit reset)
-> 2. Build story pack system ($9.99 one-time for new story batches)
-> 3. Switch Stripe to live mode when ready to charge
-> 4. Tier 2 (Ages 5–8) — `stories-tier2.json` in progress, tier toggle UI still needed
+> 2. Generate prologue audio (prologue.mp3 and prologue-t2.mp3)
+> 3. Save stripe_payment_intent_id on one-time checkout (needed for refunds)
+> 4. Build printable certificates for era badges + premium Hero badge certificate
+> 5. Build story pack system ($9.99 one-time for new story batches)
+> 6. Switch Stripe to live mode when ready
 >
 > **Reference:** FOOTSTEPS_PROJECT.md in the repo for full details.
 
