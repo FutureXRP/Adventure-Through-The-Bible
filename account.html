@@ -376,6 +376,7 @@ function renderPage() {
               '<div class="child-progress">' + childProgress + ' stories read</div>' +
             '</div>';
           }).join('')) +
+        (isParent ? '<div style="margin-top:16px"><button class="btn-ghost" onclick="openAddChildFromAccount()">+ Add Child Profile</button></div>' : '') +
         '</div>' +
     '</div>' : '') +
 
@@ -395,6 +396,11 @@ function renderPage() {
 
     // SIGN OUT
     '<div class="account-card"><div class="card-body"><button class="btn-ghost" onclick="handleSignOut()">Sign Out</button></div></div>';
+}
+
+// ADD CHILD FROM ACCOUNT PAGE
+function openAddChildFromAccount() {
+  window.location.href = './index.html?addChild=1';
 }
 
 // CHILD TIER TOGGLE
