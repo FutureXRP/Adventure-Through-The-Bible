@@ -675,6 +675,17 @@ function dismissNewStoryBanner(key) {
 // MASTERY (HERO) QUIZ
 // ════════════════════════════════════════════════════
 let masteryQuestions = [], masteryAnswers = [], masteryCurrentQ = 0, masteryScore = 0;
+
+// Debug helper — exposes state to browser console
+window._footstepsDebug = function() {
+  console.log('dbProgress count:', dbProgress ? dbProgress.size : 'undefined');
+  console.log('stories count:', stories ? stories.length : 'undefined');
+  console.log('allStoriesRead:', stories && dbProgress ? stories.every(s => dbProgress.has(s.id)) : 'unknown');
+  const missing = stories && dbProgress ? stories.filter(s => !dbProgress.has(s.id)).map(s => s.id) : [];
+  console.log('missing stories:', missing.length ? missing : 'none');
+  console.log('dbBadges:', dbBadges ? [...dbBadges] : 'undefined');
+  console.log('activeProfile:', activeProfile);
+};
 const MASTERY_QUESTION_COUNT = 25;
 function startMasteryQuiz() {
   const progress = getProgress();
