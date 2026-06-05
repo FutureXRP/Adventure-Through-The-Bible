@@ -378,6 +378,8 @@
     .welcome-pricing,.paywall-pricing{grid-template-columns:1fr}
   }
   @media (max-width: 420px) { .story-grid{grid-template-columns:1fr} }
+  .prologue-card-btn { cursor:pointer;background:linear-gradient(135deg,#1a0f05 0%,#2c1a0e 100%);border:1px solid rgba(201,162,39,0.35);border-radius:14px;padding:22px 28px;display:flex;align-items:center;gap:20px;box-shadow:0 4px 20px rgba(0,0,0,0.25);transition:transform 0.15s,box-shadow 0.15s;width:100%;text-align:left; }
+  .prologue-card-btn:hover { transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,0.35); }
 </style>
 </head>
 <body>
@@ -1429,7 +1431,7 @@ function render() {
       ? 'Are you ready? Because you are about to go on the greatest adventure in the whole world.'
       : 'You are about to walk through the greatest story ever told. Not a made-up story. The truest one there is.';
     html += '<div style="max-width:900px;margin:0 auto 32px;padding:0 16px">' +
-      '<div onclick="openPrologueModal()" style="cursor:pointer;background:linear-gradient(135deg,#1a0f05 0%,#2c1a0e 100%);border:1px solid rgba(201,162,39,0.35);border-radius:14px;padding:22px 28px;display:flex;align-items:center;gap:20px;box-shadow:0 4px 20px rgba(0,0,0,0.25);transition:transform 0.15s,box-shadow 0.15s" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 30px rgba(0,0,0,0.35)'" onmouseout="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.25)'">' +
+      '<div onclick="openPrologueModal()" class="prologue-card-btn">' +
         '<div style="font-size:36px;flex-shrink:0">👣</div>' +
         '<div style="flex:1;min-width:0">' +
           '<div style="font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(201,162,39,0.7);margin-bottom:4px">An Introduction</div>' +
