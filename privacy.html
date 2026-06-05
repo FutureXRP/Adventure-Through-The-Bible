@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Footsteps</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --parchment: #fdf6e3;
+    --parchment-dark: #f0e6c8;
+    --ink: #2c1a0e;
+    --ink-light: #5c3d1e;
+    --gold: #c9a227;
+    --gold-bright: #f0c040;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Lora', Georgia, serif;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    min-height: 100vh;
+  }
+  .top-bar {
+    background: var(--ink);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .top-bar-brand {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+  }
+  .top-bar-back {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    transition: color 0.15s;
+  }
+  .top-bar-back:hover { color: #fff; }
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+  .eyebrow {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .effective {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    color: var(--ink-light);
+    opacity: 0.6;
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--parchment-dark);
+  }
+  .intro {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--ink-light);
+    line-height: 1.75;
+    margin-bottom: 48px;
+    padding: 24px 28px;
+    background: rgba(201,162,39,0.07);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+  }
+  h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-top: 44px;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--parchment-dark);
+  }
+  h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--ink-light);
+    margin-top: 22px;
+    margin-bottom: 8px;
+  }
+  p {
+    font-family: 'Lora', serif;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  ul {
+    margin: 10px 0 14px 20px;
+  }
+  ul li {
+    font-family: 'Lora', serif;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(201,162,39,0.4); }
+  a:hover { border-bottom-color: var(--gold); }
+  .section-number {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--gold);
+    margin-right: 8px;
+  }
+  .highlight-box {
+    background: #fff;
+    border: 1px solid rgba(44,26,14,0.12);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .highlight-box p { margin-bottom: 8px; }
+  .highlight-box p:last-child { margin-bottom: 0; }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+  }
+  .data-table th {
+    background: var(--parchment-dark);
+    color: var(--ink);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 10px;
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 2px solid rgba(44,26,14,0.12);
+  }
+  .data-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--parchment-dark);
+    vertical-align: top;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+  footer {
+    text-align: center;
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid var(--parchment-dark);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    color: var(--ink-light);
+    opacity: 0.6;
+  }
+  footer a { color: var(--ink-light); border-bottom-color: rgba(92,61,30,0.3); }
+  @media (max-width: 480px) {
+    .page { padding: 36px 16px 64px; }
+    .data-table { font-size: 11px; }
+    .data-table th, .data-table td { padding: 8px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="./index.html" class="top-bar-brand">Footsteps</a>
+  <a href="./index.html" class="top-bar-back">← Back to Stories</a>
+</div>
+
+<div class="page">
+  <div class="eyebrow">Legal</div>
+  <h1>Privacy Policy</h1>
+  <p class="effective">Effective Date: June 1, 2026 &nbsp;·&nbsp; Last Updated: June 1, 2026</p>
+
+  <div class="intro">
+    We built Footsteps for families. That means privacy isn't a legal formality to us — it's a foundational commitment. This policy explains exactly what data we collect, why we collect it, and how we protect it. We collect the minimum necessary to make the app work well for your family.
+  </div>
+
+  <h2><span class="section-number">01</span>Who We Are</h2>
+  <p>Footsteps is operated by SquareOne Compassion, a nonprofit organization in Tulsa, Oklahoma. We are the "data controller" for the personal information described in this policy.</p>
+  <p>Contact us: <a href="mailto:hello@squareonecompassion.org">hello@squareonecompassion.org</a></p>
+
+  <h2><span class="section-number">02</span>What We Collect and Why</h2>
+
+  <h3>Information you provide directly</h3>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Why We Collect It</th>
+        <th>Retained Until</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Email address</td>
+        <td>Account creation, login, and account-related communications</td>
+        <td>Account deletion</td>
+      </tr>
+      <tr>
+        <td>Password (hashed)</td>
+        <td>Authentication — we never store your actual password</td>
+        <td>Account deletion</td>
+      </tr>
+      <tr>
+        <td>Display name</td>
+        <td>Personalized experience within the app</td>
+        <td>Account deletion</td>
+      </tr>
+      <tr>
+        <td>Child profile name and age</td>
+        <td>Distinguishing child profiles; age-appropriate content routing</td>
+        <td>Profile or account deletion</td>
+      </tr>
+      <tr>
+        <td>Avatar selection</td>
+        <td>Visual personalization of profiles</td>
+        <td>Profile or account deletion</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Information generated by your use of the app</h3>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Why We Collect It</th>
+        <th>Retained Until</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Reading progress (which stories have been read)</td>
+        <td>Tracking journey completion and awarding badges</td>
+        <td>Profile or account deletion</td>
+      </tr>
+      <tr>
+        <td>Badge history</td>
+        <td>Celebrating milestones and motivating continued reading</td>
+        <td>Profile or account deletion</td>
+      </tr>
+      <tr>
+        <td>Quiz results</td>
+        <td>Awarding mastery badges; not stored long-term</td>
+        <td>Session only (not persisted)</td>
+      </tr>
+      <tr>
+        <td>Subscription status and purchase history</td>
+        <td>Determining access level; billing records</td>
+        <td>7 years (legal/tax requirement)</td>
+      </tr>
+      <tr>
+        <td>Session activity timestamps</td>
+        <td>Concurrent session enforcement (up to 4 per account)</td>
+        <td>30 days rolling</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Information we do NOT collect</h3>
+  <ul>
+    <li>We do not collect precise geolocation data</li>
+    <li>We do not collect device identifiers beyond what Supabase Auth uses for session management</li>
+    <li>We do not collect behavioral analytics or tracking pixels</li>
+    <li>We do not collect any information about children beyond what is listed above</li>
+    <li>We do not sell, rent, or trade your personal information to third parties — ever</li>
+  </ul>
+
+  <h2><span class="section-number">03</span>Children's Privacy (COPPA)</h2>
+  <p>Footsteps is designed for families with children. We take our obligations under the Children's Online Privacy Protection Act (COPPA) seriously.</p>
+
+  <h3>How child profiles work</h3>
+  <p>Children do not create their own accounts. Only adults (18+) may create a Footsteps account. A parent or guardian creates child profiles from within their parent account. By creating a child profile, the parent provides verifiable parental consent for the limited data collection associated with that profile.</p>
+
+  <h3>What we collect for child profiles</h3>
+  <p>For child profiles, we collect only: a display name (which need not be the child's real name), an optional age, an avatar emoji selection, reading progress (story IDs completed), and badge history. We do not collect email addresses, phone numbers, or any identifying information directly from or about children.</p>
+
+  <h3>Parental rights</h3>
+  <p>As the parent or guardian, you have the right to:</p>
+  <ul>
+    <li>Review all data associated with your child's profile at any time</li>
+    <li>Request correction or deletion of your child's data</li>
+    <li>Delete the child profile entirely from your Account page</li>
+    <li>Revoke consent by deleting the child profile or your entire account</li>
+  </ul>
+  <p>To exercise any of these rights, contact us at <a href="mailto:hello@squareonecompassion.org">hello@squareonecompassion.org</a>. We will respond within 5 business days.</p>
+
+  <h2><span class="section-number">04</span>How We Use Your Information</h2>
+  <p>We use the information we collect exclusively to:</p>
+  <ul>
+    <li>Provide and maintain the Footsteps service</li>
+    <li>Authenticate your account and manage sessions</li>
+    <li>Track reading progress and award badges</li>
+    <li>Process payments and manage subscription status</li>
+    <li>Send transactional emails (account confirmation, subscription receipts, password reset)</li>
+    <li>Respond to your support requests</li>
+    <li>Enforce our Terms of Service, including concurrent session limits</li>
+  </ul>
+  <p>We do not use your data for advertising, do not share it with advertising networks, and do not build behavioral profiles for any commercial purpose.</p>
+
+  <h2><span class="section-number">05</span>Third-Party Services</h2>
+  <p>We use a small number of third-party services to operate Footsteps. Each is chosen carefully:</p>
+
+  <div class="highlight-box">
+    <p><strong>Supabase</strong> (database and authentication) — stores your account data, child profiles, reading progress, and manages authentication sessions. Data is stored on servers in the United States. Supabase's privacy policy: <a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a></p>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong>Stripe</strong> (payment processing) — handles all payment transactions. We never see or store your full credit card number. Stripe's privacy policy: <a href="https://stripe.com/privacy" target="_blank" rel="noopener">stripe.com/privacy</a></p>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong>GitHub Pages</strong> (web hosting) — serves the Footsteps web application. GitHub may collect standard server logs (IP addresses, user agents) as part of hosting. GitHub's privacy policy: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a></p>
+  </div>
+
+  <p>We do not use Google Analytics, Facebook Pixel, or any advertising or behavioral tracking tools.</p>
+
+  <h2><span class="section-number">06</span>Data Security</h2>
+  <p>We take reasonable technical and organizational measures to protect your information:</p>
+  <ul>
+    <li>All data is transmitted over HTTPS (encrypted in transit)</li>
+    <li>Passwords are hashed using bcrypt — we cannot see your password</li>
+    <li>Database access is restricted via Supabase Row Level Security (RLS) — each user can only access their own data</li>
+    <li>Payment data is handled entirely by Stripe — we do not store card numbers</li>
+    <li>Session tokens are rotated on each login</li>
+  </ul>
+  <p>No system is perfectly secure. In the event of a data breach that affects your personal information, we will notify you by email within 72 hours of discovery, as required by applicable law.</p>
+
+  <h2><span class="section-number">07</span>Your Rights and Choices</h2>
+
+  <h3>Access and correction</h3>
+  <p>You can view and update your display name, avatar, and account details from your Account page at any time.</p>
+
+  <h3>Data deletion</h3>
+  <p>You may request deletion of your account and all associated data at any time by emailing <a href="mailto:hello@squareonecompassion.org">hello@squareonecompassion.org</a> with the subject line "Delete My Account." We will process your request within 10 business days. Note that billing records are retained for 7 years as required by law, but will be dissociated from your personal information where possible.</p>
+
+  <h3>Email communications</h3>
+  <p>We send transactional emails only (account confirmation, password reset, subscription receipts). We do not send marketing emails unless you explicitly opt in. You can unsubscribe from any email using the link at the bottom of the message.</p>
+
+  <h3>California residents (CCPA)</h3>
+  <p>If you are a California resident, you have the right to know what personal information we collect, the right to delete it, and the right to opt out of the "sale" of your personal information. We do not sell personal information. To exercise your rights, contact us at <a href="mailto:hello@squareonecompassion.org">hello@squareonecompassion.org</a>.</p>
+
+  <h2><span class="section-number">08</span>Cookies and Local Storage</h2>
+  <p>Footsteps uses browser localStorage (not cookies) to store your session state and reading progress locally on your device. This allows the app to function without requiring a network request for every interaction. We do not use third-party cookies or tracking cookies of any kind.</p>
+  <p>You can clear your local storage at any time through your browser settings. If you do, your local progress will be lost, though progress synced to your account will be preserved.</p>
+
+  <h2><span class="section-number">09</span>Data Retention</h2>
+  <p>We retain your personal information for as long as your account is active or as needed to provide the service. If you delete your account, we will delete or anonymize your personal information within 30 days, except where retention is required by law (billing records: 7 years).</p>
+
+  <h2><span class="section-number">10</span>Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. When we make material changes, we will notify you by email and update the "Last Updated" date at the top of this page. Your continued use of Footsteps after the effective date of the revised policy constitutes your acceptance of the changes.</p>
+
+  <h2><span class="section-number">11</span>Contact</h2>
+  <p>For privacy questions, data requests, or concerns about how we handle your information:</p>
+  <div class="highlight-box">
+    <p><strong>SquareOne Compassion</strong> — Privacy<br>
+    Tulsa, Oklahoma<br>
+    <a href="mailto:hello@squareonecompassion.org">hello@squareonecompassion.org</a><br>
+    We aim to respond to all privacy inquiries within 5 business days.</p>
+  </div>
+
+  <footer>
+    &copy; 2026 SquareOne Compassion &nbsp;·&nbsp; Footsteps
+    &nbsp;·&nbsp; <a href="./terms.html">Terms of Service</a>
+    &nbsp;·&nbsp; <a href="./index.html">Back to Stories</a>
+  </footer>
+</div>
+
+</body>
+</html>
