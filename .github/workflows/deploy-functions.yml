@@ -1,5 +1,4 @@
 name: Deploy Supabase Edge Functions
-
 on:
   push:
     branches:
@@ -7,36 +6,42 @@ on:
     paths:
       - 'supabase/functions/**'
   workflow_dispatch:
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     env:
       SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
-
     steps:
       - uses: actions/checkout@v4
-
       - uses: supabase/setup-cli@v1
         with:
           version: latest
-
       - name: Deploy create-checkout function
         run: |
           supabase functions deploy create-checkout \
             --project-ref bqyysvjnitbeimvaxkao
-
       - name: Deploy stripe-webhook function
         run: |
           supabase functions deploy stripe-webhook \
             --project-ref bqyysvjnitbeimvaxkao \
             --no-verify-jwt
-
-      - name: Set Edge Function secrets
+      - name: Deploy cancel-subscription function
         run: |
-          supabase secrets set \
-            STRIPE_SECRET_KEY=${{ secrets.STRIPE_SECRET_KEY }} \
-            SUPABASE_SERVICE_ROLE_KEY=${{ secrets.SUPABASE_SERVICE_ROLE_KEY }} \
-            STRIPE_WEBHOOK_SECRET=${{ secrets.STRIPE_WEBHOOK_SECRET }} \
+          supabase functions deploy cancel-subscription \
             --project-ref bqyysvjnitbeimvaxkao
+      - name: Deploy process-refund function
+        run: |
+          supabase functions deploy process-refund \
+            --project-ref bqyysvjnitbeimvaxkao
+      - name: Set STRIPE_SECRET_KEY
+        env:
+          SECRET_VAL: ${{ secrets.STRIPE_SECRET_KEY }}
+        run: supabase secrets set STRIPE_SECRET_KEY="$SECRET_VAL" --project-ref bqyysvjnitbeimvaxkao
+      - name: Set SUPABASE_SERVICE_ROLE_KEY
+        env:
+          SECRET_VAL: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: supabase secrets set SUPABASE_SERVICE_ROLE_KEY="$SECRET_VAL" --project-ref bqyysvjnitbeimvaxkao
+      - name: Set STRIPE_WEBHOOK_SECRET
+        env:
+          SECRET_VAL: ${{ secrets.STRIPE_WEBHOOK_SECRET }}
+        run: supabase secrets set STRIPE_WEBHOOK_SECRET="$SECRET_VAL" --project-ref bqyysvjnitbeimvaxkao
