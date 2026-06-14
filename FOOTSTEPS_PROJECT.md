@@ -325,7 +325,7 @@ Every story must follow this exact style:
 - **Faithful to the biblical text** — no invented dialogue or scenes beyond what Scripture gives
 - **Zero commentary** — no "here's why this matters" woven into story paragraphs
 - **No verse numbers** — flows as narrative
-- **No em dashes (`—`) in story paragraphs** — use commas or rewrite. Em dashes cause word highlighting drift. Stories 1–10 already have audio so leave existing dashes. Apply to all new stories.
+- **No em dashes (`—`) in story paragraphs** — use commas or rewrite. A spaced em dash becomes its own on-screen word but no spoken word, so every word after it highlights one position early (drift accumulates). This now applies to ALL stories, including 1–10: their em dashes were replaced with commas, which re-aligned them perfectly with the existing audio (no regeneration needed). Em dashes are still fine in non-narrated fields (hook, quiz, devotional, connections).
 - **Conservative Protestant theology** — free will (Arminian), high view of Scripture, miracles real, OT typology pointing to Christ
 - Big Idea: one punchy sentence
 - Talk About It: exactly 3 questions, age 9–12 appropriate
@@ -422,28 +422,45 @@ Every story must follow this exact style:
 
 ## Audio Generation
 
-### Script usage
+### Network requirement (Claude Code on the web)
+`api.elevenlabs.io` must be in the environment's **network egress allowlist** or
+every request returns `403 Host not in allowlist`. Add it before generating.
+
+### API key
+Read from the `ELEVENLABS_API_KEY` environment variable (no longer hard-coded):
 ```bash
-python3 generate_audio.py <story-id>
+export ELEVENLABS_API_KEY=sk_...   # rotate the old key — it was committed publicly
 ```
 
-Generates `audio/<story-id>.mp3` and `audio/<story-id>.json` simultaneously.
+### Script usage
+```bash
+python3 generate_audio.py --list                 # status of all 50 stories
+python3 generate_audio.py --all-missing          # plan + cost, spends nothing
+python3 generate_audio.py --all-missing --yes    # generate everything not yet aligned
+python3 generate_audio.py <story-id> --yes       # generate one story
+```
+For each story it saves `audio/<id>.mp3` + `audio/<id>.json`, then verifies the
+narration lines up 1:1 with the on-screen words using the app's real tokenization.
+On PASS it sets `"audio"` in `stories.json`; on FAIL it leaves the field unset so a
+mis-highlighting file is never wired into the app. Same voice + model as stories 1–10.
+
+### Verification
+```bash
+python3 verify_audio.py            # check every story with audio (app-accurate)
+python3 verify_audio.py <story-id> # check one
+```
+PASS means every spoken word is the exact word highlighted. Run after any text edit.
 
 ### ElevenLabs notes
-- Plan: Creator ($22/month)
-- Voice: Premium voice at 2x character usage rate
-- Effective budget: ~40,000 characters per month (~8–10 stories)
-- Always write story first, generate audio after — changing text requires regenerating
-- Stories 1–10: audio complete, do not change story text without regenerating
-- Stories 11–50: ready for audio generation
+- Voice: premium voice (`1wg2wOjdEWKA7yQD8Kca`), model `eleven_multilingual_v2`, billed at 2x characters
+- Always finalize the text first — changing a story's text requires regenerating its audio
+- Stories 1–10: audio aligned via em-dash cleanup (no regeneration)
+- Stories 11–50: ~107,000 chars (~214,000 credits at 2x) still to generate
 - Prologue audio needed: `prologue.mp3` and `prologue-t2.mp3`
-
-### Audio pending (stories 11–50)
-Generate in order. Each story costs approximately 2,000–4,000 characters at 2x rate.
 
 ### Git workflow after generation
 ```bash
-git add audio/
+git add audio/ stories.json
 git commit -m "Add audio for story-name"
 git push
 ```

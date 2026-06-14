@@ -1,11 +1,28 @@
 #!/usr/bin/env python3
 """
-verify_audio.py — Compares stories.json text against ElevenLabs timestamp JSON
-to detect any word mismatches between the written story and the generated audio.
+verify_audio.py — Verify that every word the narrator speaks is the exact word
+the app will highlight, for each story that has audio.
+
+This mirrors the REAL highlighting logic in index.html so a PASS here means the
+on-screen word highlighting will track the narration perfectly:
+
+  * AUDIO side  — buildWordTimings(): walks the ElevenLabs character stream and
+                  splits words on space, newline and em dash ("—"). The em
+                  dash is a separator that produces NO word of its own.
+  * DISPLAY side — wrapStoryWords(): renders each paragraph and splits its text
+                  on whitespace only, turning every non-space run into one
+                  highlightable <span>. (A lone "—" therefore becomes its
+                  own span — which is exactly what used to break the sync.)
+
+The app highlights allWordSpans[i] for audio word i, so the two token streams
+must line up 1:1. We compare them index-by-index (punctuation/case ignored,
+since the app highlights by position, not by text).
 
 Usage:
-  python3 verify_audio.py              # checks all stories with audio
-  python3 verify_audio.py creation     # checks one story
+  python3 verify_audio.py            # check every story that has audio
+  python3 verify_audio.py creation   # check one story
+  python3 verify_audio.py --strict   # also fail on audio-field/file problems
+Exit code is non-zero if any checked story is misaligned.
 """
 
 import json
@@ -13,115 +30,132 @@ import sys
 import os
 import re
 
+AUDIO_DIR = 'audio'
+STORIES_FILE = 'stories.json'
+WORD_SEPARATORS = (' ', '\n', '—')  # exactly what buildWordTimings() splits on
+
+
 def clean_word(w):
-    """Strip punctuation for comparison, lowercase."""
-    return re.sub(r"[^a-zA-Z0-9']", '', w).lower()
+    """Lowercase and strip everything but letters/digits/apostrophe (matches by position, not punctuation)."""
+    return re.sub(r"[^a-z0-9']", '', w.lower())
 
-def get_story_words(story):
-    """Extract all words from story paragraphs."""
-    text = ' '.join(story['story'])
-    # Split on whitespace and dashes, keep words
-    tokens = re.split(r'[\s\u2014\u2013]+', text)
-    return [w for w in tokens if clean_word(w)]
 
-def get_audio_words(alignment):
-    """Reconstruct words from ElevenLabs character-level timestamp data."""
+def display_tokens(story):
+    """Mirror wrapStoryWords(): per paragraph, split textContent on whitespace, keep non-space runs."""
+    tokens = []
+    for para in story['story']:
+        for tok in re.split(r'(\s+)', para):
+            if tok.strip() != '':
+                tokens.append(tok)
+    return tokens
+
+
+def audio_tokens(alignment):
+    """Mirror buildWordTimings(): walk characters, break on space/newline/em-dash, em-dash yields no word."""
     chars = alignment['characters']
-    words = []
-    current = ''
+    words, cur = [], ''
     for c in chars:
-        if c in (' ', '\n', '\u2014', '\u2013'):
-            if current:
-                words.append(current)
-                current = ''
+        if c in WORD_SEPARATORS:
+            if cur:
+                words.append(cur)
+                cur = ''
         else:
-            current += c
-    if current:
-        words.append(current)
-    return [w for w in words if clean_word(w)]
+            cur += c
+    if cur:
+        words.append(cur)
+    return words
 
-def compare(story_words, audio_words, story_id):
-    issues = []
-    sw = [clean_word(w) for w in story_words]
-    aw = [clean_word(w) for w in audio_words]
 
-    if len(sw) != len(aw):
-        issues.append(f"  ⚠️  Word count mismatch: story={len(sw)} audio={len(aw)}")
+def verify_story(story):
+    """Return (status, message). status in {'match','mismatch','missing','unlinked'}."""
+    sid = story['id']
+    json_path = os.path.join(AUDIO_DIR, f"{sid}.json")
+    mp3_path = os.path.join(AUDIO_DIR, f"{sid}.mp3")
+    linked = bool(story.get('audio'))
 
-    # Find first divergence
-    mismatches = 0
-    for i, (s, a) in enumerate(zip(sw, aw)):
-        if s != a:
-            mismatches += 1
-            context_s = ' '.join(story_words[max(0,i-2):i+3])
-            context_a = ' '.join(audio_words[max(0,i-2):i+3])
-            issues.append(f"  ✗  Word {i+1}: story='{s}' audio='{a}'")
-            issues.append(f"       story context: '...{context_s}...'")
-            issues.append(f"       audio context: '...{context_a}...'")
-            if mismatches >= 3:
-                issues.append(f"  ... (stopping after 3 mismatches)")
-                break
+    if not os.path.exists(json_path) or not os.path.exists(mp3_path):
+        if linked:
+            return 'missing', f"audio field is set to {story['audio']!r} but the file is missing on disk"
+        return 'absent', "no audio yet"
 
-    return issues
-
-def verify_story(story, audio_dir='audio'):
-    story_id = story['id']
-    json_path = os.path.join(audio_dir, f"{story_id}.json")
-
-    if not os.path.exists(json_path):
-        return None, f"  — No timestamp file found at {json_path}"
-
-    with open(json_path) as f:
+    with open(json_path, encoding='utf-8') as f:
         alignment = json.load(f)
 
-    story_words = get_story_words(story)
-    audio_words = get_audio_words(alignment)
-    issues = compare(story_words, audio_words, story_id)
+    disp = display_tokens(story)
+    audio = audio_tokens(alignment)
 
-    return len(story_words), issues
+    # First index where the highlighted word would differ from the spoken word.
+    first_div = None
+    for i in range(min(len(disp), len(audio))):
+        if clean_word(disp[i]) != clean_word(audio[i]):
+            first_div = i
+            break
+
+    if len(disp) == len(audio) and first_div is None:
+        note = '' if linked else '  (NOTE: aligned, but "audio" field not set in stories.json — app will not play it)'
+        return 'match', f"{len(disp)} words{note}"
+
+    # Build a helpful divergence report.
+    lines = [f"display words={len(disp)}  audio words={len(audio)}  (gap={len(disp) - len(audio):+d})"]
+    if first_div is not None:
+        a = max(0, first_div - 3)
+        lines.append(f"    first divergence at word #{first_div + 1}:")
+        lines.append(f"      highlighted: ...{' '.join(disp[a:first_div + 2])}...")
+        lines.append(f"      spoken     : ...{' '.join(audio[a:first_div + 2])}...")
+    else:
+        n = min(len(disp), len(audio))
+        lines.append(f"    streams agree for {n} words, then one runs longer:")
+        lines.append(f"      extra highlighted tail: {disp[n:n + 4]}")
+        lines.append(f"      extra spoken tail     : {audio[n:n + 4]}")
+    return 'mismatch', '\n'.join(lines)
+
 
 def main():
-    with open('stories.json') as f:
+    args = [a for a in sys.argv[1:] if not a.startswith('--')]
+    strict = '--strict' in sys.argv
+
+    with open(STORIES_FILE, encoding='utf-8') as f:
         data = json.load(f)
+    stories = sorted(data['stories'], key=lambda s: s.get('order', 0))
 
-    stories = sorted(data['stories'], key=lambda s: s['order'])
-
-    # Filter to specific story if argument given
-    target = sys.argv[1] if len(sys.argv) > 1 else None
-    if target:
+    if args:
+        target = args[0]
         stories = [s for s in stories if s['id'] == target]
         if not stories:
             print(f"Story '{target}' not found")
-            sys.exit(1)
+            sys.exit(2)
 
-    print("FOOTSTEPS AUDIO VERIFICATION")
-    print("=" * 60)
+    print("FOOTSTEPS AUDIO SYNC VERIFICATION")
+    print("=" * 64)
 
-    all_clean = True
-    for story in stories:
-        word_count, issues = verify_story(story)
+    matched = mism = missing = absent = 0
+    for s in stories:
+        status, msg = verify_story(s)
+        tag = f"{s.get('order', 0):02d}. {s['title']}"
+        if status == 'match':
+            matched += 1
+            print(f"PASS  {tag:<44} {msg}")
+        elif status == 'mismatch':
+            mism += 1
+            print(f"FAIL  {tag}")
+            for line in msg.splitlines():
+                print(f"      {line}")
+        elif status == 'missing':
+            missing += 1
+            print(f"BROKEN {tag:<43} {msg}")
+        else:  # absent
+            absent += 1
+            if args:  # only mention when a specific story was requested
+                print(f"----  {tag:<44} {msg}")
 
-        if word_count is None:
-            # No audio file yet — skip silently unless it was specifically requested
-            if target:
-                print(f"\n{story['order']:02d}. {story['title']}")
-                print(issues)
-            continue
+    print("=" * 64)
+    print(f"{matched} aligned   {mism} misaligned   {missing} linked-but-missing   {absent} no-audio")
+    problems = mism + (missing if strict else 0)
+    if mism:
+        print("Some stories are misaligned. Regenerate their audio from the current text,")
+        print("or fix the text so it matches the existing audio.")
+    sys.exit(1 if problems else 0)
 
-        if not issues:
-            print(f"✅ {story['order']:02d}. {story['title']:<42} ({word_count} words) — MATCH")
-        else:
-            all_clean = False
-            print(f"\n❌ {story['order']:02d}. {story['title']}")
-            for issue in issues:
-                print(issue)
-
-    print("\n" + "=" * 60)
-    if all_clean:
-        print("✅ All stories with audio match perfectly")
-    else:
-        print("⚠️  Some stories have mismatches — fix the JSON text to match the audio")
-        print("   Rule: audio is the source of truth. Edit JSON to match audio, not vice versa.")
 
 if __name__ == '__main__':
     main()
