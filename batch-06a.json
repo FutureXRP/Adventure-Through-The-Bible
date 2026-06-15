@@ -1,0 +1,682 @@
+[
+  {
+    "id": "peter-beggar",
+    "era": "nt-church",
+    "emoji": "🙌",
+    "title": "Silver and Gold I Do Not Have",
+    "date": "c. AD 33",
+    "location": "Jerusalem",
+    "connections": [
+      {
+        "title": "The Day Everything Changed",
+        "storyId": "pentecost",
+        "reference": "Acts 3:6",
+        "why": "Filled with the Spirit at Pentecost, Peter now does in Jesus' name the very kind of miracle Jesus once did."
+      },
+      {
+        "title": "Through the Roof",
+        "storyId": "paralytic",
+        "reference": "Acts 3:8",
+        "why": "Just as Jesus made a paralyzed man walk, Peter, in Jesus' name, lifts up a man who had never walked in his life."
+      },
+      {
+        "title": "The Ethiopian's Chariot",
+        "storyId": "philip-ethiopian",
+        "reference": "Acts 1:8",
+        "why": "This is the early church beginning to spread the good news of Jesus, just as he told them to, starting in Jerusalem."
+      }
+    ],
+    "tier1": {
+      "book": "Acts 3",
+      "hook": "A man who had never walked in his whole life sat begging at the temple gate. He asked Peter for some coins. What Peter gave him was far better than money.",
+      "story": [
+        "One afternoon, Peter and John were going up to the temple to pray. At the temple gate sat a man who had been unable to walk his entire life. Every day his friends carried him there to beg for coins from the people going in to worship.",
+        "When he saw Peter and John about to enter, he asked them for money, as he asked everyone. Peter looked straight at him and said, \"Look at us.\" The man looked up, expecting to receive a coin or two.",
+        "But Peter said something surprising. \"Silver and gold I do not have,\" he told the man, \"but what I do have, I give to you. In the name of Jesus Christ of Nazareth, get up and walk!\"",
+        "Then Peter took him by the right hand and helped him up. And instantly, the man's feet and ankles became strong! He had never stood before in his life, and now strength surged through legs that had never worked.",
+        "The man jumped to his feet and began to walk. Then he started leaping and jumping, and he went into the temple courts with Peter and John, walking and jumping and praising God at the top of his voice.",
+        "Everyone who saw him was filled with wonder and amazement, for they recognized him as the man who had begged at the gate for so many years. They could hardly believe their eyes.",
+        "Peter told the astonished crowd that it was not by his own power. It was faith in the name of Jesus, the very Jesus they had handed over to be crucified, but whom God had raised from the dead, that had made this man strong. Jesus was still healing and still saving, now through his followers."
+      ],
+      "devotional": {
+        "bigIdea": "Peter did not have money to give, but he gave what he did have, the power of Jesus' name, and a man walked for the first time. We may not have everything, but we all have something to give. And the name of Jesus is more powerful than any amount of silver or gold.",
+        "questions": [
+          "The man asked for coins, but God gave him something far greater. When has God given you something better than what you asked for?",
+          "Peter said, what I have, I give to you. What is something you have that you could give to help someone else?",
+          "The healed man could not stop praising God. What is something God has done that makes you want to praise him?"
+        ]
+      },
+      "tags": [
+        "the early church",
+        "the name of Jesus",
+        "healing",
+        "faith",
+        "praise"
+      ],
+      "quiz": [
+        {
+          "question": "Where was the man who could not walk?",
+          "options": [
+            "Begging at the temple gate",
+            "On a boat",
+            "In a palace"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the man ask Peter and John for?",
+          "options": [
+            "Money",
+            "Food",
+            "A ride"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Peter say he would give instead?",
+          "options": [
+            "Healing in the name of Jesus",
+            "Gold",
+            "A job"
+          ],
+          "answer": 0,
+          "explanation": "Silver and gold he did not have, but he had the power of Jesus' name."
+        },
+        {
+          "question": "What did the healed man do?",
+          "options": [
+            "Jumped, walked, and praised God",
+            "Went back to begging",
+            "Ran away"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Whose power healed the man?",
+          "options": [
+            "The power of Jesus' name",
+            "Peter's own strength",
+            "The temple's"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ]
+    },
+    "tier2": {
+      "book": "Acts 3",
+      "hook": "A man who could never walk sat begging at the temple. He asked Peter for some coins, but Peter gave him something much better!",
+      "story": [
+        "One day, Peter and John were going to the temple to pray.",
+        "At the temple gate sat a man who had never been able to walk. Every day, his friends carried him there to beg for money.",
+        "When he saw Peter and John, he asked them for some coins.",
+        "Peter looked right at him and said, \"Look at us!\" The man looked up, hoping for some money.",
+        "But Peter said, \"I do not have any silver or gold. But I will give you what I do have!\"",
+        "\"In the name of Jesus,\" said Peter, \"get up and walk!\" Then Peter took the man's hand and helped him up.",
+        "Right away, the man's feet and legs became strong! He stood up for the very first time in his life!",
+        "The man started to walk, then jump, then leap for joy! He went into the temple praising God as loud as he could.",
+        "Everyone was amazed. They knew this was the same man who used to sit and beg.",
+        "It was the power of Jesus that made him strong. Jesus was still helping people through his friends!"
+      ],
+      "devotional": {
+        "bigIdea": "Peter had no money, but he gave what he had, the power of Jesus' name, and the man could walk! We all have something to give, and Jesus' name is more powerful than gold.",
+        "questions": [
+          "The man got something better than money. What good things has God given you?",
+          "Peter gave what he had. What could you give to help someone?",
+          "The man praised God for his new legs. What can you praise God for?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "the early church",
+        "the name of Jesus",
+        "praise"
+      ],
+      "quiz": [
+        {
+          "question": "What could the man at the gate not do?",
+          "options": [
+            "Walk",
+            "See",
+            "Hear"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Peter give him instead of money?",
+          "options": [
+            "Healing in Jesus' name",
+            "Gold",
+            "Bread"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the man do when his legs were strong?",
+          "options": [
+            "Jumped and praised God",
+            "Sat back down",
+            "Ran away"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ]
+    }
+  },
+  {
+    "id": "philip-ethiopian",
+    "era": "nt-church",
+    "emoji": "📜",
+    "title": "The Ethiopian's Chariot",
+    "date": "c. AD 34",
+    "location": "The Desert Road to Gaza",
+    "connections": [
+      {
+        "title": "The Servant Who Suffers",
+        "storyId": "isaiah-servant",
+        "reference": "Acts 8:32",
+        "why": "The Ethiopian is reading the very words of Isaiah about the suffering servant, and Philip explains that they are about Jesus."
+      },
+      {
+        "title": "Jesus Is Baptized",
+        "storyId": "baptism",
+        "reference": "Acts 8:38",
+        "why": "As soon as the Ethiopian believes, he wants to be baptized, just as Jesus was, to show he now belongs to God."
+      },
+      {
+        "title": "Silver and Gold I Do Not Have",
+        "storyId": "peter-beggar",
+        "reference": "Acts 1:8",
+        "why": "The good news of Jesus keeps spreading outward, now reaching a traveler from a faraway land."
+      }
+    ],
+    "tier1": {
+      "book": "Acts 8",
+      "hook": "God sent Philip to a lonely desert road for one reason: a man in a chariot was reading words he could not understand, and he needed someone to explain them.",
+      "story": [
+        "An angel of the Lord told Philip, one of the leaders of the early church, to go to a certain desert road that led down from Jerusalem. Philip did not know why, but he obeyed and went.",
+        "On that road came a chariot carrying an important official from the faraway land of Ethiopia. He was a powerful man, in charge of all the queen's treasure, and he had traveled a very long way to worship God in Jerusalem. Now, riding home, he was reading aloud from the scroll of the prophet Isaiah.",
+        "The Spirit of God said to Philip, \"Go over and stay near that chariot.\" So Philip ran up to it, and he heard the man reading the words of Isaiah, words about one who was led like a lamb to be killed, and who said nothing.",
+        "\"Do you understand what you are reading?\" Philip asked. \"How can I,\" the man replied, \"unless someone explains it to me?\" And he invited Philip to climb up and sit with him.",
+        "The man asked, \"Who is the prophet talking about?\" So beginning right there with that very passage of Isaiah, Philip told him the good news about Jesus, the true Lamb who was led to the cross and gave his life to save us, just as Isaiah had written hundreds of years before.",
+        "As they traveled along, they came to some water. The official said, \"Look, here is water! What is there to stop me from being baptized?\" So he ordered the chariot to stop, and Philip baptized him right there, the man's way of saying he now belonged to Jesus.",
+        "Then the Ethiopian went on his way home rejoicing, carrying the good news of Jesus all the way back to his own country. God had sent Philip to a lonely road for the sake of one searching heart, because no one is too far away for the good news of Jesus to reach."
+      ],
+      "devotional": {
+        "bigIdea": "God cared so much about one searching man that he sent Philip to a lonely desert road to find him. The good news of Jesus is for everyone, from every land. And often God uses ordinary people who are willing to go and to explain his word to others.",
+        "questions": [
+          "Philip obeyed God and went to the desert road without knowing why. When has it been hard to obey God before you understood the reason?",
+          "The man could not understand the Bible until someone explained it. Who helps you understand God's word?",
+          "The man went home rejoicing and shared the good news. Who is someone you could share about Jesus with?"
+        ]
+      },
+      "tags": [
+        "the early church",
+        "good news for all",
+        "obedience",
+        "Scripture",
+        "baptism"
+      ],
+      "quiz": [
+        {
+          "question": "Where did the angel send Philip?",
+          "options": [
+            "To a desert road",
+            "To a palace",
+            "To the sea"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Who was riding in the chariot?",
+          "options": [
+            "An important official from Ethiopia",
+            "A Roman soldier",
+            "A king of Israel"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What was the man reading?",
+          "options": [
+            "The scroll of Isaiah",
+            "A letter",
+            "A map"
+          ],
+          "answer": 0,
+          "explanation": "He was reading about the suffering servant, which was about Jesus."
+        },
+        {
+          "question": "What did Philip explain to him?",
+          "options": [
+            "The good news about Jesus",
+            "How to drive a chariot",
+            "Where to find gold"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the man do when they came to water?",
+          "options": [
+            "He was baptized",
+            "He went swimming",
+            "He took a drink and left"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ]
+    },
+    "tier2": {
+      "book": "Acts 8",
+      "hook": "God sent Philip to a quiet desert road to meet a man in a chariot who needed help understanding God's words.",
+      "story": [
+        "An angel told a man named Philip to go to a desert road. Philip did not know why, but he obeyed.",
+        "On that road came a chariot. Inside was an important man from a faraway land called Ethiopia.",
+        "He had traveled a long way to worship God. Now, riding home, he was reading from God's word, the book of Isaiah.",
+        "God's Spirit told Philip, \"Go over to that chariot.\" So Philip ran up to it.",
+        "Philip heard the man reading. \"Do you understand what you are reading?\" Philip asked.",
+        "\"How can I,\" said the man, \"unless someone explains it?\" So he invited Philip to sit with him.",
+        "Philip told the man all about Jesus, and how the words he was reading were about Jesus all along.",
+        "As they rode, they came to some water. \"Look, water!\" said the man. \"Can I be baptized?\"",
+        "So they stopped, and Philip baptized him to show he now belonged to Jesus.",
+        "Then the happy man went home to tell others about Jesus. The good news of Jesus is for everyone, everywhere!"
+      ],
+      "devotional": {
+        "bigIdea": "God sent Philip to help one man understand his word and learn about Jesus. The good news of Jesus is for everyone, in every land!",
+        "questions": [
+          "Philip obeyed God even before he knew why. When is it hard to obey?",
+          "Someone helped the man understand the Bible. Who helps you learn about God?",
+          "The man told others about Jesus. Who could you tell about Jesus?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "the early church",
+        "good news for all",
+        "baptism"
+      ],
+      "quiz": [
+        {
+          "question": "Where did God send Philip?",
+          "options": [
+            "To a desert road",
+            "To a city",
+            "To a boat"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What was the man in the chariot reading?",
+          "options": [
+            "God's word about Jesus",
+            "A storybook",
+            "A map"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the man do after he believed?",
+          "options": [
+            "He was baptized",
+            "He went to sleep",
+            "He drove away fast"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ]
+    }
+  },
+  {
+    "id": "cornelius",
+    "era": "nt-church",
+    "emoji": "🌍",
+    "title": "Good News for Everyone",
+    "date": "c. AD 37",
+    "location": "Caesarea",
+    "connections": [
+      {
+        "title": "The Day Everything Changed",
+        "storyId": "pentecost",
+        "reference": "Acts 10:44",
+        "why": "The same Holy Spirit who came at Pentecost now falls on people from another nation, showing the good news is for all."
+      },
+      {
+        "title": "The Man Who Ran From God",
+        "storyId": "jonah",
+        "reference": "Acts 10:35",
+        "why": "Like Jonah learning God loved the people of Nineveh, Peter learns that God welcomes people from every nation."
+      },
+      {
+        "title": "The Ethiopian's Chariot",
+        "storyId": "philip-ethiopian",
+        "reference": "Acts 10:34",
+        "why": "Step by step, God is showing his church that the good news of Jesus is meant for the whole world, not one nation only."
+      }
+    ],
+    "tier1": {
+      "book": "Acts 10",
+      "hook": "God had to teach Peter a lesson he never expected: the good news of Jesus was not just for his own people. It was for everyone, even a Roman soldier.",
+      "story": [
+        "In the city of Caesarea lived a Roman army officer named Cornelius. He was not part of God's people Israel, but he loved God, prayed often, and was generous to the poor. One day an angel appeared to him and said, \"God has heard your prayers. Send for a man named Peter.\" So Cornelius sent messengers to find him.",
+        "Meanwhile, Peter was praying up on a rooftop, and he became hungry. While he waited for food, he had a strange vision. He saw a huge sheet come down from heaven, full of all kinds of animals, including ones that the Jewish law said God's people were not allowed to eat.",
+        "A voice said, \"Get up, Peter. Kill and eat.\" But Peter refused. \"No, Lord! I have never eaten anything impure.\" The voice spoke again, \"Do not call anything impure that God has made clean.\" This happened three times, and Peter was left wondering what it could possibly mean.",
+        "Just then, Cornelius's messengers arrived at the door, and the Spirit told Peter to go with them. Now in those days, Jewish people did not usually enter the homes of people from other nations. But Peter was beginning to understand what his vision meant.",
+        "When Peter arrived at Cornelius's house, full of waiting friends and family, he said, \"God has shown me that I should not call anyone impure. I now realize how true it is that God does not play favorites, but welcomes people from every nation who honor him.\"",
+        "Then Peter told them all the good news about Jesus, how he died and rose again to save anyone who believes. And while Peter was still speaking, the Holy Spirit came down on everyone listening, just as he had come on Peter and the others at Pentecost. People from another nation had received the same gift!",
+        "Peter was amazed, but he knew exactly what to do. \"Can anyone keep these people from being baptized? They have received the Holy Spirit just as we have.\" And so they were baptized. The good news of Jesus had burst past every wall and border. It was for the whole wide world."
+      ],
+      "devotional": {
+        "bigIdea": "Peter thought God's good news was just for his own people. But God showed him that he does not play favorites. The gift of Jesus is for every person of every nation, color, and language. There is no one outside the reach of God's love.",
+        "questions": [
+          "Peter learned that God does not play favorites. Why is it good news that God welcomes people from every nation?",
+          "God told Peter not to call impure what God had made clean. Is there anyone you find hard to love that God loves completely?",
+          "The good news is for the whole world. How does it feel to know God's love includes you, no matter where you are from?"
+        ]
+      },
+      "tags": [
+        "good news for all",
+        "no favorites",
+        "the early church",
+        "the Holy Spirit",
+        "God's love"
+      ],
+      "quiz": [
+        {
+          "question": "Who was Cornelius?",
+          "options": [
+            "A Roman officer who loved God",
+            "A king of Israel",
+            "A fisherman"
+          ],
+          "answer": 0,
+          "explanation": "He was not one of God's people Israel, but he prayed and gave generously."
+        },
+        {
+          "question": "What did Peter see in his vision?",
+          "options": [
+            "A sheet of animals lowered from heaven",
+            "A burning bush",
+            "A great storm"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the voice tell Peter?",
+          "options": [
+            "Do not call impure what God has made clean",
+            "Go back to sleep",
+            "Build a temple"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Peter learn about God?",
+          "options": [
+            "God does not play favorites",
+            "God only loves Israel",
+            "God is far away"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What happened while Peter was still speaking?",
+          "options": [
+            "The Holy Spirit came on the people",
+            "Everyone fell asleep",
+            "It started to rain"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ]
+    },
+    "tier2": {
+      "book": "Acts 10",
+      "hook": "God taught Peter a wonderful surprise: the good news about Jesus is not just for some people. It is for everyone in the whole world!",
+      "story": [
+        "In a city called Caesarea lived a Roman soldier named Cornelius. He was not one of God's people Israel, but he loved God and prayed a lot.",
+        "One day an angel told Cornelius, \"God has heard your prayers. Send for a man named Peter.\" So Cornelius sent for him.",
+        "Meanwhile, Peter was praying on a rooftop. He got hungry, and then he saw a strange vision.",
+        "He saw a big sheet come down from heaven, full of all kinds of animals. A voice said, \"Get up, Peter, and eat.\"",
+        "\"No, Lord!\" said Peter. \"I never eat those.\" But the voice said, \"Do not call anything bad that God has made good.\"",
+        "Just then, Cornelius's messengers came to the door. God's Spirit told Peter to go with them, so he did.",
+        "When Peter got to the house, he said, \"Now I understand! God loves people from every nation, not just some.\"",
+        "Then Peter told everyone the good news about Jesus.",
+        "While Peter was still talking, the Holy Spirit came down on all of them, just like at Pentecost!",
+        "So they were all baptized. The good news of Jesus is for everyone, everywhere, including you!"
+      ],
+      "devotional": {
+        "bigIdea": "Peter learned that God does not pick favorites. The good news of Jesus is for every person, in every land. God's love is for everyone, including you!",
+        "questions": [
+          "God loves people from every land. Why is that wonderful news?",
+          "Is there someone you find hard to be kind to? God loves them too.",
+          "How does it feel to know God's love is for you, no matter what?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "good news for all",
+        "the early church",
+        "God's love"
+      ],
+      "quiz": [
+        {
+          "question": "Who was Cornelius?",
+          "options": [
+            "A Roman soldier who loved God",
+            "A king",
+            "A baker"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did God teach Peter?",
+          "options": [
+            "God loves people from every nation",
+            "Only some people matter",
+            "To stay home"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Who is the good news of Jesus for?",
+          "options": [
+            "Everyone, everywhere",
+            "Only a few people",
+            "Only grown-ups"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ]
+    }
+  },
+  {
+    "id": "peter-escapes",
+    "era": "nt-church",
+    "emoji": "⛓️",
+    "title": "Peter's Prison Escape",
+    "date": "c. AD 44",
+    "location": "Jerusalem",
+    "connections": [
+      {
+        "title": "Singing at Midnight",
+        "storyId": "paul-jail",
+        "reference": "Acts 16:25",
+        "why": "Like Paul and Silas later, Peter is locked in prison, and God steps in to set his servant free."
+      },
+      {
+        "title": "The Lion's Den",
+        "storyId": "daniel",
+        "reference": "Acts 12:11",
+        "why": "Just as God shut the lions' mouths for Daniel, he sends an angel to rescue Peter from the hand of a wicked king."
+      },
+      {
+        "title": "The Day Everything Changed",
+        "storyId": "pentecost",
+        "reference": "Acts 12:5",
+        "why": "The praying church that begs God for Peter is the same Spirit-filled community born at Pentecost."
+      }
+    ],
+    "tier1": {
+      "book": "Acts 12",
+      "hook": "Peter was chained in prison, with soldiers guarding him on every side, set to be put on trial the next morning. His friends could do only one thing: pray. So they prayed all night.",
+      "story": [
+        "Wicked King Herod had begun to attack the church, and he threw Peter into prison, planning to put him on trial and have him killed. Peter was guarded by four squads of soldiers, chained between two of them, with more guards at the door. There seemed to be no way out at all.",
+        "But the church did the most powerful thing they could do. They gathered together and prayed for Peter, earnestly, all through the night.",
+        "The very night before his trial, Peter was sleeping, chained between the two soldiers. Suddenly an angel of the Lord appeared, and a bright light filled the cell. The angel tapped Peter on the side and woke him. \"Quick, get up!\" And the chains fell right off Peter's wrists.",
+        "\"Get dressed and put on your sandals,\" the angel said. \"Now wrap your cloak around you and follow me.\" Peter obeyed, but he was so amazed he thought he must be dreaming. It did not seem like it could possibly be real.",
+        "They walked right past the first set of guards, then the second. When they came to the great iron gate that led into the city, it opened all by itself! They went through, walked the length of one street, and then suddenly the angel was gone.",
+        "Only then did Peter come to his senses. \"Now I know for certain,\" he said, \"that the Lord sent his angel and rescued me!\" He hurried to the house where the believers were gathered, still praying for him.",
+        "A servant girl named Rhoda came to answer his knock. When she heard Peter's voice, she was so overjoyed that she ran back to tell everyone, forgetting to open the door and leaving Peter standing outside, still knocking! The others did not believe her. \"You are out of your mind,\" they said. But Peter kept knocking, and when they finally opened the door, they were astonished. God had answered their prayers in the most wonderful way, while they were still praying them."
+      ],
+      "devotional": {
+        "bigIdea": "Peter's friends prayed all night, and God sent an angel to set him free. The funny part is that when the answer came knocking at the door, they could hardly believe it! God hears our prayers and answers them, sometimes in ways more amazing than we dared to expect.",
+        "questions": [
+          "The church prayed all night for Peter. Why do you think they kept praying even when things looked hopeless?",
+          "When Peter showed up, his friends could not believe their prayer was answered. Have you ever been surprised by how God answered a prayer?",
+          "God rescued Peter when there seemed to be no way out. What is a situation you can trust God with right now?"
+        ]
+      },
+      "tags": [
+        "prayer",
+        "rescue",
+        "God's power",
+        "the early church",
+        "angels"
+      ],
+      "quiz": [
+        {
+          "question": "Why was Peter in prison?",
+          "options": [
+            "Wicked King Herod was attacking the church",
+            "He stole something",
+            "He got lost"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the church do for Peter?",
+          "options": [
+            "Prayed for him all night",
+            "Forgot about him",
+            "Paid a ransom"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How did Peter get out of prison?",
+          "options": [
+            "An angel woke him and the chains fell off",
+            "He dug a tunnel",
+            "He picked the lock"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the iron gate do?",
+          "options": [
+            "It opened all by itself",
+            "It stayed shut",
+            "It broke"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Why did Rhoda leave Peter knocking at the door?",
+          "options": [
+            "She was so overjoyed she ran to tell everyone",
+            "She did not like him",
+            "She was asleep"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ]
+    },
+    "tier2": {
+      "book": "Acts 12",
+      "hook": "Peter was locked in prison with chains and guards. His friends prayed all night, and God sent an angel to set him free!",
+      "story": [
+        "A wicked king named Herod put Peter in prison. Peter was chained up, with soldiers guarding him all around.",
+        "But Peter's friends in the church did something powerful. They prayed for him all night long.",
+        "The night before Peter's trial, he was sleeping between two soldiers. Suddenly, an angel appeared, and a bright light filled the room!",
+        "The angel woke Peter and said, \"Quick, get up!\" And the chains fell right off Peter's hands!",
+        "\"Get dressed and follow me,\" said the angel. Peter was so amazed he thought he was dreaming.",
+        "They walked right past all the guards. When they came to the big iron gate, it opened all by itself!",
+        "Once they were outside, the angel disappeared. Peter said, \"Now I know God really sent his angel to rescue me!\"",
+        "Peter hurried to the house where his friends were still praying for him. He knocked on the door.",
+        "A girl named Rhoda heard his voice. She was so happy that she ran to tell everyone, but she forgot to open the door, leaving Peter knocking outside!",
+        "When they finally opened the door, they could not believe it. God had answered their prayers while they were still praying!"
+      ],
+      "devotional": {
+        "bigIdea": "Peter's friends prayed all night, and God sent an angel to rescue him. God hears our prayers and answers them, sometimes in amazing ways!",
+        "questions": [
+          "Peter's friends kept praying even when it looked hopeless. Why is it good to keep praying?",
+          "God surprised everyone with his answer. Has God ever surprised you?",
+          "What is something you can pray about and trust God with?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "prayer",
+        "rescue",
+        "the early church"
+      ],
+      "quiz": [
+        {
+          "question": "What did Peter's friends do for him?",
+          "options": [
+            "Prayed all night",
+            "Forgot him",
+            "Ran away"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How did Peter get free?",
+          "options": [
+            "An angel helped him and the chains fell off",
+            "He flew",
+            "He dug a hole"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Why did Rhoda leave Peter knocking?",
+          "options": [
+            "She was too happy and ran to tell everyone",
+            "She was mad",
+            "She was asleep"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ]
+    }
+  }
+]

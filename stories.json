@@ -3,7 +3,7 @@
     "title": "The Story Map",
     "subtitle": "An Adventure Through the Bible",
     "version": "1.0",
-    "totalStories": 93,
+    "totalStories": 100,
     "freeStories": 3
   },
   "eras": [
@@ -10081,9 +10081,119 @@
       "published_date": "2026-06-03"
     },
     {
-      "id": "stephen",
+      "id": "peter-beggar",
       "era": "nt-church",
       "order": 90,
+      "access": "premium",
+      "emoji": "🙌",
+      "title": "Silver and Gold I Do Not Have",
+      "book": "Acts 3",
+      "date": "c. AD 33",
+      "location": "Jerusalem",
+      "hook": "A man who had never walked in his whole life sat begging at the temple gate. He asked Peter for some coins. What Peter gave him was far better than money.",
+      "story": [
+        "One afternoon, Peter and John were going up to the temple to pray. At the temple gate sat a man who had been unable to walk his entire life. Every day his friends carried him there to beg for coins from the people going in to worship.",
+        "When he saw Peter and John about to enter, he asked them for money, as he asked everyone. Peter looked straight at him and said, \"Look at us.\" The man looked up, expecting to receive a coin or two.",
+        "But Peter said something surprising. \"Silver and gold I do not have,\" he told the man, \"but what I do have, I give to you. In the name of Jesus Christ of Nazareth, get up and walk!\"",
+        "Then Peter took him by the right hand and helped him up. And instantly, the man's feet and ankles became strong! He had never stood before in his life, and now strength surged through legs that had never worked.",
+        "The man jumped to his feet and began to walk. Then he started leaping and jumping, and he went into the temple courts with Peter and John, walking and jumping and praising God at the top of his voice.",
+        "Everyone who saw him was filled with wonder and amazement, for they recognized him as the man who had begged at the gate for so many years. They could hardly believe their eyes.",
+        "Peter told the astonished crowd that it was not by his own power. It was faith in the name of Jesus, the very Jesus they had handed over to be crucified, but whom God had raised from the dead, that had made this man strong. Jesus was still healing and still saving, now through his followers."
+      ],
+      "devotional": {
+        "bigIdea": "Peter did not have money to give, but he gave what he did have, the power of Jesus' name, and a man walked for the first time. We may not have everything, but we all have something to give. And the name of Jesus is more powerful than any amount of silver or gold.",
+        "questions": [
+          "The man asked for coins, but God gave him something far greater. When has God given you something better than what you asked for?",
+          "Peter said, what I have, I give to you. What is something you have that you could give to help someone else?",
+          "The healed man could not stop praising God. What is something God has done that makes you want to praise him?"
+        ]
+      },
+      "tags": [
+        "the early church",
+        "the name of Jesus",
+        "healing",
+        "faith",
+        "praise"
+      ],
+      "connections": [
+        {
+          "title": "The Day Everything Changed",
+          "storyId": "pentecost",
+          "reference": "Acts 3:6",
+          "why": "Filled with the Spirit at Pentecost, Peter now does in Jesus' name the very kind of miracle Jesus once did."
+        },
+        {
+          "title": "Through the Roof",
+          "storyId": "paralytic",
+          "reference": "Acts 3:8",
+          "why": "Just as Jesus made a paralyzed man walk, Peter, in Jesus' name, lifts up a man who had never walked in his life."
+        },
+        {
+          "title": "The Ethiopian's Chariot",
+          "storyId": "philip-ethiopian",
+          "reference": "Acts 1:8",
+          "why": "This is the early church beginning to spread the good news of Jesus, just as he told them to, starting in Jerusalem."
+        }
+      ],
+      "audio": "./audio/peter-beggar.mp3",
+      "quiz": [
+        {
+          "question": "Where was the man who could not walk?",
+          "options": [
+            "Begging at the temple gate",
+            "On a boat",
+            "In a palace"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the man ask Peter and John for?",
+          "options": [
+            "Money",
+            "Food",
+            "A ride"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Peter say he would give instead?",
+          "options": [
+            "Healing in the name of Jesus",
+            "Gold",
+            "A job"
+          ],
+          "answer": 0,
+          "explanation": "Silver and gold he did not have, but he had the power of Jesus' name."
+        },
+        {
+          "question": "What did the healed man do?",
+          "options": [
+            "Jumped, walked, and praised God",
+            "Went back to begging",
+            "Ran away"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Whose power healed the man?",
+          "options": [
+            "The power of Jesus' name",
+            "Peter's own strength",
+            "The temple's"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "stephen",
+      "era": "nt-church",
+      "order": 91,
       "access": "premium",
       "emoji": "✝️",
       "title": "The First Martyr",
@@ -10197,9 +10307,119 @@
       "published_date": "2026-06-03"
     },
     {
+      "id": "philip-ethiopian",
+      "era": "nt-church",
+      "order": 92,
+      "access": "premium",
+      "emoji": "📜",
+      "title": "The Ethiopian's Chariot",
+      "book": "Acts 8",
+      "date": "c. AD 34",
+      "location": "The Desert Road to Gaza",
+      "hook": "God sent Philip to a lonely desert road for one reason: a man in a chariot was reading words he could not understand, and he needed someone to explain them.",
+      "story": [
+        "An angel of the Lord told Philip, one of the leaders of the early church, to go to a certain desert road that led down from Jerusalem. Philip did not know why, but he obeyed and went.",
+        "On that road came a chariot carrying an important official from the faraway land of Ethiopia. He was a powerful man, in charge of all the queen's treasure, and he had traveled a very long way to worship God in Jerusalem. Now, riding home, he was reading aloud from the scroll of the prophet Isaiah.",
+        "The Spirit of God said to Philip, \"Go over and stay near that chariot.\" So Philip ran up to it, and he heard the man reading the words of Isaiah, words about one who was led like a lamb to be killed, and who said nothing.",
+        "\"Do you understand what you are reading?\" Philip asked. \"How can I,\" the man replied, \"unless someone explains it to me?\" And he invited Philip to climb up and sit with him.",
+        "The man asked, \"Who is the prophet talking about?\" So beginning right there with that very passage of Isaiah, Philip told him the good news about Jesus, the true Lamb who was led to the cross and gave his life to save us, just as Isaiah had written hundreds of years before.",
+        "As they traveled along, they came to some water. The official said, \"Look, here is water! What is there to stop me from being baptized?\" So he ordered the chariot to stop, and Philip baptized him right there, the man's way of saying he now belonged to Jesus.",
+        "Then the Ethiopian went on his way home rejoicing, carrying the good news of Jesus all the way back to his own country. God had sent Philip to a lonely road for the sake of one searching heart, because no one is too far away for the good news of Jesus to reach."
+      ],
+      "devotional": {
+        "bigIdea": "God cared so much about one searching man that he sent Philip to a lonely desert road to find him. The good news of Jesus is for everyone, from every land. And often God uses ordinary people who are willing to go and to explain his word to others.",
+        "questions": [
+          "Philip obeyed God and went to the desert road without knowing why. When has it been hard to obey God before you understood the reason?",
+          "The man could not understand the Bible until someone explained it. Who helps you understand God's word?",
+          "The man went home rejoicing and shared the good news. Who is someone you could share about Jesus with?"
+        ]
+      },
+      "tags": [
+        "the early church",
+        "good news for all",
+        "obedience",
+        "Scripture",
+        "baptism"
+      ],
+      "connections": [
+        {
+          "title": "The Servant Who Suffers",
+          "storyId": "isaiah-servant",
+          "reference": "Acts 8:32",
+          "why": "The Ethiopian is reading the very words of Isaiah about the suffering servant, and Philip explains that they are about Jesus."
+        },
+        {
+          "title": "Jesus Is Baptized",
+          "storyId": "baptism",
+          "reference": "Acts 8:38",
+          "why": "As soon as the Ethiopian believes, he wants to be baptized, just as Jesus was, to show he now belongs to God."
+        },
+        {
+          "title": "Silver and Gold I Do Not Have",
+          "storyId": "peter-beggar",
+          "reference": "Acts 1:8",
+          "why": "The good news of Jesus keeps spreading outward, now reaching a traveler from a faraway land."
+        }
+      ],
+      "audio": "./audio/philip-ethiopian.mp3",
+      "quiz": [
+        {
+          "question": "Where did the angel send Philip?",
+          "options": [
+            "To a desert road",
+            "To a palace",
+            "To the sea"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Who was riding in the chariot?",
+          "options": [
+            "An important official from Ethiopia",
+            "A Roman soldier",
+            "A king of Israel"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What was the man reading?",
+          "options": [
+            "The scroll of Isaiah",
+            "A letter",
+            "A map"
+          ],
+          "answer": 0,
+          "explanation": "He was reading about the suffering servant, which was about Jesus."
+        },
+        {
+          "question": "What did Philip explain to him?",
+          "options": [
+            "The good news about Jesus",
+            "How to drive a chariot",
+            "Where to find gold"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the man do when they came to water?",
+          "options": [
+            "He was baptized",
+            "He went swimming",
+            "He took a drink and left"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
       "id": "paul-conversion",
       "era": "nt-church",
-      "order": 91,
+      "order": 93,
       "access": "premium",
       "emoji": "⚡",
       "title": "The Man Who Hunted Christians",
@@ -10310,9 +10530,229 @@
       "published_date": "2026-06-03"
     },
     {
+      "id": "cornelius",
+      "era": "nt-church",
+      "order": 94,
+      "access": "premium",
+      "emoji": "🌍",
+      "title": "Good News for Everyone",
+      "book": "Acts 10",
+      "date": "c. AD 37",
+      "location": "Caesarea",
+      "hook": "God had to teach Peter a lesson he never expected: the good news of Jesus was not just for his own people. It was for everyone, even a Roman soldier.",
+      "story": [
+        "In the city of Caesarea lived a Roman army officer named Cornelius. He was not part of God's people Israel, but he loved God, prayed often, and was generous to the poor. One day an angel appeared to him and said, \"God has heard your prayers. Send for a man named Peter.\" So Cornelius sent messengers to find him.",
+        "Meanwhile, Peter was praying up on a rooftop, and he became hungry. While he waited for food, he had a strange vision. He saw a huge sheet come down from heaven, full of all kinds of animals, including ones that the Jewish law said God's people were not allowed to eat.",
+        "A voice said, \"Get up, Peter. Kill and eat.\" But Peter refused. \"No, Lord! I have never eaten anything impure.\" The voice spoke again, \"Do not call anything impure that God has made clean.\" This happened three times, and Peter was left wondering what it could possibly mean.",
+        "Just then, Cornelius's messengers arrived at the door, and the Spirit told Peter to go with them. Now in those days, Jewish people did not usually enter the homes of people from other nations. But Peter was beginning to understand what his vision meant.",
+        "When Peter arrived at Cornelius's house, full of waiting friends and family, he said, \"God has shown me that I should not call anyone impure. I now realize how true it is that God does not play favorites, but welcomes people from every nation who honor him.\"",
+        "Then Peter told them all the good news about Jesus, how he died and rose again to save anyone who believes. And while Peter was still speaking, the Holy Spirit came down on everyone listening, just as he had come on Peter and the others at Pentecost. People from another nation had received the same gift!",
+        "Peter was amazed, but he knew exactly what to do. \"Can anyone keep these people from being baptized? They have received the Holy Spirit just as we have.\" And so they were baptized. The good news of Jesus had burst past every wall and border. It was for the whole wide world."
+      ],
+      "devotional": {
+        "bigIdea": "Peter thought God's good news was just for his own people. But God showed him that he does not play favorites. The gift of Jesus is for every person of every nation, color, and language. There is no one outside the reach of God's love.",
+        "questions": [
+          "Peter learned that God does not play favorites. Why is it good news that God welcomes people from every nation?",
+          "God told Peter not to call impure what God had made clean. Is there anyone you find hard to love that God loves completely?",
+          "The good news is for the whole world. How does it feel to know God's love includes you, no matter where you are from?"
+        ]
+      },
+      "tags": [
+        "good news for all",
+        "no favorites",
+        "the early church",
+        "the Holy Spirit",
+        "God's love"
+      ],
+      "connections": [
+        {
+          "title": "The Day Everything Changed",
+          "storyId": "pentecost",
+          "reference": "Acts 10:44",
+          "why": "The same Holy Spirit who came at Pentecost now falls on people from another nation, showing the good news is for all."
+        },
+        {
+          "title": "The Man Who Ran From God",
+          "storyId": "jonah",
+          "reference": "Acts 10:35",
+          "why": "Like Jonah learning God loved the people of Nineveh, Peter learns that God welcomes people from every nation."
+        },
+        {
+          "title": "The Ethiopian's Chariot",
+          "storyId": "philip-ethiopian",
+          "reference": "Acts 10:34",
+          "why": "Step by step, God is showing his church that the good news of Jesus is meant for the whole world, not one nation only."
+        }
+      ],
+      "audio": "./audio/cornelius.mp3",
+      "quiz": [
+        {
+          "question": "Who was Cornelius?",
+          "options": [
+            "A Roman officer who loved God",
+            "A king of Israel",
+            "A fisherman"
+          ],
+          "answer": 0,
+          "explanation": "He was not one of God's people Israel, but he prayed and gave generously."
+        },
+        {
+          "question": "What did Peter see in his vision?",
+          "options": [
+            "A sheet of animals lowered from heaven",
+            "A burning bush",
+            "A great storm"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the voice tell Peter?",
+          "options": [
+            "Do not call impure what God has made clean",
+            "Go back to sleep",
+            "Build a temple"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Peter learn about God?",
+          "options": [
+            "God does not play favorites",
+            "God only loves Israel",
+            "God is far away"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What happened while Peter was still speaking?",
+          "options": [
+            "The Holy Spirit came on the people",
+            "Everyone fell asleep",
+            "It started to rain"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "peter-escapes",
+      "era": "nt-church",
+      "order": 95,
+      "access": "premium",
+      "emoji": "⛓️",
+      "title": "Peter's Prison Escape",
+      "book": "Acts 12",
+      "date": "c. AD 44",
+      "location": "Jerusalem",
+      "hook": "Peter was chained in prison, with soldiers guarding him on every side, set to be put on trial the next morning. His friends could do only one thing: pray. So they prayed all night.",
+      "story": [
+        "Wicked King Herod had begun to attack the church, and he threw Peter into prison, planning to put him on trial and have him killed. Peter was guarded by four squads of soldiers, chained between two of them, with more guards at the door. There seemed to be no way out at all.",
+        "But the church did the most powerful thing they could do. They gathered together and prayed for Peter, earnestly, all through the night.",
+        "The very night before his trial, Peter was sleeping, chained between the two soldiers. Suddenly an angel of the Lord appeared, and a bright light filled the cell. The angel tapped Peter on the side and woke him. \"Quick, get up!\" And the chains fell right off Peter's wrists.",
+        "\"Get dressed and put on your sandals,\" the angel said. \"Now wrap your cloak around you and follow me.\" Peter obeyed, but he was so amazed he thought he must be dreaming. It did not seem like it could possibly be real.",
+        "They walked right past the first set of guards, then the second. When they came to the great iron gate that led into the city, it opened all by itself! They went through, walked the length of one street, and then suddenly the angel was gone.",
+        "Only then did Peter come to his senses. \"Now I know for certain,\" he said, \"that the Lord sent his angel and rescued me!\" He hurried to the house where the believers were gathered, still praying for him.",
+        "A servant girl named Rhoda came to answer his knock. When she heard Peter's voice, she was so overjoyed that she ran back to tell everyone, forgetting to open the door and leaving Peter standing outside, still knocking! The others did not believe her. \"You are out of your mind,\" they said. But Peter kept knocking, and when they finally opened the door, they were astonished. God had answered their prayers in the most wonderful way, while they were still praying them."
+      ],
+      "devotional": {
+        "bigIdea": "Peter's friends prayed all night, and God sent an angel to set him free. The funny part is that when the answer came knocking at the door, they could hardly believe it! God hears our prayers and answers them, sometimes in ways more amazing than we dared to expect.",
+        "questions": [
+          "The church prayed all night for Peter. Why do you think they kept praying even when things looked hopeless?",
+          "When Peter showed up, his friends could not believe their prayer was answered. Have you ever been surprised by how God answered a prayer?",
+          "God rescued Peter when there seemed to be no way out. What is a situation you can trust God with right now?"
+        ]
+      },
+      "tags": [
+        "prayer",
+        "rescue",
+        "God's power",
+        "the early church",
+        "angels"
+      ],
+      "connections": [
+        {
+          "title": "Singing at Midnight",
+          "storyId": "paul-jail",
+          "reference": "Acts 16:25",
+          "why": "Like Paul and Silas later, Peter is locked in prison, and God steps in to set his servant free."
+        },
+        {
+          "title": "The Lion's Den",
+          "storyId": "daniel",
+          "reference": "Acts 12:11",
+          "why": "Just as God shut the lions' mouths for Daniel, he sends an angel to rescue Peter from the hand of a wicked king."
+        },
+        {
+          "title": "The Day Everything Changed",
+          "storyId": "pentecost",
+          "reference": "Acts 12:5",
+          "why": "The praying church that begs God for Peter is the same Spirit-filled community born at Pentecost."
+        }
+      ],
+      "audio": "./audio/peter-escapes.mp3",
+      "quiz": [
+        {
+          "question": "Why was Peter in prison?",
+          "options": [
+            "Wicked King Herod was attacking the church",
+            "He stole something",
+            "He got lost"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the church do for Peter?",
+          "options": [
+            "Prayed for him all night",
+            "Forgot about him",
+            "Paid a ransom"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How did Peter get out of prison?",
+          "options": [
+            "An angel woke him and the chains fell off",
+            "He dug a tunnel",
+            "He picked the lock"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the iron gate do?",
+          "options": [
+            "It opened all by itself",
+            "It stayed shut",
+            "It broke"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Why did Rhoda leave Peter knocking at the door?",
+          "options": [
+            "She was so overjoyed she ran to tell everyone",
+            "She did not like him",
+            "She was asleep"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
       "id": "paul-jail",
       "era": "nt-church",
-      "order": 92,
+      "order": 96,
       "access": "premium",
       "emoji": "🎵",
       "title": "Singing at Midnight",
@@ -10424,7 +10864,7 @@
     {
       "id": "lydia",
       "era": "nt-church",
-      "order": 93,
+      "order": 97,
       "access": "premium",
       "emoji": "🎨",
       "title": "The Purple Merchant",
@@ -10535,6 +10975,336 @@
         "women",
         "church",
         "purple"
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "athens",
+      "era": "nt-church",
+      "order": 98,
+      "access": "premium",
+      "emoji": "🗿",
+      "title": "The Unknown God",
+      "book": "Acts 17",
+      "date": "c. AD 50",
+      "location": "Athens, Greece",
+      "hook": "Paul walked through the great city of Athens and saw idols everywhere, statues to every god people could imagine. And then he found one altar with the strangest label of all.",
+      "story": [
+        "Paul came to Athens, one of the most famous cities in the world, full of clever thinkers and grand buildings. But as he walked around, his heart was troubled, because the whole city was crowded with idols, statues of made-up gods on every street corner.",
+        "Paul began to talk with people in the marketplace about Jesus. The famous thinkers of Athens were curious. \"This man has some new ideas,\" they said. \"Let us hear what he has to say.\" So they brought him to a place called the Areopagus, a hill where people gathered to discuss big questions.",
+        "Paul stood up and said, \"People of Athens, I can see that you are very religious. As I walked around, I even found an altar with these words written on it: TO AN UNKNOWN GOD. You worship a god you do not even know. Well, let me tell you who he is!\"",
+        "\"The God who made the whole world and everything in it,\" Paul said, \"is the Lord of heaven and earth. He does not live in temples built by human hands, and he does not need anything from us, because he is the one who gives life and breath to everyone.\"",
+        "\"From one man he made every nation on earth,\" Paul went on, \"and he is not far from any one of us. For in him we live and move and have our being. We are his children. So we should not think God is like a statue of gold or stone, shaped by human hands and imagination.\"",
+        "Then Paul told them the most important thing of all: that God now calls everyone everywhere to turn to him, because he has set a day when he will judge the world fairly, through a man he raised from the dead, Jesus.",
+        "When they heard about someone rising from the dead, some of the Athenians laughed and sneered. But others said, \"We want to hear more about this.\" And some believed and followed Paul. Even in a city full of false gods, the truth about the one true God found its way into hearts that were ready."
+      ],
+      "devotional": {
+        "bigIdea": "The people of Athens worshiped gods of gold and stone, and even built an altar to a god they admitted they did not know. Paul told them the truth: the real God made everything, gives us life, and is not far from any of us. We do not have to wonder about God in the dark. He has made himself known in Jesus.",
+        "questions": [
+          "The Athenians worshiped many things, even a god they did not know. What are some things people treat like gods today?",
+          "Paul said God is not far from any of us. How does it feel to know the God who made everything wants to be close to you?",
+          "Some laughed at Paul, but others wanted to hear more. How do you respond when you hear about God?"
+        ]
+      },
+      "tags": [
+        "the one true God",
+        "the Creator",
+        "idols",
+        "sharing faith",
+        "the early church"
+      ],
+      "connections": [
+        {
+          "title": "In the Beginning",
+          "storyId": "creation",
+          "reference": "Acts 17:24",
+          "why": "Paul tells the Athenians about the God who made the world and everything in it, the Creator of Genesis."
+        },
+        {
+          "title": "The Golden Calf",
+          "storyId": "golden-calf",
+          "reference": "Acts 17:29",
+          "why": "Athens was full of idols, but Paul explains that the living God is not a statue made by human hands."
+        },
+        {
+          "title": "The Empty Tomb",
+          "storyId": "resurrection",
+          "reference": "Acts 17:31",
+          "why": "Paul points the Athenians to Jesus, proven to be Lord of all by being raised from the dead."
+        }
+      ],
+      "audio": "./audio/athens.mp3",
+      "quiz": [
+        {
+          "question": "What did Paul see all over the city of Athens?",
+          "options": [
+            "Idols and statues of false gods",
+            "Gardens",
+            "Ships"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What strange altar did Paul find?",
+          "options": [
+            "One labeled, TO AN UNKNOWN GOD",
+            "One made of gold",
+            "One on fire"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Paul tell them about the real God?",
+          "options": [
+            "He made the world and is not far from us",
+            "He lives in a statue",
+            "He needs our gifts"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What proof did Paul give that Jesus is Lord?",
+          "options": [
+            "God raised him from the dead",
+            "He was very rich",
+            "He built a temple"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How did the people respond?",
+          "options": [
+            "Some laughed, but others believed and wanted to hear more",
+            "Everyone believed at once",
+            "Everyone left"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "eutychus",
+      "era": "nt-church",
+      "order": 99,
+      "access": "premium",
+      "emoji": "😴",
+      "title": "The Boy Who Fell Asleep",
+      "book": "Acts 20",
+      "date": "c. AD 57",
+      "location": "Troas",
+      "hook": "Paul was leaving the next day, so he preached late into the night. A young man named Eutychus was sitting in a window, and the longer Paul talked, the heavier his eyelids grew.",
+      "story": [
+        "Paul was visiting the believers in the town of Troas, and because he was leaving the very next morning, he had a lot he wanted to say. So the church gathered together in an upstairs room, and Paul began to teach. The room was warm, lit by many flickering lamps, and Paul talked on and on, late into the night.",
+        "Sitting in an open window was a young man named Eutychus. As Paul kept preaching, and the hour grew later and later, Eutychus began to get very, very sleepy. His eyes grew heavy, his head began to nod.",
+        "And then, sound asleep, Eutychus tumbled backward right out of the window. It was a long way down, three stories to the ground below. When the people rushed down and picked him up, he was dead.",
+        "What a terrible moment. The joyful gathering had turned to grief in an instant. But Paul hurried down the stairs to the boy.",
+        "Paul threw himself onto the young man and put his arms around him, just as the prophet Elisha had once done long ago. Then Paul stood up and said, \"Do not be alarmed. He is alive!\"",
+        "And it was true. The young man was alive and well! The people could hardly believe their relief. Their sorrow turned right back into joy.",
+        "Then everyone went back upstairs, shared a meal together, and Paul kept right on talking until the sun came up! It is a story that makes us smile, the boy who could not stay awake, but it is also a story of wonder. The same God who raised the dead through Elisha and through Jesus was still at work, turning grief into joy and showing that he is the God of life."
+      ],
+      "devotional": {
+        "bigIdea": "Even sitting in church, a boy fell asleep and something terrible happened, but God turned the grief into joy and gave him his life back. It is a story that makes us smile, and it reminds us that God is the God of life, always able to bring hope out of our darkest moments.",
+        "questions": [
+          "Eutychus fell asleep during a long sermon. Have you ever had trouble staying awake or paying attention? How can you stay focused on God?",
+          "The night turned from sorrow back to joy when the boy lived. When has God turned a sad time into a happy one for you?",
+          "God brought the boy back to life. What does this story add to the other times God showed he is stronger than death?"
+        ]
+      },
+      "tags": [
+        "God's power",
+        "life",
+        "hope",
+        "the early church",
+        "joy"
+      ],
+      "connections": [
+        {
+          "title": "Jairus's Daughter",
+          "storyId": "jairus",
+          "reference": "Acts 20:10",
+          "why": "Like Jesus with Jairus's daughter, God brings a young person back to life and turns grief into joy."
+        },
+        {
+          "title": "The Shunammite Woman's Faith",
+          "storyId": "shunammite",
+          "reference": "2 Kings 4:34",
+          "why": "Just as Elisha stretched himself over a boy and God restored his life, Paul throws himself over Eutychus and the boy lives."
+        },
+        {
+          "title": "Come Out",
+          "storyId": "lazarus",
+          "reference": "John 11:25",
+          "why": "From Elisha to Jesus to Paul, God keeps showing that death is never the end of the story for those he loves."
+        }
+      ],
+      "audio": "./audio/eutychus.mp3",
+      "quiz": [
+        {
+          "question": "Why was Paul preaching so late into the night?",
+          "options": [
+            "He was leaving the next day and had much to say",
+            "He could not sleep",
+            "He was lost"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Where was Eutychus sitting?",
+          "options": [
+            "In a window",
+            "On the floor",
+            "On the roof"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What happened to Eutychus?",
+          "options": [
+            "He fell asleep and fell out the window",
+            "He ran away",
+            "He started singing"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Paul do?",
+          "options": [
+            "Threw himself over the boy, who came back to life",
+            "Kept preaching",
+            "Went to bed"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How did the night end?",
+          "options": [
+            "In joy, with a meal and more teaching till dawn",
+            "In sadness",
+            "Everyone went home angry"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "shipwreck",
+      "era": "nt-church",
+      "order": 100,
+      "access": "premium",
+      "emoji": "⚓",
+      "title": "Shipwrecked but Safe",
+      "book": "Acts 27",
+      "date": "c. AD 60",
+      "location": "The Mediterranean Sea",
+      "hook": "Paul was being taken by ship to Rome when the worst storm of his life struck. For days there was no sun, no stars, and no hope. But God had made Paul a promise.",
+      "story": [
+        "Paul was a prisoner, being taken by ship across the sea to the great city of Rome. But not long into the voyage, the weather turned violent. A furious wind, the kind sailors most feared, caught the ship and drove it helplessly across the sea.",
+        "The storm was so terrible that the sailors threw the cargo overboard to lighten the ship. Day after day passed with no sign of the sun or the stars, and the wind never let up. At last, everyone on board gave up all hope of being saved. They were sure they were going to die.",
+        "But Paul stood up among the frightened crew and passengers. \"Keep up your courage,\" he said, \"for last night an angel of the God I belong to and serve stood beside me. The angel told me, Do not be afraid, Paul. You must stand trial before Caesar in Rome. And God has graciously given you the lives of everyone sailing with you.\"",
+        "\"So keep up your courage,\" Paul said, \"because I trust God that it will happen just as he told me. Not one of you will lose your life. Only the ship will be lost.\" In the middle of the worst storm of their lives, Paul was the calmest one aboard, because he trusted God's promise.",
+        "There were two hundred and seventy-six people on that ship. After many days, in the dark of early morning, the sailors sensed they were near land. When daylight came, they steered toward a beach, but the ship struck a sandbar and began to break apart in the pounding waves.",
+        "So Paul told everyone to make for the shore. Those who could swim jumped in first. The rest grabbed planks and broken pieces of the ship and floated in.",
+        "And so it happened, just as God had promised through Paul: every single one of the two hundred and seventy-six people reached the land safely. The ship was gone, but not one life was lost. God had kept his word, and he had used Paul's steady faith to give courage to everyone around him."
+      ],
+      "devotional": {
+        "bigIdea": "Everyone on the ship had given up hope, but Paul trusted God's promise and stayed calm, and his courage gave courage to everyone else. When we trust God in the storm, we not only find peace ourselves, we can become a calm and steady help to the frightened people around us.",
+        "questions": [
+          "Everyone panicked, but Paul stayed calm because he trusted God's promise. What helps you stay calm when things are scary?",
+          "Paul's courage gave courage to everyone on the ship. How could your trust in God help the people around you?",
+          "God kept his promise that all would be saved. When has God kept a promise to you, or to your family?"
+        ]
+      },
+      "tags": [
+        "trust",
+        "courage",
+        "God's promises",
+        "storms",
+        "the early church"
+      ],
+      "connections": [
+        {
+          "title": "Jesus Calms the Storm",
+          "storyId": "calm-storm",
+          "reference": "Acts 27:25",
+          "why": "Another terrifying storm at sea, and again God shows that the wind and waves cannot defeat his plans for his people."
+        },
+        {
+          "title": "The Man Who Ran From God",
+          "storyId": "jonah",
+          "reference": "Acts 27:24",
+          "why": "Like Jonah, Paul is on a storm-tossed ship, but this time God uses the storm to carry his servant exactly where he is meant to go."
+        },
+        {
+          "title": "Singing at Midnight",
+          "storyId": "paul-jail",
+          "reference": "Acts 27:23",
+          "why": "Just as Paul kept his faith and courage in a prison, here he stays calm and full of hope in the middle of a deadly storm."
+        }
+      ],
+      "audio": "./audio/shipwreck.mp3",
+      "quiz": [
+        {
+          "question": "Where was Paul's ship taking him?",
+          "options": [
+            "To Rome",
+            "To Egypt",
+            "Back home"
+          ],
+          "answer": 0,
+          "explanation": "He was a prisoner being taken to stand trial before Caesar."
+        },
+        {
+          "question": "What happened during the long storm?",
+          "options": [
+            "Everyone lost all hope of being saved",
+            "They had a party",
+            "They caught lots of fish"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the angel promise Paul?",
+          "options": [
+            "Everyone on the ship would be saved",
+            "The storm would never end",
+            "He would lose the ship and his life"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How many people were on the ship?",
+          "options": [
+            "Two hundred and seventy-six",
+            "Twelve",
+            "A thousand"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What happened to the people in the end?",
+          "options": [
+            "Every one of them reached land safely",
+            "Many were lost",
+            "They sailed on to Rome"
+          ],
+          "answer": 0,
+          "explanation": "The ship was lost, but not one life, just as God promised."
+        }
       ],
       "published_date": "2026-06-03"
     }

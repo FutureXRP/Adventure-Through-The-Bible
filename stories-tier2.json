@@ -5,7 +5,7 @@
     "version": "1.0",
     "tier": 2,
     "ageRange": "5-8",
-    "totalStories": 93,
+    "totalStories": 100,
     "freeStories": 3
   },
   "eras": [
@@ -8311,9 +8311,100 @@
       "published_date": "2026-06-05"
     },
     {
-      "id": "stephen",
+      "id": "peter-beggar",
       "era": "nt-church",
       "order": 90,
+      "access": "premium",
+      "emoji": "🙌",
+      "title": "Silver and Gold I Do Not Have",
+      "book": "Acts 3",
+      "date": "c. AD 33",
+      "location": "Jerusalem",
+      "hook": "A man who could never walk sat begging at the temple. He asked Peter for some coins, but Peter gave him something much better!",
+      "story": [
+        "One day, Peter and John were going to the temple to pray.",
+        "At the temple gate sat a man who had never been able to walk. Every day, his friends carried him there to beg for money.",
+        "When he saw Peter and John, he asked them for some coins.",
+        "Peter looked right at him and said, \"Look at us!\" The man looked up, hoping for some money.",
+        "But Peter said, \"I do not have any silver or gold. But I will give you what I do have!\"",
+        "\"In the name of Jesus,\" said Peter, \"get up and walk!\" Then Peter took the man's hand and helped him up.",
+        "Right away, the man's feet and legs became strong! He stood up for the very first time in his life!",
+        "The man started to walk, then jump, then leap for joy! He went into the temple praising God as loud as he could.",
+        "Everyone was amazed. They knew this was the same man who used to sit and beg.",
+        "It was the power of Jesus that made him strong. Jesus was still helping people through his friends!"
+      ],
+      "devotional": {
+        "bigIdea": "Peter had no money, but he gave what he had, the power of Jesus' name, and the man could walk! We all have something to give, and Jesus' name is more powerful than gold.",
+        "questions": [
+          "The man got something better than money. What good things has God given you?",
+          "Peter gave what he had. What could you give to help someone?",
+          "The man praised God for his new legs. What can you praise God for?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "the early church",
+        "the name of Jesus",
+        "praise"
+      ],
+      "connections": [
+        {
+          "title": "The Day Everything Changed",
+          "storyId": "pentecost",
+          "reference": "Acts 3:6",
+          "why": "Filled with the Spirit at Pentecost, Peter now does in Jesus' name the very kind of miracle Jesus once did."
+        },
+        {
+          "title": "Through the Roof",
+          "storyId": "paralytic",
+          "reference": "Acts 3:8",
+          "why": "Just as Jesus made a paralyzed man walk, Peter, in Jesus' name, lifts up a man who had never walked in his life."
+        },
+        {
+          "title": "The Ethiopian's Chariot",
+          "storyId": "philip-ethiopian",
+          "reference": "Acts 1:8",
+          "why": "This is the early church beginning to spread the good news of Jesus, just as he told them to, starting in Jerusalem."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What could the man at the gate not do?",
+          "options": [
+            "Walk",
+            "See",
+            "Hear"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Peter give him instead of money?",
+          "options": [
+            "Healing in Jesus' name",
+            "Gold",
+            "Bread"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the man do when his legs were strong?",
+          "options": [
+            "Jumped and praised God",
+            "Sat back down",
+            "Ran away"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "stephen",
+      "era": "nt-church",
+      "order": 91,
       "access": "premium",
       "emoji": "✝️",
       "title": "The First Martyr",
@@ -8406,9 +8497,100 @@
       "published_date": "2026-06-05"
     },
     {
+      "id": "philip-ethiopian",
+      "era": "nt-church",
+      "order": 92,
+      "access": "premium",
+      "emoji": "📜",
+      "title": "The Ethiopian's Chariot",
+      "book": "Acts 8",
+      "date": "c. AD 34",
+      "location": "The Desert Road to Gaza",
+      "hook": "God sent Philip to a quiet desert road to meet a man in a chariot who needed help understanding God's words.",
+      "story": [
+        "An angel told a man named Philip to go to a desert road. Philip did not know why, but he obeyed.",
+        "On that road came a chariot. Inside was an important man from a faraway land called Ethiopia.",
+        "He had traveled a long way to worship God. Now, riding home, he was reading from God's word, the book of Isaiah.",
+        "God's Spirit told Philip, \"Go over to that chariot.\" So Philip ran up to it.",
+        "Philip heard the man reading. \"Do you understand what you are reading?\" Philip asked.",
+        "\"How can I,\" said the man, \"unless someone explains it?\" So he invited Philip to sit with him.",
+        "Philip told the man all about Jesus, and how the words he was reading were about Jesus all along.",
+        "As they rode, they came to some water. \"Look, water!\" said the man. \"Can I be baptized?\"",
+        "So they stopped, and Philip baptized him to show he now belonged to Jesus.",
+        "Then the happy man went home to tell others about Jesus. The good news of Jesus is for everyone, everywhere!"
+      ],
+      "devotional": {
+        "bigIdea": "God sent Philip to help one man understand his word and learn about Jesus. The good news of Jesus is for everyone, in every land!",
+        "questions": [
+          "Philip obeyed God even before he knew why. When is it hard to obey?",
+          "Someone helped the man understand the Bible. Who helps you learn about God?",
+          "The man told others about Jesus. Who could you tell about Jesus?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "the early church",
+        "good news for all",
+        "baptism"
+      ],
+      "connections": [
+        {
+          "title": "The Servant Who Suffers",
+          "storyId": "isaiah-servant",
+          "reference": "Acts 8:32",
+          "why": "The Ethiopian is reading the very words of Isaiah about the suffering servant, and Philip explains that they are about Jesus."
+        },
+        {
+          "title": "Jesus Is Baptized",
+          "storyId": "baptism",
+          "reference": "Acts 8:38",
+          "why": "As soon as the Ethiopian believes, he wants to be baptized, just as Jesus was, to show he now belongs to God."
+        },
+        {
+          "title": "Silver and Gold I Do Not Have",
+          "storyId": "peter-beggar",
+          "reference": "Acts 1:8",
+          "why": "The good news of Jesus keeps spreading outward, now reaching a traveler from a faraway land."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Where did God send Philip?",
+          "options": [
+            "To a desert road",
+            "To a city",
+            "To a boat"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What was the man in the chariot reading?",
+          "options": [
+            "God's word about Jesus",
+            "A storybook",
+            "A map"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the man do after he believed?",
+          "options": [
+            "He was baptized",
+            "He went to sleep",
+            "He drove away fast"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
       "id": "paul-conversion",
       "era": "nt-church",
-      "order": 91,
+      "order": 93,
       "access": "premium",
       "emoji": "⚡",
       "title": "The Man Who Hunted Christians",
@@ -8502,9 +8684,191 @@
       "published_date": "2026-06-05"
     },
     {
+      "id": "cornelius",
+      "era": "nt-church",
+      "order": 94,
+      "access": "premium",
+      "emoji": "🌍",
+      "title": "Good News for Everyone",
+      "book": "Acts 10",
+      "date": "c. AD 37",
+      "location": "Caesarea",
+      "hook": "God taught Peter a wonderful surprise: the good news about Jesus is not just for some people. It is for everyone in the whole world!",
+      "story": [
+        "In a city called Caesarea lived a Roman soldier named Cornelius. He was not one of God's people Israel, but he loved God and prayed a lot.",
+        "One day an angel told Cornelius, \"God has heard your prayers. Send for a man named Peter.\" So Cornelius sent for him.",
+        "Meanwhile, Peter was praying on a rooftop. He got hungry, and then he saw a strange vision.",
+        "He saw a big sheet come down from heaven, full of all kinds of animals. A voice said, \"Get up, Peter, and eat.\"",
+        "\"No, Lord!\" said Peter. \"I never eat those.\" But the voice said, \"Do not call anything bad that God has made good.\"",
+        "Just then, Cornelius's messengers came to the door. God's Spirit told Peter to go with them, so he did.",
+        "When Peter got to the house, he said, \"Now I understand! God loves people from every nation, not just some.\"",
+        "Then Peter told everyone the good news about Jesus.",
+        "While Peter was still talking, the Holy Spirit came down on all of them, just like at Pentecost!",
+        "So they were all baptized. The good news of Jesus is for everyone, everywhere, including you!"
+      ],
+      "devotional": {
+        "bigIdea": "Peter learned that God does not pick favorites. The good news of Jesus is for every person, in every land. God's love is for everyone, including you!",
+        "questions": [
+          "God loves people from every land. Why is that wonderful news?",
+          "Is there someone you find hard to be kind to? God loves them too.",
+          "How does it feel to know God's love is for you, no matter what?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "good news for all",
+        "the early church",
+        "God's love"
+      ],
+      "connections": [
+        {
+          "title": "The Day Everything Changed",
+          "storyId": "pentecost",
+          "reference": "Acts 10:44",
+          "why": "The same Holy Spirit who came at Pentecost now falls on people from another nation, showing the good news is for all."
+        },
+        {
+          "title": "The Man Who Ran From God",
+          "storyId": "jonah",
+          "reference": "Acts 10:35",
+          "why": "Like Jonah learning God loved the people of Nineveh, Peter learns that God welcomes people from every nation."
+        },
+        {
+          "title": "The Ethiopian's Chariot",
+          "storyId": "philip-ethiopian",
+          "reference": "Acts 10:34",
+          "why": "Step by step, God is showing his church that the good news of Jesus is meant for the whole world, not one nation only."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Who was Cornelius?",
+          "options": [
+            "A Roman soldier who loved God",
+            "A king",
+            "A baker"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did God teach Peter?",
+          "options": [
+            "God loves people from every nation",
+            "Only some people matter",
+            "To stay home"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Who is the good news of Jesus for?",
+          "options": [
+            "Everyone, everywhere",
+            "Only a few people",
+            "Only grown-ups"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "peter-escapes",
+      "era": "nt-church",
+      "order": 95,
+      "access": "premium",
+      "emoji": "⛓️",
+      "title": "Peter's Prison Escape",
+      "book": "Acts 12",
+      "date": "c. AD 44",
+      "location": "Jerusalem",
+      "hook": "Peter was locked in prison with chains and guards. His friends prayed all night, and God sent an angel to set him free!",
+      "story": [
+        "A wicked king named Herod put Peter in prison. Peter was chained up, with soldiers guarding him all around.",
+        "But Peter's friends in the church did something powerful. They prayed for him all night long.",
+        "The night before Peter's trial, he was sleeping between two soldiers. Suddenly, an angel appeared, and a bright light filled the room!",
+        "The angel woke Peter and said, \"Quick, get up!\" And the chains fell right off Peter's hands!",
+        "\"Get dressed and follow me,\" said the angel. Peter was so amazed he thought he was dreaming.",
+        "They walked right past all the guards. When they came to the big iron gate, it opened all by itself!",
+        "Once they were outside, the angel disappeared. Peter said, \"Now I know God really sent his angel to rescue me!\"",
+        "Peter hurried to the house where his friends were still praying for him. He knocked on the door.",
+        "A girl named Rhoda heard his voice. She was so happy that she ran to tell everyone, but she forgot to open the door, leaving Peter knocking outside!",
+        "When they finally opened the door, they could not believe it. God had answered their prayers while they were still praying!"
+      ],
+      "devotional": {
+        "bigIdea": "Peter's friends prayed all night, and God sent an angel to rescue him. God hears our prayers and answers them, sometimes in amazing ways!",
+        "questions": [
+          "Peter's friends kept praying even when it looked hopeless. Why is it good to keep praying?",
+          "God surprised everyone with his answer. Has God ever surprised you?",
+          "What is something you can pray about and trust God with?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "prayer",
+        "rescue",
+        "the early church"
+      ],
+      "connections": [
+        {
+          "title": "Singing at Midnight",
+          "storyId": "paul-jail",
+          "reference": "Acts 16:25",
+          "why": "Like Paul and Silas later, Peter is locked in prison, and God steps in to set his servant free."
+        },
+        {
+          "title": "The Lion's Den",
+          "storyId": "daniel",
+          "reference": "Acts 12:11",
+          "why": "Just as God shut the lions' mouths for Daniel, he sends an angel to rescue Peter from the hand of a wicked king."
+        },
+        {
+          "title": "The Day Everything Changed",
+          "storyId": "pentecost",
+          "reference": "Acts 12:5",
+          "why": "The praying church that begs God for Peter is the same Spirit-filled community born at Pentecost."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What did Peter's friends do for him?",
+          "options": [
+            "Prayed all night",
+            "Forgot him",
+            "Ran away"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How did Peter get free?",
+          "options": [
+            "An angel helped him and the chains fell off",
+            "He flew",
+            "He dug a hole"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Why did Rhoda leave Peter knocking?",
+          "options": [
+            "She was too happy and ran to tell everyone",
+            "She was mad",
+            "She was asleep"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
       "id": "paul-jail",
       "era": "nt-church",
-      "order": 92,
+      "order": 96,
       "access": "premium",
       "emoji": "🎵",
       "title": "Singing at Midnight",
@@ -8598,7 +8962,7 @@
     {
       "id": "lydia",
       "era": "nt-church",
-      "order": 93,
+      "order": 97,
       "access": "premium",
       "emoji": "🎨",
       "title": "The Purple Merchant",
@@ -8689,6 +9053,279 @@
         }
       ],
       "published_date": "2026-06-05"
+    },
+    {
+      "id": "athens",
+      "era": "nt-church",
+      "order": 98,
+      "access": "premium",
+      "emoji": "🗿",
+      "title": "The Unknown God",
+      "book": "Acts 17",
+      "date": "c. AD 50",
+      "location": "Athens, Greece",
+      "hook": "Paul visited the big city of Athens and saw statues of pretend gods everywhere. So he told the people about the one true God.",
+      "story": [
+        "Paul came to a famous city called Athens. It was full of clever people and grand buildings.",
+        "But as Paul walked around, he felt sad. Everywhere he looked, there were statues of pretend gods.",
+        "Paul started telling people about Jesus. The thinkers of Athens were curious. \"Tell us your new ideas!\" they said.",
+        "So Paul stood up and said, \"People of Athens, I see you are very religious. I even found an altar that says, TO A GOD WE DO NOT KNOW.\"",
+        "\"Let me tell you who that God is!\" said Paul. \"He is the God who made the whole world and everything in it!\"",
+        "\"He does not live in a statue,\" Paul said. \"He gives life and breath to everyone. And he is not far away from any of us.\"",
+        "Paul told them that God is not like gold or stone made by people. God is alive, and he made us!",
+        "Then Paul told them the best news: that God raised Jesus from the dead, and everyone can turn to him.",
+        "Some people laughed when they heard about rising from the dead. But others said, \"We want to hear more!\"",
+        "And some of them believed. The true God is alive, and he wants us to know him!"
+      ],
+      "devotional": {
+        "bigIdea": "The people of Athens worshiped statues, even a god they did not know. Paul told them the truth: the real God made everything and is close to us. We can really know God through Jesus.",
+        "questions": [
+          "The people worshiped statues. What is the difference between a statue and the real, living God?",
+          "Paul said God is close to us. How does that make you feel?",
+          "Some people wanted to hear more about God. Do you like learning about God?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "the one true God",
+        "the Creator",
+        "the early church"
+      ],
+      "connections": [
+        {
+          "title": "In the Beginning",
+          "storyId": "creation",
+          "reference": "Acts 17:24",
+          "why": "Paul tells the Athenians about the God who made the world and everything in it, the Creator of Genesis."
+        },
+        {
+          "title": "The Golden Calf",
+          "storyId": "golden-calf",
+          "reference": "Acts 17:29",
+          "why": "Athens was full of idols, but Paul explains that the living God is not a statue made by human hands."
+        },
+        {
+          "title": "The Empty Tomb",
+          "storyId": "resurrection",
+          "reference": "Acts 17:31",
+          "why": "Paul points the Athenians to Jesus, proven to be Lord of all by being raised from the dead."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What did Paul see all over Athens?",
+          "options": [
+            "Statues of pretend gods",
+            "Lots of trees",
+            "Many boats"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Paul tell the people about the real God?",
+          "options": [
+            "He made the whole world and is close to us",
+            "He lives in a statue",
+            "He is far away"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What good news did Paul share about Jesus?",
+          "options": [
+            "God raised him from the dead",
+            "He was rich",
+            "He liked Athens"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "eutychus",
+      "era": "nt-church",
+      "order": 99,
+      "access": "premium",
+      "emoji": "😴",
+      "title": "The Boy Who Fell Asleep",
+      "book": "Acts 20",
+      "date": "c. AD 57",
+      "location": "Troas",
+      "hook": "Paul preached a very long sermon late at night. A boy named Eutychus was sitting in a window, and he got sleepier and sleepier.",
+      "story": [
+        "Paul was visiting his friends in a town called Troas. He was leaving the next day, so he had a lot to say!",
+        "Everyone gathered in an upstairs room, with lots of warm, glowing lamps. Paul began to teach, and he talked on and on, late into the night.",
+        "A young man named Eutychus was sitting in an open window. As Paul kept talking, Eutychus got very, very sleepy.",
+        "His eyes grew heavy, and his head began to nod. Then Eutychus fell fast asleep.",
+        "And while he was sleeping, he tumbled right out of the window! It was a long way down, and when they picked him up, he had died.",
+        "Everyone was so sad! But Paul hurried down the stairs to the boy.",
+        "Paul bent down and put his arms around the young man. Then he stood up and said, \"Do not be afraid. He is alive!\"",
+        "And it was true! The boy was alive and well again! Everyone was so relieved and happy.",
+        "Then they all went back upstairs, ate a meal together, and Paul kept teaching until the sun came up!",
+        "God turned their sadness into joy. God is the God of life, and he can bring hope even when things look very sad."
+      ],
+      "devotional": {
+        "bigIdea": "A boy fell asleep and fell out a window, but God brought him back to life and turned everyone's sadness into joy. God is the God of life and hope.",
+        "questions": [
+          "Eutychus got sleepy during a long talk. How can you pay attention when you learn about God?",
+          "The sad night became happy again. When has God turned something sad into something happy for you?",
+          "What was the most surprising part of this story?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "God's power",
+        "life",
+        "hope"
+      ],
+      "connections": [
+        {
+          "title": "Jairus's Daughter",
+          "storyId": "jairus",
+          "reference": "Acts 20:10",
+          "why": "Like Jesus with Jairus's daughter, God brings a young person back to life and turns grief into joy."
+        },
+        {
+          "title": "The Shunammite Woman's Faith",
+          "storyId": "shunammite",
+          "reference": "2 Kings 4:34",
+          "why": "Just as Elisha stretched himself over a boy and God restored his life, Paul throws himself over Eutychus and the boy lives."
+        },
+        {
+          "title": "Come Out",
+          "storyId": "lazarus",
+          "reference": "John 11:25",
+          "why": "From Elisha to Jesus to Paul, God keeps showing that death is never the end of the story for those he loves."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What happened to Eutychus while Paul preached?",
+          "options": [
+            "He fell asleep and fell out the window",
+            "He sang a song",
+            "He left"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Paul do for him?",
+          "options": [
+            "Helped him, and he came back to life",
+            "Kept preaching",
+            "Got angry"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How did the night end?",
+          "options": [
+            "Happy, with a meal and more teaching",
+            "Sad",
+            "Everyone went home"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "shipwreck",
+      "era": "nt-church",
+      "order": 100,
+      "access": "premium",
+      "emoji": "⚓",
+      "title": "Shipwrecked but Safe",
+      "book": "Acts 27",
+      "date": "c. AD 60",
+      "location": "The Mediterranean Sea",
+      "hook": "Paul was on a ship in a terrible storm. Everyone was scared, but God had given Paul a promise that they would all be safe.",
+      "story": [
+        "Paul was on a big ship, sailing across the sea to the city of Rome.",
+        "But a terrible storm came. The wind blew so hard that it pushed the ship all over the sea.",
+        "For days and days, there was no sun and no stars, just wind and waves. Everyone was so scared that they thought they would not survive.",
+        "But Paul stood up and said, \"Be brave! Last night an angel of God stood beside me.\"",
+        "\"The angel said, Do not be afraid, Paul. God will keep everyone on this ship safe.\"",
+        "\"So be brave,\" said Paul, \"because I trust God. It will happen just like he said. No one will be lost!\"",
+        "There were two hundred and seventy-six people on that ship! Paul was the calmest one, because he trusted God.",
+        "Finally, the ship came near land, but it crashed and started to break apart in the waves.",
+        "So everyone jumped into the water. Some swam, and some floated on broken pieces of the ship.",
+        "And just as God promised, every single person reached the shore safely! God kept his promise, and Paul's trust in God helped everyone be brave."
+      ],
+      "devotional": {
+        "bigIdea": "Everyone on the ship was scared, but Paul trusted God's promise and stayed calm. His courage helped everyone else. When we trust God, we can help others be brave too.",
+        "questions": [
+          "Everyone was scared, but Paul was calm. What helps you feel brave when you are scared?",
+          "Paul's trust helped others be brave. How could trusting God help the people around you?",
+          "God kept his promise to keep everyone safe. How does it feel that God keeps his promises?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "trust",
+        "courage",
+        "God's promises"
+      ],
+      "connections": [
+        {
+          "title": "Jesus Calms the Storm",
+          "storyId": "calm-storm",
+          "reference": "Acts 27:25",
+          "why": "Another terrifying storm at sea, and again God shows that the wind and waves cannot defeat his plans for his people."
+        },
+        {
+          "title": "The Man Who Ran From God",
+          "storyId": "jonah",
+          "reference": "Acts 27:24",
+          "why": "Like Jonah, Paul is on a storm-tossed ship, but this time God uses the storm to carry his servant exactly where he is meant to go."
+        },
+        {
+          "title": "Singing at Midnight",
+          "storyId": "paul-jail",
+          "reference": "Acts 27:23",
+          "why": "Just as Paul kept his faith and courage in a prison, here he stays calm and full of hope in the middle of a deadly storm."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What happened to Paul's ship?",
+          "options": [
+            "It was caught in a terrible storm",
+            "It sailed smoothly",
+            "It stayed in port"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did God promise Paul?",
+          "options": [
+            "Everyone would be kept safe",
+            "The storm would last forever",
+            "He would be alone"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What happened to the people in the end?",
+          "options": [
+            "They all reached land safely",
+            "They were lost",
+            "They stayed on the ship"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
     }
   ]
 }

@@ -1,0 +1,512 @@
+[
+  {
+    "id": "athens",
+    "era": "nt-church",
+    "emoji": "🗿",
+    "title": "The Unknown God",
+    "date": "c. AD 50",
+    "location": "Athens, Greece",
+    "connections": [
+      {
+        "title": "In the Beginning",
+        "storyId": "creation",
+        "reference": "Acts 17:24",
+        "why": "Paul tells the Athenians about the God who made the world and everything in it, the Creator of Genesis."
+      },
+      {
+        "title": "The Golden Calf",
+        "storyId": "golden-calf",
+        "reference": "Acts 17:29",
+        "why": "Athens was full of idols, but Paul explains that the living God is not a statue made by human hands."
+      },
+      {
+        "title": "The Empty Tomb",
+        "storyId": "resurrection",
+        "reference": "Acts 17:31",
+        "why": "Paul points the Athenians to Jesus, proven to be Lord of all by being raised from the dead."
+      }
+    ],
+    "tier1": {
+      "book": "Acts 17",
+      "hook": "Paul walked through the great city of Athens and saw idols everywhere, statues to every god people could imagine. And then he found one altar with the strangest label of all.",
+      "story": [
+        "Paul came to Athens, one of the most famous cities in the world, full of clever thinkers and grand buildings. But as he walked around, his heart was troubled, because the whole city was crowded with idols, statues of made-up gods on every street corner.",
+        "Paul began to talk with people in the marketplace about Jesus. The famous thinkers of Athens were curious. \"This man has some new ideas,\" they said. \"Let us hear what he has to say.\" So they brought him to a place called the Areopagus, a hill where people gathered to discuss big questions.",
+        "Paul stood up and said, \"People of Athens, I can see that you are very religious. As I walked around, I even found an altar with these words written on it: TO AN UNKNOWN GOD. You worship a god you do not even know. Well, let me tell you who he is!\"",
+        "\"The God who made the whole world and everything in it,\" Paul said, \"is the Lord of heaven and earth. He does not live in temples built by human hands, and he does not need anything from us, because he is the one who gives life and breath to everyone.\"",
+        "\"From one man he made every nation on earth,\" Paul went on, \"and he is not far from any one of us. For in him we live and move and have our being. We are his children. So we should not think God is like a statue of gold or stone, shaped by human hands and imagination.\"",
+        "Then Paul told them the most important thing of all: that God now calls everyone everywhere to turn to him, because he has set a day when he will judge the world fairly, through a man he raised from the dead, Jesus.",
+        "When they heard about someone rising from the dead, some of the Athenians laughed and sneered. But others said, \"We want to hear more about this.\" And some believed and followed Paul. Even in a city full of false gods, the truth about the one true God found its way into hearts that were ready."
+      ],
+      "devotional": {
+        "bigIdea": "The people of Athens worshiped gods of gold and stone, and even built an altar to a god they admitted they did not know. Paul told them the truth: the real God made everything, gives us life, and is not far from any of us. We do not have to wonder about God in the dark. He has made himself known in Jesus.",
+        "questions": [
+          "The Athenians worshiped many things, even a god they did not know. What are some things people treat like gods today?",
+          "Paul said God is not far from any of us. How does it feel to know the God who made everything wants to be close to you?",
+          "Some laughed at Paul, but others wanted to hear more. How do you respond when you hear about God?"
+        ]
+      },
+      "tags": [
+        "the one true God",
+        "the Creator",
+        "idols",
+        "sharing faith",
+        "the early church"
+      ],
+      "quiz": [
+        {
+          "question": "What did Paul see all over the city of Athens?",
+          "options": [
+            "Idols and statues of false gods",
+            "Gardens",
+            "Ships"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What strange altar did Paul find?",
+          "options": [
+            "One labeled, TO AN UNKNOWN GOD",
+            "One made of gold",
+            "One on fire"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Paul tell them about the real God?",
+          "options": [
+            "He made the world and is not far from us",
+            "He lives in a statue",
+            "He needs our gifts"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What proof did Paul give that Jesus is Lord?",
+          "options": [
+            "God raised him from the dead",
+            "He was very rich",
+            "He built a temple"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How did the people respond?",
+          "options": [
+            "Some laughed, but others believed and wanted to hear more",
+            "Everyone believed at once",
+            "Everyone left"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ]
+    },
+    "tier2": {
+      "book": "Acts 17",
+      "hook": "Paul visited the big city of Athens and saw statues of pretend gods everywhere. So he told the people about the one true God.",
+      "story": [
+        "Paul came to a famous city called Athens. It was full of clever people and grand buildings.",
+        "But as Paul walked around, he felt sad. Everywhere he looked, there were statues of pretend gods.",
+        "Paul started telling people about Jesus. The thinkers of Athens were curious. \"Tell us your new ideas!\" they said.",
+        "So Paul stood up and said, \"People of Athens, I see you are very religious. I even found an altar that says, TO A GOD WE DO NOT KNOW.\"",
+        "\"Let me tell you who that God is!\" said Paul. \"He is the God who made the whole world and everything in it!\"",
+        "\"He does not live in a statue,\" Paul said. \"He gives life and breath to everyone. And he is not far away from any of us.\"",
+        "Paul told them that God is not like gold or stone made by people. God is alive, and he made us!",
+        "Then Paul told them the best news: that God raised Jesus from the dead, and everyone can turn to him.",
+        "Some people laughed when they heard about rising from the dead. But others said, \"We want to hear more!\"",
+        "And some of them believed. The true God is alive, and he wants us to know him!"
+      ],
+      "devotional": {
+        "bigIdea": "The people of Athens worshiped statues, even a god they did not know. Paul told them the truth: the real God made everything and is close to us. We can really know God through Jesus.",
+        "questions": [
+          "The people worshiped statues. What is the difference between a statue and the real, living God?",
+          "Paul said God is close to us. How does that make you feel?",
+          "Some people wanted to hear more about God. Do you like learning about God?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "the one true God",
+        "the Creator",
+        "the early church"
+      ],
+      "quiz": [
+        {
+          "question": "What did Paul see all over Athens?",
+          "options": [
+            "Statues of pretend gods",
+            "Lots of trees",
+            "Many boats"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Paul tell the people about the real God?",
+          "options": [
+            "He made the whole world and is close to us",
+            "He lives in a statue",
+            "He is far away"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What good news did Paul share about Jesus?",
+          "options": [
+            "God raised him from the dead",
+            "He was rich",
+            "He liked Athens"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ]
+    }
+  },
+  {
+    "id": "eutychus",
+    "era": "nt-church",
+    "emoji": "😴",
+    "title": "The Boy Who Fell Asleep",
+    "date": "c. AD 57",
+    "location": "Troas",
+    "connections": [
+      {
+        "title": "Jairus's Daughter",
+        "storyId": "jairus",
+        "reference": "Acts 20:10",
+        "why": "Like Jesus with Jairus's daughter, God brings a young person back to life and turns grief into joy."
+      },
+      {
+        "title": "The Shunammite Woman's Faith",
+        "storyId": "shunammite",
+        "reference": "2 Kings 4:34",
+        "why": "Just as Elisha stretched himself over a boy and God restored his life, Paul throws himself over Eutychus and the boy lives."
+      },
+      {
+        "title": "Come Out",
+        "storyId": "lazarus",
+        "reference": "John 11:25",
+        "why": "From Elisha to Jesus to Paul, God keeps showing that death is never the end of the story for those he loves."
+      }
+    ],
+    "tier1": {
+      "book": "Acts 20",
+      "hook": "Paul was leaving the next day, so he preached late into the night. A young man named Eutychus was sitting in a window, and the longer Paul talked, the heavier his eyelids grew.",
+      "story": [
+        "Paul was visiting the believers in the town of Troas, and because he was leaving the very next morning, he had a lot he wanted to say. So the church gathered together in an upstairs room, and Paul began to teach. The room was warm, lit by many flickering lamps, and Paul talked on and on, late into the night.",
+        "Sitting in an open window was a young man named Eutychus. As Paul kept preaching, and the hour grew later and later, Eutychus began to get very, very sleepy. His eyes grew heavy, his head began to nod.",
+        "And then, sound asleep, Eutychus tumbled backward right out of the window. It was a long way down, three stories to the ground below. When the people rushed down and picked him up, he was dead.",
+        "What a terrible moment. The joyful gathering had turned to grief in an instant. But Paul hurried down the stairs to the boy.",
+        "Paul threw himself onto the young man and put his arms around him, just as the prophet Elisha had once done long ago. Then Paul stood up and said, \"Do not be alarmed. He is alive!\"",
+        "And it was true. The young man was alive and well! The people could hardly believe their relief. Their sorrow turned right back into joy.",
+        "Then everyone went back upstairs, shared a meal together, and Paul kept right on talking until the sun came up! It is a story that makes us smile, the boy who could not stay awake, but it is also a story of wonder. The same God who raised the dead through Elisha and through Jesus was still at work, turning grief into joy and showing that he is the God of life."
+      ],
+      "devotional": {
+        "bigIdea": "Even sitting in church, a boy fell asleep and something terrible happened, but God turned the grief into joy and gave him his life back. It is a story that makes us smile, and it reminds us that God is the God of life, always able to bring hope out of our darkest moments.",
+        "questions": [
+          "Eutychus fell asleep during a long sermon. Have you ever had trouble staying awake or paying attention? How can you stay focused on God?",
+          "The night turned from sorrow back to joy when the boy lived. When has God turned a sad time into a happy one for you?",
+          "God brought the boy back to life. What does this story add to the other times God showed he is stronger than death?"
+        ]
+      },
+      "tags": [
+        "God's power",
+        "life",
+        "hope",
+        "the early church",
+        "joy"
+      ],
+      "quiz": [
+        {
+          "question": "Why was Paul preaching so late into the night?",
+          "options": [
+            "He was leaving the next day and had much to say",
+            "He could not sleep",
+            "He was lost"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Where was Eutychus sitting?",
+          "options": [
+            "In a window",
+            "On the floor",
+            "On the roof"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What happened to Eutychus?",
+          "options": [
+            "He fell asleep and fell out the window",
+            "He ran away",
+            "He started singing"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Paul do?",
+          "options": [
+            "Threw himself over the boy, who came back to life",
+            "Kept preaching",
+            "Went to bed"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How did the night end?",
+          "options": [
+            "In joy, with a meal and more teaching till dawn",
+            "In sadness",
+            "Everyone went home angry"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ]
+    },
+    "tier2": {
+      "book": "Acts 20",
+      "hook": "Paul preached a very long sermon late at night. A boy named Eutychus was sitting in a window, and he got sleepier and sleepier.",
+      "story": [
+        "Paul was visiting his friends in a town called Troas. He was leaving the next day, so he had a lot to say!",
+        "Everyone gathered in an upstairs room, with lots of warm, glowing lamps. Paul began to teach, and he talked on and on, late into the night.",
+        "A young man named Eutychus was sitting in an open window. As Paul kept talking, Eutychus got very, very sleepy.",
+        "His eyes grew heavy, and his head began to nod. Then Eutychus fell fast asleep.",
+        "And while he was sleeping, he tumbled right out of the window! It was a long way down, and when they picked him up, he had died.",
+        "Everyone was so sad! But Paul hurried down the stairs to the boy.",
+        "Paul bent down and put his arms around the young man. Then he stood up and said, \"Do not be afraid. He is alive!\"",
+        "And it was true! The boy was alive and well again! Everyone was so relieved and happy.",
+        "Then they all went back upstairs, ate a meal together, and Paul kept teaching until the sun came up!",
+        "God turned their sadness into joy. God is the God of life, and he can bring hope even when things look very sad."
+      ],
+      "devotional": {
+        "bigIdea": "A boy fell asleep and fell out a window, but God brought him back to life and turned everyone's sadness into joy. God is the God of life and hope.",
+        "questions": [
+          "Eutychus got sleepy during a long talk. How can you pay attention when you learn about God?",
+          "The sad night became happy again. When has God turned something sad into something happy for you?",
+          "What was the most surprising part of this story?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "God's power",
+        "life",
+        "hope"
+      ],
+      "quiz": [
+        {
+          "question": "What happened to Eutychus while Paul preached?",
+          "options": [
+            "He fell asleep and fell out the window",
+            "He sang a song",
+            "He left"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Paul do for him?",
+          "options": [
+            "Helped him, and he came back to life",
+            "Kept preaching",
+            "Got angry"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How did the night end?",
+          "options": [
+            "Happy, with a meal and more teaching",
+            "Sad",
+            "Everyone went home"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ]
+    }
+  },
+  {
+    "id": "shipwreck",
+    "era": "nt-church",
+    "emoji": "⚓",
+    "title": "Shipwrecked but Safe",
+    "date": "c. AD 60",
+    "location": "The Mediterranean Sea",
+    "connections": [
+      {
+        "title": "Jesus Calms the Storm",
+        "storyId": "calm-storm",
+        "reference": "Acts 27:25",
+        "why": "Another terrifying storm at sea, and again God shows that the wind and waves cannot defeat his plans for his people."
+      },
+      {
+        "title": "The Man Who Ran From God",
+        "storyId": "jonah",
+        "reference": "Acts 27:24",
+        "why": "Like Jonah, Paul is on a storm-tossed ship, but this time God uses the storm to carry his servant exactly where he is meant to go."
+      },
+      {
+        "title": "Singing at Midnight",
+        "storyId": "paul-jail",
+        "reference": "Acts 27:23",
+        "why": "Just as Paul kept his faith and courage in a prison, here he stays calm and full of hope in the middle of a deadly storm."
+      }
+    ],
+    "tier1": {
+      "book": "Acts 27",
+      "hook": "Paul was being taken by ship to Rome when the worst storm of his life struck. For days there was no sun, no stars, and no hope. But God had made Paul a promise.",
+      "story": [
+        "Paul was a prisoner, being taken by ship across the sea to the great city of Rome. But not long into the voyage, the weather turned violent. A furious wind, the kind sailors most feared, caught the ship and drove it helplessly across the sea.",
+        "The storm was so terrible that the sailors threw the cargo overboard to lighten the ship. Day after day passed with no sign of the sun or the stars, and the wind never let up. At last, everyone on board gave up all hope of being saved. They were sure they were going to die.",
+        "But Paul stood up among the frightened crew and passengers. \"Keep up your courage,\" he said, \"for last night an angel of the God I belong to and serve stood beside me. The angel told me, Do not be afraid, Paul. You must stand trial before Caesar in Rome. And God has graciously given you the lives of everyone sailing with you.\"",
+        "\"So keep up your courage,\" Paul said, \"because I trust God that it will happen just as he told me. Not one of you will lose your life. Only the ship will be lost.\" In the middle of the worst storm of their lives, Paul was the calmest one aboard, because he trusted God's promise.",
+        "There were two hundred and seventy-six people on that ship. After many days, in the dark of early morning, the sailors sensed they were near land. When daylight came, they steered toward a beach, but the ship struck a sandbar and began to break apart in the pounding waves.",
+        "So Paul told everyone to make for the shore. Those who could swim jumped in first. The rest grabbed planks and broken pieces of the ship and floated in.",
+        "And so it happened, just as God had promised through Paul: every single one of the two hundred and seventy-six people reached the land safely. The ship was gone, but not one life was lost. God had kept his word, and he had used Paul's steady faith to give courage to everyone around him."
+      ],
+      "devotional": {
+        "bigIdea": "Everyone on the ship had given up hope, but Paul trusted God's promise and stayed calm, and his courage gave courage to everyone else. When we trust God in the storm, we not only find peace ourselves, we can become a calm and steady help to the frightened people around us.",
+        "questions": [
+          "Everyone panicked, but Paul stayed calm because he trusted God's promise. What helps you stay calm when things are scary?",
+          "Paul's courage gave courage to everyone on the ship. How could your trust in God help the people around you?",
+          "God kept his promise that all would be saved. When has God kept a promise to you, or to your family?"
+        ]
+      },
+      "tags": [
+        "trust",
+        "courage",
+        "God's promises",
+        "storms",
+        "the early church"
+      ],
+      "quiz": [
+        {
+          "question": "Where was Paul's ship taking him?",
+          "options": [
+            "To Rome",
+            "To Egypt",
+            "Back home"
+          ],
+          "answer": 0,
+          "explanation": "He was a prisoner being taken to stand trial before Caesar."
+        },
+        {
+          "question": "What happened during the long storm?",
+          "options": [
+            "Everyone lost all hope of being saved",
+            "They had a party",
+            "They caught lots of fish"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the angel promise Paul?",
+          "options": [
+            "Everyone on the ship would be saved",
+            "The storm would never end",
+            "He would lose the ship and his life"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How many people were on the ship?",
+          "options": [
+            "Two hundred and seventy-six",
+            "Twelve",
+            "A thousand"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What happened to the people in the end?",
+          "options": [
+            "Every one of them reached land safely",
+            "Many were lost",
+            "They sailed on to Rome"
+          ],
+          "answer": 0,
+          "explanation": "The ship was lost, but not one life, just as God promised."
+        }
+      ]
+    },
+    "tier2": {
+      "book": "Acts 27",
+      "hook": "Paul was on a ship in a terrible storm. Everyone was scared, but God had given Paul a promise that they would all be safe.",
+      "story": [
+        "Paul was on a big ship, sailing across the sea to the city of Rome.",
+        "But a terrible storm came. The wind blew so hard that it pushed the ship all over the sea.",
+        "For days and days, there was no sun and no stars, just wind and waves. Everyone was so scared that they thought they would not survive.",
+        "But Paul stood up and said, \"Be brave! Last night an angel of God stood beside me.\"",
+        "\"The angel said, Do not be afraid, Paul. God will keep everyone on this ship safe.\"",
+        "\"So be brave,\" said Paul, \"because I trust God. It will happen just like he said. No one will be lost!\"",
+        "There were two hundred and seventy-six people on that ship! Paul was the calmest one, because he trusted God.",
+        "Finally, the ship came near land, but it crashed and started to break apart in the waves.",
+        "So everyone jumped into the water. Some swam, and some floated on broken pieces of the ship.",
+        "And just as God promised, every single person reached the shore safely! God kept his promise, and Paul's trust in God helped everyone be brave."
+      ],
+      "devotional": {
+        "bigIdea": "Everyone on the ship was scared, but Paul trusted God's promise and stayed calm. His courage helped everyone else. When we trust God, we can help others be brave too.",
+        "questions": [
+          "Everyone was scared, but Paul was calm. What helps you feel brave when you are scared?",
+          "Paul's trust helped others be brave. How could trusting God help the people around you?",
+          "God kept his promise to keep everyone safe. How does it feel that God keeps his promises?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "trust",
+        "courage",
+        "God's promises"
+      ],
+      "quiz": [
+        {
+          "question": "What happened to Paul's ship?",
+          "options": [
+            "It was caught in a terrible storm",
+            "It sailed smoothly",
+            "It stayed in port"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did God promise Paul?",
+          "options": [
+            "Everyone would be kept safe",
+            "The storm would last forever",
+            "He would be alone"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What happened to the people in the end?",
+          "options": [
+            "They all reached land safely",
+            "They were lost",
+            "They stayed on the ship"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ]
+    }
+  }
+]
