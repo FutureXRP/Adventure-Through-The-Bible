@@ -314,7 +314,7 @@ function renderPage() {
   page.innerHTML =
     '<div class="page-eyebrow">My Account</div>' +
     '<h1 class="page-title">Account Settings</h1>' +
-    '<p class="page-sub">Manage your profile, subscription, and family access.</p>' +
+    '<p class="page-sub">Manage your profile and family access.</p>' +
 
     // PROFILE CARD
     '<div class="account-card">' +
@@ -329,27 +329,14 @@ function renderPage() {
       '</div>' +
     '</div>' +
 
-    // SUBSCRIPTION CARD
+    // ACCESS CARD — everything is free
     '<div class="account-card">' +
-      '<div class="card-header"><div class="card-header-icon">📜</div><div>' +
-        '<div class="card-header-title">' + (planType === 'monthly' ? 'Monthly Subscription' : (hasLifetime || planType === 'one_time') ? 'One-Time Purchase' : planType === 'monthly_cancelling' ? 'Subscription Cancelled' : 'Free Plan') + '</div>' +
-        '<div class="card-header-sub">' + (planType === 'monthly' ? 'All stories + future stories included' : (hasLifetime || planType === 'one_time') ? 'Permanent access · Future packs sold separately' : planType === 'monthly_cancelling' ? 'Access ends at billing period' : 'First 3 stories included') + '</div>' +
+      '<div class="card-header"><div class="card-header-icon">🎁</div><div>' +
+        '<div class="card-header-title">Full Access — Free</div>' +
+        '<div class="card-header-sub">All 50 stories, quizzes, and audio narration</div>' +
       '</div></div>' +
       '<div class="card-body">' +
-        '<div id="msgBox" class="msg-box"></div>' +
-        '<div class="plan-status ' + planStatusClass + '"><div class="plan-status-dot"></div><div><div class="plan-status-label">' + planLabel + '</div><div class="plan-status-desc">' + planDesc + '</div></div></div>' +
-        (hasLifetime && planType !== 'monthly' ? (
-          (paidAt ? '<div class="detail-row"><span class="detail-label">Purchased</span><span class="detail-value">' + paidAt + '</span></div>' : '') +
-          '<div class="detail-row"><span class="detail-label">Future stories</span><span class="detail-value">Available as add-on packs</span></div>' +
-          '<div style="margin-top:16px"><button class="btn-primary" id="switchMonthlyBtn" onclick="startCheckout(\'monthly\')">Switch to Monthly — $4.99/mo</button><div style="text-align:center;font-family:\'Source Sans 3\',sans-serif;font-size:11px;color:var(--ink-light);opacity:0.55;margin-top:6px">Get all future stories automatically included</div></div>'
-        ) : isPaid && (planType === 'monthly' || planType === 'monthly_cancelling') ? (
-          (paidAt ? '<div class="detail-row"><span class="detail-label">Started</span><span class="detail-value">' + paidAt + '</span></div>' : '') +
-          '<div class="detail-row"><span class="detail-label">Price</span><span class="detail-value">$4.99 / month</span></div>' +
-          '<div class="detail-row"><span class="detail-label">Future stories</span><span class="detail-value green">Included automatically</span></div>' +
-          (planType === 'monthly' ? '<div style="margin-top:16px"><button class="btn-danger" onclick="openConfirm()">Cancel Subscription</button><div style="text-align:center;font-family:\'Source Sans 3\',sans-serif;font-size:11px;color:var(--ink-light);opacity:0.55;margin-top:6px">You\'ll keep access until the end of your billing period</div></div>' : '')
-        ) : (
-          '<div style="margin-top:4px"><button class="btn-primary" id="upgradeBtn" onclick="startCheckout(\'monthly\')">Subscribe Monthly — $4.99/mo</button><button class="btn-ghost" style="margin-top:8px" onclick="startCheckout(\'one_time\')">One-Time Purchase — $49.99</button></div>'
-        )) +
+        '<div class="plan-status active"><div class="plan-status-dot"></div><div><div class="plan-status-label">Everything is unlocked</div><div class="plan-status-desc">Thanks to a generous gift, the entire library is free for you and your family — no subscription and no payment, ever.</div></div></div>' +
       '</div>' +
     '</div>' +
 
@@ -380,19 +367,8 @@ function renderPage() {
         '</div>' +
     '</div>' : '') +
 
-    // REFUND CARD — only show if paid and no refund already issued
-    (isPaid && !refundIssuedAt ?
-    '<div class="account-card">' +
-      '<div class="card-header"><div class="card-header-icon">💳</div><div><div class="card-header-title">Refund Request</div><div class="card-header-sub">Automatic eligibility check based on stories accessed</div></div></div>' +
-      '<div class="card-body">' +
-        '<div id="refundMsgBox" class="msg-box"></div>' +
-        '<p style="font-family:\'Lora\',serif;font-style:italic;font-size:0.88rem;color:var(--ink-light);line-height:1.6;margin-bottom:16px">Refunds are available if your account has accessed fewer than ' + refundThreshold + ' stories total across all profiles. The check is automatic — eligible refunds are processed immediately.</p>' +
-        '<button class="btn-danger" onclick="openRefund()">Request a Refund</button>' +
-      '</div>' +
-    '</div>'
-    : refundIssuedAt ?
-    '<div class="account-card"><div class="card-body"><div class="msg-box info" style="display:block">A refund was issued on ' + refundDate + '. If you have questions, contact hello@footstepsbibleapp.com.</div></div></div>'
-    : '') +
+    // (Refund card removed — the app is free for everyone)
+    '' +
 
     // SIGN OUT
     '<div class="account-card"><div class="card-body"><button class="btn-ghost" onclick="handleSignOut()">Sign Out</button></div></div>';

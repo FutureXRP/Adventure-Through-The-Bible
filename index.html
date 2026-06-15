@@ -402,28 +402,12 @@
     <div class="welcome-inner">
       <div class="welcome-eyebrow">Welcome to Footsteps</div>
       <h1 class="welcome-title">Walk Through the<br>Greatest Story Ever Told</h1>
-      <p class="welcome-sub">30 Bible stories told the way they were meant to be told — vivid, present-tense, and alive. Built for families. Designed to stick with your kids.</p>
+      <p class="welcome-sub">50 Bible stories told the way they were meant to be told — vivid, present-tense, and alive. Built for families. Designed to stick with your kids.</p>
       <div class="welcome-free-row">
-        <div class="welcome-free-badge">3 Free Stories</div>
-        <div class="welcome-free-text">Start reading right now — no account needed. Unlock the full library when you're ready.</div>
+        <div class="welcome-free-badge">100% Free</div>
+        <div class="welcome-free-text">Every story, every quiz, and all the audio narration — free for everyone, thanks to a generous gift. No account needed to start reading.</div>
       </div>
-      <div class="welcome-pricing">
-        <div class="welcome-plan">
-          <div class="welcome-plan-name">One-Time Purchase</div>
-          <div class="welcome-plan-price">$49.99 <span>once</span></div>
-          <div class="welcome-plan-detail">All 50 stories available at launch</div>
-          <div class="welcome-plan-desc">Pay once, own everything available now. Future story packs sold separately.</div>
-        </div>
-        <div class="welcome-plan featured">
-          <div class="welcome-plan-badge">Most Popular</div>
-          <div class="welcome-plan-name">Monthly</div>
-          <div class="welcome-plan-price">$4.99 <span>/ month</span></div>
-          <div class="welcome-plan-detail">All 50 stories + every new story added</div>
-          <div class="welcome-plan-desc">All current stories plus everything we publish after launch. Cancel anytime.</div>
-        </div>
-      </div>
-      <button class="welcome-cta-primary" id="welcomeStartBtn">Explore the Free Stories →</button>
-      <button class="welcome-cta-secondary" id="welcomeUnlockBtn">Unlock the Full Library</button>
+      <button class="welcome-cta-primary" id="welcomeStartBtn">Start Reading →</button>
       <div style="display:flex;align-items:center;gap:10px;margin-top:12px">
         <div style="flex:1;height:1px;background:rgba(44,26,14,0.1)"></div>
         <div style="font-size:11px;color:var(--ink-light);letter-spacing:0.06em">ALREADY HAVE AN ACCOUNT?</div>
@@ -776,7 +760,7 @@ const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 const { createClient } = supabase;
 const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, { auth: { detectSessionInUrl: true, persistSession: true, autoRefreshToken: true } });
 
-const PAYWALL_ENABLED = true;
+const PAYWALL_ENABLED = false;
 const FREE_STORY_LIMIT = 3;
 const SUPABASE_FUNCTIONS_URL = 'https://bqyysvjnitbeimvaxkao.supabase.co/functions/v1';
 const STRIPE_PK = 'pk_test_51THwruLhNi71Q1IHXoFa7HQdFk5Gz4PirM6J9VCPjcgZ4rCZkrUWCdRBtCLZZBydmLj1S7j4dush2j8GHd1rxd000GC3sAMxu';
@@ -826,7 +810,7 @@ async function init() {
   } catch(e) { console.warn('Auth session error:', e); }
 
   // Only show welcome popup if user is NOT already signed in AND hasn't seen it
-  if (PAYWALL_ENABLED && !authUser && !localStorage.getItem(WELCOME_KEY)) {
+  if (!authUser && !localStorage.getItem(WELCOME_KEY)) {
     const overlay = document.getElementById('welcomeOverlay');
     overlay.classList.add('open'); overlay.style.display = 'flex'; overlay.style.zIndex = '9999';
     document.body.style.overflow = 'hidden';
@@ -1405,7 +1389,6 @@ function closeWelcome() {
 function openPaywall() { document.getElementById('paywallBackdrop').classList.add('open'); document.body.style.overflow = 'hidden'; }
 function closePaywall() { document.getElementById('paywallBackdrop').classList.remove('open'); document.body.style.overflow = ''; }
 document.getElementById('welcomeStartBtn').addEventListener('click', closeWelcome);
-document.getElementById('welcomeUnlockBtn').addEventListener('click', () => { closeWelcome(); setTimeout(openPaywall, 250); });
 document.getElementById('paywallDismiss').addEventListener('click', closePaywall);
 document.getElementById('paywallBackdrop').addEventListener('click', e => { if (e.target === document.getElementById('paywallBackdrop')) closePaywall(); });
 document.getElementById('pwBtnMonthly').addEventListener('click', () => startCheckout('monthly'));
@@ -1432,8 +1415,8 @@ function render() {
   const progress = getProgress();
   let html = '';
 
-  // Prologue card — only show for paid users, above all eras
-  if (userProfile && userProfile.is_paid) {
+  // Prologue card — everything is free, so show the intro to everyone
+  if (true) {
     const tier = activeProfile ? (activeProfile.tier || 1) : 1;
     const prologueText = tier === 2
       ? 'Are you ready? Because you are about to go on the greatest adventure in the whole world.'
