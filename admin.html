@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin · Footsteps</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+  :root {
+    --parchment: #fdf6e3;
+    --parchment-dark: #f0e6c8;
+    --ink: #2c1a0e;
+    --ink-light: #5c3d1e;
+    --crimson: #8b1a1a;
+    --gold: #c9a227;
+    --gold-bright: #f0c040;
+    --gold-glow: rgba(201,162,39,0.35);
+    --shadow: rgba(44,26,14,0.18);
+    --green: #3B6D11;
+    --green-bg: #EAF3DE;
+    --purple: #7c3aed;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { min-height: 100vh; }
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Lora', Georgia, serif;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+  .top-bar { background: var(--ink); padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .top-bar-brand { font-family: 'Cinzel', serif; font-size: 14px; font-weight: 700; color: var(--gold); text-decoration: none; letter-spacing: 0.06em; }
+  .top-bar-right { display: flex; align-items: center; gap: 18px; }
+  .top-bar-link { font-family: 'Source Sans 3', sans-serif; font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.5); text-decoration: none; letter-spacing: 0.06em; cursor: pointer; background: none; border: none; transition: color 0.15s; }
+  .top-bar-link:hover { color: #fff; }
+
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 40px 24px 90px; }
+  .page-eyebrow { font-family: 'Source Sans 3', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .page-title { font-family: 'Cinzel', serif; font-size: 2rem; font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 6px; }
+  .page-sub { font-family: 'Lora', serif; font-style: italic; font-size: 0.95rem; color: var(--ink-light); margin-bottom: 28px; }
+
+  .warn-banner { display: none; background: #FFF8E6; border: 1px solid rgba(201,162,39,0.4); border-radius: 10px; padding: 12px 16px; font-family: 'Source Sans 3', sans-serif; font-size: 12.5px; color: #7a5500; line-height: 1.5; margin-bottom: 22px; }
+
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(168px, 1fr)); gap: 14px; margin-bottom: 30px; }
+  .kpi { background: #fff; border: 1px solid rgba(44,26,14,0.12); border-radius: 12px; padding: 16px 18px; box-shadow: 0 2px 10px var(--shadow); }
+  .kpi-val { font-family: 'Cinzel', serif; font-size: 1.85rem; font-weight: 700; color: var(--ink); line-height: 1; }
+  .kpi-label { font-family: 'Source Sans 3', sans-serif; font-size: 10.5px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-light); opacity: 0.8; margin-top: 8px; }
+  .kpi-sub { font-family: 'Source Sans 3', sans-serif; font-size: 11px; color: var(--ink-light); opacity: 0.6; margin-top: 4px; }
+
+  .panel { background: #fff; border: 1px solid rgba(44,26,14,0.12); border-radius: 14px; padding: 22px 24px; box-shadow: 0 2px 12px var(--shadow); margin-bottom: 22px; }
+  .panel-title { font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+  .panel-sub { font-family: 'Source Sans 3', sans-serif; font-size: 12px; color: var(--ink-light); opacity: 0.7; margin-bottom: 18px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .empty { font-family: 'Source Sans 3', sans-serif; font-size: 13px; color: var(--ink-light); opacity: 0.6; font-style: italic; padding: 10px 0; }
+
+  /* horizontal bars */
+  .hbar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 9px; }
+  .hbar-label { flex: 0 0 210px; font-family: 'Source Sans 3', sans-serif; font-size: 13px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .hbar-label .emoji { margin-right: 6px; }
+  .hbar-track { flex: 1; background: var(--parchment-dark); border-radius: 6px; height: 18px; overflow: hidden; }
+  .hbar-fill { height: 100%; border-radius: 6px; background: linear-gradient(90deg, var(--gold), var(--gold-bright)); min-width: 2px; transition: width 0.4s ease; }
+  .hbar-val { flex: 0 0 auto; font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 12px; color: var(--ink-light); min-width: 46px; text-align: right; }
+
+  /* vertical bars (time series) */
+  .seg { display: inline-flex; border: 1.5px solid var(--parchment-dark); border-radius: 8px; overflow: hidden; margin-bottom: 16px; }
+  .seg button { padding: 6px 14px; border: none; background: transparent; font-family: 'Source Sans 3', sans-serif; font-size: 12px; font-weight: 600; color: var(--ink-light); cursor: pointer; transition: background 0.15s, color 0.15s; }
+  .seg button.active { background: var(--gold); color: var(--ink); }
+  .vbars { display: flex; align-items: flex-end; gap: 3px; height: 190px; border-bottom: 1.5px solid var(--parchment-dark); }
+  .vbar { flex: 1; min-width: 5px; display: flex; align-items: flex-end; height: 100%; }
+  .vbar-fill { width: 100%; background: linear-gradient(180deg, var(--gold-bright), var(--gold)); border-radius: 3px 3px 0 0; min-height: 2px; transition: height 0.4s ease; }
+  .vaxis { display: flex; gap: 3px; margin-top: 7px; }
+  .vtick { flex: 1; min-width: 5px; text-align: center; font-family: 'Source Sans 3', sans-serif; font-size: 9px; color: var(--ink-light); opacity: 0.7; white-space: nowrap; overflow: hidden; }
+
+  /* gate */
+  .gate { max-width: 540px; margin: 70px auto; padding: 0 24px; text-align: center; }
+  .gate-icon { font-size: 44px; margin-bottom: 16px; }
+  .gate-title { font-family: 'Cinzel', serif; font-size: 1.5rem; font-weight: 700; color: var(--ink); margin-bottom: 10px; }
+  .gate-msg { font-family: 'Lora', serif; font-size: 0.98rem; color: var(--ink-light); line-height: 1.6; margin-bottom: 22px; }
+  .gate-btn { display: inline-block; padding: 12px 26px; background: linear-gradient(135deg, var(--gold), var(--gold-bright)); color: var(--ink); border: none; border-radius: 9px; font-family: 'Cinzel', serif; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; cursor: pointer; text-decoration: none; box-shadow: 0 3px 12px var(--gold-glow); }
+  .gate details { text-align: left; margin-top: 28px; background: #fff; border: 1px solid rgba(44,26,14,0.12); border-radius: 12px; padding: 6px 18px; box-shadow: 0 2px 10px var(--shadow); }
+  .gate summary { font-family: 'Source Sans 3', sans-serif; font-size: 13px; font-weight: 700; color: var(--ink); cursor: pointer; padding: 12px 0; letter-spacing: 0.02em; }
+  .gate details p { font-family: 'Source Sans 3', sans-serif; font-size: 12.5px; color: var(--ink-light); line-height: 1.6; margin: 8px 0; }
+  pre.sql { background: #2c1a0e; color: #f0e6c8; border-radius: 8px; padding: 14px; overflow-x: auto; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; line-height: 1.55; margin: 10px 0 16px; white-space: pre; }
+
+  .spinner { display: inline-block; width: 22px; height: 22px; border: 3px solid rgba(44,26,14,0.15); border-top-color: var(--gold); border-radius: 50%; animation: spin 0.7s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .loading { text-align: center; padding: 90px 0; }
+
+  @media (max-width: 640px) {
+    .two-col { grid-template-columns: 1fr; }
+    .hbar-label { flex-basis: 130px; font-size: 12px; }
+    .page-title { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="./index.html" class="top-bar-brand">FOOTSTEPS</a>
+  <div class="top-bar-right">
+    <span class="top-bar-link" id="whoami" style="cursor:default"></span>
+    <a href="./index.html" class="top-bar-link">View site</a>
+    <button class="top-bar-link" id="signOutBtn" style="display:none" onclick="signOut()">Sign out</button>
+  </div>
+</div>
+
+<!-- LOADING -->
+<div class="loading" id="loading"><div class="spinner"></div></div>
+
+<!-- ACCESS GATE -->
+<div class="gate" id="gate" style="display:none"></div>
+
+<!-- DASHBOARD -->
+<div class="wrap" id="dash" style="display:none">
+  <div class="page-eyebrow">Admin · Reports</div>
+  <h1 class="page-title">How Footsteps Is Used</h1>
+  <p class="page-sub" id="asOf"></p>
+
+  <div class="warn-banner" id="warnBanner"></div>
+
+  <div class="kpi-grid" id="kpis"></div>
+
+  <div class="panel">
+    <div class="panel-title">Growth over time</div>
+    <div class="panel-sub" id="tsSub">Activity grouped by month</div>
+    <div class="seg" id="tsSeg">
+      <button data-metric="reads" class="active">Stories read</button>
+      <button data-metric="accounts">New accounts</button>
+      <button data-metric="quizzes">Quizzes taken</button>
+    </div>
+    <div class="vbars" id="tsBars"></div>
+    <div class="vaxis" id="tsAxis"></div>
+  </div>
+
+  <div class="two-col">
+    <div class="panel">
+      <div class="panel-title">Most-read stories</div>
+      <div class="panel-sub">Top stories by completed reads (all profiles)</div>
+      <div id="topStories"></div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">Reads by era</div>
+      <div class="panel-sub">Completed reads across the 8 eras</div>
+      <div id="byEra"></div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="panel">
+      <div class="panel-title">Hardest quizzes</div>
+      <div class="panel-sub">Lowest average score (stories with the most missed questions)</div>
+      <div id="hardestQuiz"></div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">Reader levels</div>
+      <div class="panel-sub">Child profiles by reading level</div>
+      <div id="tierSplit"></div>
+      <div class="panel-title" style="margin-top:22px">Badges earned</div>
+      <div class="panel-sub">Most-earned journey badges</div>
+      <div id="badgeDist"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ════════════════════════════════════════════════════
+// CONFIG
+// ════════════════════════════════════════════════════
+const SUPABASE_URL = 'https://bqyysvjnitbeimvaxkao.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxeXlzdmpuaXRiZWltdmF4a2FvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA0MTA1OTIsImV4cCI6MjA5NTk4NjU5Mn0._GJFay_isjcvm7O_Ry7hBk1EfkKQvqoMPVVOBL2uhug';
+const { createClient } = supabase;
+const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, { auth: { detectSessionInUrl: true, persistSession: true, autoRefreshToken: true } });
+
+const SETUP_SQL =
+`-- Run once in the Supabase SQL editor to enable the admin dashboard.
+
+-- 1) Add an admin flag to profiles
+alter table public.profiles
+  add column if not exists is_admin boolean not null default false;
+
+-- 2) Make your account an admin
+update public.profiles set is_admin = true
+where id = (select id from auth.users where email = 'the5blairsworld@gmail.com');
+
+-- 3) Helper that checks admin without tripping RLS recursion
+create or replace function public.is_admin()
+returns boolean language sql security definer set search_path = public stable
+as $$ select coalesce((select is_admin from public.profiles where id = auth.uid()), false) $$;
+
+-- 4) Let admins read every row (read-only); existing per-user policies stay intact.
+--    Safe to re-run: each policy is dropped first if it already exists.
+drop policy if exists "admin read all profiles" on public.profiles;
+create policy "admin read all profiles" on public.profiles for select using (public.is_admin());
+drop policy if exists "admin read all child_profiles" on public.child_profiles;
+create policy "admin read all child_profiles" on public.child_profiles for select using (public.is_admin());
+drop policy if exists "admin read all story_progress" on public.story_progress;
+create policy "admin read all story_progress" on public.story_progress for select using (public.is_admin());
+drop policy if exists "admin read all quiz_attempts" on public.quiz_attempts;
+create policy "admin read all quiz_attempts" on public.quiz_attempts for select using (public.is_admin());
+drop policy if exists "admin read all mastery_attempts" on public.mastery_attempts;
+create policy "admin read all mastery_attempts" on public.mastery_attempts for select using (public.is_admin());
+drop policy if exists "admin read all badges" on public.badges;
+create policy "admin read all badges" on public.badges for select using (public.is_admin());`;
+
+let authUser = null;
+let storyById = {}, eraById = {}, eraOrder = [];
+const warnings = [];
+
+// ════════════════════════════════════════════════════
+// HELPERS
+// ════════════════════════════════════════════════════
+const $ = id => document.getElementById(id);
+const fmt = n => (n == null ? '—' : Number(n).toLocaleString());
+const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[c]));
+
+function show(view) {
+  $('loading').style.display = view === 'loading' ? 'block' : 'none';
+  $('gate').style.display = view === 'gate' ? 'block' : 'none';
+  $('dash').style.display = view === 'dash' ? 'block' : 'none';
+}
+
+function pct(num, den) { return den > 0 ? Math.round((num / den) * 100) : 0; }
+
+function monthKey(iso) { return iso ? String(iso).slice(0, 7) : null; }
+function yearKey(iso) { return iso ? String(iso).slice(0, 4) : null; }
+
+function monthLabel(key) {
+  // key = "YYYY-MM"
+  const [y, m] = key.split('-');
+  const names = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  return names[parseInt(m, 10) - 1] + " '" + y.slice(2);
+}
+
+// Build a contiguous list of bucket keys (monthly, or yearly if the span is long)
+function buildAxis(allIsoDates) {
+  const dates = allIsoDates.filter(Boolean).sort();
+  if (!dates.length) return { keys: [], gran: 'month' };
+  const months = [...new Set(dates.map(monthKey))];
+  if (months.length <= 24) {
+    // fill gaps month by month
+    const keys = [];
+    let [y, m] = months[0].split('-').map(Number);
+    const [ey, em] = months[months.length - 1].split('-').map(Number);
+    while (y < ey || (y === ey && m <= em)) {
+      keys.push(y + '-' + String(m).padStart(2, '0'));
+      m++; if (m > 12) { m = 1; y++; }
+    }
+    return { keys, gran: 'month' };
+  }
+  // yearly
+  const years = [...new Set(dates.map(yearKey))].map(Number);
+  const keys = [];
+  for (let yr = years[0]; yr <= years[years.length - 1]; yr++) keys.push(String(yr));
+  return { keys, gran: 'year' };
+}
+
+function bucketCounts(rows, field, gran) {
+  const m = new Map();
+  for (const r of rows) {
+    const v = r[field]; if (!v) continue;
+    const k = gran === 'year' ? yearKey(v) : monthKey(v);
+    m.set(k, (m.get(k) || 0) + 1);
+  }
+  return m;
+}
+
+function renderHBars(containerId, items, opts) {
+  opts = opts || {};
+  const el = $(containerId);
+  if (!items.length) { el.innerHTML = '<div class="empty">No data yet.</div>'; return; }
+  const max = Math.max(...items.map(i => i.value), 1);
+  el.innerHTML = items.map(i => {
+    const w = Math.max((i.value / max) * 100, i.value > 0 ? 2 : 0);
+    const fill = i.color ? ('background:' + i.color) : '';
+    const emoji = i.emoji ? '<span class="emoji">' + esc(i.emoji) + '</span>' : '';
+    return '<div class="hbar-row">' +
+        '<div class="hbar-label" title="' + esc(i.label) + '">' + emoji + esc(i.label) + '</div>' +
+        '<div class="hbar-track"><div class="hbar-fill" style="width:' + w + '%;' + fill + '"></div></div>' +
+        '<div class="hbar-val">' + esc(i.valLabel != null ? i.valLabel : fmt(i.value)) + '</div>' +
+      '</div>';
+  }).join('');
+}
+
+// ════════════════════════════════════════════════════
+// AUTH / GATE
+// ════════════════════════════════════════════════════
+async function init() {
+  show('loading');
+  let session = null;
+  try { ({ data: { session } } = await sb.auth.getSession()); } catch (e) { /* ignore */ }
+  if (!session) { renderGate('signin'); return; }
+  authUser = session.user;
+  $('whoami').textContent = authUser.email || '';
+
+  let prof = null, err = null;
+  try {
+    const r = await sb.from('profiles').select('is_admin, display_name').eq('id', authUser.id).single();
+    prof = r.data; err = r.error;
+  } catch (e) { err = e; }
+
+  if (err || !prof) { renderGate('setup'); return; }
+  if (!prof.is_admin) { renderGate('denied'); return; }
+
+  $('signOutBtn').style.display = 'inline';
+  await loadData();
+}
+
+function renderGate(reason) {
+  const signedIn = !!authUser;
+  let icon = '🔒', title = 'Admin access required', msg = '', cta = '';
+  if (reason === 'signin') {
+    icon = '🔑'; title = 'Sign in to continue';
+    msg = 'This is the private Footsteps admin dashboard. Sign in with an administrator account to view usage reports.';
+    cta = '<a class="gate-btn" href="./login.html?returnTo=admin.html">Sign In</a>';
+  } else if (reason === 'denied') {
+    icon = '🚫'; title = 'Not an admin account';
+    msg = "You're signed in as <strong>" + esc(authUser.email) + "</strong>, but this account isn't marked as an administrator. If this should be your admin account, run the one-time setup below, then reload.";
+    cta = '<a class="gate-btn" href="./index.html">Back to site</a>';
+    $('signOutBtn').style.display = 'inline';
+  } else { // setup
+    icon = '⚙️'; title = 'One-time setup needed';
+    msg = "Signed in as <strong>" + esc(authUser ? authUser.email : '') + "</strong>. The admin reporting columns and policies aren't set up yet. Run the SQL below once in your Supabase project, then reload this page.";
+    cta = '<a class="gate-btn" href="./index.html">Back to site</a>';
+    if (authUser) $('signOutBtn').style.display = 'inline';
+  }
+  $('gate').innerHTML =
+    '<div class="gate-icon">' + icon + '</div>' +
+    '<div class="gate-title">' + title + '</div>' +
+    '<div class="gate-msg">' + msg + '</div>' +
+    cta +
+    '<details' + (reason === 'signin' ? '' : ' open') + '>' +
+      '<summary>First-time setup (Supabase SQL)</summary>' +
+      '<p>Open your Supabase project → <strong>SQL Editor</strong>, paste this once, and run it. It adds a read-only admin role; existing players are unaffected.</p>' +
+      '<pre class="sql" id="sqlBox"></pre>' +
+      '<p>Already ran it? Make sure your account\'s <code>is_admin</code> is <code>true</code>, then reload.</p>' +
+    '</details>';
+  const box = $('sqlBox'); if (box) box.textContent = SETUP_SQL;
+  show('gate');
+}
+
+async function signOut() { try { await sb.auth.signOut(); } catch (e) {} location.reload(); }
+
+// ════════════════════════════════════════════════════
+// DATA
+// ════════════════════════════════════════════════════
+async function safeSelect(table) {
+  try {
+    const { data, error } = await sb.from(table).select('*');
+    if (error) { warnings.push(table + ': ' + error.message); return []; }
+    return data || [];
+  } catch (e) { warnings.push(table + ': ' + (e.message || e)); return []; }
+}
+
+let TS = null; // time-series cache for the toggle
+
+async function loadData() {
+  show('loading');
+  warnings.length = 0;
+
+  // Story / era metadata (for friendly labels)
+  try {
+    const meta = await (await fetch('./stories.json')).json();
+    (meta.stories || []).forEach(s => { storyById[s.id] = { title: s.title, emoji: s.emoji, era: s.era, order: s.order }; });
+    (meta.eras || []).forEach((e, i) => { eraById[e.id] = { label: e.label, color: e.color }; eraOrder.push(e.id); });
+  } catch (e) { warnings.push('stories.json: ' + (e.message || e)); }
+
+  const [profiles, children, progress, quizzes, mastery, badges] = await Promise.all([
+    safeSelect('profiles'), safeSelect('child_profiles'), safeSelect('story_progress'),
+    safeSelect('quiz_attempts'), safeSelect('mastery_attempts'), safeSelect('badges'),
+  ]);
+
+  render({ profiles, children, progress, quizzes, mastery, badges });
+  show('dash');
+}
+
+// ════════════════════════════════════════════════════
+// RENDER
+// ════════════════════════════════════════════════════
+function render(d) {
+  const now = new Date();
+  $('asOf').textContent = 'As of ' + now.toLocaleString('en-US', { dateStyle: 'long', timeStyle: 'short' });
+
+  // ---- warnings (incl. likely-missing RLS hint) ----
+  const lowData = d.profiles.length <= 1 && (d.progress.length + d.quizzes.length) === 0;
+  const notes = warnings.slice();
+  if (lowData) notes.push("Only your own rows are visible — if you expect more, the admin read policies may not be applied yet (see the setup SQL on the sign-in screen).");
+  if (notes.length) {
+    $('warnBanner').style.display = 'block';
+    $('warnBanner').innerHTML = '⚠️ ' + notes.map(esc).join('<br>');
+  }
+
+  // ---- KPIs ----
+  const parents = d.profiles.filter(p => p.account_type === 'parent').length;
+  const individuals = d.profiles.length - parents;
+  const readerProfiles = d.profiles.length + d.children.length;
+  const sumScore = d.quizzes.reduce((a, q) => a + (q.score || 0), 0);
+  const sumMax = d.quizzes.reduce((a, q) => a + (q.max_score || 0), 0);
+  const heroPass = d.mastery.filter(m => m.passed).length;
+
+  // recency (needs created_at)
+  const lastSeen = new Map();
+  const note = r => { if (!r.created_at) return; const k = (r.profile_type || '') + ':' + (r.profile_id || ''); const t = +new Date(r.created_at); if (!lastSeen.has(k) || t > lastSeen.get(k)) lastSeen.set(k, t); };
+  d.progress.forEach(note); d.quizzes.forEach(note);
+  const haveTimes = lastSeen.size > 0;
+  const cutoff = days => now.getTime() - days * 864e5;
+  const active7 = haveTimes ? [...lastSeen.values()].filter(t => t >= cutoff(7)).length : null;
+  const active30 = haveTimes ? [...lastSeen.values()].filter(t => t >= cutoff(30)).length : null;
+
+  const kpis = [
+    { val: fmt(readerProfiles), label: 'Reader profiles', sub: fmt(d.profiles.length) + ' accounts · ' + fmt(d.children.length) + ' children' },
+    { val: fmt(d.profiles.length), label: 'Accounts', sub: fmt(parents) + ' family · ' + fmt(individuals) + ' individual' },
+    { val: fmt(d.progress.length), label: 'Stories read', sub: 'completed across all readers' },
+    { val: fmt(d.quizzes.length), label: 'Quizzes taken', sub: sumMax > 0 ? pct(sumScore, sumMax) + '% average score' : '—' },
+    { val: fmt(d.mastery.length), label: 'Hero quiz attempts', sub: fmt(heroPass) + ' passed (' + pct(heroPass, d.mastery.length) + '%)' },
+    { val: fmt(d.badges.length), label: 'Badges earned', sub: 'journey milestones' },
+    { val: active30 == null ? '—' : fmt(active30), label: 'Active (30 days)', sub: active7 == null ? 'no timestamps' : fmt(active7) + ' in last 7 days' },
+  ];
+  $('kpis').innerHTML = kpis.map(k =>
+    '<div class="kpi"><div class="kpi-val">' + k.val + '</div><div class="kpi-label">' + esc(k.label) + '</div><div class="kpi-sub">' + esc(k.sub) + '</div></div>'
+  ).join('');
+
+  // ---- time series ----
+  const allDates = [].concat(
+    d.profiles.map(p => p.created_at), d.progress.map(p => p.created_at), d.quizzes.map(q => q.created_at)
+  );
+  const axis = buildAxis(allDates);
+  TS = {
+    axis,
+    series: {
+      reads: bucketCounts(d.progress, 'created_at', axis.gran),
+      accounts: bucketCounts(d.profiles, 'created_at', axis.gran),
+      quizzes: bucketCounts(d.quizzes, 'created_at', axis.gran),
+    },
+  };
+  $('tsSub').textContent = axis.keys.length ? ('Activity grouped by ' + (axis.gran === 'year' ? 'year' : 'month')) : 'No dated activity yet';
+  renderTimeseries('reads');
+
+  // ---- most-read stories ----
+  const readByStory = new Map();
+  d.progress.forEach(p => readByStory.set(p.story_id, (readByStory.get(p.story_id) || 0) + 1));
+  const topStories = [...readByStory.entries()]
+    .map(([id, v]) => ({ label: (storyById[id] && storyById[id].title) || id, emoji: storyById[id] && storyById[id].emoji, value: v }))
+    .sort((a, b) => b.value - a.value).slice(0, 12);
+  renderHBars('topStories', topStories);
+
+  // ---- reads by era ----
+  const readByEra = new Map();
+  d.progress.forEach(p => { const e = p.era || (storyById[p.story_id] && storyById[p.story_id].era); if (e) readByEra.set(e, (readByEra.get(e) || 0) + 1); });
+  const eraItems = (eraOrder.length ? eraOrder : [...readByEra.keys()])
+    .filter(e => readByEra.has(e))
+    .map(e => ({ label: (eraById[e] && eraById[e].label) || e, value: readByEra.get(e) || 0, color: eraById[e] && eraById[e].color }));
+  renderHBars('byEra', eraItems);
+
+  // ---- hardest quizzes ----
+  const qAgg = new Map();
+  d.quizzes.forEach(q => { const a = qAgg.get(q.story_id) || { s: 0, m: 0, n: 0 }; a.s += q.score || 0; a.m += q.max_score || 0; a.n++; qAgg.set(q.story_id, a); });
+  const hardest = [...qAgg.entries()]
+    .filter(([, a]) => a.m > 0)
+    .map(([id, a]) => ({ label: (storyById[id] && storyById[id].title) || id, emoji: storyById[id] && storyById[id].emoji, value: pct(a.s, a.m), valLabel: pct(a.s, a.m) + '% · ' + a.n }))
+    .sort((a, b) => a.value - b.value).slice(0, 10);
+  renderHBars('hardestQuiz', hardest);
+
+  // ---- reader levels (child tier) ----
+  const t2 = d.children.filter(c => (c.tier || 1) === 2).length;
+  const t1 = d.children.length - t2;
+  renderHBars('tierSplit', [
+    { label: 'Ages 9–12 (Tier 1)', value: t1, color: 'var(--gold)' },
+    { label: 'Ages 5–8 (Tier 2)', value: t2, color: 'var(--purple)' },
+  ].filter(x => d.children.length > 0));
+
+  // ---- badges ----
+  const badgeAgg = new Map();
+  d.badges.forEach(b => badgeAgg.set(b.badge_id, (badgeAgg.get(b.badge_id) || 0) + 1));
+  const badgeItems = [...badgeAgg.entries()].map(([id, v]) => ({ label: id, value: v })).sort((a, b) => b.value - a.value).slice(0, 10);
+  renderHBars('badgeDist', badgeItems);
+}
+
+function renderTimeseries(metric) {
+  if (!TS) return;
+  document.querySelectorAll('#tsSeg button').forEach(b => b.classList.toggle('active', b.dataset.metric === metric));
+  const { keys, gran } = TS.axis;
+  const series = TS.series[metric];
+  if (!keys.length) { $('tsBars').innerHTML = '<div class="empty">No dated activity yet.</div>'; $('tsAxis').innerHTML = ''; return; }
+  const max = Math.max(...keys.map(k => series.get(k) || 0), 1);
+  // cap label density
+  const step = Math.ceil(keys.length / (gran === 'year' ? 12 : 14));
+  $('tsBars').innerHTML = keys.map(k => {
+    const v = series.get(k) || 0;
+    const h = Math.max((v / max) * 100, v > 0 ? 3 : 0);
+    return '<div class="vbar" title="' + esc((gran === 'year' ? k : monthLabel(k)) + ': ' + v) + '"><div class="vbar-fill" style="height:' + h + '%"></div></div>';
+  }).join('');
+  $('tsAxis').innerHTML = keys.map((k, i) =>
+    '<div class="vtick">' + ((i % step === 0) ? esc(gran === 'year' ? k : monthLabel(k)) : '') + '</div>'
+  ).join('');
+}
+
+document.getElementById('tsSeg').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (b) renderTimeseries(b.dataset.metric);
+});
+
+init();
+</script>
+</body>
+</html>
