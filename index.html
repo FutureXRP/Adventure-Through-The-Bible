@@ -3,6 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#2c1a0e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Footsteps">
+<link rel="apple-touch-icon" href="./icons/icon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
+<script>if('serviceWorker' in navigator){addEventListener('load',function(){navigator.serviceWorker.register('./sw.js').catch(function(){});});}</script>
+<script>
+(function(){
+  var deferred=null;
+  function dismissed(){ try{ return localStorage.getItem('footsteps_install_dismissed')==='1'; }catch(e){ return false; } }
+  window.addEventListener('beforeinstallprompt', function(e){ e.preventDefault(); deferred=e; if(!dismissed()) showChip(); });
+  function showChip(){
+    if(!document.body || document.getElementById('pwaInstallChip')) return;
+    var c=document.createElement('div'); c.id='pwaInstallChip';
+    c.style.cssText='position:fixed;left:50%;transform:translateX(-50%);bottom:18px;z-index:9998;display:flex;align-items:center;gap:10px;background:#2c1a0e;color:#f0c040;border:1px solid rgba(201,162,39,0.5);border-radius:999px;padding:10px 12px 10px 16px;box-shadow:0 6px 22px rgba(0,0,0,0.35);font-family:"Source Sans 3",system-ui,sans-serif;font-size:13px;font-weight:600;max-width:92vw';
+    c.innerHTML='<span>📲 Add Footsteps to your home screen</span><button id="pwaYes" style="background:linear-gradient(135deg,#c9a227,#f0c040);color:#2c1a0e;border:none;border-radius:999px;padding:6px 14px;font-weight:700;font-size:12px;cursor:pointer;font-family:inherit">Install</button><button id="pwaNo" aria-label="Dismiss" style="background:transparent;border:none;color:rgba(253,246,227,0.6);font-size:18px;line-height:1;cursor:pointer">×</button>';
+    document.body.appendChild(c);
+    document.getElementById("pwaYes").onclick=function(){ c.remove(); if(deferred){ deferred.prompt(); deferred=null; } };
+    document.getElementById("pwaNo").onclick=function(){ c.remove(); try{ localStorage.setItem("footsteps_install_dismissed","1"); }catch(e){} };
+  }
+  window.addEventListener('appinstalled', function(){ var el=document.getElementById('pwaInstallChip'); if(el) el.remove(); try{ localStorage.setItem('footsteps_install_dismissed','1'); }catch(e){} });
+})();
+</script>
 <title>Footsteps — Walk Through the Greatest Story Ever Told</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

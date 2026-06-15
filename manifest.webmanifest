@@ -1,0 +1,19 @@
+{
+  "name": "Footsteps — A Journey Through Scripture",
+  "short_name": "Footsteps",
+  "description": "50 Bible stories told vivid and alive, with audio narration and quizzes. Free for everyone.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "./index.html?source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fdf6e3",
+  "theme_color": "#2c1a0e",
+  "categories": ["education", "books", "kids"],
+  "icons": [
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
