@@ -5,7 +5,7 @@
     "version": "1.0",
     "tier": 2,
     "ageRange": "5-8",
-    "totalStories": 73,
+    "totalStories": 83,
     "freeStories": 3
   },
   "eras": [
@@ -4223,9 +4223,281 @@
       "published_date": "2026-06-03"
     },
     {
-      "id": "job",
+      "id": "axe-head",
       "era": "kingdom",
       "order": 46,
+      "access": "premium",
+      "emoji": "🪓",
+      "title": "The Floating Axe Head",
+      "book": "2 Kings 6",
+      "date": "c. 850 BC",
+      "location": "By the Jordan River",
+      "hook": "A man was chopping wood when the head of his axe flew off and sank into the river. But nothing is too small to bring to God.",
+      "story": [
+        "A group of God's helpers lived with the prophet Elisha. Their home was too small, so they decided to build a bigger one.",
+        "They went down to the Jordan River to chop down trees for wood. Everyone got to work.",
+        "But while one man was chopping hard, the heavy iron head flew right off his axe! It splashed into the deep water and sank down out of sight.",
+        "\"Oh no!\" the man cried. \"That axe was not even mine. I borrowed it!\" Back then, iron cost a lot of money, and he could not buy a new one.",
+        "\"Where did it fall in?\" asked Elisha. The man pointed to the spot in the river.",
+        "Then Elisha did something surprising. He cut a stick and threw it into the water right where the axe head had sunk.",
+        "And the heavy iron axe head floated right up to the top of the water, as light as a leaf!",
+        "\"Reach out and grab it,\" said Elisha. The man took it, hardly believing his eyes.",
+        "It was a very small thing, just one tool. But God cared, because God cares about the little things in our lives too. Nothing is too small to bring to God."
+      ],
+      "devotional": {
+        "bigIdea": "A lost axe head seems too small to bother God about. But God cared! God cares about every part of our lives, even the little worries.",
+        "questions": [
+          "The man was sad about losing the borrowed axe. What little worries can you tell God about?",
+          "God cared about one small tool. How does it feel that God cares about little things for you?",
+          "What was the most surprising part of this story?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "God cares",
+        "prayer",
+        "everyday life"
+      ],
+      "connections": [
+        {
+          "title": "Naaman and the Servant Girl",
+          "storyId": "naaman",
+          "reference": "2 Kings 6:6",
+          "why": "The same prophet Elisha who pointed a great general to healing also cares about one worker's lost, borrowed tool."
+        },
+        {
+          "title": "The Widow's Oil",
+          "storyId": "widows-oil",
+          "reference": "2 Kings 4:1",
+          "why": "Through Elisha, God again steps into an ordinary person's everyday worry and helps in a way no one expected."
+        },
+        {
+          "title": "The Shunammite Woman's Faith",
+          "storyId": "shunammite",
+          "reference": "2 Kings 4:8",
+          "why": "Another story from Elisha's life where God shows he cares about the details of regular people's lives."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What sank into the river?",
+          "options": [
+            "The man's iron axe head",
+            "A fish",
+            "A boat"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Why was the man so worried?",
+          "options": [
+            "The axe was borrowed",
+            "He was hungry",
+            "He was lost"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the axe head do when Elisha threw in a stick?",
+          "options": [
+            "It floated to the top",
+            "It melted",
+            "It disappeared"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "widows-oil",
+      "era": "kingdom",
+      "order": 47,
+      "access": "premium",
+      "emoji": "🫙",
+      "title": "The Widow's Oil",
+      "book": "2 Kings 4",
+      "date": "c. 850 BC",
+      "location": "Israel",
+      "hook": "A poor mom had only one small jar of oil left. But when she trusted God, that tiny bit became more than enough.",
+      "story": [
+        "A poor woman came to Elisha, crying. Her husband had died, and now she owed money she could not pay.",
+        "\"The man we owe is going to take my two sons away to work for him!\" she said. She was so scared of losing her boys.",
+        "\"How can I help you?\" asked Elisha. \"What do you have in your house?\" \"Nothing,\" she said, \"except one little jar of oil.\"",
+        "Elisha said, \"Go and borrow lots of empty jars from all your neighbors. Get as many as you can!\"",
+        "So she and her sons gathered empty jars from everywhere, until they had a big pile of them.",
+        "Then they shut the door, and the woman began to pour her little jar of oil into the empty jars.",
+        "And the oil just kept pouring and pouring! She filled one jar, then another, then another, and it did not run out!",
+        "\"Bring me another jar!\" she said. They kept filling jars until every single one was full. Only then did the oil stop.",
+        "She sold all the oil, paid what she owed, and had plenty left for her family. Her boys were safe!",
+        "She gave God just a tiny bit, and God made it more than enough. God loves to do big things with the little we give him."
+      ],
+      "devotional": {
+        "bigIdea": "The widow had just one little jar of oil, but God made it more than enough. God loves to take the little we have and do big things with it.",
+        "questions": [
+          "The woman only had a little, but God used it. What little thing could you give to God?",
+          "She had to keep pouring and trusting. When is it hard to keep trusting God?",
+          "God gave her plenty. How has God taken care of your family?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "God provides",
+        "trust",
+        "generosity"
+      ],
+      "connections": [
+        {
+          "title": "Five Loaves and Two Fish",
+          "storyId": "feeding-5000",
+          "reference": "2 Kings 4:6",
+          "why": "Just as Jesus multiplied a boy's small lunch, God multiplies a widow's last little jar of oil until it overflows."
+        },
+        {
+          "title": "Fire from Heaven",
+          "storyId": "elijah",
+          "reference": "1 Kings 17:16",
+          "why": "Like the widow whose flour and oil never ran out for Elijah, this widow learns that God's supply does not run dry."
+        },
+        {
+          "title": "The Shunammite Woman's Faith",
+          "storyId": "shunammite",
+          "reference": "2 Kings 4:8",
+          "why": "Both stories show God working through Elisha to rescue women in desperate need."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What did the woman have left in her house?",
+          "options": [
+            "One little jar of oil",
+            "A bag of gold",
+            "A horse"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Elisha tell her to gather?",
+          "options": [
+            "Lots of empty jars",
+            "Firewood",
+            "Water"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What happened to the oil?",
+          "options": [
+            "It kept pouring until all the jars were full",
+            "It spilled",
+            "It dried up right away"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "shunammite",
+      "era": "kingdom",
+      "order": 48,
+      "access": "premium",
+      "emoji": "🏠",
+      "title": "The Shunammite Woman's Faith",
+      "book": "2 Kings 4",
+      "date": "c. 850 BC",
+      "location": "Shunem",
+      "hook": "A kind woman made a special room for God's prophet. So God gave her a wonderful gift: a baby boy.",
+      "story": [
+        "In a town called Shunem lived a kind woman. Whenever the prophet Elisha came by, she gave him a meal.",
+        "She told her husband, \"Let's build a little room on our roof for this man of God, so he always has a place to rest.\" She was very generous and never asked for anything back.",
+        "Elisha wanted to thank her. He found out that she had always wanted a child of her own. So he told her, \"Next year, you will have a baby boy.\"",
+        "And just as Elisha said, the woman had a baby boy! She loved him with all her heart.",
+        "The boy grew bigger. But one day he got very, very sick. His mother held him on her lap, but the little boy died.",
+        "The woman was so sad, but she trusted God. She laid her son on the prophet's bed and hurried as fast as she could to find Elisha.",
+        "Elisha came back to the house with her. He went into the room, shut the door, and prayed to God.",
+        "Then the little boy sneezed and opened his eyes. He was alive again! \"Come and take your son,\" said Elisha.",
+        "The happy mother scooped up her boy and held him close. She thanked God with all her heart.",
+        "The woman had been kind and full of faith, and God showed her that he is even stronger than death."
+      ],
+      "devotional": {
+        "bigIdea": "The kind woman gave to others without expecting anything back, and she trusted God even when things were very sad. God saw her faith and showed he is stronger than death.",
+        "questions": [
+          "The woman was kind to Elisha. How can you be kind to others?",
+          "When her son got sick, she ran to God for help. Who do you go to when you are sad or scared?",
+          "God brought the boy back to life. How does it feel to know God is stronger than anything?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "generosity",
+        "faith",
+        "God's power"
+      ],
+      "connections": [
+        {
+          "title": "The Widow's Oil",
+          "storyId": "widows-oil",
+          "reference": "2 Kings 4:8",
+          "why": "Another woman whose life God touches through Elisha, this time rewarding her kindness and answering her deepest longing."
+        },
+        {
+          "title": "Jairus's Daughter",
+          "storyId": "jairus",
+          "reference": "2 Kings 4:35",
+          "why": "Like Jesus raising Jairus's little girl, Elisha prays and God brings a beloved child back to life."
+        },
+        {
+          "title": "Come Out",
+          "storyId": "lazarus",
+          "reference": "John 11:43",
+          "why": "Long before Jesus called Lazarus from the tomb, God showed through Elisha that he has power even over death."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "How was the woman kind to Elisha?",
+          "options": [
+            "She made him a room to stay in",
+            "She gave him a horse",
+            "She paid him money"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What special gift did God give her?",
+          "options": [
+            "A baby boy",
+            "A big house",
+            "A crown"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What happened after Elisha prayed for her sick son?",
+          "options": [
+            "The boy came back to life",
+            "Nothing",
+            "He fell asleep"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "job",
+      "era": "kingdom",
+      "order": 49,
       "access": "premium",
       "emoji": "⚡",
       "title": "The Man Who Lost Everything",
@@ -4319,7 +4591,7 @@
     {
       "id": "isaiah-servant",
       "era": "kingdom",
-      "order": 47,
+      "order": 50,
       "access": "premium",
       "emoji": "📖",
       "title": "The Servant Who Suffers",
@@ -4411,9 +4683,100 @@
       "published_date": "2026-06-05"
     },
     {
+      "id": "daniel-food",
+      "era": "exile",
+      "order": 51,
+      "access": "premium",
+      "emoji": "🥦",
+      "title": "Daniel and the King's Food",
+      "book": "Daniel 1",
+      "date": "c. 605 BC",
+      "location": "Babylon",
+      "hook": "Daniel was taken far away to serve a king. On his very first day, he bravely chose to honor God, even with something as simple as his food.",
+      "story": [
+        "A long way from home, in a land called Babylon, lived a young man named Daniel and his three friends.",
+        "They had been taken from their home to serve the king in his palace. It was a big, strange new place.",
+        "The king said they should eat the very best food from his own table every day. But some of that food went against God's ways.",
+        "Daniel decided he would honor God instead. He bravely and politely asked if he and his friends could eat just vegetables and water.",
+        "The man in charge was worried. \"If the king sees you looking weak and thin, I will be in big trouble!\" he said.",
+        "So Daniel had an idea. \"Just test us for ten days,\" he said. \"Give us only vegetables and water. Then see how we look.\"",
+        "The man agreed to try it for ten days.",
+        "When the ten days were over, Daniel and his friends looked healthier and stronger than everyone else!",
+        "So they got to keep eating their simple food. And God gave these four friends extra wisdom, more than anyone else.",
+        "Daniel honored God even in a small choice about dinner. The little choices to follow God are very important."
+      ],
+      "devotional": {
+        "bigIdea": "Daniel was far from home, but he still chose to honor God, even in a small choice about food. God was pleased with him. Our small choices to follow God really matter.",
+        "questions": [
+          "Daniel decided to do the right thing ahead of time. Why is that a good idea?",
+          "It is hard to be different from everyone else. When is it hard for you to do the right thing?",
+          "What is one small way you can honor God today?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "courage",
+        "faithfulness",
+        "everyday choices"
+      ],
+      "connections": [
+        {
+          "title": "The Furnace",
+          "storyId": "shadrach",
+          "reference": "Daniel 3:17",
+          "why": "Daniel's three friends here are the very same men who later refuse to bow to the golden statue and are thrown into the fiery furnace."
+        },
+        {
+          "title": "The Lion's Den",
+          "storyId": "daniel",
+          "reference": "Daniel 6:10",
+          "why": "The young man who quietly chooses to honor God with his food grows into the old man who keeps praying even when it is against the law."
+        },
+        {
+          "title": "The Dreamer's Long Road",
+          "storyId": "joseph",
+          "reference": "Genesis 39:2",
+          "why": "Like Joseph in Egypt, Daniel is a young man taken far from home who stays faithful to God in a foreign palace, and God lifts him up."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Where was Daniel taken to live?",
+          "options": [
+            "A king's palace far from home",
+            "A farm",
+            "A boat"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Daniel ask to eat instead of the king's rich food?",
+          "options": [
+            "Vegetables and water",
+            "Candy",
+            "Nothing"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How did Daniel and his friends look after ten days?",
+          "options": [
+            "Healthier and stronger",
+            "Sick",
+            "Sleepy"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
       "id": "shadrach",
       "era": "exile",
-      "order": 48,
+      "order": 52,
       "access": "premium",
       "emoji": "🔥",
       "title": "The Furnace",
@@ -4508,7 +4871,7 @@
     {
       "id": "daniel",
       "era": "exile",
-      "order": 49,
+      "order": 53,
       "access": "premium",
       "emoji": "🦁",
       "title": "The Lion's Den",
@@ -4603,7 +4966,7 @@
     {
       "id": "esther",
       "era": "exile",
-      "order": 50,
+      "order": 54,
       "access": "premium",
       "emoji": "👑",
       "title": "For Such a Time as This",
@@ -4698,7 +5061,7 @@
     {
       "id": "jonah",
       "era": "exile",
-      "order": 51,
+      "order": 55,
       "access": "premium",
       "emoji": "🐋",
       "title": "The Man Who Ran From God",
@@ -4792,7 +5155,7 @@
     {
       "id": "nehemiah",
       "era": "exile",
-      "order": 52,
+      "order": 56,
       "access": "premium",
       "emoji": "🧱",
       "title": "The Wall Goes Up",
@@ -4887,7 +5250,7 @@
     {
       "id": "annunciation",
       "era": "nt-life",
-      "order": 53,
+      "order": 57,
       "access": "premium",
       "emoji": "👼",
       "title": "Impossible News",
@@ -4980,9 +5343,100 @@
       "published_date": "2026-06-05"
     },
     {
+      "id": "wise-men",
+      "era": "nt-life",
+      "order": 58,
+      "access": "premium",
+      "emoji": "⭐",
+      "title": "The Wise Men Follow the Star",
+      "book": "Matthew 2",
+      "date": "c. 5 BC",
+      "location": "Bethlehem",
+      "hook": "Far away, wise men saw a bright new star in the sky. They knew it meant a special king was born, so they followed it to find baby Jesus.",
+      "story": [
+        "Far away in the east, there were wise men who watched the stars at night.",
+        "One night they saw a brand new star, brighter than all the others. They knew it meant a very special king had been born!",
+        "So the wise men packed up special gifts and started a long, long journey to find the new king.",
+        "When they got to the city of Jerusalem, they asked, \"Where is the new king? We saw his star and came to worship him.\"",
+        "This news made King Herod upset, because he did not want anyone else to be king. He found out the special king would be born in a town called Bethlehem.",
+        "So the wise men followed the star again, and it led them all the way to Bethlehem.",
+        "The star stopped right over the place where Jesus was. The wise men were so happy and excited!",
+        "They went inside and saw the young child Jesus with his mother, Mary. They knelt down low and worshiped him.",
+        "Then they gave Jesus their best treasures: gold, and sweet-smelling frankincense and myrrh.",
+        "They had traveled so far just to find Jesus and worship him. We can worship Jesus and give him our best too!"
+      ],
+      "devotional": {
+        "bigIdea": "The wise men traveled very far just to find Jesus and worship him with their best gifts. We can seek Jesus and give him our best too.",
+        "questions": [
+          "The wise men traveled far to find Jesus. How can you look for Jesus every day?",
+          "They gave Jesus their best gifts. What good gift could you give to God?",
+          "How do you think the wise men felt when they finally found Jesus?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "worship",
+        "seeking Jesus",
+        "Christmas"
+      ],
+      "connections": [
+        {
+          "title": "Impossible News",
+          "storyId": "annunciation",
+          "reference": "Matthew 2:1",
+          "why": "The baby the wise men travel so far to worship is Jesus, the child the angel promised to Mary."
+        },
+        {
+          "title": "Left Behind in Jerusalem",
+          "storyId": "boy-temple",
+          "reference": "Luke 2:49",
+          "why": "The little child the wise men knelt before grows into the boy who amazes the teachers in the Temple."
+        },
+        {
+          "title": "The King Rides In",
+          "storyId": "triumphal-entry",
+          "reference": "Matthew 21:5",
+          "why": "The wise men were the first to call Jesus a king, and one day he would ride into Jerusalem as the humble King of all."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What did the wise men follow to find Jesus?",
+          "options": [
+            "A bright new star",
+            "A big map",
+            "A road sign"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What gifts did they bring Jesus?",
+          "options": [
+            "Gold, frankincense, and myrrh",
+            "Toys and candy",
+            "Books"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the wise men do when they found Jesus?",
+          "options": [
+            "Knelt down and worshiped him",
+            "Ran away",
+            "Took a nap"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
       "id": "boy-temple",
       "era": "nt-life",
-      "order": 54,
+      "order": 59,
       "access": "premium",
       "emoji": "📖",
       "title": "Left Behind in Jerusalem",
@@ -5075,9 +5529,372 @@
       "published_date": "2026-06-05"
     },
     {
+      "id": "baptism",
+      "era": "nt-life",
+      "order": 60,
+      "access": "premium",
+      "emoji": "🕊️",
+      "title": "Jesus Is Baptized",
+      "book": "Matthew 3",
+      "date": "c. AD 27",
+      "location": "The Jordan River",
+      "hook": "A preacher named John was getting people ready for God. Then Jesus came to the river, and heaven opened up!",
+      "story": [
+        "Out in the wilderness, a man named John was preaching by the Jordan River. He wore clothes made of camel hair and ate locusts and wild honey.",
+        "John told everyone, \"Turn back to God! Get your hearts ready, because someone much greater than me is coming.\"",
+        "People who were sorry for the wrong things they had done came to John, and he baptized them in the river to show they were starting fresh with God.",
+        "Then one day, Jesus came to the river and asked John to baptize him too.",
+        "John was surprised. \"You should baptize me!\" he said. But Jesus said, \"It is right for us to do this.\" So John baptized Jesus.",
+        "The moment Jesus came up out of the water, the sky opened up!",
+        "The Spirit of God came down softly, like a gentle dove, and rested on Jesus.",
+        "Then God the Father spoke from heaven. He said, \"This is my Son, whom I love. I am very pleased with him.\"",
+        "God said he loved his Son before Jesus had done any miracles at all. God loves us that same way, just because we are his children."
+      ],
+      "devotional": {
+        "bigIdea": "God the Father said he loved Jesus before Jesus had done anything. God loves us that way too, not for what we do, but just because we are his children.",
+        "questions": [
+          "God said he loved his Son right away. How does it feel that God loves you just because you are his?",
+          "Jesus was baptized to stand with us. What does that tell you about Jesus?",
+          "What do you think it was like to hear God's voice from heaven?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "Jesus",
+        "the Father's love",
+        "John the Baptist"
+      ],
+      "connections": [
+        {
+          "title": "Impossible News",
+          "storyId": "annunciation",
+          "reference": "Matthew 3:17",
+          "why": "The Father calls Jesus his beloved Son, the very child the angel had promised would be called the Son of God."
+        },
+        {
+          "title": "Tested in the Wilderness",
+          "storyId": "temptation",
+          "reference": "Matthew 4:1",
+          "why": "Right after his baptism, the same Spirit who came down like a dove leads Jesus into the wilderness to be tested."
+        },
+        {
+          "title": "In the Beginning",
+          "storyId": "creation",
+          "reference": "Genesis 1:2",
+          "why": "As at creation the Spirit hovered over the waters and God spoke, here the Spirit descends over the water and the Father's voice is heard."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Who baptized people in the river?",
+          "options": [
+            "John",
+            "Pharaoh",
+            "Goliath"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What came down on Jesus like a dove?",
+          "options": [
+            "The Spirit of God",
+            "Snow",
+            "A leaf"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did God say from heaven?",
+          "options": [
+            "This is my Son, whom I love",
+            "Go home",
+            "Build a boat"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "temptation",
+      "era": "nt-life",
+      "order": 61,
+      "access": "premium",
+      "emoji": "🏜️",
+      "title": "Tested in the Wilderness",
+      "book": "Matthew 4",
+      "date": "c. AD 27",
+      "location": "The Wilderness",
+      "hook": "Right after Jesus was baptized, he went into the desert. He was very hungry when the devil came to tempt him to do wrong.",
+      "story": [
+        "After Jesus was baptized, God's Spirit led him out into the desert.",
+        "Jesus stayed there for forty days and forty nights with no food at all. By the end, he was very, very hungry.",
+        "Then the devil came to tempt Jesus, to try to get him to do wrong. \"If you are God's Son,\" he said, \"turn these stones into bread!\"",
+        "But Jesus said no. He answered with God's words: \"People do not live on bread alone, but on every word from God.\"",
+        "The devil tried again. He took Jesus up high and said, \"Jump off! God's angels will catch you.\" But Jesus said, \"Do not test God.\"",
+        "Then the devil showed Jesus all the kingdoms of the world. \"I will give them all to you,\" he said, \"if you bow down to me.\"",
+        "But Jesus said, \"Go away! We must worship and obey God alone.\"",
+        "Three times the devil tried, and three times Jesus said no by trusting God and God's words.",
+        "Finally the devil gave up and left. Then angels came and took care of Jesus.",
+        "Jesus knows just what it feels like to be tempted. So he can help us say no to wrong things too."
+      ],
+      "devotional": {
+        "bigIdea": "The devil tried three times to get Jesus to do wrong, but Jesus said no every time by trusting God and God's words. Jesus understands when we are tempted, and he helps us do what is right.",
+        "questions": [
+          "Jesus said no to wrong things by remembering God's words. How can knowing about God help you do right?",
+          "What is something that sometimes tempts you to not do the right thing?",
+          "Jesus understands when things are hard. How does it help to know Jesus can help you?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "temptation",
+        "obedience",
+        "Jesus"
+      ],
+      "connections": [
+        {
+          "title": "Jesus Is Baptized",
+          "storyId": "baptism",
+          "reference": "Matthew 4:1",
+          "why": "Straight from the joy of his baptism, the Spirit leads Jesus into the desert to be tested before his ministry begins."
+        },
+        {
+          "title": "The First Bad Choice",
+          "storyId": "adam-eve",
+          "reference": "Romans 5:19",
+          "why": "Where Adam and Eve gave in to the tempter in a beautiful garden, Jesus stands firm against him in a barren desert."
+        },
+        {
+          "title": "The Ten Commandments",
+          "storyId": "ten-commandments",
+          "reference": "Matthew 4:4",
+          "why": "Jesus fights every temptation with God's own words, the Scriptures, showing how powerful and precious they are."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Where did Jesus go after his baptism?",
+          "options": [
+            "The desert",
+            "A castle",
+            "A boat"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How did Jesus answer the devil each time?",
+          "options": [
+            "With God's words",
+            "By running",
+            "By hiding"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How many times did Jesus say no to the devil?",
+          "options": [
+            "Three times",
+            "Never",
+            "One time"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "call-disciples",
+      "era": "nt-life",
+      "order": 62,
+      "access": "premium",
+      "emoji": "🎣",
+      "title": "Come, Follow Me",
+      "book": "Matthew 4",
+      "date": "c. AD 27",
+      "location": "The Sea of Galilee",
+      "hook": "Jesus walked by a big lake and saw some fishermen. He said three simple words that changed their lives: Come, follow me.",
+      "story": [
+        "Jesus began to travel and tell people the good news about God.",
+        "One day he was walking beside a big lake called the Sea of Galilee, where lots of people caught fish for their job.",
+        "Jesus saw two brothers, Simon Peter and Andrew, throwing their fishing net into the water.",
+        "Jesus called to them, \"Come, follow me, and I will make you fishers of people!\"",
+        "Right away, they left their nets and went with Jesus!",
+        "A little farther down, Jesus saw two more brothers, James and John, fixing their nets in a boat.",
+        "Jesus called them too. And right away, they left their boat and followed him.",
+        "Jesus did not pick kings or the smartest people. He picked ordinary, hardworking fishermen.",
+        "And when Jesus called, they did not wait. They followed him right away.",
+        "Jesus still calls ordinary people like us today. He says, Come, follow me!"
+      ],
+      "devotional": {
+        "bigIdea": "Jesus called ordinary fishermen, and they followed him right away. Jesus calls ordinary people like us too. He just wants us to trust him and follow.",
+        "questions": [
+          "The fishermen followed Jesus right away. What do you think it means to follow Jesus?",
+          "Jesus picked ordinary people. How does it feel that Jesus wants you?",
+          "Is there something that would be hard to leave to follow Jesus?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "following Jesus",
+        "the disciples",
+        "trust"
+      ],
+      "connections": [
+        {
+          "title": "Five Loaves and Two Fish",
+          "storyId": "feeding-5000",
+          "reference": "Matthew 4:19",
+          "why": "These ordinary fishermen Jesus calls become the disciples who help him feed thousands and learn from him every day."
+        },
+        {
+          "title": "Stepping Out",
+          "storyId": "walk-on-water",
+          "reference": "Matthew 14:29",
+          "why": "Simon Peter, who drops his nets here to follow Jesus, will later step out of a boat to walk to him on the water."
+        },
+        {
+          "title": "The Man Who Walked Away",
+          "storyId": "rich-young-ruler",
+          "reference": "Mark 10:22",
+          "why": "The fishermen leave everything in a heartbeat to follow Jesus, unlike the rich young man who walks away sad, unwilling to let go."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What job did Simon Peter and Andrew have?",
+          "options": [
+            "They were fishermen",
+            "They were kings",
+            "They were farmers"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Jesus say to them?",
+          "options": [
+            "Come, follow me",
+            "Go home",
+            "Give me a fish"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How fast did they follow Jesus?",
+          "options": [
+            "Right away",
+            "After many years",
+            "They did not"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "cana",
+      "era": "nt-life",
+      "order": 63,
+      "access": "premium",
+      "emoji": "🏺",
+      "title": "Water into Wine",
+      "book": "John 2",
+      "date": "c. AD 27",
+      "location": "Cana in Galilee",
+      "hook": "Jesus' very first miracle happened at a wedding party, when the drinks ran out and everyone was worried.",
+      "story": [
+        "Jesus, his mother Mary, and his friends were all invited to a big wedding party in a town called Cana.",
+        "Back then, a wedding was a huge celebration with lots of food and fun for many days.",
+        "But in the middle of the party, something went wrong. They ran out of wine to drink! This was very embarrassing for the family.",
+        "Mary went to Jesus and said, \"They have no more wine.\" Then she told the servants, \"Do whatever Jesus tells you.\"",
+        "Nearby were six great big stone jars. Jesus said to the servants, \"Fill the jars all the way up with water.\" So they did.",
+        "Then Jesus said, \"Now dip some out and take it to the man in charge of the party.\"",
+        "When the man tasted it, the water had turned into wine! And it was the very best wine of all!",
+        "\"Most people serve the best first,\" he said, \"but you saved the best for last!\" He could not believe how good it was.",
+        "This was Jesus' very first miracle. It showed how amazing and powerful he is.",
+        "Jesus did his first miracle at a happy party. That shows us Jesus cares about our happy times too, and he makes everything good."
+      ],
+      "devotional": {
+        "bigIdea": "Jesus' first miracle was at a happy wedding, where he made the very best wine. Jesus cares about our happy times too, and whatever he touches, he makes good.",
+        "questions": [
+          "Mary said, do whatever Jesus tells you. Why is that good advice for us?",
+          "Jesus made the best wine, more than enough. What does that show about God?",
+          "Jesus' first miracle was at a happy party. What does that tell you about Jesus?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "Jesus",
+        "miracles",
+        "joy"
+      ],
+      "connections": [
+        {
+          "title": "Impossible News",
+          "storyId": "annunciation",
+          "reference": "John 2:5",
+          "why": "It is Mary, the mother who once said yes to God, who tells the servants here, do whatever he tells you."
+        },
+        {
+          "title": "Five Loaves and Two Fish",
+          "storyId": "feeding-5000",
+          "reference": "John 2:11",
+          "why": "Just as Jesus would make a little food feed thousands, here he makes ordinary water into the very best wine, with plenty to spare."
+        },
+        {
+          "title": "The Night Before",
+          "storyId": "last-supper",
+          "reference": "John 2:11",
+          "why": "Jesus' first sign uses cups of wine at a joyful feast, pointing ahead to the cup he shares with his friends the night before he dies."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Where did Jesus do his first miracle?",
+          "options": [
+            "At a wedding party",
+            "On a boat",
+            "In a cave"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What ran out at the party?",
+          "options": [
+            "The wine to drink",
+            "The chairs",
+            "The music"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Jesus turn the water into?",
+          "options": [
+            "The best wine",
+            "Juice",
+            "Ice"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
       "id": "sermon-mount",
       "era": "nt-life",
-      "order": 55,
+      "order": 64,
       "access": "premium",
       "emoji": "⛰️",
       "title": "The Upside-Down Kingdom",
@@ -5171,9 +5988,100 @@
       "published_date": "2026-06-05"
     },
     {
+      "id": "sower",
+      "era": "nt-life",
+      "order": 65,
+      "access": "premium",
+      "emoji": "🌱",
+      "title": "The Farmer and the Seeds",
+      "book": "Matthew 13",
+      "date": "c. AD 28",
+      "location": "By the Sea of Galilee",
+      "hook": "So many people came to hear Jesus that he taught from a boat. He told a story about a farmer who scattered seeds on four kinds of ground.",
+      "story": [
+        "One day, such a big crowd came to hear Jesus that he got into a boat. He pushed out a little, so everyone on the beach could see and hear him.",
+        "Then Jesus told them a story. \"A farmer went out to plant his seeds,\" he said.",
+        "\"Some seeds fell on the hard path. The birds flew down and gobbled them all up.\"",
+        "\"Some seeds fell on rocky ground. They grew fast, but their roots could not go deep, so the hot sun made them dry up.\"",
+        "\"Some seeds fell where there were thorny weeds. The weeds grew up and crowded out the little plants.\"",
+        "\"But some seeds fell on good, soft soil. Those seeds grew strong and made lots and lots of new plants!\"",
+        "Later, Jesus told his friends what the story meant. The seed is God's word, the good news about him.",
+        "The different grounds are like different hearts. Some people hear God's word but forget it, or give up, or let other things crowd it out.",
+        "But the good soil is a heart that hears God's word, holds it close, and lets it grow big and strong.",
+        "Jesus wants us to have hearts like the good soil, ready to listen to God and let his word grow in us."
+      ],
+      "devotional": {
+        "bigIdea": "The same seeds fell everywhere, but only the good soil grew a big crop. God's word grows best in a heart that listens and holds on to it. Jesus wants our hearts to be like good soil.",
+        "questions": [
+          "What do you think makes a heart like good soil?",
+          "Some things crowded out the little plants. What things might keep us from listening to God?",
+          "How can you keep your heart soft and ready to listen to God?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "God's word",
+        "the heart",
+        "parables"
+      ],
+      "connections": [
+        {
+          "title": "The Tiny Mustard Seed",
+          "storyId": "mustard-seed",
+          "reference": "Mark 4:31",
+          "why": "Another of Jesus' seed stories about God's kingdom, showing how something tiny can grow into something great."
+        },
+        {
+          "title": "The Upside-Down Kingdom",
+          "storyId": "sermon-mount",
+          "reference": "Matthew 7:24",
+          "why": "Like the wise builder who hears Jesus and obeys, the good soil stands for those who hear God's word and let it take root."
+        },
+        {
+          "title": "The Boy Who Came Home",
+          "storyId": "prodigal",
+          "reference": "Luke 15:11",
+          "why": "Jesus loved to teach with stories, and like the prodigal son, the parable of the sower reveals what our hearts are really like."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Why did Jesus teach from a boat?",
+          "options": [
+            "The crowd was very big",
+            "He was fishing",
+            "He was tired"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the seed in the story stand for?",
+          "options": [
+            "God's word",
+            "Real food",
+            "Money"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What kind of heart does Jesus want us to have?",
+          "options": [
+            "A heart like good soil",
+            "A hard path",
+            "A thorny patch"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
       "id": "woman-at-well",
       "era": "nt-life",
-      "order": 56,
+      "order": 66,
       "access": "premium",
       "emoji": "🪣",
       "title": "The Woman at the Well",
@@ -5267,7 +6175,7 @@
     {
       "id": "feeding-5000",
       "era": "nt-life",
-      "order": 57,
+      "order": 67,
       "access": "premium",
       "emoji": "🐟",
       "title": "Five Loaves and Two Fish",
@@ -5362,7 +6270,7 @@
     {
       "id": "walk-on-water",
       "era": "nt-life",
-      "order": 58,
+      "order": 68,
       "access": "premium",
       "emoji": "🌊",
       "title": "Stepping Out",
@@ -5457,7 +6365,7 @@
     {
       "id": "good-samaritan",
       "era": "nt-life",
-      "order": 59,
+      "order": 69,
       "access": "premium",
       "emoji": "🫶",
       "title": "The One Who Stopped",
@@ -5551,7 +6459,7 @@
     {
       "id": "zacchaeus",
       "era": "nt-life",
-      "order": 60,
+      "order": 70,
       "access": "premium",
       "emoji": "🌳",
       "title": "The Man in the Tree",
@@ -5646,7 +6554,7 @@
     {
       "id": "rich-young-ruler",
       "era": "nt-life",
-      "order": 61,
+      "order": 71,
       "access": "premium",
       "emoji": "💰",
       "title": "The Man Who Walked Away",
@@ -5741,7 +6649,7 @@
     {
       "id": "prodigal",
       "era": "nt-life",
-      "order": 62,
+      "order": 72,
       "access": "premium",
       "emoji": "🏠",
       "title": "The Boy Who Came Home",
@@ -5836,7 +6744,7 @@
     {
       "id": "lazarus",
       "era": "nt-life",
-      "order": 63,
+      "order": 73,
       "access": "premium",
       "emoji": "🪦",
       "title": "Come Out",
@@ -5932,7 +6840,7 @@
     {
       "id": "triumphal-entry",
       "era": "nt-life",
-      "order": 64,
+      "order": 74,
       "access": "premium",
       "emoji": "🌿",
       "title": "The King Rides In",
@@ -6026,7 +6934,7 @@
     {
       "id": "last-supper",
       "era": "nt-church",
-      "order": 65,
+      "order": 75,
       "access": "premium",
       "emoji": "🍞",
       "title": "The Night Before",
@@ -6120,7 +7028,7 @@
     {
       "id": "crucifixion",
       "era": "nt-church",
-      "order": 66,
+      "order": 76,
       "access": "premium",
       "emoji": "✝️",
       "title": "The Darkest Friday",
@@ -6214,7 +7122,7 @@
     {
       "id": "resurrection",
       "era": "nt-church",
-      "order": 67,
+      "order": 77,
       "access": "premium",
       "emoji": "🌅",
       "title": "The Empty Tomb",
@@ -6309,7 +7217,7 @@
     {
       "id": "road-emmaus",
       "era": "nt-church",
-      "order": 68,
+      "order": 78,
       "access": "premium",
       "emoji": "🛤️",
       "title": "The Stranger on the Road",
@@ -6404,7 +7312,7 @@
     {
       "id": "pentecost",
       "era": "nt-church",
-      "order": 69,
+      "order": 79,
       "access": "premium",
       "emoji": "🕊️",
       "title": "The Day Everything Changed",
@@ -6498,7 +7406,7 @@
     {
       "id": "stephen",
       "era": "nt-church",
-      "order": 70,
+      "order": 80,
       "access": "premium",
       "emoji": "✝️",
       "title": "The First Martyr",
@@ -6593,7 +7501,7 @@
     {
       "id": "paul-conversion",
       "era": "nt-church",
-      "order": 71,
+      "order": 81,
       "access": "premium",
       "emoji": "⚡",
       "title": "The Man Who Hunted Christians",
@@ -6689,7 +7597,7 @@
     {
       "id": "paul-jail",
       "era": "nt-church",
-      "order": 72,
+      "order": 82,
       "access": "premium",
       "emoji": "🎵",
       "title": "Singing at Midnight",
@@ -6783,7 +7691,7 @@
     {
       "id": "lydia",
       "era": "nt-church",
-      "order": 73,
+      "order": 83,
       "access": "premium",
       "emoji": "🎨",
       "title": "The Purple Merchant",

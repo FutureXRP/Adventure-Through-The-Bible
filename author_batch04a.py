@@ -1,0 +1,368 @@
+#!/usr/bin/env python3
+"""Authoring source for Batch 4a (Elisha + Daniel + the Wise Men). Writes batch-04a.json."""
+import json
+
+batch = [
+{
+  "id": "axe-head", "era": "kingdom", "emoji": "🪓",
+  "title": "The Floating Axe Head", "date": "c. 850 BC", "location": "By the Jordan River",
+  "connections": [
+    {"title": "Naaman and the Servant Girl", "storyId": "naaman", "reference": "2 Kings 6:6",
+     "why": "The same prophet Elisha who pointed a great general to healing also cares about one worker's lost, borrowed tool."},
+    {"title": "The Widow's Oil", "storyId": "widows-oil", "reference": "2 Kings 4:1",
+     "why": "Through Elisha, God again steps into an ordinary person's everyday worry and helps in a way no one expected."},
+    {"title": "The Shunammite Woman's Faith", "storyId": "shunammite", "reference": "2 Kings 4:8",
+     "why": "Another story from Elisha's life where God shows he cares about the details of regular people's lives."}
+  ],
+  "tier1": {
+    "book": "2 Kings 6",
+    "hook": "It was only a borrowed axe head, and it sank to the bottom of the river. But nothing is too small to bring to God.",
+    "story": [
+      "A group of prophets lived and worked with Elisha, and their meeting place had grown too small. \"Let us go down to the Jordan River,\" they said, \"where each of us can cut a log, and we will build ourselves a bigger place to live.\" Elisha agreed and went along with them.",
+      "When they reached the river, the men set to work chopping down trees. But as one of them was swinging hard, the heavy iron head flew right off his axe and splashed into the deep water, sinking out of sight.",
+      "The man cried out in dismay. \"Oh no, my master! That axe was borrowed!\" In those days, iron was costly and precious, and he had no way to replace it. He had wanted to do good work, and now he owed something he could never repay.",
+      "\"Where did it fall?\" Elisha asked. The man showed him the place in the water. Then Elisha did something surprising. He cut a stick, threw it into the river at that very spot, and the heavy iron axe head floated up to the top of the water, as light as a leaf.",
+      "\"Lift it out,\" said Elisha. The man reached out his hand and grabbed it, hardly believing his eyes.",
+      "It was such a small thing, just one tool, just one worried man. God could have left it at the bottom of the river. But God cared about it, because God cares about the everyday worries of ordinary people. Nothing in your life is too small to bring to him."
+    ],
+    "devotional": {
+      "bigIdea": "A lost axe head seems too small a thing to bother God with. But God cared, because he cares about every part of our lives, even the small worries. Nothing is too little to bring to him in prayer.",
+      "questions": [
+        "The man was upset because the axe was borrowed and he could not replace it. What small worries do you sometimes think are too little to pray about?",
+        "God cared about one lost tool. How does it feel to know God cares about the little things in your life?",
+        "Elisha asked the man to reach out and grab the floating iron. What does it look like to trust God and take the help he offers?"
+      ]
+    },
+    "tags": ["God cares", "prayer", "everyday life", "Elisha", "trust"],
+    "quiz": [
+      {"question": "Why did the prophets go to the Jordan River?", "options": ["To cut wood for a bigger home", "To go swimming", "To catch fish"], "answer": 0, "explanation": ""},
+      {"question": "What happened to the man's axe head?", "options": ["It flew off and sank in the river", "It broke in two", "It got stuck in a tree"], "answer": 0, "explanation": ""},
+      {"question": "Why was he so upset?", "options": ["The axe was borrowed and he could not replace it", "He was tired", "It was getting dark"], "answer": 0, "explanation": "Iron was very costly back then."},
+      {"question": "What did Elisha do?", "options": ["Threw a stick in, and the iron floated up", "Dove in to get it", "Bought a new one"], "answer": 0, "explanation": ""},
+      {"question": "What does this story show about God?", "options": ["He cares even about our small worries", "He only cares about big things", "He does not notice us"], "answer": 0, "explanation": ""}
+    ]
+  },
+  "tier2": {
+    "book": "2 Kings 6",
+    "hook": "A man was chopping wood when the head of his axe flew off and sank into the river. But nothing is too small to bring to God.",
+    "story": [
+      "A group of God's helpers lived with the prophet Elisha. Their home was too small, so they decided to build a bigger one.",
+      "They went down to the Jordan River to chop down trees for wood. Everyone got to work.",
+      "But while one man was chopping hard, the heavy iron head flew right off his axe! It splashed into the deep water and sank down out of sight.",
+      "\"Oh no!\" the man cried. \"That axe was not even mine. I borrowed it!\" Back then, iron cost a lot of money, and he could not buy a new one.",
+      "\"Where did it fall in?\" asked Elisha. The man pointed to the spot in the river.",
+      "Then Elisha did something surprising. He cut a stick and threw it into the water right where the axe head had sunk.",
+      "And the heavy iron axe head floated right up to the top of the water, as light as a leaf!",
+      "\"Reach out and grab it,\" said Elisha. The man took it, hardly believing his eyes.",
+      "It was a very small thing, just one tool. But God cared, because God cares about the little things in our lives too. Nothing is too small to bring to God."
+    ],
+    "devotional": {
+      "bigIdea": "A lost axe head seems too small to bother God about. But God cared! God cares about every part of our lives, even the little worries.",
+      "questions": [
+        "The man was sad about losing the borrowed axe. What little worries can you tell God about?",
+        "God cared about one small tool. How does it feel that God cares about little things for you?",
+        "What was the most surprising part of this story?"
+      ]
+    },
+    "devotionalHeading": "Let's Talk About It",
+    "tags": ["God cares", "prayer", "everyday life"],
+    "quiz": [
+      {"question": "What sank into the river?", "options": ["The man's iron axe head", "A fish", "A boat"], "answer": 0, "explanation": ""},
+      {"question": "Why was the man so worried?", "options": ["The axe was borrowed", "He was hungry", "He was lost"], "answer": 0, "explanation": ""},
+      {"question": "What did the axe head do when Elisha threw in a stick?", "options": ["It floated to the top", "It melted", "It disappeared"], "answer": 0, "explanation": ""}
+    ]
+  }
+},
+{
+  "id": "widows-oil", "era": "kingdom", "emoji": "🫙",
+  "title": "The Widow's Oil", "date": "c. 850 BC", "location": "Israel",
+  "connections": [
+    {"title": "Five Loaves and Two Fish", "storyId": "feeding-5000", "reference": "2 Kings 4:6",
+     "why": "Just as Jesus multiplied a boy's small lunch, God multiplies a widow's last little jar of oil until it overflows."},
+    {"title": "Fire from Heaven", "storyId": "elijah", "reference": "1 Kings 17:16",
+     "why": "Like the widow whose flour and oil never ran out for Elijah, this widow learns that God's supply does not run dry."},
+    {"title": "The Shunammite Woman's Faith", "storyId": "shunammite", "reference": "2 Kings 4:8",
+     "why": "Both stories show God working through Elisha to rescue women in desperate need."}
+  ],
+  "tier1": {
+    "book": "2 Kings 4",
+    "hook": "A poor widow was about to lose her two sons to pay a debt. All she had left in the world was one small jar of oil. It turned out to be more than enough.",
+    "story": [
+      "A widow came to Elisha in tears. Her husband, one of the prophets, had died and left her with a debt she could not pay. \"Now the man my husband owed is coming to take my two sons away to be his slaves,\" she wept. She was about to lose her boys, and she was helpless to stop it.",
+      "\"How can I help you?\" Elisha asked. \"Tell me, what do you have in your house?\" The woman shook her head. \"Your servant has nothing at all,\" she said, \"except one small jar of olive oil.\" It was the last little thing she owned.",
+      "But that little jar was exactly what God would use. \"Go,\" said Elisha, \"and ask all your neighbors for empty jars. Do not ask for just a few. Get as many as you possibly can. Then go inside, shut the door behind you and your sons, and start pouring your oil into all the jars.\"",
+      "So the woman and her sons gathered empty jars from all over the neighborhood until they had a great pile of them. Then they shut the door, and she began to pour from her one little jar.",
+      "And the oil kept flowing. She filled one jar, and there was still more. She filled another, and another, and still the oil poured out. \"Bring me another jar,\" she kept saying to her sons. They ran back and forth until at last one of them said, \"There are no more jars.\" And only then did the oil stop.",
+      "The widow ran and told Elisha what had happened. \"Now go,\" he told her, \"sell the oil and pay off your debt. And you and your sons can live on what is left over.\" Her family was saved.",
+      "She had brought God only the tiniest thing, one small jar, almost nothing. But when she trusted him and obeyed, God turned her almost nothing into more than enough. God loves to take the little we have and do far more with it than we could imagine."
+    ],
+    "devotional": {
+      "bigIdea": "The widow thought one small jar of oil was nothing. But she brought it to God, obeyed, and watched him multiply it into more than enough. God delights in taking the little we have and doing far more with it than we ever could.",
+      "questions": [
+        "The widow only had one small jar, but God used it. What small thing do you have that God might want to use?",
+        "She had to keep pouring and trusting before she could see how much God would give. When is it hard to keep trusting before you see the result?",
+        "God gave her more than enough. When has God provided for you or your family?"
+      ]
+    },
+    "tags": ["God provides", "trust", "obedience", "Elisha", "generosity"],
+    "quiz": [
+      {"question": "What was about to happen to the widow's two sons?", "options": ["They would be taken away to pay a debt", "They would move to Egypt", "They would become soldiers"], "answer": 0, "explanation": ""},
+      {"question": "What did she have left in her house?", "options": ["One small jar of oil", "A pile of gold", "Nothing at all"], "answer": 0, "explanation": ""},
+      {"question": "What did Elisha tell her to collect?", "options": ["As many empty jars as she could", "Water from the well", "Food from the market"], "answer": 0, "explanation": ""},
+      {"question": "When did the oil finally stop flowing?", "options": ["When there were no more empty jars", "After one hour", "When she got tired"], "answer": 0, "explanation": ""},
+      {"question": "What does this story teach?", "options": ["God can do much with the little we bring him", "Only rich people can be helped", "Oil is valuable"], "answer": 0, "explanation": ""}
+    ]
+  },
+  "tier2": {
+    "book": "2 Kings 4",
+    "hook": "A poor mom had only one small jar of oil left. But when she trusted God, that tiny bit became more than enough.",
+    "story": [
+      "A poor woman came to Elisha, crying. Her husband had died, and now she owed money she could not pay.",
+      "\"The man we owe is going to take my two sons away to work for him!\" she said. She was so scared of losing her boys.",
+      "\"How can I help you?\" asked Elisha. \"What do you have in your house?\" \"Nothing,\" she said, \"except one little jar of oil.\"",
+      "Elisha said, \"Go and borrow lots of empty jars from all your neighbors. Get as many as you can!\"",
+      "So she and her sons gathered empty jars from everywhere, until they had a big pile of them.",
+      "Then they shut the door, and the woman began to pour her little jar of oil into the empty jars.",
+      "And the oil just kept pouring and pouring! She filled one jar, then another, then another, and it did not run out!",
+      "\"Bring me another jar!\" she said. They kept filling jars until every single one was full. Only then did the oil stop.",
+      "She sold all the oil, paid what she owed, and had plenty left for her family. Her boys were safe!",
+      "She gave God just a tiny bit, and God made it more than enough. God loves to do big things with the little we give him."
+    ],
+    "devotional": {
+      "bigIdea": "The widow had just one little jar of oil, but God made it more than enough. God loves to take the little we have and do big things with it.",
+      "questions": [
+        "The woman only had a little, but God used it. What little thing could you give to God?",
+        "She had to keep pouring and trusting. When is it hard to keep trusting God?",
+        "God gave her plenty. How has God taken care of your family?"
+      ]
+    },
+    "devotionalHeading": "Let's Talk About It",
+    "tags": ["God provides", "trust", "generosity"],
+    "quiz": [
+      {"question": "What did the woman have left in her house?", "options": ["One little jar of oil", "A bag of gold", "A horse"], "answer": 0, "explanation": ""},
+      {"question": "What did Elisha tell her to gather?", "options": ["Lots of empty jars", "Firewood", "Water"], "answer": 0, "explanation": ""},
+      {"question": "What happened to the oil?", "options": ["It kept pouring until all the jars were full", "It spilled", "It dried up right away"], "answer": 0, "explanation": ""}
+    ]
+  }
+},
+{
+  "id": "shunammite", "era": "kingdom", "emoji": "🏠",
+  "title": "The Shunammite Woman's Faith", "date": "c. 850 BC", "location": "Shunem",
+  "connections": [
+    {"title": "The Widow's Oil", "storyId": "widows-oil", "reference": "2 Kings 4:8",
+     "why": "Another woman whose life God touches through Elisha, this time rewarding her kindness and answering her deepest longing."},
+    {"title": "Jairus's Daughter", "storyId": "jairus", "reference": "2 Kings 4:35",
+     "why": "Like Jesus raising Jairus's little girl, Elisha prays and God brings a beloved child back to life."},
+    {"title": "Come Out", "storyId": "lazarus", "reference": "John 11:43",
+     "why": "Long before Jesus called Lazarus from the tomb, God showed through Elisha that he has power even over death."}
+  ],
+  "tier1": {
+    "book": "2 Kings 4",
+    "hook": "A kind woman built a room for God's prophet, never asking for anything in return. So God gave her the one thing her heart longed for, and then he gave it back again.",
+    "story": [
+      "In the town of Shunem lived a wealthy woman with a generous heart. Whenever the prophet Elisha passed through, she invited him to stay for a meal. She even said to her husband, \"Let us build a little room on our roof for this man of God, with a bed and a table, so he has a place to rest whenever he comes.\" She gave and gave, never asking for a thing.",
+      "Elisha wanted to do something for her in return. He learned that she had no child, and her husband was old, and a child was the deep longing of her heart. So Elisha told her, \"About this time next year, you will hold a son in your arms.\" And just as he said, the woman had a baby boy.",
+      "The child grew, and he was the joy of her life. But one morning, out in the fields with his father, the boy suddenly cried, \"My head! My head!\" He was carried home to his mother, and he sat on her lap until noon, and then he died in her arms.",
+      "But this woman's faith was strong. She carried her son up and laid him on the prophet's bed, and then she set out at once to find Elisha, riding as fast as she could. When she reached him, she fell at his feet and poured out her grief.",
+      "Elisha came back with her to the house and went into the room where the boy lay. He shut the door and prayed to the Lord. Then he stretched himself out over the child, and slowly the boy's body grew warm again.",
+      "And then the little boy sneezed, once, twice, seven times in all, and opened his eyes! Elisha called the mother in. \"Take your son,\" he said. She fell at his feet in thankfulness, then scooped up her boy, alive and well, and held him close.",
+      "This woman had given freely without expecting anything back, and God saw her kindness and her faith. And he showed her, long before Jesus ever walked the earth, that the God she served is more powerful than death itself."
+    ],
+    "devotional": {
+      "bigIdea": "The Shunammite woman gave generously without expecting anything in return, and she held tight to her faith even in her darkest moment. God saw her kindness, answered her longing, and showed her that he has power even over death. God never forgets the quiet, faithful, generous heart.",
+      "questions": [
+        "The woman built a room for Elisha just to be kind, not to get anything back. What is a way you could be generous without expecting a reward?",
+        "Even when her son died, she ran straight to God's prophet. Where do you run when something terrible happens?",
+        "God showed he is stronger than death. How does that change the way you think about scary things?"
+      ]
+    },
+    "tags": ["generosity", "faith", "God's power", "hope", "Elisha"],
+    "quiz": [
+      {"question": "How did the woman show kindness to Elisha?", "options": ["She built him a room to stay in", "She gave him gold", "She sang him songs"], "answer": 0, "explanation": ""},
+      {"question": "What did God give her through Elisha?", "options": ["A son", "A palace", "A crown"], "answer": 0, "explanation": ""},
+      {"question": "What happened to her young son one day?", "options": ["He got very sick and died", "He ran away", "He became a king"], "answer": 0, "explanation": ""},
+      {"question": "What did the woman do when her son died?", "options": ["She ran straight to Elisha for help", "She gave up", "She hid"], "answer": 0, "explanation": "Her faith stayed strong even in her grief."},
+      {"question": "What did God show through this miracle?", "options": ["He has power even over death", "He likes big houses", "He only helps prophets"], "answer": 0, "explanation": ""}
+    ]
+  },
+  "tier2": {
+    "book": "2 Kings 4",
+    "hook": "A kind woman made a special room for God's prophet. So God gave her a wonderful gift: a baby boy.",
+    "story": [
+      "In a town called Shunem lived a kind woman. Whenever the prophet Elisha came by, she gave him a meal.",
+      "She told her husband, \"Let's build a little room on our roof for this man of God, so he always has a place to rest.\" She was very generous and never asked for anything back.",
+      "Elisha wanted to thank her. He found out that she had always wanted a child of her own. So he told her, \"Next year, you will have a baby boy.\"",
+      "And just as Elisha said, the woman had a baby boy! She loved him with all her heart.",
+      "The boy grew bigger. But one day he got very, very sick. His mother held him on her lap, but the little boy died.",
+      "The woman was so sad, but she trusted God. She laid her son on the prophet's bed and hurried as fast as she could to find Elisha.",
+      "Elisha came back to the house with her. He went into the room, shut the door, and prayed to God.",
+      "Then the little boy sneezed and opened his eyes. He was alive again! \"Come and take your son,\" said Elisha.",
+      "The happy mother scooped up her boy and held him close. She thanked God with all her heart.",
+      "The woman had been kind and full of faith, and God showed her that he is even stronger than death."
+    ],
+    "devotional": {
+      "bigIdea": "The kind woman gave to others without expecting anything back, and she trusted God even when things were very sad. God saw her faith and showed he is stronger than death.",
+      "questions": [
+        "The woman was kind to Elisha. How can you be kind to others?",
+        "When her son got sick, she ran to God for help. Who do you go to when you are sad or scared?",
+        "God brought the boy back to life. How does it feel to know God is stronger than anything?"
+      ]
+    },
+    "devotionalHeading": "Let's Talk About It",
+    "tags": ["generosity", "faith", "God's power"],
+    "quiz": [
+      {"question": "How was the woman kind to Elisha?", "options": ["She made him a room to stay in", "She gave him a horse", "She paid him money"], "answer": 0, "explanation": ""},
+      {"question": "What special gift did God give her?", "options": ["A baby boy", "A big house", "A crown"], "answer": 0, "explanation": ""},
+      {"question": "What happened after Elisha prayed for her sick son?", "options": ["The boy came back to life", "Nothing", "He fell asleep"], "answer": 0, "explanation": ""}
+    ]
+  }
+},
+{
+  "id": "daniel-food", "era": "exile", "emoji": "🥦",
+  "title": "Daniel and the King's Food", "date": "c. 605 BC", "location": "Babylon",
+  "connections": [
+    {"title": "The Furnace", "storyId": "shadrach", "reference": "Daniel 3:17",
+     "why": "Daniel's three friends here are the very same men who later refuse to bow to the golden statue and are thrown into the fiery furnace."},
+    {"title": "The Lion's Den", "storyId": "daniel", "reference": "Daniel 6:10",
+     "why": "The young man who quietly chooses to honor God with his food grows into the old man who keeps praying even when it is against the law."},
+    {"title": "The Dreamer's Long Road", "storyId": "joseph", "reference": "Genesis 39:2",
+     "why": "Like Joseph in Egypt, Daniel is a young man taken far from home who stays faithful to God in a foreign palace, and God lifts him up."}
+  ],
+  "tier1": {
+    "book": "Daniel 1",
+    "hook": "Daniel was a teenager dragged far from home to serve a foreign king. On his very first test, with everyone watching, he quietly decided to honor God, even over something as simple as dinner.",
+    "story": [
+      "When the army of Babylon conquered Jerusalem, they carried away the brightest young men of Judah to serve in the king's palace, far from home. Among them were Daniel and his three friends. They were given new names, new schooling, and a place in the most powerful court in the world.",
+      "The king ordered that these young men be fed the very best food from his own table, rich meats and fine wine, every day for three years. It was a great honor. But Daniel knew that some of this food had been offered to Babylon's idols and went against God's ways, and he made up his mind not to eat it.",
+      "This took real courage. Daniel was a captive, far from home, surrounded by people who did not know his God. It would have been so easy to just go along with everyone else. Instead, he politely asked the official in charge for permission to eat only vegetables and water.",
+      "The official was afraid. \"My lord the king has chosen your food himself,\" he said. \"If he sees you looking thinner and worse than the other young men, he will have my head!\" He was risking his life if this went wrong.",
+      "So Daniel suggested a test. \"Please try us for just ten days,\" he said. \"Give us only vegetables to eat and water to drink. Then compare us to the young men who eat the king's rich food, and decide for yourself.\" The official agreed to the ten-day test.",
+      "When the ten days were over, Daniel and his friends looked healthier and stronger and better nourished than all the young men who had eaten the royal food. So they were allowed to keep their simple diet. And God gave these four faithful young men great knowledge and wisdom, more than anyone else in the kingdom.",
+      "Daniel did not wait for some huge, dramatic moment to take a stand. He honored God in an ordinary, everyday choice about dinner, when he could have just blended in. And God honored him for it. The small, quiet choices to follow God are some of the most important ones we ever make."
+    ],
+    "devotional": {
+      "bigIdea": "Daniel was far from home and could have just gone along with everyone else. Instead, he chose to honor God in a quiet, ordinary decision about food. God honored that faithfulness. The small choices we make to follow God, when no one would blame us for blending in, really matter.",
+      "questions": [
+        "Daniel decided ahead of time that he would honor God. Why does it help to decide what is right before the hard moment comes?",
+        "It would have been easy for Daniel to just blend in. When is it hard for you to do the right thing when everyone else is doing something different?",
+        "Daniel honored God in a small, everyday choice. What is a small way you could honor God today?"
+      ]
+    },
+    "tags": ["courage", "faithfulness", "doing right", "everyday choices", "Daniel"],
+    "quiz": [
+      {"question": "Where was Daniel taken to serve?", "options": ["The king's palace in Babylon", "Egypt", "Rome"], "answer": 0, "explanation": "He was carried far from home after Babylon conquered Jerusalem."},
+      {"question": "What did Daniel decide not to eat?", "options": ["The king's rich food that went against God's ways", "Any food at all", "Bread"], "answer": 0, "explanation": ""},
+      {"question": "What did Daniel ask to eat instead?", "options": ["Only vegetables and water", "Only meat", "Only fruit"], "answer": 0, "explanation": ""},
+      {"question": "How did Daniel and his friends look after the ten-day test?", "options": ["Healthier and stronger than the others", "Weak and sick", "Exactly the same"], "answer": 0, "explanation": ""},
+      {"question": "What is the lesson of this story?", "options": ["Small, everyday choices to honor God matter", "Vegetables make you smart", "Kings always get their way"], "answer": 0, "explanation": ""}
+    ]
+  },
+  "tier2": {
+    "book": "Daniel 1",
+    "hook": "Daniel was taken far away to serve a king. On his very first day, he bravely chose to honor God, even with something as simple as his food.",
+    "story": [
+      "A long way from home, in a land called Babylon, lived a young man named Daniel and his three friends.",
+      "They had been taken from their home to serve the king in his palace. It was a big, strange new place.",
+      "The king said they should eat the very best food from his own table every day. But some of that food went against God's ways.",
+      "Daniel decided he would honor God instead. He bravely and politely asked if he and his friends could eat just vegetables and water.",
+      "The man in charge was worried. \"If the king sees you looking weak and thin, I will be in big trouble!\" he said.",
+      "So Daniel had an idea. \"Just test us for ten days,\" he said. \"Give us only vegetables and water. Then see how we look.\"",
+      "The man agreed to try it for ten days.",
+      "When the ten days were over, Daniel and his friends looked healthier and stronger than everyone else!",
+      "So they got to keep eating their simple food. And God gave these four friends extra wisdom, more than anyone else.",
+      "Daniel honored God even in a small choice about dinner. The little choices to follow God are very important."
+    ],
+    "devotional": {
+      "bigIdea": "Daniel was far from home, but he still chose to honor God, even in a small choice about food. God was pleased with him. Our small choices to follow God really matter.",
+      "questions": [
+        "Daniel decided to do the right thing ahead of time. Why is that a good idea?",
+        "It is hard to be different from everyone else. When is it hard for you to do the right thing?",
+        "What is one small way you can honor God today?"
+      ]
+    },
+    "devotionalHeading": "Let's Talk About It",
+    "tags": ["courage", "faithfulness", "everyday choices"],
+    "quiz": [
+      {"question": "Where was Daniel taken to live?", "options": ["A king's palace far from home", "A farm", "A boat"], "answer": 0, "explanation": ""},
+      {"question": "What did Daniel ask to eat instead of the king's rich food?", "options": ["Vegetables and water", "Candy", "Nothing"], "answer": 0, "explanation": ""},
+      {"question": "How did Daniel and his friends look after ten days?", "options": ["Healthier and stronger", "Sick", "Sleepy"], "answer": 0, "explanation": ""}
+    ]
+  }
+},
+{
+  "id": "wise-men", "era": "nt-life", "emoji": "⭐",
+  "title": "The Wise Men Follow the Star", "date": "c. 5 BC", "location": "Bethlehem",
+  "connections": [
+    {"title": "Impossible News", "storyId": "annunciation", "reference": "Matthew 2:1",
+     "why": "The baby the wise men travel so far to worship is Jesus, the child the angel promised to Mary."},
+    {"title": "Left Behind in Jerusalem", "storyId": "boy-temple", "reference": "Luke 2:49",
+     "why": "The little child the wise men knelt before grows into the boy who amazes the teachers in the Temple."},
+    {"title": "The King Rides In", "storyId": "triumphal-entry", "reference": "Matthew 21:5",
+     "why": "The wise men were the first to call Jesus a king, and one day he would ride into Jerusalem as the humble King of all."}
+  ],
+  "tier1": {
+    "book": "Matthew 2",
+    "hook": "Far away in the East, wise men saw a brand new star blaze into the sky. They knew it meant a king had been born, so they set out on a long journey to find him and worship him.",
+    "story": [
+      "Far away in lands to the east, there lived wise men who studied the night sky. One night they saw a new star, brighter and more wonderful than any they had ever seen. They understood that it meant something amazing: a great new king had been born to the Jewish people. So they packed up rich gifts and set out on a long, long journey to find him.",
+      "When they reached Jerusalem, they began asking everyone, \"Where is the one who has been born king of the Jews? We saw his star in the east, and we have come to worship him.\" Word of this soon reached King Herod, and it troubled him deeply. He was the king, and he did not want anyone taking his place.",
+      "Herod called together the priests and teachers and demanded to know where this special king was to be born. They told him the old promise from the prophets: \"In Bethlehem. From there will come a ruler who will shepherd God's people.\"",
+      "So Herod secretly called the wise men and found out exactly when the star had appeared. Then he sent them to Bethlehem with a sneaky request. \"Go and search carefully for the child,\" he said, \"and when you find him, come back and tell me, so that I can go and worship him too.\" But Herod did not want to worship the child. He wanted to harm him.",
+      "The wise men set off, and the star they had seen went ahead of them until it stopped right over the place where the child was. They were overjoyed. They went into the house, and there they saw the young child Jesus with his mother Mary, and they bowed down low and worshiped him.",
+      "Then they opened their treasures and gave him their precious gifts: gold, and frankincense, and myrrh. They had traveled so far, not to see a palace or a famous city, but to kneel before a little child and give him their very best.",
+      "God warned the wise men in a dream not to go back to Herod, so they returned to their own country by another road. They had followed a star across the world to find Jesus, and they went home full of joy, having worshiped the true King."
+    ],
+    "devotional": {
+      "bigIdea": "The wise men traveled an enormous distance, not for riches or fame, but simply to find Jesus, kneel before him, and give him their best. They show us what it looks like to truly seek Jesus and to worship him with everything we have.",
+      "questions": [
+        "The wise men traveled very far just to worship Jesus. What are some ways you can seek Jesus in your own life?",
+        "They gave Jesus their finest treasures. What is something valuable to you that you could give to God?",
+        "Herod pretended he wanted to worship Jesus, but the wise men really did. What is the difference between pretending and really worshiping?"
+      ]
+    },
+    "tags": ["worship", "seeking Jesus", "the King", "giving our best", "Christmas"],
+    "quiz": [
+      {"question": "What did the wise men follow to find Jesus?", "options": ["A new star", "A map", "A river"], "answer": 0, "explanation": ""},
+      {"question": "Why did King Herod feel troubled?", "options": ["He did not want a new king taking his place", "He was happy", "He wanted to give gifts"], "answer": 0, "explanation": ""},
+      {"question": "Where was the child king to be born?", "options": ["Bethlehem", "Egypt", "Rome"], "answer": 0, "explanation": "The prophets had promised it long before."},
+      {"question": "What gifts did the wise men bring?", "options": ["Gold, frankincense, and myrrh", "Bread and water", "Toys"], "answer": 0, "explanation": ""},
+      {"question": "What did the wise men do when they found Jesus?", "options": ["Bowed down and worshiped him", "Took him away", "Ran off"], "answer": 0, "explanation": ""}
+    ]
+  },
+  "tier2": {
+    "book": "Matthew 2",
+    "hook": "Far away, wise men saw a bright new star in the sky. They knew it meant a special king was born, so they followed it to find baby Jesus.",
+    "story": [
+      "Far away in the east, there were wise men who watched the stars at night.",
+      "One night they saw a brand new star, brighter than all the others. They knew it meant a very special king had been born!",
+      "So the wise men packed up special gifts and started a long, long journey to find the new king.",
+      "When they got to the city of Jerusalem, they asked, \"Where is the new king? We saw his star and came to worship him.\"",
+      "This news made King Herod upset, because he did not want anyone else to be king. He found out the special king would be born in a town called Bethlehem.",
+      "So the wise men followed the star again, and it led them all the way to Bethlehem.",
+      "The star stopped right over the place where Jesus was. The wise men were so happy and excited!",
+      "They went inside and saw the young child Jesus with his mother, Mary. They knelt down low and worshiped him.",
+      "Then they gave Jesus their best treasures: gold, and sweet-smelling frankincense and myrrh.",
+      "They had traveled so far just to find Jesus and worship him. We can worship Jesus and give him our best too!"
+    ],
+    "devotional": {
+      "bigIdea": "The wise men traveled very far just to find Jesus and worship him with their best gifts. We can seek Jesus and give him our best too.",
+      "questions": [
+        "The wise men traveled far to find Jesus. How can you look for Jesus every day?",
+        "They gave Jesus their best gifts. What good gift could you give to God?",
+        "How do you think the wise men felt when they finally found Jesus?"
+      ]
+    },
+    "devotionalHeading": "Let's Talk About It",
+    "tags": ["worship", "seeking Jesus", "Christmas"],
+    "quiz": [
+      {"question": "What did the wise men follow to find Jesus?", "options": ["A bright new star", "A big map", "A road sign"], "answer": 0, "explanation": ""},
+      {"question": "What gifts did they bring Jesus?", "options": ["Gold, frankincense, and myrrh", "Toys and candy", "Books"], "answer": 0, "explanation": ""},
+      {"question": "What did the wise men do when they found Jesus?", "options": ["Knelt down and worshiped him", "Ran away", "Took a nap"], "answer": 0, "explanation": ""}
+    ]
+  }
+}
+]
+
+with open("batch-04a.json", "w", encoding="utf-8") as f:
+    json.dump(batch, f, ensure_ascii=False, indent=2)
+print(f"Wrote batch-04a.json with {len(batch)} stories.")
