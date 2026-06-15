@@ -1562,6 +1562,9 @@ function renderModal(idx) {
 }
 function initQuiz(questions, container, story) {
   const letters = ['A','B','C','D'];
+  // Tier 2 (ages 5-8): gentle "guess until you get it right" — the quiz always ends perfect.
+  // Tier 1 (ages 9-12) and guests: a wrong first answer counts, with a warm invite to retake at the end.
+  const countWrong = !(activeProfile && activeProfile.tier === 2);
   let current = 0, answered = false, score = 0;
   function renderQ() {
     const q = questions[current];
@@ -1580,7 +1583,18 @@ function initQuiz(questions, container, story) {
           fb.className = 'quiz-feedback qcorrect-msg';
           fb.textContent = 'Correct! ' + (q.explanation || 'Well done!');
           nb.className = 'quiz-next-btn qvisible';
+        } else if (countWrong) {
+          // Tier 1: the answer counts. Kindly reveal the right one and move on.
+          answered = true;
+          playWrongSound();
+          btn.className = 'quiz-option qwrong';
+          const right = container.querySelector('.quiz-option[data-idx="' + q.answer + '"]');
+          if (right) right.className = 'quiz-option qcorrect';
+          fb.className = 'quiz-feedback qwrong-msg';
+          fb.textContent = (q.explanation ? q.explanation + ' ' : '') + "That's okay, now you know it!";
+          nb.className = 'quiz-next-btn qvisible';
         } else {
+          // Tier 2: keep trying until it's right.
           playWrongSound();
           btn.className = 'quiz-option qwrong';
           fb.className = 'quiz-feedback qwrong-msg';
@@ -1596,9 +1610,16 @@ function initQuiz(questions, container, story) {
       sb.from('quiz_attempts').insert({ profile_id: activeProfile.id, profile_type: activeProfile.type, story_id: story.id, score, max_score: questions.length });
     }
     const colors = ['#c9a227','#f0c040','#8b1a1a','#c9a227','#3B6D11','#f0c040','#7c3aed','#c9a227','#f0c040','#065f46'];
-    const stars = score === questions.length ? '★ ★ ★' : score >= questions.length * 0.66 ? '★ ★ ☆' : '★ ☆ ☆';
-    const msg = score === questions.length ? 'You got every question right! You really know this story.' : `Great effort! You got ${score} out of ${questions.length}. Worth a second read!`;
-    container.innerHTML = `<div class="quiz-celebration qvisible"><div class="quiz-stars">${stars}</div><div class="quiz-confetti">${colors.map((c,i)=>`<div class="quiz-confetti-dot" style="background:${c};animation-delay:${i*0.06}s"></div>`).join('')}</div><div class="quiz-cel-title">Well done!</div><div class="quiz-cel-sub">${msg}</div><div class="quiz-score-badge">${score} out of ${questions.length} correct</div></div>`;
+    const perfect = score === questions.length;
+    const stars = perfect ? '★ ★ ★' : score >= questions.length * 0.66 ? '★ ★ ☆' : '★ ☆ ☆';
+    const title = perfect ? 'Well done!' : 'Great effort!';
+    const msg = perfect
+      ? 'You got every question right! You really know this story.'
+      : `You got ${score} out of ${questions.length}, and that is something to be proud of. Every reader grows a little more each time. Read the story once more and give it another try whenever you are ready. You can do this!`;
+    const retakeBtn = perfect ? '' : `<button class="quiz-next-btn qvisible" id="qretake" style="margin-top:14px">Try the Quiz Again</button>`;
+    container.innerHTML = `<div class="quiz-celebration qvisible"><div class="quiz-stars">${stars}</div><div class="quiz-confetti">${colors.map((c,i)=>`<div class="quiz-confetti-dot" style="background:${c};animation-delay:${i*0.06}s"></div>`).join('')}</div><div class="quiz-cel-title">${title}</div><div class="quiz-cel-sub">${msg}</div><div class="quiz-score-badge">${score} out of ${questions.length} correct</div>${retakeBtn}</div>`;
+    const rt = container.querySelector('#qretake');
+    if (rt) rt.addEventListener('click', () => { current = 0; score = 0; answered = false; renderQ(); });
   }
   renderQ();
 }
