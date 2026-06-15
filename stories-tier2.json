@@ -5,7 +5,7 @@
     "version": "1.0",
     "tier": 2,
     "ageRange": "5-8",
-    "totalStories": 68,
+    "totalStories": 73,
     "freeStories": 3
   },
   "eras": [
@@ -3488,9 +3488,191 @@
       "published_date": "2026-06-03"
     },
     {
-      "id": "psalm23",
+      "id": "mephibosheth",
       "era": "kingdom",
       "order": 38,
+      "access": "premium",
+      "emoji": "🍽️",
+      "title": "Kindness for Jonathan's Sake",
+      "book": "2 Samuel 9",
+      "date": "c. 990 BC",
+      "location": "Jerusalem",
+      "hook": "King David made a promise to his best friend long ago. Now he kept that promise by being kind to someone everyone else had forgotten.",
+      "story": [
+        "David was now the king. He was safe and strong, sitting on his throne.",
+        "One day David remembered his best friend, Jonathan, who had died. David had promised to always be kind to Jonathan's family.",
+        "So David asked, \"Is anyone left from Jonathan's family that I can be kind to?\"",
+        "There was one person. Jonathan had a son named Mephibosheth. When he was little, he had been hurt in his feet, and he could not walk.",
+        "Mephibosheth had been hiding far away, because he was scared the new king would want to get rid of him.",
+        "David sent for Mephibosheth. The poor man was shaking with fear as he was brought before the king.",
+        "But David said gently, \"Do not be afraid! I am going to be kind to you, because I loved your father Jonathan.\"",
+        "\"I am giving you back all your grandfather's land,\" said David. \"And you will eat at my table with me every day, like one of my own sons.\"",
+        "Mephibosheth could hardly believe it! He thought he was in trouble, but instead he got a home and a special place at the king's table.",
+        "He did nothing to earn it. It was all because of David's love. That is how God welcomes us too, because he loves us so much."
+      ],
+      "devotional": {
+        "bigIdea": "Mephibosheth thought he was in trouble, but David gave him a place at the king's table because of love. That is how God welcomes us, because he loves us, not because we earned it.",
+        "questions": [
+          "Mephibosheth was scared, but David was kind. When has someone surprised you with kindness?",
+          "David kept his promise to his friend. What is a promise you can keep?",
+          "God gives us a special place with him because he loves us. How does that make you feel?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "kindness",
+        "grace",
+        "welcome"
+      ],
+      "connections": [
+        {
+          "title": "The Best of Friends",
+          "storyId": "david-jonathan",
+          "reference": "2 Samuel 9:1",
+          "why": "David promised his friend Jonathan to be loyal to his family forever, and now, years later, he keeps that promise."
+        },
+        {
+          "title": "The Boy Who Came Home",
+          "storyId": "prodigal",
+          "reference": "Luke 15:23",
+          "why": "Like the father who welcomes his lost son to the feast, David welcomes a frightened, forgotten man to eat at the king's table."
+        },
+        {
+          "title": "The Man in the Tree",
+          "storyId": "zacchaeus",
+          "reference": "Luke 19:5",
+          "why": "Just as Jesus invited himself to the table of an outcast, David invites the last of Saul's family to share his own table."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Why was David kind to Mephibosheth?",
+          "options": [
+            "Because he loved Jonathan, Mephibosheth's father",
+            "Because he had to be",
+            "Because Mephibosheth was rich"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What was special about Mephibosheth?",
+          "options": [
+            "He could not walk",
+            "He was a giant",
+            "He was a king"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What wonderful thing did David give him?",
+          "options": [
+            "A place at the king's table forever",
+            "A horse",
+            "A crown"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "david-bathsheba",
+      "era": "kingdom",
+      "order": 39,
+      "access": "premium",
+      "emoji": "🕊️",
+      "title": "David's Great Mistake",
+      "book": "2 Samuel 11-12",
+      "date": "c. 990 BC",
+      "location": "Jerusalem",
+      "hook": "Even King David, who loved God, did something very wrong. Then he tried to hide it. But no one can hide from God.",
+      "story": [
+        "David was a great king who loved God very much. But one day, David made some very bad and selfish choices, and he hurt someone.",
+        "After he did the wrong thing, David tried to keep it a secret. He hoped no one would ever find out.",
+        "On the outside, it looked like nobody knew. But there was someone who saw everything David did.",
+        "God knew. God sees all that we do, even the things we try to hide.",
+        "But God loved David too much to leave him that way. So God sent a brave helper named Nathan to talk to David.",
+        "Nathan told David a story about a rich man who stole a poor man's only little lamb. David got very angry. \"That is so unfair!\" he said.",
+        "Then Nathan looked at David and said, \"You are that man.\" David suddenly saw what he had done.",
+        "David did not make any excuses. He said, \"I have sinned against God.\" He was truly, deeply sorry.",
+        "And God forgave David. God is always ready to forgive us when we are truly sorry.",
+        "We cannot hide from God, and we do not need to. When we tell God we are sorry, he forgives us, just like he forgave David."
+      ],
+      "devotional": {
+        "bigIdea": "Even David did something wrong and tried to hide it. But God sees everything. When David said he was sorry, God forgave him. God forgives us too when we tell him the truth.",
+        "questions": [
+          "Why do we sometimes try to hide it when we do something wrong?",
+          "David said, I am sorry, and God forgave him. How does it feel to be forgiven?",
+          "Is there something you can tell God you are sorry about, knowing he will forgive you?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "confession",
+        "forgiveness",
+        "honesty"
+      ],
+      "connections": [
+        {
+          "title": "God Looks at the Heart",
+          "storyId": "david-anointed",
+          "reference": "2 Samuel 12:13",
+          "why": "God chose David for his heart, and even when that heart went badly wrong, God did not give up on him."
+        },
+        {
+          "title": "The Lord Is My Shepherd",
+          "storyId": "psalm23",
+          "reference": "Psalm 51:1",
+          "why": "After his sin, David poured out his sorrow in songs of repentance, some of the most honest prayers in the whole Bible."
+        },
+        {
+          "title": "The Boy Who Came Home",
+          "storyId": "prodigal",
+          "reference": "Luke 15:21",
+          "why": "Like the lost son who finally came home, David stopped hiding, admitted his sin, and found a Father ready to forgive."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What did David try to do after he did wrong?",
+          "options": [
+            "Hide it",
+            "Tell everyone",
+            "Run away"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Who saw everything David did?",
+          "options": [
+            "God",
+            "No one",
+            "A lion"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What happened when David said he was sorry?",
+          "options": [
+            "God forgave him",
+            "Nothing",
+            "He had to leave"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "psalm23",
+      "era": "kingdom",
+      "order": 40,
       "access": "premium",
       "emoji": "🐑",
       "title": "The Lord Is My Shepherd",
@@ -3584,7 +3766,7 @@
     {
       "id": "solomon-wisdom",
       "era": "kingdom",
-      "order": 39,
+      "order": 41,
       "access": "premium",
       "emoji": "📜",
       "title": "The Wisest Request",
@@ -3675,9 +3857,100 @@
       "published_date": "2026-06-05"
     },
     {
+      "id": "solomon-temple",
+      "era": "kingdom",
+      "order": 42,
+      "access": "premium",
+      "emoji": "🏛️",
+      "title": "Solomon Builds the Temple",
+      "book": "1 Kings 5-8",
+      "date": "c. 960 BC",
+      "location": "Jerusalem",
+      "hook": "King David dreamed of building a beautiful house for God. His son Solomon built it: the most amazing temple anyone had ever seen.",
+      "story": [
+        "King David had always wanted to build a special house for God, a place where everyone could come to worship.",
+        "But God said that David's son would build it. So when Solomon became king, he started to build a wonderful temple for God.",
+        "It was a huge job! Solomon used the best wood and the finest stone. Many, many workers helped, and it took seven whole years.",
+        "Here is something amazing: the stones were all cut and shaped far away. So the temple was built without the sound of a single hammer at the site. It was quiet and peaceful.",
+        "Inside, the temple was beautiful. The walls were covered with carvings of flowers and palm trees, and shining gold.",
+        "In the very middle was the most special room. There they placed the ark, the golden chest. At last it had a forever home.",
+        "When everything was done, a bright cloud filled the temple. It was the glory of God! God had come to fill his house.",
+        "Then Solomon prayed, \"God, you are so big that even all of heaven cannot hold you. How wonderful that you would meet us here!\"",
+        "Solomon knew that no building could ever hold the great big God who made everything.",
+        "And here is the best part: today God comes to live right inside the hearts of people who love him. We get to be God's home!"
+      ],
+      "devotional": {
+        "bigIdea": "Solomon built God a beautiful temple, but he knew nothing could hold our great big God. The wonderful news is that God now lives in the hearts of people who love him.",
+        "questions": [
+          "The workers gave their very best to build God's temple. How can you give God your best?",
+          "God is bigger than all of heaven! What is something that helps you remember how great God is?",
+          "God wants to live in our hearts. How does it feel that God wants to be close to you?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "worship",
+        "God's presence",
+        "the Temple"
+      ],
+      "connections": [
+        {
+          "title": "The Wisest Request",
+          "storyId": "solomon-wisdom",
+          "reference": "1 Kings 6:12",
+          "why": "The same Solomon who asked God for wisdom now uses it to build the most beautiful house of worship the world had ever seen."
+        },
+        {
+          "title": "Dancing Before the Lord",
+          "storyId": "david-ark",
+          "reference": "1 Kings 8:6",
+          "why": "David brought the ark to Jerusalem in a tent, and now his son builds it a permanent home in the Temple's Most Holy Place."
+        },
+        {
+          "title": "The Day Everything Changed",
+          "storyId": "pentecost",
+          "reference": "1 Corinthians 3:16",
+          "why": "God's glory once filled the Temple, and at Pentecost his Spirit came to fill his people, who are now God's living temple."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Who built the great Temple?",
+          "options": [
+            "Solomon",
+            "Noah",
+            "Pharaoh"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What was special about how it was built?",
+          "options": [
+            "No hammer was heard at the site",
+            "It was built in one day",
+            "It was made of sand"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Where does God live today?",
+          "options": [
+            "In the hearts of people who love him",
+            "Only in buildings",
+            "On the moon"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
       "id": "elijah",
       "era": "kingdom",
-      "order": 40,
+      "order": 43,
       "access": "premium",
       "emoji": "⚡",
       "title": "Fire from Heaven",
@@ -3768,9 +4041,191 @@
       "published_date": "2026-06-05"
     },
     {
+      "id": "naboth",
+      "era": "kingdom",
+      "order": 44,
+      "access": "premium",
+      "emoji": "⚖️",
+      "title": "Naboth's Vineyard",
+      "book": "1 Kings 21",
+      "date": "c. 870 BC",
+      "location": "Jezreel",
+      "hook": "A king already had everything, but he wanted his neighbor's little garden too. When he could not have it, a very unfair thing happened. But God was watching.",
+      "story": [
+        "King Ahab had a big palace and lots of riches. But there was one little thing he wanted: a vineyard, like a garden, that belonged to his neighbor Naboth.",
+        "Ahab said, \"Naboth, sell me your vineyard.\" But Naboth said, \"I am sorry, but this land belongs to my family. God gave it to us, so I cannot sell it.\"",
+        "Ahab was so upset that he went to his room, lay on his bed, and would not even eat. He had almost everything, but he pouted about the one thing he could not have.",
+        "Ahab's wife was a wicked queen named Jezebel. She said, \"You are the king! I will get you that vineyard.\"",
+        "Then Jezebel did a very wicked thing. She told lies about Naboth, and because of those lies, poor Naboth was treated very unfairly and lost his life.",
+        "Then Jezebel told Ahab, \"Now the vineyard is yours.\" So Ahab went to take it, as if nothing was wrong.",
+        "But Someone had seen the whole thing. God saw everything that happened to Naboth.",
+        "God sent the prophet Elijah to King Ahab. \"You did a very wicked thing,\" Elijah said. \"God saw it all.\"",
+        "Naboth had no one strong to protect him. But God saw, and God cared about him.",
+        "Our God always sees when people are treated unfairly, and he cares about everyone, especially those who need help."
+      ],
+      "devotional": {
+        "bigIdea": "Ahab had so much but still wanted more. Naboth was treated unfairly, but God saw everything and cared. God always sees when things are unfair, and he cares about people who need help.",
+        "questions": [
+          "Ahab had so much but was sad about one thing. Why is it good to be thankful for what we have?",
+          "God saw what happened to Naboth. How does it feel to know God sees when things are unfair?",
+          "God cares about people who are treated unfairly. How can you be kind and fair to others?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "justice",
+        "God sees",
+        "fairness"
+      ],
+      "connections": [
+        {
+          "title": "Fire from Heaven",
+          "storyId": "elijah",
+          "reference": "1 Kings 21:17",
+          "why": "It is the prophet Elijah whom God sends to stand up to wicked King Ahab and Queen Jezebel after they wrong Naboth."
+        },
+        {
+          "title": "The Man Who Lost Everything",
+          "storyId": "job",
+          "reference": "Psalm 11:7",
+          "why": "Like Job, Naboth is a good man treated unjustly, and the story reminds us that God sees and cares when people suffer wrongly."
+        },
+        {
+          "title": "The Man Who Walked Away",
+          "storyId": "rich-young-ruler",
+          "reference": "1 Kings 21:4",
+          "why": "King Ahab already had everything, yet he could not be happy without more, showing how wanting more and more can poison a heart."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What did King Ahab want from his neighbor?",
+          "options": [
+            "His vineyard",
+            "His crown",
+            "His horse"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Why would Naboth not sell it?",
+          "options": [
+            "It was his family's land from God",
+            "It was haunted",
+            "It was too small"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did God do about the unfair thing?",
+          "options": [
+            "He saw it and sent Elijah to speak up",
+            "He did nothing",
+            "He gave Ahab more land"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "naaman",
+      "era": "kingdom",
+      "order": 45,
+      "access": "premium",
+      "emoji": "🌊",
+      "title": "Naaman and the Servant Girl",
+      "book": "2 Kings 5",
+      "date": "c. 850 BC",
+      "location": "The Jordan River",
+      "hook": "Naaman was a strong, important general, but he was very sick. A kind servant girl knew just where he could find help.",
+      "story": [
+        "Naaman was the leader of a great big army. He was strong and important. But Naaman had a bad skin sickness that no one could fix.",
+        "A young servant girl from Israel lived in Naaman's house. She was kind, and she said, \"There is a prophet in Israel who could make my master well!\"",
+        "So Naaman traveled all the way to Israel to find the prophet Elisha. He brought horses and chariots and lots of treasure.",
+        "But Elisha did not even come outside. He just sent a message: \"Go wash in the Jordan River seven times, and you will be all better.\"",
+        "Naaman was angry! \"I thought he would do something big and fancy! And the Jordan is just a muddy little river!\" He started to stomp away.",
+        "But his servants said kindly, \"Master, if he had asked you to do something hard, you would do it. So why not try this simple thing?\"",
+        "So Naaman went to the river. He dipped under the water one, two, three times, all the way to seven times, just as Elisha said.",
+        "When he came up the seventh time, his skin was all better! It was healthy and new, like a little child's skin.",
+        "Naaman was so happy and thankful. \"Now I know that the God of Israel is the only true God!\" he said.",
+        "And it all started because one little servant girl was brave and kind enough to speak up. God can use anyone, even you!"
+      ],
+      "devotional": {
+        "bigIdea": "Naaman almost missed being healed because the cure seemed too simple. God used a little servant girl to help him. God can use anyone, even when they feel small, and he just wants us to trust him.",
+        "questions": [
+          "Naaman wanted something fancy, but God's way was simple. Why is it good to trust what God asks, even when it seems simple?",
+          "A young servant girl helped a great general. How might God use you to help others?",
+          "Naaman had to stop being proud. What is something it is good to ask for help with?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "humility",
+        "healing",
+        "God uses the small"
+      ],
+      "connections": [
+        {
+          "title": "The Bronze Snake",
+          "storyId": "bronze-serpent",
+          "reference": "2 Kings 5:14",
+          "why": "Like the people who only had to look at the snake, Naaman only has to do something simple, wash in the river, and trust God to heal him."
+        },
+        {
+          "title": "God Looks at the Heart",
+          "storyId": "david-anointed",
+          "reference": "2 Kings 5:3",
+          "why": "God uses a young, captured servant girl that the world would overlook to point a great general to healing."
+        },
+        {
+          "title": "Jesus Heals the Ten Lepers",
+          "storyId": "ten-lepers",
+          "reference": "Luke 4:27",
+          "why": "Naaman is healed of the same disease Jesus would later heal, and like the one grateful leper, Naaman comes back to give thanks."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What was wrong with Naaman?",
+          "options": [
+            "He had a skin sickness",
+            "He was lost",
+            "He was poor"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Who told him where to find help?",
+          "options": [
+            "A young servant girl",
+            "A king",
+            "A soldier"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Naaman have to do to be healed?",
+          "options": [
+            "Wash in the river seven times",
+            "Pay gold",
+            "Fight a battle"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
       "id": "job",
       "era": "kingdom",
-      "order": 41,
+      "order": 46,
       "access": "premium",
       "emoji": "⚡",
       "title": "The Man Who Lost Everything",
@@ -3864,7 +4319,7 @@
     {
       "id": "isaiah-servant",
       "era": "kingdom",
-      "order": 42,
+      "order": 47,
       "access": "premium",
       "emoji": "📖",
       "title": "The Servant Who Suffers",
@@ -3958,7 +4413,7 @@
     {
       "id": "shadrach",
       "era": "exile",
-      "order": 43,
+      "order": 48,
       "access": "premium",
       "emoji": "🔥",
       "title": "The Furnace",
@@ -4053,7 +4508,7 @@
     {
       "id": "daniel",
       "era": "exile",
-      "order": 44,
+      "order": 49,
       "access": "premium",
       "emoji": "🦁",
       "title": "The Lion's Den",
@@ -4148,7 +4603,7 @@
     {
       "id": "esther",
       "era": "exile",
-      "order": 45,
+      "order": 50,
       "access": "premium",
       "emoji": "👑",
       "title": "For Such a Time as This",
@@ -4243,7 +4698,7 @@
     {
       "id": "jonah",
       "era": "exile",
-      "order": 46,
+      "order": 51,
       "access": "premium",
       "emoji": "🐋",
       "title": "The Man Who Ran From God",
@@ -4337,7 +4792,7 @@
     {
       "id": "nehemiah",
       "era": "exile",
-      "order": 47,
+      "order": 52,
       "access": "premium",
       "emoji": "🧱",
       "title": "The Wall Goes Up",
@@ -4432,7 +4887,7 @@
     {
       "id": "annunciation",
       "era": "nt-life",
-      "order": 48,
+      "order": 53,
       "access": "premium",
       "emoji": "👼",
       "title": "Impossible News",
@@ -4527,7 +4982,7 @@
     {
       "id": "boy-temple",
       "era": "nt-life",
-      "order": 49,
+      "order": 54,
       "access": "premium",
       "emoji": "📖",
       "title": "Left Behind in Jerusalem",
@@ -4622,7 +5077,7 @@
     {
       "id": "sermon-mount",
       "era": "nt-life",
-      "order": 50,
+      "order": 55,
       "access": "premium",
       "emoji": "⛰️",
       "title": "The Upside-Down Kingdom",
@@ -4718,7 +5173,7 @@
     {
       "id": "woman-at-well",
       "era": "nt-life",
-      "order": 51,
+      "order": 56,
       "access": "premium",
       "emoji": "🪣",
       "title": "The Woman at the Well",
@@ -4812,7 +5267,7 @@
     {
       "id": "feeding-5000",
       "era": "nt-life",
-      "order": 52,
+      "order": 57,
       "access": "premium",
       "emoji": "🐟",
       "title": "Five Loaves and Two Fish",
@@ -4907,7 +5362,7 @@
     {
       "id": "walk-on-water",
       "era": "nt-life",
-      "order": 53,
+      "order": 58,
       "access": "premium",
       "emoji": "🌊",
       "title": "Stepping Out",
@@ -5002,7 +5457,7 @@
     {
       "id": "good-samaritan",
       "era": "nt-life",
-      "order": 54,
+      "order": 59,
       "access": "premium",
       "emoji": "🫶",
       "title": "The One Who Stopped",
@@ -5096,7 +5551,7 @@
     {
       "id": "zacchaeus",
       "era": "nt-life",
-      "order": 55,
+      "order": 60,
       "access": "premium",
       "emoji": "🌳",
       "title": "The Man in the Tree",
@@ -5191,7 +5646,7 @@
     {
       "id": "rich-young-ruler",
       "era": "nt-life",
-      "order": 56,
+      "order": 61,
       "access": "premium",
       "emoji": "💰",
       "title": "The Man Who Walked Away",
@@ -5286,7 +5741,7 @@
     {
       "id": "prodigal",
       "era": "nt-life",
-      "order": 57,
+      "order": 62,
       "access": "premium",
       "emoji": "🏠",
       "title": "The Boy Who Came Home",
@@ -5381,7 +5836,7 @@
     {
       "id": "lazarus",
       "era": "nt-life",
-      "order": 58,
+      "order": 63,
       "access": "premium",
       "emoji": "🪦",
       "title": "Come Out",
@@ -5477,7 +5932,7 @@
     {
       "id": "triumphal-entry",
       "era": "nt-life",
-      "order": 59,
+      "order": 64,
       "access": "premium",
       "emoji": "🌿",
       "title": "The King Rides In",
@@ -5571,7 +6026,7 @@
     {
       "id": "last-supper",
       "era": "nt-church",
-      "order": 60,
+      "order": 65,
       "access": "premium",
       "emoji": "🍞",
       "title": "The Night Before",
@@ -5665,7 +6120,7 @@
     {
       "id": "crucifixion",
       "era": "nt-church",
-      "order": 61,
+      "order": 66,
       "access": "premium",
       "emoji": "✝️",
       "title": "The Darkest Friday",
@@ -5759,7 +6214,7 @@
     {
       "id": "resurrection",
       "era": "nt-church",
-      "order": 62,
+      "order": 67,
       "access": "premium",
       "emoji": "🌅",
       "title": "The Empty Tomb",
@@ -5854,7 +6309,7 @@
     {
       "id": "road-emmaus",
       "era": "nt-church",
-      "order": 63,
+      "order": 68,
       "access": "premium",
       "emoji": "🛤️",
       "title": "The Stranger on the Road",
@@ -5949,7 +6404,7 @@
     {
       "id": "pentecost",
       "era": "nt-church",
-      "order": 64,
+      "order": 69,
       "access": "premium",
       "emoji": "🕊️",
       "title": "The Day Everything Changed",
@@ -6043,7 +6498,7 @@
     {
       "id": "stephen",
       "era": "nt-church",
-      "order": 65,
+      "order": 70,
       "access": "premium",
       "emoji": "✝️",
       "title": "The First Martyr",
@@ -6138,7 +6593,7 @@
     {
       "id": "paul-conversion",
       "era": "nt-church",
-      "order": 66,
+      "order": 71,
       "access": "premium",
       "emoji": "⚡",
       "title": "The Man Who Hunted Christians",
@@ -6234,7 +6689,7 @@
     {
       "id": "paul-jail",
       "era": "nt-church",
-      "order": 67,
+      "order": 72,
       "access": "premium",
       "emoji": "🎵",
       "title": "Singing at Midnight",
@@ -6328,7 +6783,7 @@
     {
       "id": "lydia",
       "era": "nt-church",
-      "order": 68,
+      "order": 73,
       "access": "premium",
       "emoji": "🎨",
       "title": "The Purple Merchant",
