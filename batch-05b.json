@@ -1,0 +1,852 @@
+[
+  {
+    "id": "bartimaeus",
+    "era": "nt-life",
+    "emoji": "👁️",
+    "title": "Blind Bartimaeus",
+    "date": "c. AD 30",
+    "location": "Jericho",
+    "connections": [
+      {
+        "title": "Through the Roof",
+        "storyId": "paralytic",
+        "reference": "Mark 10:52",
+        "why": "Like the four friends who would not give up, Bartimaeus refuses to let anything stop him from reaching Jesus."
+      },
+      {
+        "title": "Jairus's Daughter",
+        "storyId": "jairus",
+        "reference": "Mark 5:34",
+        "why": "Again Jesus tells someone, your faith has made you well, showing how he honors those who trust him."
+      },
+      {
+        "title": "The Man in the Tree",
+        "storyId": "zacchaeus",
+        "reference": "Luke 19:1",
+        "why": "In the very same town of Jericho, Jesus stops for another person the crowd ignored, showing he notices every overlooked soul."
+      }
+    ],
+    "tier1": {
+      "book": "Mark 10",
+      "hook": "A blind beggar sat by the road, and when he heard Jesus was passing by, he refused to be silenced. He shouted, and shouted louder, until the whole crowd stopped.",
+      "story": [
+        "As Jesus was leaving the city of Jericho, a huge crowd followed him. Beside the road sat a blind beggar named Bartimaeus. He could not work or see, and he spent his days asking passersby for help.",
+        "When Bartimaeus heard that it was Jesus of Nazareth going by, his heart leaped. He began to shout at the top of his voice, \"Jesus, Son of David, have mercy on me!\"",
+        "Many in the crowd told him to be quiet. \"Hush! Stop making such a scene!\" But Bartimaeus would not be silenced. He only shouted all the louder, \"Son of David, have mercy on me!\" He was not going to let this chance slip past him.",
+        "Then Jesus stopped. In the middle of the great crowd, with everywhere to go and everyone wanting him, Jesus stood still and said, \"Call him here.\" The same people who had told Bartimaeus to be quiet now said, \"Cheer up! On your feet! He is calling you.\"",
+        "Bartimaeus threw off his cloak, jumped up, and came to Jesus. \"What do you want me to do for you?\" Jesus asked. \"Rabbi,\" he said, \"I want to see.\"",
+        "\"Go,\" said Jesus. \"Your faith has healed you.\" And immediately Bartimaeus could see! The first face his eyes ever rested on was the face of Jesus.",
+        "And then Bartimaeus did something wonderful. He did not run off to start his new life. He followed Jesus down the road. The man who once sat begging in the dark now walked in the light, right behind the One who had given him sight."
+      ],
+      "devotional": {
+        "bigIdea": "Everyone told Bartimaeus to be quiet, but he cried out to Jesus all the louder, and Jesus stopped just for him. No one is too small or too overlooked for Jesus to notice. When we call out to him, he hears, and he stops.",
+        "questions": [
+          "The crowd told Bartimaeus to be quiet, but he kept calling out. When is it hard to keep seeking Jesus even when others discourage you?",
+          "Jesus stopped everything for one blind beggar. How does it feel to know Jesus would stop for you?",
+          "After he was healed, Bartimaeus followed Jesus down the road. What do you think it looks like to follow Jesus after he helps you?"
+        ]
+      },
+      "tags": [
+        "faith",
+        "persistence",
+        "healing",
+        "Jesus cares",
+        "crying out"
+      ],
+      "quiz": [
+        {
+          "question": "Who was sitting by the road in Jericho?",
+          "options": [
+            "A blind beggar named Bartimaeus",
+            "A king",
+            "A fisherman"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Bartimaeus do when he heard Jesus was near?",
+          "options": [
+            "He shouted for Jesus to have mercy on him",
+            "He stayed silent",
+            "He ran away"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the crowd tell him to do?",
+          "options": [
+            "Be quiet",
+            "Shout louder",
+            "Go home"
+          ],
+          "answer": 0,
+          "explanation": "But he only called out more loudly."
+        },
+        {
+          "question": "What did Bartimaeus ask Jesus for?",
+          "options": [
+            "To be able to see",
+            "Money",
+            "A new cloak"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Bartimaeus do after he was healed?",
+          "options": [
+            "He followed Jesus down the road",
+            "He went home",
+            "He hid"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ]
+    },
+    "tier2": {
+      "book": "Mark 10",
+      "hook": "A blind man named Bartimaeus sat by the road. When he heard Jesus coming, he shouted as loud as he could!",
+      "story": [
+        "As Jesus was leaving the town of Jericho, a big crowd followed him.",
+        "Beside the road sat a blind beggar named Bartimaeus. He could not see, so he asked people for help.",
+        "When Bartimaeus heard that Jesus was coming, he shouted, \"Jesus, please have mercy on me!\"",
+        "Some people told him, \"Be quiet!\" But Bartimaeus did not stop. He shouted even louder!",
+        "Then Jesus stopped walking. \"Call him over here,\" Jesus said.",
+        "Bartimaeus jumped up and hurried to Jesus. \"What do you want me to do for you?\" Jesus asked.",
+        "\"Teacher,\" he said, \"I want to see!\"",
+        "Jesus said, \"Go, your faith has made you well.\" And right away, Bartimaeus could see!",
+        "The very first thing he saw was the kind face of Jesus.",
+        "And then Bartimaeus followed Jesus down the road. Jesus always hears us when we call out to him."
+      ],
+      "devotional": {
+        "bigIdea": "Everyone told Bartimaeus to be quiet, but he kept calling out to Jesus, and Jesus stopped just for him. Jesus always hears us when we call to him.",
+        "questions": [
+          "Bartimaeus would not stop calling for Jesus. How can you talk to Jesus when you need help?",
+          "Jesus stopped for one man. How does it feel that Jesus would stop for you?",
+          "After he could see, Bartimaeus followed Jesus. How can you follow Jesus?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "faith",
+        "healing",
+        "Jesus cares"
+      ],
+      "quiz": [
+        {
+          "question": "What could Bartimaeus not do?",
+          "options": [
+            "See",
+            "Walk",
+            "Hear"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did he do when Jesus came near?",
+          "options": [
+            "Shouted for help",
+            "Hid",
+            "Stayed quiet"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Jesus do for him?",
+          "options": [
+            "Helped him see",
+            "Gave him money",
+            "Walked away"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ]
+    }
+  },
+  {
+    "id": "jairus",
+    "era": "nt-life",
+    "emoji": "👧",
+    "title": "Jairus's Daughter",
+    "date": "c. AD 28",
+    "location": "Capernaum",
+    "connections": [
+      {
+        "title": "The Shunammite Woman's Faith",
+        "storyId": "shunammite",
+        "reference": "2 Kings 4:35",
+        "why": "Long before, God raised a child to life through Elisha, and now Jesus does the same for a desperate father's daughter."
+      },
+      {
+        "title": "Come Out",
+        "storyId": "lazarus",
+        "reference": "John 11:43",
+        "why": "Just as Jesus calls Lazarus from the tomb, here he gently takes a little girl by the hand and brings her back to life."
+      },
+      {
+        "title": "Through the Roof",
+        "storyId": "paralytic",
+        "reference": "Mark 5:36",
+        "why": "Jesus tells Jairus, do not be afraid, just believe, the same trusting faith that brought the paralyzed man to him."
+      }
+    ],
+    "tier1": {
+      "book": "Mark 5",
+      "hook": "A father pushed through the crowd and fell at Jesus' feet. His little girl was dying, and Jesus was her only hope. Then came the worst news of all: she was already gone.",
+      "story": [
+        "A man named Jairus was an important leader in his town, but that day he came to Jesus as a frightened, desperate father. He fell down at Jesus' feet and begged him, \"My little daughter is dying. Please come and place your hands on her, so that she will live.\" His girl was only twelve years old.",
+        "So Jesus went with him. But the crowd was so thick, pressing in on every side, that they could only move slowly. And Jairus must have been frantic with worry, knowing every moment counted.",
+        "Then, before they could reach the house, some people came with the news every parent dreads. \"Your daughter is dead,\" they said. \"There is no point in bothering the teacher anymore.\" It seemed like all hope was gone.",
+        "But Jesus heard them, and he turned to Jairus. \"Do not be afraid,\" he said. \"Just believe.\" Jesus asked him to keep trusting, even when everything looked hopeless.",
+        "When they reached the house, it was full of people weeping and wailing in grief. Jesus said to them, \"Why all this crying? The child is not dead but asleep.\" And they laughed at him, sure that he did not understand.",
+        "But Jesus sent them all outside. He took the girl's mother and father and three of his disciples, and went in to where the child lay. Then he took her by the hand and said gently, \"Little girl, I say to you, get up.\"",
+        "And at once the little girl stood up and began to walk around! Her parents were absolutely overwhelmed with amazement and joy. And Jesus, so tender and practical, told them to give her something to eat. The same Jesus who has power over death also cared that a little girl was hungry."
+      ],
+      "devotional": {
+        "bigIdea": "When the news came that the girl had died, it seemed there was no more hope. But Jesus said, do not be afraid, just believe. Jesus has power even over death, and he is gentle and caring with us. Even when a situation looks completely hopeless, it is never hopeless with him.",
+        "questions": [
+          "Jairus was told to stop bothering Jesus because it was too late. When have you felt like a situation was hopeless?",
+          "Jesus said, do not be afraid, just believe. What helps you keep trusting God when things look scary?",
+          "Jesus made sure the little girl got something to eat. What does that small detail show you about how Jesus cares for us?"
+        ]
+      },
+      "tags": [
+        "faith",
+        "hope",
+        "Jesus' power",
+        "do not fear",
+        "healing"
+      ],
+      "quiz": [
+        {
+          "question": "What did Jairus beg Jesus to do?",
+          "options": [
+            "Come heal his dying daughter",
+            "Lend him money",
+            "Teach in his town"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What terrible news came while they were on the way?",
+          "options": [
+            "The girl had died",
+            "Jesus was needed elsewhere",
+            "A storm was coming"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Jesus tell Jairus?",
+          "options": [
+            "Do not be afraid, just believe",
+            "Go home",
+            "It is too late"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Jesus say and do for the girl?",
+          "options": [
+            "Took her hand and said, little girl, get up",
+            "Sang to her",
+            "Left her sleeping"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What kind thing did Jesus do after she got up?",
+          "options": [
+            "Told them to give her something to eat",
+            "Left right away",
+            "Asked for payment"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ]
+    },
+    "tier2": {
+      "book": "Mark 5",
+      "hook": "A worried dad begged Jesus to help his very sick little girl. Then sad news came: she had died. But Jesus said, do not be afraid.",
+      "story": [
+        "A man named Jairus came running to Jesus. He fell down at Jesus' feet.",
+        "\"My little girl is so sick,\" he begged. \"Please come and help her!\" His daughter was twelve years old.",
+        "So Jesus went with Jairus. But the crowd was so big that they could only walk slowly.",
+        "Before they got there, some people came with very sad news. \"Your daughter has died,\" they said. \"Do not bother the teacher anymore.\"",
+        "But Jesus said to Jairus, \"Do not be afraid. Just believe.\"",
+        "When they got to the house, everyone was crying. Jesus said, \"The little girl is only sleeping.\" But the people laughed at him.",
+        "Jesus took the girl's mom and dad and his closest friends into the room.",
+        "Then Jesus gently took the little girl's hand and said, \"Little girl, get up.\"",
+        "And right away, the girl stood up and walked around! Her mom and dad were so happy and amazed.",
+        "Then Jesus kindly said, \"Give her something to eat.\" Jesus is powerful, and he is gentle and caring too."
+      ],
+      "devotional": {
+        "bigIdea": "When it seemed too late, Jesus said, do not be afraid, just believe. Jesus is powerful even over death, and he is gentle and kind. Nothing is ever hopeless with Jesus.",
+        "questions": [
+          "Jesus said, do not be afraid. What helps you feel brave when you are scared?",
+          "Jesus made the little girl well. What do you want to thank Jesus for?",
+          "Jesus said to give her food. What does that show about how kind Jesus is?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "faith",
+        "hope",
+        "Jesus' power"
+      ],
+      "quiz": [
+        {
+          "question": "What did Jairus ask Jesus to do?",
+          "options": [
+            "Help his sick little girl",
+            "Build a house",
+            "Tell a story"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Jesus tell Jairus when sad news came?",
+          "options": [
+            "Do not be afraid, just believe",
+            "Go home",
+            "Too late"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What happened when Jesus took the girl's hand?",
+          "options": [
+            "She got up and walked",
+            "She slept",
+            "Nothing"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ]
+    }
+  },
+  {
+    "id": "ten-lepers",
+    "era": "nt-life",
+    "emoji": "🙏",
+    "title": "The One Who Said Thank You",
+    "date": "c. AD 30",
+    "location": "Between Samaria and Galilee",
+    "connections": [
+      {
+        "title": "Naaman and the Servant Girl",
+        "storyId": "naaman",
+        "reference": "Luke 17:16",
+        "why": "Like Naaman, who was healed of leprosy and turned to thank God, one healed man here returns with a grateful heart, and he too is a foreigner."
+      },
+      {
+        "title": "Blind Bartimaeus",
+        "storyId": "bartimaeus",
+        "reference": "Luke 17:13",
+        "why": "Like Bartimaeus, these men cry out from a distance, Jesus, have mercy on us, and Jesus answers their cry."
+      },
+      {
+        "title": "Mary and Martha",
+        "storyId": "mary-martha",
+        "reference": "Luke 10:39",
+        "why": "Both stories ask what really matters most: not just being busy or healed, but turning back to be with Jesus."
+      }
+    ],
+    "tier1": {
+      "book": "Luke 17",
+      "hook": "Ten men were healed of a terrible disease on the very same day. All ten got their lives back. But only one of them remembered to come back and say thank you.",
+      "story": [
+        "As Jesus was traveling toward Jerusalem, he came to a village where ten men with leprosy stood waiting. Leprosy was a dreadful disease, and those who had it were forced to live apart from everyone else, away from their families and friends. They were lonely and outcast.",
+        "Because they were not allowed to come close, the ten men stood at a distance and called out together as loudly as they could, \"Jesus, Master, have mercy on us!\"",
+        "When Jesus saw them, he said, \"Go and show yourselves to the priests.\" In those days, only a priest could declare that someone was healed and could go home. So Jesus was telling them to go before anything had even happened, asking them to trust him.",
+        "And the ten men went. They obeyed and started off down the road, and as they walked, their skin became clean and whole. Every one of them was completely healed! Can you imagine their joy as they looked at their hands and saw the disease was gone?",
+        "All ten of them hurried off to start their new lives. But one of them stopped. When he saw that he was healed, he turned around and came running back to Jesus, praising God at the top of his voice. He threw himself down at Jesus' feet and thanked him, again and again. And this man was a Samaritan, a foreigner that many Jews looked down on.",
+        "Jesus looked at him and asked, \"Were not all ten healed? Where are the other nine? Was no one found to return and give praise to God except this foreigner?\"",
+        "Then Jesus said to the man, \"Rise and go. Your faith has made you well.\" All ten received the gift, but only one came back to say thank you. And it was the one no one expected. Jesus noticed, and he was glad for the grateful heart."
+      ],
+      "devotional": {
+        "bigIdea": "All ten men were healed, but only one came back to say thank you. God pours out good gifts on us every single day. The question is whether we will be like the nine who hurried off and forgot, or like the one who turned around to give thanks.",
+        "questions": [
+          "All ten were healed, but only one said thank you. Why do you think it is so easy to forget to be thankful?",
+          "The grateful man was the one nobody expected. What does that teach us about who notices God's goodness?",
+          "What are some good gifts from God that you can thank him for right now?"
+        ]
+      },
+      "tags": [
+        "thankfulness",
+        "gratitude",
+        "healing",
+        "faith",
+        "Jesus"
+      ],
+      "quiz": [
+        {
+          "question": "How many men with leprosy called out to Jesus?",
+          "options": [
+            "Ten",
+            "Two",
+            "Fifty"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Jesus tell them to do?",
+          "options": [
+            "Go show themselves to the priests",
+            "Wash in a river",
+            "Wait three days"
+          ],
+          "answer": 0,
+          "explanation": "They were healed as they obeyed and went."
+        },
+        {
+          "question": "How many came back to say thank you?",
+          "options": [
+            "Only one",
+            "All ten",
+            "None"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What was surprising about the thankful man?",
+          "options": [
+            "He was a foreigner that others looked down on",
+            "He was a king",
+            "He was a priest"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What is the lesson of this story?",
+          "options": [
+            "Remember to be thankful for God's gifts",
+            "Doctors are important",
+            "Always travel in groups"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ]
+    },
+    "tier2": {
+      "book": "Luke 17",
+      "hook": "Ten sick men were all made well by Jesus on the same day. But only one of them remembered to come back and say thank you!",
+      "story": [
+        "One day, Jesus came near a village where ten men with a bad skin sickness were waiting.",
+        "These men had to live far away from everyone else. They were lonely and sad.",
+        "From far away, they called out together, \"Jesus, please have mercy on us!\"",
+        "Jesus told them, \"Go and show yourselves to the priests.\" So the ten men started walking, trusting Jesus.",
+        "And as they walked, an amazing thing happened. Their sickness went away! All ten of them were completely well!",
+        "Nine of the men hurried off, so excited to start their new lives.",
+        "But one man stopped. He turned around and ran back to Jesus, shouting happy praises to God.",
+        "He fell down at Jesus' feet and said thank you, again and again.",
+        "Jesus asked, \"Weren't ten men healed? Where are the other nine? Only one came back to say thank you.\"",
+        "All ten got better, but only one remembered to say thank you. Let's always remember to thank God for his good gifts!"
+      ],
+      "devotional": {
+        "bigIdea": "Ten men were healed, but only one came back to say thank you. God gives us so many good gifts. Let's always remember to thank him.",
+        "questions": [
+          "Why do you think it is easy to forget to say thank you?",
+          "What are some things you can thank God for today?",
+          "How can you remember to be thankful every day?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "thankfulness",
+        "gratitude",
+        "healing"
+      ],
+      "quiz": [
+        {
+          "question": "How many men did Jesus make well?",
+          "options": [
+            "Ten",
+            "One",
+            "Three"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How many came back to say thank you?",
+          "options": [
+            "Only one",
+            "All of them",
+            "None"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What should we always remember to do?",
+          "options": [
+            "Thank God for his gifts",
+            "Run fast",
+            "Stay quiet"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ]
+    }
+  },
+  {
+    "id": "blesses-children",
+    "era": "nt-life",
+    "emoji": "🧒",
+    "title": "Let the Children Come",
+    "date": "c. AD 30",
+    "location": "Judea",
+    "connections": [
+      {
+        "title": "Jairus's Daughter",
+        "storyId": "jairus",
+        "reference": "Mark 10:16",
+        "why": "Jesus shows again how much he loves children, taking them in his arms just as he took a little girl by the hand."
+      },
+      {
+        "title": "The Lost Sheep",
+        "storyId": "lost-sheep",
+        "reference": "Matthew 18:14",
+        "why": "Just as the shepherd treasures one little sheep, Jesus makes clear that not one child is unimportant to him."
+      },
+      {
+        "title": "The Tiny Mustard Seed",
+        "storyId": "mustard-seed",
+        "reference": "Mark 10:15",
+        "why": "Jesus says we must receive God's kingdom like a little child, with the same simple, trusting faith."
+      }
+    ],
+    "tier1": {
+      "book": "Mark 10",
+      "hook": "Parents were bringing their little children to Jesus, but the disciples tried to shoo them away. Jesus stopped them with words that changed everything.",
+      "story": [
+        "Wherever Jesus went, people wanted to be near him. One day, parents began bringing their little children to Jesus, hoping he would place his hands on them and bless them. Mothers and fathers carried their babies and led their toddlers toward him.",
+        "But the disciples did not like this. They thought Jesus was far too busy and important for little children. He had grown-ups to teach and great things to do. So they tried to send the families away, scolding them and telling them not to bother the teacher.",
+        "When Jesus saw what his disciples were doing, he was upset with them. \"Let the little children come to me,\" he said firmly, \"and do not stop them! For the kingdom of God belongs to such as these.\"",
+        "The disciples had it exactly backward. They thought children were not important enough for Jesus. But Jesus said the kingdom of God belongs to children like them.",
+        "Then Jesus said something even more surprising. \"I tell you the truth, anyone who will not receive the kingdom of God like a little child will never enter it.\" He was not just making room for children. He was saying that grown-ups need to come to God the way children do: simply, trustingly, with open arms.",
+        "And then Jesus did exactly what the parents had hoped. He took the children up into his arms, one by one, placed his hands on them, and blessed them. He was never too busy or too important. He had time for every single child.",
+        "Jesus loves children. He always has. You are never too small, too young, or too unimportant for Jesus. He says to you the very same thing: come to me."
+      ],
+      "devotional": {
+        "bigIdea": "The disciples thought children were not important enough for Jesus, but Jesus said the kingdom of God belongs to them, and that everyone must come to God like a child. You are never too small or unimportant for Jesus. He always has time, and his arms are always open to you.",
+        "questions": [
+          "The disciples tried to keep the children away, but Jesus welcomed them. How does it feel to know Jesus always has time for you?",
+          "Jesus said we must come to God like a little child. What do you think it means to trust God the way a child trusts?",
+          "Jesus took the children in his arms and blessed them. What would you want to say to Jesus if you climbed up beside him?"
+        ]
+      },
+      "tags": [
+        "children",
+        "Jesus' love",
+        "childlike faith",
+        "the kingdom",
+        "welcome"
+      ],
+      "quiz": [
+        {
+          "question": "Why were parents bringing their children to Jesus?",
+          "options": [
+            "So he would bless them",
+            "To sell them things",
+            "To learn to fish"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the disciples try to do?",
+          "options": [
+            "Send the children away",
+            "Help the children",
+            "Feed the children"
+          ],
+          "answer": 0,
+          "explanation": "They thought Jesus was too busy for children."
+        },
+        {
+          "question": "What did Jesus say?",
+          "options": [
+            "Let the little children come to me",
+            "Send them home",
+            "Come back tomorrow"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How did Jesus say we must come to God?",
+          "options": [
+            "Like a little child",
+            "Like a king",
+            "Like a soldier"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Jesus do with the children?",
+          "options": [
+            "Took them in his arms and blessed them",
+            "Ignored them",
+            "Sent them to the disciples"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ]
+    },
+    "tier2": {
+      "book": "Mark 10",
+      "hook": "Parents brought their little children to Jesus. When the disciples tried to send them away, Jesus said, let them come to me!",
+      "story": [
+        "Everywhere Jesus went, people wanted to be near him.",
+        "One day, parents started bringing their little children to Jesus. They wanted Jesus to put his hands on them and bless them.",
+        "But the disciples tried to shoo the children away. They thought Jesus was too busy and important for little kids.",
+        "When Jesus saw this, he was not happy with the disciples.",
+        "\"Let the little children come to me,\" Jesus said. \"Do not stop them!\"",
+        "\"God's kingdom belongs to children just like these,\" Jesus said.",
+        "Then he said something surprising: everyone must come to God simply and trustingly, the way a little child does.",
+        "Then Jesus took the children up in his arms, one by one. He put his hands on them and blessed them.",
+        "Jesus was never too busy for the children. He had time for every single one.",
+        "Jesus loves children, and that means he loves you! You are never too small for Jesus. He says, come to me!"
+      ],
+      "devotional": {
+        "bigIdea": "The disciples thought Jesus was too busy for children, but Jesus welcomed them with open arms. You are never too small for Jesus. He always has time for you.",
+        "questions": [
+          "Jesus always has time for you. How does that make you feel?",
+          "Jesus took the children in his arms. What would you tell Jesus if you sat next to him?",
+          "Jesus loves children. How can you show Jesus' love to other kids?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "children",
+        "Jesus' love",
+        "welcome"
+      ],
+      "quiz": [
+        {
+          "question": "What did the disciples try to do with the children?",
+          "options": [
+            "Send them away",
+            "Teach them",
+            "Feed them"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Jesus say?",
+          "options": [
+            "Let the little children come to me",
+            "Send them home",
+            "Be quiet"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Jesus do with the children?",
+          "options": [
+            "Held them and blessed them",
+            "Ignored them",
+            "Walked away"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ]
+    }
+  },
+  {
+    "id": "mary-martha",
+    "era": "nt-life",
+    "emoji": "🏡",
+    "title": "Mary and Martha",
+    "date": "c. AD 29",
+    "location": "Bethany",
+    "connections": [
+      {
+        "title": "Come Out",
+        "storyId": "lazarus",
+        "reference": "John 11:1",
+        "why": "Mary and Martha are the sisters of Lazarus, the friend Jesus would later raise from the dead in this same town of Bethany."
+      },
+      {
+        "title": "The Farmer and the Seeds",
+        "storyId": "sower",
+        "reference": "Luke 8:14",
+        "why": "Martha's worries threaten to crowd out time with Jesus, just like the thorns that choke the seed in the parable of the sower."
+      },
+      {
+        "title": "Let the Children Come",
+        "storyId": "blesses-children",
+        "reference": "Luke 10:39",
+        "why": "Mary simply sits at Jesus' feet to be near him, the same trusting, childlike way Jesus welcomes everyone to come to him."
+      }
+    ],
+    "tier1": {
+      "book": "Luke 10",
+      "hook": "Jesus came to visit two sisters. One rushed around the kitchen trying to make everything perfect. The other simply sat down at his feet. And Jesus said the one sitting down had chosen better.",
+      "story": [
+        "Jesus came to a village called Bethany, where two sisters named Martha and Mary lived. Martha opened her home and welcomed Jesus inside, glad to have him as her guest.",
+        "Martha wanted everything to be just right. There was so much to do, a meal to cook, a house to tidy, guests to care for. So she bustled about, busy and working hard to make the visit perfect for Jesus.",
+        "But her sister Mary did something different. Mary came and sat down at Jesus' feet, and she just listened to every word he said. While Martha rushed around, Mary stayed close to Jesus, drinking in his teaching.",
+        "This bothered Martha more and more. She was doing all the work while her sister just sat there! Finally she came to Jesus, a little frustrated, and said, \"Lord, don't you care that my sister has left me to do all the work by myself? Tell her to come and help me!\"",
+        "Jesus answered her gently and with great love. \"Martha, Martha,\" he said, repeating her name kindly, \"you are worried and upset about so many things.\"",
+        "\"But really only one thing is needed,\" Jesus told her. \"Mary has chosen what is better, and it will not be taken away from her.\" Martha was not wrong to work hard or to want to be a good host. But in all her busyness, she had let the most important thing slip away: simply being with Jesus.",
+        "Jesus was not scolding Martha for caring. He was inviting her to stop, to put down her worries for a moment, and to come sit with him too. There is a time for working hard. But nothing, not even a long list of good things to do, is more important than spending time with Jesus."
+      ],
+      "devotional": {
+        "bigIdea": "Martha was so busy doing things for Jesus that she missed being with Jesus. He gently reminded her that only one thing is truly needed. It is good to work hard, but nothing matters more than stopping to spend time with him. Being with Jesus comes first.",
+        "questions": [
+          "Martha was busy with many good things, but she missed sitting with Jesus. What things keep you so busy that you forget to spend time with God?",
+          "Mary chose to sit and listen to Jesus. What are some ways you can sit and listen to God?",
+          "Jesus said being with him was the most important thing. How could you make more time just to be with Jesus?"
+        ]
+      },
+      "tags": [
+        "being with Jesus",
+        "busyness",
+        "listening",
+        "priorities",
+        "worship"
+      ],
+      "quiz": [
+        {
+          "question": "What was Martha busy doing?",
+          "options": [
+            "Working hard to prepare everything",
+            "Sleeping",
+            "Fishing"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Mary do instead?",
+          "options": [
+            "Sat at Jesus' feet and listened",
+            "Went outside",
+            "Cooked dinner"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Martha ask Jesus to do?",
+          "options": [
+            "Tell Mary to help her",
+            "Stay for dinner",
+            "Leave"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Jesus say was needed?",
+          "options": [
+            "Really only one thing, being with him",
+            "More food",
+            "A bigger house"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What is the lesson of this story?",
+          "options": [
+            "Nothing matters more than spending time with Jesus",
+            "Always cook a big meal",
+            "Never have guests"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ]
+    },
+    "tier2": {
+      "book": "Luke 10",
+      "hook": "Jesus visited two sisters. One sister stayed busy in the kitchen. The other sat down to be near Jesus, and Jesus said she chose the better thing.",
+      "story": [
+        "Jesus came to visit two sisters named Martha and Mary in their town.",
+        "Martha was happy to have Jesus over. She wanted everything to be perfect.",
+        "So Martha got very busy. She cooked and cleaned and worked hard to get everything ready.",
+        "But her sister Mary did something different. Mary sat down at Jesus' feet and listened to everything he said.",
+        "This made Martha upset. She was doing all the work while Mary just sat there!",
+        "Martha came to Jesus and said, \"Lord, don't you care that my sister left me to do all the work alone? Tell her to help me!\"",
+        "Jesus answered kindly, \"Martha, Martha, you are worried about so many things.\"",
+        "\"But really only one thing matters most,\" Jesus said. \"Mary chose the better thing, sitting with me.\"",
+        "Martha was not wrong to work hard. But she had forgotten the most important thing: being with Jesus.",
+        "It is good to be helpful. But nothing is more important than spending time with Jesus."
+      ],
+      "devotional": {
+        "bigIdea": "Martha was so busy that she missed sitting with Jesus. Mary chose to be with him, and Jesus said that was best. Nothing is more important than spending time with Jesus.",
+        "questions": [
+          "What keeps you so busy that you forget to spend time with God?",
+          "Mary sat and listened to Jesus. How can you listen to God?",
+          "How could you make time just to be with Jesus?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "being with Jesus",
+        "listening",
+        "worship"
+      ],
+      "quiz": [
+        {
+          "question": "What was Martha busy doing?",
+          "options": [
+            "Working hard to get ready",
+            "Sleeping",
+            "Playing"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Mary do?",
+          "options": [
+            "Sat with Jesus and listened",
+            "Went home",
+            "Cooked"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Jesus say matters most?",
+          "options": [
+            "Spending time with him",
+            "Cooking a big meal",
+            "Cleaning the house"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ]
+    }
+  }
+]

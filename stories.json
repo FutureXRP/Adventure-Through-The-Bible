@@ -3,7 +3,7 @@
     "title": "The Story Map",
     "subtitle": "An Adventure Through the Bible",
     "version": "1.0",
-    "totalStories": 83,
+    "totalStories": 93,
     "freeStories": 3
   },
   "eras": [
@@ -7366,9 +7366,119 @@
       "published_date": "2026-06-03"
     },
     {
-      "id": "woman-at-well",
+      "id": "mustard-seed",
       "era": "nt-life",
       "order": 66,
+      "access": "premium",
+      "emoji": "🌳",
+      "title": "The Tiny Mustard Seed",
+      "book": "Matthew 13",
+      "date": "c. AD 28",
+      "location": "Galilee",
+      "hook": "Jesus said the kingdom of God is like the smallest seed a farmer could plant. It seems like nothing at all, until you see what it becomes.",
+      "story": [
+        "One day Jesus wanted to help people understand what God's kingdom is like. So he told them a very short story about a very small seed.",
+        "\"The kingdom of heaven,\" Jesus said, \"is like a tiny mustard seed that a man planted in his field.\"",
+        "Now a mustard seed is one of the smallest seeds of all. You could hold a hundred of them in the palm of your hand. If you dropped one on the ground, you might not even be able to find it again. It looks like nothing important at all.",
+        "\"But when that little seed is planted and begins to grow,\" Jesus went on, \"it becomes the biggest plant in the garden. It grows into a tree so large that the birds of the air come and make their nests in its branches.\"",
+        "The smallest seed imaginable becomes a tree big enough to shelter the birds. That is what God's kingdom is like.",
+        "It often starts in ways that look tiny and unimportant. A baby born in a stable. Twelve ordinary followers. One small act of love. A quiet prayer. But God takes those small beginnings and grows them into something far bigger and more beautiful than anyone could imagine.",
+        "So we never have to think that we are too small, or that what we do for God is too little to matter. In God's hands, even the tiniest seed of faith can grow into something wonderful."
+      ],
+      "devotional": {
+        "bigIdea": "God loves to start with small things. A tiny seed becomes a great tree. Twelve followers became a worldwide family. We never have to feel too small or think our little acts of love do not matter, because in God's hands, small beginnings grow into amazing things.",
+        "questions": [
+          "The mustard seed looked too small to matter, but it grew into a tree. When have you seen something small grow into something big?",
+          "Jesus said God's kingdom starts small and grows. What is one small thing you could do for God this week?",
+          "Why do you think God so often chooses to start with small, humble things?"
+        ]
+      },
+      "tags": [
+        "the kingdom",
+        "faith",
+        "small beginnings",
+        "parables",
+        "growing"
+      ],
+      "connections": [
+        {
+          "title": "The Farmer and the Seeds",
+          "storyId": "sower",
+          "reference": "Matthew 13:31",
+          "why": "Another of Jesus' seed parables, teaching that God's kingdom grows in ways we do not always see."
+        },
+        {
+          "title": "Five Loaves and Two Fish",
+          "storyId": "feeding-5000",
+          "reference": "Matthew 13:33",
+          "why": "Like a few loaves feeding thousands, the smallest beginning in God's hands becomes something far greater than we expect."
+        },
+        {
+          "title": "The Day Everything Changed",
+          "storyId": "pentecost",
+          "reference": "Acts 1:8",
+          "why": "Jesus' kingdom began with a tiny handful of followers and grew, just like the mustard seed, into something that filled the world."
+        }
+      ],
+      "audio": "./audio/mustard-seed.mp3",
+      "quiz": [
+        {
+          "question": "What did Jesus say the kingdom of heaven is like?",
+          "options": [
+            "A tiny mustard seed",
+            "A big mountain",
+            "A pile of gold"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How big is a mustard seed?",
+          "options": [
+            "One of the smallest seeds of all",
+            "As big as an apple",
+            "As big as a rock"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What does the tiny seed grow into?",
+          "options": [
+            "A tree big enough for birds to nest in",
+            "A small weed",
+            "Nothing"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What does this parable teach us?",
+          "options": [
+            "God grows small beginnings into something great",
+            "Big seeds are best",
+            "Gardening is hard"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How should this make us feel about small acts of love?",
+          "options": [
+            "They matter, because God can grow them",
+            "They are a waste of time",
+            "Only big things count"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "woman-at-well",
+      "era": "nt-life",
+      "order": 67,
       "access": "premium",
       "emoji": "🪣",
       "title": "The Woman at the Well",
@@ -7482,9 +7592,229 @@
       "published_date": "2026-06-03"
     },
     {
+      "id": "paralytic",
+      "era": "nt-life",
+      "order": 68,
+      "access": "premium",
+      "emoji": "🛏️",
+      "title": "Through the Roof",
+      "book": "Mark 2",
+      "date": "c. AD 28",
+      "location": "Capernaum",
+      "hook": "Four friends were determined to get their paralyzed friend to Jesus. When they found the house too packed to enter, they did the only thing they could think of: they went through the roof.",
+      "story": [
+        "Jesus was teaching inside a house in Capernaum, and so many people had crowded in that there was not an inch of room left, not even outside the door. People were packed in shoulder to shoulder to hear him.",
+        "Now there was a man in that town who could not walk. He had four good friends who believed that if they could just get him to Jesus, Jesus could help. So they carried him on his mat all the way to the house, only to find they could not get anywhere near the door.",
+        "But these friends would not give up. They carried their friend up the outside stairs to the flat roof. Then they began to dig, pulling apart the roof right above where Jesus was teaching, until they had made a hole big enough. And carefully, with ropes, they lowered their friend down on his mat, right in front of Jesus.",
+        "When Jesus saw their faith, the bold, stubborn, loving faith of those four friends, he was pleased. He looked at the man on the mat and said something surprising. \"Son, your sins are forgiven.\"",
+        "Some of the religious teachers sitting there were upset. \"Who does he think he is?\" they thought. \"Only God can forgive sins!\" And they were right that only God can forgive sins. They just did not understand who Jesus was.",
+        "Jesus knew their thoughts. \"Which is easier,\" he asked, \"to say your sins are forgiven, or to say get up and walk? But so that you will know I have the authority to forgive sins...\" He turned to the man and said, \"Get up, take your mat, and go home.\"",
+        "At once the man stood up, picked up the very mat he had been carried in on, and walked out through the amazed crowd. Everyone was stunned, praising God and saying, \"We have never seen anything like this!\" Jesus had shown that he could heal a body, and even more, that he had the power of God to forgive."
+      ],
+      "devotional": {
+        "bigIdea": "Four friends would not let anything, not even a roof, keep their friend from Jesus. And Jesus gave the man something even greater than the ability to walk: he forgave his sins, showing that he has the very power of God. Good friends bring each other to Jesus, and Jesus heals us inside and out.",
+        "questions": [
+          "The four friends went to great lengths to get their friend to Jesus. How can you help bring your friends closer to Jesus?",
+          "Jesus forgave the man's sins before he healed his legs. Why do you think Jesus cared about that even more?",
+          "The man had to get up and walk when Jesus told him to. When has trusting Jesus meant actually doing something?"
+        ]
+      },
+      "tags": [
+        "friendship",
+        "faith",
+        "forgiveness",
+        "healing",
+        "Jesus"
+      ],
+      "connections": [
+        {
+          "title": "Jesus Heals Blind Bartimaeus",
+          "storyId": "bartimaeus",
+          "reference": "Mark 10:52",
+          "why": "Another time Jesus heals someone whose faith would not be stopped, no matter what stood in the way."
+        },
+        {
+          "title": "Jairus's Daughter",
+          "storyId": "jairus",
+          "reference": "Mark 5:23",
+          "why": "Like Jairus, these friends are sure that if they can just get to Jesus, everything will change, and they are right."
+        },
+        {
+          "title": "Jesus Calms the Storm",
+          "storyId": "calm-storm",
+          "reference": "Mark 2:10",
+          "why": "Just as Jesus shows his power over the storm, here he shows his authority to do what only God can do, forgive sins."
+        }
+      ],
+      "audio": "./audio/paralytic.mp3",
+      "quiz": [
+        {
+          "question": "Why couldn't the friends get their friend to Jesus the normal way?",
+          "options": [
+            "The house was too crowded",
+            "It was locked",
+            "It was night"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How did the four friends get their friend to Jesus?",
+          "options": [
+            "They lowered him through the roof",
+            "They waited a week",
+            "They gave up"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Jesus say to the man first?",
+          "options": [
+            "Your sins are forgiven",
+            "Go away",
+            "Pay me first"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Why were the teachers upset?",
+          "options": [
+            "They thought only God could forgive sins",
+            "It was too loud",
+            "The roof was broken"
+          ],
+          "answer": 0,
+          "explanation": "They did not understand that Jesus is God."
+        },
+        {
+          "question": "What did the healed man do?",
+          "options": [
+            "Got up, took his mat, and walked home",
+            "Stayed on his mat",
+            "Ran and hid"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "calm-storm",
+      "era": "nt-life",
+      "order": 69,
+      "access": "premium",
+      "emoji": "⛵",
+      "title": "Jesus Calms the Storm",
+      "book": "Mark 4",
+      "date": "c. AD 28",
+      "location": "The Sea of Galilee",
+      "hook": "A furious storm slammed into the little boat, and the disciples were sure they were going to drown. And there, in the back of the boat, Jesus was fast asleep.",
+      "story": [
+        "It had been a long day of teaching, and as evening came, Jesus said to his disciples, \"Let us cross over to the other side of the lake.\" So they set off in their boat across the Sea of Galilee, with Jesus among them.",
+        "Jesus was so tired that he lay down in the back of the boat, put his head on a cushion, and fell fast asleep.",
+        "Then, without warning, a fierce storm swept down on the lake. The wind howled, and the waves grew higher and higher, crashing over the sides of the boat. Water poured in, and the little boat began to fill up. Even the disciples, who were experienced fishermen, were terrified.",
+        "But through all of it, Jesus kept sleeping peacefully in the back. The disciples could not believe it. They shook him awake, crying out, \"Teacher! Don't you care that we are about to drown?\"",
+        "Jesus stood up in the rocking boat. He spoke to the wind, and he said to the raging waves, \"Quiet! Be still!\" And in an instant, the wind died down, and the water became completely calm. The storm was simply gone, as if it had never been there at all.",
+        "Then Jesus turned to his friends. \"Why are you so afraid?\" he asked them gently. \"Do you still have no faith?\" He was not angry, but he wanted them to learn to trust him, even in the storm.",
+        "The disciples were filled with awe, and they whispered to one another, \"Who is this? Even the wind and the waves obey him!\" They were beginning to understand the answer. The one asleep in their boat was the very One who made the wind and the sea in the beginning. And he was right there with them, in the storm, the whole time."
+      ],
+      "devotional": {
+        "bigIdea": "The disciples thought they were all alone against the storm, but Jesus was in the boat the whole time, and the wind and waves obeyed his voice. When the storms of life crash over us, we are never alone. The One who made the sea is with us, and we can trust him.",
+        "questions": [
+          "The disciples were terrified, but Jesus was peacefully asleep. What do you think made the difference between his peace and their fear?",
+          "Jesus was in the boat the whole time. When you feel scared, what helps you remember that God is with you?",
+          "The wind and waves obeyed Jesus instantly. What does that show you about how powerful Jesus is?"
+        ]
+      },
+      "tags": [
+        "fear",
+        "faith",
+        "Jesus' power",
+        "trust",
+        "storms"
+      ],
+      "connections": [
+        {
+          "title": "Stepping Out",
+          "storyId": "walk-on-water",
+          "reference": "Matthew 14:25",
+          "why": "Another night on the same lake where Jesus shows that the wind and waves are no match for him."
+        },
+        {
+          "title": "Come, Follow Me",
+          "storyId": "call-disciples",
+          "reference": "Mark 1:17",
+          "why": "The frightened men in the boat are the fishermen Jesus called, learning that the one they followed has power over creation itself."
+        },
+        {
+          "title": "In the Beginning",
+          "storyId": "creation",
+          "reference": "Mark 4:41",
+          "why": "The disciples ask, who is this that even the wind and waves obey him? The answer is the very One who made the sea in the beginning."
+        }
+      ],
+      "audio": "./audio/calm-storm.mp3",
+      "quiz": [
+        {
+          "question": "What was Jesus doing when the storm hit?",
+          "options": [
+            "Sleeping in the back of the boat",
+            "Fishing",
+            "Swimming"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Why were the disciples so afraid?",
+          "options": [
+            "The storm was filling the boat with water",
+            "It was dark",
+            "They were lost"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Jesus say to the wind and waves?",
+          "options": [
+            "Quiet! Be still!",
+            "Go faster!",
+            "Goodbye!"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What happened after Jesus spoke?",
+          "options": [
+            "The storm stopped and it was completely calm",
+            "It got worse",
+            "Nothing"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the disciples learn about Jesus?",
+          "options": [
+            "Even the wind and waves obey him",
+            "He was a good sailor",
+            "He liked storms"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
       "id": "feeding-5000",
       "era": "nt-life",
-      "order": 67,
+      "order": 70,
       "access": "premium",
       "emoji": "🐟",
       "title": "Five Loaves and Two Fish",
@@ -7600,7 +7930,7 @@
     {
       "id": "walk-on-water",
       "era": "nt-life",
-      "order": 68,
+      "order": 71,
       "access": "premium",
       "emoji": "🌊",
       "title": "Stepping Out",
@@ -7714,9 +8044,339 @@
       "published_date": "2026-06-03"
     },
     {
+      "id": "bartimaeus",
+      "era": "nt-life",
+      "order": 72,
+      "access": "premium",
+      "emoji": "👁️",
+      "title": "Blind Bartimaeus",
+      "book": "Mark 10",
+      "date": "c. AD 30",
+      "location": "Jericho",
+      "hook": "A blind beggar sat by the road, and when he heard Jesus was passing by, he refused to be silenced. He shouted, and shouted louder, until the whole crowd stopped.",
+      "story": [
+        "As Jesus was leaving the city of Jericho, a huge crowd followed him. Beside the road sat a blind beggar named Bartimaeus. He could not work or see, and he spent his days asking passersby for help.",
+        "When Bartimaeus heard that it was Jesus of Nazareth going by, his heart leaped. He began to shout at the top of his voice, \"Jesus, Son of David, have mercy on me!\"",
+        "Many in the crowd told him to be quiet. \"Hush! Stop making such a scene!\" But Bartimaeus would not be silenced. He only shouted all the louder, \"Son of David, have mercy on me!\" He was not going to let this chance slip past him.",
+        "Then Jesus stopped. In the middle of the great crowd, with everywhere to go and everyone wanting him, Jesus stood still and said, \"Call him here.\" The same people who had told Bartimaeus to be quiet now said, \"Cheer up! On your feet! He is calling you.\"",
+        "Bartimaeus threw off his cloak, jumped up, and came to Jesus. \"What do you want me to do for you?\" Jesus asked. \"Rabbi,\" he said, \"I want to see.\"",
+        "\"Go,\" said Jesus. \"Your faith has healed you.\" And immediately Bartimaeus could see! The first face his eyes ever rested on was the face of Jesus.",
+        "And then Bartimaeus did something wonderful. He did not run off to start his new life. He followed Jesus down the road. The man who once sat begging in the dark now walked in the light, right behind the One who had given him sight."
+      ],
+      "devotional": {
+        "bigIdea": "Everyone told Bartimaeus to be quiet, but he cried out to Jesus all the louder, and Jesus stopped just for him. No one is too small or too overlooked for Jesus to notice. When we call out to him, he hears, and he stops.",
+        "questions": [
+          "The crowd told Bartimaeus to be quiet, but he kept calling out. When is it hard to keep seeking Jesus even when others discourage you?",
+          "Jesus stopped everything for one blind beggar. How does it feel to know Jesus would stop for you?",
+          "After he was healed, Bartimaeus followed Jesus down the road. What do you think it looks like to follow Jesus after he helps you?"
+        ]
+      },
+      "tags": [
+        "faith",
+        "persistence",
+        "healing",
+        "Jesus cares",
+        "crying out"
+      ],
+      "connections": [
+        {
+          "title": "Through the Roof",
+          "storyId": "paralytic",
+          "reference": "Mark 10:52",
+          "why": "Like the four friends who would not give up, Bartimaeus refuses to let anything stop him from reaching Jesus."
+        },
+        {
+          "title": "Jairus's Daughter",
+          "storyId": "jairus",
+          "reference": "Mark 5:34",
+          "why": "Again Jesus tells someone, your faith has made you well, showing how he honors those who trust him."
+        },
+        {
+          "title": "The Man in the Tree",
+          "storyId": "zacchaeus",
+          "reference": "Luke 19:1",
+          "why": "In the very same town of Jericho, Jesus stops for another person the crowd ignored, showing he notices every overlooked soul."
+        }
+      ],
+      "audio": "./audio/bartimaeus.mp3",
+      "quiz": [
+        {
+          "question": "Who was sitting by the road in Jericho?",
+          "options": [
+            "A blind beggar named Bartimaeus",
+            "A king",
+            "A fisherman"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Bartimaeus do when he heard Jesus was near?",
+          "options": [
+            "He shouted for Jesus to have mercy on him",
+            "He stayed silent",
+            "He ran away"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the crowd tell him to do?",
+          "options": [
+            "Be quiet",
+            "Shout louder",
+            "Go home"
+          ],
+          "answer": 0,
+          "explanation": "But he only called out more loudly."
+        },
+        {
+          "question": "What did Bartimaeus ask Jesus for?",
+          "options": [
+            "To be able to see",
+            "Money",
+            "A new cloak"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Bartimaeus do after he was healed?",
+          "options": [
+            "He followed Jesus down the road",
+            "He went home",
+            "He hid"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "jairus",
+      "era": "nt-life",
+      "order": 73,
+      "access": "premium",
+      "emoji": "👧",
+      "title": "Jairus's Daughter",
+      "book": "Mark 5",
+      "date": "c. AD 28",
+      "location": "Capernaum",
+      "hook": "A father pushed through the crowd and fell at Jesus' feet. His little girl was dying, and Jesus was her only hope. Then came the worst news of all: she was already gone.",
+      "story": [
+        "A man named Jairus was an important leader in his town, but that day he came to Jesus as a frightened, desperate father. He fell down at Jesus' feet and begged him, \"My little daughter is dying. Please come and place your hands on her, so that she will live.\" His girl was only twelve years old.",
+        "So Jesus went with him. But the crowd was so thick, pressing in on every side, that they could only move slowly. And Jairus must have been frantic with worry, knowing every moment counted.",
+        "Then, before they could reach the house, some people came with the news every parent dreads. \"Your daughter is dead,\" they said. \"There is no point in bothering the teacher anymore.\" It seemed like all hope was gone.",
+        "But Jesus heard them, and he turned to Jairus. \"Do not be afraid,\" he said. \"Just believe.\" Jesus asked him to keep trusting, even when everything looked hopeless.",
+        "When they reached the house, it was full of people weeping and wailing in grief. Jesus said to them, \"Why all this crying? The child is not dead but asleep.\" And they laughed at him, sure that he did not understand.",
+        "But Jesus sent them all outside. He took the girl's mother and father and three of his disciples, and went in to where the child lay. Then he took her by the hand and said gently, \"Little girl, I say to you, get up.\"",
+        "And at once the little girl stood up and began to walk around! Her parents were absolutely overwhelmed with amazement and joy. And Jesus, so tender and practical, told them to give her something to eat. The same Jesus who has power over death also cared that a little girl was hungry."
+      ],
+      "devotional": {
+        "bigIdea": "When the news came that the girl had died, it seemed there was no more hope. But Jesus said, do not be afraid, just believe. Jesus has power even over death, and he is gentle and caring with us. Even when a situation looks completely hopeless, it is never hopeless with him.",
+        "questions": [
+          "Jairus was told to stop bothering Jesus because it was too late. When have you felt like a situation was hopeless?",
+          "Jesus said, do not be afraid, just believe. What helps you keep trusting God when things look scary?",
+          "Jesus made sure the little girl got something to eat. What does that small detail show you about how Jesus cares for us?"
+        ]
+      },
+      "tags": [
+        "faith",
+        "hope",
+        "Jesus' power",
+        "do not fear",
+        "healing"
+      ],
+      "connections": [
+        {
+          "title": "The Shunammite Woman's Faith",
+          "storyId": "shunammite",
+          "reference": "2 Kings 4:35",
+          "why": "Long before, God raised a child to life through Elisha, and now Jesus does the same for a desperate father's daughter."
+        },
+        {
+          "title": "Come Out",
+          "storyId": "lazarus",
+          "reference": "John 11:43",
+          "why": "Just as Jesus calls Lazarus from the tomb, here he gently takes a little girl by the hand and brings her back to life."
+        },
+        {
+          "title": "Through the Roof",
+          "storyId": "paralytic",
+          "reference": "Mark 5:36",
+          "why": "Jesus tells Jairus, do not be afraid, just believe, the same trusting faith that brought the paralyzed man to him."
+        }
+      ],
+      "audio": "./audio/jairus.mp3",
+      "quiz": [
+        {
+          "question": "What did Jairus beg Jesus to do?",
+          "options": [
+            "Come heal his dying daughter",
+            "Lend him money",
+            "Teach in his town"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What terrible news came while they were on the way?",
+          "options": [
+            "The girl had died",
+            "Jesus was needed elsewhere",
+            "A storm was coming"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Jesus tell Jairus?",
+          "options": [
+            "Do not be afraid, just believe",
+            "Go home",
+            "It is too late"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Jesus say and do for the girl?",
+          "options": [
+            "Took her hand and said, little girl, get up",
+            "Sang to her",
+            "Left her sleeping"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What kind thing did Jesus do after she got up?",
+          "options": [
+            "Told them to give her something to eat",
+            "Left right away",
+            "Asked for payment"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "ten-lepers",
+      "era": "nt-life",
+      "order": 74,
+      "access": "premium",
+      "emoji": "🙏",
+      "title": "The One Who Said Thank You",
+      "book": "Luke 17",
+      "date": "c. AD 30",
+      "location": "Between Samaria and Galilee",
+      "hook": "Ten men were healed of a terrible disease on the very same day. All ten got their lives back. But only one of them remembered to come back and say thank you.",
+      "story": [
+        "As Jesus was traveling toward Jerusalem, he came to a village where ten men with leprosy stood waiting. Leprosy was a dreadful disease, and those who had it were forced to live apart from everyone else, away from their families and friends. They were lonely and outcast.",
+        "Because they were not allowed to come close, the ten men stood at a distance and called out together as loudly as they could, \"Jesus, Master, have mercy on us!\"",
+        "When Jesus saw them, he said, \"Go and show yourselves to the priests.\" In those days, only a priest could declare that someone was healed and could go home. So Jesus was telling them to go before anything had even happened, asking them to trust him.",
+        "And the ten men went. They obeyed and started off down the road, and as they walked, their skin became clean and whole. Every one of them was completely healed! Can you imagine their joy as they looked at their hands and saw the disease was gone?",
+        "All ten of them hurried off to start their new lives. But one of them stopped. When he saw that he was healed, he turned around and came running back to Jesus, praising God at the top of his voice. He threw himself down at Jesus' feet and thanked him, again and again. And this man was a Samaritan, a foreigner that many Jews looked down on.",
+        "Jesus looked at him and asked, \"Were not all ten healed? Where are the other nine? Was no one found to return and give praise to God except this foreigner?\"",
+        "Then Jesus said to the man, \"Rise and go. Your faith has made you well.\" All ten received the gift, but only one came back to say thank you. And it was the one no one expected. Jesus noticed, and he was glad for the grateful heart."
+      ],
+      "devotional": {
+        "bigIdea": "All ten men were healed, but only one came back to say thank you. God pours out good gifts on us every single day. The question is whether we will be like the nine who hurried off and forgot, or like the one who turned around to give thanks.",
+        "questions": [
+          "All ten were healed, but only one said thank you. Why do you think it is so easy to forget to be thankful?",
+          "The grateful man was the one nobody expected. What does that teach us about who notices God's goodness?",
+          "What are some good gifts from God that you can thank him for right now?"
+        ]
+      },
+      "tags": [
+        "thankfulness",
+        "gratitude",
+        "healing",
+        "faith",
+        "Jesus"
+      ],
+      "connections": [
+        {
+          "title": "Naaman and the Servant Girl",
+          "storyId": "naaman",
+          "reference": "Luke 17:16",
+          "why": "Like Naaman, who was healed of leprosy and turned to thank God, one healed man here returns with a grateful heart, and he too is a foreigner."
+        },
+        {
+          "title": "Blind Bartimaeus",
+          "storyId": "bartimaeus",
+          "reference": "Luke 17:13",
+          "why": "Like Bartimaeus, these men cry out from a distance, Jesus, have mercy on us, and Jesus answers their cry."
+        },
+        {
+          "title": "Mary and Martha",
+          "storyId": "mary-martha",
+          "reference": "Luke 10:39",
+          "why": "Both stories ask what really matters most: not just being busy or healed, but turning back to be with Jesus."
+        }
+      ],
+      "audio": "./audio/ten-lepers.mp3",
+      "quiz": [
+        {
+          "question": "How many men with leprosy called out to Jesus?",
+          "options": [
+            "Ten",
+            "Two",
+            "Fifty"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Jesus tell them to do?",
+          "options": [
+            "Go show themselves to the priests",
+            "Wash in a river",
+            "Wait three days"
+          ],
+          "answer": 0,
+          "explanation": "They were healed as they obeyed and went."
+        },
+        {
+          "question": "How many came back to say thank you?",
+          "options": [
+            "Only one",
+            "All ten",
+            "None"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What was surprising about the thankful man?",
+          "options": [
+            "He was a foreigner that others looked down on",
+            "He was a king",
+            "He was a priest"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What is the lesson of this story?",
+          "options": [
+            "Remember to be thankful for God's gifts",
+            "Doctors are important",
+            "Always travel in groups"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
       "id": "good-samaritan",
       "era": "nt-life",
-      "order": 69,
+      "order": 75,
       "access": "premium",
       "emoji": "🫶",
       "title": "The One Who Stopped",
@@ -7830,9 +8490,339 @@
       "published_date": "2026-06-03"
     },
     {
+      "id": "lost-sheep",
+      "era": "nt-life",
+      "order": 76,
+      "access": "premium",
+      "emoji": "🐑",
+      "title": "The Lost Sheep",
+      "book": "Luke 15",
+      "date": "c. AD 29",
+      "location": "Galilee",
+      "hook": "Some people grumbled that Jesus spent his time with the wrong sort of people. So Jesus told them a story about a shepherd who would leave ninety-nine sheep to go find just one.",
+      "story": [
+        "The religious leaders did not like that Jesus welcomed sinners and even ate meals with them. \"Why does this man spend time with people like that?\" they grumbled. So Jesus answered them with a story.",
+        "\"Suppose one of you has a hundred sheep,\" Jesus said, \"and one of them wanders off and gets lost. What will you do? Won't you leave the ninety-nine safe in the open country and go after the one lost sheep until you find it?\"",
+        "Every sheep mattered to the shepherd. He would not just shrug and say, well, I still have ninety-nine. That one lost sheep, alone and frightened and in danger, was worth going after.",
+        "So the shepherd searches. He climbs the hills and looks through the valleys, calling and calling, until at last he finds his lost little sheep.",
+        "And when he finds it, he is not angry. Jesus said the shepherd joyfully puts the sheep on his shoulders and carries it all the way home. Then he calls his friends and neighbors together and says, \"Rejoice with me! I have found my lost sheep!\"",
+        "Then Jesus explained what the story meant. \"In the same way,\" he said, \"there is more rejoicing in heaven over one sinner who turns back to God than over ninety-nine who never wandered away.\"",
+        "That is why Jesus spent time with lost and broken people. He is the Good Shepherd, and not one of his sheep is too lost or too far away for him to come looking. When even one person comes home to God, all of heaven throws a party."
+      ],
+      "devotional": {
+        "bigIdea": "The shepherd did not give up on the one lost sheep, even though he still had ninety-nine. Jesus is that shepherd, and he comes looking for each one of us. To God, you are never just one in a crowd. You are the one he would leave everything to find, and heaven celebrates when you are found.",
+        "questions": [
+          "The shepherd went after just one lost sheep. How does it feel to know that God would come looking for you?",
+          "When the sheep was found, the shepherd threw a party. Why do you think heaven celebrates so much when one person comes home to God?",
+          "Jesus spent time with people others looked down on. Who is someone you could show God's love to this week?"
+        ]
+      },
+      "tags": [
+        "God seeks us",
+        "the Good Shepherd",
+        "joy",
+        "parables",
+        "being found"
+      ],
+      "connections": [
+        {
+          "title": "The Lost Coin",
+          "storyId": "lost-coin",
+          "reference": "Luke 15:8",
+          "why": "Jesus tells this story right alongside the lost coin, both about the joy of finding what was lost."
+        },
+        {
+          "title": "The Boy Who Came Home",
+          "storyId": "prodigal",
+          "reference": "Luke 15:11",
+          "why": "All three stories in a row, the lost sheep, the lost coin, and the lost son, show how much heaven rejoices when the lost are found."
+        },
+        {
+          "title": "The Lord Is My Shepherd",
+          "storyId": "psalm23",
+          "reference": "Psalm 23:1",
+          "why": "Jesus is the Good Shepherd who goes after the one lost sheep, just as the shepherd of Psalm 23 watches over his own."
+        }
+      ],
+      "audio": "./audio/lost-sheep.mp3",
+      "quiz": [
+        {
+          "question": "Why were the religious leaders grumbling about Jesus?",
+          "options": [
+            "He welcomed and ate with sinners",
+            "He was too quiet",
+            "He charged money"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How many sheep did the shepherd have, and how many got lost?",
+          "options": [
+            "A hundred, and one got lost",
+            "Ten, and five got lost",
+            "Two, and both got lost"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the shepherd do about the one lost sheep?",
+          "options": [
+            "Left the ninety-nine and went to find it",
+            "Forgot about it",
+            "Bought a new one"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the shepherd do when he found it?",
+          "options": [
+            "Carried it home with joy and celebrated",
+            "Scolded it",
+            "Sold it"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What happens in heaven when one person turns back to God?",
+          "options": [
+            "There is great rejoicing",
+            "Nothing",
+            "It gets quiet"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "lost-coin",
+      "era": "nt-life",
+      "order": 77,
+      "access": "premium",
+      "emoji": "🪙",
+      "title": "The Lost Coin",
+      "book": "Luke 15",
+      "date": "c. AD 29",
+      "location": "Galilee",
+      "hook": "A woman had ten silver coins, and she lost just one. So she turned her whole house upside down to find it, because that one coin mattered to her.",
+      "story": [
+        "Right after the story of the lost sheep, Jesus told another short story to make the very same point, this time about a woman and her coins.",
+        "\"Suppose a woman has ten silver coins,\" Jesus said, \"and she loses one of them.\" These coins were precious to her, perhaps her savings, perhaps all the money she had. Losing even one was a real loss.",
+        "\"What does she do?\" Jesus asked. \"She lights a lamp, sweeps the whole house, and searches carefully in every corner until she finds it.\" She does not just give up and say, well, I still have nine. She gets down on her hands and knees and searches every crack in the floor.",
+        "She keeps looking and looking, refusing to stop until that one lost coin is back in her hand.",
+        "And when she finally finds it, she is overjoyed. She runs to call her friends and neighbors together and says, \"Rejoice with me! I have found my lost coin!\" Her joy is so big she cannot keep it to herself.",
+        "Then Jesus told them what it meant. \"In the same way,\" he said, \"there is rejoicing among the angels of God over one sinner who turns back to him.\"",
+        "Like the shepherd with his sheep and the woman with her coin, God does not count us as just one of many. Each person is so precious to him that he searches, and when one lost person is found and comes home, all of heaven breaks into celebration."
+      ],
+      "devotional": {
+        "bigIdea": "The woman searched her whole house for one lost coin because it was precious to her. That is how precious you are to God. He does not lose interest or give up. And when one lost person is found, the angels of heaven throw a celebration.",
+        "questions": [
+          "The woman searched everywhere for one coin. Have you ever looked and looked for something that really mattered to you?",
+          "Jesus said the angels rejoice when one person comes back to God. How does it feel to be that valuable to God?",
+          "Both the shepherd and the woman could not keep their joy to themselves. Who could you share the good news of God's love with?"
+        ]
+      },
+      "tags": [
+        "God seeks us",
+        "being precious",
+        "joy",
+        "parables",
+        "being found"
+      ],
+      "connections": [
+        {
+          "title": "The Lost Sheep",
+          "storyId": "lost-sheep",
+          "reference": "Luke 15:4",
+          "why": "Jesus tells this story right after the lost sheep, making the very same point: God searches for what is lost."
+        },
+        {
+          "title": "The Boy Who Came Home",
+          "storyId": "prodigal",
+          "reference": "Luke 15:11",
+          "why": "The third in the trio of lost-and-found stories, all about the joy of heaven when one lost person comes home."
+        },
+        {
+          "title": "The Man in the Tree",
+          "storyId": "zacchaeus",
+          "reference": "Luke 19:10",
+          "why": "Jesus said he came to seek and to save the lost, which is exactly what the searching woman in this story does."
+        }
+      ],
+      "audio": "./audio/lost-coin.mp3",
+      "quiz": [
+        {
+          "question": "How many coins did the woman have, and how many did she lose?",
+          "options": [
+            "Ten coins, and she lost one",
+            "Five, and she lost two",
+            "Two, and she lost both"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the woman do to find her lost coin?",
+          "options": [
+            "Lit a lamp and swept the whole house",
+            "Bought a new coin",
+            "Gave up"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How did she feel when she found it?",
+          "options": [
+            "Overjoyed, and she called her friends",
+            "Annoyed",
+            "Tired"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What does the lost coin stand for?",
+          "options": [
+            "A person who is precious to God",
+            "Real money",
+            "A toy"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What happens in heaven when one person turns back to God?",
+          "options": [
+            "The angels rejoice",
+            "Nothing happens",
+            "It gets quiet"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "blesses-children",
+      "era": "nt-life",
+      "order": 78,
+      "access": "premium",
+      "emoji": "🧒",
+      "title": "Let the Children Come",
+      "book": "Mark 10",
+      "date": "c. AD 30",
+      "location": "Judea",
+      "hook": "Parents were bringing their little children to Jesus, but the disciples tried to shoo them away. Jesus stopped them with words that changed everything.",
+      "story": [
+        "Wherever Jesus went, people wanted to be near him. One day, parents began bringing their little children to Jesus, hoping he would place his hands on them and bless them. Mothers and fathers carried their babies and led their toddlers toward him.",
+        "But the disciples did not like this. They thought Jesus was far too busy and important for little children. He had grown-ups to teach and great things to do. So they tried to send the families away, scolding them and telling them not to bother the teacher.",
+        "When Jesus saw what his disciples were doing, he was upset with them. \"Let the little children come to me,\" he said firmly, \"and do not stop them! For the kingdom of God belongs to such as these.\"",
+        "The disciples had it exactly backward. They thought children were not important enough for Jesus. But Jesus said the kingdom of God belongs to children like them.",
+        "Then Jesus said something even more surprising. \"I tell you the truth, anyone who will not receive the kingdom of God like a little child will never enter it.\" He was not just making room for children. He was saying that grown-ups need to come to God the way children do: simply, trustingly, with open arms.",
+        "And then Jesus did exactly what the parents had hoped. He took the children up into his arms, one by one, placed his hands on them, and blessed them. He was never too busy or too important. He had time for every single child.",
+        "Jesus loves children. He always has. You are never too small, too young, or too unimportant for Jesus. He says to you the very same thing: come to me."
+      ],
+      "devotional": {
+        "bigIdea": "The disciples thought children were not important enough for Jesus, but Jesus said the kingdom of God belongs to them, and that everyone must come to God like a child. You are never too small or unimportant for Jesus. He always has time, and his arms are always open to you.",
+        "questions": [
+          "The disciples tried to keep the children away, but Jesus welcomed them. How does it feel to know Jesus always has time for you?",
+          "Jesus said we must come to God like a little child. What do you think it means to trust God the way a child trusts?",
+          "Jesus took the children in his arms and blessed them. What would you want to say to Jesus if you climbed up beside him?"
+        ]
+      },
+      "tags": [
+        "children",
+        "Jesus' love",
+        "childlike faith",
+        "the kingdom",
+        "welcome"
+      ],
+      "connections": [
+        {
+          "title": "Jairus's Daughter",
+          "storyId": "jairus",
+          "reference": "Mark 10:16",
+          "why": "Jesus shows again how much he loves children, taking them in his arms just as he took a little girl by the hand."
+        },
+        {
+          "title": "The Lost Sheep",
+          "storyId": "lost-sheep",
+          "reference": "Matthew 18:14",
+          "why": "Just as the shepherd treasures one little sheep, Jesus makes clear that not one child is unimportant to him."
+        },
+        {
+          "title": "The Tiny Mustard Seed",
+          "storyId": "mustard-seed",
+          "reference": "Mark 10:15",
+          "why": "Jesus says we must receive God's kingdom like a little child, with the same simple, trusting faith."
+        }
+      ],
+      "audio": "./audio/blesses-children.mp3",
+      "quiz": [
+        {
+          "question": "Why were parents bringing their children to Jesus?",
+          "options": [
+            "So he would bless them",
+            "To sell them things",
+            "To learn to fish"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the disciples try to do?",
+          "options": [
+            "Send the children away",
+            "Help the children",
+            "Feed the children"
+          ],
+          "answer": 0,
+          "explanation": "They thought Jesus was too busy for children."
+        },
+        {
+          "question": "What did Jesus say?",
+          "options": [
+            "Let the little children come to me",
+            "Send them home",
+            "Come back tomorrow"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How did Jesus say we must come to God?",
+          "options": [
+            "Like a little child",
+            "Like a king",
+            "Like a soldier"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Jesus do with the children?",
+          "options": [
+            "Took them in his arms and blessed them",
+            "Ignored them",
+            "Sent them to the disciples"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
       "id": "zacchaeus",
       "era": "nt-life",
-      "order": 70,
+      "order": 79,
       "access": "premium",
       "emoji": "🌳",
       "title": "The Man in the Tree",
@@ -7946,9 +8936,119 @@
       "published_date": "2026-06-03"
     },
     {
+      "id": "mary-martha",
+      "era": "nt-life",
+      "order": 80,
+      "access": "premium",
+      "emoji": "🏡",
+      "title": "Mary and Martha",
+      "book": "Luke 10",
+      "date": "c. AD 29",
+      "location": "Bethany",
+      "hook": "Jesus came to visit two sisters. One rushed around the kitchen trying to make everything perfect. The other simply sat down at his feet. And Jesus said the one sitting down had chosen better.",
+      "story": [
+        "Jesus came to a village called Bethany, where two sisters named Martha and Mary lived. Martha opened her home and welcomed Jesus inside, glad to have him as her guest.",
+        "Martha wanted everything to be just right. There was so much to do, a meal to cook, a house to tidy, guests to care for. So she bustled about, busy and working hard to make the visit perfect for Jesus.",
+        "But her sister Mary did something different. Mary came and sat down at Jesus' feet, and she just listened to every word he said. While Martha rushed around, Mary stayed close to Jesus, drinking in his teaching.",
+        "This bothered Martha more and more. She was doing all the work while her sister just sat there! Finally she came to Jesus, a little frustrated, and said, \"Lord, don't you care that my sister has left me to do all the work by myself? Tell her to come and help me!\"",
+        "Jesus answered her gently and with great love. \"Martha, Martha,\" he said, repeating her name kindly, \"you are worried and upset about so many things.\"",
+        "\"But really only one thing is needed,\" Jesus told her. \"Mary has chosen what is better, and it will not be taken away from her.\" Martha was not wrong to work hard or to want to be a good host. But in all her busyness, she had let the most important thing slip away: simply being with Jesus.",
+        "Jesus was not scolding Martha for caring. He was inviting her to stop, to put down her worries for a moment, and to come sit with him too. There is a time for working hard. But nothing, not even a long list of good things to do, is more important than spending time with Jesus."
+      ],
+      "devotional": {
+        "bigIdea": "Martha was so busy doing things for Jesus that she missed being with Jesus. He gently reminded her that only one thing is truly needed. It is good to work hard, but nothing matters more than stopping to spend time with him. Being with Jesus comes first.",
+        "questions": [
+          "Martha was busy with many good things, but she missed sitting with Jesus. What things keep you so busy that you forget to spend time with God?",
+          "Mary chose to sit and listen to Jesus. What are some ways you can sit and listen to God?",
+          "Jesus said being with him was the most important thing. How could you make more time just to be with Jesus?"
+        ]
+      },
+      "tags": [
+        "being with Jesus",
+        "busyness",
+        "listening",
+        "priorities",
+        "worship"
+      ],
+      "connections": [
+        {
+          "title": "Come Out",
+          "storyId": "lazarus",
+          "reference": "John 11:1",
+          "why": "Mary and Martha are the sisters of Lazarus, the friend Jesus would later raise from the dead in this same town of Bethany."
+        },
+        {
+          "title": "The Farmer and the Seeds",
+          "storyId": "sower",
+          "reference": "Luke 8:14",
+          "why": "Martha's worries threaten to crowd out time with Jesus, just like the thorns that choke the seed in the parable of the sower."
+        },
+        {
+          "title": "Let the Children Come",
+          "storyId": "blesses-children",
+          "reference": "Luke 10:39",
+          "why": "Mary simply sits at Jesus' feet to be near him, the same trusting, childlike way Jesus welcomes everyone to come to him."
+        }
+      ],
+      "audio": "./audio/mary-martha.mp3",
+      "quiz": [
+        {
+          "question": "What was Martha busy doing?",
+          "options": [
+            "Working hard to prepare everything",
+            "Sleeping",
+            "Fishing"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Mary do instead?",
+          "options": [
+            "Sat at Jesus' feet and listened",
+            "Went outside",
+            "Cooked dinner"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Martha ask Jesus to do?",
+          "options": [
+            "Tell Mary to help her",
+            "Stay for dinner",
+            "Leave"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Jesus say was needed?",
+          "options": [
+            "Really only one thing, being with him",
+            "More food",
+            "A bigger house"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What is the lesson of this story?",
+          "options": [
+            "Nothing matters more than spending time with Jesus",
+            "Always cook a big meal",
+            "Never have guests"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
       "id": "rich-young-ruler",
       "era": "nt-life",
-      "order": 71,
+      "order": 81,
       "access": "premium",
       "emoji": "💰",
       "title": "The Man Who Walked Away",
@@ -8064,7 +9164,7 @@
     {
       "id": "prodigal",
       "era": "nt-life",
-      "order": 72,
+      "order": 82,
       "access": "premium",
       "emoji": "🏠",
       "title": "The Boy Who Came Home",
@@ -8179,7 +9279,7 @@
     {
       "id": "lazarus",
       "era": "nt-life",
-      "order": 73,
+      "order": 83,
       "access": "premium",
       "emoji": "🪦",
       "title": "Come Out",
@@ -8292,7 +9392,7 @@
     {
       "id": "triumphal-entry",
       "era": "nt-life",
-      "order": 74,
+      "order": 84,
       "access": "premium",
       "emoji": "🌿",
       "title": "The King Rides In",
@@ -8408,7 +9508,7 @@
     {
       "id": "last-supper",
       "era": "nt-church",
-      "order": 75,
+      "order": 85,
       "access": "premium",
       "emoji": "🍞",
       "title": "The Night Before",
@@ -8524,7 +9624,7 @@
     {
       "id": "crucifixion",
       "era": "nt-church",
-      "order": 76,
+      "order": 86,
       "access": "premium",
       "emoji": "✝️",
       "title": "The Darkest Friday",
@@ -8640,7 +9740,7 @@
     {
       "id": "resurrection",
       "era": "nt-church",
-      "order": 77,
+      "order": 87,
       "access": "premium",
       "emoji": "🌅",
       "title": "The Empty Tomb",
@@ -8755,7 +9855,7 @@
     {
       "id": "road-emmaus",
       "era": "nt-church",
-      "order": 78,
+      "order": 88,
       "access": "premium",
       "emoji": "🛤️",
       "title": "The Stranger on the Road",
@@ -8871,7 +9971,7 @@
     {
       "id": "pentecost",
       "era": "nt-church",
-      "order": 79,
+      "order": 89,
       "access": "premium",
       "emoji": "🕊️",
       "title": "The Day Everything Changed",
@@ -8983,7 +10083,7 @@
     {
       "id": "stephen",
       "era": "nt-church",
-      "order": 80,
+      "order": 90,
       "access": "premium",
       "emoji": "✝️",
       "title": "The First Martyr",
@@ -9099,7 +10199,7 @@
     {
       "id": "paul-conversion",
       "era": "nt-church",
-      "order": 81,
+      "order": 91,
       "access": "premium",
       "emoji": "⚡",
       "title": "The Man Who Hunted Christians",
@@ -9212,7 +10312,7 @@
     {
       "id": "paul-jail",
       "era": "nt-church",
-      "order": 82,
+      "order": 92,
       "access": "premium",
       "emoji": "🎵",
       "title": "Singing at Midnight",
@@ -9324,7 +10424,7 @@
     {
       "id": "lydia",
       "era": "nt-church",
-      "order": 83,
+      "order": 93,
       "access": "premium",
       "emoji": "🎨",
       "title": "The Purple Merchant",
