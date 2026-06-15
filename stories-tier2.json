@@ -147,22 +147,22 @@
           "question": "How did God make the man come alive?",
           "options": [
             "He spoke his name out loud",
-            "He touched him with fire",
             "He breathed into his nose",
+            "He touched him with fire",
             "He sprinkled water on him"
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "God bent down close and breathed right into the man's nose. That is how the man came alive."
         },
         {
           "question": "What did God say about everything He made on the sixth day?",
           "options": [
-            "It was very good",
             "It was finished",
             "It was pretty good",
+            "It was very good",
             "It was enough"
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "After making people, God looked at everything He had made and said it was very good. Not just good, but very good!"
         }
       ],
@@ -232,21 +232,21 @@
           "options": [
             "Do not talk to animals",
             "Do not leave the garden",
-            "Do not eat from the special tree in the middle",
-            "Do not go out at night"
+            "Do not go out at night",
+            "Do not eat from the special tree in the middle"
           ],
-          "answer": 2,
+          "answer": 3,
           "explanation": "God said they could eat from any tree except the one in the middle of the garden. That was the only rule."
         },
         {
           "question": "What did Adam and Eve do when they heard God coming after they ate the fruit?",
           "options": [
-            "They ran to meet Him like always",
             "They hid in the trees because they were scared",
+            "They ran to meet Him like always",
             "They went to sleep",
             "They kept eating the fruit"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Adam and Eve hid in the trees. They felt bad inside and were scared because they had broken God's rule."
         },
         {
@@ -326,33 +326,33 @@
           "question": "What did Abel bring as a gift to God?",
           "options": [
             "Some vegetables from his garden",
-            "The very best of his baby lambs",
             "A pile of rocks he had collected",
+            "The very best of his baby lambs",
             "Some bread he had baked"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Abel brought the very best of his baby lambs. He gave God his best, and God was happy with his gift."
         },
         {
           "question": "What did God tell Cain when Cain was angry?",
           "options": [
             "That he should go away and not come back",
-            "That if he did what was right, his gift would be accepted too",
             "That Abel was better than him",
-            "That he should try again tomorrow"
+            "That he should try again tomorrow",
+            "That if he did what was right, his gift would be accepted too"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "God told Cain that if he did what was right, his gift would be accepted. God gave Cain a chance to change before anything bad happened."
         },
         {
           "question": "Even after Cain did something very wrong, what did God do for him?",
           "options": [
-            "God forgave him right away and forgot it happened",
             "God put a special mark on him to keep him safe",
+            "God forgave him right away and forgot it happened",
             "God gave him a new family",
             "God let him go back to his old home"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "God put a mark on Cain so that nobody would hurt him. Even Cain was still cared for by God."
         }
       ],
@@ -445,11 +445,11 @@
           "question": "What did God put in the sky as a sign of His promise to never flood the whole earth again?",
           "options": [
             "A bright star",
-            "A rainbow",
             "A pillar of fire",
-            "A big cloud shaped like a boat"
+            "A big cloud shaped like a boat",
+            "A rainbow"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "God put a rainbow in the sky as a sign of His promise. Every rainbow we see is a reminder that God keeps His word."
         }
       ],
@@ -516,12 +516,12 @@
         {
           "question": "Why did the people want to build such a tall tower?",
           "options": [
+            "To make themselves famous and stay together",
             "To see the animals from far away",
             "To get closer to God and worship Him",
-            "To make themselves famous and stay together",
             "To protect themselves from rain"
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "The people wanted to make themselves famous and stay in one place. They were not thinking about what God wanted."
         },
         {
@@ -615,32 +615,32 @@
           "options": [
             "Twenty-five years old",
             "Forty years old",
-            "Seventy-five years old",
-            "Ten years old"
+            "Ten years old",
+            "Seventy-five years old"
           ],
-          "answer": 2,
+          "answer": 3,
           "explanation": "Abram was seventy-five years old, not young at all, when he trusted God and left everything he knew."
         },
         {
           "question": "What did God use to show Abraham how big his family would be one day?",
           "options": [
-            "Grains of sand on a beach",
             "The stars in the night sky",
+            "Grains of sand on a beach",
             "Drops of water in a river",
             "Blades of grass in a field"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "God took Abraham outside at night and said count the stars. So shall your family be. Abraham believed Him."
         },
         {
           "question": "What did God provide at the last moment when Abraham was on the mountain?",
           "options": [
             "A lamb sent down from heaven",
-            "A dove with a message",
             "A ram caught in the bushes",
+            "A dove with a message",
             "An angel with a new plan"
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "A ram was caught in the bushes nearby. Abraham used it instead of Isaac. He named the place The Lord Will Provide."
         }
       ],
@@ -710,11 +710,11 @@
           "question": "Why were Joseph's brothers so jealous of him?",
           "options": [
             "Because Joseph was the fastest runner",
-            "Because their father loved Joseph best and gave him a beautiful coat",
             "Because Joseph had the most animals",
+            "Because their father loved Joseph best and gave him a beautiful coat",
             "Because Joseph was the tallest brother"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Jacob gave Joseph a beautiful coat to show how much he loved him. The brothers saw it every day and it made them very jealous."
         },
         {
@@ -722,21 +722,21 @@
           "options": [
             "He climbed out and ran home",
             "He was rescued by his father Jacob",
-            "His brothers sold him to traders going to Egypt",
-            "He stayed in the pit until it rained"
+            "He stayed in the pit until it rained",
+            "His brothers sold him to traders going to Egypt"
           ],
-          "answer": 2,
+          "answer": 3,
           "explanation": "Some traders came by on their way to Egypt. The brothers sold Joseph to them for twenty pieces of silver."
         },
         {
           "question": "What did Joseph say to his brothers when he finally told them who he was?",
           "options": [
+            "You meant to hurt me, but God meant it for good",
             "I have been looking for you all this time",
             "You will pay for what you did to me",
-            "You meant to hurt me, but God meant it for good",
             "I never want to see you again"
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Joseph said you meant to hurt me, but God meant it for good. It is one of the most amazing things anyone ever said."
         }
       ],
@@ -826,11 +826,11 @@
           "question": "What does the name Moses mean?",
           "options": [
             "Born in a river",
-            "Pulled out of the water",
             "Son of a king",
-            "Strong and brave"
+            "Strong and brave",
+            "Pulled out of the water"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "The princess named him Moses, which means pulled out of the water, because she pulled him out of the Nile River."
         }
       ],
@@ -899,12 +899,12 @@
         {
           "question": "What was so strange about the burning bush that made Moses stop and look?",
           "options": [
+            "It was on fire but it was not burning up",
             "It was glowing every color of the rainbow",
             "It was floating above the ground",
-            "It was on fire but it was not burning up",
             "It was singing a song"
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Bushes catching fire in the hot desert happened sometimes. But this bush kept burning and burning and never burned up. That was what stopped Moses."
         },
         {
@@ -995,22 +995,22 @@
           "question": "What was in front of the people and what was behind them when they were trapped?",
           "options": [
             "A desert in front and a mountain behind",
-            "The sea in front and the Egyptian army behind",
             "A forest in front and a river behind",
-            "A city in front and a storm behind"
+            "A city in front and a storm behind",
+            "The sea in front and the Egyptian army behind"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "The sea was in front of them and the Egyptian army was coming behind them. There was nowhere to go."
         },
         {
           "question": "What did God use to make a dry path through the sea?",
           "options": [
+            "A strong wind that blew all night",
             "A big wave that pushed the water aside",
             "Angels who held the water back",
-            "A strong wind that blew all night",
             "Moses jumping into the water"
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "God sent a strong wind that blew all night and pushed the water into two walls, leaving dry ground in the middle."
         },
         {
@@ -1100,22 +1100,22 @@
           "question": "What did God write the ten rules on?",
           "options": [
             "A big piece of wood",
-            "Two flat stones",
             "A long piece of cloth",
-            "The side of the mountain"
+            "The side of the mountain",
+            "Two flat stones"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "God wrote the ten rules on two flat stones with His own finger. Moses carried them down the mountain."
         },
         {
           "question": "When did God give the people His rules?",
           "options": [
-            "Before He rescued them from Egypt so they could earn their freedom",
             "After He had already rescued them and they were free",
+            "Before He rescued them from Egypt so they could earn their freedom",
             "While they were still slaves in Egypt",
             "A long time after they had settled in the new land"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "God rescued His people first and then gave them the rules. He did not make them earn their rescue. He helped them first."
         }
       ],
@@ -1205,11 +1205,11 @@
           "question": "What did Jesus say that connects to this story?",
           "options": [
             "I am the bread of life",
-            "If anyone is thirsty, come to me and drink",
             "I am the light of the world",
-            "Come to me and I will give you rest"
+            "Come to me and I will give you rest",
+            "If anyone is thirsty, come to me and drink"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "Jesus stood up one day and said if anyone is thirsty, come to me and drink. He is the living water the rock in the desert was pointing toward."
         }
       ],
@@ -1276,12 +1276,12 @@
         {
           "question": "Where did Rahab hide the two spies?",
           "options": [
+            "Under piles of grain drying on her roof",
             "In a cave outside the city walls",
             "In a room under the floor",
-            "Under piles of grain drying on her roof",
             "In a barrel of water"
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Rahab hid the two spies under piles of grain that were drying on her flat roof, then sent the soldiers in the wrong direction."
         },
         {
@@ -1299,11 +1299,11 @@
           "question": "How did Rahab know that God was real even before she met any of God's people?",
           "options": [
             "She had a dream about God one night",
-            "She had heard the stories about what God did at the Red Sea",
             "She saw a rainbow over the Israelite camp",
+            "She had heard the stories about what God did at the Red Sea",
             "An angel appeared to her"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Rahab said everyone in Jericho had heard what God did at the Red Sea and they were all scared. She heard the stories and believed them."
         }
       ],
@@ -1371,21 +1371,21 @@
           "options": [
             "Build a big ramp and climb over the walls",
             "Sneak in at night through a secret tunnel",
-            "March around it, blow trumpets, and shout on the seventh day",
-            "Wait until the people inside ran out of food"
+            "Wait until the people inside ran out of food",
+            "March around it, blow trumpets, and shout on the seventh day"
           ],
-          "answer": 2,
+          "answer": 3,
           "explanation": "March around once a day for six days, then seven times on the seventh day, blow the trumpets, and shout. No weapons needed."
         },
         {
           "question": "What did the people do for the first six days as they marched?",
           "options": [
+            "They made no sound at all except for the trumpets",
             "They shouted war cries to scare the people inside",
             "They prayed loudly together as they walked",
-            "They made no sound at all except for the trumpets",
             "They sang songs of praise"
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Joshua told the people not to say a single word until the day he told them to shout. Six days of silence and just the sound of trumpets."
         },
         {
@@ -1465,11 +1465,11 @@
           "question": "What was Gideon doing when the angel of the Lord appeared to him?",
           "options": [
             "Praying at the front of his army",
-            "Hiding underground doing farm work so the enemy would not see him",
             "Leading his village in a celebration",
+            "Hiding underground doing farm work so the enemy would not see him",
             "Sleeping in his bed"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Gideon was hiding underground trying to do his farm work without being spotted by the enemy. Not exactly where you would expect a mighty warrior."
         },
         {
@@ -1477,21 +1477,21 @@
           "options": [
             "32,000",
             "10,000",
-            "300",
-            "3,000"
+            "3,000",
+            "300"
           ],
-          "answer": 2,
+          "answer": 3,
           "explanation": "God kept reducing the army until only 300 were left, so that when Israel won, nobody could say it was because of how many soldiers they had."
         },
         {
           "question": "What was Gideon's battle plan?",
           "options": [
+            "Surround the camp with torches, trumpets, and a shout in the darkness",
             "Charge the camp at dawn with swords",
             "Dig tunnels under the camp at night",
-            "Surround the camp with torches, trumpets, and a shout in the darkness",
             "Send a small group to the gates to ask them to surrender"
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "In the dark of night, 300 torches blazed up from every direction at once with trumpets and shouting. The enemy panicked and ran."
         }
       ],
@@ -1583,10 +1583,10 @@
           "options": [
             "Moses",
             "Solomon",
-            "David",
-            "Abraham"
+            "Abraham",
+            "David"
           ],
-          "answer": 2,
+          "answer": 3,
           "explanation": "Ruth and Boaz had a son named Obed, who had a son named Jesse, who had a son named David, the greatest king Israel ever had."
         }
       ],
@@ -1653,12 +1653,12 @@
         {
           "question": "Why did Samuel keep running to Eli when he heard his name?",
           "options": [
-            "He thought Eli needed help in the night",
             "He had never heard God's voice before and thought it was Eli calling",
+            "He thought Eli needed help in the night",
             "He was sleepwalking",
             "He was playing a game"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Samuel had never heard God speak before. He did not know who was calling him so he ran to the nearest grown-up he trusted."
         },
         {
@@ -1748,22 +1748,22 @@
           "question": "How long had Goliath been challenging the Israelite army before David arrived?",
           "options": [
             "Seven days",
-            "Forty days",
             "One whole year",
-            "Three days"
+            "Three days",
+            "Forty days"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "Goliath had been walking out twice a day for forty days and the whole army had been too scared to face him."
         },
         {
           "question": "What did David take with him to face Goliath?",
           "options": [
-            "King Saul's sword and armour",
             "Five smooth stones and his sling",
+            "King Saul's sword and armour",
             "A spear borrowed from a soldier",
             "Just his shepherd's staff"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "David chose five smooth stones from the stream and his sling. He refused the king's heavy armour."
         },
         {
@@ -1841,33 +1841,33 @@
           "question": "Why was Saul trying to hurt David even though David had done nothing wrong?",
           "options": [
             "David had stolen something from the palace",
-            "Saul was jealous because the people loved David and scared because God had chosen David",
             "David had refused to fight in Saul's army",
+            "Saul was jealous because the people loved David and scared because God had chosen David",
             "David had said something rude to the king"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Saul was jealous and scared. Jealousy made Saul want to get rid of David."
         },
         {
           "question": "What did David do when Saul came into the cave where David was hiding?",
           "options": [
             "He jumped out and captured the king",
-            "He quietly cut off a small piece of Saul's robe but did not hurt him",
             "He hid completely and did nothing at all",
-            "He called out to Saul and surrendered"
+            "He called out to Saul and surrendered",
+            "He quietly cut off a small piece of Saul's robe but did not hurt him"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "David crept forward and cut off a small piece of Saul's robe. Even that small thing made David feel guilty."
         },
         {
           "question": "What did Saul say when he saw the piece of his robe in David's hand?",
           "options": [
+            "He cried and said David was a better man than he was",
             "He was furious and ordered his soldiers to attack",
             "He said nothing and walked away",
-            "He cried and said David was a better man than he was",
             "He promised to stop chasing David"
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Saul cried and said you are more righteous than I am, for you paid me good when I paid you evil. He admitted the truth."
         }
       ],
@@ -1946,22 +1946,22 @@
           "question": "What does David mean when he says his cup is so full it spills over?",
           "options": [
             "He is complaining about having too much to carry",
-            "He is saying God has given him more good things than he can even hold",
             "He knocked over a drink by accident",
+            "He is saying God has given him more good things than he can even hold",
             "He is describing rain falling on dry land"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "David is saying God's goodness to him is so great it overflows. He has more than enough."
         },
         {
           "question": "Who did Jesus say He was that connects to this psalm?",
           "options": [
             "The King of Israel",
-            "The Good Shepherd",
             "The Light of the World",
-            "The Gate to heaven"
+            "The Gate to heaven",
+            "The Good Shepherd"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "Jesus said I am the good shepherd. The good shepherd gives his life for the sheep. David's song was pointing to Jesus all along."
         }
       ],
@@ -2027,23 +2027,23 @@
         {
           "question": "What did Solomon ask God for when God said he could have anything?",
           "options": [
-            "Lots of gold and a big palace",
             "A wise heart to lead God's people well",
+            "Lots of gold and a big palace",
             "Victory over all his enemies",
             "A very long life"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Solomon asked for wisdom to lead God's people and know right from wrong. He thought about other people instead of himself."
         },
         {
           "question": "Why was God so pleased with Solomon's request?",
           "options": [
             "Because it showed Solomon was the cleverest person alive",
-            "Because Solomon had prayed in exactly the right way",
             "Because Solomon asked for something to help others rather than just for himself",
+            "Because Solomon had prayed in exactly the right way",
             "Because God had been hoping someone would ask for wisdom"
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "God was pleased because Solomon did not ask for riches or long life but for the ability to serve God's people well."
         },
         {
@@ -2122,21 +2122,21 @@
           "options": [
             "Ten",
             "A hundred",
-            "Four hundred and fifty",
-            "A thousand"
+            "A thousand",
+            "Four hundred and fifty"
           ],
-          "answer": 2,
+          "answer": 3,
           "explanation": "There were 450 prophets of Baal against one prophet of God. Elijah stood alone and God showed up for him."
         },
         {
           "question": "What did Elijah do to make his contest harder before asking God for fire?",
           "options": [
-            "He built the smallest altar he could find",
             "He poured twelve jugs of water over the altar so everyone would know only God could light it",
+            "He built the smallest altar he could find",
             "He blindfolded himself",
             "He moved the altar to the top of the mountain"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Elijah poured twelve jugs of water over everything. He made it obviously impossible so nobody could miss who did it."
         },
         {
@@ -2215,11 +2215,11 @@
           "question": "What did Job say after losing everything in one terrible day?",
           "options": [
             "I will never trust God again after this",
-            "God gave me everything and God has taken it away. May His name be praised",
             "This must be punishment for something I did wrong",
+            "God gave me everything and God has taken it away. May His name be praised",
             "I cannot go on living after this"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Job was heartbroken but he did not blame God. He said the name of God be praised even in his worst moment."
         },
         {
@@ -2227,21 +2227,21 @@
           "options": [
             "They said God did not exist",
             "They told Job to stop praying",
-            "They said all the bad things must have happened because Job had done something wrong, but that was not true",
-            "They said Job should run away"
+            "They said Job should run away",
+            "They said all the bad things must have happened because Job had done something wrong, but that was not true"
           ],
-          "answer": 2,
+          "answer": 3,
           "explanation": "Job's friends insisted the suffering must be his fault. God said later they were wrong. Job had done nothing to deserve what happened."
         },
         {
           "question": "What did God give Job instead of an explanation?",
           "options": [
+            "Questions about how the world was made that showed Job how big and amazing God is",
             "A list of reasons each thing had happened",
             "A vision of heaven",
-            "Questions about how the world was made that showed Job how big and amazing God is",
             "An angel who stayed with Job"
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "God did not explain. He showed Job His own greatness and power. Job said now I have really met you. That was better than an answer."
         }
       ],
@@ -2309,11 +2309,11 @@
           "question": "How long before Jesus was born did Isaiah write about the suffering servant?",
           "options": [
             "Ten years",
+            "Seven hundred years",
             "Fifty years",
-            "Two hundred years",
-            "Seven hundred years"
+            "Two hundred years"
           ],
-          "answer": 3,
+          "answer": 1,
           "explanation": "Isaiah lived about seven hundred years before Jesus. He described the cross in detail without ever seeing it happen."
         },
         {
@@ -2332,10 +2332,10 @@
           "options": [
             "A soldier who would not give up",
             "A lion facing its hunters",
-            "A lamb being quietly led to the place where it would die",
-            "A king going into battle"
+            "A king going into battle",
+            "A lamb being quietly led to the place where it would die"
           ],
-          "answer": 2,
+          "answer": 3,
           "explanation": "Isaiah said the servant was like a lamb going quietly to the slaughter. Jesus did not fight back when He was arrested and taken away."
         }
       ],
@@ -2403,23 +2403,23 @@
         {
           "question": "What did Shadrach, Meshach, and Abednego refuse to do when the music played?",
           "options": [
-            "They refused to work for the king any more",
             "They refused to bow down and worship the king's gold statue",
+            "They refused to work for the king any more",
             "They refused to leave the city",
             "They refused to eat the king's food"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "When the music played and everyone else bowed, the three men stood straight up. They would not worship anyone or anything except God."
         },
         {
           "question": "What did the three men say when the king gave them one more chance?",
           "options": [
             "They asked for more time to think",
-            "They said they would bow once and never again",
             "They said God can save us but even if He does not we will still not bow",
+            "They said they would bow once and never again",
             "They said nothing and quietly refused"
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "They said our God is able to save us. But even if He does not, we will not worship your statue. That is what brave faith looks like."
         },
         {
@@ -2500,21 +2500,21 @@
           "options": [
             "Because he was very good at hiding his mistakes",
             "Because he bribed people to keep quiet",
-            "Because he was completely honest and hardworking and they could not find any fault",
-            "Because he was new to the job"
+            "Because he was new to the job",
+            "Because he was completely honest and hardworking and they could not find any fault"
           ],
-          "answer": 2,
+          "answer": 3,
           "explanation": "Daniel was not corrupt or lazy. He did everything right. The only vulnerability they could find was his faith."
         },
         {
           "question": "What did Daniel do when he heard about the new law against praying?",
           "options": [
+            "He went home, opened his window, and prayed three times just like he always had",
             "He stopped praying for thirty days until the law ended",
             "He prayed secretly with all the windows shut",
-            "He went home, opened his window, and prayed three times just like he always had",
             "He went to the king to argue against the law"
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Daniel did not hide and did not stop. He opened his window and prayed exactly as he always did. His faithfulness did not change because of a law."
         },
         {
@@ -2594,33 +2594,33 @@
           "question": "What was dangerous about Esther going to see the king?",
           "options": [
             "The king did not know who she was",
-            "Anyone who came to the king without being invited could be killed unless he held out his golden sceptre",
             "Haman had told the guards not to let anyone in",
+            "Anyone who came to the king without being invited could be killed unless he held out his golden sceptre",
             "The king was angry at Esther"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Even the queen could not just walk in uninvited. Anyone who came without being called faced death unless the king chose to hold out his sceptre."
         },
         {
           "question": "What did Mordecai say to Esther when she hesitated?",
           "options": [
             "He said God will protect you so you have nothing to worry about",
-            "He said maybe you became queen exactly for a time like this",
             "He said if you do not go I will go instead",
-            "He said the king loves you so you will definitely be safe"
+            "He said the king loves you so you will definitely be safe",
+            "He said maybe you became queen exactly for a time like this"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "Mordecai said who knows whether you came to the kingdom for such a time as this. He believed God had placed Esther exactly where she needed to be."
         },
         {
           "question": "What did Esther say before she went to the king?",
           "options": [
+            "Gather everyone and fast and pray for me, and if I die I die",
             "I know God will protect me so I am not scared",
             "I will go to the king tomorrow and see what happens",
-            "Gather everyone and fast and pray for me, and if I die I die",
             "I will only go if you promise everything will be fine"
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Esther asked everyone to fast and pray for three days. Then she said if I die I die. She was brave but also honest about the cost."
         }
       ],
@@ -2688,11 +2688,11 @@
           "question": "Why did Jonah run away from God's instructions to go to Nineveh?",
           "options": [
             "He was afraid they would hurt him",
-            "He did not believe he could do the job",
             "He did not want God to forgive Nineveh because they were Israel's enemy",
+            "He did not believe he could do the job",
             "He had already planned a trip in the other direction"
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "Jonah admits at the end he ran because he knew God would be kind to Nineveh if they listened. He did not want that."
         },
         {
@@ -2711,10 +2711,10 @@
           "options": [
             "He tried to find a way out through the fish's mouth",
             "He went to sleep because there was nothing else to do",
-            "He prayed honestly to God and said sorry",
-            "He was unconscious for all three days"
+            "He was unconscious for all three days",
+            "He prayed honestly to God and said sorry"
           ],
-          "answer": 2,
+          "answer": 3,
           "explanation": "Inside the fish in the dark Jonah prayed. He was honest with God and said he would do what he had promised. Then the fish put him back out."
         }
       ],
@@ -2782,34 +2782,34 @@
         {
           "question": "What was Nehemiah's job before he went to rebuild Jerusalem?",
           "options": [
-            "A soldier in the Persian army",
             "A cup bearer and trusted helper to the king of Persia",
+            "A soldier in the Persian army",
             "A merchant who travelled between countries",
             "A scribe who copied documents"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Nehemiah was cup bearer to the king, one of the most trusted positions possible."
         },
         {
           "question": "What did Nehemiah do when he first arrived in Jerusalem?",
           "options": [
             "He called everyone together immediately and made a big speech",
-            "He started building straight away",
             "He waited three days then went out alone at night to look at the broken walls and make a plan",
+            "He started building straight away",
             "He prayed for another four months before doing anything"
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "Nehemiah was patient and careful. He waited three days then went out alone at night so he could look at everything quietly before telling anyone his plan."
         },
         {
           "question": "How long did it take to rebuild the walls of Jerusalem?",
           "options": [
             "Three years even with everyone helping",
-            "Fifty-two days which amazed everyone who saw it",
             "One year working as fast as they could",
+            "Fifty-two days which amazed everyone who saw it",
             "Six months including a summer break"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "The wall was finished in fifty-two days. The enemies who had been trying to stop the work were amazed and could see that God had helped."
         }
       ],
@@ -2878,22 +2878,22 @@
           "question": "What was Mary's one question when the angel told her she was going to have a baby?",
           "options": [
             "Why has God chosen someone as ordinary as me?",
-            "How can this happen since I am not married yet?",
             "What will Joseph say when he finds out?",
-            "Will this baby really be the king of Israel?"
+            "Will this baby really be the king of Israel?",
+            "How can this happen since I am not married yet?"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "Mary asked how can this happen since I am not yet married. It was a practical question not an argument. Gabriel answered honestly."
         },
         {
           "question": "What did Mary say when the angel finished explaining?",
           "options": [
+            "I am God's servant, let it happen just as you have said",
             "She asked for more time to think",
             "She said she needed to ask Joseph first",
-            "I am God's servant, let it happen just as you have said",
             "She said she was scared and did not know if she could do it"
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Mary said I am God's servant and let it happen as you said. She trusted God completely even before she knew what it would cost."
         },
         {
@@ -2985,21 +2985,21 @@
           "options": [
             "Playing with other children in the Temple courtyard",
             "Helping the priests prepare for ceremonies",
-            "Sitting with the great teachers listening and asking questions that amazed everyone",
-            "Praying quietly alone in a corner"
+            "Praying quietly alone in a corner",
+            "Sitting with the great teachers listening and asking questions that amazed everyone"
           ],
-          "answer": 2,
+          "answer": 3,
           "explanation": "Jesus was sitting with the greatest teachers in Israel asking and answering questions. Everyone who heard Him was amazed at His understanding."
         },
         {
           "question": "What did Jesus say when Mary asked why He had stayed behind?",
           "options": [
+            "He said why were you looking, did you not know I would be in my Father's house?",
             "He said He had got lost in the crowd",
             "He said He had made friends with the teachers and wanted to stay",
-            "He said why were you looking, did you not know I would be in my Father's house?",
             "He said He was sorry for worrying them"
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Jesus was surprised they had not thought to look in the Temple. It was His Father's house. Where else would He be?"
         }
       ],
@@ -3091,11 +3091,11 @@
           "question": "What did Jesus say about loving enemies?",
           "options": [
             "He said it was too hard so just try to stay away from them",
-            "He said love your enemies and pray for people who treat you badly",
             "He said love your enemies but you do not have to spend time with them",
-            "He said enemies usually become friends if you are patient"
+            "He said enemies usually become friends if you are patient",
+            "He said love your enemies and pray for people who treat you badly"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "Jesus said love your enemies and pray for people who are unkind to you. Anyone can love people who love them back. God asks for more."
         }
       ],
@@ -3162,12 +3162,12 @@
         {
           "question": "Why was it surprising that Jesus spoke to the Samaritan woman?",
           "options": [
-            "Because she was very important and He was just a traveller",
             "Because Jewish people and Samaritan people did not talk to each other and men did not speak to women alone in public",
+            "Because she was very important and He was just a traveller",
             "Because the well was private property",
             "Because it was too hot in the middle of the day for anyone to be out"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Two barriers were crossed at once. Jewish people and Samaritans did not mix. And men and women did not speak alone in public. Jesus crossed both."
         },
         {
@@ -3258,33 +3258,33 @@
           "question": "How much food was there at the start?",
           "options": [
             "A large basket of bread one family had brought",
-            "Five small loaves and two small fish that a boy had",
             "Twelve small portions the disciples had been keeping",
-            "Just one loaf of bread and nothing else"
+            "Just one loaf of bread and nothing else",
+            "Five small loaves and two small fish that a boy had"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "A boy had five small barley loaves and two small fish. He gave them all to Jesus."
         },
         {
           "question": "How many people ate and how much food was left over?",
           "options": [
-            "About five hundred people ate and a little was left over",
             "Five thousand men plus women and children all ate until full and twelve baskets of leftovers were collected",
+            "About five hundred people ate and a little was left over",
             "The disciples ate first and then there was only a little left",
             "Everyone had a small taste and the rest was left for the next day"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Five thousand men plus women and children all ate as much as they wanted. Then the disciples collected twelve large baskets of leftovers."
         },
         {
           "question": "What did Jesus do before He started breaking and sharing the bread?",
           "options": [
             "He asked everyone to be absolutely quiet and still",
-            "He closed His eyes and concentrated very hard",
             "He looked up to heaven and said thank you to God",
+            "He closed His eyes and concentrated very hard",
             "He walked around the whole crowd so everyone could see Him"
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "Jesus looked up to heaven and gave thanks before the miracle. Gratitude came before the multiplication."
         }
       ],
@@ -3353,11 +3353,11 @@
           "question": "What did the disciples think when they saw Jesus walking toward them on the water?",
           "options": [
             "They recognised Him immediately and were very relieved",
-            "They thought it was a ghost and screamed in terror",
             "They thought it was someone from another boat who needed help",
+            "They thought it was a ghost and screamed in terror",
             "They thought they were dreaming because they were so tired"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "They were terrified and thought it was a ghost. Jesus immediately called out and told them not to be afraid."
         },
         {
@@ -3365,21 +3365,21 @@
           "options": [
             "He walked back to the boat safely",
             "He froze and could not move at all",
-            "He started sinking and cried out Lord save me",
-            "He swam the rest of the way to Jesus"
+            "He swam the rest of the way to Jesus",
+            "He started sinking and cried out Lord save me"
           ],
-          "answer": 2,
+          "answer": 3,
           "explanation": "Peter took his eyes off Jesus and looked at the wind and huge waves. He got scared and began to sink. He cried out Lord save me."
         },
         {
           "question": "What did Jesus do when Peter started sinking?",
           "options": [
+            "He immediately reached out His hand and caught him",
             "He waited to see if Peter could sort it out himself",
             "He called out instructions from where He was standing",
-            "He immediately reached out His hand and caught him",
             "He sent another disciple from the boat to help"
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Jesus immediately reached out and caught Peter. Not eventually. Immediately. That is how fast Jesus responds when we cry out to Him."
         }
       ],
@@ -3470,10 +3470,10 @@
           "options": [
             "He said knowing who your neighbour is is the most important thing",
             "He said remember this story so you can tell it to others",
-            "He said go and do the same as the Samaritan did",
-            "He said the priest and the Levite should have done better"
+            "He said the priest and the Levite should have done better",
+            "He said go and do the same as the Samaritan did"
           ],
-          "answer": 2,
+          "answer": 3,
           "explanation": "Jesus said go and do the same. Not think about it, not feel good about it. Do it. The point was always action."
         }
       ],
@@ -3541,34 +3541,34 @@
         {
           "question": "Why did Zacchaeus climb a tree?",
           "options": [
-            "He was hiding because he knew people did not like him",
             "He was short and the crowd was thick and he wanted to see Jesus",
+            "He was hiding because he knew people did not like him",
             "He was trying to get Jesus's attention by doing something silly",
             "He liked climbing trees and did it all the time"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Zacchaeus was short and could not see over the crowd. So this wealthy important man ran ahead and climbed a tree like a little child just to get a look at Jesus."
         },
         {
           "question": "What did Jesus say when He looked up and saw Zacchaeus in the tree?",
           "options": [
             "Come down when you are ready and we can talk later",
-            "Why are you up there? That is very undignified",
             "Zacchaeus come down right now, I must come to your house today",
+            "Why are you up there? That is very undignified",
             "I can see you up there. Now pay back the people you have cheated"
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "Jesus called him by name and said I must come to your house today. He invited Himself to the home of the person everyone else was avoiding."
         },
         {
           "question": "What did Zacchaeus say he would do after Jesus came to his house?",
           "options": [
             "He said he would stop collecting taxes and find a different job",
-            "He said he would give half of everything to the poor and pay back four times what he had taken from people",
             "He said he would use his money to build a new place of worship",
+            "He said he would give half of everything to the poor and pay back four times what he had taken from people",
             "He said he would follow Jesus and travel with His disciples"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Zacchaeus said he would give half everything to the poor and repay four times what he had taken. Nobody asked him to. Meeting Jesus changed what he wanted."
         }
       ],
@@ -3636,33 +3636,33 @@
           "question": "What animal did Jesus ride into Jerusalem on and why did it matter?",
           "options": [
             "A white warhorse, to show He had the power of a king",
-            "A donkey, because a prophet had written five hundred years before that the king would come gently on a donkey",
             "A camel, because that was the most common animal",
-            "He walked on foot because He did not want to draw attention to Himself"
+            "He walked on foot because He did not want to draw attention to Himself",
+            "A donkey, because a prophet had written five hundred years before that the king would come gently on a donkey"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "Jesus chose a donkey on purpose to fulfil what Zechariah had written. He was announcing that He was the promised king but a gentle king who came in peace."
         },
         {
           "question": "What did the crowd shout as Jesus rode into Jerusalem?",
           "options": [
-            "Long live the king of Israel!",
             "Hosanna to the Son of David, blessed is He who comes in the name of the Lord",
+            "Long live the king of Israel!",
             "Make way for the prophet from Galilee",
             "The Messiah has come"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "The crowd shouted Hosanna to the Son of David which means save us now, Son of David. They were welcoming a king and calling on a saviour."
         },
         {
           "question": "Who was still praising Jesus in the Temple when the religious leaders had stopped?",
           "options": [
             "The disciples who had been with Him from the start",
-            "The sick people He had healed",
             "The children who were shouting Hosanna to the Son of David",
+            "The sick people He had healed",
             "The poor people He had helped feed"
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "The children in the Temple were still shouting Hosanna. The religious leaders were angry about it. Jesus said God had called forth praise from the mouths of children."
         }
       ],
@@ -3731,11 +3731,11 @@
           "question": "What did the young man say when Jesus listed the commandments?",
           "options": [
             "He admitted he had broken several and wanted to make things right",
-            "He said he had kept all of them since he was a boy",
             "He said he tried his best but nobody could keep them all perfectly",
+            "He said he had kept all of them since he was a boy",
             "He said he had never heard these rules before"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "The young man said teacher I have kept all of these since I was a boy. He was not bragging. He was being honest. Jesus did not argue with him."
         },
         {
@@ -3743,21 +3743,21 @@
           "options": [
             "He felt frustrated that the man could not see what he was missing",
             "He felt sad because He could see the man was going to make the wrong choice",
-            "He loved him",
-            "He felt impressed by how faithfully the man had kept the rules"
+            "He felt impressed by how faithfully the man had kept the rules",
+            "He loved him"
           ],
-          "answer": 2,
+          "answer": 3,
           "explanation": "The Bible says Jesus looked at him and loved him. The hard thing He said next came from that love not from wanting the man to fail."
         },
         {
           "question": "Why did the young man walk away sad?",
           "options": [
+            "Because he had great wealth and loved it more than he was willing to give it up",
             "Because Jesus had told him things he had already tried and they had not worked",
             "Because he was too proud to admit he needed help",
-            "Because he had great wealth and loved it more than he was willing to give it up",
             "Because he did not believe Jesus could give him what he was asking about"
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "He had great wealth and he could not let go of it. He had done everything right but he had one thing he loved more than God."
         }
       ],
@@ -3849,10 +3849,10 @@
           "options": [
             "He listened carefully and then said he needed time to think before forgiving him",
             "He told the son to go and work as a servant first and earn his way back",
-            "He did not let the son finish but called for the best robe and ring and sandals and threw a party",
-            "He said he forgave him but they would not have a party until the older brother agreed"
+            "He said he forgave him but they would not have a party until the older brother agreed",
+            "He did not let the son finish but called for the best robe and ring and sandals and threw a party"
           ],
-          "answer": 2,
+          "answer": 3,
           "explanation": "The father interrupted the speech with a robe, a ring, sandals, and a feast. No conditions. No waiting. Just celebration that his son was home."
         }
       ],
@@ -3921,23 +3921,23 @@
         {
           "question": "What did Jesus do when He saw Mary and all her friends crying at the tomb?",
           "options": [
+            "He stood there and cried too",
             "He told them there was no need to cry because everything would be fine",
             "He stayed a little back to give them space to grieve",
-            "He stood there and cried too",
             "He asked everyone to be quiet so He could concentrate"
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Jesus saw their grief and He cried. He did not stand above the sadness. He walked into it with them."
         },
         {
           "question": "What did Jesus say He was when He spoke to Martha?",
           "options": [
             "The way, the truth, and the life",
-            "The good shepherd who lays down His life",
             "The resurrection and the life, whoever believes in me will live even though they die",
+            "The good shepherd who lays down His life",
             "The light of the world who takes away the darkness of death"
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "Jesus said I am the resurrection and the life. Then He proved it."
         },
         {
@@ -4016,22 +4016,22 @@
           "question": "What surprising thing did Jesus do at the start of the last supper?",
           "options": [
             "He told His disciples exactly what was going to happen the next day",
-            "He got up, wrapped a towel around His waist, and washed all His disciples' feet",
             "He cooked the whole Passover meal Himself",
-            "He asked His disciples to take turns saying what they were thankful for"
+            "He asked His disciples to take turns saying what they were thankful for",
+            "He got up, wrapped a towel around His waist, and washed all His disciples' feet"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "Jesus the Lord and Teacher got on His knees with a towel and a bowl of water and washed His disciples' feet, the job of the lowest servant."
         },
         {
           "question": "What did Jesus say the bread represented when He broke it and gave it to them?",
           "options": [
+            "His body which He was giving for them",
             "The Passover lamb that had been sacrificed in Egypt long ago",
             "The daily bread He had prayed about in the Lord's prayer",
-            "His body which He was giving for them",
             "The bread that had fed five thousand people on the hillside"
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Jesus took bread, gave thanks, broke it and said take and eat, this is my body. He was showing them what was coming."
         },
         {
@@ -4110,33 +4110,33 @@
           "question": "What did Jesus pray in the garden before He was arrested?",
           "options": [
             "Father send angels to protect me from what is coming",
-            "Father if there is any other way please let there be another way, but not my will, yours",
             "Father I am ready, let it happen quickly",
+            "Father if there is any other way please let there be another way, but not my will, yours",
             "Father help my disciples to be brave when they take me away"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Jesus prayed if there is another way let there be another way. But then He said not what I want but what you want. He chose to go through with it."
         },
         {
           "question": "What happened to the great curtain in the Temple when Jesus died?",
           "options": [
             "It fell down because of an earthquake",
-            "It was torn in two from top to bottom by God",
             "It caught fire from candles burning inside",
-            "It was removed by the priests as a sign of mourning"
+            "It was removed by the priests as a sign of mourning",
+            "It was torn in two from top to bottom by God"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "The curtain was torn from top to bottom, not from the bottom up as a person would do it. From the top, the way God tears things. The door to God's presence was now open."
         },
         {
           "question": "What did the criminal on the cross next to Jesus say to Him?",
           "options": [
+            "We deserve what we are getting but you did nothing wrong. Remember me when you come into your kingdom",
             "Save yourself and us if you are really the Son of God",
             "I believe in you, now prove it by getting us all down from these crosses",
-            "We deserve what we are getting but you did nothing wrong. Remember me when you come into your kingdom",
             "Why did God let this happen to someone as good as you"
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "The criminal said we deserve this but you are innocent. Then he said just remember me when you come into your kingdom. Jesus said today you will be with me in paradise."
         }
       ],
@@ -4205,11 +4205,11 @@
           "question": "How did Mary recognise that the person she thought was the gardener was actually Jesus?",
           "options": [
             "She saw His face clearly in the morning light",
-            "He showed her His hands where the nails had been",
             "He said her name and she knew His voice",
+            "He showed her His hands where the nails had been",
             "She saw Him walk through the solid wall of the tomb"
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "Jesus said one word. Mary. She heard His voice and knew immediately. She turned and said Teacher."
         },
         {
@@ -4227,11 +4227,11 @@
           "question": "What did Jesus make for His disciples on the beach after the resurrection?",
           "options": [
             "A feast of bread and wine like the last supper",
-            "Breakfast of bread and fish on a charcoal fire",
             "Nothing, He just appeared and talked with them",
-            "He brought food from a nearby village for them"
+            "He brought food from a nearby village for them",
+            "Breakfast of bread and fish on a charcoal fire"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "Jesus cooked bread and fish on a charcoal fire on the beach. After everything that had happened He made them breakfast. That is what Jesus is like."
         }
       ],
@@ -4299,23 +4299,23 @@
         {
           "question": "Why were the two disciples walking away from Jerusalem?",
           "options": [
-            "They had heard Jesus was alive and were going to tell people in Emmaus",
             "They were going home sad because they thought everything was over after the crucifixion",
+            "They had heard Jesus was alive and were going to tell people in Emmaus",
             "They were going to Emmaus to collect food for the other disciples",
             "They were trying to escape because they were afraid the religious leaders would arrest them too"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "They were walking away from Jerusalem with sad faces. They had hoped Jesus would rescue Israel. Now He was dead and it seemed like the end."
         },
         {
           "question": "When did the two disciples finally recognise Jesus?",
           "options": [
             "When He explained the Scriptures to them on the road",
+            "When He took bread, gave thanks, broke it, and gave it to them at the table",
             "When He asked them what they were talking about",
-            "When He stayed the night at their home in Emmaus",
-            "When He took bread, gave thanks, broke it, and gave it to them at the table"
+            "When He stayed the night at their home in Emmaus"
           ],
-          "answer": 3,
+          "answer": 1,
           "explanation": "Their eyes were opened at the breaking of the bread, the same gesture Jesus had made at the last supper. Then He disappeared."
         },
         {
@@ -4394,22 +4394,22 @@
           "question": "What happened when the Holy Spirit came on the disciples?",
           "options": [
             "A bright light flashed and they all fell to the ground",
-            "A sound like strong wind filled the building, something like flames sat on each person, and they spoke in other languages",
             "An angel appeared and told them what to do next",
-            "They all fell asleep and had the same dream at the same time"
+            "They all fell asleep and had the same dream at the same time",
+            "A sound like strong wind filled the building, something like flames sat on each person, and they spoke in other languages"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "A sound like rushing wind filled the house, flames appeared on each person, and they were filled with the Holy Spirit and spoke in other languages."
         },
         {
           "question": "Why were the people from other countries so amazed?",
           "options": [
-            "Because they had never heard about Jesus before",
             "Because each person heard the disciples speaking in their own home language",
+            "Because they had never heard about Jesus before",
             "Because the disciples were performing miracles and healing people",
             "Because a great light was shining from the building they could see from far away"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "People who had come from all over the world each heard the good news about God in their own native language. It was like Babel being undone."
         },
         {
@@ -4501,21 +4501,21 @@
           "options": [
             "An angel coming down to rescue him",
             "A bright light that blinded the people about to hurt him",
-            "Heaven open and Jesus standing at the right hand of God",
-            "His friends and family waiting for him"
+            "His friends and family waiting for him",
+            "Heaven open and Jesus standing at the right hand of God"
           ],
-          "answer": 2,
+          "answer": 3,
           "explanation": "Stephen said I can see heaven open and the Son of Man standing at the right hand of God. Knowing where he was going made all the difference."
         },
         {
           "question": "What were Stephen's last words?",
           "options": [
-            "I forgive you all and I pray God opens your eyes to the truth",
             "Lord Jesus receive my spirit, and Lord do not count this sin against them",
+            "I forgive you all and I pray God opens your eyes to the truth",
             "The Messiah is alive and you will all see Him one day",
             "I am going to be with Jesus and nothing can stop that now"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Stephen prayed Lord Jesus receive my spirit. Then he cried out Lord do not count this against them. He forgave while it was still happening."
         }
       ],
@@ -4596,11 +4596,11 @@
           "question": "What did the voice from heaven say to Saul?",
           "options": [
             "Stop what you are doing and go back to Jerusalem immediately",
-            "Saul Saul, why are you hurting me? I am Jesus, whom you are hurting",
             "I have chosen you to be the greatest teacher Israel has ever had",
+            "Saul Saul, why are you hurting me? I am Jesus, whom you are hurting",
             "Turn around and go home, your time for this work is not yet"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Jesus said Saul Saul why are you hurting me. To hurt the followers of Jesus was to hurt Jesus Himself."
         },
         {
@@ -4608,10 +4608,10 @@
           "options": [
             "He immediately started preaching about Jesus to the men around him",
             "He saw a great vision of heaven and all its wonders",
-            "He was struck blind and had to be led by hand into Damascus where he sat for three days without eating or drinking",
-            "He went back to Jerusalem to tell the high priest what had happened"
+            "He went back to Jerusalem to tell the high priest what had happened",
+            "He was struck blind and had to be led by hand into Damascus where he sat for three days without eating or drinking"
           ],
-          "answer": 2,
+          "answer": 3,
           "explanation": "Saul was struck blind. They led him by the hand to Damascus where he sat for three days without sight, food, or water, waiting for what came next."
         }
       ],
@@ -4678,34 +4678,34 @@
         {
           "question": "What were Paul and Silas doing at midnight in prison?",
           "options": [
+            "They were praying and singing songs to God while the other prisoners listened",
             "They were trying to find a way to escape through the window",
             "They were asleep because they were so exhausted from the beatings",
-            "They were praying and singing songs to God while the other prisoners listened",
             "They were whispering quietly so the guards would not hear them"
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "At midnight, beaten, with feet locked in stocks, Paul and Silas were praying out loud and singing songs. The other prisoners were listening."
         },
         {
           "question": "What did the jailer do after he and his family heard about Jesus and believed?",
           "options": [
             "He promised to tell the city leaders that Paul and Silas were innocent",
-            "He opened the prison and let everyone go free",
             "He washed their wounds and had his whole family baptised and brought Paul and Silas into his home and fed them",
+            "He opened the prison and let everyone go free",
             "He gave Paul and Silas money to help them travel to the next city"
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "The jailer washed their wounds, had his whole family baptised, brought them into his home, and fed them. He was full of joy. All in one night."
         },
         {
           "question": "Why was Paul not willing to just quietly leave the prison the next morning?",
           "options": [
             "Because he wanted to preach to all the prisoners before he left",
-            "Because they had beaten him and Silas without a proper trial and they were Roman citizens and he wanted the leaders to come and apologise",
             "Because he was still in too much pain to walk",
+            "Because they had beaten him and Silas without a proper trial and they were Roman citizens and he wanted the leaders to come and apologise",
             "Because the jailer asked him to stay and teach his family more about Jesus"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Paul said they beat Roman citizens without a trial and threw them in prison and now they want to quietly let them go. No. The leaders had to come and apologise in person."
         }
       ],
@@ -4774,33 +4774,33 @@
           "question": "What was Lydia's job?",
           "options": [
             "She baked and sold bread in the city market",
-            "She was a dealer in purple cloth, one of the most expensive things in the world",
             "She looked after the sick people in the city",
-            "She kept an inn where travellers could stay"
+            "She kept an inn where travellers could stay",
+            "She was a dealer in purple cloth, one of the most expensive things in the world"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "Lydia was a dealer in purple cloth from the city of Thyatira. Purple was incredibly expensive and only the very wealthy could afford it. She was a successful businesswoman."
         },
         {
           "question": "What did God do while Lydia was listening to Paul?",
           "options": [
+            "He opened her heart to pay careful attention to what Paul was saying",
             "He gave her a vision of heaven to confirm everything Paul was saying",
             "He sent an angel to stand beside Paul as a sign his message was true",
-            "He opened her heart to pay careful attention to what Paul was saying",
             "He caused a miracle to happen so she would know the message was real"
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "The Bible says the Lord opened her heart to pay attention to what Paul was saying. She was already seeking God. God opened what was already searching."
         },
         {
           "question": "What did Lydia do after she and her household were baptised?",
           "options": [
             "She went back to Thyatira to tell her family about Jesus",
-            "She gave all her money to Paul to help him travel to more cities",
             "She asked Paul and his friends to come and stay at her house and they did",
+            "She gave all her money to Paul to help him travel to more cities",
             "She started going from house to house in Philippi telling her neighbours about Jesus"
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "Lydia asked Paul to stay at her home and kept asking until he agreed. Her house became the gathering place for the first church in Europe."
         }
       ],
