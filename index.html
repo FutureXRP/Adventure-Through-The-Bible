@@ -1358,6 +1358,18 @@ async function checkCheckoutReturn() {
 }
 
 // ── PROLOGUE MODAL ────────────────────────────────────────────────────────────
+let _prlRaf = null, _prlAudio = null;
+function parsePrologueTimings(al) {
+  const chars = al.characters, starts = al.character_start_times_seconds, ends = al.character_end_times_seconds;
+  const out = []; let word = '', wordStart = null, endIdx = 0;
+  for (let i = 0; i < chars.length; i++) {
+    const c = chars[i];
+    if (c === ' ' || c === '\n' || c === '—') { if (word) { out.push({ start: wordStart, end: ends[endIdx] }); word = ''; wordStart = null; } }
+    else { if (!word) wordStart = starts[i]; word += c; endIdx = i; }
+  }
+  if (word) out.push({ start: wordStart, end: ends[endIdx] });
+  return out;
+}
 async function openPrologueModal() {
   try {
     const r = await fetch('./prologue.json');
@@ -1366,6 +1378,14 @@ async function openPrologueModal() {
     const tier = activeProfile ? (activeProfile.tier || 1) : 1;
     const storyArr = tier === 2 ? p.story_t2 : p.story;
     const audioSrc = tier === 2 ? p.audio_t2 : p.audio;
+    let _wi = 0;
+    function wrapPrologueWords(text) {
+      let html = '', word = '';
+      function flush() { if (word) { html += '<span class="story-word" data-idx="' + (_wi++) + '">' + word.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>'; word = ''; } }
+      for (let k = 0; k < text.length; k++) { const ch = text[k]; if (ch === ' ' || ch === '\n' || ch === '—') { flush(); html += ch; } else { word += ch; } }
+      flush();
+      return html;
+    }
 
     // Build modal
     const backdrop = document.createElement('div');
@@ -1373,15 +1393,15 @@ async function openPrologueModal() {
     backdrop.style.cssText = 'display:flex;position:fixed;inset:0;background:rgba(20,10,5,0.88);z-index:2000;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(6px);animation:fadeIn 0.4s ease';
 
     backdrop.innerHTML =
-      '<div style="background:var(--parchment);border-radius:16px;max-width:620px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,0.5);animation:modalIn 0.4s cubic-bezier(0.34,1.56,0.64,1)">' +
+      '<div id="prologueScroll" style="background:var(--parchment);border-radius:16px;max-width:620px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,0.5);animation:modalIn 0.4s cubic-bezier(0.34,1.56,0.64,1)">' +
         '<div style="height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-bright));border-radius:16px 16px 0 0"></div>' +
         '<div style="padding:32px 32px 12px">' +
           '<div class="modal-eyebrow">An Introduction</div>' +
           '<div class="modal-title" style="font-size:1.6rem;margin-bottom:6px">&#128099; The Road Begins Here</div>' +
           '<div class="modal-hook">' + p.hook + '</div>' +
-          (audioSrc ? '<audio controls style="width:100%;margin-bottom:20px;border-radius:8px" src="' + audioSrc + '"></audio>' : '') +
+          (audioSrc ? '<audio id="prologueAudio" controls style="width:100%;margin-bottom:20px;border-radius:8px" src="' + audioSrc + '"></audio>' : '') +
           '<div class="modal-story-text" style="font-size:0.97rem;line-height:1.85">' +
-            storyArr.map(function(para) { return '<p style="margin-bottom:1.2em">' + para + '</p>'; }).join('') +
+            storyArr.map(function(para) { return '<p class="prologue-para" style="margin-bottom:1.2em">' + wrapPrologueWords(para) + '</p>'; }).join('') +
           '</div>' +
         '</div>' +
         '<div style="padding:20px 32px 32px;text-align:center">' +
@@ -1392,6 +1412,28 @@ async function openPrologueModal() {
     backdrop.addEventListener('click', function(e) { if (e.target === backdrop) closePrologueModal(); });
     document.body.appendChild(backdrop);
     document.body.style.overflow = 'hidden';
+
+    // Word-by-word highlighting synced to the narration (parity with the story reader)
+    if (audioSrc) {
+      const audio = document.getElementById('prologueAudio');
+      const scroll = document.getElementById('prologueScroll');
+      const spans = Array.from(backdrop.querySelectorAll('.story-word'));
+      const paras = Array.from(backdrop.querySelectorAll('.prologue-para'));
+      _prlAudio = audio;
+      let timings = [], last = -1;
+      fetch(audioSrc.replace('.mp3', '.json')).then(function(r) { return r.ok ? r.json() : null; })
+        .then(function(al) { if (al && al.characters) timings = parsePrologueTimings(al); }).catch(function() {});
+      function bsearch(t) { if (!timings.length || t < timings[0].start) return -1; let lo = 0, hi = timings.length - 1; while (lo < hi) { const m = Math.ceil((lo + hi) / 2); if (timings[m].start <= t) lo = m; else hi = m - 1; } return lo; }
+      function clearHi() { spans.forEach(function(s) { s.classList.remove('speaking'); }); paras.forEach(function(p2) { p2.classList.remove('story-para-active'); }); }
+      function hi(t) { if (!timings.length || !spans.length) return; const idx = bsearch(t); if (idx === last) return; last = idx; clearHi(); if (idx >= 0 && idx < spans.length) { const s = spans[idx]; s.classList.add('speaking'); const par = s.closest('.prologue-para'); if (par) par.classList.add('story-para-active'); if (scroll) { const cr = scroll.getBoundingClientRect(), sr = s.getBoundingClientRect(); if (sr.top < cr.top + 24 || sr.bottom > cr.bottom - 24) s.scrollIntoView({ behavior: 'smooth', block: 'center' }); } } }
+      function loop() { if (!audio || audio.paused) { _prlRaf = null; return; } hi(audio.currentTime); _prlRaf = requestAnimationFrame(loop); }
+      if (audio) {
+        audio.addEventListener('play', function() { if (_prlRaf) cancelAnimationFrame(_prlRaf); _prlRaf = requestAnimationFrame(loop); });
+        audio.addEventListener('pause', function() { if (_prlRaf) { cancelAnimationFrame(_prlRaf); _prlRaf = null; } });
+        audio.addEventListener('seeked', function() { last = -1; });
+        audio.addEventListener('ended', function() { if (_prlRaf) { cancelAnimationFrame(_prlRaf); _prlRaf = null; } clearHi(); last = -1; });
+      }
+    }
   } catch(err) {
     console.warn('Prologue load failed:', err);
     // Silent fail — not critical
@@ -1399,6 +1441,8 @@ async function openPrologueModal() {
 }
 
 function closePrologueModal() {
+  if (_prlRaf) { cancelAnimationFrame(_prlRaf); _prlRaf = null; }
+  if (_prlAudio) { try { _prlAudio.pause(); } catch (e) {} _prlAudio = null; }
   const el = document.getElementById('prologueBackdrop');
   if (el) el.remove();
   document.body.style.overflow = '';
