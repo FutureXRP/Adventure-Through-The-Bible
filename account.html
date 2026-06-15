@@ -313,7 +313,7 @@ function renderPage() {
   let planStatusClass = 'free';
   let planLabel = 'Free Plan';
   let planDesc = 'You have access to the first 3 stories.';
-  if (isPaid && planType === 'one_time') { planStatusClass = 'active'; planLabel = 'Full Access — One-Time Purchase'; planDesc = 'You have permanent access to all 50 stories available at launch.'; }
+  if (isPaid && planType === 'one_time') { planStatusClass = 'active'; planLabel = 'Full Access — One-Time Purchase'; planDesc = 'You have permanent access to all 100 stories available at launch.'; }
   else if (isPaid && planType === 'monthly') { planStatusClass = 'active'; planLabel = 'Monthly Subscription — Active'; planDesc = 'You have access to all current and future stories.'; }
   else if (planType === 'monthly_cancelling') { planStatusClass = 'cancelling'; planLabel = 'Monthly Subscription — Cancelling'; planDesc = "Your subscription is cancelled. You'll keep access until the end of your billing period."; }
 
@@ -342,7 +342,7 @@ function renderPage() {
     '<div class="account-card">' +
       '<div class="card-header"><div class="card-header-icon">🎁</div><div>' +
         '<div class="card-header-title">Full Access — Free</div>' +
-        '<div class="card-header-sub">All 50 stories, quizzes, and audio narration</div>' +
+        '<div class="card-header-sub">All 100 stories, quizzes, and audio narration</div>' +
       '</div></div>' +
       '<div class="card-body">' +
         '<div class="plan-status active"><div class="plan-status-dot"></div><div><div class="plan-status-label">Everything is unlocked</div><div class="plan-status-desc">Thanks to a generous gift, the entire library is free for you and your family — no subscription and no payment, ever.</div></div></div>' +
