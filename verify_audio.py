@@ -32,6 +32,7 @@ import re
 
 AUDIO_DIR = 'audio'
 STORIES_FILE = 'stories.json'
+SUFFIX = ''                         # '-t2' for Tier 2 audio files
 WORD_SEPARATORS = (' ', '\n', '—')  # exactly what buildWordTimings() splits on
 
 
@@ -69,8 +70,8 @@ def audio_tokens(alignment):
 def verify_story(story):
     """Return (status, message). status in {'match','mismatch','missing','unlinked'}."""
     sid = story['id']
-    json_path = os.path.join(AUDIO_DIR, f"{sid}.json")
-    mp3_path = os.path.join(AUDIO_DIR, f"{sid}.mp3")
+    json_path = os.path.join(AUDIO_DIR, f"{sid}{SUFFIX}.json")
+    mp3_path = os.path.join(AUDIO_DIR, f"{sid}{SUFFIX}.mp3")
     linked = bool(story.get('audio'))
 
     if not os.path.exists(json_path) or not os.path.exists(mp3_path):
@@ -111,8 +112,11 @@ def verify_story(story):
 
 
 def main():
+    global STORIES_FILE, SUFFIX
     args = [a for a in sys.argv[1:] if not a.startswith('--')]
     strict = '--strict' in sys.argv
+    if '--tier2' in sys.argv:
+        STORIES_FILE, SUFFIX = 'stories-tier2.json', '-t2'
 
     with open(STORIES_FILE, encoding='utf-8') as f:
         data = json.load(f)

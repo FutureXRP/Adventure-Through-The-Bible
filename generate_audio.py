@@ -40,6 +40,7 @@ from verify_audio import display_tokens, audio_tokens, clean_word
 
 STORIES_FILE = 'stories.json'
 AUDIO_DIR = 'audio'
+SUFFIX = ''                                 # '-t2' for Tier 2 (separate files; never overwrites Tier 1)
 VOICE_ID = "1wg2wOjdEWKA7yQD8Kca"          # same premium voice as stories 1-10
 MODEL_ID = "eleven_multilingual_v2"         # same model as stories 1-10
 VOICE_SETTINGS = {"stability": 0.5, "similarity_boost": 0.75, "style": 0.0, "use_speaker_boost": True}
@@ -134,8 +135,8 @@ def generate(story_id, api_key):
 
     alignment = result['alignment']
     os.makedirs(AUDIO_DIR, exist_ok=True)
-    mp3_path = os.path.join(AUDIO_DIR, f"{story_id}.mp3")
-    json_path = os.path.join(AUDIO_DIR, f"{story_id}.json")
+    mp3_path = os.path.join(AUDIO_DIR, f"{story_id}{SUFFIX}.mp3")
+    json_path = os.path.join(AUDIO_DIR, f"{story_id}{SUFFIX}.json")
     with open(mp3_path, 'wb') as f:
         f.write(base64.b64decode(result['audio_base64']))
     with open(json_path, 'w', encoding='utf-8') as f:
@@ -143,8 +144,8 @@ def generate(story_id, api_key):
 
     ok, msg = check_alignment(story, alignment)
     if ok:
-        set_audio_field(story_id, f"./{AUDIO_DIR}/{story_id}.mp3")
-        print(f"  PASS  {msg}  ->  saved + linked in stories.json")
+        set_audio_field(story_id, f"./{AUDIO_DIR}/{story_id}{SUFFIX}.mp3")
+        print(f"  PASS  {msg}  ->  saved + linked in {STORIES_FILE}")
         return True
     print(f"  FAIL  audio saved but NOT linked (would mis-highlight):\n      {msg}")
     return False
@@ -152,8 +153,8 @@ def generate(story_id, api_key):
 
 def audio_status(story):
     sid = story['id']
-    have_files = os.path.exists(os.path.join(AUDIO_DIR, f"{sid}.mp3")) and \
-        os.path.exists(os.path.join(AUDIO_DIR, f"{sid}.json"))
+    have_files = os.path.exists(os.path.join(AUDIO_DIR, f"{sid}{SUFFIX}.mp3")) and \
+        os.path.exists(os.path.join(AUDIO_DIR, f"{sid}{SUFFIX}.json"))
     linked = bool(story.get('audio'))
     if have_files and linked:
         from verify_audio import verify_story
@@ -187,8 +188,13 @@ def cmd_list(data):
 
 
 def main():
+    global STORIES_FILE, SUFFIX
     args = sys.argv[1:]
     confirm = '--yes' in args
+    if '--tier2' in args:
+        STORIES_FILE, SUFFIX = 'stories-tier2.json', '-t2'
+        import verify_audio                       # keep the verifier's paths in sync for --list/status
+        verify_audio.STORIES_FILE, verify_audio.SUFFIX = 'stories-tier2.json', '-t2'
     ids = [a for a in args if not a.startswith('--')]
     data = load_data()
 
