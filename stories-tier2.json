@@ -5,7 +5,7 @@
     "version": "1.0",
     "tier": 2,
     "ageRange": "5-8",
-    "totalStories": 50,
+    "totalStories": 53,
     "freeStories": 3
   },
   "eras": [
@@ -647,9 +647,273 @@
       "published_date": "2026-06-04"
     },
     {
-      "id": "joseph",
+      "id": "jacob-esau",
       "era": "patriarchs",
       "order": 7,
+      "access": "premium",
+      "emoji": "🍲",
+      "title": "The Stolen Blessing",
+      "book": "Genesis 25, 27",
+      "date": "c. 1900 BC",
+      "location": "Canaan",
+      "hook": "Esau was born first, so the big blessing belonged to him. But his brother Jacob wanted it, and he came up with a sneaky plan to get it.",
+      "story": [
+        "Isaac and Rebekah had twin boys. The first one came out red and hairy, and they named him Esau. The second one came out holding on to his brother's heel, and they named him Jacob. Esau loved to hunt outside. Jacob liked to stay near home. They were brothers, but they were very different.",
+        "Because Esau was born first, he had something special called the birthright. It meant that one day he would get the biggest gift and the special blessing from his father.",
+        "One day Esau came home very hungry. Jacob was cooking a pot of red stew. \"Please give me some!\" said Esau. Jacob said, \"First give me your birthright.\" Esau was so hungry that he said yes, just for a bowl of soup. He gave away his special gift without even thinking about it.",
+        "Many years later, their father Isaac was very old, and he could not see anymore. He wanted to give his big blessing to Esau. But Rebekah wanted Jacob to have it instead. So she made a plan.",
+        "She cooked Isaac's favorite food. She put goat skins on Jacob's smooth arms so they would feel hairy like Esau's. Then Jacob went to his father and said, \"I am Esau.\" Isaac could not see, so he believed him, and he gave Jacob the big blessing.",
+        "When Esau found out what had happened, he was very sad and very angry. He was so angry that Jacob had to run far away to keep safe.",
+        "Jacob did a wrong thing when he tricked his father, and it made his whole family sad. But God was not finished with Jacob. Even when we make a mess, God still keeps his promises and never gives up on us."
+      ],
+      "devotional": {
+        "bigIdea": "Jacob tricked his father to get the blessing, and it made his family very sad. But God did not give up on Jacob. God keeps his promises even when we make mistakes.",
+        "questions": [
+          "Esau gave away something special just because he was hungry right now. What is something good that is worth waiting for?",
+          "How do you think Esau felt when he found out about the trick?",
+          "Even when we do something wrong, God still loves us. How does that make you feel?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "family",
+        "choices",
+        "God's promises"
+      ],
+      "connections": [
+        {
+          "title": "A Promise as Big as the Stars",
+          "storyId": "abraham",
+          "reference": "Genesis 28:13",
+          "why": "The blessing Jacob fought for was the very promise God first made to his grandfather Abraham, handed down through the family."
+        },
+        {
+          "title": "Jacob's Ladder",
+          "storyId": "jacob-ladder",
+          "reference": "Genesis 28:15",
+          "why": "Running for his life, Jacob meets God in the wilderness, who promises to stay with the very schemer who just lied to his father."
+        },
+        {
+          "title": "The Dreamer's Long Road",
+          "storyId": "joseph",
+          "reference": "Genesis 37:3",
+          "why": "Jacob grew up in a home with a favorite son, and sadly he repeated it with his own boys, loving Joseph best of all."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Esau traded his special birthright for what?",
+          "options": [
+            "A bowl of stew",
+            "A new bow",
+            "A baby goat"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Isaac could not see Jacob's trick because he was?",
+          "options": [
+            "Sleeping",
+            "Old and could not see",
+            "Too busy eating"
+          ],
+          "answer": 1,
+          "explanation": ""
+        },
+        {
+          "question": "After he tricked his father, Jacob had to do what?",
+          "options": [
+            "Say he was sorry",
+            "Run far away",
+            "Go hunting"
+          ],
+          "answer": 1,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "jacob-ladder",
+      "era": "patriarchs",
+      "order": 8,
+      "access": "premium",
+      "emoji": "🪜",
+      "title": "Jacob's Ladder",
+      "book": "Genesis 28",
+      "date": "c. 1900 BC",
+      "location": "Bethel",
+      "hook": "Jacob was all alone, far from home, with a stone for a pillow. Then he had a dream that showed him heaven was closer than he ever imagined.",
+      "story": [
+        "Jacob was running away from home because his brother was very angry with him. He walked a long, long way, all by himself, until the sun went down.",
+        "There was no bed out in the wild country. So Jacob found a stone, put his head on it like a pillow, and went to sleep under the stars. He felt very alone.",
+        "That night Jacob had an amazing dream. He saw a giant stairway that went all the way from the ground up into heaven. Angels were going up and coming down on it.",
+        "At the very top stood God. And God said, \"I am with you. I will take care of you everywhere you go, and I will bring you back home. I will never leave you.\"",
+        "When Jacob woke up, he was amazed. \"God is in this place,\" he said, \"and I did not even know it!\"",
+        "Jacob took his stone pillow and stood it up tall to help him remember. He named the place Bethel, which means the house of God.",
+        "Jacob had thought he was all alone. But God was right there with him the whole time. Even when you feel alone, God is closer than you know."
+      ],
+      "devotional": {
+        "bigIdea": "Jacob felt all alone, but God was right there with him, and God promised to never leave him. God is with you too, even when you cannot see him.",
+        "questions": [
+          "When is a time you have felt alone? How does it help to know that God is with you?",
+          "What was the most amazing part of Jacob's dream to you?",
+          "Jacob set up a stone to remember God. What is something that helps you remember God loves you?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "God's presence",
+        "loneliness",
+        "God's promises"
+      ],
+      "connections": [
+        {
+          "title": "The Stolen Blessing",
+          "storyId": "jacob-esau",
+          "reference": "Genesis 28:10",
+          "why": "Jacob is on the run because of the blessing he stole, and God meets him anyway with grace he never earned."
+        },
+        {
+          "title": "A New Name",
+          "storyId": "jacob-wrestles",
+          "reference": "Genesis 32:24",
+          "why": "Twenty years later God meets Jacob again, this time face to face, and gives the schemer a brand new name."
+        },
+        {
+          "title": "A Promise as Big as the Stars",
+          "storyId": "abraham",
+          "reference": "Genesis 28:14",
+          "why": "God repeats to Jacob the very promise he made to Abraham, that through this family every nation on earth would be blessed."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What did Jacob use for a pillow?",
+          "options": [
+            "A stone",
+            "A pillow of feathers",
+            "His shoes"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "In his dream, Jacob saw a stairway going up to where?",
+          "options": [
+            "A mountain",
+            "Heaven",
+            "A castle"
+          ],
+          "answer": 1,
+          "explanation": ""
+        },
+        {
+          "question": "What did God promise Jacob?",
+          "options": [
+            "He would be rich",
+            "He would always be with him",
+            "He would win every race"
+          ],
+          "answer": 1,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "jacob-wrestles",
+      "era": "patriarchs",
+      "order": 9,
+      "access": "premium",
+      "emoji": "🌅",
+      "title": "A New Name",
+      "book": "Genesis 32",
+      "date": "c. 1880 BC",
+      "location": "Peniel, by the Jabbok River",
+      "hook": "Jacob was going home at last, but he was scared to see his brother Esau. Alone in the dark, a mysterious man began to wrestle with him all night long.",
+      "story": [
+        "Jacob was finally going back home after many years away. But he was very scared, because he had to see his brother Esau, and the last time, Esau had been so very angry.",
+        "The night before they would meet, Jacob sent his family across the river. He stayed behind all by himself in the dark.",
+        "Then a man came and started to wrestle with Jacob. They wrestled and wrestled, all night long, and neither one would give up.",
+        "When morning was almost there, the man said, \"Let me go.\" But Jacob held on tight. \"I will not let go,\" he said, \"until you bless me.\"",
+        "The man asked, \"What is your name?\" \"Jacob,\" he said. Then the man said, \"Your new name is Israel, because you have struggled with God and you kept holding on.\"",
+        "Then Jacob knew something amazing. He had been wrestling with God! He named that place Peniel, and he said, \"I have seen God face to face.\"",
+        "When the sun came up, Jacob walked toward his brother, and he was limping. Jacob had stopped grabbing for things, and now he held on tight to God instead."
+      ],
+      "devotional": {
+        "bigIdea": "Jacob held on to God all night and would not let go until God blessed him. God gave him a new name and a new start. God can change us, even when life is a struggle.",
+        "questions": [
+          "Jacob held on tight to God. What are some ways you can hold on to God when you are scared?",
+          "How do you think Jacob felt when God gave him a brand new name?",
+          "God gave Jacob a fresh start. Is there something you would like a fresh start with?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "transformation",
+        "perseverance",
+        "identity"
+      ],
+      "connections": [
+        {
+          "title": "Jacob's Ladder",
+          "storyId": "jacob-ladder",
+          "reference": "Genesis 32:9",
+          "why": "Years earlier God promised at Bethel to bring Jacob home safely, and now Jacob holds God to that very promise on the way back."
+        },
+        {
+          "title": "The Stolen Blessing",
+          "storyId": "jacob-esau",
+          "reference": "Genesis 32:11",
+          "why": "The brother Jacob cheated is finally right in front of him, and the cheater has to face the past he ran away from."
+        },
+        {
+          "title": "The Dreamer's Long Road",
+          "storyId": "joseph",
+          "reference": "Genesis 35:10",
+          "why": "Jacob, now named Israel, becomes the father of the sons whose families grow into the twelve tribes of Israel."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Jacob was scared to go home because he had to see whom?",
+          "options": [
+            "A lion",
+            "His brother Esau",
+            "A king"
+          ],
+          "answer": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Who did Jacob wrestle with all night?",
+          "options": [
+            "A man who was really God",
+            "His brother",
+            "A friend"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What new name did God give him?",
+          "options": [
+            "Israel",
+            "Adam",
+            "David"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "joseph",
+      "era": "patriarchs",
+      "order": 10,
       "access": "premium",
       "emoji": "🌾",
       "title": "The Dreamer's Long Road",
@@ -745,7 +1009,7 @@
     {
       "id": "moses-birth",
       "era": "exodus",
-      "order": 8,
+      "order": 11,
       "access": "premium",
       "emoji": "🌿",
       "title": "The Baby in the River",
@@ -839,7 +1103,7 @@
     {
       "id": "burning-bush",
       "era": "exodus",
-      "order": 9,
+      "order": 12,
       "access": "premium",
       "emoji": "🔥",
       "title": "The Burning Bush",
@@ -935,7 +1199,7 @@
     {
       "id": "red-sea",
       "era": "exodus",
-      "order": 10,
+      "order": 13,
       "access": "premium",
       "emoji": "🌊",
       "title": "Through the Sea on Dry Ground",
@@ -1030,7 +1294,7 @@
     {
       "id": "ten-commandments",
       "era": "exodus",
-      "order": 11,
+      "order": 14,
       "access": "premium",
       "emoji": "📜",
       "title": "The Ten Commandments",
@@ -1124,7 +1388,7 @@
     {
       "id": "moses-water",
       "era": "exodus",
-      "order": 12,
+      "order": 15,
       "access": "premium",
       "emoji": "💧",
       "title": "Water From the Rock",
@@ -1218,7 +1482,7 @@
     {
       "id": "rahab",
       "era": "promised-land",
-      "order": 13,
+      "order": 16,
       "access": "premium",
       "emoji": "🪡",
       "title": "The Scarlet Thread",
@@ -1312,7 +1576,7 @@
     {
       "id": "jericho",
       "era": "promised-land",
-      "order": 14,
+      "order": 17,
       "access": "premium",
       "emoji": "🏛️",
       "title": "The Walls Come Down",
@@ -1405,7 +1669,7 @@
     {
       "id": "gideon",
       "era": "promised-land",
-      "order": 15,
+      "order": 18,
       "access": "premium",
       "emoji": "🏺",
       "title": "Three Hundred Men and Torches",
@@ -1500,7 +1764,7 @@
     {
       "id": "ruth",
       "era": "promised-land",
-      "order": 16,
+      "order": 19,
       "access": "premium",
       "emoji": "🌾",
       "title": "Wherever You Go",
@@ -1595,7 +1859,7 @@
     {
       "id": "samuel",
       "era": "kingdom",
-      "order": 17,
+      "order": 20,
       "access": "premium",
       "emoji": "👂",
       "title": "Speak, Lord",
@@ -1689,7 +1953,7 @@
     {
       "id": "david-goliath",
       "era": "kingdom",
-      "order": 18,
+      "order": 21,
       "access": "premium",
       "emoji": "🪨",
       "title": "One Stone",
@@ -1783,7 +2047,7 @@
     {
       "id": "david-saul",
       "era": "kingdom",
-      "order": 19,
+      "order": 22,
       "access": "premium",
       "emoji": "🗡️",
       "title": "The Cave and the King",
@@ -1876,7 +2140,7 @@
     {
       "id": "psalm23",
       "era": "kingdom",
-      "order": 20,
+      "order": 23,
       "access": "premium",
       "emoji": "🐑",
       "title": "The Lord Is My Shepherd",
@@ -1970,7 +2234,7 @@
     {
       "id": "solomon-wisdom",
       "era": "kingdom",
-      "order": 21,
+      "order": 24,
       "access": "premium",
       "emoji": "📜",
       "title": "The Wisest Request",
@@ -2063,7 +2327,7 @@
     {
       "id": "elijah",
       "era": "kingdom",
-      "order": 22,
+      "order": 25,
       "access": "premium",
       "emoji": "⚡",
       "title": "Fire from Heaven",
@@ -2156,7 +2420,7 @@
     {
       "id": "job",
       "era": "kingdom",
-      "order": 23,
+      "order": 26,
       "access": "premium",
       "emoji": "⚡",
       "title": "The Man Who Lost Everything",
@@ -2250,7 +2514,7 @@
     {
       "id": "isaiah-servant",
       "era": "kingdom",
-      "order": 24,
+      "order": 27,
       "access": "premium",
       "emoji": "📖",
       "title": "The Servant Who Suffers",
@@ -2344,7 +2608,7 @@
     {
       "id": "shadrach",
       "era": "exile",
-      "order": 25,
+      "order": 28,
       "access": "premium",
       "emoji": "🔥",
       "title": "The Furnace",
@@ -2439,7 +2703,7 @@
     {
       "id": "daniel",
       "era": "exile",
-      "order": 26,
+      "order": 29,
       "access": "premium",
       "emoji": "🦁",
       "title": "The Lion's Den",
@@ -2534,7 +2798,7 @@
     {
       "id": "esther",
       "era": "exile",
-      "order": 27,
+      "order": 30,
       "access": "premium",
       "emoji": "👑",
       "title": "For Such a Time as This",
@@ -2629,7 +2893,7 @@
     {
       "id": "jonah",
       "era": "exile",
-      "order": 28,
+      "order": 31,
       "access": "premium",
       "emoji": "🐋",
       "title": "The Man Who Ran From God",
@@ -2723,7 +2987,7 @@
     {
       "id": "nehemiah",
       "era": "exile",
-      "order": 29,
+      "order": 32,
       "access": "premium",
       "emoji": "🧱",
       "title": "The Wall Goes Up",
@@ -2818,7 +3082,7 @@
     {
       "id": "annunciation",
       "era": "nt-life",
-      "order": 30,
+      "order": 33,
       "access": "premium",
       "emoji": "👼",
       "title": "Impossible News",
@@ -2913,7 +3177,7 @@
     {
       "id": "boy-temple",
       "era": "nt-life",
-      "order": 31,
+      "order": 34,
       "access": "premium",
       "emoji": "📖",
       "title": "Left Behind in Jerusalem",
@@ -3008,7 +3272,7 @@
     {
       "id": "sermon-mount",
       "era": "nt-life",
-      "order": 32,
+      "order": 35,
       "access": "premium",
       "emoji": "⛰️",
       "title": "The Upside-Down Kingdom",
@@ -3104,7 +3368,7 @@
     {
       "id": "woman-at-well",
       "era": "nt-life",
-      "order": 33,
+      "order": 36,
       "access": "premium",
       "emoji": "🪣",
       "title": "The Woman at the Well",
@@ -3198,7 +3462,7 @@
     {
       "id": "feeding-5000",
       "era": "nt-life",
-      "order": 34,
+      "order": 37,
       "access": "premium",
       "emoji": "🐟",
       "title": "Five Loaves and Two Fish",
@@ -3293,7 +3557,7 @@
     {
       "id": "walk-on-water",
       "era": "nt-life",
-      "order": 35,
+      "order": 38,
       "access": "premium",
       "emoji": "🌊",
       "title": "Stepping Out",
@@ -3388,7 +3652,7 @@
     {
       "id": "good-samaritan",
       "era": "nt-life",
-      "order": 36,
+      "order": 39,
       "access": "premium",
       "emoji": "🫶",
       "title": "The One Who Stopped",
@@ -3482,7 +3746,7 @@
     {
       "id": "zacchaeus",
       "era": "nt-life",
-      "order": 37,
+      "order": 40,
       "access": "premium",
       "emoji": "🌳",
       "title": "The Man in the Tree",
@@ -3575,103 +3839,9 @@
       "published_date": "2026-06-05"
     },
     {
-      "id": "triumphal-entry",
-      "era": "nt-life",
-      "order": 38,
-      "access": "premium",
-      "emoji": "🌿",
-      "title": "The King Rides In",
-      "book": "Matthew 21:1-11",
-      "date": "c. AD 30",
-      "location": "Jerusalem",
-      "hook": "Jerusalem was waiting for a king to arrive on a great warhorse. Jesus came in on a donkey. The crowd went absolutely wild anyway.",
-      "story": [
-        "Jesus was heading to Jerusalem for the last time. He sent two disciples ahead to a village and told them exactly where to find a donkey and her young colt. He said if anyone asks why you are untying them just say the Lord needs them. They found everything exactly as Jesus had said.",
-        "This was not an accident. A prophet named Zechariah had written five hundred years before that your king is coming to you, gentle, and riding on a donkey. Jesus was doing what the prophet had said on purpose. He was announcing something.",
-        "The disciples put their cloaks on the donkey and Jesus sat on it. As He rode toward Jerusalem something amazing happened. The crowd grew and grew. People spread their cloaks on the road in front of Him like a red carpet for royalty. Others cut branches from palm trees and laid them down.",
-        "They shouted, \"Hosanna to the Son of David! Blessed is the one who comes in the name of the Lord! Hosanna in the highest!\" Hosanna means save us now. They were crying out to a king.",
-        "When Jesus entered Jerusalem the whole city was stirred up. People asked, \"Who is this?\" The crowd answered, \"This is Jesus the prophet from Nazareth in Galilee.\"",
-        "Jesus went into the Temple. He saw that people had turned the house of God into a market, buying and selling things right in the place meant for prayer. He turned over the tables of the money changers and said, \"My house is supposed to be a house of prayer. You have made it a den of robbers.\"",
-        "Then the blind and the sick came to Him in the Temple and He healed them all. The children in the Temple started shouting, \"Hosanna to the Son of David!\" The chief priests were angry. Jesus quoted the psalm that said from the mouths of children God has called forth praise.",
-        "The children in the Temple saw clearly what the powerful religious leaders refused to see."
-      ],
-      "devotional": {
-        "bigIdea": "The crowd shouted Hosanna, save us, to a king who arrived on a donkey instead of a warhorse. Jesus came in peace not to conquer armies but to deal with something much deeper. He is always a different kind of king from what we expect.",
-        "questions": [
-          "The crowd was expecting a mighty warrior king on a warhorse. Jesus came on a donkey. Why do you think God so often surprises us with how He does things?",
-          "The children in the Temple were shouting praises while the important religious leaders were annoyed. What do you think the children understood that the leaders missed?",
-          "The crowd shouted Hosanna which means save us. From what did they need saving? From what do we need saving?"
-        ]
-      },
-      "devotionalHeading": "Let's Talk About It",
-      "tags": [
-        "Jesus",
-        "king",
-        "worship",
-        "prophecy"
-      ],
-      "connections": [
-        {
-          "title": "Impossible News",
-          "storyId": "annunciation",
-          "reference": "Zechariah 9:9",
-          "why": "Zechariah wrote your king comes riding on a donkey five hundred years before Jesus was born, just as Isaiah described the suffering servant."
-        },
-        {
-          "title": "The Darkest Friday",
-          "storyId": "crucifixion",
-          "reference": "Matthew 21:9",
-          "why": "Hosanna means save us now. Five days after the crowd shouted it they were demanding His death. The journey from this day to Golgotha is the whole story of what kind of king Jesus came to be."
-        },
-        {
-          "title": "The Servant Who Suffers",
-          "storyId": "isaiah-servant",
-          "reference": "Matthew 21:5",
-          "why": "Isaiah said the servant would be gentle and humble. Zechariah said the king would be gentle on a donkey. Both pointed to this same moment."
-        }
-      ],
-      "audio": "./audio/triumphal-entry-t2.mp3",
-      "quiz": [
-        {
-          "question": "What animal did Jesus ride into Jerusalem on and why did it matter?",
-          "options": [
-            "A white warhorse, to show He had the power of a king",
-            "A camel, because that was the most common animal",
-            "He walked on foot because He did not want to draw attention to Himself",
-            "A donkey, because a prophet had written five hundred years before that the king would come gently on a donkey"
-          ],
-          "answer": 3,
-          "explanation": "Jesus chose a donkey on purpose to fulfil what Zechariah had written. He was announcing that He was the promised king but a gentle king who came in peace."
-        },
-        {
-          "question": "What did the crowd shout as Jesus rode into Jerusalem?",
-          "options": [
-            "Hosanna to the Son of David, blessed is He who comes in the name of the Lord",
-            "Long live the king of Israel!",
-            "Make way for the prophet from Galilee",
-            "The Messiah has come"
-          ],
-          "answer": 0,
-          "explanation": "The crowd shouted Hosanna to the Son of David which means save us now, Son of David. They were welcoming a king and calling on a saviour."
-        },
-        {
-          "question": "Who was still praising Jesus in the Temple when the religious leaders had stopped?",
-          "options": [
-            "The disciples who had been with Him from the start",
-            "The children who were shouting Hosanna to the Son of David",
-            "The sick people He had healed",
-            "The poor people He had helped feed"
-          ],
-          "answer": 1,
-          "explanation": "The children in the Temple were still shouting Hosanna. The religious leaders were angry about it. Jesus said God had called forth praise from the mouths of children."
-        }
-      ],
-      "published_date": "2026-06-05"
-    },
-    {
       "id": "rich-young-ruler",
       "era": "nt-life",
-      "order": 39,
+      "order": 41,
       "access": "premium",
       "emoji": "💰",
       "title": "The Man Who Walked Away",
@@ -3766,7 +3936,7 @@
     {
       "id": "prodigal",
       "era": "nt-life",
-      "order": 40,
+      "order": 42,
       "access": "premium",
       "emoji": "🏠",
       "title": "The Boy Who Came Home",
@@ -3861,7 +4031,7 @@
     {
       "id": "lazarus",
       "era": "nt-life",
-      "order": 41,
+      "order": 43,
       "access": "premium",
       "emoji": "🪦",
       "title": "Come Out",
@@ -3955,9 +4125,103 @@
       "published_date": "2026-06-05"
     },
     {
+      "id": "triumphal-entry",
+      "era": "nt-life",
+      "order": 44,
+      "access": "premium",
+      "emoji": "🌿",
+      "title": "The King Rides In",
+      "book": "Matthew 21:1-11",
+      "date": "c. AD 30",
+      "location": "Jerusalem",
+      "hook": "Jerusalem was waiting for a king to arrive on a great warhorse. Jesus came in on a donkey. The crowd went absolutely wild anyway.",
+      "story": [
+        "Jesus was heading to Jerusalem for the last time. He sent two disciples ahead to a village and told them exactly where to find a donkey and her young colt. He said if anyone asks why you are untying them just say the Lord needs them. They found everything exactly as Jesus had said.",
+        "This was not an accident. A prophet named Zechariah had written five hundred years before that your king is coming to you, gentle, and riding on a donkey. Jesus was doing what the prophet had said on purpose. He was announcing something.",
+        "The disciples put their cloaks on the donkey and Jesus sat on it. As He rode toward Jerusalem something amazing happened. The crowd grew and grew. People spread their cloaks on the road in front of Him like a red carpet for royalty. Others cut branches from palm trees and laid them down.",
+        "They shouted, \"Hosanna to the Son of David! Blessed is the one who comes in the name of the Lord! Hosanna in the highest!\" Hosanna means save us now. They were crying out to a king.",
+        "When Jesus entered Jerusalem the whole city was stirred up. People asked, \"Who is this?\" The crowd answered, \"This is Jesus the prophet from Nazareth in Galilee.\"",
+        "Jesus went into the Temple. He saw that people had turned the house of God into a market, buying and selling things right in the place meant for prayer. He turned over the tables of the money changers and said, \"My house is supposed to be a house of prayer. You have made it a den of robbers.\"",
+        "Then the blind and the sick came to Him in the Temple and He healed them all. The children in the Temple started shouting, \"Hosanna to the Son of David!\" The chief priests were angry. Jesus quoted the psalm that said from the mouths of children God has called forth praise.",
+        "The children in the Temple saw clearly what the powerful religious leaders refused to see."
+      ],
+      "devotional": {
+        "bigIdea": "The crowd shouted Hosanna, save us, to a king who arrived on a donkey instead of a warhorse. Jesus came in peace not to conquer armies but to deal with something much deeper. He is always a different kind of king from what we expect.",
+        "questions": [
+          "The crowd was expecting a mighty warrior king on a warhorse. Jesus came on a donkey. Why do you think God so often surprises us with how He does things?",
+          "The children in the Temple were shouting praises while the important religious leaders were annoyed. What do you think the children understood that the leaders missed?",
+          "The crowd shouted Hosanna which means save us. From what did they need saving? From what do we need saving?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "Jesus",
+        "king",
+        "worship",
+        "prophecy"
+      ],
+      "connections": [
+        {
+          "title": "Impossible News",
+          "storyId": "annunciation",
+          "reference": "Zechariah 9:9",
+          "why": "Zechariah wrote your king comes riding on a donkey five hundred years before Jesus was born, just as Isaiah described the suffering servant."
+        },
+        {
+          "title": "The Darkest Friday",
+          "storyId": "crucifixion",
+          "reference": "Matthew 21:9",
+          "why": "Hosanna means save us now. Five days after the crowd shouted it they were demanding His death. The journey from this day to Golgotha is the whole story of what kind of king Jesus came to be."
+        },
+        {
+          "title": "The Servant Who Suffers",
+          "storyId": "isaiah-servant",
+          "reference": "Matthew 21:5",
+          "why": "Isaiah said the servant would be gentle and humble. Zechariah said the king would be gentle on a donkey. Both pointed to this same moment."
+        }
+      ],
+      "audio": "./audio/triumphal-entry-t2.mp3",
+      "quiz": [
+        {
+          "question": "What animal did Jesus ride into Jerusalem on and why did it matter?",
+          "options": [
+            "A white warhorse, to show He had the power of a king",
+            "A camel, because that was the most common animal",
+            "He walked on foot because He did not want to draw attention to Himself",
+            "A donkey, because a prophet had written five hundred years before that the king would come gently on a donkey"
+          ],
+          "answer": 3,
+          "explanation": "Jesus chose a donkey on purpose to fulfil what Zechariah had written. He was announcing that He was the promised king but a gentle king who came in peace."
+        },
+        {
+          "question": "What did the crowd shout as Jesus rode into Jerusalem?",
+          "options": [
+            "Hosanna to the Son of David, blessed is He who comes in the name of the Lord",
+            "Long live the king of Israel!",
+            "Make way for the prophet from Galilee",
+            "The Messiah has come"
+          ],
+          "answer": 0,
+          "explanation": "The crowd shouted Hosanna to the Son of David which means save us now, Son of David. They were welcoming a king and calling on a saviour."
+        },
+        {
+          "question": "Who was still praising Jesus in the Temple when the religious leaders had stopped?",
+          "options": [
+            "The disciples who had been with Him from the start",
+            "The children who were shouting Hosanna to the Son of David",
+            "The sick people He had healed",
+            "The poor people He had helped feed"
+          ],
+          "answer": 1,
+          "explanation": "The children in the Temple were still shouting Hosanna. The religious leaders were angry about it. Jesus said God had called forth praise from the mouths of children."
+        }
+      ],
+      "published_date": "2026-06-05"
+    },
+    {
       "id": "last-supper",
       "era": "nt-church",
-      "order": 42,
+      "order": 45,
       "access": "premium",
       "emoji": "🍞",
       "title": "The Night Before",
@@ -4051,7 +4315,7 @@
     {
       "id": "crucifixion",
       "era": "nt-church",
-      "order": 43,
+      "order": 46,
       "access": "premium",
       "emoji": "✝️",
       "title": "The Darkest Friday",
@@ -4145,7 +4409,7 @@
     {
       "id": "resurrection",
       "era": "nt-church",
-      "order": 44,
+      "order": 47,
       "access": "premium",
       "emoji": "🌅",
       "title": "The Empty Tomb",
@@ -4240,7 +4504,7 @@
     {
       "id": "road-emmaus",
       "era": "nt-church",
-      "order": 45,
+      "order": 48,
       "access": "premium",
       "emoji": "🛤️",
       "title": "The Stranger on the Road",
@@ -4335,7 +4599,7 @@
     {
       "id": "pentecost",
       "era": "nt-church",
-      "order": 46,
+      "order": 49,
       "access": "premium",
       "emoji": "🕊️",
       "title": "The Day Everything Changed",
@@ -4429,7 +4693,7 @@
     {
       "id": "stephen",
       "era": "nt-church",
-      "order": 47,
+      "order": 50,
       "access": "premium",
       "emoji": "✝️",
       "title": "The First Martyr",
@@ -4524,7 +4788,7 @@
     {
       "id": "paul-conversion",
       "era": "nt-church",
-      "order": 48,
+      "order": 51,
       "access": "premium",
       "emoji": "⚡",
       "title": "The Man Who Hunted Christians",
@@ -4620,7 +4884,7 @@
     {
       "id": "paul-jail",
       "era": "nt-church",
-      "order": 49,
+      "order": 52,
       "access": "premium",
       "emoji": "🎵",
       "title": "Singing at Midnight",
@@ -4714,7 +4978,7 @@
     {
       "id": "lydia",
       "era": "nt-church",
-      "order": 50,
+      "order": 53,
       "access": "premium",
       "emoji": "🎨",
       "title": "The Purple Merchant",
