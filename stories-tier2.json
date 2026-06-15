@@ -5,7 +5,7 @@
     "version": "1.0",
     "tier": 2,
     "ageRange": "5-8",
-    "totalStories": 63,
+    "totalStories": 68,
     "freeStories": 3
   },
   "eras": [
@@ -2757,9 +2757,99 @@
       "published_date": "2026-06-05"
     },
     {
-      "id": "samuel",
+      "id": "hannah",
       "era": "kingdom",
       "order": 30,
+      "access": "premium",
+      "emoji": "🙏",
+      "title": "Hannah's Prayer",
+      "book": "1 Samuel 1-2",
+      "date": "c. 1100 BC",
+      "location": "Shiloh",
+      "hook": "Hannah wanted a baby more than anything. So she went to God's house and prayed a quiet prayer that only God could hear.",
+      "story": [
+        "There was a woman named Hannah who loved God very much. More than anything in the world, she wanted to have a baby of her own.",
+        "But year after year went by, and Hannah had no children. It made her very, very sad.",
+        "One day Hannah went to God's house all by herself. She cried and prayed from deep in her heart.",
+        "\"Dear God,\" she prayed quietly, \"if you give me a son, I will give him right back to you to serve you his whole life.\"",
+        "Hannah prayed so quietly that her lips moved but no sound came out. Only God could hear her prayer.",
+        "The priest, named Eli, told her, \"Go in peace, and may God give you what you have asked for.\"",
+        "And God did! After a while, Hannah had a baby boy. She named him Samuel, and she was so happy.",
+        "Hannah did not forget her promise. When Samuel was still little, she brought him to God's house to serve God, just like she had promised.",
+        "Then Hannah sang a happy song to thank God. God had heard her quiet prayer, and God hears our prayers too."
+      ],
+      "devotional": {
+        "bigIdea": "Hannah told God exactly how she felt and trusted him with her biggest wish. God heard her quiet prayer. God hears our prayers too, even the quiet ones.",
+        "questions": [
+          "Hannah told God how sad she was. How does it help to tell God how you feel?",
+          "Hannah kept her promise to God even though it was hard. What is a promise you can keep?",
+          "God heard Hannah's quiet prayer. How does it feel to know God always hears you?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "prayer",
+        "trust",
+        "God listens"
+      ],
+      "connections": [
+        {
+          "title": "Speak, Lord",
+          "storyId": "samuel",
+          "reference": "1 Samuel 1:20",
+          "why": "The son God gives Hannah is Samuel, who grows up to hear God's voice and anoint Israel's first kings."
+        },
+        {
+          "title": "Impossible News",
+          "storyId": "annunciation",
+          "reference": "Luke 1:46",
+          "why": "Hannah's song of praise, that God lifts up the lowly and fills the hungry, is echoed centuries later in Mary's song."
+        },
+        {
+          "title": "The Upside-Down Kingdom",
+          "storyId": "sermon-mount",
+          "reference": "1 Samuel 2:8",
+          "why": "Hannah sings that God raises the poor from the dust, the same upside-down kingdom Jesus would teach about on the mountain."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What did Hannah want most of all?",
+          "options": [
+            "A baby",
+            "Gold",
+            "A castle"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How quietly did Hannah pray?",
+          "options": [
+            "So quietly only God could hear",
+            "Very loudly",
+            "In a shout"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Hannah do after her son was born?",
+          "options": [
+            "Kept her promise and gave him to serve God",
+            "Hid him",
+            "Forgot her promise"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "samuel",
+      "era": "kingdom",
+      "order": 31,
       "access": "premium",
       "emoji": "👂",
       "title": "Speak, Lord",
@@ -2851,9 +2941,189 @@
       "published_date": "2026-06-05"
     },
     {
+      "id": "saul-king",
+      "era": "kingdom",
+      "order": 32,
+      "access": "premium",
+      "emoji": "👑",
+      "title": "Israel's First King",
+      "book": "1 Samuel 8-10",
+      "date": "c. 1050 BC",
+      "location": "Israel",
+      "hook": "God was already Israel's king. But the people wanted a king they could see, like all the other nations had.",
+      "story": [
+        "For a long time, God himself was the king of his people. He led them and took care of them.",
+        "But the people looked at the other nations, who all had kings with crowns. They went to the prophet Samuel and said, \"We want a king too, like everyone else!\"",
+        "This made Samuel sad. So he prayed, and God said, \"They are not really saying no to you. They are saying no to me as their king.\"",
+        "Samuel warned the people. \"A king will take your sons and your best things, and one day you will be sorry.\"",
+        "But the people still said, \"We want a king!\" So God let them have one.",
+        "God chose a young man named Saul. He was very tall and looked just like a king should look.",
+        "At first, Saul was humble. When it was time to make him king, he was so shy that he hid behind the bags, and the people had to go find him!",
+        "Samuel made Saul the king, and everyone shouted, \"Long live the king!\"",
+        "But the people learned something important. No king they could see could ever take the place of God, their real King."
+      ],
+      "devotional": {
+        "bigIdea": "The people wanted to be like everyone else and have a king they could see. But only God can truly be the King our hearts need.",
+        "questions": [
+          "When do you want to be just like everyone else?",
+          "Saul was humble and even hid behind the bags. Why is it good to be humble?",
+          "God is the best King of all. What do you love about God being your King?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "kingship",
+        "trust",
+        "humility"
+      ],
+      "connections": [
+        {
+          "title": "Speak, Lord",
+          "storyId": "samuel",
+          "reference": "1 Samuel 8:7",
+          "why": "Samuel, the boy who once heard God's voice, is now the old prophet who warns the people and anoints their first king."
+        },
+        {
+          "title": "God Looks at the Heart",
+          "storyId": "david-anointed",
+          "reference": "1 Samuel 16:7",
+          "why": "Saul looked exactly like a king should look, but God would soon choose David instead, looking past the outside to the heart."
+        },
+        {
+          "title": "The Cave and the King",
+          "storyId": "david-saul",
+          "reference": "1 Samuel 18:9",
+          "why": "Saul began so humbly, but jealousy of David would grow in him until he was chasing the very man God had chosen."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Who was Israel's king before they asked for one?",
+          "options": [
+            "God himself",
+            "A giant",
+            "Samuel"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Why did the people want a king?",
+          "options": [
+            "To be like the other nations",
+            "To win a game",
+            "God told them to"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Where did Saul hide when it was time to be king?",
+          "options": [
+            "Among the baggage",
+            "In a cave",
+            "Up a tree"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "david-anointed",
+      "era": "kingdom",
+      "order": 33,
+      "access": "premium",
+      "emoji": "🫒",
+      "title": "God Looks at the Heart",
+      "book": "1 Samuel 16",
+      "date": "c. 1025 BC",
+      "location": "Bethlehem",
+      "hook": "Samuel went to pick the next king. Seven strong brothers walked by, but God was waiting for the youngest one, who was still out with the sheep.",
+      "story": [
+        "King Saul had stopped following God. So God sent the prophet Samuel to a town called Bethlehem to find a new king.",
+        "God sent him to the house of a man named Jesse, who had many sons. \"One of them will be the new king,\" God said.",
+        "The oldest son came first. He was tall and strong and handsome. Samuel thought, \"This must be the one!\"",
+        "But God said, \"No. People look at the outside, but I look at the heart.\"",
+        "So one by one, seven big, strong sons walked past Samuel. And each time, God said, \"Not this one.\"",
+        "\"Are these all your sons?\" Samuel asked. \"There is one more,\" said Jesse. \"My youngest, David. He is out watching the sheep.\"",
+        "Nobody had even thought to call him in! So they ran to get David from the fields.",
+        "When David came in, God said, \"This is the one!\" So Samuel poured oil on David's head to show he was God's chosen king.",
+        "God did not pick David because he was the biggest or strongest. God picked him because of his heart. God always sees what is inside us."
+      ],
+      "devotional": {
+        "bigIdea": "Everyone looked at the big strong brothers, but God looked at David's heart. God does not care how we look on the outside. He sees who we really are inside.",
+        "questions": [
+          "Why do we often look at how people look on the outside?",
+          "God looks at our hearts. What do you think God sees when he looks at your heart?",
+          "Everyone forgot about David, but God did not. How does it feel that God never forgets you?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "the heart",
+        "being chosen",
+        "God sees"
+      ],
+      "connections": [
+        {
+          "title": "Israel's First King",
+          "storyId": "saul-king",
+          "reference": "1 Samuel 16:1",
+          "why": "Saul looked like a king on the outside, but God now sends Samuel to find a king after his own heart instead."
+        },
+        {
+          "title": "One Stone",
+          "storyId": "david-goliath",
+          "reference": "1 Samuel 16:13",
+          "why": "The shepherd boy anointed here is the same David who will soon face the giant Goliath with nothing but a sling and trust in God."
+        },
+        {
+          "title": "The Lord Is My Shepherd",
+          "storyId": "psalm23",
+          "reference": "1 Samuel 16:11",
+          "why": "David was out watching the sheep when God chose him, and the shepherd boy would grow up to write the most famous shepherd song of all."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What does God look at when he chooses someone?",
+          "options": [
+            "The heart",
+            "How tall they are",
+            "Their clothes"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Where was David when Samuel came?",
+          "options": [
+            "Watching the sheep",
+            "Sleeping",
+            "Eating dinner"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Why did God choose David?",
+          "options": [
+            "Because of his heart",
+            "Because he was the biggest",
+            "Because he was the oldest"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
       "id": "david-goliath",
       "era": "kingdom",
-      "order": 31,
+      "order": 34,
       "access": "premium",
       "emoji": "🪨",
       "title": "One Stone",
@@ -2945,9 +3215,99 @@
       "published_date": "2026-06-05"
     },
     {
+      "id": "david-jonathan",
+      "era": "kingdom",
+      "order": 35,
+      "access": "premium",
+      "emoji": "🏹",
+      "title": "The Best of Friends",
+      "book": "1 Samuel 18-20",
+      "date": "c. 1015 BC",
+      "location": "Gibeah",
+      "hook": "Jonathan was a prince, and David would one day be king in his place. But instead of being rivals, they became the very best of friends.",
+      "story": [
+        "After David beat the giant Goliath, he came to live at the palace of King Saul.",
+        "There he met the king's son, Prince Jonathan. Right away, Jonathan loved David like a brother, and they became the very best of friends.",
+        "Jonathan even gave David his own royal robe and his sword. He was the prince, but he gladly shared everything with his friend.",
+        "But King Saul became very jealous of David, because everyone loved him. Saul wanted to hurt David.",
+        "Jonathan was sad and worried for his friend. He bravely warned David that he was in danger.",
+        "They made a secret plan with arrows. If Jonathan shot the arrows far away, it meant David must run to stay safe.",
+        "When Jonathan saw David really was in danger, he shot the arrows far out into the field. That was the signal.",
+        "The two friends hugged and cried, because David had to run far away. \"Go in peace,\" said Jonathan. \"We will be friends forever.\"",
+        "David and Jonathan loved each other and helped each other. That is what good friends do."
+      ],
+      "devotional": {
+        "bigIdea": "Jonathan and David were the best of friends. Jonathan even gave up his own things and kept his friend safe. Real friends want what is best for each other.",
+        "questions": [
+          "Jonathan shared his special things with David. How can you be a good friend by sharing?",
+          "Jonathan kept David safe. Who are the friends who help you?",
+          "What do you think makes someone a really good friend?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "friendship",
+        "loyalty",
+        "love"
+      ],
+      "connections": [
+        {
+          "title": "One Stone",
+          "storyId": "david-goliath",
+          "reference": "1 Samuel 18:1",
+          "why": "It was right after David defeated Goliath that Prince Jonathan's heart was knit to David's in friendship."
+        },
+        {
+          "title": "The Cave and the King",
+          "storyId": "david-saul",
+          "reference": "1 Samuel 19:1",
+          "why": "Jonathan's own father, King Saul, grows so jealous of David that Jonathan must risk his life to protect his friend."
+        },
+        {
+          "title": "Kindness for Jonathan's Sake",
+          "storyId": "mephibosheth",
+          "reference": "1 Samuel 20:42",
+          "why": "David and Jonathan promise to be loyal forever, and years later David keeps that promise to Jonathan's son."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Who was David's best friend?",
+          "options": [
+            "Jonathan",
+            "Goliath",
+            "Pharaoh"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Jonathan give David?",
+          "options": [
+            "His royal robe and sword",
+            "A bowl of soup",
+            "A boat"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How did Jonathan warn David to run away?",
+          "options": [
+            "With a signal using arrows",
+            "With a letter",
+            "With a song"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
       "id": "david-saul",
       "era": "kingdom",
-      "order": 32,
+      "order": 36,
       "access": "premium",
       "emoji": "🗡️",
       "title": "The Cave and the King",
@@ -3038,9 +3398,99 @@
       "published_date": "2026-06-05"
     },
     {
+      "id": "david-ark",
+      "era": "kingdom",
+      "order": 37,
+      "access": "premium",
+      "emoji": "🎶",
+      "title": "Dancing Before the Lord",
+      "book": "2 Samuel 6",
+      "date": "c. 1000 BC",
+      "location": "Jerusalem",
+      "hook": "When King David brought God's special golden chest home to the city, he was so happy that he danced with all his might, and he did not care who was watching!",
+      "story": [
+        "David was now the king of all God's people. He wanted to bring something very special home to his city, Jerusalem.",
+        "It was the ark of the covenant, a golden chest that showed that God was with his people. David wanted God right at the center of everything.",
+        "So they carried the ark carefully into the city, just the way God said to. And there was a huge, happy celebration!",
+        "There were trumpets and harps and tambourines. Everyone sang and shouted for joy as the ark came home.",
+        "King David was so full of joy that he danced and danced with all his might, right down the middle of the street!",
+        "But David's wife, Michal, watched from a window. She thought a king should not dance like that. She felt embarrassed.",
+        "She told David, \"You looked silly today!\" But David said, \"I was dancing for God! I do not care if I look silly. I just want to honor him.\"",
+        "David loved God so much that his joy spilled right out of him.",
+        "Worshiping God is not about looking proper. It is about loving God with your whole heart, just like David did."
+      ],
+      "devotional": {
+        "bigIdea": "King David danced with all his might because he loved God so much. Worshiping God is about loving him with your whole heart, not about looking proper.",
+        "questions": [
+          "David danced to show his love for God. What are fun ways you can worship God?",
+          "David did not care if he looked silly. Why do you think he was so happy?",
+          "How can you put God at the center of your day, like David did?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "worship",
+        "joy",
+        "celebration"
+      ],
+      "connections": [
+        {
+          "title": "God Looks at the Heart",
+          "storyId": "david-anointed",
+          "reference": "2 Samuel 6:14",
+          "why": "The shepherd boy God chose for his heart grows into a king whose heart overflows with joyful worship."
+        },
+        {
+          "title": "The Lord Is My Shepherd",
+          "storyId": "psalm23",
+          "reference": "Psalm 30:11",
+          "why": "David, who danced before the Lord with all his might, was also the singer and poet who gave us the Psalms."
+        },
+        {
+          "title": "The Wisest Request",
+          "storyId": "solomon-wisdom",
+          "reference": "1 Kings 8:1",
+          "why": "David brings the ark to Jerusalem, and his son Solomon would later build the great Temple to be its permanent home."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What did David bring home to the city?",
+          "options": [
+            "God's special golden chest, the ark",
+            "A new crown",
+            "A big drum"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did David do because he was so happy?",
+          "options": [
+            "He danced with all his might",
+            "He took a nap",
+            "He hid"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did David care about most?",
+          "options": [
+            "Honoring God, not looking proper",
+            "Looking like a fancy king",
+            "Winning a dance contest"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
       "id": "psalm23",
       "era": "kingdom",
-      "order": 33,
+      "order": 38,
       "access": "premium",
       "emoji": "🐑",
       "title": "The Lord Is My Shepherd",
@@ -3134,7 +3584,7 @@
     {
       "id": "solomon-wisdom",
       "era": "kingdom",
-      "order": 34,
+      "order": 39,
       "access": "premium",
       "emoji": "📜",
       "title": "The Wisest Request",
@@ -3227,7 +3677,7 @@
     {
       "id": "elijah",
       "era": "kingdom",
-      "order": 35,
+      "order": 40,
       "access": "premium",
       "emoji": "⚡",
       "title": "Fire from Heaven",
@@ -3320,7 +3770,7 @@
     {
       "id": "job",
       "era": "kingdom",
-      "order": 36,
+      "order": 41,
       "access": "premium",
       "emoji": "⚡",
       "title": "The Man Who Lost Everything",
@@ -3414,7 +3864,7 @@
     {
       "id": "isaiah-servant",
       "era": "kingdom",
-      "order": 37,
+      "order": 42,
       "access": "premium",
       "emoji": "📖",
       "title": "The Servant Who Suffers",
@@ -3508,7 +3958,7 @@
     {
       "id": "shadrach",
       "era": "exile",
-      "order": 38,
+      "order": 43,
       "access": "premium",
       "emoji": "🔥",
       "title": "The Furnace",
@@ -3603,7 +4053,7 @@
     {
       "id": "daniel",
       "era": "exile",
-      "order": 39,
+      "order": 44,
       "access": "premium",
       "emoji": "🦁",
       "title": "The Lion's Den",
@@ -3698,7 +4148,7 @@
     {
       "id": "esther",
       "era": "exile",
-      "order": 40,
+      "order": 45,
       "access": "premium",
       "emoji": "👑",
       "title": "For Such a Time as This",
@@ -3793,7 +4243,7 @@
     {
       "id": "jonah",
       "era": "exile",
-      "order": 41,
+      "order": 46,
       "access": "premium",
       "emoji": "🐋",
       "title": "The Man Who Ran From God",
@@ -3887,7 +4337,7 @@
     {
       "id": "nehemiah",
       "era": "exile",
-      "order": 42,
+      "order": 47,
       "access": "premium",
       "emoji": "🧱",
       "title": "The Wall Goes Up",
@@ -3982,7 +4432,7 @@
     {
       "id": "annunciation",
       "era": "nt-life",
-      "order": 43,
+      "order": 48,
       "access": "premium",
       "emoji": "👼",
       "title": "Impossible News",
@@ -4077,7 +4527,7 @@
     {
       "id": "boy-temple",
       "era": "nt-life",
-      "order": 44,
+      "order": 49,
       "access": "premium",
       "emoji": "📖",
       "title": "Left Behind in Jerusalem",
@@ -4172,7 +4622,7 @@
     {
       "id": "sermon-mount",
       "era": "nt-life",
-      "order": 45,
+      "order": 50,
       "access": "premium",
       "emoji": "⛰️",
       "title": "The Upside-Down Kingdom",
@@ -4268,7 +4718,7 @@
     {
       "id": "woman-at-well",
       "era": "nt-life",
-      "order": 46,
+      "order": 51,
       "access": "premium",
       "emoji": "🪣",
       "title": "The Woman at the Well",
@@ -4362,7 +4812,7 @@
     {
       "id": "feeding-5000",
       "era": "nt-life",
-      "order": 47,
+      "order": 52,
       "access": "premium",
       "emoji": "🐟",
       "title": "Five Loaves and Two Fish",
@@ -4457,7 +4907,7 @@
     {
       "id": "walk-on-water",
       "era": "nt-life",
-      "order": 48,
+      "order": 53,
       "access": "premium",
       "emoji": "🌊",
       "title": "Stepping Out",
@@ -4552,7 +5002,7 @@
     {
       "id": "good-samaritan",
       "era": "nt-life",
-      "order": 49,
+      "order": 54,
       "access": "premium",
       "emoji": "🫶",
       "title": "The One Who Stopped",
@@ -4646,7 +5096,7 @@
     {
       "id": "zacchaeus",
       "era": "nt-life",
-      "order": 50,
+      "order": 55,
       "access": "premium",
       "emoji": "🌳",
       "title": "The Man in the Tree",
@@ -4741,7 +5191,7 @@
     {
       "id": "rich-young-ruler",
       "era": "nt-life",
-      "order": 51,
+      "order": 56,
       "access": "premium",
       "emoji": "💰",
       "title": "The Man Who Walked Away",
@@ -4836,7 +5286,7 @@
     {
       "id": "prodigal",
       "era": "nt-life",
-      "order": 52,
+      "order": 57,
       "access": "premium",
       "emoji": "🏠",
       "title": "The Boy Who Came Home",
@@ -4931,7 +5381,7 @@
     {
       "id": "lazarus",
       "era": "nt-life",
-      "order": 53,
+      "order": 58,
       "access": "premium",
       "emoji": "🪦",
       "title": "Come Out",
@@ -5027,7 +5477,7 @@
     {
       "id": "triumphal-entry",
       "era": "nt-life",
-      "order": 54,
+      "order": 59,
       "access": "premium",
       "emoji": "🌿",
       "title": "The King Rides In",
@@ -5121,7 +5571,7 @@
     {
       "id": "last-supper",
       "era": "nt-church",
-      "order": 55,
+      "order": 60,
       "access": "premium",
       "emoji": "🍞",
       "title": "The Night Before",
@@ -5215,7 +5665,7 @@
     {
       "id": "crucifixion",
       "era": "nt-church",
-      "order": 56,
+      "order": 61,
       "access": "premium",
       "emoji": "✝️",
       "title": "The Darkest Friday",
@@ -5309,7 +5759,7 @@
     {
       "id": "resurrection",
       "era": "nt-church",
-      "order": 57,
+      "order": 62,
       "access": "premium",
       "emoji": "🌅",
       "title": "The Empty Tomb",
@@ -5404,7 +5854,7 @@
     {
       "id": "road-emmaus",
       "era": "nt-church",
-      "order": 58,
+      "order": 63,
       "access": "premium",
       "emoji": "🛤️",
       "title": "The Stranger on the Road",
@@ -5499,7 +5949,7 @@
     {
       "id": "pentecost",
       "era": "nt-church",
-      "order": 59,
+      "order": 64,
       "access": "premium",
       "emoji": "🕊️",
       "title": "The Day Everything Changed",
@@ -5593,7 +6043,7 @@
     {
       "id": "stephen",
       "era": "nt-church",
-      "order": 60,
+      "order": 65,
       "access": "premium",
       "emoji": "✝️",
       "title": "The First Martyr",
@@ -5688,7 +6138,7 @@
     {
       "id": "paul-conversion",
       "era": "nt-church",
-      "order": 61,
+      "order": 66,
       "access": "premium",
       "emoji": "⚡",
       "title": "The Man Who Hunted Christians",
@@ -5784,7 +6234,7 @@
     {
       "id": "paul-jail",
       "era": "nt-church",
-      "order": 62,
+      "order": 67,
       "access": "premium",
       "emoji": "🎵",
       "title": "Singing at Midnight",
@@ -5878,7 +6328,7 @@
     {
       "id": "lydia",
       "era": "nt-church",
-      "order": 63,
+      "order": 68,
       "access": "premium",
       "emoji": "🎨",
       "title": "The Purple Merchant",
