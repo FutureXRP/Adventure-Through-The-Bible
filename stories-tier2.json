@@ -5,7 +5,7 @@
     "version": "1.0",
     "tier": 2,
     "ageRange": "5-8",
-    "totalStories": 53,
+    "totalStories": 58,
     "freeStories": 3
   },
   "eras": [
@@ -1197,9 +1197,189 @@
       "published_date": "2026-06-04"
     },
     {
-      "id": "red-sea",
+      "id": "plagues",
       "era": "exodus",
       "order": 13,
+      "access": "premium",
+      "emoji": "🐸",
+      "title": "The Ten Plagues",
+      "book": "Exodus 7-11",
+      "date": "c. 1446 BC",
+      "location": "Egypt",
+      "hook": "God told Pharaoh to let his people go free. But Pharaoh kept saying no, so God showed him who was really in charge.",
+      "story": [
+        "God's people, the Israelites, had been slaves in Egypt for a very, very long time. They worked hard all day long, and they cried out to God to save them.",
+        "So God sent Moses to the king of Egypt, who was called Pharaoh. Moses stood before him and said, \"God says, let my people go!\"",
+        "But Pharaoh did not want to lose all his workers. He folded his arms and said, \"No! I will not let them go.\"",
+        "So God sent troubles on Egypt called plagues. First, Moses held his hand over the river, and all the water turned to blood.",
+        "Then frogs came hopping up out of the river, thousands and thousands of them, into the houses and the beds and even the ovens! After that came tiny biting bugs and clouds of buzzing flies.",
+        "The farm animals got sick. The people got itchy, sore skin. Then big chunks of hail came crashing down from the sky, and hungry locusts ate up every green plant that was left.",
+        "Last of all, darkness covered Egypt for three whole days, so dark that no one could even see their own hand. But where God's people lived, it stayed bright and sunny.",
+        "Every single time, Moses said, \"Let God's people go.\" And every single time, Pharaoh was stubborn and said no. But God kept his own people safe through every plague.",
+        "God was showing Pharaoh that he is stronger than any king in the whole world. And one more plague was coming, the one that would finally set the people free."
+      ],
+      "devotional": {
+        "bigIdea": "Pharaoh thought he was the strongest. But God showed that he alone is God, and that he never forgets his people. Nothing is stronger than God.",
+        "questions": [
+          "Pharaoh kept saying no to God. Why do you think he was so stubborn?",
+          "God kept his people safe through all the plagues. How does it feel to know God keeps you safe?",
+          "What was the most surprising plague to you?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "God's power",
+        "rescue",
+        "freedom"
+      ],
+      "connections": [
+        {
+          "title": "The Burning Bush",
+          "storyId": "burning-bush",
+          "reference": "Exodus 7:1",
+          "why": "At the bush God promised to rescue his people, and now he sends Moses back to Pharaoh to make good on that promise."
+        },
+        {
+          "title": "The First Passover",
+          "storyId": "passover",
+          "reference": "Exodus 11:1",
+          "why": "Nine plagues could not move Pharaoh's heart. The tenth and final one is coming, and it changes everything."
+        },
+        {
+          "title": "Through the Sea on Dry Ground",
+          "storyId": "red-sea",
+          "reference": "Exodus 14:4",
+          "why": "Even after the plagues, Pharaoh chases the people to the sea, where God wins the very last word."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What did Moses keep telling Pharaoh?",
+          "options": [
+            "Let God's people go",
+            "Give me a crown",
+            "Build a boat"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the river turn into?",
+          "options": [
+            "Blood",
+            "Milk",
+            "Sand"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Did God keep his own people safe during the plagues?",
+          "options": [
+            "Yes, he protected them",
+            "No, he forgot them",
+            "Only sometimes"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "passover",
+      "era": "exodus",
+      "order": 14,
+      "access": "premium",
+      "emoji": "🐑",
+      "title": "The First Passover",
+      "book": "Exodus 12",
+      "date": "c. 1446 BC",
+      "location": "Egypt",
+      "hook": "On the night God set his people free, every family painted lamb's blood on their door, and the blood kept everyone inside safe.",
+      "story": [
+        "God said one last plague would finally set his people free. But first, he gave them a special way to stay safe that night.",
+        "Each family was to pick a perfect little lamb. That evening they would gather together, and they would paint some of the lamb's blood on the sides and the top of their door.",
+        "Then they cooked the lamb and ate it with flat bread. They put on their coats and their shoes and held their walking sticks, all ready to leave the very moment God said go.",
+        "God told them, \"When I come through Egypt tonight and I see the blood on your door, I will pass right over your house. No harm will come to anyone inside.\"",
+        "So the families waited inside, trusting God. And in the middle of the night, God passed through all of Egypt.",
+        "Every single house that had blood on the door was safe, and everyone inside was protected. The blood showed that the people inside belonged to God.",
+        "That very night, Pharaoh called for Moses and cried, \"Go! Take your families, take your animals, take everything, and leave!\" God's people were finally free.",
+        "God told them to remember this special night every single year, with a special meal. They called it the Passover, because God had passed over them.",
+        "And long, long after, a man named John would point to Jesus and say, \"Look, the Lamb of God!\" Jesus is the Lamb who keeps us safe forever."
+      ],
+      "devotional": {
+        "bigIdea": "God's people were kept safe by the blood of the lamb on their door. That first Passover was a picture of Jesus, the Lamb of God, who keeps us safe.",
+        "questions": [
+          "The families had to trust God and paint the blood before anything happened. When is it hard for you to trust?",
+          "God told them to remember this night every year. What is a special thing your family likes to remember?",
+          "How do you think the families felt when morning came and they were safe?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "rescue",
+        "the Lamb",
+        "freedom"
+      ],
+      "connections": [
+        {
+          "title": "The Ten Plagues",
+          "storyId": "plagues",
+          "reference": "Exodus 12:29",
+          "why": "Nine plagues failed to move Pharaoh. The tenth, on the night of the Passover, finally sets the people free."
+        },
+        {
+          "title": "The Darkest Friday",
+          "storyId": "crucifixion",
+          "reference": "1 Corinthians 5:7",
+          "why": "A spotless lamb died so death would pass over God's people, pointing ahead to Jesus, the Lamb of God who died to rescue us."
+        },
+        {
+          "title": "The Night Before",
+          "storyId": "last-supper",
+          "reference": "Luke 22:15",
+          "why": "Centuries later Jesus shared a Passover meal with his friends the night before he died, and gave it a brand new meaning."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What did the families paint on their doors?",
+          "options": [
+            "A lamb's blood",
+            "Gold stars",
+            "Their names"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did God promise when he saw the blood?",
+          "options": [
+            "He would pass over the house",
+            "He would send snow",
+            "He would knock"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What special meal did God tell them to remember each year?",
+          "options": [
+            "The Passover",
+            "Breakfast",
+            "A birthday"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "red-sea",
+      "era": "exodus",
+      "order": 15,
       "access": "premium",
       "emoji": "🌊",
       "title": "Through the Sea on Dry Ground",
@@ -1292,9 +1472,99 @@
       "published_date": "2026-06-04"
     },
     {
+      "id": "manna",
+      "era": "exodus",
+      "order": 16,
+      "access": "premium",
+      "emoji": "🍞",
+      "title": "Bread from Heaven",
+      "book": "Exodus 16",
+      "date": "c. 1446 BC",
+      "location": "The Wilderness",
+      "hook": "There was no food in the desert, and the people were hungry and scared. So every single morning, God sent bread down from heaven.",
+      "story": [
+        "Out in the hot desert, the people of Israel ran out of food. They were hungry and afraid, and they began to grumble. \"We wish we were back in Egypt,\" they said, \"where we had plenty to eat!\"",
+        "But God was very kind to them. He told Moses, \"I will send bread down from heaven for you, every single day.\"",
+        "That evening, a big flock of birds called quail came to the camp, so the people had meat to eat for dinner.",
+        "And the next morning, when the dew dried up, there were little white flakes all over the ground, like frost. The people had never seen anything like it.",
+        "They asked each other, \"What is it?\" So they gave it that name: manna, which means, what is it? It was white like seeds and tasted sweet, like honey.",
+        "God told them to gather just enough for that one day. But some people did not listen and kept extra overnight, and in the morning it was full of worms and smelled terrible.",
+        "On the sixth day, God told them to gather twice as much, because the seventh day was a special day to rest, and no manna would fall. That day, the extra they saved stayed fresh and good.",
+        "God did not send manna for just a few days. He sent it every single morning for forty years, until his people reached the land he had promised them.",
+        "God gave his people exactly what they needed, one day at a time. He always took care of them, and he always will."
+      ],
+      "devotional": {
+        "bigIdea": "God gave his people just enough food for each day, so they would trust him every morning. God still gives us what we need, one day at a time.",
+        "questions": [
+          "The people forgot how big God was and started to grumble. What helps you remember the good things God does?",
+          "God gave them food one day at a time. What is something you can trust God for today?",
+          "How would you feel if you woke up and found breakfast on the ground from God?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "God provides",
+        "trust",
+        "the wilderness"
+      ],
+      "connections": [
+        {
+          "title": "Through the Sea on Dry Ground",
+          "storyId": "red-sea",
+          "reference": "Exodus 16:3",
+          "why": "Soon after God split the sea to save them, the people forgot, and grumbled that they would rather be back in Egypt."
+        },
+        {
+          "title": "Water From the Rock",
+          "storyId": "moses-water",
+          "reference": "Exodus 17:6",
+          "why": "Just as God sent bread when they were hungry, he sent water from a rock when they were thirsty, day after day."
+        },
+        {
+          "title": "Five Loaves and Two Fish",
+          "storyId": "feeding-5000",
+          "reference": "John 6:35",
+          "why": "God fed a whole nation with bread from heaven, pointing ahead to Jesus, who said, I am the bread of life."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What did God send down every morning?",
+          "options": [
+            "Bread called manna",
+            "Rain",
+            "Snow"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How much were the people supposed to gather each day?",
+          "options": [
+            "Just enough for that day",
+            "As much as possible",
+            "None at all"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How long did God feed them with manna?",
+          "options": [
+            "Forty years",
+            "One day",
+            "One week"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
       "id": "ten-commandments",
       "era": "exodus",
-      "order": 14,
+      "order": 17,
       "access": "premium",
       "emoji": "📜",
       "title": "The Ten Commandments",
@@ -1386,9 +1656,99 @@
       "published_date": "2026-06-04"
     },
     {
+      "id": "golden-calf",
+      "era": "exodus",
+      "order": 18,
+      "access": "premium",
+      "emoji": "🐂",
+      "title": "The Golden Calf",
+      "book": "Exodus 32",
+      "date": "c. 1446 BC",
+      "location": "Mount Sinai",
+      "hook": "While Moses was up on the mountain talking with God, the people grew tired of waiting and made a pretend god out of gold.",
+      "story": [
+        "Moses went up the tall mountain to meet with God and to get his rules for living. He was gone for a long, long time, forty days and forty nights.",
+        "Down below, the people got tired of waiting. They went to Moses' brother Aaron and said, \"We do not know what happened to Moses. Make us a god we can see!\"",
+        "So Aaron took their gold earrings, melted them in the fire, and shaped the gold into a shiny calf. The people bowed down low to it and had a big, wild party.",
+        "But this was very, very wrong. They were forgetting the real God, who had just saved them from Egypt with his mighty power.",
+        "Up on the mountain, God told Moses what the people were doing. So Moses hurried back down, carrying two flat stones with God's words written on them.",
+        "When Moses saw the golden calf and the wild party, his heart filled with sadness and anger. He was so upset that he dropped the two stones, and they smashed into pieces on the ground.",
+        "Moses melted the golden calf in the fire until there was nothing left of it. Then he asked Aaron, \"Why did you let the people do such a terrible thing?\"",
+        "The next day, Moses went back up the mountain. \"Please forgive your people,\" he begged God. He loved them so much that he wanted to share their punishment.",
+        "And God, who is slow to get angry and full of love, forgave the people and stayed with them. They had been quick to forget God, but God would not give up on them."
+      ],
+      "devotional": {
+        "bigIdea": "The people forgot God and made a pretend god of gold. But when Moses asked God to forgive them, God did. God is patient and loving, even when we mess up.",
+        "questions": [
+          "The people made a god they could see. Why is it better to trust the real God we cannot see?",
+          "Moses asked God to forgive his friends. Who prays for you?",
+          "How does it feel to know God forgives us when we are sorry?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "worship",
+        "forgiveness",
+        "God's mercy"
+      ],
+      "connections": [
+        {
+          "title": "The Ten Commandments",
+          "storyId": "ten-commandments",
+          "reference": "Exodus 32:19",
+          "why": "The people break the very first command, to worship God alone, before Moses even gets down the mountain with the stone tablets."
+        },
+        {
+          "title": "The Boy Who Came Home",
+          "storyId": "prodigal",
+          "reference": "Exodus 34:6",
+          "why": "Like the father who runs to his lost son, God shows himself to be slow to anger and full of love, forgiving a people who turned away."
+        },
+        {
+          "title": "Water From the Rock",
+          "storyId": "moses-water",
+          "reference": "Exodus 17:6",
+          "why": "Moses keeps standing between God and a stubborn people, pleading for them again and again on the long desert road."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Why did the people make a golden calf?",
+          "options": [
+            "They were tired of waiting for Moses",
+            "God asked them to",
+            "They were hungry"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did Moses do when he saw the calf?",
+          "options": [
+            "He dropped and broke the stone tablets",
+            "He danced too",
+            "He hid"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did God do when Moses asked him to forgive the people?",
+          "options": [
+            "He forgave them",
+            "He left them",
+            "He got a new people"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
       "id": "moses-water",
       "era": "exodus",
-      "order": 15,
+      "order": 19,
       "access": "premium",
       "emoji": "💧",
       "title": "Water From the Rock",
@@ -1480,9 +1840,99 @@
       "published_date": "2026-06-04"
     },
     {
+      "id": "bronze-serpent",
+      "era": "exodus",
+      "order": 20,
+      "access": "premium",
+      "emoji": "🐍",
+      "title": "The Bronze Snake",
+      "book": "Numbers 21",
+      "date": "c. 1407 BC",
+      "location": "The Wilderness",
+      "hook": "When snakes came into the camp, God gave the people a surprising way to be saved. All they had to do was look up.",
+      "story": [
+        "The people of Israel had been traveling through the desert for a long, long time, and they were getting grumpy. They complained against God again, even about the good food he sent them every day.",
+        "This time, snakes came slithering into the camp, and many people got hurt and were very scared.",
+        "The people ran to Moses and said, \"We are sorry! We should not have complained against God. Please ask him to help us.\" So Moses prayed for the people.",
+        "God gave Moses a surprising answer. He said, \"Make a snake out of shiny bronze, and put it up high on a tall pole.\"",
+        "God promised, \"Anyone who has been hurt can look up at the bronze snake, and they will get better.\"",
+        "So Moses made the bronze snake and lifted it high on the pole, right in the middle of the camp.",
+        "There was no medicine to take and nothing hard to do. The people who were hurt just looked up at the snake, and they got well again.",
+        "All they had to bring was trust. Looking up was their way of saying, God, I believe you can save me.",
+        "Long, long after, Jesus said that he would be lifted up high too, so that everyone who looks to him would be saved. When we need help, we can always look to Jesus."
+      ],
+      "devotional": {
+        "bigIdea": "All the people had to do was look up and trust God, and they were saved. We are saved the same way, by looking to Jesus.",
+        "questions": [
+          "The people complained even about good things. What is something good God has given you to be thankful for?",
+          "God's cure was just to look up. Why is it good that God makes the way simple?",
+          "What does it mean to you to look to Jesus when you are scared?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "trust",
+        "healing",
+        "the cross"
+      ],
+      "connections": [
+        {
+          "title": "The Darkest Friday",
+          "storyId": "crucifixion",
+          "reference": "John 3:14",
+          "why": "Jesus said that just as Moses lifted the snake on a pole, he would be lifted up on the cross, so that all who look to him in trust would live."
+        },
+        {
+          "title": "Water From the Rock",
+          "storyId": "moses-water",
+          "reference": "Numbers 21:5",
+          "why": "Once again the people grumble on the hard desert road, and once again God answers their complaining with mercy."
+        },
+        {
+          "title": "Bread from Heaven",
+          "storyId": "manna",
+          "reference": "Numbers 21:5",
+          "why": "The people complain about the very manna God sends them each day, forgetting that it is a daily gift from heaven."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What came into the camp when the people grumbled?",
+          "options": [
+            "Snakes",
+            "Bears",
+            "Birds"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did God tell Moses to put up on a pole?",
+          "options": [
+            "A bronze snake",
+            "A flag",
+            "A lamp"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What did the people do to get better?",
+          "options": [
+            "Looked up at the snake",
+            "Ran away fast",
+            "Took medicine"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
       "id": "rahab",
       "era": "promised-land",
-      "order": 16,
+      "order": 21,
       "access": "premium",
       "emoji": "🪡",
       "title": "The Scarlet Thread",
@@ -1576,7 +2026,7 @@
     {
       "id": "jericho",
       "era": "promised-land",
-      "order": 17,
+      "order": 22,
       "access": "premium",
       "emoji": "🏛️",
       "title": "The Walls Come Down",
@@ -1669,7 +2119,7 @@
     {
       "id": "gideon",
       "era": "promised-land",
-      "order": 18,
+      "order": 23,
       "access": "premium",
       "emoji": "🏺",
       "title": "Three Hundred Men and Torches",
@@ -1764,7 +2214,7 @@
     {
       "id": "ruth",
       "era": "promised-land",
-      "order": 19,
+      "order": 24,
       "access": "premium",
       "emoji": "🌾",
       "title": "Wherever You Go",
@@ -1859,7 +2309,7 @@
     {
       "id": "samuel",
       "era": "kingdom",
-      "order": 20,
+      "order": 25,
       "access": "premium",
       "emoji": "👂",
       "title": "Speak, Lord",
@@ -1953,7 +2403,7 @@
     {
       "id": "david-goliath",
       "era": "kingdom",
-      "order": 21,
+      "order": 26,
       "access": "premium",
       "emoji": "🪨",
       "title": "One Stone",
@@ -2047,7 +2497,7 @@
     {
       "id": "david-saul",
       "era": "kingdom",
-      "order": 22,
+      "order": 27,
       "access": "premium",
       "emoji": "🗡️",
       "title": "The Cave and the King",
@@ -2140,7 +2590,7 @@
     {
       "id": "psalm23",
       "era": "kingdom",
-      "order": 23,
+      "order": 28,
       "access": "premium",
       "emoji": "🐑",
       "title": "The Lord Is My Shepherd",
@@ -2234,7 +2684,7 @@
     {
       "id": "solomon-wisdom",
       "era": "kingdom",
-      "order": 24,
+      "order": 29,
       "access": "premium",
       "emoji": "📜",
       "title": "The Wisest Request",
@@ -2327,7 +2777,7 @@
     {
       "id": "elijah",
       "era": "kingdom",
-      "order": 25,
+      "order": 30,
       "access": "premium",
       "emoji": "⚡",
       "title": "Fire from Heaven",
@@ -2420,7 +2870,7 @@
     {
       "id": "job",
       "era": "kingdom",
-      "order": 26,
+      "order": 31,
       "access": "premium",
       "emoji": "⚡",
       "title": "The Man Who Lost Everything",
@@ -2514,7 +2964,7 @@
     {
       "id": "isaiah-servant",
       "era": "kingdom",
-      "order": 27,
+      "order": 32,
       "access": "premium",
       "emoji": "📖",
       "title": "The Servant Who Suffers",
@@ -2608,7 +3058,7 @@
     {
       "id": "shadrach",
       "era": "exile",
-      "order": 28,
+      "order": 33,
       "access": "premium",
       "emoji": "🔥",
       "title": "The Furnace",
@@ -2703,7 +3153,7 @@
     {
       "id": "daniel",
       "era": "exile",
-      "order": 29,
+      "order": 34,
       "access": "premium",
       "emoji": "🦁",
       "title": "The Lion's Den",
@@ -2798,7 +3248,7 @@
     {
       "id": "esther",
       "era": "exile",
-      "order": 30,
+      "order": 35,
       "access": "premium",
       "emoji": "👑",
       "title": "For Such a Time as This",
@@ -2893,7 +3343,7 @@
     {
       "id": "jonah",
       "era": "exile",
-      "order": 31,
+      "order": 36,
       "access": "premium",
       "emoji": "🐋",
       "title": "The Man Who Ran From God",
@@ -2987,7 +3437,7 @@
     {
       "id": "nehemiah",
       "era": "exile",
-      "order": 32,
+      "order": 37,
       "access": "premium",
       "emoji": "🧱",
       "title": "The Wall Goes Up",
@@ -3082,7 +3532,7 @@
     {
       "id": "annunciation",
       "era": "nt-life",
-      "order": 33,
+      "order": 38,
       "access": "premium",
       "emoji": "👼",
       "title": "Impossible News",
@@ -3177,7 +3627,7 @@
     {
       "id": "boy-temple",
       "era": "nt-life",
-      "order": 34,
+      "order": 39,
       "access": "premium",
       "emoji": "📖",
       "title": "Left Behind in Jerusalem",
@@ -3272,7 +3722,7 @@
     {
       "id": "sermon-mount",
       "era": "nt-life",
-      "order": 35,
+      "order": 40,
       "access": "premium",
       "emoji": "⛰️",
       "title": "The Upside-Down Kingdom",
@@ -3368,7 +3818,7 @@
     {
       "id": "woman-at-well",
       "era": "nt-life",
-      "order": 36,
+      "order": 41,
       "access": "premium",
       "emoji": "🪣",
       "title": "The Woman at the Well",
@@ -3462,7 +3912,7 @@
     {
       "id": "feeding-5000",
       "era": "nt-life",
-      "order": 37,
+      "order": 42,
       "access": "premium",
       "emoji": "🐟",
       "title": "Five Loaves and Two Fish",
@@ -3557,7 +4007,7 @@
     {
       "id": "walk-on-water",
       "era": "nt-life",
-      "order": 38,
+      "order": 43,
       "access": "premium",
       "emoji": "🌊",
       "title": "Stepping Out",
@@ -3652,7 +4102,7 @@
     {
       "id": "good-samaritan",
       "era": "nt-life",
-      "order": 39,
+      "order": 44,
       "access": "premium",
       "emoji": "🫶",
       "title": "The One Who Stopped",
@@ -3746,7 +4196,7 @@
     {
       "id": "zacchaeus",
       "era": "nt-life",
-      "order": 40,
+      "order": 45,
       "access": "premium",
       "emoji": "🌳",
       "title": "The Man in the Tree",
@@ -3841,7 +4291,7 @@
     {
       "id": "rich-young-ruler",
       "era": "nt-life",
-      "order": 41,
+      "order": 46,
       "access": "premium",
       "emoji": "💰",
       "title": "The Man Who Walked Away",
@@ -3936,7 +4386,7 @@
     {
       "id": "prodigal",
       "era": "nt-life",
-      "order": 42,
+      "order": 47,
       "access": "premium",
       "emoji": "🏠",
       "title": "The Boy Who Came Home",
@@ -4031,7 +4481,7 @@
     {
       "id": "lazarus",
       "era": "nt-life",
-      "order": 43,
+      "order": 48,
       "access": "premium",
       "emoji": "🪦",
       "title": "Come Out",
@@ -4127,7 +4577,7 @@
     {
       "id": "triumphal-entry",
       "era": "nt-life",
-      "order": 44,
+      "order": 49,
       "access": "premium",
       "emoji": "🌿",
       "title": "The King Rides In",
@@ -4221,7 +4671,7 @@
     {
       "id": "last-supper",
       "era": "nt-church",
-      "order": 45,
+      "order": 50,
       "access": "premium",
       "emoji": "🍞",
       "title": "The Night Before",
@@ -4315,7 +4765,7 @@
     {
       "id": "crucifixion",
       "era": "nt-church",
-      "order": 46,
+      "order": 51,
       "access": "premium",
       "emoji": "✝️",
       "title": "The Darkest Friday",
@@ -4409,7 +4859,7 @@
     {
       "id": "resurrection",
       "era": "nt-church",
-      "order": 47,
+      "order": 52,
       "access": "premium",
       "emoji": "🌅",
       "title": "The Empty Tomb",
@@ -4504,7 +4954,7 @@
     {
       "id": "road-emmaus",
       "era": "nt-church",
-      "order": 48,
+      "order": 53,
       "access": "premium",
       "emoji": "🛤️",
       "title": "The Stranger on the Road",
@@ -4599,7 +5049,7 @@
     {
       "id": "pentecost",
       "era": "nt-church",
-      "order": 49,
+      "order": 54,
       "access": "premium",
       "emoji": "🕊️",
       "title": "The Day Everything Changed",
@@ -4693,7 +5143,7 @@
     {
       "id": "stephen",
       "era": "nt-church",
-      "order": 50,
+      "order": 55,
       "access": "premium",
       "emoji": "✝️",
       "title": "The First Martyr",
@@ -4788,7 +5238,7 @@
     {
       "id": "paul-conversion",
       "era": "nt-church",
-      "order": 51,
+      "order": 56,
       "access": "premium",
       "emoji": "⚡",
       "title": "The Man Who Hunted Christians",
@@ -4884,7 +5334,7 @@
     {
       "id": "paul-jail",
       "era": "nt-church",
-      "order": 52,
+      "order": 57,
       "access": "premium",
       "emoji": "🎵",
       "title": "Singing at Midnight",
@@ -4978,7 +5428,7 @@
     {
       "id": "lydia",
       "era": "nt-church",
-      "order": 53,
+      "order": 58,
       "access": "premium",
       "emoji": "🎨",
       "title": "The Purple Merchant",
