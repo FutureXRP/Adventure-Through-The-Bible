@@ -1139,11 +1139,9 @@ function renderAuthBar() {
 
   // Add child link — inside dropdown only
   const addChildRow = ''; // Add child moved to account.html
-  // Plan badge — only show on parent/individual, not child profiles
+  // Plan badge removed since the app is free for everyone
   const isChildActive = activeProfile && activeProfile.type === 'child';
-  const planBadge = (!isChildActive && userProfile.is_paid)
-    ? '<div class="auth-tier-badge gold">' + (userProfile.plan_type === 'monthly' ? '\u25cf MONTHLY' : '\u25cf FULL ACCESS') + '</div>'
-    : '';
+  const planBadge = '';
 
   // Tier label badge shown under child name
   const childTierBadge = isChildActive
