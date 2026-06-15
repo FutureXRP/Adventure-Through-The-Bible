@@ -1085,7 +1085,7 @@ function openJourney() {
   const earned = authUser ? dbBadges : new Set();
   const profileName = activeProfile ? activeProfile.name : 'Guest';
   document.getElementById('journeyProfileName').textContent = profileName + "'s badges";
-  const allStoriesRead = stories.every(s => getProgress().has(s.id));
+  const allStoriesRead = stories.length >= 10 && stories.every(s => getProgress().has(s.id));
   const eraBadges = BADGE_DEFS.filter(b => b.id !== 'hero' && b.id !== 'complete');
   const heroEarned = (authUser ? dbBadges : new Set()).has('hero');
   const grid = document.getElementById('journeyGrid');
