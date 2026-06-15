@@ -5,7 +5,7 @@
     "version": "1.0",
     "tier": 2,
     "ageRange": "5-8",
-    "totalStories": 58,
+    "totalStories": 63,
     "freeStories": 3
   },
   "eras": [
@@ -1840,9 +1840,99 @@
       "published_date": "2026-06-04"
     },
     {
-      "id": "bronze-serpent",
+      "id": "spies",
       "era": "exodus",
       "order": 20,
+      "access": "premium",
+      "emoji": "🍇",
+      "title": "The Twelve Spies",
+      "book": "Numbers 13-14",
+      "date": "c. 1446 BC",
+      "location": "The Edge of Canaan",
+      "hook": "God's people came right up to the edge of the wonderful new land God promised them. Twelve men went to explore it, but only two of them trusted God.",
+      "story": [
+        "After many years in the desert, God's people finally came to the edge of the new land God had promised to give them.",
+        "God told Moses to send twelve men ahead to explore the land and see what it was like.",
+        "For forty days the men walked all around the land. It was beautiful and full of good food. They even found a bunch of grapes so big that it took two men to carry it on a pole!",
+        "But when they came back, ten of the men were scared. \"There are giants in that land,\" they said, \"and huge cities with tall walls. We can never go in there!\"",
+        "When the people heard this, they got very afraid, and they cried all night long.",
+        "But two of the men, Caleb and Joshua, were brave. \"Do not be afraid!\" they said. \"God is with us. He will help us go in and live there.\"",
+        "Sadly, the people listened to their fear instead of trusting God. So they had to wait out in the desert for a long, long time.",
+        "But Caleb and Joshua had trusted God, and one day they got to go into the good land. The giants were big, but God was even bigger.",
+        "When we feel scared, we can remember that God is bigger than anything that frightens us."
+      ],
+      "devotional": {
+        "bigIdea": "Everyone saw the same giants. But Caleb and Joshua remembered that God was even bigger than the giants. We can trust that God is bigger than anything that scares us.",
+        "questions": [
+          "Why do you think the ten men were so scared?",
+          "Caleb and Joshua were brave because they trusted God. What is something scary that God can help you with?",
+          "How do you remember that God is with you when you feel afraid?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "faith",
+        "fear",
+        "courage"
+      ],
+      "connections": [
+        {
+          "title": "The Walls Come Down",
+          "storyId": "jericho",
+          "reference": "Numbers 14:30",
+          "why": "Only Caleb and Joshua trusted God here, and forty years later Joshua is the one who finally leads Israel into the land."
+        },
+        {
+          "title": "Crossing the Jordan River",
+          "storyId": "jordan",
+          "reference": "Numbers 14:24",
+          "why": "The fearful generation never entered the land, but their children, led by Joshua, cross the river and go in."
+        },
+        {
+          "title": "Through the Sea on Dry Ground",
+          "storyId": "red-sea",
+          "reference": "Numbers 14:11",
+          "why": "God had already split the sea for these people, yet they still would not trust him with the giants ahead."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What did the men bring back to show the land was good?",
+          "options": [
+            "A giant bunch of grapes",
+            "A pile of rocks",
+            "A baby lion"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Which two men trusted God and were brave?",
+          "options": [
+            "Caleb and Joshua",
+            "Moses and Aaron",
+            "Adam and Eve"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What should we remember when we are scared?",
+          "options": [
+            "God is bigger than anything",
+            "We should run away",
+            "Giants always win"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "bronze-serpent",
+      "era": "exodus",
+      "order": 21,
       "access": "premium",
       "emoji": "🐍",
       "title": "The Bronze Snake",
@@ -1930,9 +2020,189 @@
       "published_date": "2026-06-03"
     },
     {
+      "id": "balaam",
+      "era": "exodus",
+      "order": 22,
+      "access": "premium",
+      "emoji": "🫏",
+      "title": "Balaam's Donkey",
+      "book": "Numbers 22-24",
+      "date": "c. 1407 BC",
+      "location": "Moab",
+      "hook": "A king wanted a man named Balaam to say bad words against God's people. But God had a very surprising helper to stop him: a donkey that could talk!",
+      "story": [
+        "God's people set up their camp near a land called Moab. The king of Moab was very afraid of them, because there were so many of them.",
+        "So the king sent for a man named Balaam. He offered Balaam lots of money to come and say bad, cursing words against God's people.",
+        "But God told Balaam, \"Do not curse them. They are my people, and they are blessed.\" Still, Balaam wanted the money. So he got on his donkey and started to go anyway.",
+        "God was not happy about this. So an angel with a shiny sword stood right in the middle of the road. But only the donkey could see the angel, not Balaam!",
+        "To stay safe, the donkey kept turning away from the angel. But Balaam could not see why, so he hit his donkey to make her keep going. This happened three times.",
+        "Then God did something amazing. He let the donkey talk! \"Why are you hitting me?\" she asked Balaam.",
+        "Then God let Balaam see the angel too. Balaam was very sorry. His donkey had been keeping him safe the whole time.",
+        "After that, every time Balaam tried to say bad words about God's people, only good and happy words came out instead!",
+        "No one can curse the people God has blessed. God was taking care of his people, even when they did not know it."
+      ],
+      "devotional": {
+        "bigIdea": "A king with lots of money could not hurt God's people, because God was protecting them. God even used a talking donkey to keep Balaam safe. God watches over us all the time.",
+        "questions": [
+          "Only the donkey could see the angel. Has anyone smaller than you ever noticed something you missed?",
+          "God protected his people from something they did not even know about. How does it feel that God is watching over you?",
+          "What was the most surprising part of this story to you?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "God's protection",
+        "blessing",
+        "God's power"
+      ],
+      "connections": [
+        {
+          "title": "A Promise as Big as the Stars",
+          "storyId": "abraham",
+          "reference": "Genesis 12:3",
+          "why": "God told Abraham he would bless those who blessed his family and curse those who cursed them, and now no one can curse what God has blessed."
+        },
+        {
+          "title": "The Burning Bush",
+          "storyId": "burning-bush",
+          "reference": "Numbers 22:28",
+          "why": "Just as God once spoke from a bush that would not burn up, here he speaks through the mouth of a donkey, using the unexpected to get our attention."
+        },
+        {
+          "title": "Through the Sea on Dry Ground",
+          "storyId": "red-sea",
+          "reference": "Numbers 23:23",
+          "why": "The same God who fought for his people at the sea now protects them from a curse they never even knew was coming."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What did the king want Balaam to do?",
+          "options": [
+            "Say bad words against God's people",
+            "Build a boat",
+            "Sing a song"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Who could see the angel in the road?",
+          "options": [
+            "The donkey",
+            "Balaam",
+            "The king"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What surprising thing did God let the donkey do?",
+          "options": [
+            "Talk",
+            "Fly",
+            "Dance"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
+      "id": "jordan",
+      "era": "promised-land",
+      "order": 23,
+      "access": "premium",
+      "emoji": "🌊",
+      "title": "Crossing the Jordan River",
+      "book": "Joshua 3-4",
+      "date": "c. 1406 BC",
+      "location": "The Jordan River",
+      "hook": "God's people came to a big river they had to cross to reach their new home. The river was deep and wide, but God made a dry path right through the middle.",
+      "story": [
+        "After many years, God's people came to a big river called the Jordan. They needed to cross it to reach the new home God had promised them.",
+        "But the river was very deep and fast, and there was no bridge and no boats.",
+        "Their new leader was a brave man named Joshua. God told him, \"Have the priests carry the special golden chest into the river first.\"",
+        "So the priests carried the golden chest down to the water and stepped in.",
+        "The very moment their feet touched the river, the water stopped flowing! It piled up far away, and the ground in the middle of the river became dry.",
+        "Then all of God's people walked across the river on the dry ground, and they stayed perfectly safe and dry.",
+        "God told them to pile up twelve big stones on the other side, to help everyone remember this amazing day.",
+        "Whenever children would ask, \"What are these stones for?\" their parents could tell them the story of how God stopped the river.",
+        "God had stopped the sea for their parents, and now he stopped the river for them. God was showing he would always take care of his people."
+      ],
+      "devotional": {
+        "bigIdea": "God stopped a whole river so his people could cross safely. He gave them stones to help them remember, so they would never forget how good he is.",
+        "questions": [
+          "How do you think the people felt walking through the middle of a river on dry ground?",
+          "The stones helped them remember God's help. What helps you remember the good things God does?",
+          "God took care of his people again and again. How has God taken care of you?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "faith",
+        "God's faithfulness",
+        "remembering"
+      ],
+      "connections": [
+        {
+          "title": "Through the Sea on Dry Ground",
+          "storyId": "red-sea",
+          "reference": "Joshua 4:23",
+          "why": "Forty years earlier God split the sea for their parents, and now he stops a flooding river so the children can cross on dry ground."
+        },
+        {
+          "title": "The Walls Come Down",
+          "storyId": "jericho",
+          "reference": "Joshua 6:1",
+          "why": "The first thing waiting on the far side of the river is the great walled city of Jericho, Israel's first test in the new land."
+        },
+        {
+          "title": "The Twelve Spies",
+          "storyId": "spies",
+          "reference": "Joshua 3:7",
+          "why": "This is the generation the fearful spies never believed in, the children who grew up and finally trusted God enough to go in."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What did the people need to cross to reach their new home?",
+          "options": [
+            "A big river",
+            "A tall mountain",
+            "A wide desert"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What happened when the priests stepped into the water?",
+          "options": [
+            "The river stopped flowing",
+            "It started to rain",
+            "They swam across"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Why did they pile up twelve stones?",
+          "options": [
+            "To help everyone remember",
+            "To build a house",
+            "To play a game"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
       "id": "rahab",
       "era": "promised-land",
-      "order": 21,
+      "order": 24,
       "access": "premium",
       "emoji": "🪡",
       "title": "The Scarlet Thread",
@@ -2026,7 +2296,7 @@
     {
       "id": "jericho",
       "era": "promised-land",
-      "order": 22,
+      "order": 25,
       "access": "premium",
       "emoji": "🏛️",
       "title": "The Walls Come Down",
@@ -2117,9 +2387,99 @@
       "published_date": "2026-06-04"
     },
     {
+      "id": "deborah",
+      "era": "promised-land",
+      "order": 26,
+      "access": "premium",
+      "emoji": "🌴",
+      "title": "Deborah the Judge",
+      "book": "Judges 4-5",
+      "date": "c. 1200 BC",
+      "location": "The Hill Country of Ephraim",
+      "hook": "God's people were in trouble and needed a brave leader. God chose a wise woman named Deborah to help save them.",
+      "story": [
+        "After Joshua died, God's people kept getting into trouble. So God sent special helpers called judges to rescue them.",
+        "One of the best judges was a very wise woman named Deborah. She would sit under a big palm tree, and people came to her to solve their problems and hear from God.",
+        "A mean king and his army had been hurting God's people for a long, long time. The army had nine hundred strong chariots, and the people were scared.",
+        "So Deborah called for a soldier named Barak. \"God says to take an army to the mountain,\" she told him. \"God will help you win!\"",
+        "But Barak was afraid. \"I will only go if you come with me,\" he said. So brave Deborah went with him.",
+        "When it was time to fight, Deborah said, \"Go now! This is the day God will help you win!\"",
+        "Then God sent a big rainstorm. The ground turned to thick, sticky mud, and all the enemy chariots got stuck and could not move.",
+        "So God's people won the battle! God had saved them again.",
+        "Then Deborah sang a happy song to thank God. God can use anyone who trusts him, to do brave and wonderful things."
+      ],
+      "devotional": {
+        "bigIdea": "God used a wise woman named Deborah and a little rainstorm to save his people from a great big army. God can use anyone who is willing to trust him.",
+        "questions": [
+          "Barak was braver when Deborah went with him. Who helps you be brave?",
+          "God used a rainstorm to stop the scary chariots. What is something big that is small to God?",
+          "God used Deborah in a special way. What do you think God might use you for?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "courage",
+        "leadership",
+        "trust"
+      ],
+      "connections": [
+        {
+          "title": "Three Hundred Men and Torches",
+          "storyId": "gideon",
+          "reference": "Judges 6:14",
+          "why": "Like Gideon after her, Deborah is one of the judges God raised up to rescue his people whenever they cried out to him."
+        },
+        {
+          "title": "Wherever You Go",
+          "storyId": "ruth",
+          "reference": "Ruth 1:1",
+          "why": "Ruth's story takes place in these same days of the judges, when God was quietly at work through ordinary, faithful people."
+        },
+        {
+          "title": "The Walls Come Down",
+          "storyId": "jericho",
+          "reference": "Judges 4:14",
+          "why": "Just as God handed Jericho to Joshua, he hands Sisera's mighty army to a people who march out trusting his word."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What was Deborah?",
+          "options": [
+            "A wise judge who helped God's people",
+            "A farmer",
+            "A queen of Egypt"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "How did God stop the enemy's chariots?",
+          "options": [
+            "With a rainstorm and mud",
+            "With a big wind",
+            "With fire"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What can God do with anyone who trusts him?",
+          "options": [
+            "Use them for brave and wonderful things",
+            "Nothing much",
+            "Make them a king"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
       "id": "gideon",
       "era": "promised-land",
-      "order": 23,
+      "order": 27,
       "access": "premium",
       "emoji": "🏺",
       "title": "Three Hundred Men and Torches",
@@ -2212,9 +2572,99 @@
       "published_date": "2026-06-04"
     },
     {
+      "id": "samson",
+      "era": "promised-land",
+      "order": 28,
+      "access": "premium",
+      "emoji": "💪",
+      "title": "Samson's Strength",
+      "book": "Judges 13-16",
+      "date": "c. 1100 BC",
+      "location": "The Land of the Philistines",
+      "hook": "God gave a man named Samson amazing strength. As long as he kept his special promise to God, no one could beat him.",
+      "story": [
+        "God's people were having a hard time. So God sent a special baby boy named Samson to help save them.",
+        "An angel said that Samson must never cut his hair. It was a special sign that Samson belonged to God.",
+        "When Samson grew up, God gave him amazing strength. He was the strongest man anyone had ever seen! As long as he did not cut his hair, no one could beat him.",
+        "But Samson did not always make good choices, and he did not always listen to God.",
+        "One day, a woman named Delilah kept asking Samson why he was so strong. Finally, he told her his secret: it was his long hair.",
+        "While Samson was sleeping, his enemies came and cut off his hair. When he woke up, his great strength was gone, and his enemies caught him and put him in prison.",
+        "But while Samson was in prison, his hair slowly started to grow back again.",
+        "One day his enemies brought him to their big building to laugh at him. Samson prayed, \"God, please give me strength just one more time.\"",
+        "And God did! Samson pushed against the big pillars, and the whole building came tumbling down. Even after all of Samson's mistakes, God still listened when he prayed. God is strong, and he loves to help us when we ask."
+      ],
+      "devotional": {
+        "bigIdea": "God gave Samson amazing strength. Samson made many bad choices, but when he finally prayed, God still helped him. God loves to help us when we ask him.",
+        "questions": [
+          "God gave Samson special strength. What special things has God given you?",
+          "Samson forgot to listen to God. What are some ways we can listen to God every day?",
+          "When Samson prayed, God helped him. How does it feel to know God hears your prayers?"
+        ]
+      },
+      "devotionalHeading": "Let's Talk About It",
+      "tags": [
+        "strength",
+        "choices",
+        "second chances"
+      ],
+      "connections": [
+        {
+          "title": "Three Hundred Men and Torches",
+          "storyId": "gideon",
+          "reference": "Judges 13:5",
+          "why": "Like Gideon, Samson is one of the judges, but his story is a warning that God's gifts are wasted when we will not follow him."
+        },
+        {
+          "title": "Deborah the Judge",
+          "storyId": "deborah",
+          "reference": "Judges 13:1",
+          "why": "Samson comes in the same long age of the judges, when God kept rescuing a people who kept forgetting him."
+        },
+        {
+          "title": "One Stone",
+          "storyId": "david-goliath",
+          "reference": "Judges 16:28",
+          "why": "Like David against Goliath, Samson's victories were never really about human muscle. The power always belonged to God."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What made Samson so strong?",
+          "options": [
+            "God gave him strength, shown by his uncut hair",
+            "He ate lots of vegetables",
+            "A magic ring"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "What was the secret of Samson's strength?",
+          "options": [
+            "His long hair",
+            "His big shoes",
+            "His sword"
+          ],
+          "answer": 0,
+          "explanation": ""
+        },
+        {
+          "question": "When Samson prayed at the end, did God help him?",
+          "options": [
+            "Yes, God gave him strength again",
+            "No, it was too late",
+            "God was asleep"
+          ],
+          "answer": 0,
+          "explanation": ""
+        }
+      ],
+      "published_date": "2026-06-03"
+    },
+    {
       "id": "ruth",
       "era": "promised-land",
-      "order": 24,
+      "order": 29,
       "access": "premium",
       "emoji": "🌾",
       "title": "Wherever You Go",
@@ -2309,7 +2759,7 @@
     {
       "id": "samuel",
       "era": "kingdom",
-      "order": 25,
+      "order": 30,
       "access": "premium",
       "emoji": "👂",
       "title": "Speak, Lord",
@@ -2403,7 +2853,7 @@
     {
       "id": "david-goliath",
       "era": "kingdom",
-      "order": 26,
+      "order": 31,
       "access": "premium",
       "emoji": "🪨",
       "title": "One Stone",
@@ -2497,7 +2947,7 @@
     {
       "id": "david-saul",
       "era": "kingdom",
-      "order": 27,
+      "order": 32,
       "access": "premium",
       "emoji": "🗡️",
       "title": "The Cave and the King",
@@ -2590,7 +3040,7 @@
     {
       "id": "psalm23",
       "era": "kingdom",
-      "order": 28,
+      "order": 33,
       "access": "premium",
       "emoji": "🐑",
       "title": "The Lord Is My Shepherd",
@@ -2684,7 +3134,7 @@
     {
       "id": "solomon-wisdom",
       "era": "kingdom",
-      "order": 29,
+      "order": 34,
       "access": "premium",
       "emoji": "📜",
       "title": "The Wisest Request",
@@ -2777,7 +3227,7 @@
     {
       "id": "elijah",
       "era": "kingdom",
-      "order": 30,
+      "order": 35,
       "access": "premium",
       "emoji": "⚡",
       "title": "Fire from Heaven",
@@ -2870,7 +3320,7 @@
     {
       "id": "job",
       "era": "kingdom",
-      "order": 31,
+      "order": 36,
       "access": "premium",
       "emoji": "⚡",
       "title": "The Man Who Lost Everything",
@@ -2964,7 +3414,7 @@
     {
       "id": "isaiah-servant",
       "era": "kingdom",
-      "order": 32,
+      "order": 37,
       "access": "premium",
       "emoji": "📖",
       "title": "The Servant Who Suffers",
@@ -3058,7 +3508,7 @@
     {
       "id": "shadrach",
       "era": "exile",
-      "order": 33,
+      "order": 38,
       "access": "premium",
       "emoji": "🔥",
       "title": "The Furnace",
@@ -3153,7 +3603,7 @@
     {
       "id": "daniel",
       "era": "exile",
-      "order": 34,
+      "order": 39,
       "access": "premium",
       "emoji": "🦁",
       "title": "The Lion's Den",
@@ -3248,7 +3698,7 @@
     {
       "id": "esther",
       "era": "exile",
-      "order": 35,
+      "order": 40,
       "access": "premium",
       "emoji": "👑",
       "title": "For Such a Time as This",
@@ -3343,7 +3793,7 @@
     {
       "id": "jonah",
       "era": "exile",
-      "order": 36,
+      "order": 41,
       "access": "premium",
       "emoji": "🐋",
       "title": "The Man Who Ran From God",
@@ -3437,7 +3887,7 @@
     {
       "id": "nehemiah",
       "era": "exile",
-      "order": 37,
+      "order": 42,
       "access": "premium",
       "emoji": "🧱",
       "title": "The Wall Goes Up",
@@ -3532,7 +3982,7 @@
     {
       "id": "annunciation",
       "era": "nt-life",
-      "order": 38,
+      "order": 43,
       "access": "premium",
       "emoji": "👼",
       "title": "Impossible News",
@@ -3627,7 +4077,7 @@
     {
       "id": "boy-temple",
       "era": "nt-life",
-      "order": 39,
+      "order": 44,
       "access": "premium",
       "emoji": "📖",
       "title": "Left Behind in Jerusalem",
@@ -3722,7 +4172,7 @@
     {
       "id": "sermon-mount",
       "era": "nt-life",
-      "order": 40,
+      "order": 45,
       "access": "premium",
       "emoji": "⛰️",
       "title": "The Upside-Down Kingdom",
@@ -3818,7 +4268,7 @@
     {
       "id": "woman-at-well",
       "era": "nt-life",
-      "order": 41,
+      "order": 46,
       "access": "premium",
       "emoji": "🪣",
       "title": "The Woman at the Well",
@@ -3912,7 +4362,7 @@
     {
       "id": "feeding-5000",
       "era": "nt-life",
-      "order": 42,
+      "order": 47,
       "access": "premium",
       "emoji": "🐟",
       "title": "Five Loaves and Two Fish",
@@ -4007,7 +4457,7 @@
     {
       "id": "walk-on-water",
       "era": "nt-life",
-      "order": 43,
+      "order": 48,
       "access": "premium",
       "emoji": "🌊",
       "title": "Stepping Out",
@@ -4102,7 +4552,7 @@
     {
       "id": "good-samaritan",
       "era": "nt-life",
-      "order": 44,
+      "order": 49,
       "access": "premium",
       "emoji": "🫶",
       "title": "The One Who Stopped",
@@ -4196,7 +4646,7 @@
     {
       "id": "zacchaeus",
       "era": "nt-life",
-      "order": 45,
+      "order": 50,
       "access": "premium",
       "emoji": "🌳",
       "title": "The Man in the Tree",
@@ -4291,7 +4741,7 @@
     {
       "id": "rich-young-ruler",
       "era": "nt-life",
-      "order": 46,
+      "order": 51,
       "access": "premium",
       "emoji": "💰",
       "title": "The Man Who Walked Away",
@@ -4386,7 +4836,7 @@
     {
       "id": "prodigal",
       "era": "nt-life",
-      "order": 47,
+      "order": 52,
       "access": "premium",
       "emoji": "🏠",
       "title": "The Boy Who Came Home",
@@ -4481,7 +4931,7 @@
     {
       "id": "lazarus",
       "era": "nt-life",
-      "order": 48,
+      "order": 53,
       "access": "premium",
       "emoji": "🪦",
       "title": "Come Out",
@@ -4577,7 +5027,7 @@
     {
       "id": "triumphal-entry",
       "era": "nt-life",
-      "order": 49,
+      "order": 54,
       "access": "premium",
       "emoji": "🌿",
       "title": "The King Rides In",
@@ -4671,7 +5121,7 @@
     {
       "id": "last-supper",
       "era": "nt-church",
-      "order": 50,
+      "order": 55,
       "access": "premium",
       "emoji": "🍞",
       "title": "The Night Before",
@@ -4765,7 +5215,7 @@
     {
       "id": "crucifixion",
       "era": "nt-church",
-      "order": 51,
+      "order": 56,
       "access": "premium",
       "emoji": "✝️",
       "title": "The Darkest Friday",
@@ -4859,7 +5309,7 @@
     {
       "id": "resurrection",
       "era": "nt-church",
-      "order": 52,
+      "order": 57,
       "access": "premium",
       "emoji": "🌅",
       "title": "The Empty Tomb",
@@ -4954,7 +5404,7 @@
     {
       "id": "road-emmaus",
       "era": "nt-church",
-      "order": 53,
+      "order": 58,
       "access": "premium",
       "emoji": "🛤️",
       "title": "The Stranger on the Road",
@@ -5049,7 +5499,7 @@
     {
       "id": "pentecost",
       "era": "nt-church",
-      "order": 54,
+      "order": 59,
       "access": "premium",
       "emoji": "🕊️",
       "title": "The Day Everything Changed",
@@ -5143,7 +5593,7 @@
     {
       "id": "stephen",
       "era": "nt-church",
-      "order": 55,
+      "order": 60,
       "access": "premium",
       "emoji": "✝️",
       "title": "The First Martyr",
@@ -5238,7 +5688,7 @@
     {
       "id": "paul-conversion",
       "era": "nt-church",
-      "order": 56,
+      "order": 61,
       "access": "premium",
       "emoji": "⚡",
       "title": "The Man Who Hunted Christians",
@@ -5334,7 +5784,7 @@
     {
       "id": "paul-jail",
       "era": "nt-church",
-      "order": 57,
+      "order": 62,
       "access": "premium",
       "emoji": "🎵",
       "title": "Singing at Midnight",
@@ -5428,7 +5878,7 @@
     {
       "id": "lydia",
       "era": "nt-church",
-      "order": 58,
+      "order": 63,
       "access": "premium",
       "emoji": "🎨",
       "title": "The Purple Merchant",

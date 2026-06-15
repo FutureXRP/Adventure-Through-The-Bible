@@ -35,7 +35,7 @@ CANONICAL_ORDER = [
     "noah", "tower-babel", "abraham", "jacob-esau", "jacob-ladder", "jacob-wrestles", "joseph",
     # exodus
     "moses-birth", "burning-bush", "plagues", "passover", "red-sea", "manna",
-    "ten-commandments", "golden-calf", "moses-water", "bronze-serpent", "spies", "balaam",
+    "ten-commandments", "golden-calf", "moses-water", "spies", "bronze-serpent", "balaam",
     # promised-land
     "jordan", "rahab", "jericho", "deborah", "gideon", "samson", "ruth",
     # kingdom
