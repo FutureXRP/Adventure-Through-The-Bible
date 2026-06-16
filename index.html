@@ -1374,7 +1374,7 @@ async function checkCheckoutReturn() {
     window.history.replaceState({}, '', window.location.pathname);
     showToast('Checkout cancelled — no charge was made.');
   }
-  if (params.get('openPaywall') === '1') { window.history.replaceState({}, '', window.location.pathname); setTimeout(openPaywall, 500); }
+  if (params.get('openPaywall') === '1') { window.history.replaceState({}, '', window.location.pathname); setTimeout(openLoginGate, 500); }
   if (params.get('addChild') === '1') { window.history.replaceState({}, '', window.location.pathname); setTimeout(openChildModal, 800); }
 }
 
@@ -1853,7 +1853,7 @@ document.getElementById('nextBtn').addEventListener('click', () => {
   const idx = parseInt(document.getElementById('nextBtn').dataset.idx);
   if (idx < stories.length - 1) {
     const next = stories[idx + 1];
-    if (storyIsLocked(next)) { closeModal(); openPaywall(); }
+    if (storyIsLocked(next)) { closeModal(); if (!prologueDone()) { openPrologueModal(); } else { openLoginGate(); } }
     else { currentStoryIndex = idx + 1; renderModal(idx + 1); document.getElementById('modalBody').scrollTop = 0; }
   }
 });
