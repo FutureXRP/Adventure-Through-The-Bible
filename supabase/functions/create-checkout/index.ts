@@ -13,7 +13,7 @@ const stripe = new Stripe(Deno.env.get('STRIPE_SECRET_KEY')!, {
 
 const PRICE_ONE_TIME = 'price_1TdxaVLhNi71Q1IHxg3M9vIX';
 const PRICE_MONTHLY  = 'price_1Tdxb2LhNi71Q1IHq8OmNGt6';
-const SITE_URL       = 'https://futurexrp.github.io/Adventure-Through-The-Bible';
+const SITE_URL       = 'https://biblefootsteps.com';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
