@@ -428,19 +428,19 @@
     <div class="welcome-inner">
       <div class="welcome-eyebrow">Welcome to Footsteps</div>
       <h1 class="welcome-title">Walk Through the<br>Greatest Story Ever Told</h1>
-      <p class="welcome-sub">100 Bible stories told the way they were meant to be told — vivid, present-tense, and alive. Built for families. Designed to stick with your kids.</p>
+      <p class="welcome-sub">100 Bible stories, from Genesis to the early church — vivid, alive, and made for families. Every one has audio narration and a quiz to help it stick with your kids.</p>
       <div class="welcome-free-row">
         <div class="welcome-free-badge">100% Free</div>
-        <div class="welcome-free-text">Every story, every quiz, and all the audio narration — free for everyone, thanks to a generous gift. No account needed to start reading.</div>
+        <div class="welcome-free-text">Every story, every quiz, and all the audio narration is free for everyone, thanks to a generous gift.</div>
       </div>
-      <button class="welcome-cta-primary" id="welcomeStartBtn">Start Reading →</button>
+      <button class="welcome-cta-primary" id="welcomeStartBtn">Create Your Free Account →</button>
       <div style="display:flex;align-items:center;gap:10px;margin-top:12px">
         <div style="flex:1;height:1px;background:rgba(44,26,14,0.1)"></div>
         <div style="font-size:11px;color:var(--ink-light);letter-spacing:0.06em">ALREADY HAVE AN ACCOUNT?</div>
         <div style="flex:1;height:1px;background:rgba(44,26,14,0.1)"></div>
       </div>
       <a href="./login.html" style="display:block;width:100%;padding:11px;background:transparent;color:var(--ink);border:1.5px solid rgba(44,26,14,0.25);border-radius:9px;font-size:13px;font-weight:600;letter-spacing:0.04em;text-align:center;text-decoration:none;margin-top:10px;box-sizing:border-box;transition:border-color 0.15s" onmouseover="this.style.borderColor='var(--ink)'" onmouseout="this.style.borderColor='rgba(44,26,14,0.25)'">Sign In</a>
-      <div class="welcome-footnote">No account required to start reading</div>
+      <div class="welcome-footnote">Free forever — your account saves your progress across devices.</div>
       <div style="text-align:center;margin-top:10px;font-size:10px;color:var(--ink-light);opacity:0.5;line-height:1.5">By continuing you agree to our <a href="./terms.html" style="color:var(--ink-light);border-bottom:1px solid rgba(92,61,30,0.3)" target="_blank">Terms of Service</a> and <a href="./privacy.html" style="color:var(--ink-light);border-bottom:1px solid rgba(92,61,30,0.3)" target="_blank">Privacy Policy</a></div>
     </div>
   </div>
@@ -792,6 +792,8 @@ const SUPABASE_FUNCTIONS_URL = 'https://bqyysvjnitbeimvaxkao.supabase.co/functio
 const STRIPE_PK = 'pk_test_51THwruLhNi71Q1IHXoFa7HQdFk5Gz4PirM6J9VCPjcgZ4rCZkrUWCdRBtCLZZBydmLj1S7j4dush2j8GHd1rxd000GC3sAMxu';
 const PROGRESS_KEY = 'footsteps_progress_v1';
 const WELCOME_KEY = 'footsteps_seen_welcome';
+const PROLOGUE_KEY = 'footsteps_prologue_done';
+function prologueDone() { try { return localStorage.getItem(PROLOGUE_KEY) === '1'; } catch(e) { return false; } }
 const AVATARS = ['📖','⭐','🦁','🐬','🦅','🌟','🦋','🐢','🌙','☀️','🌿','🦊','🐧','🦉','🌊','🏔️','🌸','🦒','🐝','🎠'];
 
 const BADGE_DEFS = [
@@ -835,8 +837,8 @@ async function init() {
     if (session) { authUser = session.user; await loadUserProfile(); }
   } catch(e) { console.warn('Auth session error:', e); }
 
-  // Only show welcome popup if user is NOT already signed in AND hasn't seen it
-  if (!authUser && !localStorage.getItem(WELCOME_KEY)) {
+  // Login is required: show the welcome / sign-in wall whenever nobody is signed in.
+  if (!authUser) {
     const overlay = document.getElementById('welcomeOverlay');
     overlay.classList.add('open'); overlay.style.display = 'flex'; overlay.style.zIndex = '9999';
     document.body.style.overflow = 'hidden';
@@ -858,6 +860,9 @@ async function init() {
       childProfiles = []; dbProgress = new Set(); dbBadges = new Set();
       // Reset to default tier-1 story file
       try { const r = await fetch('./stories.json'); DATA = await r.json(); stories = DATA.stories.sort((a,b)=>a.order-b.order); eras = DATA.eras; } catch(e) {}
+      // Login required: bring the sign-in wall back up.
+      const ov = document.getElementById('welcomeOverlay');
+      if (ov) { ov.classList.add('open'); ov.style.display = 'flex'; ov.style.zIndex = '9999'; document.body.style.overflow = 'hidden'; }
     }
     renderAuthBar(); renderBadgeShelf(); render(); updateProgress();
   });
@@ -1446,7 +1451,10 @@ function closePrologueModal() {
   const el = document.getElementById('prologueBackdrop');
   if (el) el.remove();
   document.body.style.overflow = '';
-  showToast('🎉 Welcome to Footsteps! All stories are now unlocked.');
+  const wasLocked = !prologueDone();
+  try { localStorage.setItem(PROLOGUE_KEY, '1'); } catch (e) {}
+  render();
+  if (wasLocked) showToast('🎉 The journey has begun — all 100 stories are now unlocked.');
 }
 function closeWelcome() {
   localStorage.setItem(WELCOME_KEY, '1');
@@ -1456,7 +1464,7 @@ function closeWelcome() {
 }
 function openPaywall() { document.getElementById('paywallBackdrop').classList.add('open'); document.body.style.overflow = 'hidden'; }
 function closePaywall() { document.getElementById('paywallBackdrop').classList.remove('open'); document.body.style.overflow = ''; }
-document.getElementById('welcomeStartBtn').addEventListener('click', closeWelcome);
+document.getElementById('welcomeStartBtn').addEventListener('click', () => { window.location.href = './login.html?mode=signup'; });
 document.getElementById('paywallDismiss').addEventListener('click', closePaywall);
 document.getElementById('paywallBackdrop').addEventListener('click', e => { if (e.target === document.getElementById('paywallBackdrop')) closePaywall(); });
 document.getElementById('pwBtnMonthly').addEventListener('click', () => startCheckout('monthly'));
@@ -1465,6 +1473,7 @@ document.getElementById('pwLifetimePlan').addEventListener('click', () => startC
 document.getElementById('pwMonthlyPlan').addEventListener('click', () => startCheckout('monthly'));
 
 function storyIsLocked(story) {
+  if (!prologueDone()) return true;   // the journey starts with the prologue — read or listen to it first
   if (!PAYWALL_ENABLED) return false;
   if (!userProfile) return story.order > FREE_STORY_LIMIT;
   if (userProfile.is_paid && userProfile.plan_type === 'monthly') return false;
@@ -1533,14 +1542,17 @@ function renderCard(story, progress) {
     <div class="card-hook">${story.hook}</div>
     <div class="card-footer">
       <span class="card-location">📍 ${story.location.split('—')[0].trim()}</span>
-      <button class="card-read-btn" data-id="${story.id}">${locked?'Unlock →':'Read →'}</button>
+      <button class="card-read-btn" data-id="${story.id}">${locked?(prologueDone()?'Unlock →':'Prologue first →'):'Read →'}</button>
     </div>
   </div>`;
 }
 function handleCardClick(storyId) {
   const story = stories.find(s => s.id === storyId);
   if (!story) return;
-  if (storyIsLocked(story)) { openPaywall(); return; }
+  if (storyIsLocked(story)) {
+    if (!prologueDone()) { openPrologueModal(); return; }  // must read/listen to the prologue first
+    openPaywall(); return;
+  }
   openModal(storyId);
 }
 
