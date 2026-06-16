@@ -433,14 +433,14 @@
         <div class="welcome-free-badge">100% Free</div>
         <div class="welcome-free-text">Every story, every quiz, and all the audio narration is free for everyone, thanks to a generous gift.</div>
       </div>
-      <button class="welcome-cta-primary" id="welcomeStartBtn">Create Your Free Account →</button>
+      <button class="welcome-cta-primary" id="welcomeStartBtn">Start Reading →</button>
       <div style="display:flex;align-items:center;gap:10px;margin-top:12px">
         <div style="flex:1;height:1px;background:rgba(44,26,14,0.1)"></div>
         <div style="font-size:11px;color:var(--ink-light);letter-spacing:0.06em">ALREADY HAVE AN ACCOUNT?</div>
         <div style="flex:1;height:1px;background:rgba(44,26,14,0.1)"></div>
       </div>
       <a href="./login.html" style="display:block;width:100%;padding:11px;background:transparent;color:var(--ink);border:1.5px solid rgba(44,26,14,0.25);border-radius:9px;font-size:13px;font-weight:600;letter-spacing:0.04em;text-align:center;text-decoration:none;margin-top:10px;box-sizing:border-box;transition:border-color 0.15s" onmouseover="this.style.borderColor='var(--ink)'" onmouseout="this.style.borderColor='rgba(44,26,14,0.25)'">Sign In</a>
-      <div class="welcome-footnote">Free forever — your account saves your progress across devices.</div>
+      <div class="welcome-footnote">Read the prologue and your first stories free — a free account unlocks all 100.</div>
       <div style="text-align:center;margin-top:10px;font-size:10px;color:var(--ink-light);opacity:0.5;line-height:1.5">By continuing you agree to our <a href="./terms.html" style="color:var(--ink-light);border-bottom:1px solid rgba(92,61,30,0.3)" target="_blank">Terms of Service</a> and <a href="./privacy.html" style="color:var(--ink-light);border-bottom:1px solid rgba(92,61,30,0.3)" target="_blank">Privacy Policy</a></div>
     </div>
   </div>
@@ -476,6 +476,25 @@
       <button class="paywall-btn-lifetime" id="pwBtnLifetime">One-Time Purchase — $49.99</button>
       <button class="paywall-dismiss" id="paywallDismiss">Not right now — go back</button>
       <div class="paywall-footnote">Secure checkout · Cancel anytime · Stories work on any device</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CONTINUE / FREE SIGN-IN GATE (after the free preview) ── -->
+<div class="paywall-backdrop" id="loginGateBackdrop" role="dialog" aria-modal="true">
+  <div class="paywall-card">
+    <div class="paywall-top-bar"></div>
+    <div class="paywall-inner">
+      <div class="paywall-lock-icon">
+        <svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4" fill="none" stroke="#c9a227" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="16" r="1.5" fill="#2c1a0e"/></svg>
+      </div>
+      <div class="paywall-eyebrow">Keep Going — It's Free</div>
+      <h2 class="paywall-title">Create a free account<br>to continue the journey.</h2>
+      <p class="paywall-sub">You've read the prologue and your first stories. The rest of the journey — all <strong>100 stories</strong> from Genesis to the early church, with full audio narration — is <strong>completely free</strong>. Create an account to keep going and save your progress.</p>
+      <a href="./login.html?mode=signup" class="paywall-btn-monthly" style="text-decoration:none;display:block;box-sizing:border-box">Create Free Account →</a>
+      <a href="./login.html" class="paywall-btn-lifetime" style="text-decoration:none;display:block;box-sizing:border-box">I already have an account</a>
+      <button class="paywall-dismiss" id="lgDismiss">Not right now — go back</button>
+      <div class="paywall-footnote">100% free · No payment, ever · Saves your progress across devices</div>
     </div>
   </div>
 </div>
@@ -837,8 +856,8 @@ async function init() {
     if (session) { authUser = session.user; await loadUserProfile(); }
   } catch(e) { console.warn('Auth session error:', e); }
 
-  // Login is required: show the welcome / sign-in wall whenever nobody is signed in.
-  if (!authUser) {
+  // Show the welcome screen once to newcomers; they can read the prologue + first stories free.
+  if (!authUser && !localStorage.getItem(WELCOME_KEY)) {
     const overlay = document.getElementById('welcomeOverlay');
     overlay.classList.add('open'); overlay.style.display = 'flex'; overlay.style.zIndex = '9999';
     document.body.style.overflow = 'hidden';
@@ -860,9 +879,6 @@ async function init() {
       childProfiles = []; dbProgress = new Set(); dbBadges = new Set();
       // Reset to default tier-1 story file
       try { const r = await fetch('./stories.json'); DATA = await r.json(); stories = DATA.stories.sort((a,b)=>a.order-b.order); eras = DATA.eras; } catch(e) {}
-      // Login required: bring the sign-in wall back up.
-      const ov = document.getElementById('welcomeOverlay');
-      if (ov) { ov.classList.add('open'); ov.style.display = 'flex'; ov.style.zIndex = '9999'; document.body.style.overflow = 'hidden'; }
     }
     renderAuthBar(); renderBadgeShelf(); render(); updateProgress();
   });
@@ -1454,7 +1470,7 @@ function closePrologueModal() {
   const wasLocked = !prologueDone();
   try { localStorage.setItem(PROLOGUE_KEY, '1'); } catch (e) {}
   render();
-  if (wasLocked) showToast('🎉 The journey has begun — all 100 stories are now unlocked.');
+  if (wasLocked) showToast(authUser ? '🎉 The journey has begun — all 100 stories are unlocked.' : '🎉 The journey has begun — your first stories are unlocked.');
 }
 function closeWelcome() {
   localStorage.setItem(WELCOME_KEY, '1');
@@ -1464,24 +1480,22 @@ function closeWelcome() {
 }
 function openPaywall() { document.getElementById('paywallBackdrop').classList.add('open'); document.body.style.overflow = 'hidden'; }
 function closePaywall() { document.getElementById('paywallBackdrop').classList.remove('open'); document.body.style.overflow = ''; }
-document.getElementById('welcomeStartBtn').addEventListener('click', () => { window.location.href = './login.html?mode=signup'; });
+function openLoginGate() { document.getElementById('loginGateBackdrop').classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeLoginGate() { document.getElementById('loginGateBackdrop').classList.remove('open'); document.body.style.overflow = ''; }
+document.getElementById('welcomeStartBtn').addEventListener('click', closeWelcome);
 document.getElementById('paywallDismiss').addEventListener('click', closePaywall);
 document.getElementById('paywallBackdrop').addEventListener('click', e => { if (e.target === document.getElementById('paywallBackdrop')) closePaywall(); });
+document.getElementById('lgDismiss').addEventListener('click', closeLoginGate);
+document.getElementById('loginGateBackdrop').addEventListener('click', e => { if (e.target === document.getElementById('loginGateBackdrop')) closeLoginGate(); });
 document.getElementById('pwBtnMonthly').addEventListener('click', () => startCheckout('monthly'));
 document.getElementById('pwBtnLifetime').addEventListener('click', () => startCheckout('one_time'));
 document.getElementById('pwLifetimePlan').addEventListener('click', () => startCheckout('one_time'));
 document.getElementById('pwMonthlyPlan').addEventListener('click', () => startCheckout('monthly'));
 
 function storyIsLocked(story) {
-  if (!prologueDone()) return true;   // the journey starts with the prologue — read or listen to it first
-  if (!PAYWALL_ENABLED) return false;
-  if (!userProfile) return story.order > FREE_STORY_LIMIT;
-  if (userProfile.is_paid && userProfile.plan_type === 'monthly') return false;
-  if (userProfile.has_lifetime) {
-    if (!userProfile.paid_at || !story.published_date) return false;
-    return story.published_date > userProfile.paid_at.substring(0, 10);
-  }
-  return story.order > FREE_STORY_LIMIT;
+  if (!prologueDone()) return true;          // the journey starts with the prologue — read or listen to it first
+  if (authUser) return false;                 // signed in → all 100 stories are free and open
+  return story.order > FREE_STORY_LIMIT;      // signed out → first 3 free, then a free account continues the journey
 }
 
 // ════════════════════════════════════════════════════
@@ -1542,7 +1556,7 @@ function renderCard(story, progress) {
     <div class="card-hook">${story.hook}</div>
     <div class="card-footer">
       <span class="card-location">📍 ${story.location.split('—')[0].trim()}</span>
-      <button class="card-read-btn" data-id="${story.id}">${locked?(prologueDone()?'Unlock →':'Prologue first →'):'Read →'}</button>
+      <button class="card-read-btn" data-id="${story.id}">${locked?(prologueDone()?'Sign in to read →':'Prologue first →'):'Read →'}</button>
     </div>
   </div>`;
 }
@@ -1550,8 +1564,8 @@ function handleCardClick(storyId) {
   const story = stories.find(s => s.id === storyId);
   if (!story) return;
   if (storyIsLocked(story)) {
-    if (!prologueDone()) { openPrologueModal(); return; }  // must read/listen to the prologue first
-    openPaywall(); return;
+    if (!prologueDone()) { openPrologueModal(); return; }  // prologue first
+    openLoginGate(); return;                                // free preview done → free account to continue
   }
   openModal(storyId);
 }
