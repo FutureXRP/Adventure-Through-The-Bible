@@ -1,7 +1,7 @@
 {
   "name": "Footsteps — A Journey Through Scripture",
   "short_name": "Footsteps",
-  "description": "50 Bible stories told vivid and alive, with audio narration and quizzes. Free for everyone.",
+  "description": "100 Bible stories told vivid and alive, with audio narration and quizzes. Free for everyone.",
   "lang": "en",
   "dir": "ltr",
   "start_url": "./index.html?source=pwa",
