@@ -471,24 +471,24 @@ async function processRefund() {
     } else if (data.eligible === false) {
       document.getElementById('refundIcon').textContent = '📖';
       document.getElementById('refundTitle').textContent = 'Not Eligible for Refund';
-      document.getElementById('refundBody').textContent = 'Your account has opened ' + data.stories_opened + ' ' + (data.stories_opened === 1 ? 'story' : 'stories') + ' across all profiles. Refunds are available only when fewer than ' + data.threshold + ' stories have been accessed. If you believe there\'s been an error, contact hello@footstepsbibleapp.com.';
+      document.getElementById('refundBody').textContent = 'Your account has opened ' + data.stories_opened + ' ' + (data.stories_opened === 1 ? 'story' : 'stories') + ' across all profiles. Refunds are available only when fewer than ' + data.threshold + ' stories have been accessed. If you believe there\'s been an error, contact info@biblefootsteps.com.';
       document.getElementById('refundBtns').innerHTML = '<button class="confirm-proceed-btn" style="background:var(--ink);flex:1" onclick="closeRefund()">Close</button>';
     } else if (data.already_refunded) {
       document.getElementById('refundIcon').textContent = '✅';
       document.getElementById('refundTitle').textContent = 'Already Refunded';
-      document.getElementById('refundBody').textContent = 'A refund has already been issued for this account. Contact hello@footstepsbibleapp.com with questions.';
+      document.getElementById('refundBody').textContent = 'A refund has already been issued for this account. Contact info@biblefootsteps.com with questions.';
       document.getElementById('refundBtns').innerHTML = '<button class="confirm-proceed-btn" style="background:var(--ink);flex:1" onclick="closeRefund()">Close</button>';
     } else {
       document.getElementById('refundIcon').textContent = '⚠️';
       document.getElementById('refundTitle').textContent = 'Something Went Wrong';
-      document.getElementById('refundBody').textContent = data.error || 'Please contact hello@footstepsbibleapp.com and we\'ll sort it out.';
+      document.getElementById('refundBody').textContent = data.error || 'Please contact info@biblefootsteps.com and we\'ll sort it out.';
       document.getElementById('refundBtns').innerHTML = '<button class="confirm-cancel-btn" onclick="closeRefund()">Close</button>';
     }
   } catch (err) {
     console.error('Refund request error:', err);
     document.getElementById('refundIcon').textContent = '⚠️';
     document.getElementById('refundTitle').textContent = 'Connection Error';
-    document.getElementById('refundBody').textContent = 'Could not reach the server. Please try again or contact hello@footstepsbibleapp.com.';
+    document.getElementById('refundBody').textContent = 'Could not reach the server. Please try again or contact info@biblefootsteps.com.';
     if (btn) { btn.disabled = false; btn.textContent = 'Try Again'; }
   }
 }
