@@ -728,20 +728,39 @@ window._footstepsDebug = function() {
   console.log('dbBadges:', dbBadges ? [...dbBadges] : 'undefined');
   console.log('activeProfile:', activeProfile);
 };
-const MASTERY_QUESTION_COUNT = 25;
+const MASTERY_QUESTION_COUNT = 30;
 function startMasteryQuiz() {
   const progress = getProgress();
-  const completedStories = stories.filter(s => progress.has(s.id));
-  let pool = [];
-  completedStories.forEach(story => { (story.quiz || []).forEach(q => { pool.push({ ...q, storyId: story.id, storyTitle: story.title, era: story.era }); }); });
-  pool = pool.sort(() => Math.random() - 0.5);
-  const eras = [...new Set(stories.map(s => s.era))];
-  const selected = [];
-  const perEra = Math.ceil(MASTERY_QUESTION_COUNT / eras.length);
-  eras.forEach(era => { const eraQs = pool.filter(q => q.era === era); selected.push(...eraQs.slice(0, perEra)); });
-  const remaining = pool.filter(q => !selected.includes(q));
-  while (selected.length < Math.min(MASTERY_QUESTION_COUNT, pool.length)) { const next = remaining.shift(); if (next) selected.push(next); }
-  masteryQuestions = selected.slice(0, MASTERY_QUESTION_COUNT).sort(() => Math.random() - 0.5);
+  const shuffle = arr => arr.slice().sort(() => Math.random() - 0.5);
+
+  // Draw ONE random question from each completed story, so every question on the
+  // test comes from a different story. This keeps the Hero Quiz varied and lets it
+  // reflect the full sweep of all the stories instead of clustering on a few.
+  const byEra = {};
+  stories.filter(s => progress.has(s.id) && s.quiz && s.quiz.length).forEach(s => {
+    const q = s.quiz[Math.floor(Math.random() * s.quiz.length)];
+    (byEra[s.era] = byEra[s.era] || []).push({ ...q, storyId: s.id, storyTitle: s.title, era: s.era });
+  });
+  // Keep eras in canonical journey order (Creation → Early Church).
+  const eraOrder = [...new Set(stories.map(s => s.era))].filter(e => byEra[e] && byEra[e].length);
+  const totalStories = eraOrder.reduce((n, e) => n + byEra[e].length, 0);
+  const target = Math.min(MASTERY_QUESTION_COUNT, totalStories);
+
+  // Allocate questions to each era proportionally to how many stories it holds,
+  // guaranteeing at least one question per era so every era is represented.
+  const alloc = {};
+  let assigned = 0;
+  eraOrder.forEach(e => { alloc[e] = (target >= eraOrder.length) ? 1 : 0; assigned += alloc[e]; });
+  const slack = eraOrder.map(e => ({ era: e, frac: (byEra[e].length / totalStories) * target - alloc[e], room: byEra[e].length - alloc[e] }));
+  while (assigned < target) {
+    const pick = slack.filter(s => s.room > 0).sort((a, b) => b.frac - a.frac)[0];
+    if (!pick) break;
+    alloc[pick.era]++; pick.room--; pick.frac -= 1; assigned++;
+  }
+
+  let selected = [];
+  eraOrder.forEach(e => { selected.push(...shuffle(byEra[e]).slice(0, alloc[e])); });
+  masteryQuestions = shuffle(selected).slice(0, target);
   masteryAnswers = []; masteryCurrentQ = 0; masteryScore = 0;
   document.getElementById('masteryBackdrop').style.display = 'flex';
   document.body.style.overflow = 'hidden';
@@ -791,9 +810,22 @@ async function showMasteryCelebration() {
   }
   const colors = ['#c9a227','#f0c040','#8b1a1a','#c9a227','#3B6D11','#f0c040','#7c3aed','#c9a227','#f0c040','#065f46'];
   if (passed) {
-    body.innerHTML = `<div style="text-align:center;padding:20px 0"><div style="font-size:56px;margin-bottom:12px;animation:qpop 0.5s cubic-bezier(0.34,1.56,0.64,1)">🌟</div><div style="font-size:1.6rem;font-weight:700;color:var(--ink);margin-bottom:8px">You are a Hero!</div><div style="font-style:italic;font-size:0.95rem;color:var(--ink-light);line-height:1.6;margin-bottom:16px;max-width:400px;margin-left:auto;margin-right:auto">You have walked through every story from the beginning of creation to the birth of the church. Not many people can say that.</div><div class="quiz-confetti" style="justify-content:center;margin-bottom:16px">${colors.map((c,i)=>`<div class="quiz-confetti-dot" style="background:${c};animation-delay:${i*0.06}s"></div>`).join('')}</div><div style="display:inline-block;background:var(--ink);color:var(--gold);font-size:13px;font-weight:700;padding:8px 20px;border-radius:20px;margin-bottom:20px;letter-spacing:0.06em">${masteryScore} of ${masteryQuestions.length} correct — ${pct}%</div><br><button onclick="closeMastery()" style="background:linear-gradient(135deg,var(--gold),var(--gold-bright));border:none;border-radius:9px;padding:12px 28px;font-size:13px;font-weight:700;color:var(--ink);cursor:pointer">Back to Stories</button></div>`;
+    const perfect = pct === 100;
+    const headline = perfect ? 'A Perfect Score!' : 'You are a Hero!';
+    const blurb = perfect
+      ? 'Every single question, answered perfectly. You truly know these stories from the beginning of creation to the birth of the church.'
+      : 'You have walked through every story from the beginning of creation to the birth of the church. Not many people can say that.';
+    // Once you are a Hero you can keep retaking the quiz to chase a perfect score.
+    const retakeBtn = perfect ? '' : `<button onclick="startMasteryQuiz()" style="background:transparent;border:1.5px solid rgba(201,162,39,0.5);border-radius:9px;padding:12px 24px;font-size:12px;font-weight:700;color:var(--gold);cursor:pointer">Try for 100% →</button>`;
+    body.innerHTML = `<div style="text-align:center;padding:20px 0"><div style="font-size:56px;margin-bottom:12px;animation:qpop 0.5s cubic-bezier(0.34,1.56,0.64,1)">${perfect ? '🏆' : '🌟'}</div><div style="font-size:1.6rem;font-weight:700;color:var(--ink);margin-bottom:8px">${headline}</div><div style="font-style:italic;font-size:0.95rem;color:var(--ink-light);line-height:1.6;margin-bottom:16px;max-width:400px;margin-left:auto;margin-right:auto">${blurb}</div><div class="quiz-confetti" style="justify-content:center;margin-bottom:16px">${colors.map((c,i)=>`<div class="quiz-confetti-dot" style="background:${c};animation-delay:${i*0.06}s"></div>`).join('')}</div><div style="display:inline-block;background:var(--ink);color:var(--gold);font-size:13px;font-weight:700;padding:8px 20px;border-radius:20px;margin-bottom:20px;letter-spacing:0.06em">${masteryScore} of ${masteryQuestions.length} correct — ${pct}%</div><br><div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><button onclick="closeMastery()" style="background:linear-gradient(135deg,var(--gold),var(--gold-bright));border:none;border-radius:9px;padding:12px 28px;font-size:13px;font-weight:700;color:var(--ink);cursor:pointer">Back to Stories</button>${retakeBtn}</div></div>`;
   } else {
-    body.innerHTML = `<div style="text-align:center;padding:20px 0"><div style="font-size:48px;margin-bottom:12px">📖</div><div style="font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:8px">Almost There!</div><div style="font-style:italic;font-size:0.92rem;color:var(--ink-light);line-height:1.6;margin-bottom:16px">You need 80% to earn the Hero badge. Review the stories and try again.</div><div style="display:inline-block;background:var(--ink);color:var(--gold);font-size:13px;font-weight:700;padding:8px 20px;border-radius:20px;margin-bottom:20px">${masteryScore} of ${masteryQuestions.length} correct — ${pct}%</div><br><div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><button onclick="startMasteryQuiz()" style="background:linear-gradient(135deg,var(--gold),var(--gold-bright));border:none;border-radius:9px;padding:11px 24px;font-size:13px;font-weight:700;color:var(--ink);cursor:pointer">Try Again</button><button onclick="closeMastery()" style="background:transparent;border:1.5px solid rgba(44,26,14,0.2);border-radius:9px;padding:11px 24px;font-size:12px;font-weight:600;color:var(--ink-light);cursor:pointer">Back to Stories</button></div></div>`;
+    // A Hero who retakes and falls short keeps the badge they already earned.
+    const alreadyHero = authUser && dbBadges.has('hero');
+    const failTitle = alreadyHero ? 'So Close to Perfect!' : 'Almost There!';
+    const failBlurb = alreadyHero
+      ? 'You are still a Hero, and your badge is safe. Review the stories and try again to beat your score.'
+      : 'You need 80% to earn the Hero badge. Review the stories and try again.';
+    body.innerHTML = `<div style="text-align:center;padding:20px 0"><div style="font-size:48px;margin-bottom:12px">📖</div><div style="font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:8px">${failTitle}</div><div style="font-style:italic;font-size:0.92rem;color:var(--ink-light);line-height:1.6;margin-bottom:16px">${failBlurb}</div><div style="display:inline-block;background:var(--ink);color:var(--gold);font-size:13px;font-weight:700;padding:8px 20px;border-radius:20px;margin-bottom:20px">${masteryScore} of ${masteryQuestions.length} correct — ${pct}%</div><br><div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><button onclick="startMasteryQuiz()" style="background:linear-gradient(135deg,var(--gold),var(--gold-bright));border:none;border-radius:9px;padding:11px 24px;font-size:13px;font-weight:700;color:var(--ink);cursor:pointer">Try Again</button><button onclick="closeMastery()" style="background:transparent;border:1.5px solid rgba(44,26,14,0.2);border-radius:9px;padding:11px 24px;font-size:12px;font-weight:600;color:var(--ink-light);cursor:pointer">Back to Stories</button></div></div>`;
   }
 }
 
@@ -1134,7 +1166,7 @@ function openJourney() {
   sec.id = 'masterySection';
   sec.style.cssText = 'padding:16px 28px;border-bottom:1px solid var(--parchment-dark);margin-bottom:8px';
   if (heroEarned) {
-    sec.innerHTML = `<div style="text-align:center;padding:20px 0"><div style="font-size:48px;margin-bottom:10px">🌟</div><div style="font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:6px">Hero</div><div style="font-style:italic;font-size:0.88rem;color:var(--ink-light);margin-bottom:14px">You have walked through every story from creation to the early church.</div><button onclick="printCertificate('hero')" style="padding:10px 24px;background:linear-gradient(135deg,var(--gold),var(--gold-bright));border:none;border-radius:9px;font-size:12px;font-weight:700;letter-spacing:0.06em;color:var(--ink);cursor:pointer;box-shadow:0 3px 12px rgba(201,162,39,0.35)">Print Hero Certificate</button></div>`;
+    sec.innerHTML = `<div style="text-align:center;padding:20px 0"><div style="font-size:48px;margin-bottom:10px">🌟</div><div style="font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:6px">Hero</div><div style="font-style:italic;font-size:0.88rem;color:var(--ink-light);margin-bottom:14px">You have walked through every story from creation to the early church.</div><div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><button onclick="printCertificate('hero')" style="padding:10px 24px;background:linear-gradient(135deg,var(--gold),var(--gold-bright));border:none;border-radius:9px;font-size:12px;font-weight:700;letter-spacing:0.06em;color:var(--ink);cursor:pointer;box-shadow:0 3px 12px rgba(201,162,39,0.35)">Print Hero Certificate</button><button onclick="closeJourney();startMasteryQuiz()" style="padding:10px 24px;background:transparent;border:1.5px solid rgba(201,162,39,0.5);border-radius:9px;font-size:12px;font-weight:700;letter-spacing:0.06em;color:var(--gold);cursor:pointer">Retake for 100%</button></div></div>`;
   } else if (allStoriesRead) {
     sec.innerHTML = `<div style="text-align:center;padding:20px 0"><div style="font-size:36px;margin-bottom:10px">🌟</div><div style="font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:6px">Hero Quiz Unlocked</div><div style="font-style:italic;font-size:0.85rem;color:var(--ink-light);margin-bottom:16px">You have read every story. Now prove you know them.</div><button onclick="closeJourney();startMasteryQuiz()" style="background:linear-gradient(135deg,var(--gold),var(--gold-bright));border:none;border-radius:9px;padding:12px 28px;font-size:13px;font-weight:700;color:var(--ink);cursor:pointer;box-shadow:0 3px 12px rgba(201,162,39,0.35)">Take the Hero Quiz →</button></div>`;
   } else {
