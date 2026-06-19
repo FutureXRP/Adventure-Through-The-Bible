@@ -1942,10 +1942,17 @@ function pauseModalAudio() {
 // ════════════════════════════════════════════════════
 // STORYBOOK READER — page-turner synced to the narration
 // ════════════════════════════════════════════════════
+// Feature flag: storybook mode is OFF for now. The entire feature (reader,
+// CSS, data, controls) is left intact below — flip this to true to re-enable
+// it as an add-on later. This single guard hides the "Read the Storybook"
+// button and makes the reader unreachable.
+const STORYBOOK_ENABLED = false;
+
 let sbPages = [], sbPageIdx = 0, sbAudio = null, sbTimings = [], sbRanges = [],
     sbRaf = null, sbPlaying = false, sbLastWord = -1, sbHasAudio = false;
 
 function storyHasStorybook(story) {
+  if (!STORYBOOK_ENABLED) return false;
   return !!(story && story.storybook && Array.isArray(story.storybook.images) && story.storybook.images.length);
 }
 function sbEsc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
