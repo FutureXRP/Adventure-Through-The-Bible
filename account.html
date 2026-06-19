@@ -168,6 +168,19 @@
   </div>
 </div>
 
+<!-- DELETE CHILD MODAL -->
+<div class="confirm-backdrop" id="deleteChildBackdrop">
+  <div class="confirm-card">
+    <div class="confirm-icon">🗑️</div>
+    <div class="confirm-title" id="deleteChildTitle">Delete this profile?</div>
+    <div class="confirm-body" id="deleteChildBody"></div>
+    <div class="confirm-btns" id="deleteChildBtns">
+      <button class="confirm-cancel-btn" onclick="closeDeleteChild()">Keep Profile</button>
+      <button class="confirm-proceed-btn" id="deleteChildProceedBtn" onclick="proceedDeleteChild()">Delete Profile</button>
+    </div>
+  </div>
+</div>
+
 <!-- PAGE -->
 <div class="page" id="pageContent">
   <div class="loading-state">Loading your account…</div>
@@ -199,6 +212,8 @@ let storyProgress = [];
 const AVATARS = ['📖','⭐','🦁','🐬','🦅','🌟','🦋','🐢','🌙','☀️','🌿','🦊','🐧','🦉','🌊','🏔️','🌸','🦒','🐝','🎠'];
 let selectedAvatar = null;
 let editingChildId = null;
+let deletingChildId = null;
+let _deleteChildBusy = false;
 
 function buildAvatarGrid() {
   const grid = document.getElementById('avatarEditGrid');
@@ -367,6 +382,7 @@ function renderPage() {
                     '<button onclick="setChildTier(\'' + child.id + '\',1)" style="padding:3px 10px;border:none;cursor:pointer;font-size:10px;font-weight:700;transition:all 0.15s;background:' + (childTier===1?'var(--gold)':'transparent') + ';color:' + (childTier===1?'var(--ink)':'var(--ink-light)') + '">Ages 9–12</button>' +
                     '<button onclick="setChildTier(\'' + child.id + '\',2)" style="padding:3px 10px;border:none;cursor:pointer;font-size:10px;font-weight:700;transition:all 0.15s;background:' + (childTier===2?'#7c3aed':'transparent') + ';color:' + (childTier===2?'#fff':'var(--ink-light)') + '">Ages 5–8</button>' +
                   '</div>' +
+                  '<button onclick="confirmDeleteChild(\'' + child.id + '\')" style="margin-top:10px;background:none;border:none;padding:0;cursor:pointer;font-family:\'Source Sans 3\',sans-serif;font-size:11px;font-weight:600;color:var(--crimson);opacity:0.75">Remove profile</button>' +
                 '</div>' +
               '<div class="child-progress">' + childProgress + ' stories read</div>' +
             '</div>';
@@ -406,6 +422,54 @@ async function setChildTier(childId, tier) {
   } catch(err) {
     console.error('Tier update error:', err);
     showToast('Something went wrong. Please try again.');
+  }
+}
+
+// DELETE CHILD PROFILE
+function confirmDeleteChild(childId) {
+  const child = childProfiles.find(c => c.id === childId);
+  if (!child) return;
+  deletingChildId = childId;
+  const progress = storyProgress.filter(p => p.profile_id === child.id && p.profile_type === 'child').length;
+  const progressNote = progress ? ('their ' + progress + ' ' + (progress === 1 ? 'story' : 'stories') + ' of reading progress') : 'their reading progress';
+  document.getElementById('deleteChildTitle').textContent = 'Delete ' + child.display_name + "'s profile?";
+  document.getElementById('deleteChildBody').textContent = 'This permanently removes ' + child.display_name + ' and ' + progressNote + ' from your family account. This cannot be undone.';
+  document.getElementById('deleteChildBtns').innerHTML =
+    '<button class="confirm-cancel-btn" onclick="closeDeleteChild()">Keep Profile</button>' +
+    '<button class="confirm-proceed-btn" id="deleteChildProceedBtn" onclick="proceedDeleteChild()">Delete Profile</button>';
+  document.getElementById('deleteChildBackdrop').classList.add('open');
+}
+function closeDeleteChild() {
+  if (_deleteChildBusy) return;
+  document.getElementById('deleteChildBackdrop').classList.remove('open');
+  deletingChildId = null;
+}
+async function proceedDeleteChild() {
+  if (!deletingChildId || _deleteChildBusy) return;
+  const childId = deletingChildId;
+  const btn = document.getElementById('deleteChildProceedBtn');
+  _deleteChildBusy = true;
+  if (btn) { btn.disabled = true; btn.innerHTML = '<span class="spinner"></span>Deleting…'; }
+  try {
+    // Remove the child's reading progress and badges, then the profile itself.
+    await sb.from('story_progress').delete().eq('profile_id', childId).eq('profile_type', 'child');
+    await sb.from('badges').delete().eq('profile_id', childId).eq('profile_type', 'child');
+    const { data: deleted, error } = await sb.from('child_profiles').delete().eq('id', childId).eq('parent_id', authUser.id).select();
+    if (error) throw error;
+    if (!deleted || deleted.length === 0) throw new Error('Profile was not removed.');
+    childProfiles = childProfiles.filter(c => c.id !== childId);
+    storyProgress = storyProgress.filter(p => !(p.profile_id === childId && p.profile_type === 'child'));
+    _deleteChildBusy = false;
+    deletingChildId = null;
+    document.getElementById('deleteChildBackdrop').classList.remove('open');
+    renderPage();
+    showToast('Profile deleted');
+  } catch (err) {
+    console.error('Delete child error:', err);
+    _deleteChildBusy = false;
+    if (btn) { btn.disabled = false; btn.textContent = 'Delete Profile'; }
+    const body = document.getElementById('deleteChildBody');
+    if (body) body.textContent = 'Something went wrong and the profile was not deleted. Please try again, or email info@biblefootsteps.com if it keeps happening.';
   }
 }
 
@@ -503,7 +567,8 @@ async function handleSignOut() {
 document.getElementById('avatarEditBackdrop').addEventListener('click', e => { if (e.target === document.getElementById('avatarEditBackdrop')) closeAvatarEdit(); });
 document.getElementById('confirmBackdrop').addEventListener('click', e => { if (e.target === document.getElementById('confirmBackdrop')) closeConfirm(); });
 document.getElementById('refundBackdrop').addEventListener('click', e => { if (e.target === document.getElementById('refundBackdrop')) closeRefund(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeConfirm(); closeAvatarEdit(); closeRefund(); } });
+document.getElementById('deleteChildBackdrop').addEventListener('click', e => { if (e.target === document.getElementById('deleteChildBackdrop')) closeDeleteChild(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeConfirm(); closeAvatarEdit(); closeRefund(); closeDeleteChild(); } });
 
 init();
 </script>
