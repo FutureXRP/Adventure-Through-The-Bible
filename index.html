@@ -2212,7 +2212,7 @@ function printCertificate(badgeId) {
 
   const eraStories = badge.era ? stories.filter(s => s.era === badge.era) : stories;
   const storyCountLine = isHero
-    ? 'All 50 Stories \u2022 Hero Quiz Passed \u2022 80%+'
+    ? `All ${stories.length} Stories \u2022 Hero Quiz Passed \u2022 80%+`
     : badge.era ? (eraStories.length + (eraStories.length === 1 ? ' Story' : ' Stories') + ' Complete') : (stories.length + ' Stories Complete');
 
   const eraDescriptions = {
@@ -2224,7 +2224,7 @@ function printCertificate(badgeId) {
     exile:           'has walked faithfully through the stories of Exile and Return, from the furnace of Babylon to the walls of Jerusalem, and earned the badge of',
     'nt-life':       'has walked faithfully through the stories of the Life of Jesus, from the manger in Bethlehem to the road to Jerusalem, and earned the badge of',
     'nt-church':     'has walked faithfully through the stories of the Early Church, from the empty tomb to the ends of the earth, and earned the badge of',
-    complete:        'has read every story in the Footsteps journey \u2014 all fifty \u2014 and earned the badge of',
+    complete:        'has read every story in the Footsteps journey \u2014 all one hundred \u2014 and earned the badge of',
     hero:            'has walked every road, from Creation to the Early Church, read all one hundred stories, passed the Hero Quiz, and earned the highest honor Footsteps can bestow \u2014 the badge of',
   };
   const bodyText = eraDescriptions[badgeId] || 'has completed this chapter of the journey and earned the badge of';
@@ -2281,11 +2281,17 @@ function printCertificate(badgeId) {
   html, body { width:100%; height:100%; }
   body { background:${bg}; display:flex; align-items:center; justify-content:center; min-height:100vh; padding:20px; }
   @media print {
-    html, body { width:100%; height:100%; background:${bg} !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    html, body { width:100%; height:100%; margin:0 !important; padding:0 !important; background:${bg} !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    body { display:block !important; min-height:0 !important; }
     .no-print { display:none !important; }
-    @page { size:11in 8.5in landscape; margin:0.25in; }
-    .outer { max-width:100% !important; width:100% !important; padding:0 !important; }
-    .cert { width:100% !important; max-width:100% !important; page-break-inside:avoid; background:${bg} !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    @page { size:11in 8.5in landscape; margin:0.3in; }
+    .outer { max-width:none !important; width:100% !important; height:100% !important; margin:0 !important; padding:0 !important; }
+    .cert {
+      width:100% !important; max-width:none !important; height:100% !important;
+      display:flex !important; flex-direction:column; justify-content:center;
+      page-break-inside:avoid; background:${bg} !important;
+      -webkit-print-color-adjust:exact; print-color-adjust:exact;
+    }
   }
   .print-bar { text-align:center; margin-bottom:20px; }
   .print-bar button { padding:11px 30px; background:${goldAcc}; border:none; border-radius:8px; font-family:'Cinzel',serif; font-size:13px; font-weight:700; color:${isHero?'#1a0f05':'#2c1a0e'}; cursor:pointer; margin-right:10px; letter-spacing:0.04em; }
