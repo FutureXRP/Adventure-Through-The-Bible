@@ -208,6 +208,46 @@ Both versions close with:
 
 ---
 
+## Storybook System
+
+### What it is
+A page-turning, illustrated picture-book view of a story that plays **inside the
+existing narration** — same MP3, same word-by-word highlighting. A "📖 Read the
+Storybook" button appears at the top of the story modal for any story that has
+storybook art. Tier-aware: it uses whichever tier's story/audio is active.
+
+### Data model
+A story opts in via a `storybook` block in `stories.json` / `stories-tier2.json`:
+```json
+"storybook": { "images": ["./storybook/creation/01.webp", "..."] }
+```
+- **One image per paragraph, in order** (`images[i]` ↔ paragraph `i`). The reader
+  shows one paragraph per page.
+- Image counts are per-tier (paragraph counts differ between tiers).
+- Files live at `storybook/<story-id>/NN.webp`. See `storybook/README.md`.
+
+### Sync logic (reuses the audio engine)
+- `computeWordTimings()` (shared with the modal reader) turns ElevenLabs
+  character timestamps into a flat `{word,start,end}` array.
+- `computePageRanges()` splits each paragraph on whitespace to get per-paragraph
+  word-index boundaries — **verified 1:1** against the audio word list, the same
+  alignment guarantee `verify_audio.py` enforces. (Depends on the no-em-dash rule.)
+- As narration crosses a paragraph boundary the page auto-turns; manual turns
+  (arrows / edge-tap / swipe / ← → keys) seek the audio to that page's first word.
+
+### Graceful state
+Missing images show a styled "Illustration coming soon" placeholder, so the
+reader is fully usable before art exists. Drop a `.webp` at the path → it appears,
+no code change. The service worker runtime-caches images for offline automatically.
+
+### Status
+- [x] Reader built (page-turner, narration sync, highlight, swipe/keys, placeholders)
+- [x] Wired on `creation` (Tier 1) as the live reference, 11 placeholder pages
+- [ ] Generate/curate illustrations (consistent style + character reference sheets)
+- [ ] Add `storybook` blocks to remaining stories (and Tier 2 sets)
+
+---
+
 ## Story Release Process — New Batches
 
 ### How it works

@@ -417,6 +417,62 @@
   .tier-btn.active-gold { background:rgba(201,162,39,0.85);color:#2c1a0e; }
   .tier-btn.active-purple { background:#7c3aed;color:#fff; }
   .tier-divider { width:1px;height:16px;background:rgba(255,255,255,0.15);flex-shrink:0; }
+
+  /* ── STORYBOOK ── */
+  .modal-storybook-cta { margin: 18px 36px 0; }
+  .sb-open-btn { width:100%; cursor:pointer; border:1px solid rgba(201,162,39,0.55); border-radius:12px; padding:15px 20px; display:flex; align-items:center; gap:16px; text-align:left; background:linear-gradient(135deg,#1a0f05 0%,#2c1a0e 100%); box-shadow:0 4px 18px rgba(0,0,0,0.22); transition:transform 0.15s, box-shadow 0.15s; }
+  .sb-open-btn:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(0,0,0,0.32); }
+  .sb-open-icon { font-size:26px; line-height:1; flex-shrink:0; }
+  .sb-open-text { flex:1; min-width:0; }
+  .sb-open-title { font-family:'Cinzel',serif; font-weight:700; font-size:15px; color:var(--gold-bright); letter-spacing:0.02em; }
+  .sb-open-sub { font-family:'Source Sans 3',sans-serif; font-size:11px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-top:3px; }
+  .sb-open-arrow { color:var(--gold); font-size:20px; flex-shrink:0; }
+
+  .sb-overlay { display:none; position:fixed; inset:0; z-index:3500; background:radial-gradient(circle at 50% 35%, #3a2412 0%, #1a0f06 70%, #0e0803 100%); flex-direction:column; align-items:center; justify-content:center; padding:20px; }
+  .sb-overlay.open { display:flex; }
+  .sb-close { position:absolute; top:16px; right:18px; z-index:5; width:42px; height:42px; border-radius:50%; border:1px solid rgba(201,162,39,0.4); background:rgba(20,10,5,0.6); color:var(--gold-bright); font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background 0.15s; }
+  .sb-close:hover { background:rgba(20,10,5,0.9); }
+  .sb-title { position:absolute; top:22px; left:50%; transform:translateX(-50%); font-family:'Cinzel',serif; font-weight:600; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(240,192,64,0.7); text-align:center; max-width:60vw; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; pointer-events:none; }
+  .sb-stage { position:relative; display:flex; align-items:center; justify-content:center; gap:14px; width:100%; max-width:860px; flex:1; min-height:0; }
+  .sb-arrow { width:48px; height:48px; flex-shrink:0; border-radius:50%; border:1px solid rgba(201,162,39,0.45); background:rgba(20,10,5,0.55); color:var(--gold-bright); font-size:26px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background 0.15s, opacity 0.15s; z-index:4; }
+  .sb-arrow:hover { background:rgba(20,10,5,0.85); }
+  .sb-arrow:disabled { opacity:0.25; cursor:default; }
+  .sb-page { position:relative; flex:1; max-width:680px; height:100%; max-height:78vh; background:var(--parchment); border-radius:14px; box-shadow:0 18px 50px rgba(0,0,0,0.5); overflow:hidden; display:flex; }
+  .sb-page::after { content:''; position:absolute; inset:0; border-radius:14px; box-shadow:inset 0 0 0 1px rgba(201,162,39,0.25); pointer-events:none; }
+  .sb-page-inner { display:flex; flex-direction:column; width:100%; height:100%; }
+  .sb-page-inner.anim-next { animation:sbInNext 0.24s ease; }
+  .sb-page-inner.anim-prev { animation:sbInPrev 0.24s ease; }
+  @keyframes sbInNext { from { opacity:0; transform:translateX(30px); } to { opacity:1; transform:none; } }
+  @keyframes sbInPrev { from { opacity:0; transform:translateX(-30px); } to { opacity:1; transform:none; } }
+  @media (prefers-reduced-motion: reduce) { .sb-page-inner.anim-next, .sb-page-inner.anim-prev { animation:none; } }
+  .sb-illustration { position:relative; width:100%; height:52%; flex-shrink:0; background:#efe3c4; border-bottom:1px solid rgba(201,162,39,0.3); overflow:hidden; }
+  .sb-illo-img { width:100%; height:100%; object-fit:cover; display:block; }
+  .sb-illo-placeholder { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; background:radial-gradient(circle at 50% 40%, #f7eccb 0%, #e8d9b0 100%); }
+  .sb-illo-placeholder .sb-illo-emoji { font-size:64px; opacity:0.85; filter:drop-shadow(0 2px 4px rgba(0,0,0,0.12)); }
+  .sb-illo-placeholder .sb-illo-note { font-family:'Source Sans 3',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:rgba(92,61,30,0.55); }
+  .sb-text-wrap { flex:1; min-height:0; overflow-y:auto; padding:24px 32px; display:flex; flex-direction:column; }
+  .sb-text { font-family:'Lora',serif; font-size:1.18rem; line-height:1.8; color:var(--ink); margin:auto 0; }
+  .sb-controls { display:flex; align-items:center; gap:14px; width:100%; max-width:680px; margin-top:16px; padding:12px 18px; background:rgba(20,10,5,0.55); border:1px solid rgba(201,162,39,0.25); border-radius:12px; }
+  .sb-play { width:40px; height:40px; flex-shrink:0; border-radius:50%; border:none; background:var(--gold); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background 0.15s; }
+  .sb-play:hover { background:var(--gold-bright); }
+  .sb-play svg { width:15px; height:15px; fill:var(--ink); }
+  .sb-play.is-disabled { opacity:0.4; cursor:default; }
+  .sb-progress-wrap { flex:1; height:4px; background:rgba(255,255,255,0.15); border-radius:2px; cursor:pointer; position:relative; }
+  .sb-progress-fill { height:100%; width:0%; background:var(--gold); border-radius:2px; transition:width 0.1s linear; }
+  .sb-count { font-family:'Source Sans 3',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.08em; color:rgba(240,192,64,0.75); flex-shrink:0; min-width:42px; text-align:right; }
+  .sb-tap { position:absolute; top:0; bottom:0; width:22%; z-index:3; cursor:pointer; }
+  .sb-tap.left { left:0; } .sb-tap.right { right:0; }
+  @media (max-width: 680px) {
+    .sb-overlay { padding:12px; }
+    .sb-arrow { position:absolute; bottom:-2px; z-index:6; width:44px; height:44px; }
+    .sb-arrow.sb-prev { left:8px; } .sb-arrow.sb-next { right:8px; }
+    .sb-page { max-height:none; }
+    .sb-stage { gap:0; }
+    .sb-illustration { height:44%; }
+    .sb-text { font-size:1.08rem; }
+    .sb-text-wrap { padding:18px 22px; }
+    .sb-title { font-size:11px; max-width:70vw; }
+  }
 </style>
 </head>
 <body>
@@ -610,6 +666,16 @@
       <p class="modal-hook" id="modalHook"></p>
       <div class="modal-meta" id="modalMeta"></div>
     </div>
+    <div class="modal-storybook-cta" id="modalStorybookCta" style="display:none">
+      <button class="sb-open-btn" id="sbOpenBtn" type="button">
+        <span class="sb-open-icon">📖</span>
+        <span class="sb-open-text">
+          <span class="sb-open-title">Read the Storybook</span>
+          <span class="sb-open-sub">Pictures + narration</span>
+        </span>
+        <span class="sb-open-arrow">›</span>
+      </button>
+    </div>
     <div class="modal-body" id="modalBody"></div>
     <div class="modal-audio">
       <button class="audio-play-btn" id="audioPlayBtn" aria-label="Play">
@@ -634,6 +700,31 @@
       </div>
       <button class="mark-done-btn" id="markDoneBtn">Mark as Read ✓</button>
     </div>
+  </div>
+</div>
+
+<!-- ── STORYBOOK READER ── -->
+<div class="sb-overlay" id="sbOverlay" role="dialog" aria-modal="true" aria-label="Storybook reader">
+  <button class="sb-close" id="sbClose" aria-label="Close storybook">✕</button>
+  <div class="sb-title" id="sbTitle"></div>
+  <div class="sb-stage">
+    <button class="sb-arrow sb-prev" id="sbPrev" aria-label="Previous page">‹</button>
+    <div class="sb-page" id="sbPage">
+      <div class="sb-page-inner" id="sbPageInner">
+        <div class="sb-illustration" id="sbIllo"></div>
+        <div class="sb-text-wrap"><p class="sb-text" id="sbText"></p></div>
+        <div class="sb-tap left" id="sbTapLeft" aria-hidden="true"></div>
+        <div class="sb-tap right" id="sbTapRight" aria-hidden="true"></div>
+      </div>
+    </div>
+    <button class="sb-arrow sb-next" id="sbNext" aria-label="Next page">›</button>
+  </div>
+  <div class="sb-controls">
+    <button class="sb-play" id="sbPlay" aria-label="Play narration">
+      <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+    </button>
+    <div class="sb-progress-wrap" id="sbProgressWrap"><div class="sb-progress-fill" id="sbProgressFill"></div></div>
+    <div class="sb-count" id="sbCount">1 / 1</div>
   </div>
 </div>
 
@@ -1627,6 +1718,7 @@ function renderModal(idx) {
   const bodyEl = document.getElementById('modalBody');
   bodyEl.innerHTML = story.story.map(p => `<p class="story-paragraph">${p}</p>`).join('');
   bodyEl.scrollTop = 0;
+  document.getElementById('modalStorybookCta').style.display = storyHasStorybook(story) ? '' : 'none';
   const audioStatus = document.getElementById('audioStatus');
   const playBtn = document.getElementById('audioPlayBtn');
   if (currentAudio) { currentAudio.pause(); currentAudio = null; isAudioPlaying = false; }
@@ -1768,19 +1860,20 @@ function toggleAudio() {
     document.getElementById('audioPlayBtn').innerHTML = '<svg viewBox="0 0 24 24"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg>';
   }
 }
-function buildWordTimings(alignment) {
-  const OFFSET = 0.0;
+function computeWordTimings(alignment) {
   const chars = alignment.characters, starts = alignment.character_start_times_seconds, ends = alignment.character_end_times_seconds;
-  wordTimings = [];
+  const timings = [];
   let word = '', wordStart = null, wordEndIdx = 0;
   for (let i = 0; i < chars.length; i++) {
     const c = chars[i];
     if (c === ' ' || c === '\n' || c === '\u2014') {
-      if (word) { wordTimings.push({ word, start: wordStart + OFFSET, end: ends[wordEndIdx] + OFFSET }); word = ''; wordStart = null; }
+      if (word) { timings.push({ word, start: wordStart, end: ends[wordEndIdx] }); word = ''; wordStart = null; }
     } else { if (!word) wordStart = starts[i]; word += c; wordEndIdx = i; }
   }
-  if (word) wordTimings.push({ word, start: wordStart + OFFSET, end: ends[wordEndIdx] + OFFSET });
+  if (word) timings.push({ word, start: wordStart, end: ends[wordEndIdx] });
+  return timings;
 }
+function buildWordTimings(alignment) { wordTimings = computeWordTimings(alignment); }
 function wrapStoryWords() {
   allWordSpans = [];
   const body = document.getElementById('modalBody');
@@ -1808,10 +1901,11 @@ function startHighlightLoop() {
   rafHandle = requestAnimationFrame(loop);
 }
 function stopHighlightLoop() { if (rafHandle) { cancelAnimationFrame(rafHandle); rafHandle = null; } }
-function binarySearchWord(t) {
-  if (!wordTimings.length || t < wordTimings[0].start) return -1;
-  let lo = 0, hi = wordTimings.length - 1;
-  while (lo < hi) { const mid = Math.ceil((lo + hi) / 2); if (wordTimings[mid].start <= t) lo = mid; else hi = mid - 1; }
+function binarySearchWord(t, timings) {
+  timings = timings || wordTimings;
+  if (!timings.length || t < timings[0].start) return -1;
+  let lo = 0, hi = timings.length - 1;
+  while (lo < hi) { const mid = Math.ceil((lo + hi) / 2); if (timings[mid].start <= t) lo = mid; else hi = mid - 1; }
   return lo;
 }
 function highlightCurrentWord(currentTime) {
@@ -1852,6 +1946,217 @@ function scrubAudio(e) {
   currentAudio.currentTime = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width)) * currentAudio.duration;
   lastHighlightIdx = -1; updateAudioProgress();
 }
+function pauseModalAudio() {
+  if (currentAudio && isAudioPlaying) {
+    currentAudio.pause(); isAudioPlaying = false; stopHighlightLoop();
+    const b = document.getElementById('audioPlayBtn');
+    if (b) b.innerHTML = '<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>';
+  }
+}
+
+// ════════════════════════════════════════════════════
+// STORYBOOK READER — page-turner synced to the narration
+// ════════════════════════════════════════════════════
+let sbPages = [], sbPageIdx = 0, sbAudio = null, sbTimings = [], sbRanges = [],
+    sbRaf = null, sbPlaying = false, sbLastWord = -1, sbHasAudio = false;
+
+function storyHasStorybook(story) {
+  return !!(story && story.storybook && Array.isArray(story.storybook.images) && story.storybook.images.length);
+}
+function sbEsc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+
+// Word-count boundaries per paragraph, in the same index space as the
+// narration timings (split that matches buildWordTimings / wrapStoryWords).
+function computePageRanges(paragraphs) {
+  const ranges = []; let idx = 0;
+  paragraphs.forEach(p => {
+    const n = String(p).trim().split(/\s+/).filter(Boolean).length;
+    ranges.push({ start: idx, end: idx + n });
+    idx += n;
+  });
+  return ranges;
+}
+function sbPageForWord(wordIdx) {
+  for (let i = 0; i < sbRanges.length; i++) {
+    if (wordIdx >= sbRanges[i].start && wordIdx < sbRanges[i].end) return i;
+  }
+  return -1;
+}
+
+function openStorybook() {
+  if (currentStoryIndex === null) return;
+  const story = stories[currentStoryIndex];
+  if (!storyHasStorybook(story)) return;
+  pauseModalAudio(); // never let two narrations overlap
+
+  const paras = Array.isArray(story.story) ? story.story : [];
+  const imgs = story.storybook.images || [];
+  sbPages = paras.map((text, i) => ({ text: text, img: imgs[i] || null, emoji: story.emoji }));
+  sbRanges = computePageRanges(paras);
+  sbTimings = []; sbHasAudio = false; sbLastWord = -1; sbPlaying = false; sbPageIdx = 0;
+
+  if (sbAudio) { sbAudio.pause(); sbAudio = null; }
+  document.getElementById('sbProgressFill').style.width = '0%';
+  const playBtn = document.getElementById('sbPlay');
+  if (story.audio) {
+    sbHasAudio = true; playBtn.classList.remove('is-disabled');
+    sbAudio = new Audio(story.audio);
+    sbAudio.addEventListener('timeupdate', sbUpdateProgress);
+    sbAudio.addEventListener('ended', sbOnEnded);
+    fetch(story.audio.replace('.mp3', '.json')).then(r => r.ok ? r.json() : null)
+      .then(ts => { if (ts) sbTimings = computeWordTimings(ts); }).catch(() => {});
+  } else {
+    sbHasAudio = false; playBtn.classList.add('is-disabled');
+  }
+  sbSetPlayIcon(false);
+
+  document.getElementById('sbTitle').textContent = story.title || '';
+  document.getElementById('sbOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  sbRenderPage(0, null);
+}
+function closeStorybook() {
+  sbStopLoop();
+  if (sbAudio) { sbAudio.pause(); sbAudio = null; }
+  sbPlaying = false; sbSetPlayIcon(false);
+  document.getElementById('sbOverlay').classList.remove('open');
+  if (!document.getElementById('modalBackdrop').classList.contains('open')) document.body.style.overflow = '';
+}
+
+function sbPlaceholder(emoji) {
+  const d = document.createElement('div'); d.className = 'sb-illo-placeholder';
+  const e = document.createElement('span'); e.className = 'sb-illo-emoji'; e.textContent = emoji || '📖';
+  const n = document.createElement('span'); n.className = 'sb-illo-note'; n.textContent = 'Illustration coming soon';
+  d.appendChild(e); d.appendChild(n); return d;
+}
+function sbWrapWords(text, startIdx) {
+  const tokens = String(text).split(/(\s+)/);
+  let html = '', wi = startIdx;
+  tokens.forEach(tok => {
+    if (/^\s+$/.test(tok) || tok.length === 0) { html += tok; }
+    else { html += '<span class="story-word" data-idx="' + (wi++) + '">' + sbEsc(tok) + '</span>'; }
+  });
+  return html;
+}
+function sbRenderPage(i, dir) {
+  if (i < 0 || i >= sbPages.length) return;
+  sbPageIdx = i;
+  const page = sbPages[i];
+  const illo = document.getElementById('sbIllo');
+  illo.innerHTML = '';
+  if (page.img) {
+    const img = document.createElement('img');
+    img.className = 'sb-illo-img'; img.alt = '';
+    img.onerror = function () { illo.innerHTML = ''; illo.appendChild(sbPlaceholder(page.emoji)); };
+    img.src = page.img;
+    illo.appendChild(img);
+  } else {
+    illo.appendChild(sbPlaceholder(page.emoji));
+  }
+  const range = sbRanges[i] || { start: 0 };
+  document.getElementById('sbText').innerHTML = sbWrapWords(page.text, range.start);
+  const wrap = document.getElementById('sbText').parentElement; if (wrap) wrap.scrollTop = 0;
+  const inner = document.getElementById('sbPageInner');
+  inner.classList.remove('anim-next', 'anim-prev');
+  if (dir) { void inner.offsetWidth; inner.classList.add(dir === 'prev' ? 'anim-prev' : 'anim-next'); }
+  document.getElementById('sbCount').textContent = (i + 1) + ' / ' + sbPages.length;
+  document.getElementById('sbPrev').disabled = i <= 0;
+  document.getElementById('sbNext').disabled = i >= sbPages.length - 1;
+  sbLastWord = -1;
+}
+function sbGoTo(i, opts) {
+  opts = opts || {};
+  if (i < 0) i = 0; if (i >= sbPages.length) i = sbPages.length - 1;
+  const dir = i > sbPageIdx ? 'next' : (i < sbPageIdx ? 'prev' : null);
+  if (i !== sbPageIdx) sbRenderPage(i, dir);
+  if (opts.seek && sbHasAudio && sbAudio && sbTimings.length) {
+    const r = sbRanges[i], wt = r && sbTimings[r.start];
+    if (wt) { sbAudio.currentTime = wt.start; sbLastWord = -1; sbUpdateProgress(); }
+  }
+}
+function sbNext(seek) { if (sbPageIdx < sbPages.length - 1) sbGoTo(sbPageIdx + 1, { seek: seek }); }
+function sbPrev(seek) { if (sbPageIdx > 0) sbGoTo(sbPageIdx - 1, { seek: seek }); }
+
+function sbSetPlayIcon(playing) {
+  document.getElementById('sbPlay').innerHTML = playing
+    ? '<svg viewBox="0 0 24 24"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg>'
+    : '<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>';
+}
+function sbTogglePlay() {
+  if (!sbHasAudio || !sbAudio) return;
+  if (sbPlaying) {
+    sbAudio.pause(); sbPlaying = false; sbStopLoop(); sbSetPlayIcon(false);
+  } else {
+    sbAudio.play(); sbPlaying = true; sbSetPlayIcon(true);
+    if (sbTimings.length) sbStartLoop();
+  }
+}
+function sbStartLoop() {
+  if (sbRaf) cancelAnimationFrame(sbRaf);
+  function loop() {
+    if (!sbAudio || sbAudio.paused || !sbTimings.length) { sbRaf = null; return; }
+    sbSyncToAudio(sbAudio.currentTime);
+    sbRaf = requestAnimationFrame(loop);
+  }
+  sbRaf = requestAnimationFrame(loop);
+}
+function sbStopLoop() { if (sbRaf) { cancelAnimationFrame(sbRaf); sbRaf = null; } }
+function sbClearSpeaking() {
+  document.getElementById('sbPageInner').querySelectorAll('.story-word.speaking').forEach(s => s.classList.remove('speaking'));
+}
+function sbSyncToAudio(t) {
+  const idx = binarySearchWord(t, sbTimings);
+  if (idx === -1) return;
+  const page = sbPageForWord(idx);
+  if (page !== -1 && page !== sbPageIdx) sbGoTo(page, { seek: false }); // narration turns the page
+  if (idx === sbLastWord) return;
+  sbLastWord = idx;
+  sbClearSpeaking();
+  const span = document.getElementById('sbPageInner').querySelector('.story-word[data-idx="' + idx + '"]');
+  if (span) {
+    const tok = span.textContent;
+    if (tok !== '—' && tok !== '–' && tok !== '-') span.classList.add('speaking');
+  }
+}
+function sbOnEnded() { sbPlaying = false; sbStopLoop(); sbSetPlayIcon(false); sbLastWord = -1; sbClearSpeaking(); }
+function sbUpdateProgress() {
+  if (!sbAudio) return;
+  const pct = sbAudio.duration ? (sbAudio.currentTime / sbAudio.duration) * 100 : 0;
+  document.getElementById('sbProgressFill').style.width = pct + '%';
+}
+function sbScrub(e) {
+  if (!sbAudio || !sbAudio.duration) return;
+  const rect = document.getElementById('sbProgressWrap').getBoundingClientRect();
+  sbAudio.currentTime = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width)) * sbAudio.duration;
+  sbLastWord = -1; sbUpdateProgress();
+  const page = sbPageForWord(binarySearchWord(sbAudio.currentTime, sbTimings));
+  if (page !== -1 && page !== sbPageIdx) sbGoTo(page, { seek: false });
+}
+
+document.getElementById('sbOpenBtn').addEventListener('click', openStorybook);
+document.getElementById('sbClose').addEventListener('click', closeStorybook);
+document.getElementById('sbPrev').addEventListener('click', function () { sbPrev(true); });
+document.getElementById('sbNext').addEventListener('click', function () { sbNext(true); });
+document.getElementById('sbTapLeft').addEventListener('click', function () { sbPrev(true); });
+document.getElementById('sbTapRight').addEventListener('click', function () { sbNext(true); });
+document.getElementById('sbPlay').addEventListener('click', sbTogglePlay);
+document.getElementById('sbProgressWrap').addEventListener('click', sbScrub);
+document.addEventListener('keydown', function (e) {
+  if (!document.getElementById('sbOverlay').classList.contains('open')) return;
+  if (e.key === 'ArrowRight') { sbNext(true); }
+  else if (e.key === 'ArrowLeft') { sbPrev(true); }
+  else if (e.key === ' ') { e.preventDefault(); sbTogglePlay(); }
+});
+(function () {
+  const stage = document.getElementById('sbPage');
+  let x0 = null;
+  stage.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  stage.addEventListener('touchend', function (e) {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0; x0 = null;
+    if (Math.abs(dx) > 45) { if (dx < 0) sbNext(true); else sbPrev(true); }
+  }, { passive: true });
+})();
 
 // ════════════════════════════════════════════════════
 // PROGRESS / MARK DONE
@@ -1895,6 +2200,7 @@ document.getElementById('journeyBackdrop').addEventListener('click', e => { if (
 document.getElementById('masteryBackdrop').addEventListener('click', e => { if (e.target === document.getElementById('masteryBackdrop')) closeMastery(); });
 document.getElementById('childModalBackdrop').addEventListener('click', e => { if (e.target === document.getElementById('childModalBackdrop')) closeChildModal(); });
 document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && document.getElementById('sbOverlay').classList.contains('open')) { closeStorybook(); return; }
   if (e.key === 'Escape') { closeModal(); closePaywall(); closeJourney(); closeChildModal(); closeMastery(); }
   if (e.key === 'Enter' && e.target.classList.contains('story-card')) handleCardClick(e.target.dataset.id);
 });

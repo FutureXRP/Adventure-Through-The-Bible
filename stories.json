@@ -125,6 +125,21 @@
         }
       ],
       "audio": "./audio/creation.mp3",
+      "storybook": {
+        "images": [
+          "./storybook/creation/01.webp",
+          "./storybook/creation/02.webp",
+          "./storybook/creation/03.webp",
+          "./storybook/creation/04.webp",
+          "./storybook/creation/05.webp",
+          "./storybook/creation/06.webp",
+          "./storybook/creation/07.webp",
+          "./storybook/creation/08.webp",
+          "./storybook/creation/09.webp",
+          "./storybook/creation/10.webp",
+          "./storybook/creation/11.webp"
+        ]
+      },
       "quiz": [
         {
           "question": "What were the very first words God spoke to create the world?",
