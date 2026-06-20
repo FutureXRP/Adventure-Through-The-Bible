@@ -394,9 +394,20 @@ function render(d) {
   $('asOf').textContent = 'As of ' + now.toLocaleString('en-US', { dateStyle: 'long', timeStyle: 'short' });
 
   // ---- warnings (incl. likely-missing RLS hint) ----
-  const lowData = d.profiles.length <= 1 && (d.progress.length + d.quizzes.length) === 0;
   const notes = warnings.slice();
-  if (lowData) notes.push("Only your own rows are visible — if you expect more, the admin read policies may not be applied yet (see the setup SQL on the sign-in screen).");
+  // Distinct profiles that appear across the activity tables. If the admin
+  // read policies are missing on those tables, RLS limits them to the admin's
+  // OWN rows, so this collapses to ~1 even when many accounts exist — which is
+  // exactly the "accounts look full but activity is empty" failure mode.
+  const activeIds = new Set();
+  [].concat(d.progress, d.quizzes, d.mastery, d.badges).forEach(r => { if (r && r.profile_id) activeIds.add(r.profile_type + ':' + r.profile_id); });
+  const partialRls = d.profiles.length >= 2 && activeIds.size <= 1;
+  const lowData = d.profiles.length <= 1 && (d.progress.length + d.quizzes.length + d.children.length) === 0;
+  if (partialRls) {
+    notes.push(fmt(d.profiles.length) + " accounts are visible, but the activity tables (reads, quizzes, badges, children) show only one profile. The admin read policies are almost certainly missing on story_progress, quiz_attempts, mastery_attempts, badges, and child_profiles — re-run the full setup SQL (sign-in screen), then reload. Until then, every number below except Accounts reflects only your own activity.");
+  } else if (lowData) {
+    notes.push("Only your own rows are visible — if you expect more, the admin read policies may not be applied yet (see the setup SQL on the sign-in screen).");
+  }
   if (notes.length) {
     $('warnBanner').style.display = 'block';
     $('warnBanner').innerHTML = '⚠️ ' + notes.map(esc).join('<br>');

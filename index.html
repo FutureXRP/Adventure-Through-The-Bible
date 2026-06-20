@@ -876,10 +876,10 @@ async function showMasteryCelebration() {
   const pct = Math.round((masteryScore / masteryQuestions.length) * 100);
   const body = document.getElementById('masteryBody');
   if (authUser && activeProfile) {
-    await sb.from('mastery_attempts').insert({ profile_id: activeProfile.id, profile_type: activeProfile.type, score: masteryScore, max_score: masteryQuestions.length, passed });
+    await reliableWrite('mastery_attempts', 'insert', { profile_id: activeProfile.id, profile_type: activeProfile.type, score: masteryScore, max_score: masteryQuestions.length, passed });
     if (passed && !dbBadges.has('hero')) {
       dbBadges.add('hero');
-      await sb.from('badges').upsert({ profile_id: activeProfile.id, profile_type: activeProfile.type, badge_id: 'hero', story_count_at_earn: stories.length });
+      await reliableWrite('badges', 'upsert', { profile_id: activeProfile.id, profile_type: activeProfile.type, badge_id: 'hero', story_count_at_earn: stories.length });
       renderBadgeShelf();
     }
   }
@@ -911,6 +911,64 @@ const SUPABASE_URL = 'https://bqyysvjnitbeimvaxkao.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxeXlzdmpuaXRiZWltdmF4a2FvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA0MTA1OTIsImV4cCI6MjA5NTk4NjU5Mn0._GJFay_isjcvm7O_Ry7hBk1EfkKQvqoMPVVOBL2uhug';
 const { createClient } = supabase;
 const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, { auth: { detectSessionInUrl: true, persistSession: true, autoRefreshToken: true } });
+
+// ════════════════════════════════════════════════════
+// RELIABLE WRITES — never silently drop signed-in activity.
+// Every analytics write (reads, quizzes, hero attempts, badges) goes
+// through reliableWrite(). On failure the row is queued to localStorage
+// and replayed on the next load and whenever the device comes back
+// online, instead of being lost. Upserts are idempotent (dedup-safe);
+// insert retries may, in a rare ambiguous-network case, double-count —
+// acceptable for analytics and far better than under-counting.
+// ════════════════════════════════════════════════════
+const PENDING_WRITES_KEY = 'footsteps_pending_writes';
+
+function queuePendingWrite(op) {
+  try {
+    const q = JSON.parse(localStorage.getItem(PENDING_WRITES_KEY) || '[]');
+    q.push(op);
+    localStorage.setItem(PENDING_WRITES_KEY, JSON.stringify(q.slice(-300)));
+  } catch (e) { /* localStorage unavailable — nothing more we can do */ }
+}
+
+// Returns the Supabase error (truthy) on failure, falsy on success.
+async function runWrite(op) {
+  const b = sb.from(op.table);
+  const { error } = op.mode === 'upsert' ? await b.upsert(op.row) : await b.insert(op.row);
+  return error;
+}
+
+// Returns true on success; false if the write failed and was queued for retry.
+async function reliableWrite(table, mode, row) {
+  const op = { table, mode, row };
+  try {
+    const error = await runWrite(op);
+    if (error) { console.warn('write failed [' + table + ']:', error.message); queuePendingWrite(op); return false; }
+    return true;
+  } catch (e) {
+    console.warn('write threw [' + table + ']:', (e && e.message) || e);
+    queuePendingWrite(op);
+    return false;
+  }
+}
+
+let flushingWrites = false;
+async function flushPendingWrites() {
+  if (flushingWrites || !authUser) return;       // need a session for RLS to accept the rows
+  let q;
+  try { q = JSON.parse(localStorage.getItem(PENDING_WRITES_KEY) || '[]'); } catch (e) { return; }
+  if (!q.length) return;
+  flushingWrites = true;
+  const remaining = [];
+  for (const op of q) {
+    try { if (await runWrite(op)) remaining.push(op); }   // keep it queued if it still errors
+    catch (e) { remaining.push(op); }
+  }
+  try { localStorage.setItem(PENDING_WRITES_KEY, JSON.stringify(remaining)); } catch (e) {}
+  flushingWrites = false;
+}
+
+window.addEventListener('online', flushPendingWrites);
 
 const PAYWALL_ENABLED = false;
 const FREE_STORY_LIMIT = 3;
@@ -978,9 +1036,10 @@ async function init() {
   await checkCheckoutReturn();
   await checkBadgeRevocations();
   await checkNewStoriesForLifetimeBuyers();
+  flushPendingWrites();   // replay any writes that failed in a previous session
 
   sb.auth.onAuthStateChange(async (event, session) => {
-    if (event === 'SIGNED_IN' && session) { authUser = session.user; await loadUserProfile(); }
+    if (event === 'SIGNED_IN' && session) { authUser = session.user; await loadUserProfile(); flushPendingWrites(); }
     else if (event === 'SIGNED_OUT') {
       authUser = null; userProfile = null; activeProfile = null;
       childProfiles = []; dbProgress = new Set(); dbBadges = new Set();
@@ -1046,7 +1105,7 @@ async function syncBadgesFromProgress() {
     if (earned) {
       const eraStories = badge.era ? stories.filter(s => s.era === badge.era) : stories;
       dbBadges.add(badge.id);
-      await sb.from('badges').upsert({ profile_id: activeProfile.id, profile_type: activeProfile.type, badge_id: badge.id, story_count_at_earn: eraStories.length });
+      await reliableWrite('badges', 'upsert', { profile_id: activeProfile.id, profile_type: activeProfile.type, badge_id: badge.id, story_count_at_earn: eraStories.length });
     }
   }
 }
@@ -1122,16 +1181,16 @@ function getProgress() {
 function saveProgressLocal(set) { localStorage.setItem(PROGRESS_KEY, JSON.stringify([...set])); }
 async function markStoryComplete(story) {
   if (authUser && activeProfile) {
-    const { error } = await sb.from('story_progress').upsert({
+    const ok = await reliableWrite('story_progress', 'upsert', {
       profile_id: activeProfile.id,
       profile_type: activeProfile.type,
       story_id: story.id,
       story_order: story.order,
       era: story.era
     });
-    if (error) {
-      // Fall back to local storage if Supabase fails
-      console.warn('Supabase progress save failed, using local fallback:', error.message);
+    if (!ok) {
+      // Queued for retry inside reliableWrite; also keep a local copy so the
+      // reader still sees their own progress until the queue syncs.
       const p = getProgress(); p.add(story.id); saveProgressLocal(p);
     }
     dbProgress.add(story.id); // Always update in-memory regardless
@@ -1161,7 +1220,7 @@ async function checkAndAwardBadges(justCompletedStory) {
     if (earned) {
       const eraStories = badge.era ? stories.filter(s => s.era === badge.era) : stories;
       dbBadges.add(badge.id);
-      await sb.from('badges').upsert({ profile_id: activeProfile.id, profile_type: activeProfile.type, badge_id: badge.id, story_count_at_earn: eraStories.length });
+      await reliableWrite('badges', 'upsert', { profile_id: activeProfile.id, profile_type: activeProfile.type, badge_id: badge.id, story_count_at_earn: eraStories.length });
       showBadgePopup(badge); renderBadgeShelf();
       // If all stories complete, also unlock the hero quiz
       if (badge.id === 'complete') {
@@ -1793,7 +1852,7 @@ function initQuiz(questions, container, story) {
   }
   function showCelebration() {
     if (authUser && activeProfile) {
-      sb.from('quiz_attempts').insert({ profile_id: activeProfile.id, profile_type: activeProfile.type, story_id: story.id, score, max_score: questions.length });
+      reliableWrite('quiz_attempts', 'insert', { profile_id: activeProfile.id, profile_type: activeProfile.type, story_id: story.id, score, max_score: questions.length });
     }
     const colors = ['#c9a227','#f0c040','#8b1a1a','#c9a227','#3B6D11','#f0c040','#7c3aed','#c9a227','#f0c040','#065f46'];
     const perfect = score === questions.length;
