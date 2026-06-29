@@ -2,11 +2,11 @@
  * Docs are network-first (so deploys show up immediately); static assets are
  * cache-first (fast, and available offline). Supabase API calls are never
  * intercepted, so auth and data stay live. Bump CACHE to force a refresh. */
-const CACHE = 'footsteps-v1';
+const CACHE = 'footsteps-v2';
 const CORE = [
   './', './index.html', './account.html', './login.html', './admin.html',
   './stories.json', './stories-tier2.json', './prologue.json',
-  './manifest.webmanifest',
+  './manifest.webmanifest', './pixel.js',
   './icons/icon-192.png', './icons/icon-512.png', './icons/icon-180.png'
 ];
 

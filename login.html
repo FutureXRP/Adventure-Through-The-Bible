@@ -12,6 +12,7 @@
 <link rel="apple-touch-icon" href="./icons/icon-180.png">
 <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
 <script>if('serviceWorker' in navigator){addEventListener('load',function(){navigator.serviceWorker.register('./sw.js').catch(function(){});});}</script>
+<script src="./pixel.js"></script>
 <title>Sign In — Footsteps</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -494,6 +495,7 @@ async function handleSubmit() {
         }
       });
       if (error) throw error;
+      window.fbTrack && window.fbTrack('CompleteRegistration', { content_name: 'account_signup' });
       if (data.user && !data.session) {
         // Email confirmation required
         showMessage('Almost there! Check your email and click the confirmation link to activate your account.', 'success');

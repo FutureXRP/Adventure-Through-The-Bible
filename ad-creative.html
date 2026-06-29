@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!--
+  ════════════════════════════════════════════════════════════════════════
+  FOOTSTEPS — Facebook / Instagram ad creatives
+  Two designed cards below:
+    • Card 1 — 1080 × 1080  (Feed square / 1:1)
+    • Card 2 — 1080 × 1350  (Feed vertical / 4:5)
+
+  HOW TO EXPORT A CRISP PNG
+  1) Open this file in Chrome.
+  2) Open DevTools (F12 or ⌘⌥I). Optional but recommended for max sharpness:
+     toggle the device toolbar (⌘⇧M) and set the Device Pixel Ratio to 2 — this
+     captures the card at 2× for a crisp result.
+  3) In the Elements panel, right-click the <section class="ad …"> node you want
+     and choose "Capture node screenshot."
+       - At DPR 1 you get exactly 1080×1080 / 1080×1350 (already Meta-ready).
+       - At DPR 2 you get 2160×2160 / 2160×2700 — downscale to 1080 in any
+         editor for the smallest, sharpest file.
+  Each card is built at the exact pixel size, so there is nothing to crop.
+  (The grey background and the little size labels are screen-only — they are
+  outside the .ad nodes, so they never appear in the capture.)
+  ════════════════════════════════════════════════════════════════════════
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Footsteps — Ad Creatives</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF6E7;
+    --espresso:#2B1E12;
+    --gold:#C9A24B;
+    --gold-bright:#E3C56B;
+    --gold-deep:#A87E2E;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  body{
+    background:#33302b;
+    display:flex; flex-direction:column; align-items:center; gap:48px;
+    padding:48px 20px 90px;
+    font-family:'EB Garamond', Georgia, serif;
+  }
+  .label{
+    font-family:'EB Garamond',serif; color:#cfc6b4; font-size:15px;
+    letter-spacing:0.14em; text-transform:uppercase; margin-bottom:-30px;
+  }
+
+  /* ── the ad card ─────────────────────────────────────────── */
+  .ad{
+    position:relative; overflow:hidden;
+    background:linear-gradient(180deg,#FCEFD2 0%,#F7DCA0 28%,#ECB86A 48%,#D98E4A 64%,#a9652f 82%,#6f421f 100%);
+    box-shadow:0 30px 80px rgba(0,0,0,0.5);
+    font-family:'EB Garamond', Georgia, serif;
+  }
+  .ad.square{ width:1080px; height:1080px; }
+  .ad.portrait{ width:1080px; height:1350px; }
+
+  /* sun glow */
+  .sun{
+    position:absolute; top:13%; left:50%; transform:translateX(-50%);
+    width:460px; height:460px; border-radius:50%;
+    background:radial-gradient(circle, rgba(255,249,231,0.95) 0%, rgba(248,219,156,0.55) 38%, rgba(248,219,156,0) 70%);
+    z-index:1;
+  }
+
+  /* ruined columns on the horizon */
+  .columns{
+    position:absolute; top:39%; left:50%; transform:translateX(-50%);
+    display:flex; align-items:flex-end; gap:20px; height:150px; z-index:1;
+    opacity:0.92;
+  }
+  .col{
+    width:34px; background:linear-gradient(180deg,#3a2a18,#241a10);
+    border-radius:3px 3px 0 0; box-shadow:0 0 18px rgba(60,40,20,0.4);
+  }
+  .col.tall{ height:150px; } .col.mid{ height:118px; } .col.short{ height:92px; }
+  .col.broken{ clip-path:polygon(0 0,100% 14%,100% 100%,0 100%); }
+  .architrave{
+    position:absolute; top:39%; left:50%; transform:translateX(-50%) translateY(-14px);
+    width:138px; height:16px; background:linear-gradient(180deg,#3a2a18,#241a10);
+    border-radius:3px; z-index:1; opacity:0.92;
+  }
+
+  /* glowing path receding to the horizon */
+  .path{
+    position:absolute; bottom:0; left:50%; transform:translateX(-50%);
+    width:74%; height:64%;
+    background:linear-gradient(180deg, rgba(255,238,190,0) 0%, rgba(247,214,150,0.45) 34%, rgba(233,197,107,0.72) 100%);
+    clip-path:polygon(44% 0%, 56% 0%, 100% 100%, 0% 100%);
+    z-index:1;
+  }
+
+  /* three small travelers on the path */
+  .walkers{
+    position:absolute; top:46%; left:50%; transform:translateX(-50%);
+    display:flex; align-items:flex-end; gap:24px; z-index:2;
+  }
+  .walker{ position:relative; background:#241a10; border-radius:9px 9px 5px 5px; opacity:0.9; }
+  .walker::before{
+    content:''; position:absolute; left:50%; transform:translateX(-50%);
+    border-radius:50%; background:#241a10;
+  }
+  .w1{ width:22px; height:48px; } .w1::before{ width:19px; height:19px; top:-15px; }
+  .w2{ width:18px; height:38px; } .w2::before{ width:15px; height:15px; top:-12px; }
+  .w3{ width:14px; height:30px; } .w3::before{ width:12px; height:12px; top:-9px; }
+
+  /* legibility scrim for the text */
+  .scrim{
+    position:absolute; left:0; right:0; bottom:0; height:56%;
+    background:linear-gradient(180deg, rgba(43,30,18,0) 0%, rgba(43,30,18,0.5) 38%, rgba(43,30,18,0.93) 100%);
+    z-index:3;
+  }
+
+  /* brand wordmark */
+  .brand{
+    position:absolute; top:48px; left:0; right:0; text-align:center; z-index:4;
+    font-family:'Cinzel',serif; font-weight:700; font-size:30px; letter-spacing:0.34em;
+    color:#3a2a18; text-indent:0.34em;
+    text-shadow:0 1px 0 rgba(255,255,255,0.25);
+  }
+
+  /* content block */
+  .content{
+    position:absolute; left:0; right:0; bottom:0; z-index:4;
+    text-align:center; padding:0 76px 78px;
+  }
+  .eyebrow{
+    font-family:'Cinzel',serif; font-weight:600; font-size:22px; letter-spacing:0.28em;
+    text-transform:uppercase; color:var(--gold-bright); text-indent:0.28em; margin-bottom:20px;
+  }
+  .headline{
+    font-family:'Cinzel',serif; font-weight:700; color:var(--cream);
+    font-size:86px; line-height:1.04; letter-spacing:0.005em;
+    text-shadow:0 2px 18px rgba(0,0,0,0.45); margin-bottom:22px;
+  }
+  .subhead{
+    font-family:'EB Garamond',serif; font-style:italic; font-size:31px; line-height:1.4;
+    color:rgba(251,246,231,0.9); max-width:760px; margin:0 auto 28px;
+  }
+  .badges{ display:flex; justify-content:center; gap:14px; margin-bottom:34px; }
+  .badge{
+    width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    background:radial-gradient(circle at 35% 30%, var(--gold-bright), var(--gold) 58%, var(--gold-deep));
+    color:#2B1E12; font-size:21px; line-height:1;
+    box-shadow:0 3px 10px rgba(0,0,0,0.4), inset 0 0 0 2px rgba(255,255,255,0.28);
+  }
+  .cta{
+    display:inline-block; font-family:'Cinzel',serif; font-weight:700; font-size:30px;
+    letter-spacing:0.05em; color:#2B1E12; padding:21px 50px; border-radius:999px;
+    background:linear-gradient(180deg, var(--gold-bright), var(--gold));
+    box-shadow:0 8px 22px rgba(0,0,0,0.38), inset 0 1px 0 rgba(255,255,255,0.4);
+  }
+  .url{
+    margin-top:24px; font-family:'Cinzel',serif; font-weight:500; font-size:25px;
+    letter-spacing:0.2em; color:var(--gold-bright); text-indent:0.2em;
+  }
+
+  /* thin gold inner frame */
+  .ad .frame{
+    position:absolute; inset:24px; border:2px solid rgba(201,162,75,0.55);
+    border-radius:6px; z-index:5; pointer-events:none;
+  }
+
+  /* ── portrait (1080×1350) recomposition ─────────────────── */
+  .portrait .sun{ top:11%; width:520px; height:520px; }
+  .portrait .columns{ top:34%; }
+  .portrait .architrave{ top:34%; }
+  .portrait .path{ height:66%; }
+  .portrait .walkers{ top:43%; }
+  .portrait .scrim{ height:54%; }
+  .portrait .brand{ top:64px; font-size:32px; }
+  .portrait .content{ padding-bottom:104px; }
+  .portrait .eyebrow{ font-size:24px; margin-bottom:24px; }
+  .portrait .headline{ font-size:100px; margin-bottom:26px; }
+  .portrait .subhead{ font-size:34px; margin-bottom:34px; }
+  .portrait .badge{ width:54px; height:54px; font-size:24px; }
+  .portrait .badges{ gap:16px; margin-bottom:40px; }
+  .portrait .cta{ font-size:33px; padding:23px 56px; }
+  .portrait .url{ font-size:27px; }
+</style>
+</head>
+<body>
+
+  <!-- ════════ CARD 1 — 1080×1080 Feed square ════════ -->
+  <div class="label">Card 1 · 1080 × 1080 · Feed square</div>
+  <section class="ad square">
+    <div class="sun"></div>
+    <div class="columns">
+      <div class="col short broken"></div>
+      <div class="col mid"></div>
+      <div class="col tall"></div>
+      <div class="col tall broken"></div>
+      <div class="col mid"></div>
+      <div class="col short"></div>
+    </div>
+    <div class="architrave"></div>
+    <div class="path"></div>
+    <div class="walkers">
+      <div class="walker w1"></div>
+      <div class="walker w2"></div>
+      <div class="walker w3"></div>
+    </div>
+    <div class="scrim"></div>
+
+    <div class="brand">FOOTSTEPS</div>
+    <div class="content">
+      <div class="eyebrow">A Journey Through Scripture</div>
+      <h1 class="headline">The Whole Story,<br>In Order</h1>
+      <p class="subhead">All 100 illustrated Bible stories — Creation to the early church. Read together or listen along.</p>
+      <div class="badges">
+        <span class="badge">&#10022;</span>
+        <span class="badge">&#10022;</span>
+        <span class="badge">&#10022;</span>
+        <span class="badge">&#10022;</span>
+        <span class="badge">&#10022;</span>
+      </div>
+      <span class="cta">Start the Journey &rarr;</span>
+      <div class="url">biblefootsteps.com</div>
+    </div>
+    <div class="frame"></div>
+  </section>
+
+  <!-- ════════ CARD 2 — 1080×1350 Feed vertical (4:5) ════════ -->
+  <div class="label">Card 2 · 1080 × 1350 · Feed vertical (4:5)</div>
+  <section class="ad portrait">
+    <div class="sun"></div>
+    <div class="columns">
+      <div class="col short broken"></div>
+      <div class="col mid"></div>
+      <div class="col tall"></div>
+      <div class="col tall broken"></div>
+      <div class="col mid"></div>
+      <div class="col short"></div>
+    </div>
+    <div class="architrave"></div>
+    <div class="path"></div>
+    <div class="walkers">
+      <div class="walker w1"></div>
+      <div class="walker w2"></div>
+      <div class="walker w3"></div>
+    </div>
+    <div class="scrim"></div>
+
+    <div class="brand">FOOTSTEPS</div>
+    <div class="content">
+      <div class="eyebrow">A Journey Through Scripture</div>
+      <h1 class="headline">The Whole Story,<br>In Order</h1>
+      <p class="subhead">All 100 illustrated Bible stories — Creation to the early church. Read together or listen along.</p>
+      <div class="badges">
+        <span class="badge">&#10022;</span>
+        <span class="badge">&#10022;</span>
+        <span class="badge">&#10022;</span>
+        <span class="badge">&#10022;</span>
+        <span class="badge">&#10022;</span>
+      </div>
+      <span class="cta">Start the Journey &rarr;</span>
+      <div class="url">biblefootsteps.com</div>
+    </div>
+    <div class="frame"></div>
+  </section>
+
+</body>
+</html>

@@ -12,6 +12,7 @@
 <link rel="apple-touch-icon" href="./icons/icon-180.png">
 <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
 <script>if('serviceWorker' in navigator){addEventListener('load',function(){navigator.serviceWorker.register('./sw.js').catch(function(){});});}</script>
+<script src="./pixel.js"></script>
 <script>
 (function(){
   var deferred=null;
@@ -1193,6 +1194,7 @@ async function markStoryComplete(story) {
       // reader still sees their own progress until the queue syncs.
       const p = getProgress(); p.add(story.id); saveProgressLocal(p);
     }
+    if (!dbProgress.has(story.id)) window.fbTrack && window.fbTrack('StoryComplete', { content_name: story.id });
     dbProgress.add(story.id); // Always update in-memory regardless
     await checkAndAwardBadges(story);
   } else {
