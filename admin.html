@@ -501,6 +501,10 @@ function render(d) {
       quizzes: bucketCounts(d.quizzes, 'created_at', axis.gran),
     },
   };
+  // Whether each source table actually exposes a created_at column (vs. simply
+  // having no dated rows yet) — drives a precise empty-state message.
+  const hasCol = rows => rows.some(r => r && Object.prototype.hasOwnProperty.call(r, 'created_at'));
+  TS.hasCreatedAt = { reads: hasCol(d.progress), quizzes: hasCol(d.quizzes), accounts: hasCol(d.profiles) };
   // Default to the first metric that actually has data, so the panel never
   // opens on an empty chart when another metric is populated.
   const firstWithData = ['reads', 'accounts', 'quizzes'].find(mt => {
@@ -562,12 +566,14 @@ function renderTimeseries(metric) {
 
   if (!keys.length || total === 0) {
     grid.innerHTML = ''; axis.innerHTML = '';
-    const hint = metric === 'accounts'
-      ? 'No account sign-ups recorded yet.'
-      : 'No dated ' + (metric === 'reads' ? 'reads' : 'quizzes') + ' yet — add a created_at column to the ' +
-        (metric === 'reads' ? 'story_progress' : 'quiz_attempts') + ' table to enable this view.';
+    const noun = metric === 'reads' ? 'reads' : 'quizzes';
+    const table = metric === 'reads' ? 'story_progress' : 'quiz_attempts';
+    let hint;
+    if (metric === 'accounts') hint = 'No account sign-ups recorded yet.';
+    else if (TS.hasCreatedAt && TS.hasCreatedAt[metric]) hint = 'Timestamps are enabled — new ' + noun + ' will appear here as they happen.';
+    else hint = 'No dated ' + noun + ' yet — add a created_at column to the ' + table + ' table to enable this view.';
     bars.innerHTML = '<div class="ts-empty">' + esc(hint) + '</div>';
-    $('tsSub').textContent = 'Growth over time';
+    $('tsSub').textContent = 'No dated activity for this metric yet';
     return;
   }
 
