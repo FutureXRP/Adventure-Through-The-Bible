@@ -74,15 +74,25 @@
   .hbar-fill { height: 100%; border-radius: 6px; background: linear-gradient(90deg, var(--gold), var(--gold-bright)); min-width: 2px; transition: width 0.4s ease; }
   .hbar-val { flex: 0 0 auto; font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 12px; color: var(--ink-light); min-width: 46px; text-align: right; }
 
-  /* vertical bars (time series) */
-  .seg { display: inline-flex; border: 1.5px solid var(--parchment-dark); border-radius: 8px; overflow: hidden; margin-bottom: 16px; }
+  /* time series (segmented toggle) */
+  .seg { display: inline-flex; border: 1.5px solid var(--parchment-dark); border-radius: 8px; overflow: hidden; margin-bottom: 18px; }
   .seg button { padding: 6px 14px; border: none; background: transparent; font-family: 'Source Sans 3', sans-serif; font-size: 12px; font-weight: 600; color: var(--ink-light); cursor: pointer; transition: background 0.15s, color 0.15s; }
   .seg button.active { background: var(--gold); color: var(--ink); }
-  .vbars { display: flex; align-items: flex-end; gap: 3px; height: 190px; border-bottom: 1.5px solid var(--parchment-dark); }
-  .vbar { flex: 1; min-width: 5px; display: flex; align-items: flex-end; height: 100%; }
-  .vbar-fill { width: 100%; background: linear-gradient(180deg, var(--gold-bright), var(--gold)); border-radius: 3px 3px 0 0; min-height: 2px; transition: height 0.4s ease; }
-  .vaxis { display: flex; gap: 3px; margin-top: 7px; }
-  .vtick { flex: 1; min-width: 5px; text-align: center; font-family: 'Source Sans 3', sans-serif; font-size: 9px; color: var(--ink-light); opacity: 0.7; white-space: nowrap; overflow: hidden; }
+
+  /* time-series bar chart */
+  .ts-plot { position: relative; height: 210px; padding-left: 36px; }
+  .ts-grid { position: absolute; left: 36px; right: 0; top: 0; bottom: 0; pointer-events: none; }
+  .ts-grid-line { position: absolute; left: 0; right: 0; height: 0; border-top: 1px dashed rgba(44,26,14,0.12); }
+  .ts-grid-line.base { border-top: 1.5px solid var(--parchment-dark); }
+  .ts-grid-label { position: absolute; left: -36px; top: -0.62em; width: 31px; text-align: right; font-family: 'Source Sans 3', sans-serif; font-size: 9px; font-weight: 600; color: var(--ink-light); opacity: 0.6; }
+  .ts-bars { position: absolute; left: 36px; right: 0; top: 0; bottom: 0; display: flex; align-items: flex-end; justify-content: flex-start; gap: 5px; }
+  .ts-bar { flex: 1 1 0; max-width: 48px; min-width: 4px; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; position: relative; }
+  .ts-bar-fill { width: 100%; background: linear-gradient(180deg, var(--gold-bright), var(--gold)); border-radius: 4px 4px 0 0; min-height: 0; box-shadow: inset 0 -1px 0 rgba(0,0,0,0.05); transition: height 0.4s ease; }
+  .ts-bar:hover .ts-bar-fill { filter: brightness(1.07); }
+  .ts-bar-val { font-family: 'Source Sans 3', sans-serif; font-size: 10px; font-weight: 700; color: var(--ink-light); margin-bottom: 3px; white-space: nowrap; }
+  .ts-axis { display: flex; gap: 5px; padding-left: 36px; margin-top: 8px; }
+  .ts-tick { flex: 1 1 0; max-width: 48px; min-width: 4px; text-align: center; font-family: 'Source Sans 3', sans-serif; font-size: 9px; color: var(--ink-light); opacity: 0.7; white-space: nowrap; }
+  .ts-empty { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 24px; font-family: 'Source Sans 3', sans-serif; font-size: 13px; font-style: italic; color: var(--ink-light); opacity: 0.65; line-height: 1.5; }
 
   /* gate */
   .gate { max-width: 540px; margin: 70px auto; padding: 0 24px; text-align: center; }
@@ -141,8 +151,11 @@
       <button data-metric="accounts">New accounts</button>
       <button data-metric="quizzes">Quizzes taken</button>
     </div>
-    <div class="vbars" id="tsBars"></div>
-    <div class="vaxis" id="tsAxis"></div>
+    <div class="ts-plot">
+      <div class="ts-grid" id="tsGrid"></div>
+      <div class="ts-bars" id="tsBars"></div>
+    </div>
+    <div class="ts-axis" id="tsAxis"></div>
   </div>
 
   <div class="two-col">
@@ -237,30 +250,62 @@ function pct(num, den) { return den > 0 ? Math.round((num / den) * 100) : 0; }
 function monthKey(iso) { return iso ? String(iso).slice(0, 7) : null; }
 function yearKey(iso) { return iso ? String(iso).slice(0, 4) : null; }
 
+const MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function dayKey(iso) { return iso ? String(iso).slice(0, 10) : null; }   // "YYYY-MM-DD"
 function monthLabel(key) {
-  // key = "YYYY-MM"
   const [y, m] = key.split('-');
-  const names = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  return names[parseInt(m, 10) - 1] + " '" + y.slice(2);
+  return MONTH_NAMES[parseInt(m, 10) - 1] + " '" + y.slice(2);
+}
+function dayLabel(key) {
+  const [, m, d] = key.split('-');
+  return MONTH_NAMES[parseInt(m, 10) - 1] + ' ' + parseInt(d, 10);
+}
+// "Nice" integer y-axis ticks from 0 up to a rounded max with headroom above the tallest bar.
+function niceTicks(peak) {
+  const max = Math.max(peak, 1);
+  const pow = Math.pow(10, Math.floor(Math.log10(max)));
+  const norm = max / pow;
+  let step = (norm <= 1 ? 0.2 : norm <= 2 ? 0.5 : norm <= 5 ? 1 : 2) * pow;
+  if (step < 1) step = 1;
+  let niceMax = Math.ceil(max / step) * step;
+  if (niceMax <= peak) niceMax += step;          // guarantee space above the peak bar for its label
+  const ticks = [];
+  for (let v = 0; v <= niceMax + 1e-9; v += step) ticks.push(Math.round(v));
+  return { ticks, niceMax };
 }
 
-// Build a contiguous list of bucket keys (monthly, or yearly if the span is long)
+// Build a contiguous list of bucket keys. Granularity adapts to the data span:
+// daily for a young site (<= 70 days), monthly up to two years, then yearly.
 function buildAxis(allIsoDates) {
   const dates = allIsoDates.filter(Boolean).sort();
-  if (!dates.length) return { keys: [], gran: 'month' };
+  if (!dates.length) return { keys: [], gran: 'day' };
+  const first = new Date(dates[0]);
+  const last = new Date(dates[dates.length - 1]);
+  const spanDays = Math.round((last - first) / 864e5);
+
+  if (spanDays <= 70) {
+    // daily — fill every day from first to last so gaps read honestly
+    const keys = [];
+    let d = new Date(Date.UTC(first.getUTCFullYear(), first.getUTCMonth(), first.getUTCDate()));
+    const end = new Date(Date.UTC(last.getUTCFullYear(), last.getUTCMonth(), last.getUTCDate()));
+    let guard = 0;
+    while (d <= end && guard++ < 400) { keys.push(d.toISOString().slice(0, 10)); d.setUTCDate(d.getUTCDate() + 1); }
+    return { keys, gran: 'day' };
+  }
+
   const months = [...new Set(dates.map(monthKey))];
   if (months.length <= 24) {
-    // fill gaps month by month
     const keys = [];
     let [y, m] = months[0].split('-').map(Number);
     const [ey, em] = months[months.length - 1].split('-').map(Number);
-    while (y < ey || (y === ey && m <= em)) {
+    let guard = 0;
+    while ((y < ey || (y === ey && m <= em)) && guard++ < 400) {
       keys.push(y + '-' + String(m).padStart(2, '0'));
       m++; if (m > 12) { m = 1; y++; }
     }
     return { keys, gran: 'month' };
   }
-  // yearly
+
   const years = [...new Set(dates.map(yearKey))].map(Number);
   const keys = [];
   for (let yr = years[0]; yr <= years[years.length - 1]; yr++) keys.push(String(yr));
@@ -271,7 +316,7 @@ function bucketCounts(rows, field, gran) {
   const m = new Map();
   for (const r of rows) {
     const v = r[field]; if (!v) continue;
-    const k = gran === 'year' ? yearKey(v) : monthKey(v);
+    const k = gran === 'year' ? yearKey(v) : gran === 'day' ? dayKey(v) : monthKey(v);
     m.set(k, (m.get(k) || 0) + 1);
   }
   return m;
@@ -456,8 +501,12 @@ function render(d) {
       quizzes: bucketCounts(d.quizzes, 'created_at', axis.gran),
     },
   };
-  $('tsSub').textContent = axis.keys.length ? ('Activity grouped by ' + (axis.gran === 'year' ? 'year' : 'month')) : 'No dated activity yet';
-  renderTimeseries('reads');
+  // Default to the first metric that actually has data, so the panel never
+  // opens on an empty chart when another metric is populated.
+  const firstWithData = ['reads', 'accounts', 'quizzes'].find(mt => {
+    const s = TS.series[mt]; let tot = 0; if (s) s.forEach(v => tot += v); return tot > 0;
+  }) || 'reads';
+  renderTimeseries(firstWithData);
 
   // ---- most-read stories ----
   const readByStory = new Map();
@@ -503,18 +552,53 @@ function renderTimeseries(metric) {
   if (!TS) return;
   document.querySelectorAll('#tsSeg button').forEach(b => b.classList.toggle('active', b.dataset.metric === metric));
   const { keys, gran } = TS.axis;
-  const series = TS.series[metric];
-  if (!keys.length) { $('tsBars').innerHTML = '<div class="empty">No dated activity yet.</div>'; $('tsAxis').innerHTML = ''; return; }
-  const max = Math.max(...keys.map(k => series.get(k) || 0), 1);
-  // cap label density
-  const step = Math.ceil(keys.length / (gran === 'year' ? 12 : 14));
-  $('tsBars').innerHTML = keys.map(k => {
-    const v = series.get(k) || 0;
-    const h = Math.max((v / max) * 100, v > 0 ? 3 : 0);
-    return '<div class="vbar" title="' + esc((gran === 'year' ? k : monthLabel(k)) + ': ' + v) + '"><div class="vbar-fill" style="height:' + h + '%"></div></div>';
+  const series = TS.series[metric] || new Map();
+  const grid = $('tsGrid'), bars = $('tsBars'), axis = $('tsAxis');
+  const lab = k => gran === 'year' ? k : gran === 'day' ? dayLabel(k) : monthLabel(k);
+  const granWord = gran === 'year' ? 'year' : gran === 'day' ? 'day' : 'month';
+
+  const vals = keys.map(k => series.get(k) || 0);
+  const total = vals.reduce((a, b) => a + b, 0);
+
+  if (!keys.length || total === 0) {
+    grid.innerHTML = ''; axis.innerHTML = '';
+    const hint = metric === 'accounts'
+      ? 'No account sign-ups recorded yet.'
+      : 'No dated ' + (metric === 'reads' ? 'reads' : 'quizzes') + ' yet — add a created_at column to the ' +
+        (metric === 'reads' ? 'story_progress' : 'quiz_attempts') + ' table to enable this view.';
+    bars.innerHTML = '<div class="ts-empty">' + esc(hint) + '</div>';
+    $('tsSub').textContent = 'Growth over time';
+    return;
+  }
+
+  const peak = Math.max(...vals);
+  const peakIdx = vals.indexOf(peak);
+  const { ticks, niceMax } = niceTicks(peak);
+
+  $('tsSub').textContent = fmt(total) + ' total · by ' + granWord +
+    (peak > 0 ? ' · busiest ' + lab(keys[peakIdx]) + ' (' + fmt(peak) + ')' : '');
+
+  // horizontal gridlines + y-axis scale
+  grid.innerHTML = ticks.map(t =>
+    '<div class="ts-grid-line' + (t === 0 ? ' base' : '') + '" style="bottom:' + ((t / niceMax) * 100) + '%">' +
+      '<span class="ts-grid-label">' + fmt(t) + '</span></div>'
+  ).join('');
+
+  // bars (value labels only when there is room)
+  const showVals = keys.length <= 16;
+  bars.innerHTML = keys.map((k, i) => {
+    const v = vals[i];
+    const h = v > 0 ? Math.max((v / niceMax) * 100, 2) : 0;
+    const valTag = (showVals && v > 0) ? '<span class="ts-bar-val">' + fmt(v) + '</span>' : '';
+    return '<div class="ts-bar" title="' + esc(lab(k) + ': ' + fmt(v)) + '">' +
+        valTag + '<div class="ts-bar-fill" style="height:' + h + '%"></div></div>';
   }).join('');
-  $('tsAxis').innerHTML = keys.map((k, i) =>
-    '<div class="vtick">' + ((i % step === 0) ? esc(gran === 'year' ? k : monthLabel(k)) : '') + '</div>'
+
+  // x-axis labels, thinned to avoid crowding
+  const targetTicks = gran === 'day' ? 10 : 14;
+  const step = Math.max(1, Math.ceil(keys.length / targetTicks));
+  axis.innerHTML = keys.map((k, i) =>
+    '<div class="ts-tick">' + ((i % step === 0 || i === keys.length - 1) ? esc(lab(k)) : '') + '</div>'
   ).join('');
 }
 
